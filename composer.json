@@ -1,0 +1,36 @@
+{
+    "name": "webeweb/jquery-datatables-bundle",
+    "type": "symfony-bundle",
+    "description": "Intregate jQuery Datatable with Symfony2",
+    "keywords": ["webeweb", "bundle", "symfony", "jquery", "datatable"],
+    "homepage": "http://github.com/webeweb/jquery-datatables-bundle",
+    "license": "LGPL-3.0-only",
+    "authors": [
+        {
+            "name": "webeweb",
+            "homepage": "http://github.com/webeweb/"
+        }
+    ],
+    "require": {
+        "php": "^5.6|^7.0",
+        "symfony/framework-bundle": "^2.6|^3.0",
+        "twig/twig": "^1.0||^2.0",
+        "webeweb/core-library": "~1.0@dev"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.7.*"
+    },
+    "support": {
+        "issues": "http://github.com/webeweb/jquery-datatables-bundle/issues"
+    },
+    "autoload": {
+        "psr-4": {
+            "WBW\\Bundle\\JQuery\\DatatablesBundle\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
+}
