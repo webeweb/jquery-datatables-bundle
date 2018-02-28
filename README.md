@@ -1,9 +1,9 @@
 jquery-datatables-bundle
-=======================
+========================
 
 [![Build Status](https://travis-ci.org/webeweb/jquery-datatables-bundle.svg?branch=master)](https://travis-ci.org/webeweb/jquery-datatables-bundle) [![Coverage Status](https://coveralls.io/repos/github/webeweb/jquery-datatables-bundle/badge.svg?branch=master)](https://coveralls.io/github/webeweb/jquery-datatables-bundle?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/webeweb/jquery-datatables-bundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/webeweb/jquery-datatables-bundle/?branch=master) [![Latest Stable Version](https://poser.pugx.org/webeweb/jquery-datatables-bundle/v/stable)](https://packagist.org/packages/webeweb/jquery-datatables-bundle) [![Latest Unstable Version](https://poser.pugx.org/webeweb/jquery-datatables-bundle/v/unstable)](https://packagist.org/packages/webeweb/jquery-datatables-bundle) [![License](https://poser.pugx.org/webeweb/jquery-datatables-bundle/license)](https://packagist.org/packages/webeweb/jquery-datatables-bundle) [![composer.lock](https://poser.pugx.org/webeweb/jquery-datatables-bundle/composerlock)](https://packagist.org/packages/webeweb/jquery-datatables-bundle)
 
-Integrate jQuery Datatable with Symfony2.
+Integrate jQuery Datatable with Symfony 2.
 
 > IMPORTANT NOTICE: This package is still under development. Any changes will be
 > done without prior notice to consumers of this package. Of course this code
@@ -11,7 +11,21 @@ Integrate jQuery Datatable with Symfony2.
 
 Includes :
 
-- [jQuery 3.2.1](http://jquery.com/) (Datatable dependency)
+- [DataTables 1.10.16](https://datatables.net/)
+- [DataTables AutoFill 2.2.2](https://datatables.net/extensions/autofill/) (DataTables plugin)
+- [DataTables Buttons 1.5.1](https://datatables.net/extensions/buttons/) (DataTables plugin)
+- DataTables JSZip 2.5.0
+- DataTables pdfmake 0.1.32
+- [DataTables ColReorder 1.4.1](https://datatables.net/extensions/colreorder/) (DataTables plugin)
+- [DataTables FixedColumns 3.2.4](https://datatables.net/extensions/fixedcolumns/) (DataTables plugin)
+- [DataTables FixedHeader 3.1.3](https://datatables.net/extensions/fixedheader/) (DataTables plugin)
+- [DataTables KeyTable 2.3.2](https://datatables.net/extensions/keytable/) (DataTables plugin)
+- [DataTables Responsive 2.2.1](https://datatables.net/extensions/responsive/) (DataTables plugin)
+- [DataTables RowGroup 1.0.2](https://datatables.net/extensions/rowgroup/) (DataTables plugin)
+- [DataTables RowReorder 1.2.3](https://datatables.net/extensions/rowreorder/) (DataTables plugin)
+- [DataTables Scroller 1.4.4](https://datatables.net/extensions/scroller/) (DataTables plugin)
+- [DataTables Select 1.2.5](https://datatables.net/extensions/select/) (DataTables plugin)
+- [jQuery 3.2.1](http://jquery.com/) (DataTables dependency)
 
 ---
 
