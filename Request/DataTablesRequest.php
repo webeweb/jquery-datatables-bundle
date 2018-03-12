@@ -106,7 +106,7 @@ final class DataTablesRequest {
      *
      * @return integer Returns the draw.
      */
-    public final function getDraw() {
+    public function getDraw() {
         return $this->draw;
     }
 
