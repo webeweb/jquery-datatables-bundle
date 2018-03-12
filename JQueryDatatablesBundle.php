@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\DatatablesBundle;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * jQuery Datatables bundle.
+ * jQuery DataTables bundle.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\jQuery\DatatablesBundle
