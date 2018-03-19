@@ -36,7 +36,7 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(null, $obj->getClassname());
         $this->assertEquals(null, $obj->getContentPadding());
         $this->assertEquals("name", $obj->getData());
-        $this->assertEquals("name", $obj->getDataTablesMapping()->getColumn());
+        $this->assertEquals("name", $obj->getMapping()->getColumn());
         $this->assertEquals(null, $obj->getDefaultContent());
         $this->assertEquals("name", $obj->getName());
         $this->assertEquals(null, $obj->getOrderData());

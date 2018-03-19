@@ -189,21 +189,21 @@ final class DataTablesColumn implements JsonSerializable {
     }
 
     /**
-     * Get the DataTables mapping.
-     *
-     * @return DataTablesMapping Returns the DataTables mapping.
-     */
-    public function getDataTablesMapping() {
-        return $this->mapping;
-    }
-
-    /**
      * Get the default content
      *
      * @return string Returns the default content.
      */
     public function getDefaultContent() {
         return $this->defaultContent;
+    }
+
+    /**
+     * Get the mapping.
+     *
+     * @return DataTablesMapping The mapping.
+     */
+    public function getMapping() {
+        return $this->mapping;
     }
 
     /**
