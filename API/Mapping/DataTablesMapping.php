@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\DatatablesBundle\API\Mapping;
 /**
  * DataTables mapping.
  *
- * @author Camille A. <camille@ingeneo.eu>
+ * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DatatablesBundle\API\Mapping
  * @final
  */

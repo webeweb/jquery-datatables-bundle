@@ -17,7 +17,7 @@ use WBW\Bundle\JQuery\DatatablesBundle\API\Mapping\DataTablesMapping;
 /**
  * DataTables mapping test.
  *
- * @author Camille A. <camille@ingeneo.eu>
+ * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DatatablesBundle\API\Mapping
  * @final
  */
