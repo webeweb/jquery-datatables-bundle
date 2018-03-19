@@ -346,7 +346,7 @@ final class DataTablesColumn implements JsonSerializable {
     /**
      * Set the data.
      *
-     * @param integer|strign $data The data.
+     * @param integer|string $data The data.
      * @return DataTablesColumn Returns the DataTables column.
      */
     public function setData($data) {
@@ -465,7 +465,7 @@ final class DataTablesColumn implements JsonSerializable {
             case "string":
                 $this->type = $type;
                 break;
-            default :
+            default:
                 $this->type = null;
         }
         return $this;
