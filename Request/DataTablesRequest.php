@@ -68,8 +68,6 @@ final class DataTablesRequest {
      * Constructor.
      */
     private function __construct() {
-
-        // Initialize.
         $this->setColumns([]);
         $this->setOrder([]);
         $this->setSearch([]);
