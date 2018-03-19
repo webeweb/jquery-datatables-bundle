@@ -25,6 +25,59 @@ use WBW\Bundle\JQuery\DatatablesBundle\API\Request\DataTablesRequest;
 final class DataTablesRequestTest extends PHPUnit_Framework_TestCase {
 
     /**
+     * Get a array.
+     *
+     * @return array Returns the array.
+     */
+    public static function getArray() {
+
+        // Initialize.
+        $output = [];
+
+        // ID
+        $output["columns"][0]["data"]            = "id";
+        $output["columns"][0]["name"]            = "id";
+        $output["columns"][0]["orderable"]       = "true";
+        $output["columns"][0]["search"]["regex"] = "false";
+        $output["columns"][0]["search"]["value"] = "";
+        $output["columns"][0]["searchable"]      = "";
+
+        // Firstname
+        $output["columns"][1]["data"]            = "firstname";
+        $output["columns"][1]["name"]            = "firstname";
+        $output["columns"][1]["orderable"]       = "true";
+        $output["columns"][1]["search"]["regex"] = "false";
+        $output["columns"][1]["search"]["value"] = "";
+        $output["columns"][1]["searchable"]      = "";
+
+        // Lastname
+        $output["columns"][2]["data"]            = "lastname";
+        $output["columns"][2]["name"]            = "lastname";
+        $output["columns"][2]["orderable"]       = "true";
+        $output["columns"][2]["search"]["regex"] = "false";
+        $output["columns"][2]["search"]["value"] = "";
+        $output["columns"][2]["searchable"]      = "";
+
+        //
+        $output["draw"]   = "1";
+        $output["length"] = "10";
+
+        // Order
+        $output["order"][0]["column"] = "0";
+        $output["order"][0]["dir"]    = "asc";
+
+        // Search
+        $output["search"]["regex"] = "false";
+        $output["search"]["value"] = "";
+
+        // Start
+        $output["start"] = "0";
+
+        // Return
+        return $output;
+    }
+
+    /**
      * Tests the __construct() method.
      *
      * @return void.
@@ -39,6 +92,28 @@ final class DataTablesRequestTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals([], $obj->getOrder());
         $this->assertEquals([], $obj->getSearch());
         $this->assertEquals(0, $obj->getStart());
+    }
+
+    /**
+     * Tests the getColumn() method.
+     *
+     * @return void
+     */
+    public function testGetColumn() {
+
+        $obj = DataTablesRequest::newInstance(new Request(self::getQuery()));
+
+        $this->assertCount(3, $obj->getColumns());
+        $this->assertEquals(1, $obj->getDraw());
+        $this->assertEquals(10, $obj->getLength());
+        $this->assertCount(1, $obj->getOrder());
+        $this->assertCount(2, $obj->getSearch());
+        $this->assertEquals(0, $obj->getStart());
+
+        $this->assertNotNull($obj->getColumn("id"));
+        $this->assertNotNull($obj->getColumn("firstname"));
+        $this->assertNotNull($obj->getColumn("lastname"));
+        $this->assertNull($obj->getColumn("exceptions"));
     }
 
     /**

@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DatatablesBundle\API\Request;
 
 use Symfony\Component\HttpFoundation\Request;
+use WBW\Library\Core\HTTP\HTTPMethodInterface;
 
 /**
  * DataTables request.
@@ -20,7 +21,7 @@ use Symfony\Component\HttpFoundation\Request;
  * @package WBW\Bundle\JQuery\DatatablesBundle\API\Request
  * @final
  */
-final class DataTablesRequest {
+final class DataTablesRequest implements HTTPMethodInterface {
 
     /**
      * Columns.
@@ -80,11 +81,10 @@ final class DataTablesRequest {
      * @return array Returns the column in case of success, null otherwise.
      */
     public function getColumn($name) {
-        foreach ($this->columns as $column) {
-            if ($name !== $column["name"]) {
-                continue;
+        foreach ($this->columns as $current) {
+            if ($name === $current["name"]) {
+                return $current;
             }
-            return $column;
         }
         return null;
     }
@@ -155,7 +155,7 @@ final class DataTablesRequest {
         $instance = new DataTablesRequest();
 
         // Get the parameter bag.
-        if ("GET" === $request->getMethod()) {
+        if (self::METHOD_GET === $request->getMethod()) {
             $parameterBag = $request->query;
         } else {
             $parameterBag = $request->request;
