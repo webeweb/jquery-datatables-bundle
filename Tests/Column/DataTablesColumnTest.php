@@ -60,6 +60,9 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
         $obj->setCellType("exception");
         $this->assertEquals("td", $obj->getCellType());
 
+        $obj->setCellType("td");
+        $this->assertEquals("td", $obj->getCellType());
+
         $obj->setCellType("th");
         $this->assertEquals("th", $obj->getCellType());
     }

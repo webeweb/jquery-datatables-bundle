@@ -287,6 +287,9 @@ final class DataTablesColumn implements JsonSerializable {
             case "td":
             case "th":
                 $this->cellType = $cellType;
+                break;
+            default:
+                $this->cellType = "td";
         }
         return $this;
     }
