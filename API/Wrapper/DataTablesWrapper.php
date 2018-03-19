@@ -262,9 +262,9 @@ final class DataTablesWrapper implements HTTPMethodInterface {
      * @return DataTablesWrapper Returns the DataTables wrapper.
      */
     public function setProcessing($processing) {
-        switch ($processing) {
-            case false :
-            case true :
+        switch (true) {
+            case (false === $processing):
+            case (true === $processing):
                 $this->processing = $processing;
                 break;
             default:
@@ -292,9 +292,9 @@ final class DataTablesWrapper implements HTTPMethodInterface {
      * @return DataTablesWrapper Returns the DataTables wrapper.
      */
     public function setServerSide($serverSide) {
-        switch ($serverSide) {
-            case false :
-            case true :
+        switch (true) {
+            case (false === $serverSide):
+            case (true === $serverSide):
                 $this->serverSide = $serverSide;
                 break;
             default:
