@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DatatablesBundle\API\Column;
 
 use JsonSerializable;
+use WBW\Bundle\JQuery\DatatablesBundle\API\Mapping\DataTablesMapping;
 
 /**
  * DataTables column.
@@ -49,6 +50,13 @@ final class DataTablesColumn implements JsonSerializable {
      * @var integer|string
      */
     private $data;
+
+    /**
+     * DataTables mapping.
+     *
+     * @var DataTablesMapping
+     */
+    private $dataTablesMapping;
 
     /**
      * Default content.
@@ -129,9 +137,19 @@ final class DataTablesColumn implements JsonSerializable {
 
     /**
      * Constructor.
+     *
+     * @param string $name The column name.
+     * @param string $title The column title.
+     * @param string $cellType The column cell type.
      */
-    public function __construct() {
-        // NOTHING TO DO.
+    public function __construct($name, $title, $cellType = "td") {
+        $this->dataTablesMapping = new DataTablesMapping();
+        $this->dataTablesMapping->setColumn($name);
+
+        $this->setCellType($cellType);
+        $this->setData($name);
+        $this->setName($name);
+        $this->setTitle($title);
     }
 
     /**
@@ -168,6 +186,15 @@ final class DataTablesColumn implements JsonSerializable {
      */
     public function getData() {
         return $this->data;
+    }
+
+    /**
+     * Get the DataTables mapping.
+     *
+     * @return DataTablesMapping Returns the DataTables mapping.
+     */
+    public function getDataTablesMapping() {
+        return $this->dataTablesMapping;
     }
 
     /**
