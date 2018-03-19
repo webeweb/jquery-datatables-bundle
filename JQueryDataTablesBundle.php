@@ -20,6 +20,6 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  * @package WBW\Bundle\jQuery\DatatablesBundle
  * @final
  */
-final class JQueryDatatablesBundle extends Bundle {
+final class JQueryDataTablesBundle extends Bundle {
 
 }
