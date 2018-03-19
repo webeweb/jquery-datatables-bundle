@@ -25,15 +25,20 @@ use WBW\Bundle\JQuery\DatatablesBundle\Request\DataTablesRequest;
 final class DataTablesRequestTest extends PHPUnit_Framework_TestCase {
 
     /**
-     * Tests the getColumns() method.
+     * Tests the __construct() method.
      *
      * @return void.
      */
-    public function testGetColumns() {
+    public function testConstructor() {
 
         $obj = DataTablesRequest::newInstance(new Request());
 
         $this->assertEquals([], $obj->getColumns());
+        $this->assertEquals(0, $obj->getDraw());
+        $this->assertEquals(0, $obj->getLength());
+        $this->assertEquals([], $obj->getOrder());
+        $this->assertEquals([], $obj->getSearch());
+        $this->assertEquals(0, $obj->getStart());
     }
 
     /**
@@ -45,55 +50,8 @@ final class DataTablesRequestTest extends PHPUnit_Framework_TestCase {
 
         $obj = DataTablesRequest::newInstance(new Request());
 
-        $this->assertEquals(0, $obj->getDraw());
-    }
-
-    /**
-     * Tests the getLength() method.
-     *
-     * @return void.
-     */
-    public function testGetLength() {
-
-        $obj = DataTablesRequest::newInstance(new Request());
-
-        $this->assertEquals(0, $obj->getLength());
-    }
-
-    /**
-     * Tests the getOrder() method.
-     *
-     * @return void.
-     */
-    public function testGetOrder() {
-
-        $obj = DataTablesRequest::newInstance(new Request());
-
-        $this->assertEquals([], $obj->getOrder());
-    }
-
-    /**
-     * Tests the getSearch() method.
-     *
-     * @return void.
-     */
-    public function testGetSearch() {
-
-        $obj = DataTablesRequest::newInstance(new Request());
-
-        $this->assertEquals([], $obj->getSearch());
-    }
-
-    /**
-     * Tests the getStart() method.
-     *
-     * @return void.
-     */
-    public function testGetStart() {
-
-        $obj = DataTablesRequest::newInstance(new Request());
-
-        $this->assertEquals(0, $obj->getStart());
+        $obj->setDraw(1);
+        $this->assertEquals(1, $obj->getDraw());
     }
 
 }
