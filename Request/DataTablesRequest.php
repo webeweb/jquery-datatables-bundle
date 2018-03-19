@@ -80,14 +80,13 @@ final class DataTablesRequest {
      * @return array Returns the column in case of success, null otherwise.
      */
     public function getColumn($name) {
-        $output = null;
         foreach ($this->columns as $column) {
-            if ($column["name"] === $name) {
-                $output = $column;
-                break;
+            if ($name !== $column["name"]) {
+                continue;
             }
+            return $column;
         }
-        return $output;
+        return null;
     }
 
     /**
