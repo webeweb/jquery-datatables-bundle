@@ -1,0 +1,5 @@
+# Resources/config/services.yml
+services:
+
+    webeweb.bundle.datatablesbundle.manager.datatables:
+        class: WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager
