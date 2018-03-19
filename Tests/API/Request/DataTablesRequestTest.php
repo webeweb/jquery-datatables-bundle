@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\API\Request;
 
 use PHPUnit_Framework_TestCase;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\JQuery\DatatablesBundle\API\Request\DataTablesRequest;
 
@@ -84,14 +85,14 @@ final class DataTablesRequestTest extends PHPUnit_Framework_TestCase {
      */
     public function testConstructor() {
 
-        $obj = DataTablesRequest::newInstance(new Request());
+        $objGET = DataTablesRequest::newInstance(new Request());
 
-        $this->assertEquals([], $obj->getColumns());
-        $this->assertEquals(0, $obj->getDraw());
-        $this->assertEquals(0, $obj->getLength());
-        $this->assertEquals([], $obj->getOrder());
-        $this->assertEquals([], $obj->getSearch());
-        $this->assertEquals(0, $obj->getStart());
+        $this->assertEquals([], $objGET->getColumns());
+        $this->assertEquals(0, $objGET->getDraw());
+        $this->assertEquals(0, $objGET->getLength());
+        $this->assertEquals([], $objGET->getOrder());
+        $this->assertEquals([], $objGET->getSearch());
+        $this->assertEquals(0, $objGET->getStart());
     }
 
     /**
@@ -101,7 +102,14 @@ final class DataTablesRequestTest extends PHPUnit_Framework_TestCase {
      */
     public function testGetColumn() {
 
-        $obj = DataTablesRequest::newInstance(new Request(self::getArray()));
+        $query      = [];
+        $post       = self::getArray();
+        $attributes = [];
+        $cookies    = [];
+        $files      = [];
+        $server     = ["REQUEST_METHOD" => "POST"];
+
+        $obj = DataTablesRequest::newInstance(new Request($query, $post, $attributes, $cookies, $files, $server));
 
         $this->assertCount(3, $obj->getColumns());
         $this->assertEquals(1, $obj->getDraw());
