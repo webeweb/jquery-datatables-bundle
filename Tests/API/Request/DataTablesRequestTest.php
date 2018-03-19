@@ -101,7 +101,7 @@ final class DataTablesRequestTest extends PHPUnit_Framework_TestCase {
      */
     public function testGetColumn() {
 
-        $obj = DataTablesRequest::newInstance(new Request(self::getQuery()));
+        $obj = DataTablesRequest::newInstance(new Request(self::getArray()));
 
         $this->assertCount(3, $obj->getColumns());
         $this->assertEquals(1, $obj->getDraw());
