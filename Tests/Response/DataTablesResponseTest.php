@@ -57,11 +57,11 @@ final class DataTablesResponseTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
-     * Tests the getError() method.
+     * Tests the setError() method.
      *
      * @return void
      */
-    public function testGetError() {
+    public function testSetError() {
 
         $obj = DataTablesResponse::newInstance($this->dataTablesRequest);
 
@@ -70,11 +70,11 @@ final class DataTablesResponseTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
-     * Tests the getRecordFiltered() method.
+     * Tests the setRecordFiltered() method.
      *
      * @return void
      */
-    public function testGetRecordFiltered() {
+    public function testSetRecordFiltered() {
 
         $obj = DataTablesResponse::newInstance($this->dataTablesRequest);
 
@@ -83,11 +83,11 @@ final class DataTablesResponseTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
-     * Tests the getRecordTotal() method.
+     * Tests the setRecordTotal() method.
      *
      * @return void
      */
-    public function testGetRecordTotal() {
+    public function testSetRecordTotal() {
 
         $obj = DataTablesResponse::newInstance($this->dataTablesRequest);
 
@@ -116,6 +116,7 @@ final class DataTablesResponseTest extends PHPUnit_Framework_TestCase {
      * Tests the jsonSerialize() method.
      *
      * @return void
+     * @depends testToArray
      */
     public function testJsonSerialize() {
 
