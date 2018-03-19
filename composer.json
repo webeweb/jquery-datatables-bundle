@@ -1,7 +1,7 @@
 {
     "name": "webeweb/jquery-datatables-bundle",
     "type": "symfony-bundle",
-    "description": "Intregate jQuery Datatable with Symfony2",
+    "description": "Intregate jQuery Datatable with Symfony 2",
     "keywords": ["webeweb", "bundle", "symfony", "jquery", "datatable"],
     "homepage": "http://github.com/webeweb/jquery-datatables-bundle",
     "license": "LGPL-3.0-only",
