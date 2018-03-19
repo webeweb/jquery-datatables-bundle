@@ -52,18 +52,18 @@ final class DataTablesColumn implements JsonSerializable {
     private $data;
 
     /**
-     * DataTables mapping.
-     *
-     * @var DataTablesMapping
-     */
-    private $dataTablesMapping;
-
-    /**
      * Default content.
      *
      * @var string
      */
     private $defaultContent;
+
+    /**
+     * mapping.
+     *
+     * @var DataTablesMapping
+     */
+    private $mapping;
 
     /**
      * Name.
@@ -143,8 +143,8 @@ final class DataTablesColumn implements JsonSerializable {
      * @param string $cellType The column cell type.
      */
     public function __construct($name, $title, $cellType = "td") {
-        $this->dataTablesMapping = new DataTablesMapping();
-        $this->dataTablesMapping->setColumn($name);
+        $this->mapping = new DataTablesMapping();
+        $this->mapping->setColumn($name);
 
         $this->setCellType($cellType);
         $this->setData($name);
@@ -194,7 +194,7 @@ final class DataTablesColumn implements JsonSerializable {
      * @return DataTablesMapping Returns the DataTables mapping.
      */
     public function getDataTablesMapping() {
-        return $this->dataTablesMapping;
+        return $this->mapping;
     }
 
     /**
