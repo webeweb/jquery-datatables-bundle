@@ -15,6 +15,7 @@ use WBW\Bundle\JQuery\DatatablesBundle\API\Column\DataTablesColumn;
 use WBW\Bundle\JQuery\DatatablesBundle\API\Mapping\DataTablesMapping;
 use WBW\Bundle\JQuery\DatatablesBundle\API\Request\DataTablesRequest;
 use WBW\Bundle\JQuery\DatatablesBundle\API\Response\DataTablesResponse;
+use WBW\Library\Core\HTTP\HTTPMethodInterface;
 
 /**
  * DataTables wrapper.
@@ -23,7 +24,7 @@ use WBW\Bundle\JQuery\DatatablesBundle\API\Response\DataTablesResponse;
  * @package WBW\Bundle\JQuery\DatatablesBundle\API\Wrapper
  * @final
  */
-final class DataTablesWrapper {
+final class DataTablesWrapper implements HTTPMethodInterface {
 
     /**
      * Columns.
@@ -108,6 +109,18 @@ final class DataTablesWrapper {
     }
 
     /**
+     * Add a column.
+     *
+     * @param DataTablesColumn $column The column.
+     * @return DataTablesWrapper Returns the DataTables wrapper.
+     */
+    public function addColumn(DataTablesColumn $column) {
+        $this->columns[$column->getName()] = $column;
+        $this->columns[$column->getName()]->getMapping()->setPrefix($this->mapping->getPrefix());
+        return $this;
+    }
+
+    /**
      * Get the columns.
      *
      * @return DataTablesColumn[] Returns the columns.
@@ -189,6 +202,20 @@ final class DataTablesWrapper {
     }
 
     /**
+     * Remove a column.
+     *
+     * @param DataTablesColumn $column The column.
+     * @return DataTablesWrapper Returns the DataTables wrapper.
+     */
+    public function removeColumn(DataTablesColumn $column) {
+        if (true === array_key_exists($column->getName(), $this->columns)) {
+            $this->columns[$column->getName()]->getMapping()->setPrefix(null);
+            unset($this->columns[$column->getName()]);
+        }
+        return $this;
+    }
+
+    /**
      * Set the columns.
      *
      * @param DataTablesColumn[] $columns The columns.
@@ -205,14 +232,14 @@ final class DataTablesWrapper {
      * @param string $method The method.
      * @return DataTablesWrapper Returns the DataTables wrapper.
      */
-    private function setMethod($method) {
+    public function setMethod($method) {
         switch ($method) {
-            case "GET":
-            case "POST":
+            case self::METHOD_GET:
+            case self::METHOD_POST:
                 $this->method = $method;
                 break;
             default:
-                $this->method = "GET";
+                $this->method = self::METHOD_GET;
         }
         return $this;
     }
@@ -253,7 +280,7 @@ final class DataTablesWrapper {
      * @param string $route The route.
      * @return DataTablesWrapper Returns the DataTables wrapper.
      */
-    private function setRoute($route) {
+    public function setRoute($route) {
         $this->route = $route;
         return $this;
     }
