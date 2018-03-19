@@ -42,11 +42,11 @@ final class DataTablesRequestTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
-     * Tests the getDraw() method.
+     * Tests the setDraw() method.
      *
-     * @return void.
+     * @return void
      */
-    public function testGetDraw() {
+    public function testSetDraw() {
 
         $obj = DataTablesRequest::newInstance(new Request());
 
