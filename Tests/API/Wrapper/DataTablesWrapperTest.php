@@ -124,6 +124,9 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
 
         $obj->setProcessing(false);
         $this->assertEquals(false, $obj->getProcessing());
+
+        $obj->setProcessing(null);
+        $this->assertEquals(true, $obj->getProcessing());
     }
 
     /**
@@ -150,6 +153,9 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
 
         $obj->setServerSide(false);
         $this->assertEquals(false, $obj->getServerSide());
+
+        $obj->setServerSide(null);
+        $this->assertEquals(true, $obj->getServerSide());
     }
 
 }
