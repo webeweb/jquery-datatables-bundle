@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\API\Wrapper;
+namespace WBW\Bundle\JQuery\DatatablesBundle\Wrapper;
 
-use WBW\Bundle\JQuery\DatatablesBundle\API\Column\DataTablesColumn;
-use WBW\Bundle\JQuery\DatatablesBundle\API\Mapping\DataTablesMapping;
-use WBW\Bundle\JQuery\DatatablesBundle\API\Request\DataTablesRequest;
-use WBW\Bundle\JQuery\DatatablesBundle\API\Response\DataTablesResponse;
+use WBW\Bundle\JQuery\DatatablesBundle\Column\DataTablesColumn;
+use WBW\Bundle\JQuery\DatatablesBundle\Mapping\DataTablesMapping;
+use WBW\Bundle\JQuery\DatatablesBundle\Request\DataTablesRequest;
+use WBW\Bundle\JQuery\DatatablesBundle\Response\DataTablesResponse;
 use WBW\Library\Core\HTTP\HTTPMethodInterface;
 
 /**
  * DataTables wrapper.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\API\Wrapper
+ * @package WBW\Bundle\JQuery\DatatablesBundle\Wrapper
  * @final
  */
 final class DataTablesWrapper implements HTTPMethodInterface {

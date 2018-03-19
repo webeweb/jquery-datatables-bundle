@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\API\Column;
+namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Column;
 
 use PHPUnit_Framework_TestCase;
-use WBW\Bundle\JQuery\DatatablesBundle\API\Column\DataTablesColumn;
+use WBW\Bundle\JQuery\DatatablesBundle\Column\DataTablesColumn;
 
 /**
  * DataTables column test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\API\Column
+ * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\Column
  * @final
  */
 final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {

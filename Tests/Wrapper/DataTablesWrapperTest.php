@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\API\Wrapper;
+namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Wrapper;
 
 use PHPUnit_Framework_TestCase;
-use WBW\Bundle\JQuery\DatatablesBundle\API\Column\DataTablesColumn;
-use WBW\Bundle\JQuery\DatatablesBundle\API\Wrapper\DataTablesWrapper;
+use WBW\Bundle\JQuery\DatatablesBundle\Column\DataTablesColumn;
+use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
 
 /**
  * DataTables wrapper test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\API\Wrapper
+ * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\Wrapper
  * @final
  */
 final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {

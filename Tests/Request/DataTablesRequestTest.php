@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\API\Request;
+namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Request;
 
 use PHPUnit_Framework_TestCase;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
-use WBW\Bundle\JQuery\DatatablesBundle\API\Request\DataTablesRequest;
+use WBW\Bundle\JQuery\DatatablesBundle\Request\DataTablesRequest;
 
 /**
  * DataTables request test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\API\Request
+ * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\Request
  * @final
  */
 final class DataTablesRequestTest extends PHPUnit_Framework_TestCase {

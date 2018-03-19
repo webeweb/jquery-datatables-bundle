@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\API\Request;
+namespace WBW\Bundle\JQuery\DatatablesBundle\Request;
 
 use Symfony\Component\HttpFoundation\Request;
 use WBW\Library\Core\HTTP\HTTPMethodInterface;
@@ -18,7 +18,7 @@ use WBW\Library\Core\HTTP\HTTPMethodInterface;
  * DataTables request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\API\Request
+ * @package WBW\Bundle\JQuery\DatatablesBundle\Request
  * @final
  */
 final class DataTablesRequest implements HTTPMethodInterface {
