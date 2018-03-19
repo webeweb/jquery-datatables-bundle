@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Request;
+namespace WBW\Bundle\JQuery\DatatablesBundle\API\Request;
 
 use Symfony\Component\HttpFoundation\Request;
 
@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\Request;
  * DataTables request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Request
+ * @package WBW\Bundle\JQuery\DatatablesBundle\API\Request
  * @final
  */
 final class DataTablesRequest {
