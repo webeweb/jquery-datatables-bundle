@@ -26,7 +26,10 @@
     "autoload": {
         "psr-4": {
             "WBW\\Bundle\\JQuery\\DatatablesBundle\\": ""
-        }
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
     },
     "extra": {
         "branch-alias": {
