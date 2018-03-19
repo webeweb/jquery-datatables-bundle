@@ -85,14 +85,14 @@ final class DataTablesRequestTest extends PHPUnit_Framework_TestCase {
      */
     public function testConstructor() {
 
-        $objGET = DataTablesRequest::newInstance(new Request());
+        $obj = DataTablesRequest::newInstance(new Request());
 
-        $this->assertEquals([], $objGET->getColumns());
-        $this->assertEquals(0, $objGET->getDraw());
-        $this->assertEquals(0, $objGET->getLength());
-        $this->assertEquals([], $objGET->getOrder());
-        $this->assertEquals([], $objGET->getSearch());
-        $this->assertEquals(0, $objGET->getStart());
+        $this->assertEquals([], $obj->getColumns());
+        $this->assertEquals(0, $obj->getDraw());
+        $this->assertEquals(0, $obj->getLength());
+        $this->assertEquals([], $obj->getOrder());
+        $this->assertEquals([], $obj->getSearch());
+        $this->assertEquals(0, $obj->getStart());
     }
 
     /**
