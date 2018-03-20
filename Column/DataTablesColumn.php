@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DatatablesBundle\Column;
 
 use JsonSerializable;
 use WBW\Bundle\JQuery\DatatablesBundle\Mapping\DataTablesMapping;
+use WBW\Library\Core\Utility\ArrayUtility;
 
 /**
  * DataTables column.
@@ -503,51 +504,21 @@ final class DataTablesColumn implements JsonSerializable {
         // Initialize the output.
         $output = [];
 
-        if (null !== $this->cellType) {
-            $output["cellType"] = $this->cellType;
-        }
-        if (null !== $this->classname) {
-            $output["classname"] = $this->classname;
-        }
-        if (null !== $this->contentPadding) {
-            $output["contentPadding"] = $this->contentPadding;
-        }
-        if (null !== $this->data) {
-            $output["data"] = $this->data;
-        }
-        if (null !== $this->defaultContent) {
-            $output["defaultContent"] = $this->defaultContent;
-        }
-        if (null !== $this->name) {
-            $output["name"] = $this->name;
-        }
-        if (null !== $this->orderable && false === $this->orderable) {
-            $output["orderable"] = $this->orderable;
-        }
-        if (null !== $this->orderData) {
-            $output["orderData"] = $this->orderData;
-        }
-        if (null !== $this->orderDataType) {
-            $output["orderDataType"] = $this->orderDataType;
-        }
-        if (null !== $this->orderSequence) {
-            $output["orderSequence"] = $this->orderSequence;
-        }
-        if (null !== $this->searchable && false === $this->searchable) {
-            $output["searchable"] = $this->searchable;
-        }
-        if (null !== $this->title) {
-            $output["title"] = $this->title;
-        }
-        if (null !== $this->type) {
-            $output["type"] = $this->type;
-        }
-        if (null !== $this->visible && false === $this->visible) {
-            $output["visible"] = $this->visible;
-        }
-        if (null !== $this->width) {
-            $output["width"] = $this->width;
-        }
+        ArrayUtility::set($output, "cellType", $this->cellType, [null]);
+        ArrayUtility::set($output, "classname", $this->classname, [null]);
+        ArrayUtility::set($output, "contentPadding", $this->contentPadding, [null]);
+        ArrayUtility::set($output, "data", $this->data, [null]);
+        ArrayUtility::set($output, "defaultContent", $this->defaultContent, [null]);
+        ArrayUtility::set($output, "name", $this->name, [null]);
+        ArrayUtility::set($output, "orderable", $this->orderable, [null, true]);
+        ArrayUtility::set($output, "orderData", $this->orderData, [null]);
+        ArrayUtility::set($output, "orderDataType", $this->orderDataType, [null]);
+        ArrayUtility::set($output, "orderSequence", $this->orderSequence, [null]);
+        ArrayUtility::set($output, "searchable", $this->searchable, [null, true]);
+        ArrayUtility::set($output, "title", $this->title, [null]);
+        ArrayUtility::set($output, "type", $this->type, [null]);
+        ArrayUtility::set($output, "visible", $this->visible, [null, true]);
+        ArrayUtility::set($output, "width", $this->width, [null]);
 
         // Return the output.
         return $output;
