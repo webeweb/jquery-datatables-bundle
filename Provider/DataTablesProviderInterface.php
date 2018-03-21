@@ -20,6 +20,13 @@ namespace WBW\Bundle\JQuery\DatatablesBundle\Provider;
 interface DataTablesProviderInterface {
 
     /**
+     * Tag name.
+     *
+     * @var string
+     */
+    const TAG_NAME = "webeweb.jquerydatatables.provider";
+
+    /**
      * Get the name.
      *
      * @return string Returns the name.
