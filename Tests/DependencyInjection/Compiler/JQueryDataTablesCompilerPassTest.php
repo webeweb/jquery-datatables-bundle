@@ -54,7 +54,6 @@ final class JQueryDataTablesCompilerPassTest extends AbstractBootstrapTest {
 
         // We set a container builder with only the necessary.
         $this->containerBuilder->register(DataTablesManager::SERVICE_NAME, $this->dataTablesManager);
-        $this->containerBuilder->register("datatables.provider.test", $this->dataTablesProvider)->addTag(DataTablesProviderInterface::TAG_NAME);
     }
 
     /**
@@ -67,8 +66,13 @@ final class JQueryDataTablesCompilerPassTest extends AbstractBootstrapTest {
         $obj = new JQueryDataTablesCompilerPass();
 
         $obj->process($this->containerBuilder);
+        $this->assertEquals(false, $this->containerBuilder->getDefinition(DataTablesManager::SERVICE_NAME)->hasMethodCall("registerProvider"));
+
+        $this->containerBuilder->register("datatables.provider.test", $this->dataTablesProvider)->addTag(DataTablesProviderInterface::TAG_NAME);
         $this->assertEquals(true, $this->containerBuilder->hasDefinition("datatables.provider.test"));
         $this->assertEquals(true, $this->containerBuilder->getDefinition("datatables.provider.test")->hasTag(DataTablesProviderInterface::TAG_NAME));
+
+        $obj->process($this->containerBuilder);
         $this->assertEquals(true, $this->containerBuilder->getDefinition(DataTablesManager::SERVICE_NAME)->hasMethodCall("registerProvider"));
     }
 
