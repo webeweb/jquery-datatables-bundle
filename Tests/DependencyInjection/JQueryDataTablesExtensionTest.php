@@ -15,7 +15,7 @@ use PHPUnit_Framework_TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\HttpKernel\KernelInterface;
-use WBW\Bundle\JQuery\DatatablesBundle\DependencyInjection\DataTablesExtension;
+use WBW\Bundle\JQuery\DatatablesBundle\DependencyInjection\JQueryDataTablesExtension;
 use WBW\Bundle\JQuery\DatatablesBundle\Manager\DataTablesManager;
 
 /**
@@ -40,7 +40,7 @@ final class DataTablesExtensionTest extends PHPUnit_Framework_TestCase {
         $container = new ContainerBuilder(new ParameterBag(["kernel.environment" => "dev"]));
         $container->set("kernel", $kernel);
 
-        $obj = new DataTablesExtension();
+        $obj = new JQueryDataTablesExtension();
 
         $obj->load([], $container);
         $this->assertInstanceOf(DataTablesManager::class, $container->get(DataTablesManager::SERVICE_NAME));

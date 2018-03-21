@@ -17,13 +17,13 @@ use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 /**
- * DataTables extension.
+ * jQuery DataTables extension.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DatatablesBundle\DependencyInjection
  * @final
  */
-final class DataTablesExtension extends Extension {
+final class JQueryDataTablesExtension extends Extension {
 
     /**
      * {@inheritdoc}
