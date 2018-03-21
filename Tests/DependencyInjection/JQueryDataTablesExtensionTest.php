@@ -11,10 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\DependencyInjection;
 
-use PHPUnit_Framework_TestCase;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
-use Symfony\Component\HttpKernel\KernelInterface;
+use WBW\Bundle\BootstrapBundle\Tests\AbstractBootstrapTest;
 use WBW\Bundle\JQuery\DatatablesBundle\DependencyInjection\JQueryDataTablesExtension;
 use WBW\Bundle\JQuery\DatatablesBundle\Manager\DataTablesManager;
 
@@ -24,7 +21,14 @@ use WBW\Bundle\JQuery\DatatablesBundle\Manager\DataTablesManager;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\DependencyInjection
  */
-final class DataTablesExtensionTest extends PHPUnit_Framework_TestCase {
+final class DataTablesExtensionTest extends AbstractBootstrapTest {
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function setUp() {
+        parent::setUp();
+    }
 
     /**
      * Tests the load() method.
@@ -33,17 +37,10 @@ final class DataTablesExtensionTest extends PHPUnit_Framework_TestCase {
      */
     public function testLoad() {
 
-        // Set the mocks.
-        $kernel = $this->getMockBuilder(KernelInterface::class)->getMock();
-
-        // We set a container builder with only the necessary.
-        $container = new ContainerBuilder(new ParameterBag(["kernel.environment" => "dev"]));
-        $container->set("kernel", $kernel);
-
         $obj = new JQueryDataTablesExtension();
 
-        $obj->load([], $container);
-        $this->assertInstanceOf(DataTablesManager::class, $container->get(DataTablesManager::SERVICE_NAME));
+        $obj->load([], $this->containerBuilder);
+        $this->assertInstanceOf(DataTablesManager::class, $this->containerBuilder->get(DataTablesManager::SERVICE_NAME));
     }
 
 }

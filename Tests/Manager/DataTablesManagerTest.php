@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Manager;
 
 use Exception;
-use PHPUnit_Framework_TestCase;
+use WBW\Bundle\BootstrapBundle\Tests\AbstractBootstrapTest;
 use WBW\Bundle\JQuery\DatatablesBundle\Exception\AlreadyRegisteredProviderException;
 use WBW\Bundle\JQuery\DatatablesBundle\Exception\UnregisteredProviderException;
 use WBW\Bundle\JQuery\DatatablesBundle\Manager\DataTablesManager;
@@ -25,22 +25,24 @@ use WBW\Bundle\JQuery\DatatablesBundle\Provider\DataTablesProviderInterface;
  * @package WBW\Bundle\JQuery\DatatablesBundle\Manager
  * @final
  */
-final class DataTablesManagerTest extends PHPUnit_Framework_TestCase {
+final class DataTablesManagerTest extends AbstractBootstrapTest {
 
     /**
-     * Provider.
+     * DataTables provider.
      *
      * @var DataTablesProviderInterface
      */
-    private $provider;
+    private $dataTablesProvider;
 
     /**
      * {@inheritdoc}
      */
     protected function setUp() {
+        parent::setUp();
 
-        $this->provider = $this->getMockBuilder(DataTablesProviderInterface::class)->getMock();
-        $this->provider->expects($this->any())->method("getName")->willReturn("name");
+        // Set a DataTables provider mock.
+        $this->dataTablesProvider = $this->getMockBuilder(DataTablesProviderInterface::class)->getMock();
+        $this->dataTablesProvider->expects($this->any())->method("getName")->willReturn("name");
     }
 
     /**
@@ -64,11 +66,11 @@ final class DataTablesManagerTest extends PHPUnit_Framework_TestCase {
 
         $obj = new DataTablesManager();
 
-        $obj->registerProvider($this->provider);
+        $obj->registerProvider($this->dataTablesProvider);
         $this->assertCount(1, $obj->getProviders());
 
         try {
-            $obj->registerProvider($this->provider);
+            $obj->registerProvider($this->dataTablesProvider);
         } catch (Exception $ex) {
             $this->assertInstanceOf(AlreadyRegisteredProviderException::class, $ex);
             $this->assertEquals("A provider with name \"name\" is already registered", $ex->getMessage());
@@ -84,8 +86,8 @@ final class DataTablesManagerTest extends PHPUnit_Framework_TestCase {
 
         $obj = new DataTablesManager();
 
-        $obj->registerProvider($this->provider);
-        $this->assertEquals($this->provider, $obj->getProvider($this->provider->getName()));
+        $obj->registerProvider($this->dataTablesProvider);
+        $this->assertEquals($this->dataTablesProvider, $obj->getProvider($this->dataTablesProvider->getName()));
 
         try {
             $obj->getProvider("exception");
