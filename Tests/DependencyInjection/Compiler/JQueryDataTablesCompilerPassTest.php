@@ -51,9 +51,6 @@ final class JQueryDataTablesCompilerPassTest extends AbstractBootstrapTest {
         // Set a DataTables provider mock.
         $this->dataTablesProvider = $this->getMockBuilder(DataTablesProviderInterface::class)->getMock();
         $this->dataTablesProvider->expects($this->any())->method("getName")->willReturn("name");
-
-        // We set a container builder with only the necessary.
-        $this->containerBuilder->register(DataTablesManager::SERVICE_NAME, $this->dataTablesManager);
     }
 
     /**
@@ -66,14 +63,24 @@ final class JQueryDataTablesCompilerPassTest extends AbstractBootstrapTest {
         $obj = new JQueryDataTablesCompilerPass();
 
         $obj->process($this->containerBuilder);
+        $this->assertEquals(false, $this->containerBuilder->hasDefinition(DataTablesManager::SERVICE_NAME));
+
+        $this->containerBuilder->register(DataTablesManager::SERVICE_NAME, $this->dataTablesManager);
+        $obj->process($this->containerBuilder);
+        $this->assertEquals(true, $this->containerBuilder->hasDefinition(DataTablesManager::SERVICE_NAME));
         $this->assertEquals(false, $this->containerBuilder->getDefinition(DataTablesManager::SERVICE_NAME)->hasMethodCall("registerProvider"));
 
         $this->containerBuilder->register("datatables.provider.test", $this->dataTablesProvider)->addTag(DataTablesProviderInterface::TAG_NAME);
+        $this->assertEquals(true, $this->containerBuilder->hasDefinition(DataTablesManager::SERVICE_NAME));
+        $this->assertEquals(false, $this->containerBuilder->getDefinition(DataTablesManager::SERVICE_NAME)->hasMethodCall("registerProvider"));
         $this->assertEquals(true, $this->containerBuilder->hasDefinition("datatables.provider.test"));
         $this->assertEquals(true, $this->containerBuilder->getDefinition("datatables.provider.test")->hasTag(DataTablesProviderInterface::TAG_NAME));
 
         $obj->process($this->containerBuilder);
+        $this->assertEquals(true, $this->containerBuilder->hasDefinition(DataTablesManager::SERVICE_NAME));
         $this->assertEquals(true, $this->containerBuilder->getDefinition(DataTablesManager::SERVICE_NAME)->hasMethodCall("registerProvider"));
+        $this->assertEquals(true, $this->containerBuilder->hasDefinition("datatables.provider.test"));
+        $this->assertEquals(true, $this->containerBuilder->getDefinition("datatables.provider.test")->hasTag(DataTablesProviderInterface::TAG_NAME));
     }
 
 }
