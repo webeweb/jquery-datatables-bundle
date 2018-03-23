@@ -186,7 +186,7 @@ final class DataTablesWrapper implements HTTPMethodInterface {
     /**
      * Get the route.
      *
-     * @return string Returns the reoute.
+     * @return string Returns the route.
      */
     public function getRoute() {
         return $this->route;
