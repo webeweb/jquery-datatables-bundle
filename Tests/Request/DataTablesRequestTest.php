@@ -12,7 +12,6 @@
 namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Request;
 
 use PHPUnit_Framework_TestCase;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\JQuery\DatatablesBundle\Request\DataTablesRequest;
 
