@@ -64,6 +64,27 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals("prefix", $obj->getColumns()["name2"]->getMapping()->getPrefix());
     }
 
+    /**
+     * Tests the getColumn() method.
+     *
+     * @return void.
+     */
+    public function testGetColumn() {
+
+        $obj = new DataTablesWrapper("POST", "route", "prefix");
+        $arg = new DataTablesColumn("name1", "title1");
+
+        $this->assertEquals(null, $obj->getColumn("name1"));
+
+        $obj->addColumn($arg);
+        $this->assertEquals($arg, $obj->getColumn("name1"));
+    }
+
+    /**
+     * Tests the removeColumn() method.
+     *
+     * @return void
+     */
     public function testRemoveColumn() {
 
         $obj = new DataTablesWrapper("POST", "route", "prefix");

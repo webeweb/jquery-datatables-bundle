@@ -116,8 +116,23 @@ final class DataTablesWrapper implements HTTPMethodInterface {
      */
     public function addColumn(DataTablesColumn $column) {
         $this->columns[$column->getName()] = $column;
-        $this->columns[$column->getName()]->getMapping()->setPrefix($this->mapping->getPrefix());
+        if (null === $column->getMapping()->getPrefix()) {
+            $this->columns[$column->getName()]->getMapping()->setPrefix($this->mapping->getPrefix());
+        }
         return $this;
+    }
+
+    /**
+     * Get a column.
+     *
+     * @param string $name The column name.
+     * @return DataTablesColumn Returns the DataTables column in case of success, null otherwise.
+     */
+    public function getColumn($name) {
+        if (true === array_key_exists($name, $this->columns)) {
+            return $this->columns[$name];
+        }
+        return null;
     }
 
     /**
