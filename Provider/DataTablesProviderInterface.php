@@ -11,11 +11,14 @@
 
 namespace WBW\Bundle\JQuery\DatatablesBundle\Provider;
 
+use WBW\Bundle\JQuery\DatatablesBundle\Column\DataTablesColumn;
+use WBW\Bundle\JQuery\DatatablesBundle\Repository\DataTablesRepositoryInterface;
+
 /**
  * DataTables provider interface.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package namespace WBW\Bundle\JQuery\DatatablesBundle\Provider;
+ * @package WBW\Bundle\JQuery\DatatablesBundle\Provider;
  */
 interface DataTablesProviderInterface {
 
@@ -27,9 +30,37 @@ interface DataTablesProviderInterface {
     const TAG_NAME = "webeweb.jquerydatatables.provider";
 
     /**
-     * Get the name.
+     * Get the DataTables columns.
      *
-     * @return string Returns the name.
+     * @return DataTablesColumn[] Returns the DataTables columns.
+     */
+    public function getColumns();
+
+    /**
+     * Get the provider name.
+     *
+     * @return string Returns the provider name.
      */
     public function getName();
+
+    /**
+     * Get the prefix.
+     *
+     * @return string Returns the prefix.
+     */
+    public function getPrefix();
+
+    /**
+     * Get the DataTables repository.
+     *
+     * @return DataTablesRepositoryInterface Returns the DataTables repository.
+     */
+    public function getRepository();
+
+    /**
+     * Get the controller view.
+     *
+     * @return string Returns the controller view.
+     */
+    public function getView();
 }
