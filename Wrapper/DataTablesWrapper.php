@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DatatablesBundle\Wrapper;
 
+use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\JQuery\DatatablesBundle\Column\DataTablesColumn;
 use WBW\Bundle\JQuery\DatatablesBundle\Mapping\DataTablesMapping;
 use WBW\Bundle\JQuery\DatatablesBundle\Request\DataTablesRequest;
@@ -214,6 +215,16 @@ final class DataTablesWrapper implements HTTPMethodInterface {
      */
     public function getServerSide() {
         return $this->serverSide;
+    }
+
+    /**
+     * Parse a request.
+     *
+     * @param Request $request The request.
+     */
+    public function parse(Request $request) {
+        $this->request  = new DataTablesRequest($request);
+        $this->response = new DataTablesResponse($this->request);
     }
 
     /**
