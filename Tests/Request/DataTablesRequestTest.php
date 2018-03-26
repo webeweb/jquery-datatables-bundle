@@ -84,7 +84,7 @@ final class DataTablesRequestTest extends PHPUnit_Framework_TestCase {
      */
     public function testConstructor() {
 
-        $obj = DataTablesRequest::newInstance(new Request());
+        $obj = new DataTablesRequest(new Request());
 
         $this->assertEquals([], $obj->getColumns());
         $this->assertEquals(0, $obj->getDraw());
@@ -108,7 +108,7 @@ final class DataTablesRequestTest extends PHPUnit_Framework_TestCase {
         $files      = [];
         $server     = ["REQUEST_METHOD" => "POST"];
 
-        $obj = DataTablesRequest::newInstance(new Request($query, $post, $attributes, $cookies, $files, $server));
+        $obj = new DataTablesRequest(new Request($query, $post, $attributes, $cookies, $files, $server));
 
         $this->assertCount(3, $obj->getColumns());
         $this->assertEquals(1, $obj->getDraw());
@@ -130,7 +130,7 @@ final class DataTablesRequestTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetDraw() {
 
-        $obj = DataTablesRequest::newInstance(new Request());
+        $obj = new DataTablesRequest(new Request());
 
         $obj->setDraw(1);
         $this->assertEquals(1, $obj->getDraw());

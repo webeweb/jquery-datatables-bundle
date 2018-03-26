@@ -67,11 +67,18 @@ final class DataTablesRequest implements HTTPMethodInterface {
 
     /**
      * Constructor.
+     *
+     * @param Request $request The request.
      */
-    private function __construct() {
+    public function __construct(Request $request) {
+
+        // Set the attributes.
         $this->setColumns([]);
         $this->setOrder([]);
         $this->setSearch([]);
+
+        // Parse the request.
+        $this->parse($request);
     }
 
     /**
@@ -144,15 +151,12 @@ final class DataTablesRequest implements HTTPMethodInterface {
     }
 
     /**
-     * Create a DataTables request.
+     * Parse a request.
      *
      * @param Request $request The request.
-     * @return DataTablesRequest Returns a DataTables request.
+     * @return void
      */
-    public static function newInstance(Request $request) {
-
-        // Initialize the DataTables request.
-        $instance = new DataTablesRequest();
+    private function parse(Request $request) {
 
         // Get the parameter bag.
         if (self::METHOD_GET === $request->getMethod()) {
@@ -162,15 +166,12 @@ final class DataTablesRequest implements HTTPMethodInterface {
         }
 
         // Set the DataTables request.
-        $instance->setColumns(null !== $parameterBag->get("columns") ? $parameterBag->get("columns") : []);
-        $instance->setDraw(intval($parameterBag->get("draw")));
-        $instance->setLength(intval($parameterBag->get("length")));
-        $instance->setOrder(null !== $parameterBag->get("order") ? $parameterBag->get("order") : []);
-        $instance->setSearch(null !== $parameterBag->get("search") ? $parameterBag->get("search") : []);
-        $instance->setStart(intval($parameterBag->get("start")));
-
-        // Return the DataTables request.
-        return $instance;
+        $this->setColumns(null !== $parameterBag->get("columns") ? $parameterBag->get("columns") : []);
+        $this->setDraw(intval($parameterBag->get("draw")));
+        $this->setLength(intval($parameterBag->get("length")));
+        $this->setOrder(null !== $parameterBag->get("order") ? $parameterBag->get("order") : []);
+        $this->setSearch(null !== $parameterBag->get("search") ? $parameterBag->get("search") : []);
+        $this->setStart(intval($parameterBag->get("start")));
     }
 
     /**
