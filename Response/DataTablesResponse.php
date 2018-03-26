@@ -60,10 +60,14 @@ final class DataTablesResponse implements JsonSerializable {
 
     /**
      * Constructor.
+     *
+     * @param DataTablesRequest $dtRequest The DataTables request.
      */
-    private function __construct() {
+    public function __construct(DataTablesRequest $dtRequest) {
+
+        // Set the attributes.
         $this->setData([]);
-        $this->setDraw(-1);
+        $this->setDraw($dtRequest->getDraw());
         $this->setRecordsFiltered(0);
         $this->setRecordsTotal(0);
     }
@@ -118,24 +122,6 @@ final class DataTablesResponse implements JsonSerializable {
      */
     public function jsonSerialize() {
         return $this->toArray();
-    }
-
-    /**
-     * Create a DataTables response.
-     *
-     * @param DataTablesRequest $dtRequest The DataTables request.
-     * @return DataTablesResponse Returns a DataTables response.
-     */
-    public static function newInstance(DataTablesRequest $dtRequest) {
-
-        // Initialize the DataTables response.
-        $instance = new DataTablesResponse();
-
-        // Set the DataTables response.
-        $instance->setDraw($dtRequest->getDraw());
-
-        // Return the DataTables response.
-        return $instance;
     }
 
     /**

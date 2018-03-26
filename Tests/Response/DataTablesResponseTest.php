@@ -47,7 +47,7 @@ final class DataTablesResponseTest extends PHPUnit_Framework_TestCase {
      */
     public function testConstructor() {
 
-        $obj = DataTablesResponse::newInstance($this->dataTablesRequest);
+        $obj = new DataTablesResponse($this->dataTablesRequest);
 
         $this->assertEquals([], $obj->getData());
         $this->assertEquals(0, $obj->getDraw());
@@ -63,7 +63,7 @@ final class DataTablesResponseTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetError() {
 
-        $obj = DataTablesResponse::newInstance($this->dataTablesRequest);
+        $obj = new DataTablesResponse($this->dataTablesRequest);
 
         $obj->setError("error");
         $this->assertEquals("error", $obj->getError());
@@ -76,7 +76,7 @@ final class DataTablesResponseTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetRecordFiltered() {
 
-        $obj = DataTablesResponse::newInstance($this->dataTablesRequest);
+        $obj = new DataTablesResponse($this->dataTablesRequest);
 
         $obj->setRecordsFiltered(1);
         $this->assertEquals(1, $obj->getRecordsFiltered());
@@ -89,7 +89,7 @@ final class DataTablesResponseTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetRecordTotal() {
 
-        $obj = DataTablesResponse::newInstance($this->dataTablesRequest);
+        $obj = new DataTablesResponse($this->dataTablesRequest);
 
         $obj->setRecordsTotal(2);
         $this->assertEquals(2, $obj->getRecordsTotal());
@@ -102,7 +102,7 @@ final class DataTablesResponseTest extends PHPUnit_Framework_TestCase {
      */
     public function testToArray() {
 
-        $obj = DataTablesResponse::newInstance($this->dataTablesRequest);
+        $obj = new DataTablesResponse($this->dataTablesRequest);
 
         $obj->setError("error");
         $obj->setRecordsFiltered(1);
@@ -120,7 +120,7 @@ final class DataTablesResponseTest extends PHPUnit_Framework_TestCase {
      */
     public function testJsonSerialize() {
 
-        $obj = DataTablesResponse::newInstance($this->dataTablesRequest);
+        $obj = new DataTablesResponse($this->dataTablesRequest);
 
         $obj->setError("error");
         $obj->setRecordsFiltered(1);
