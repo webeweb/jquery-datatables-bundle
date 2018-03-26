@@ -32,8 +32,8 @@ final class DataTablesMappingTest extends PHPUnit_Framework_TestCase {
 
         $obj = new DataTablesMapping();
 
-        $this->assertEquals(null, $obj->getColumn());
-        $this->assertEquals(null, $obj->getPrefix());
+        $this->assertNull($obj->getColumn());
+        $this->assertNull($obj->getPrefix());
     }
 
     /**
