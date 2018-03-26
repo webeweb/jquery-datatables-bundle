@@ -25,7 +25,7 @@ interface DataTablesRepositoryInterface {
      * Count filtered entities.
      *
      * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
-     * @return integer Returns the count.
+     * @return integer Returns the filtered entities count.
      */
     public function dataTablesCountFiltered(DataTablesWrapper $dtWrapper);
 
