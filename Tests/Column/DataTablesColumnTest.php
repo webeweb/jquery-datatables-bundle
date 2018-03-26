@@ -26,7 +26,7 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
     /**
      * Tests the __construct() method.
      *
-     * @return void.
+     * @return void
      */
     public function testConstructor() {
 

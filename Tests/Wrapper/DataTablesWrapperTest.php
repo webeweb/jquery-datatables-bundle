@@ -27,7 +27,7 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
     /**
      * Tests the __construct() method.
      *
-     * @return void.
+     * @return void
      */
     public function testConstructor() {
 
@@ -67,7 +67,7 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
     /**
      * Tests the getColumn() method.
      *
-     * @return void.
+     * @return void
      */
     public function testGetColumn() {
 
