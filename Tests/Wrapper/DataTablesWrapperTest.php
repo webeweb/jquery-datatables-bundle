@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Wrapper;
 
 use PHPUnit_Framework_TestCase;
+use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\JQuery\DatatablesBundle\Column\DataTablesColumn;
 use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
 
@@ -37,11 +38,11 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals("prefix", $obj->getMapping()->getPrefix());
         $this->assertEquals("POST", $obj->getMethod());
         $this->assertEquals([], $obj->getOrder());
-        $this->assertEquals(true, $obj->getProcessing());
-        $this->assertEquals(null, $obj->getRequest());
-        $this->assertEquals(null, $obj->getResponse());
+        $this->assertTrue($obj->getProcessing());
+        $this->assertNull($obj->getRequest());
+        $this->assertNull($obj->getResponse());
         $this->assertEquals("route", $obj->getRoute());
-        $this->assertEquals(true, $obj->getServerSide());
+        $this->assertTrue($obj->getServerSide());
     }
 
     /**
@@ -74,10 +75,24 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
         $obj = new DataTablesWrapper("POST", "route", "prefix");
         $arg = new DataTablesColumn("name1", "title1");
 
-        $this->assertEquals(null, $obj->getColumn("name1"));
+        $this->assertNull($obj->getColumn("name1"));
 
         $obj->addColumn($arg);
         $this->assertEquals($arg, $obj->getColumn("name1"));
+    }
+
+    /**
+     * Tests the parse() method.
+     *
+     * @return void
+     */
+    public function testParse() {
+
+        $obj = new DataTablesWrapper("POST", "route", "prefix");
+
+        $obj->parse(new Request());
+        $this->assertNotNull($obj->getRequest());
+        $this->assertNotNull($obj->getResponse());
     }
 
     /**
@@ -98,11 +113,11 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
 
         $obj->removeColumn($col1);
         $this->assertCount(1, $obj->getColumns());
-        $this->assertEquals(null, $col1->getMapping()->getPrefix());
+        $this->assertNull($col1->getMapping()->getPrefix());
 
         $obj->removeColumn($col2);
         $this->assertCount(0, $obj->getColumns());
-        $this->assertEquals(null, $col2->getMapping()->getPrefix());
+        $this->assertNull($col2->getMapping()->getPrefix());
     }
 
     /**
@@ -144,10 +159,10 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
         $obj = new DataTablesWrapper("POST", "route", "prefix");
 
         $obj->setProcessing(false);
-        $this->assertEquals(false, $obj->getProcessing());
+        $this->assertFalse($obj->getProcessing());
 
         $obj->setProcessing(null);
-        $this->assertEquals(true, $obj->getProcessing());
+        $this->assertTrue($obj->getProcessing());
     }
 
     /**
@@ -173,10 +188,10 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
         $obj = new DataTablesWrapper("POST", "route", "prefix");
 
         $obj->setServerSide(false);
-        $this->assertEquals(false, $obj->getServerSide());
+        $this->assertFalse($obj->getServerSide());
 
         $obj->setServerSide(null);
-        $this->assertEquals(true, $obj->getServerSide());
+        $this->assertTrue($obj->getServerSide());
     }
 
 }

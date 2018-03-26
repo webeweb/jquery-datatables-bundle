@@ -51,7 +51,7 @@ final class DataTablesResponseTest extends PHPUnit_Framework_TestCase {
 
         $this->assertEquals([], $obj->getData());
         $this->assertEquals(0, $obj->getDraw());
-        $this->assertEquals(null, $obj->getError());
+        $this->assertNull($obj->getError());
         $this->assertEquals(0, $obj->getRecordsFiltered());
         $this->assertEquals(0, $obj->getRecordsTotal());
     }
