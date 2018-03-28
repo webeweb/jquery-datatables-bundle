@@ -1,0 +1,53 @@
+# Tests/Fixtures/App/config/config_test.yml
+imports:
+    - { resource: security_test.yml }
+    - { resource: services_test.yml }
+
+parameters:
+    locale: en
+
+framework:
+    #assets:          ~
+    #csrf_protection: true
+    default_locale:  "%locale%"
+    form:            false
+    router:
+        resource:            "%kernel.root_dir%/config/routing_test.yml"
+        strict_requirements: true
+    secret:          ThisTokenIsNotSoSecretChangeIt
+    session:
+        storage_id: session.storage.mock_file
+    templating:
+        engines: ["twig"]
+    test:            ~
+    translator:      { fallbacks: ["%locale%"] }
+    trusted_hosts:   ~
+    trusted_proxies: ~
+    validation:
+        enabled: false
+
+doctrine:
+    dbal:
+        driver: pdo_sqlite
+        path:   "%kernel.root_dir%/var/test.sqlite"
+    orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+        auto_mapping:                true
+        mappings:
+            JQueryDataTablesBundle:
+                dir:       "Tests/Fixtures/App/config/doctrine"
+                type:      "yml"
+                is_bundle: true
+                prefix:    "WBW\\Bundle\\JQuery\\DatatablesBundle\\Tests\\Fixtures\\Entity"
+        naming_strategy:             doctrine.orm.naming_strategy.underscore
+
+monolog:
+    handlers:
+        main:
+            level: info
+            path:  "%kernel.logs_dir%/test.log"
+            type:  stream
+
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
