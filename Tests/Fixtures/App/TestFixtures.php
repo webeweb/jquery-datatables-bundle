@@ -24,7 +24,7 @@ use WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\Entity\Employee;
 final class TestFixtures {
 
     /**
-     * Get the employess.
+     * Get the employees.
      *
      * @return Employee[] Returns the employee entities.
      */
