@@ -9,6 +9,8 @@ Integrate jQuery Datatable with Symfony 2.
 > done without prior notice to consumers of this package. Of course this code
 > will become stable at a certain point, but for now, use at your own risk.
 
+<img src="https://raw.githubusercontent.com/webeweb/jquery-datatables-bundle/master/Resources/doc/images/jquery-datatables-bundle_550x550.png" alt="jQuery DataTables bundle" align="right" width="380"/>
+
 Includes :
 
 - [DataTables 1.10.16](https://datatables.net/)
