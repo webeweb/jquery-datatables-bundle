@@ -11,11 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DatatablesBundle\Tests;
 
-use DateTime;
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\SchemaTool;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\Entity\Employee;
 
 /**
  * Abstract web test case.
