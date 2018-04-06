@@ -2,7 +2,7 @@
 WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\Entity\Employee:
 
     type:            entity
-    # repositoryClass: WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\Repository\EmployeeRepository
+    repositoryClass: WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\Repository\EmployeeRepository
     table:           datatables_employee
 
     id:
