@@ -20,9 +20,8 @@ use WBW\Bundle\JQuery\DatatablesBundle\DependencyInjection\Compiler\JQueryDataTa
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\jQuery\DatatablesBundle
- * @final
  */
-final class JQueryDataTablesBundle extends Bundle {
+class JQueryDataTablesBundle extends Bundle {
 
     /**
      * {@inheritdoc}
