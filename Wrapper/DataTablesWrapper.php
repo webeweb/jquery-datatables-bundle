@@ -84,6 +84,13 @@ final class DataTablesWrapper implements HTTPMethodInterface {
     private $route;
 
     /**
+     * Route arguments.
+     *
+     * @var array
+     */
+    private $routeArguments;
+
+    /**
      * Server side.
      *
      * @var boolean
@@ -93,11 +100,12 @@ final class DataTablesWrapper implements HTTPMethodInterface {
     /**
      * Constructor.
      *
+     * @param string $prefix The prefix.
      * @param string $method The method.
      * @param string $route The route.
-     * @param string $prefix The prefix.
+     * @param array $routeArguments The route arguments.
      */
-    public function __construct($method, $route, $prefix) {
+    public function __construct($prefix, $method, $route, array $routeArguments = []) {
         $this->mapping = new DataTablesMapping();
         $this->mapping->setPrefix($prefix);
 
@@ -106,6 +114,7 @@ final class DataTablesWrapper implements HTTPMethodInterface {
         $this->setOrder([]);
         $this->setProcessing(true);
         $this->setRoute($route);
+        $this->setRouteArguments($routeArguments);
         $this->setServerSide(true);
     }
 
@@ -209,6 +218,15 @@ final class DataTablesWrapper implements HTTPMethodInterface {
     }
 
     /**
+     * Get the route arguments.
+     *
+     * @return array Returns the route arguments.
+     */
+    public function getRouteArguments() {
+        return $this->routeArguments;
+    }
+
+    /**
      * Get the server side.
      *
      * @return boolean Returns the server side.
@@ -308,6 +326,17 @@ final class DataTablesWrapper implements HTTPMethodInterface {
      */
     public function setRoute($route) {
         $this->route = $route;
+        return $this;
+    }
+
+    /**
+     * Set the route arguments.
+     *
+     * @param array $routeArguments The route arguments.
+     * @return DataTablesWrapper Returns the DatTables wrapper.
+     */
+    public function setRouteArguments(array $routeArguments) {
+        $this->routeArguments = $routeArguments;
         return $this;
     }
 
