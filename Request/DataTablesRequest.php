@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DatatablesBundle\Request;
 
 use Symfony\Component\HttpFoundation\Request;
+use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
 use WBW\Library\Core\HTTP\HTTPMethodInterface;
 
 /**
@@ -66,18 +67,23 @@ final class DataTablesRequest implements HTTPMethodInterface {
     private $start;
 
     /**
+     * Wrapper.
+     *
+     * @var DataTablesWrapper
+     */
+    private $wrapper;
+
+    /**
      * Constructor.
      *
-     * @param Request $request The request.
+     * @param DataTableswrapper The wrapper.
+     * @param Request The request.
      */
-    public function __construct(Request $request) {
-
-        // Set the attributes.
+    public function __construct(DataTablesWrapper $wrapper, Request $request) {
         $this->setColumns([]);
         $this->setOrder([]);
         $this->setSearch([]);
-
-        // Parse the request.
+        $this->setWrapper($wrapper);
         $this->parse($request);
     }
 
@@ -151,10 +157,19 @@ final class DataTablesRequest implements HTTPMethodInterface {
     }
 
     /**
+     * Get the wrapper.
+     *
+     * @return DataTablesWrapper Returns the wrapper.
+     */
+    public function getWrapper() {
+        return $this->wrapper;
+    }
+
+    /**
      * Parse a request.
      *
      * @param Request $request The request.
-     * @return void
+     * @return DataTablesRequest Returns the DataTables request.
      */
     private function parse(Request $request) {
 
@@ -172,6 +187,9 @@ final class DataTablesRequest implements HTTPMethodInterface {
         $this->setOrder(null !== $parameterBag->get("order") ? $parameterBag->get("order") : []);
         $this->setSearch(null !== $parameterBag->get("search") ? $parameterBag->get("search") : []);
         $this->setStart(intval($parameterBag->get("start")));
+
+        // Return the DataTables request.
+        return $this;
     }
 
     /**
@@ -237,6 +255,17 @@ final class DataTablesRequest implements HTTPMethodInterface {
      */
     private function setStart($start) {
         $this->start = $start;
+        return $this;
+    }
+
+    /**
+     * Set the wrapper.
+     *
+     * @param \WBW\Bundle\JQuery\DatatablesBundle\Request\DataTablesWrapper $wrapper The wrapper.
+     * @return DataTablesRequest Returns the DataTables request.
+     */
+    private function setWrapper(DataTablesWrapper $wrapper) {
+        $this->wrapper = $wrapper;
         return $this;
     }
 

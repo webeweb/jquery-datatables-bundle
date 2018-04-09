@@ -11,9 +11,9 @@
 
 namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Request;
 
-use PHPUnit_Framework_TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\JQuery\DatatablesBundle\Request\DataTablesRequest;
+use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractDataTablesTest;
 
 /**
  * DataTables request test.
@@ -22,7 +22,7 @@ use WBW\Bundle\JQuery\DatatablesBundle\Request\DataTablesRequest;
  * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\Request
  * @final
  */
-final class DataTablesRequestTest extends PHPUnit_Framework_TestCase {
+final class DataTablesRequestTest extends AbstractDataTablesTest {
 
     /**
      * Get a array.
@@ -84,7 +84,7 @@ final class DataTablesRequestTest extends PHPUnit_Framework_TestCase {
      */
     public function testConstructor() {
 
-        $obj = new DataTablesRequest(new Request());
+        $obj = $this->dataTablesRequest;
 
         $this->assertEquals([], $obj->getColumns());
         $this->assertEquals(0, $obj->getDraw());
@@ -92,6 +92,7 @@ final class DataTablesRequestTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals([], $obj->getOrder());
         $this->assertEquals([], $obj->getSearch());
         $this->assertEquals(0, $obj->getStart());
+        $this->assertEquals($this->dataTablesWrapper, $obj->getWrapper());
     }
 
     /**
@@ -108,7 +109,7 @@ final class DataTablesRequestTest extends PHPUnit_Framework_TestCase {
         $files      = [];
         $server     = ["REQUEST_METHOD" => "POST"];
 
-        $obj = new DataTablesRequest(new Request($query, $post, $attributes, $cookies, $files, $server));
+        $obj = new DataTablesRequest($this->dataTablesWrapper, new Request($query, $post, $attributes, $cookies, $files, $server));
 
         $this->assertCount(3, $obj->getColumns());
         $this->assertEquals(1, $obj->getDraw());
@@ -121,19 +122,6 @@ final class DataTablesRequestTest extends PHPUnit_Framework_TestCase {
         $this->assertNotNull($obj->getColumn("firstname"));
         $this->assertNotNull($obj->getColumn("lastname"));
         $this->assertNull($obj->getColumn("exceptions"));
-    }
-
-    /**
-     * Tests the setDraw() method.
-     *
-     * @return void
-     */
-    public function testSetDraw() {
-
-        $obj = new DataTablesRequest(new Request());
-
-        $obj->setDraw(1);
-        $this->assertEquals(1, $obj->getDraw());
     }
 
 }
