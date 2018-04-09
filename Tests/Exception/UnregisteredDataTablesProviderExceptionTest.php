@@ -12,16 +12,16 @@
 namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Exception;
 
 use PHPUnit_Framework_TestCase;
-use WBW\Bundle\JQuery\DatatablesBundle\Exception\AlreadyRegisteredProviderException;
+use WBW\Bundle\JQuery\DatatablesBundle\Exception\UnregisteredDataTablesProviderException;
 
 /**
- * Already registered provider exception test.
+ * Unregistered DataTables provider exception test.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\Exception
  * @final
  */
-final class AlreadyRegisteredProviderExceptionTest extends PHPUnit_Framework_TestCase {
+final class UnregisteredDataTablesProviderExceptionTest extends PHPUnit_Framework_TestCase {
 
     /**
      * Tests the __construct() method.
@@ -30,9 +30,9 @@ final class AlreadyRegisteredProviderExceptionTest extends PHPUnit_Framework_Tes
      */
     public function testConstructor() {
 
-        $obj = new AlreadyRegisteredProviderException("exception");
+        $obj = new UnregisteredDataTablesProviderException("exception");
 
-        $this->assertEquals("A provider with name \"exception\" is already registered", $obj->getMessage());
+        $this->assertEquals("None DataTables provider registered with name \"exception\"", $obj->getMessage());
     }
 
 }

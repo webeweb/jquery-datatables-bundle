@@ -12,13 +12,13 @@
 namespace WBW\Bundle\JQuery\DatatablesBundle\Exception;
 
 /**
- * Already registered provider exception.
+ * Unregistered DataTables provider exception.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DatatablesBundle\Exception
  * @final
  */
-final class AlreadyRegisteredProviderException extends AbstractDataTablesException {
+final class UnregisteredDataTablesProviderException extends AbstractDataTablesException {
 
     /**
      * Constructor.
@@ -26,7 +26,7 @@ final class AlreadyRegisteredProviderException extends AbstractDataTablesExcepti
      * @param string $name The name.
      */
     public function __construct($name) {
-        parent::__construct(sprintf("A provider with name \"%s\" is already registered", $name));
+        parent::__construct(sprintf("None DataTables provider registered with name \"%s\"", $name));
     }
 
 }

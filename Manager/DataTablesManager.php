@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DatatablesBundle\Manager;
 
-use WBW\Bundle\JQuery\DatatablesBundle\Exception\AlreadyRegisteredProviderException;
-use WBW\Bundle\JQuery\DatatablesBundle\Exception\UnregisteredProviderException;
+use WBW\Bundle\JQuery\DatatablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
+use WBW\Bundle\JQuery\DatatablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DatatablesBundle\Provider\DataTablesProviderInterface;
 
 /**
@@ -50,11 +50,11 @@ final class DataTablesManager {
      *
      * @param string $name The provider name.
      * @return DataTablesProviderInterface Returns the DataTables provider.
-     * @throws UnregisteredProviderException Throws an unregistered provider exception.
+     * @throws UnregisteredDataTablesProviderException Throws an unregistered DataTables provider exception.
      */
     public function getProvider($name) {
         if (false === array_key_exists($name, $this->providers)) {
-            throw new UnregisteredProviderException($name);
+            throw new UnregisteredDataTablesProviderException($name);
         }
         return $this->providers[$name];
     }
@@ -72,11 +72,11 @@ final class DataTablesManager {
      * Register a provider.
      *
      * @param DataTablesProviderInterface $provider The provider.
-     * @throws AlreadyRegisteredProviderException Throws an already registered provider exception.
+     * @throws AlreadyRegisteredDataTablesProviderException Throws an already registered DataTables provider exception.
      */
     public function registerProvider(DataTablesProviderInterface $provider) {
         if (true === array_key_exists($provider->getName(), $this->providers)) {
-            throw new AlreadyRegisteredProviderException($provider->getName());
+            throw new AlreadyRegisteredDataTablesProviderException($provider->getName());
         }
         $this->providers[$provider->getName()] = $provider;
     }
