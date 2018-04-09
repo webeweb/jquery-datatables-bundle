@@ -62,7 +62,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository {
     /**
      * {@inheritdoc}
      */
-    public function dataTablesFind(DataTablesWrapper $dtWrapper) {
+    public function dataTablesFindAll(DataTablesWrapper $dtWrapper) {
 
         // Get the prefix.
         $prefix = $dtWrapper->getMapping()->getPrefix();
