@@ -24,8 +24,9 @@ use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
 /**
  * Abstract DataTables test.
  *
- * @author Camille A. <camille@ingeneo.eu>
+ * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DatatablesBundle\Tests
+ * @abstract
  */
 abstract class AbstractDataTablesTest extends PHPUnit_Framework_TestCase {
 
