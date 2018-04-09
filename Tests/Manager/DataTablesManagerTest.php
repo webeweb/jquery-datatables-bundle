@@ -13,8 +13,8 @@ namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Manager;
 
 use Exception;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractBootstrapTest;
-use WBW\Bundle\JQuery\DatatablesBundle\Exception\AlreadyRegisteredProviderException;
-use WBW\Bundle\JQuery\DatatablesBundle\Exception\UnregisteredProviderException;
+use WBW\Bundle\JQuery\DatatablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
+use WBW\Bundle\JQuery\DatatablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DatatablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DatatablesBundle\Provider\DataTablesProviderInterface;
 
@@ -72,8 +72,8 @@ final class DataTablesManagerTest extends AbstractBootstrapTest {
         try {
             $obj->registerProvider($this->dataTablesProvider);
         } catch (Exception $ex) {
-            $this->assertInstanceOf(AlreadyRegisteredProviderException::class, $ex);
-            $this->assertEquals("A provider with name \"name\" is already registered", $ex->getMessage());
+            $this->assertInstanceOf(AlreadyRegisteredDataTablesProviderException::class, $ex);
+            $this->assertEquals("A DataTables provider with name \"name\" is already registered", $ex->getMessage());
         }
     }
 
@@ -92,8 +92,8 @@ final class DataTablesManagerTest extends AbstractBootstrapTest {
         try {
             $obj->getProvider("exception");
         } catch (Exception $ex) {
-            $this->assertInstanceOf(UnregisteredProviderException::class, $ex);
-            $this->assertEquals("None provider registered with name \"exception\"", $ex->getMessage());
+            $this->assertInstanceOf(UnregisteredDataTablesProviderException::class, $ex);
+            $this->assertEquals("None DataTables provider registered with name \"exception\"", $ex->getMessage());
         }
     }
 
