@@ -12,7 +12,6 @@
 namespace WBW\Bundle\JQuery\DatatablesBundle\Provider;
 
 use WBW\Bundle\JQuery\DatatablesBundle\Column\DataTablesColumn;
-use WBW\Bundle\JQuery\DatatablesBundle\Repository\DataTablesRepositoryInterface;
 
 /**
  * DataTables provider interface.
@@ -37,6 +36,13 @@ interface DataTablesProviderInterface {
     public function getColumns();
 
     /**
+     * Get the DataTables entity.
+     *
+     * @return mixed Returns the DataTables entity.
+     */
+    public function getEntity();
+
+    /**
      * Get the provider name.
      *
      * @return string Returns the provider name.
@@ -51,16 +57,18 @@ interface DataTablesProviderInterface {
     public function getPrefix();
 
     /**
-     * Get the DataTables repository.
-     *
-     * @return DataTablesRepositoryInterface Returns the DataTables repository.
-     */
-    public function getRepository();
-
-    /**
      * Get the controller view.
      *
      * @return string Returns the controller view.
      */
     public function getView();
+
+    /**
+     * Render a DataTables column.
+     *
+     * @param mixed $entity The entity.
+     * @param string $column The column name.
+     * @return string Returns the DataTables column rendered.
+     */
+    public function render($entity, $column);
 }
