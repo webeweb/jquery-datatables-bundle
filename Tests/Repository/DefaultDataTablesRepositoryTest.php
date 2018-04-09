@@ -60,7 +60,7 @@ final class DefaultDataTablesRepositoryTest extends PHPUnit_Framework_TestCase {
      */
     public function testDataTablesOrder() {
 
-        $arg = new DataTablesWrapper("POST", "route", "prefix");
+        $arg = new DataTablesWrapper("prefix", "POST", "route");
         $arg->parse(new Request());
 
         DefaultDataTablesRepository::dataTablesOrder($this->queryBuilder, $arg);
@@ -73,7 +73,7 @@ final class DefaultDataTablesRepositoryTest extends PHPUnit_Framework_TestCase {
      */
     public function testDataTablesWhere() {
 
-        $arg = new DataTablesWrapper("POST", "route", "prefix");
+        $arg = new DataTablesWrapper("prefix", "POST", "route");
         $arg->parse(new Request());
 
         DefaultDataTablesRepository::dataTablesWhere($this->queryBuilder, $arg);
