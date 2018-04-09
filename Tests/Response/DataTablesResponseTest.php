@@ -11,10 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Response;
 
-use PHPUnit_Framework_TestCase;
-use Symfony\Component\HttpFoundation\Request;
-use WBW\Bundle\JQuery\DatatablesBundle\Request\DataTablesRequest;
-use WBW\Bundle\JQuery\DatatablesBundle\Response\DataTablesResponse;
+use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractDataTablesTest;
 
 /**
  * DataTables response test.
@@ -23,22 +20,7 @@ use WBW\Bundle\JQuery\DatatablesBundle\Response\DataTablesResponse;
  * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\Response
  * @final
  */
-final class DataTablesResponseTest extends PHPUnit_Framework_TestCase {
-
-    /**
-     * DataTables request.
-     *
-     * @var DataTablesRequest
-     */
-    private $dataTablesRequest;
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function setUp() {
-
-        $this->dataTablesRequest = new DataTablesRequest(new Request());
-    }
+final class DataTablesResponseTest extends AbstractDataTablesTest {
 
     /**
      * Tests the __construct() method.
@@ -47,7 +29,7 @@ final class DataTablesResponseTest extends PHPUnit_Framework_TestCase {
      */
     public function testConstructor() {
 
-        $obj = new DataTablesResponse($this->dataTablesRequest);
+        $obj = $this->dataTablesResponse;
 
         $this->assertEquals([], $obj->getData());
         $this->assertEquals(0, $obj->getDraw());
@@ -63,7 +45,7 @@ final class DataTablesResponseTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetError() {
 
-        $obj = new DataTablesResponse($this->dataTablesRequest);
+        $obj = $this->dataTablesResponse;
 
         $obj->setError("error");
         $this->assertEquals("error", $obj->getError());
@@ -76,7 +58,7 @@ final class DataTablesResponseTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetRecordFiltered() {
 
-        $obj = new DataTablesResponse($this->dataTablesRequest);
+        $obj = $this->dataTablesResponse;
 
         $obj->setRecordsFiltered(1);
         $this->assertEquals(1, $obj->getRecordsFiltered());
@@ -89,7 +71,7 @@ final class DataTablesResponseTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetRecordTotal() {
 
-        $obj = new DataTablesResponse($this->dataTablesRequest);
+        $obj = $this->dataTablesResponse;
 
         $obj->setRecordsTotal(2);
         $this->assertEquals(2, $obj->getRecordsTotal());
@@ -102,7 +84,7 @@ final class DataTablesResponseTest extends PHPUnit_Framework_TestCase {
      */
     public function testToArray() {
 
-        $obj = new DataTablesResponse($this->dataTablesRequest);
+        $obj = $this->dataTablesResponse;
 
         $obj->setError("error");
         $obj->setRecordsFiltered(1);
@@ -120,7 +102,7 @@ final class DataTablesResponseTest extends PHPUnit_Framework_TestCase {
      */
     public function testJsonSerialize() {
 
-        $obj = new DataTablesResponse($this->dataTablesRequest);
+        $obj = $this->dataTablesResponse;
 
         $obj->setError("error");
         $obj->setRecordsFiltered(1);
