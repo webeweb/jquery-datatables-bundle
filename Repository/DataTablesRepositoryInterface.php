@@ -38,10 +38,10 @@ interface DataTablesRepositoryInterface {
     public function dataTablesCountTotal(DataTablesWrapper $dtWrapper);
 
     /**
-     * Find entities.
+     * Find all entities.
      *
      * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
      * @return array Returns the entities.
      */
-    public function dataTablesFind(DataTablesWrapper $dtWrapper);
+    public function dataTablesFindAll(DataTablesWrapper $dtWrapper);
 }
