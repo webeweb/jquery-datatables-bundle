@@ -241,7 +241,7 @@ final class DataTablesWrapper implements HTTPMethodInterface {
      * @param Request $request The request.
      */
     public function parse(Request $request) {
-        $this->request  = new DataTablesRequest($request);
+        $this->request  = new DataTablesRequest($this, $request);
         $this->response = new DataTablesResponse($this->request);
     }
 
