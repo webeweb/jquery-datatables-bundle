@@ -39,6 +39,7 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
         $this->assertNull($obj->getError());
         $this->assertEquals(0, $obj->getRecordsFiltered());
         $this->assertEquals(0, $obj->getRecordsTotal());
+        $this->assertEquals($this->dataTablesWrapper, $obj->getWrapper());
     }
 
     /**
