@@ -13,7 +13,8 @@ namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Request;
 
 use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\JQuery\DatatablesBundle\Request\DataTablesRequest;
-use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractDataTablesTest;
+use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractFrameworkTestCase;
+use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
 
 /**
  * DataTables request test.
@@ -22,7 +23,7 @@ use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractDataTablesTest;
  * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\Request
  * @final
  */
-final class DataTablesRequestTest extends AbstractDataTablesTest {
+final class DataTablesRequestTest extends AbstractFrameworkTestCase {
 
     /**
      * Get a array.
@@ -84,7 +85,7 @@ final class DataTablesRequestTest extends AbstractDataTablesTest {
      */
     public function testConstructor() {
 
-        $obj = $this->dataTablesRequest;
+        $obj = new DataTablesRequest($this->dataTablesWrapper, new Request());
 
         $this->assertEquals([], $obj->getColumns());
         $this->assertEquals(0, $obj->getDraw());
