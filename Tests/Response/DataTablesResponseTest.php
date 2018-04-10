@@ -30,7 +30,7 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
      */
     public function testConstructor() {
 
-        $obj = new DataTablesResponse($this->dataTablesRequest);
+        $obj = new DataTablesResponse($this->dataTablesWrapper, $this->dataTablesRequest);
 
         $this->assertEquals([], $obj->getData());
         $this->assertEquals(0, $obj->getDraw());
@@ -46,7 +46,7 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
      */
     public function testSetError() {
 
-        $obj = new DataTablesResponse($this->dataTablesRequest);
+        $obj = new DataTablesResponse($this->dataTablesWrapper, $this->dataTablesRequest);
 
         $obj->setError("error");
         $this->assertEquals("error", $obj->getError());
@@ -59,7 +59,7 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
      */
     public function testSetRecordFiltered() {
 
-        $obj = new DataTablesResponse($this->dataTablesRequest);
+        $obj = new DataTablesResponse($this->dataTablesWrapper, $this->dataTablesRequest);
 
         $obj->setRecordsFiltered(1);
         $this->assertEquals(1, $obj->getRecordsFiltered());
@@ -72,7 +72,7 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
      */
     public function testSetRecordTotal() {
 
-        $obj = new DataTablesResponse($this->dataTablesRequest);
+        $obj = new DataTablesResponse($this->dataTablesWrapper, $this->dataTablesRequest);
 
         $obj->setRecordsTotal(2);
         $this->assertEquals(2, $obj->getRecordsTotal());
@@ -85,7 +85,7 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
      */
     public function testToArray() {
 
-        $obj = new DataTablesResponse($this->dataTablesRequest);
+        $obj = new DataTablesResponse($this->dataTablesWrapper, $this->dataTablesRequest);
 
         $obj->setError("error");
         $obj->setRecordsFiltered(1);
@@ -103,7 +103,7 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
      */
     public function testJsonSerialize() {
 
-        $obj = new DataTablesResponse($this->dataTablesRequest);
+        $obj = new DataTablesResponse($this->dataTablesWrapper, $this->dataTablesRequest);
 
         $obj->setError("error");
         $obj->setRecordsFiltered(1);

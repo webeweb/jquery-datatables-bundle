@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DatatablesBundle\Response;
 
 use JsonSerializable;
 use WBW\Bundle\JQuery\DatatablesBundle\Request\DataTablesRequest;
+use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
 
 /**
  * DataTables response.
@@ -68,15 +69,15 @@ final class DataTablesResponse implements JsonSerializable {
     /**
      * Constructor.
      *
+     * @param DataTablesWrapper $wrapper The DataTables wrapper.
      * @param DataTablesRequest $request The DataTables request.
      */
-    public function __construct(DataTablesRequest $request) {
-
-        // Set the attributes.
+    public function __construct(DataTablesWrapper $wrapper, DataTablesRequest $request) {
         $this->setData([]);
         $this->setDraw($request->getDraw());
         $this->setRecordsFiltered(0);
         $this->setRecordsTotal(0);
+        $this->setWrapper($wrapper);
     }
 
     /**
@@ -122,6 +123,15 @@ final class DataTablesResponse implements JsonSerializable {
      */
     public function getRecordsTotal() {
         return $this->recordsTotal;
+    }
+
+    /**
+     * Get the wrapper.
+     *
+     * @return DataTablesWrapper Returns the wrapper.
+     */
+    public function getWrapper() {
+        return $this->wrapper;
     }
 
     /**
@@ -183,6 +193,17 @@ final class DataTablesResponse implements JsonSerializable {
      */
     public function setRecordsTotal($recordsTotal) {
         $this->recordsTotal = $recordsTotal;
+        return $this;
+    }
+
+    /**
+     * Set the wrapper.
+     *
+     * @param DataTablesWrapper $wrapper The wrapper.
+     * @return DataTablesResponse Returns the DataTables request.
+     */
+    private function setWrapper(DataTablesWrapper $wrapper) {
+        $this->wrapper = $wrapper;
         return $this;
     }
 

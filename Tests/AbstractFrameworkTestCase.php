@@ -64,7 +64,7 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTestCase {
         $this->dataTablesRequest = new DataTablesRequest($this->dataTablesWrapper, new Request());
 
         // Set a DataTables response mock.
-        $this->dataTablesResponse = new DataTablesResponse($this->dataTablesRequest);
+        $this->dataTablesResponse = new DataTablesResponse($this->dataTablesWrapper, $this->dataTablesRequest);
     }
 
 }
