@@ -11,9 +11,9 @@
 
 namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\DependencyInjection;
 
-use WBW\Bundle\BootstrapBundle\Tests\AbstractBootstrapTest;
 use WBW\Bundle\JQuery\DatatablesBundle\DependencyInjection\JQueryDataTablesExtension;
 use WBW\Bundle\JQuery\DatatablesBundle\Manager\DataTablesManager;
+use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
  * DataTables extension test.
@@ -21,7 +21,7 @@ use WBW\Bundle\JQuery\DatatablesBundle\Manager\DataTablesManager;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\DependencyInjection
  */
-final class DataTablesExtensionTest extends AbstractBootstrapTest {
+final class DataTablesExtensionTest extends AbstractFrameworkTestCase {
 
     /**
      * {@inheritdoc}

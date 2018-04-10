@@ -11,10 +11,10 @@
 
 namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\DependencyInjection\Compiler;
 
-use WBW\Bundle\BootstrapBundle\Tests\AbstractBootstrapTest;
 use WBW\Bundle\JQuery\DatatablesBundle\DependencyInjection\Compiler\JQueryDataTablesCompilerPass;
 use WBW\Bundle\JQuery\DatatablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DatatablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
  * jQuery DataTables compiler pass test.
@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DatatablesBundle\Provider\DataTablesProviderInterface;
  * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\DependencyInjection\Compiler
  * @final
  */
-final class JQueryDataTablesCompilerPassTest extends AbstractBootstrapTest {
+final class JQueryDataTablesCompilerPassTest extends AbstractFrameworkTestCase {
 
     /**
      * DataTables manager.
