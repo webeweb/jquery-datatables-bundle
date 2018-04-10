@@ -11,7 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Response;
 
-use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractDataTablesTest;
+use WBW\Bundle\JQuery\DatatablesBundle\Response\DataTablesResponse;
+use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
  * DataTables response test.
@@ -20,7 +21,7 @@ use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractDataTablesTest;
  * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\Response
  * @final
  */
-final class DataTablesResponseTest extends AbstractDataTablesTest {
+final class DataTablesResponseTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.
@@ -29,7 +30,7 @@ final class DataTablesResponseTest extends AbstractDataTablesTest {
      */
     public function testConstructor() {
 
-        $obj = $this->dataTablesResponse;
+        $obj = new DataTablesResponse($this->dataTablesRequest);
 
         $this->assertEquals([], $obj->getData());
         $this->assertEquals(0, $obj->getDraw());
@@ -45,7 +46,7 @@ final class DataTablesResponseTest extends AbstractDataTablesTest {
      */
     public function testSetError() {
 
-        $obj = $this->dataTablesResponse;
+        $obj = new DataTablesResponse($this->dataTablesRequest);
 
         $obj->setError("error");
         $this->assertEquals("error", $obj->getError());
@@ -58,7 +59,7 @@ final class DataTablesResponseTest extends AbstractDataTablesTest {
      */
     public function testSetRecordFiltered() {
 
-        $obj = $this->dataTablesResponse;
+        $obj = new DataTablesResponse($this->dataTablesRequest);
 
         $obj->setRecordsFiltered(1);
         $this->assertEquals(1, $obj->getRecordsFiltered());
@@ -71,7 +72,7 @@ final class DataTablesResponseTest extends AbstractDataTablesTest {
      */
     public function testSetRecordTotal() {
 
-        $obj = $this->dataTablesResponse;
+        $obj = new DataTablesResponse($this->dataTablesRequest);
 
         $obj->setRecordsTotal(2);
         $this->assertEquals(2, $obj->getRecordsTotal());
@@ -84,7 +85,7 @@ final class DataTablesResponseTest extends AbstractDataTablesTest {
      */
     public function testToArray() {
 
-        $obj = $this->dataTablesResponse;
+        $obj = new DataTablesResponse($this->dataTablesRequest);
 
         $obj->setError("error");
         $obj->setRecordsFiltered(1);
@@ -102,7 +103,7 @@ final class DataTablesResponseTest extends AbstractDataTablesTest {
      */
     public function testJsonSerialize() {
 
-        $obj = $this->dataTablesResponse;
+        $obj = new DataTablesResponse($this->dataTablesRequest);
 
         $obj->setError("error");
         $obj->setRecordsFiltered(1);
