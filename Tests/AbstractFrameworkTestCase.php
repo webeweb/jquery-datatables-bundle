@@ -52,6 +52,13 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTestCase {
     protected $dataTablesWrapper;
 
     /**
+     * Request.
+     *
+     * @var Request.
+     */
+    protected $request;
+
+    /**
      * Get the POST data.
      *
      * @return array Returns the POST data.
@@ -150,6 +157,9 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTestCase {
 
         // Set a DataTables response mock.
         $this->dataTablesResponse = new DataTablesResponse($this->dataTablesWrapper, $this->dataTablesRequest);
+
+        // Set a Request mock.
+        $this->request = new Request([], self::getPostData(), [], [], [], ["REQUEST_METHOD" => "POST"]);
     }
 
 }

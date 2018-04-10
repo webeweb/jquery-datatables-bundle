@@ -49,14 +49,7 @@ final class DataTablesRequestTest extends AbstractFrameworkTestCase {
      */
     public function testGetColumn() {
 
-        $query      = [];
-        $post       = self::getPostData();
-        $attributes = [];
-        $cookies    = [];
-        $files      = [];
-        $server     = ["REQUEST_METHOD" => "POST"];
-
-        $obj = new DataTablesRequest($this->dataTablesWrapper, new Request($query, $post, $attributes, $cookies, $files, $server));
+        $obj = new DataTablesRequest($this->dataTablesWrapper, $this->request);
 
         $this->assertCount(7, $obj->getColumns());
         $this->assertEquals(1, $obj->getDraw());
