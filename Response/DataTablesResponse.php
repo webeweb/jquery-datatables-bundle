@@ -22,7 +22,7 @@ use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
  * @package WBW\Bundle\JQuery\DatatablesBundle\Response
  * @final
  */
-final class DataTablesResponse implements JsonSerializable {
+final class DataTablesResponse implements DataTablesResponseInterface, JsonSerializable {
 
     /**
      * Data.
@@ -78,6 +78,27 @@ final class DataTablesResponse implements JsonSerializable {
         $this->setRecordsFiltered(0);
         $this->setRecordsTotal(0);
         $this->setWrapper($wrapper);
+    }
+
+    /**
+     * Add a row.
+     *
+     * @return DataTablesResponse Returns the DataTables response.
+     */
+    public function addRow() {
+
+        // Add a new row.
+        $this->data[] = [];
+
+        // Count the rows.
+        $index = count($this->data);
+
+        // Set each column name in the new row.
+        foreach ($this->wrapper->getColumns() as $column) {
+            $this->data[$index - 1][$column->getName()] = null;
+        }
+
+        return $this;
     }
 
     /**
@@ -193,6 +214,34 @@ final class DataTablesResponse implements JsonSerializable {
      */
     public function setRecordsTotal($recordsTotal) {
         $this->recordsTotal = $recordsTotal;
+        return $this;
+    }
+
+    /**
+     * Set a row value.
+     *
+     * @param string $name The column name.
+     * @param string $value The column value.
+     * @return DataTablesResponse Returns the DataTables response.
+     */
+    public function setRow($name, $value) {
+
+        // Count the rows.
+        $index = count($this->data);
+
+        // Determines the available column names.
+        $names = array_merge(array_keys($this->data[$index - 1]), [
+            self::DATATABLES_ROW_ATTR,
+            self::DATATABLES_ROW_CLASS,
+            self::DATATABLES_ROW_DATA,
+            self::DATATABLES_ROW_ID,
+        ]);
+
+        // Check the column name.
+        if (true === in_array($name, $names)) {
+            $this->data[$index - 1][$name] = $value;
+        }
+
         return $this;
     }
 

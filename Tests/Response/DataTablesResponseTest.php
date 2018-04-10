@@ -11,8 +11,10 @@
 
 namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Response;
 
+use WBW\Bundle\JQuery\DatatablesBundle\Column\DataTablesColumn;
 use WBW\Bundle\JQuery\DatatablesBundle\Response\DataTablesResponse;
 use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractFrameworkTestCase;
+use WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\App\TestFixtures;
 
 /**
  * DataTables response test.
@@ -37,6 +39,21 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
         $this->assertNull($obj->getError());
         $this->assertEquals(0, $obj->getRecordsFiltered());
         $this->assertEquals(0, $obj->getRecordsTotal());
+    }
+
+    /**
+     * Tests the addRow() method.
+     *
+     * @return void
+     */
+    public function testAddRow() {
+
+        $obj = new DataTablesResponse($this->dataTablesWrapper, $this->dataTablesRequest);
+
+        $this->assertCount(0, $obj->getData());
+
+        $obj->addRow();
+        $this->assertCount(1, $obj->getData());
     }
 
     /**
@@ -76,6 +93,40 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
 
         $obj->setRecordsTotal(2);
         $this->assertEquals(2, $obj->getRecordsTotal());
+    }
+
+    /**
+     * Tests the setRow() method.
+     *
+     * @return void
+     */
+    public function testSetRow() {
+
+        // Add the columns.
+        $this->dataTablesWrapper
+            ->addColumn(new DataTablesColumn("name", "name"))
+            ->addColumn(new DataTablesColumn("position", "position"))
+            ->addColumn(new DataTablesColumn("office", "office"))
+            ->addColumn(new DataTablesColumn("age", "age"))
+            ->addColumn(new DataTablesColumn("startDate", "startDate"))
+            ->addColumn(new DataTablesColumn("salary", "salary"));
+
+        $obj = $this->dataTablesWrapper->parse($this->request)->getResponse();
+
+        $arg = TestFixtures::getEmployees()[0];
+        $res = ["name" => "Tiger Nixon", "position" => "System Architect", "office" => "Edinburgh", "age" => 61, "startDate" => "2011-04-25", "salary" => 320800];
+
+        $obj->addRow();
+
+        $obj->setRow("name", $arg->getName());
+        $obj->setRow("position", $arg->getPosition());
+        $obj->setRow("office", $arg->getOffice());
+        $obj->setRow("age", $arg->getAge());
+        $obj->setRow("startDate", $arg->getStartDate()->format("Y-m-d"));
+        $obj->setRow("salary", $arg->getSalary());
+
+        $this->assertCount(1, $obj->getData());
+        $this->assertEquals($res, $obj->getData()[0]);
     }
 
     /**
