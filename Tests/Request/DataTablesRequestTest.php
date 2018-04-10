@@ -14,7 +14,6 @@ namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Request;
 use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\JQuery\DatatablesBundle\Request\DataTablesRequest;
 use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractFrameworkTestCase;
-use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
 
 /**
  * DataTables request test.
@@ -24,59 +23,6 @@ use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
  * @final
  */
 final class DataTablesRequestTest extends AbstractFrameworkTestCase {
-
-    /**
-     * Get a array.
-     *
-     * @return array Returns the array.
-     */
-    public static function getArray() {
-
-        // Initialize.
-        $output = [];
-
-        // ID
-        $output["columns"][0]["data"]            = "id";
-        $output["columns"][0]["name"]            = "id";
-        $output["columns"][0]["orderable"]       = "true";
-        $output["columns"][0]["search"]["regex"] = "false";
-        $output["columns"][0]["search"]["value"] = "";
-        $output["columns"][0]["searchable"]      = "";
-
-        // Firstname
-        $output["columns"][1]["data"]            = "firstname";
-        $output["columns"][1]["name"]            = "firstname";
-        $output["columns"][1]["orderable"]       = "true";
-        $output["columns"][1]["search"]["regex"] = "false";
-        $output["columns"][1]["search"]["value"] = "";
-        $output["columns"][1]["searchable"]      = "";
-
-        // Lastname
-        $output["columns"][2]["data"]            = "lastname";
-        $output["columns"][2]["name"]            = "lastname";
-        $output["columns"][2]["orderable"]       = "true";
-        $output["columns"][2]["search"]["regex"] = "false";
-        $output["columns"][2]["search"]["value"] = "";
-        $output["columns"][2]["searchable"]      = "";
-
-        //
-        $output["draw"]   = "1";
-        $output["length"] = "10";
-
-        // Order
-        $output["order"][0]["column"] = "0";
-        $output["order"][0]["dir"]    = "asc";
-
-        // Search
-        $output["search"]["regex"] = "false";
-        $output["search"]["value"] = "";
-
-        // Start
-        $output["start"] = "0";
-
-        // Return
-        return $output;
-    }
 
     /**
      * Tests the __construct() method.
@@ -104,7 +50,7 @@ final class DataTablesRequestTest extends AbstractFrameworkTestCase {
     public function testGetColumn() {
 
         $query      = [];
-        $post       = self::getArray();
+        $post       = self::getPostData();
         $attributes = [];
         $cookies    = [];
         $files      = [];
@@ -112,7 +58,7 @@ final class DataTablesRequestTest extends AbstractFrameworkTestCase {
 
         $obj = new DataTablesRequest($this->dataTablesWrapper, new Request($query, $post, $attributes, $cookies, $files, $server));
 
-        $this->assertCount(3, $obj->getColumns());
+        $this->assertCount(7, $obj->getColumns());
         $this->assertEquals(1, $obj->getDraw());
         $this->assertEquals(10, $obj->getLength());
         $this->assertCount(1, $obj->getOrder());
@@ -120,9 +66,13 @@ final class DataTablesRequestTest extends AbstractFrameworkTestCase {
         $this->assertEquals(0, $obj->getStart());
 
         $this->assertNotNull($obj->getColumn("id"));
-        $this->assertNotNull($obj->getColumn("firstname"));
-        $this->assertNotNull($obj->getColumn("lastname"));
-        $this->assertNull($obj->getColumn("exceptions"));
+        $this->assertNotNull($obj->getColumn("name"));
+        $this->assertNotNull($obj->getColumn("position"));
+        $this->assertNotNull($obj->getColumn("office"));
+        $this->assertNotNull($obj->getColumn("age"));
+        $this->assertNotNull($obj->getColumn("startDate"));
+        $this->assertNotNull($obj->getColumn("salary"));
+        $this->assertNull($obj->getColumn("exception"));
     }
 
 }
