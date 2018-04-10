@@ -261,7 +261,7 @@ final class DataTablesRequest implements HTTPMethodInterface {
     /**
      * Set the wrapper.
      *
-     * @param \WBW\Bundle\JQuery\DatatablesBundle\Request\DataTablesWrapper $wrapper The wrapper.
+     * @param DataTablesWrapper $wrapper The wrapper.
      * @return DataTablesRequest Returns the DataTables request.
      */
     private function setWrapper(DataTablesWrapper $wrapper) {
