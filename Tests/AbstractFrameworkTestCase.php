@@ -15,20 +15,20 @@
 
 namespace WBW\Bundle\JQuery\DatatablesBundle\Tests;
 
-use PHPUnit_Framework_TestCase;
 use Symfony\Component\HttpFoundation\Request;
+use WBW\Bundle\BootstrapBundle\Tests\AbstractFrameworkTestCase as BaseFrameworkTestCase;
 use WBW\Bundle\JQuery\DatatablesBundle\Request\DataTablesRequest;
 use WBW\Bundle\JQuery\DatatablesBundle\Response\DataTablesResponse;
 use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
 
 /**
- * Abstract DataTables test.
+ * Abstract framework test case.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DatatablesBundle\Tests
  * @abstract
  */
-abstract class AbstractDataTablesTest extends PHPUnit_Framework_TestCase {
+abstract class AbstractFrameworkTestCase extends BaseFrameworkTestCase {
 
     /**
      * DataTables request.
@@ -55,6 +55,7 @@ abstract class AbstractDataTablesTest extends PHPUnit_Framework_TestCase {
      * {@inheritdoc}
      */
     protected function setUp() {
+        parent::setUp();
 
         // Set a DataTables wrappper mock.
         $this->dataTablesWrapper = new DataTablesWrapper("prefix", "POST", "route");
