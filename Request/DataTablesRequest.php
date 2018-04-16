@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DatatablesBundle\Request;
 
 use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
-use WBW\Library\Core\HTTP\HTTPMethodInterface;
+use WBW\Library\Core\IO\HTTPInterface;
 
 /**
  * DataTables request.
@@ -22,7 +22,7 @@ use WBW\Library\Core\HTTP\HTTPMethodInterface;
  * @package WBW\Bundle\JQuery\DatatablesBundle\Request
  * @final
  */
-final class DataTablesRequest implements HTTPMethodInterface {
+final class DataTablesRequest implements HTTPInterface {
 
     /**
      * Columns.
@@ -174,7 +174,7 @@ final class DataTablesRequest implements HTTPMethodInterface {
     private function parse(Request $request) {
 
         // Get the parameter bag.
-        if (self::METHOD_GET === $request->getMethod()) {
+        if (self::HTTP_METHOD_GET === $request->getMethod()) {
             $parameterBag = $request->query;
         } else {
             $parameterBag = $request->request;

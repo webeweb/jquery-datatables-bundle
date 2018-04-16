@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\DatatablesBundle\Column\DataTablesColumn;
 use WBW\Bundle\JQuery\DatatablesBundle\Mapping\DataTablesMapping;
 use WBW\Bundle\JQuery\DatatablesBundle\Request\DataTablesRequest;
 use WBW\Bundle\JQuery\DatatablesBundle\Response\DataTablesResponse;
-use WBW\Library\Core\HTTP\HTTPMethodInterface;
+use WBW\Library\Core\IO\HTTPInterface;
 
 /**
  * DataTables wrapper.
@@ -25,7 +25,7 @@ use WBW\Library\Core\HTTP\HTTPMethodInterface;
  * @package WBW\Bundle\JQuery\DatatablesBundle\Wrapper
  * @final
  */
-final class DataTablesWrapper implements HTTPMethodInterface {
+final class DataTablesWrapper implements HTTPInterface {
 
     /**
      * Columns.
@@ -280,12 +280,12 @@ final class DataTablesWrapper implements HTTPMethodInterface {
      */
     public function setMethod($method) {
         switch ($method) {
-            case self::METHOD_GET:
-            case self::METHOD_POST:
+            case self::HTTP_METHOD_GET:
+            case self::HTTP_METHOD_POST:
                 $this->method = $method;
                 break;
             default:
-                $this->method = self::METHOD_GET;
+                $this->method = self::HTTP_METHOD_GET;
         }
         return $this;
     }

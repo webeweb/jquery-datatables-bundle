@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DatatablesBundle\Exception;
 
 use Exception;
-use WBW\Library\Core\Exception\AbstractWBWException;
+use WBW\Library\Core\Exception\AbstractCoreException;
 
 /**
  * Abstract DataTables exception.
@@ -21,7 +21,7 @@ use WBW\Library\Core\Exception\AbstractWBWException;
  * @package WBW\Bundle\JQuery\DatatablesBundle\Exception
  * @abstract
  */
-abstract class AbstractDataTablesException extends AbstractWBWException {
+abstract class AbstractDataTablesException extends AbstractCoreException {
 
     /**
      * Constructor.
