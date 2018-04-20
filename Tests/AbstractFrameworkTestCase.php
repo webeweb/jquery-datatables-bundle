@@ -59,7 +59,7 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTestCase {
      *
      * @return array Returns the POST data.
      */
-    protected static function getPostData() {
+    public static function getPostData() {
 
         // Initialize.
         $output = [];
