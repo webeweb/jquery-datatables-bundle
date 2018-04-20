@@ -38,7 +38,7 @@ interface DataTablesProviderInterface {
     /**
      * Get the DataTables entity.
      *
-     * @return mixed Returns the DataTables entity.
+     * @return mixed Returns the DataTables entity (Entity::class for example).
      */
     public function getEntity();
 
