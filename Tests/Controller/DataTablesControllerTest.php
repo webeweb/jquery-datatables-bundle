@@ -46,7 +46,11 @@ final class DataTablesControllerTest extends AbstractWebTestCase {
      * @return void
      */
     public function testIndexAction() {
-        // NOTHING TO DO.
+
+        $client = static::createClient();
+
+        $client->request("GET", "/datatables/index/employee");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 
 }
