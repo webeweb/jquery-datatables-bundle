@@ -1,1 +1,7 @@
 # Tests/Fixtures/App/config/services_test.yml
+services:
+
+    app.datatables.provider.employee:
+        class: WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider
+        tags:
+            - { name: webeweb.jquerydatatables.provider }
