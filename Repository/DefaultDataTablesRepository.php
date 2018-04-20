@@ -22,7 +22,7 @@ use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
  * @package WBW\Bundle\JQuery\DatatablesBundle\Repository
  * @abstract
  */
-abstract class DefaultDataTablesRepository extends EntityRepository {
+abstract class DefaultDataTablesRepository extends EntityRepository implements DataTablesRepositoryInterface {
 
     /**
      * {@inheritdoc}
@@ -40,7 +40,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository {
         self::dataTablesWhere($qb, $dtWrapper);
 
         // Return the single scalar result.
-        return $qb->getQuery()->getSingleScalarResult();
+        return intval($qb->getQuery()->getSingleScalarResult());
     }
 
     /**
@@ -56,7 +56,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository {
             ->select("COUNT(" . $prefix . ")");
 
         // Return the single scalar result.
-        return $qb->getQuery()->getSingleScalarResult();
+        return intval($qb->getQuery()->getSingleScalarResult());
     }
 
     /**
@@ -69,7 +69,8 @@ abstract class DefaultDataTablesRepository extends EntityRepository {
 
         // Create a query builder.
         $qb = $this->createQueryBuilder($prefix)
-            ->select("COUNT(" . $prefix . ")");
+            ->setFirstResult($dtWrapper->getRequest()->getStart())
+            ->setMaxResults($dtWrapper->getRequest()->getLength());
 
         // Build the where and order clauses.
         self::dataTablesWhere($qb, $dtWrapper);
