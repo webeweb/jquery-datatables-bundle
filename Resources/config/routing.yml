@@ -1,0 +1,4 @@
+# Resources/config/routing.yml
+jquery_datatables:
+    resource: "@JQueryDataTablesBundle/Resources/config/routing/datatables.yml"
+    prefix: /
