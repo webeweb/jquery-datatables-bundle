@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\Provider;
 
+use WBW\Bundle\JQuery\DatatablesBundle\Column\DataTablesColumn;
 use WBW\Bundle\JQuery\DatatablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\Entity\Employee;
 
@@ -26,7 +27,20 @@ final class EmployeeDataTablesProvider implements DataTablesProviderInterface {
      * {@inheritdoc}
      */
     public function getColumns() {
-        return [];
+
+        // Initialize the columns.
+        $dtColumns = [];
+
+        $dtColumns[] = new DataTablesColumn("name", "Name");
+        $dtColumns[] = new DataTablesColumn("position", "Position");
+        $dtColumns[] = new DataTablesColumn("office", "Office");
+        $dtColumns[] = new DataTablesColumn("age", "Age");
+        $dtColumns[] = new DataTablesColumn("startDate", "Start date");
+        $dtColumns[] = new DataTablesColumn("salary", "Salary");
+        $dtColumns[] = new DataTablesColumn("actions", "Actions");
+
+        // Returns the columns.
+        return $dtColumns;
     }
 
     /**
@@ -60,8 +74,47 @@ final class EmployeeDataTablesProvider implements DataTablesProviderInterface {
     /**
      * {@inheritdoc}
      */
-    public function render($entity, $column) {
-        return "";
+    public function render(DataTablesColumn $column, $entity) {
+
+        // Initialize the output.
+        $output = null;
+
+        // Switch into column name.
+        switch ($column->getName()) {
+
+            case "actions":
+                $output = "";
+                break;
+
+            case "age":
+                $output = $entity->getAge();
+                break;
+
+            case "name":
+                $output = $entity->getName();
+                break;
+
+            case "office":
+                $output = $entity->getOffice();
+                break;
+
+            case "position":
+                $output = $entity->getPosition();
+                break;
+
+            case "salary":
+                $output = $entity->getSalary();
+                break;
+
+            case "startDate":
+                if (null !== $entity->getStartDate()) {
+                    $output = $entity->getStartDate()->format("Y-m-d");
+                }
+                break;
+        }
+
+        // Return the output.
+        return $output;
     }
 
 }
