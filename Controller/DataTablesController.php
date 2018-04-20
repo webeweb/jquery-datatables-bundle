@@ -15,6 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use WBW\Bundle\JQuery\DatatablesBundle\Exception\BadDataTablesRepositoryException;
+use WBW\Bundle\JQuery\DatatablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DatatablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DatatablesBundle\Repository\DataTablesRepositoryInterface;
 use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
@@ -35,6 +36,7 @@ final class DataTablesController extends Controller {
      * @param Request $request The request.
      * @param string $name The provider name.
      * @return Response Returns the response.
+     * @throws UnregisteredDataTablesProviderException Throws an unregistered DataTables provider exception.
      */
     public function indexAction(Request $request, $name) {
 
@@ -78,8 +80,8 @@ final class DataTablesController extends Controller {
                 $dtWrapper->getResponse()->addRow();
 
                 // Render each column.
-                foreach (array_keys($dtWrapper->getColumns()) as $column) {
-                    $dtWrapper->getResponse()->setRow($column, $dtProvider->render($entity, $column));
+                foreach ($dtWrapper->getColumns() as $column) {
+                    $dtWrapper->getResponse()->setRow($column->getName(), $dtProvider->render($column, $entity));
                 }
             }
 
@@ -87,8 +89,10 @@ final class DataTablesController extends Controller {
             return new Response(json_encode($dtWrapper->getResponse()));
         }
 
-        // Initialize the view.
+        // Initialize the default view.
         $dtView = "@JQueryDataTables/DataTables/index.html.twig";
+
+        // Check the provider view.
         if (null !== $dtProvider->getView()) {
             $dtView = $dtProvider->getView();
         }
