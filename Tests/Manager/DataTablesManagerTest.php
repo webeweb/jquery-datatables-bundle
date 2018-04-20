@@ -87,7 +87,7 @@ final class DataTablesManagerTest extends AbstractFrameworkTestCase {
         $obj = new DataTablesManager();
 
         $obj->registerProvider($this->dataTablesProvider);
-        $this->assertEquals($this->dataTablesProvider, $obj->getProvider($this->dataTablesProvider->getName()));
+        $this->assertSame($this->dataTablesProvider, $obj->getProvider($this->dataTablesProvider->getName()));
 
         try {
             $obj->getProvider("exception");

@@ -39,7 +39,7 @@ final class DataTablesRequestTest extends AbstractFrameworkTestCase {
         $this->assertEquals([], $obj->getOrder());
         $this->assertEquals([], $obj->getSearch());
         $this->assertEquals(0, $obj->getStart());
-        $this->assertEquals($this->dataTablesWrapper, $obj->getWrapper());
+        $this->assertSame($this->dataTablesWrapper, $obj->getWrapper());
     }
 
     /**
