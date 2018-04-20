@@ -26,7 +26,7 @@ abstract class AbstractWebTestCase extends WebTestCase {
     /**
      * {@inheritdoc}
      */
-    final public static function setUpBeforeClass() {
+    public static function setUpBeforeClass() {
 
         // Initialize and boot the kernel.
         static::$kernel = static::createKernel();
