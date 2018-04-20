@@ -66,9 +66,9 @@ interface DataTablesProviderInterface {
     /**
      * Render a DataTables column.
      *
+     * @param DataTablesColumn $column The DataTables column.
      * @param mixed $entity The entity.
-     * @param string $column The column name.
-     * @return string Returns the DataTables column rendered.
+     * @return mixed Returns the DataTables column rendered.
      */
-    public function render($entity, $column);
+    public function render(DataTablesColumn $column, $entity);
 }
