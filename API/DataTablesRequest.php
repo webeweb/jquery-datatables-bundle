@@ -46,14 +46,14 @@ class DataTablesRequest implements HTTPInterface {
     /**
      * Order.
      *
-     * @var array
+     * @var DataTablesOrder[]
      */
     private $order;
 
     /**
      * Search.
      *
-     * @var array
+     * @var DataTablesSearch
      */
     private $search;
 
@@ -73,16 +73,14 @@ class DataTablesRequest implements HTTPInterface {
 
     /**
      * Constructor.
-     *
-     * @param DataTableswrapper The wrapper.
-     * @param Request The request.
      */
-    public function __construct(DataTablesWrapper $wrapper, Request $request) {
+    protected function __construct() {
         $this->setColumns([]);
+        $this->setDraw(0);
+        $this->setLength(10);
         $this->setOrder([]);
-        $this->setSearch([]);
-        $this->setWrapper($wrapper);
-        $this->parse($request);
+        $this->setStart(0);
+        $this->setSearch(null);
     }
 
     /**
@@ -130,7 +128,7 @@ class DataTablesRequest implements HTTPInterface {
     /**
      * Get the order.
      *
-     * @return array Returns the order.
+     * @return DataTablesOrder[] Returns the order.
      */
     public function getOrder() {
         return $this->order;
@@ -139,7 +137,7 @@ class DataTablesRequest implements HTTPInterface {
     /**
      * Get the search.
      *
-     * @return array Returns the search.
+     * @return DatTablesSearch Returns the search.
      */
     public function getSearch() {
         return $this->search;
@@ -166,10 +164,14 @@ class DataTablesRequest implements HTTPInterface {
     /**
      * Parse a request.
      *
+     * @param DataTablesWrapper $wrapper The wrapper.
      * @param Request $request The request.
      * @return DataTablesRequest Returns the DataTables request.
      */
-    private function parse(Request $request) {
+    public static function parse(DataTablesWrapper $wrapper, Request $request) {
+
+        // Initialize a DataTables request.
+        $dtRequest = new DataTablesRequest();
 
         // Get the parameter bag.
         if (self::HTTP_METHOD_GET === $request->getMethod()) {
@@ -178,16 +180,21 @@ class DataTablesRequest implements HTTPInterface {
             $parameterBag = $request->request;
         }
 
+        // Parse.
+        $dtOrders = DataTablesOrder::parse(null !== $parameterBag->get("order") ? $parameterBag->get("order") : []);
+        $dtSearch = DataTablesSearch::parse(null !== $parameterBag->get("search") ? $parameterBag->get("search") : []);
+
         // Set the DataTables request.
-        $this->setColumns(null !== $parameterBag->get("columns") ? $parameterBag->get("columns") : []);
-        $this->setDraw(intval($parameterBag->get("draw")));
-        $this->setLength(intval($parameterBag->get("length")));
-        $this->setOrder(null !== $parameterBag->get("order") ? $parameterBag->get("order") : []);
-        $this->setSearch(null !== $parameterBag->get("search") ? $parameterBag->get("search") : []);
-        $this->setStart(intval($parameterBag->get("start")));
+        $dtRequest->setColumns(null !== $parameterBag->get("columns") ? $parameterBag->get("columns") : []);
+        $dtRequest->setDraw(intval($parameterBag->get("draw")));
+        $dtRequest->setLength(intval($parameterBag->get("length")));
+        $dtRequest->setOrder($dtOrders);
+        $dtRequest->setSearch($dtSearch);
+        $dtRequest->setStart(intval($parameterBag->get("start")));
+        $dtRequest->setWrapper($wrapper);
 
         // Return the DataTables request.
-        return $this;
+        return $dtRequest;
     }
 
     /**
@@ -196,7 +203,7 @@ class DataTablesRequest implements HTTPInterface {
      * @param array $columns The columns.
      * @return DataTablesRequest Returns the DataTables request.
      */
-    private function setColumns(array $columns) {
+    protected function setColumns(array $columns) {
         $this->columns = $columns;
         return $this;
     }
@@ -207,7 +214,7 @@ class DataTablesRequest implements HTTPInterface {
      * @param integer $draw The draw.
      * @return DataTablesRequest Returns the DataTables request.
      */
-    public function setDraw($draw) {
+    protected function setDraw($draw) {
         $this->draw = $draw;
         return $this;
     }
@@ -218,7 +225,7 @@ class DataTablesRequest implements HTTPInterface {
      * @param integer $length The length.
      * @return DataTablesRequest Returns the DataTables request.
      */
-    private function setLength($length) {
+    protected function setLength($length) {
         $this->length = $length;
         return $this;
     }
@@ -226,10 +233,10 @@ class DataTablesRequest implements HTTPInterface {
     /**
      * Set the order.
      *
-     * @param array $order The order.
+     * @param DataTablesOrder[] $order The order.
      * @return DataTablesRequest Returns the DataTables request.
      */
-    private function setOrder(array $order) {
+    protected function setOrder($order) {
         $this->order = $order;
         return $this;
     }
@@ -237,10 +244,10 @@ class DataTablesRequest implements HTTPInterface {
     /**
      * Set the search.
      *
-     * @param array $search The search.
+     * @param DataTablesSearch $search The search.
      * @return DataTablesRequest Returns the DataTables request.
      */
-    private function setSearch(array $search) {
+    protected function setSearch(DataTablesSearch $search = null) {
         $this->search = $search;
         return $this;
     }
@@ -251,7 +258,7 @@ class DataTablesRequest implements HTTPInterface {
      * @param integer $start The start.
      * @return DataTablesRequest Returns the DataTables request.
      */
-    private function setStart($start) {
+    protected function setStart($start) {
         $this->start = $start;
         return $this;
     }
@@ -262,7 +269,7 @@ class DataTablesRequest implements HTTPInterface {
      * @param DataTablesWrapper $wrapper The wrapper.
      * @return DataTablesRequest Returns the DataTables request.
      */
-    private function setWrapper(DataTablesWrapper $wrapper) {
+    protected function setWrapper(DataTablesWrapper $wrapper) {
         $this->wrapper = $wrapper;
         return $this;
     }

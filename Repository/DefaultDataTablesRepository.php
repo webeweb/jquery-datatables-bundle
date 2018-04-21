@@ -125,7 +125,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
             $columnNames = array_keys($dtWrapper->getColumns());
 
             // Get and check the column index.
-            $columnIndex = intval($order["column"]);
+            $columnIndex = intval($order->getColumn());
             if ($columnIndex < 0 && count($dtWrapper->getColumns()) < $columnIndex) {
                 continue;
             }
@@ -144,7 +144,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
             $sort[] = $dtColumn->getMapping()->getColumn();
 
             // Add the order by.
-            $queryBuilder->addOrderBy(implode(".", $sort), $order["dir"]);
+            $queryBuilder->addOrderBy(implode(".", $sort), $order->getDir());
         }
     }
 
@@ -184,7 +184,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
                 // Add.
                 $wheres[] = $mPrefix . "." . $mColumn . " LIKE :" . $mPrefix . $mColumn;
                 $params[] = ":" . $mPrefix . $mColumn;
-                $values[] = "%" . ("AND" === $operator ? $column["search"]["value"] : $dtWrapper->getRequest()->getSearch()["value"]) . "%";
+                $values[] = "%" . ("AND" === $operator ? $column["search"]["value"] : $dtWrapper->getRequest()->getSearch()->getValue()) . "%";
             }
         }
 

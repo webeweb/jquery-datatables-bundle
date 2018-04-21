@@ -25,19 +25,19 @@ use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractFrameworkTestCase;
 final class DataTablesRequestTest extends AbstractFrameworkTestCase {
 
     /**
-     * Tests the __construct() method.
+     * Tests the parse() method.
      *
      * @return void
      */
-    public function testConstructor() {
+    public function testParse() {
 
-        $obj = new DataTablesRequest($this->dataTablesWrapper, new Request());
+        $obj = DataTablesRequest::parse($this->dataTablesWrapper, new Request());
 
         $this->assertEquals([], $obj->getColumns());
         $this->assertEquals(0, $obj->getDraw());
         $this->assertEquals(0, $obj->getLength());
         $this->assertEquals([], $obj->getOrder());
-        $this->assertEquals([], $obj->getSearch());
+        $this->assertNull($obj->getSearch());
         $this->assertEquals(0, $obj->getStart());
         $this->assertSame($this->dataTablesWrapper, $obj->getWrapper());
     }
@@ -49,13 +49,13 @@ final class DataTablesRequestTest extends AbstractFrameworkTestCase {
      */
     public function testGetColumn() {
 
-        $obj = new DataTablesRequest($this->dataTablesWrapper, $this->request);
+        $obj = DataTablesRequest::parse($this->dataTablesWrapper, $this->request);
 
         $this->assertCount(7, $obj->getColumns());
         $this->assertEquals(1, $obj->getDraw());
         $this->assertEquals(10, $obj->getLength());
         $this->assertCount(1, $obj->getOrder());
-        $this->assertCount(2, $obj->getSearch());
+        $this->assertNotNull($obj->getSearch());
         $this->assertEquals(0, $obj->getStart());
 
         $this->assertNotNull($obj->getColumn("id"));
