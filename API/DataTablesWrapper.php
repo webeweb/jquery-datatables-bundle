@@ -260,7 +260,7 @@ class DataTablesWrapper implements HTTPInterface {
      * Set the columns.
      *
      * @param DataTablesColumn[] $columns The columns.
-     * @return DataTablesWrapper Returns the DataTables wrapper.
+     * @return DataTablesWrapper Returns this DataTables wrapper.
      */
     private function setColumns(array $columns) {
         $this->columns = $columns;
@@ -271,7 +271,7 @@ class DataTablesWrapper implements HTTPInterface {
      * Set the method.
      *
      * @param string $method The method.
-     * @return DataTablesWrapper Returns the DataTables wrapper.
+     * @return DataTablesWrapper Returns this DataTables wrapper.
      */
     public function setMethod($method) {
         switch ($method) {
@@ -289,7 +289,7 @@ class DataTablesWrapper implements HTTPInterface {
      * Set the order.
      *
      * @param array $order The order.
-     * @return DataTablesWrapper Returns the DataTables wrapper.
+     * @return DataTablesWrapper Returns this DataTables wrapper.
      */
     public function setOrder(array $order) {
         $this->order = $order;
@@ -300,7 +300,7 @@ class DataTablesWrapper implements HTTPInterface {
      * Set the processing.
      *
      * @param boolean $processing The processing.
-     * @return DataTablesWrapper Returns the DataTables wrapper.
+     * @return DataTablesWrapper Returns this DataTables wrapper.
      */
     public function setProcessing($processing) {
         switch (true) {
@@ -319,7 +319,7 @@ class DataTablesWrapper implements HTTPInterface {
      * Set the route.
      *
      * @param string $route The route.
-     * @return DataTablesWrapper Returns the DataTables wrapper.
+     * @return DataTablesWrapper Returns this DataTables wrapper.
      */
     public function setRoute($route) {
         $this->route = $route;
@@ -330,7 +330,7 @@ class DataTablesWrapper implements HTTPInterface {
      * Set the route arguments.
      *
      * @param array $routeArguments The route arguments.
-     * @return DataTablesWrapper Returns the DatTables wrapper.
+     * @return DataTablesWrapper Returns this DatTables wrapper.
      */
     public function setRouteArguments(array $routeArguments) {
         $this->routeArguments = $routeArguments;
@@ -341,7 +341,7 @@ class DataTablesWrapper implements HTTPInterface {
      * Set the server side.
      *
      * @param boolean $serverSide The server side.
-     * @return DataTablesWrapper Returns the DataTables wrapper.
+     * @return DataTablesWrapper Returns this DataTables wrapper.
      */
     public function setServerSide($serverSide) {
         switch (true) {
