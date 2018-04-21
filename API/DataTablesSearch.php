@@ -38,7 +38,7 @@ class DataTablesSearch {
     /**
      * Constructor.
      */
-    private function __construct() {
+    protected function __construct() {
         // NOTHING TO DO.
     }
 
@@ -91,7 +91,7 @@ class DataTablesSearch {
      * @param boolean $regex The regex.
      * @return DataTablesSearch Returns this DataTables search.
      */
-    public function setRegex($regex) {
+    protected function setRegex($regex) {
         $this->regex = $regex;
         return $this;
     }
@@ -102,7 +102,7 @@ class DataTablesSearch {
      * @param string $value The value.
      * @return DataTablesSearch Returns this DataTables search.
      */
-    public function setValue($value) {
+    protected function setValue($value) {
         $this->value = $value;
         return $this;
     }

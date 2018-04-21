@@ -36,7 +36,7 @@ class DataTablesOrder {
     /**
      * Constructor.
      */
-    private function __construct() {
+    protected function __construct() {
         // NOTHING TO DO
     }
 
@@ -99,7 +99,7 @@ class DataTablesOrder {
      * @param integer $column The column.
      * @return DataTablesOrder Returns this DataTables order.
      */
-    public function setColumn($column) {
+    protected function setColumn($column) {
         $this->column = (0 <= $column ? $column : null);
         return $this;
     }
@@ -109,9 +109,8 @@ class DataTablesOrder {
      *
      * @param string $dir The dir.
      * @return DataTablesOrder Returns this DataTables order.
-
      */
-    public function setDir($dir) {
+    protected function setDir($dir) {
         $this->dir = strtoupper(true === in_array($dir, ["asc", "desc"]) ? $dir : "asc");
         return $this;
     }
