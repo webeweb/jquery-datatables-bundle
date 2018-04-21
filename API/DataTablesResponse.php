@@ -160,17 +160,6 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     }
 
     /**
-     * Set the draw.
-     *
-     * @param integer $draw The draw.
-     * @return DataTablesResponse Returns the DataTables response.
-     */
-    private function setDraw($draw) {
-        $this->draw = $draw;
-        return $this;
-    }
-
-    /**
      * Set the data.
      *
      * @param array $data The data.
@@ -178,6 +167,17 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      */
     private function setData(array $data) {
         $this->data = $data;
+        return $this;
+    }
+
+    /**
+     * Set the draw.
+     *
+     * @param integer $draw The draw.
+     * @return DataTablesResponse Returns the DataTables response.
+     */
+    private function setDraw($draw) {
+        $this->draw = $draw;
         return $this;
     }
 
