@@ -38,44 +38,6 @@ final class DataTablesSearchTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
-     * Tests the parse() method.
-     *
-     * @return void
-     */
-    public function testParse() {
-
-        // Get the POST data.
-        $postData = AbstractFrameworkTestCase::getPostData();
-
-        //
-        $res0 = DataTablesSearch::parse($postData["search"]);
-        $this->assertFalse($res0->getRegex());
-        $this->assertEquals("", $res0->getValue());
-
-        // Set a different search.
-        $postData["search"]["regex"] = "true";
-        $postData["search"]["value"] = "value";
-
-        $res1 = DataTablesSearch::parse($postData["search"]);
-        $this->assertTrue($res1->getRegex());
-        $this->assertEquals("value", $res1->getValue());
-
-        // Set an invalid search.
-        $postData["search"]["regex"] = "false";
-        unset($postData["search"]["value"]);
-
-        $res2 = DataTablesSearch::parse($postData["search"]);
-        $this->assertNull($res2);
-
-        // Set an invalid search.
-        unset($postData["search"]["regex"]);
-        unset($postData["search"]["value"]);
-
-        $res3 = DataTablesSearch::parse($postData["search"]);
-        $this->assertNull($res3);
-    }
-
-    /**
      * Tests the setRegex() method.
      *
      * @return void
@@ -99,6 +61,42 @@ final class DataTablesSearchTest extends PHPUnit_Framework_TestCase {
 
         $obj->setValue("value");
         $this->assertEquals("value", $obj->getValue());
+    }
+
+    /**
+     * Tests the parse() method.
+     *
+     * @return void
+     * @depends testSetRegex
+     * @depends testSetValue
+     */
+    public function testParse() {
+
+        // Get the POST data.
+        $postData = AbstractFrameworkTestCase::getPostData();
+
+        // Set the POST data.
+        $postData["search"]["regex"] = "true";
+        $postData["search"]["value"] = "value";
+
+        //
+        $res = DataTablesSearch::parse($postData["search"]);
+        $this->assertTrue($res->getRegex());
+        $this->assertEquals("value", $res->getValue());
+
+        // Set an invalid search.
+        $postData["search"]["regex"] = "false";
+        unset($postData["search"]["value"]);
+
+        $res1 = DataTablesSearch::parse($postData["search"]);
+        $this->assertNull($res1);
+
+        // Set an invalid search.
+        unset($postData["search"]["regex"]);
+        unset($postData["search"]["value"]);
+
+        $res2 = DataTablesSearch::parse($postData["search"]);
+        $this->assertNull($res2);
     }
 
 }
