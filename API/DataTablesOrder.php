@@ -64,7 +64,7 @@ class DataTablesOrder {
      * @param array $rawOrder The raw order.
      * @return DataTablesOrder[] Returns the DataTables order.
      */
-    public static function parse(array $rawOrder = []) {
+    public static function parse(array $rawOrder) {
 
         // Initialize the output.
         $output = [];

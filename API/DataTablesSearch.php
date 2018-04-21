@@ -66,7 +66,7 @@ class DataTablesSearch {
      * @param array $rawSearch The raw search array.
      * @return DataTablesSearch Returns the DataTables search in case of success, null otherwise.
      */
-    public static function parse(array $rawSearch = []) {
+    public static function parse(array $rawSearch) {
 
         // Determines if the raw search is valid.
         if (false === array_key_exists("regex", $rawSearch)) {
