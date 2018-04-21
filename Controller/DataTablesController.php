@@ -18,7 +18,7 @@ use WBW\Bundle\JQuery\DatatablesBundle\Exception\BadDataTablesRepositoryExceptio
 use WBW\Bundle\JQuery\DatatablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DatatablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DatatablesBundle\Repository\DataTablesRepositoryInterface;
-use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
+use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesWrapper;
 use WBW\Library\Core\IO\HTTPInterface;
 
 /**

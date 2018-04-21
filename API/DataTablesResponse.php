@@ -12,7 +12,6 @@
 namespace WBW\Bundle\JQuery\DatatablesBundle\API;
 
 use JsonSerializable;
-use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
 
 /**
  * DataTables response.

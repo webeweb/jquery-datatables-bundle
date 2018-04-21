@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DatatablesBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\QueryBuilder;
-use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
+use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesWrapper;
 
 /**
  * Default DataTables repository.

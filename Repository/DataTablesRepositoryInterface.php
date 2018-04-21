@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DatatablesBundle\Repository;
 
-use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
+use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesWrapper;
 
 /**
  * DataTables repository interface.

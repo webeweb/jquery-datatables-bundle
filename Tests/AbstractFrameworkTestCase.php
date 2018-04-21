@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractFrameworkTestCase as BaseFrameworkTestCase;
 use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesRequest;
 use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesResponse;
-use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
+use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesWrapper;
 
 /**
  * Abstract framework test case.

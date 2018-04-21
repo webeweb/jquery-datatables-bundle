@@ -9,23 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Wrapper;
+namespace WBW\Bundle\JQuery\DatatablesBundle\API;
 
 use Symfony\Component\HttpFoundation\Request;
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesColumn;
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesMapping;
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesRequest;
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesResponse;
 use WBW\Library\Core\IO\HTTPInterface;
 
 /**
  * DataTables wrapper.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Wrapper
- * @final
+ * @package WBW\Bundle\JQuery\DatatablesBundle\API
  */
-final class DataTablesWrapper implements HTTPInterface {
+class DataTablesWrapper implements HTTPInterface {
 
     /**
      * Columns.

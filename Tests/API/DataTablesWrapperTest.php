@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Wrapper;
+namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\API;
 
 use PHPUnit_Framework_TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesColumn;
-use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
+use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesWrapper;
 
 /**
  * DataTables wrapper test.

@@ -16,7 +16,7 @@ use Doctrine\ORM\QueryBuilder;
 use PHPUnit_Framework_TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\JQuery\DatatablesBundle\Repository\DefaultDataTablesRepository;
-use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
+use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesWrapper;
 
 /**
  * Default DataTables repository test.
