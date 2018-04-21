@@ -272,71 +272,71 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
         $obj->setData(null);
         $obj->setTitle(null);
 
-        $res1 = ["name" => "name", "cellType" => "td"];
+        $res1 = ["cellType" => "td", "name" => "name"];
         $this->assertEquals($res1, $obj->toArray());
 
         $obj->setClassname("classname");
-        $res2 = ["name" => "name", "cellType" => "td", "classname" => "classname"];
+        $res2 = ["cellType" => "td", "classname" => "classname", "name" => "name"];
         $this->assertEquals($res2, $obj->toArray());
 
         $obj->setClassname(null);
         $obj->setContentPadding("contentPadding");
-        $res3 = ["name" => "name", "cellType" => "td", "contentPadding" => "contentPadding"];
+        $res3 = ["cellType" => "td", "contentPadding" => "contentPadding", "name" => "name"];
         $this->assertEquals($res3, $obj->toArray());
 
         $obj->setContentPadding(null);
         $obj->setData("data");
-        $res4 = ["name" => "name", "cellType" => "td", "data" => "data"];
+        $res4 = ["cellType" => "td", "data" => "data", "name" => "name"];
         $this->assertEquals($res4, $obj->toArray());
 
         $obj->setData(null);
         $obj->setDefaultContent("defaultContent");
-        $res5 = ["name" => "name", "cellType" => "td", "defaultContent" => "defaultContent"];
+        $res5 = ["cellType" => "td", "defaultContent" => "defaultContent", "name" => "name"];
         $this->assertEquals($res5, $obj->toArray());
 
         $obj->setDefaultContent(null);
         $obj->setOrderData("orderData");
-        $res6 = ["name" => "name", "cellType" => "td", "orderData" => "orderData"];
+        $res6 = ["cellType" => "td", "name" => "name", "orderData" => "orderData"];
         $this->assertEquals($res6, $obj->toArray());
 
         $obj->setOrderData(null);
         $obj->setOrderDataType("orderDataType");
-        $res7 = ["name" => "name", "cellType" => "td", "orderDataType" => "orderDataType"];
+        $res7 = ["cellType" => "td", "name" => "name", "orderDataType" => "orderDataType"];
         $this->assertEquals($res7, $obj->toArray());
 
         $obj->setOrderDataType(null);
         $obj->setOrderSequence("asc");
-        $res8 = ["name" => "name", "cellType" => "td", "orderSequence" => "asc"];
+        $res8 = ["cellType" => "td", "name" => "name", "orderSequence" => "asc"];
         $this->assertEquals($res8, $obj->toArray());
 
         $obj->setOrderSequence(null);
         $obj->setOrderable(false);
-        $res9 = ["name" => "name", "cellType" => "td", "orderable" => false];
+        $res9 = ["cellType" => "td", "name" => "name", "orderable" => false];
         $this->assertEquals($res9, $obj->toArray());
 
         $obj->setOrderable(true);
         $obj->setSearchable(false);
-        $res10 = ["name" => "name", "cellType" => "td", "searchable" => false];
+        $res10 = ["cellType" => "td", "name" => "name", "searchable" => false];
         $this->assertEquals($res10, $obj->toArray());
 
         $obj->setSearchable(true);
         $obj->setTitle("title");
-        $res11 = ["name" => "name", "cellType" => "td", "title" => "title"];
+        $res11 = ["cellType" => "td", "name" => "name", "title" => "title"];
         $this->assertEquals($res11, $obj->toArray());
 
         $obj->setTitle(null);
         $obj->setType("string");
-        $res12 = ["name" => "name", "cellType" => "td", "type" => "string"];
+        $res12 = ["cellType" => "td", "name" => "name", "type" => "string"];
         $this->assertEquals($res12, $obj->toArray());
 
         $obj->setType(null);
         $obj->setVisible(false);
-        $res13 = ["name" => "name", "cellType" => "td", "visible" => false];
+        $res13 = ["cellType" => "td", "name" => "name", "visible" => false];
         $this->assertEquals($res13, $obj->toArray());
 
         $obj->setVisible(true);
         $obj->setWidth("width");
-        $res14 = ["name" => "name", "cellType" => "td", "width" => "width"];
+        $res14 = ["cellType" => "td", "name" => "name", "width" => "width"];
         $this->assertEquals($res14, $obj->toArray());
     }
 
