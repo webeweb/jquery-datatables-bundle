@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Response;
 
-use WBW\Bundle\JQuery\DatatablesBundle\Column\DataTablesColumn;
+use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DatatablesBundle\Response\DataTablesResponse;
 use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractFrameworkTestCase;
 use WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\App\TestFixtures;

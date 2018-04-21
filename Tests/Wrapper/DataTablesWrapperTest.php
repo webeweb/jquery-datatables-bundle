@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Wrapper;
 
 use PHPUnit_Framework_TestCase;
 use Symfony\Component\HttpFoundation\Request;
-use WBW\Bundle\JQuery\DatatablesBundle\Column\DataTablesColumn;
+use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
 
 /**

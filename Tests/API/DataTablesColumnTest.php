@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Column;
+namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\API;
 
 use PHPUnit_Framework_TestCase;
-use WBW\Bundle\JQuery\DatatablesBundle\Column\DataTablesColumn;
+use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesColumn;
 
 /**
  * DataTables column test.

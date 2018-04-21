@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\Provider;
 
-use WBW\Bundle\JQuery\DatatablesBundle\Column\DataTablesColumn;
+use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DatatablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\Entity\Employee;
 

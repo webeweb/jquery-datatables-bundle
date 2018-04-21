@@ -9,20 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Column;
+namespace WBW\Bundle\JQuery\DatatablesBundle\API;
 
 use JsonSerializable;
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesMapping;
 use WBW\Library\Core\Utility\Argument\ArrayUtility;
 
 /**
  * DataTables column.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Column
- * @final
+ * @package WBW\Bundle\JQuery\DatatablesBundle\API
  */
-final class DataTablesColumn implements JsonSerializable {
+class DataTablesColumn implements JsonSerializable {
 
     /**
      * Cell type.
