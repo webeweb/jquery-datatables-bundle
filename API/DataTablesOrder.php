@@ -62,7 +62,7 @@ class DataTablesOrder {
      * Parse a raw order.
      *
      * @param array $rawOrder The raw order.
-     * @return array<DataTablesOrder> Returns the DataTables order.
+     * @return DataTablesOrder[] Returns the DataTables order.
      */
     public static function parse(array $rawOrder = []) {
 
