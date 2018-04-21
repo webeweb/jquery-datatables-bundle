@@ -70,7 +70,7 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTestCase {
         $output["columns"][0]["orderable"]       = "true";
         $output["columns"][0]["search"]["regex"] = "false";
         $output["columns"][0]["search"]["value"] = "";
-        $output["columns"][0]["searchable"]      = "";
+        $output["columns"][0]["searchable"]      = "false";
 
         // Name
         $output["columns"][1]["data"]            = "name";
@@ -78,7 +78,7 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTestCase {
         $output["columns"][1]["orderable"]       = "true";
         $output["columns"][1]["search"]["regex"] = "false";
         $output["columns"][1]["search"]["value"] = "";
-        $output["columns"][1]["searchable"]      = "";
+        $output["columns"][1]["searchable"]      = "true";
 
         // Position
         $output["columns"][2]["data"]            = "position";
@@ -86,7 +86,7 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTestCase {
         $output["columns"][2]["orderable"]       = "true";
         $output["columns"][2]["search"]["regex"] = "false";
         $output["columns"][2]["search"]["value"] = "";
-        $output["columns"][2]["searchable"]      = "";
+        $output["columns"][2]["searchable"]      = "true";
 
         // Office
         $output["columns"][3]["data"]            = "office";
@@ -94,7 +94,7 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTestCase {
         $output["columns"][3]["orderable"]       = "true";
         $output["columns"][3]["search"]["regex"] = "false";
         $output["columns"][3]["search"]["value"] = "";
-        $output["columns"][3]["searchable"]      = "";
+        $output["columns"][3]["searchable"]      = "true";
 
         // Age
         $output["columns"][4]["data"]            = "age";
@@ -102,7 +102,7 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTestCase {
         $output["columns"][4]["orderable"]       = "true";
         $output["columns"][4]["search"]["regex"] = "false";
         $output["columns"][4]["search"]["value"] = "";
-        $output["columns"][4]["searchable"]      = "";
+        $output["columns"][4]["searchable"]      = "true";
 
         // Start date
         $output["columns"][5]["data"]            = "startDate";
@@ -110,7 +110,7 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTestCase {
         $output["columns"][5]["orderable"]       = "true";
         $output["columns"][5]["search"]["regex"] = "false";
         $output["columns"][5]["search"]["value"] = "";
-        $output["columns"][5]["searchable"]      = "";
+        $output["columns"][5]["searchable"]      = "true";
 
         // Salary
         $output["columns"][6]["data"]            = "salary";
@@ -118,7 +118,7 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTestCase {
         $output["columns"][6]["orderable"]       = "true";
         $output["columns"][6]["search"]["regex"] = "false";
         $output["columns"][6]["search"]["value"] = "";
-        $output["columns"][6]["searchable"]      = "";
+        $output["columns"][6]["searchable"]      = "true";
 
         //
         $output["draw"]   = "1";
