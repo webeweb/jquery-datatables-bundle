@@ -174,7 +174,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      * Set the data.
      *
      * @param array $data The data.
-     * @return DataTablesResponse Returns the DataTables response.
+     * @return DataTablesResponse Returns this DataTables response.
      */
     private function setData(array $data) {
         $this->data = $data;
@@ -185,7 +185,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      * Set the error.
      *
      * @param string $error The error.
-     * @return DataTablesResponse Returns the DataTables response.
+     * @return DataTablesResponse Returns this DataTables response.
      */
     public function setError($error) {
         $this->error = $error;
@@ -196,7 +196,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      * Set the records filtered.
      *
      * @param integer $recordsFiltered The records filtered.
-     * @return DataTablesResponse Returns the DataTables response.
+     * @return DataTablesResponse Returns this DataTables response.
      */
     public function setRecordsFiltered($recordsFiltered) {
         $this->recordsFiltered = $recordsFiltered;
@@ -207,7 +207,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      * Set the records total.
      *
      * @param integer $recordsTotal The records total.
-     * @return DataTablesResponse Returns the DataTables response.
+     * @return DataTablesResponse Returns this DataTables response.
      */
     public function setRecordsTotal($recordsTotal) {
         $this->recordsTotal = $recordsTotal;
@@ -219,7 +219,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      *
      * @param string $name The column name.
      * @param string $value The column value.
-     * @return DataTablesResponse Returns the DataTables response.
+     * @return DataTablesResponse Returns this DataTables response.
      */
     public function setRow($name, $value) {
 
@@ -246,7 +246,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      * Set the wrapper.
      *
      * @param DataTablesWrapper $wrapper The wrapper.
-     * @return DataTablesResponse Returns the DataTables request.
+     * @return DataTablesResponse Returns this DataTables request.
      */
     private function setWrapper(DataTablesWrapper $wrapper) {
         $this->wrapper = $wrapper;
