@@ -59,20 +59,20 @@ class DataTablesOrder {
     }
 
     /**
-     * Parse a raw order.
+     * Parse a raw orders.
      *
-     * @param array $rawOrder The raw order.
-     * @return DataTablesOrder[] Returns the DataTables order.
+     * @param array $rawOrders The raw orders.
+     * @return DataTablesOrder[] Returns the DataTables orders.
      */
-    public static function parse(array $rawOrder) {
+    public static function parse(array $rawOrders) {
 
         // Initialize the output.
         $output = [];
 
         // Handle each raw order.
-        foreach ($rawOrder as $current) {
+        foreach ($rawOrders as $current) {
 
-            // Detremines if the order is valid.
+            // Detremines if the raw order is valid.
             if (false === array_key_exists("column", $current)) {
                 continue;
             }
