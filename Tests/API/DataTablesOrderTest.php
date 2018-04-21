@@ -25,59 +25,9 @@ use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractFrameworkTestCase;
 final class DataTablesOrderTest extends PHPUnit_Framework_TestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstructor() {
-
-        $obj = new DataTablesOrder();
-
-        $this->assertNull($obj->getColumn());
-        $this->assertNull($obj->getDir());
-    }
-
-    /**
-     * Tests the setColumn() method.
-     *
-     * @return void
-     */
-    public function testSetColumn() {
-
-        $obj = new DataTablesOrder();
-
-        $obj->setColumn(0);
-        $this->assertEquals(0, $obj->getColumn());
-
-        $obj->setColumn(-1);
-        $this->assertNull($obj->getColumn());
-    }
-
-    /**
-     * Tests the setDir() method.
-     *
-     * @return void
-     */
-    public function testSetDir() {
-
-        $obj = new DataTablesOrder();
-
-        $obj->setDir("asc");
-        $this->assertEquals("ASC", $obj->getDir());
-
-        $obj->setDir("desc");
-        $this->assertEquals("DESC", $obj->getDir());
-
-        $obj->setDir("exception");
-        $this->assertEquals("ASC", $obj->getDir());
-    }
-
-    /**
      * Tests the parse() method.
      *
      * @return void
-     * @depends testSetColumn
-     * @depends testSetDir
      */
     public function testParse() {
 
