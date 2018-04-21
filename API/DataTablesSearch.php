@@ -39,7 +39,8 @@ class DataTablesSearch {
      * Constructor.
      */
     protected function __construct() {
-        // NOTHING TO DO.
+        $this->setRegex(false);
+        $this->setValue("");
     }
 
     /**
@@ -64,20 +65,22 @@ class DataTablesSearch {
      * Parse a raw search array.
      *
      * @param array $rawSearch The raw search array.
-     * @return DataTablesSearch Returns the DataTables search in case of success, null otherwise.
+     * @return DataTablesSearch Returns the DataTables search.
      */
     public static function parse(array $rawSearch) {
 
+        // Initialize a DataTable search.
+        $dtSearch = new DataTablesSearch();
+
         // Determines if the raw search is valid.
         if (false === array_key_exists("regex", $rawSearch)) {
-            return null;
+            return $dtSearch;
         }
         if (false === array_key_exists("value", $rawSearch)) {
-            return null;
+            return $dtSearch;
         }
 
-        // Create a DataTable search.
-        $dtSearch = new DataTablesSearch();
+        // Set the DataTables search.
         $dtSearch->setRegex(BooleanUtility::parseString($rawSearch["regex"]));
         $dtSearch->setValue($rawSearch["value"]);
 

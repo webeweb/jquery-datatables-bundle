@@ -48,14 +48,16 @@ final class DataTablesSearchTest extends PHPUnit_Framework_TestCase {
         unset($postData["search"]["value"]);
 
         $res1 = DataTablesSearch::parse($postData["search"]);
-        $this->assertNull($res1);
+        $this->assertFalse($res1->getRegex());
+        $this->assertEquals("", $res1->getValue());
 
         // Set an invalid search.
         unset($postData["search"]["regex"]);
         unset($postData["search"]["value"]);
 
         $res2 = DataTablesSearch::parse($postData["search"]);
-        $this->assertNull($res2);
+        $this->assertFalse($res2->getRegex());
+        $this->assertEquals("", $res2->getValue());
     }
 
 }

@@ -80,7 +80,6 @@ class DataTablesRequest implements HTTPInterface {
         $this->setLength(10);
         $this->setOrder([]);
         $this->setStart(0);
-        $this->setSearch(null);
     }
 
     /**
@@ -247,7 +246,7 @@ class DataTablesRequest implements HTTPInterface {
      * @param DataTablesSearch $search The search.
      * @return DataTablesRequest Returns this DataTables request.
      */
-    protected function setSearch(DataTablesSearch $search = null) {
+    protected function setSearch(DataTablesSearch $search) {
         $this->search = $search;
         return $this;
     }
