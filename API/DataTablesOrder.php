@@ -59,6 +59,41 @@ class DataTablesOrder {
     }
 
     /**
+     * Parse a raw order.
+     *
+     * @param array $rawOrder The raw order.
+     * @return array<DataTablesOrder> Returns the DataTables order.
+     */
+    public static function parse(array $rawOrder = []) {
+
+        // Initialize the output.
+        $output = [];
+
+        // Handle each raw order.
+        foreach ($rawOrder as $current) {
+
+            // Detremines if the order is valid.
+            if (false === array_key_exists("column", $current)) {
+                continue;
+            }
+            if (false === array_key_exists("dir", $current)) {
+                continue;
+            }
+
+            // Create a DataTables order.
+            $dtOrder = new DataTablesOrder();
+            $dtOrder->setColumn(intval($current["column"]));
+            $dtOrder->setDir($current["dir"]);
+
+            // Add the DataTables order.
+            $output[] = $dtOrder;
+        }
+
+        // Return the output.
+        return $output;
+    }
+
+    /**
      * Set the column.
      *
      * @param integer $column The column.
