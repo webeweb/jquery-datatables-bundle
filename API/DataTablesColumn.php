@@ -27,7 +27,7 @@ class DataTablesColumn implements JsonSerializable {
      *
      * @var string
      */
-    private $cellType = "td";
+    private $cellType;
 
     /**
      * Class name.
@@ -97,14 +97,21 @@ class DataTablesColumn implements JsonSerializable {
      *
      * @var boolean
      */
-    private $orderable = true;
+    private $orderable;
+
+    /**
+     * Search.
+     *
+     * @var DataTablesSearch
+     */
+    private $search;
 
     /**
      * Searchable.
      *
      * @var boolean
      */
-    private $searchable = true;
+    private $searchable;
 
     /**
      * Title.
@@ -125,7 +132,7 @@ class DataTablesColumn implements JsonSerializable {
      *
      * @var boolean
      */
-    private $visible = true;
+    private $visible;
 
     /**
      * Width.
@@ -138,7 +145,11 @@ class DataTablesColumn implements JsonSerializable {
      * Constructor.
      */
     protected function __construct() {
-        $this->mapping = new DataTablesMapping();
+        $this->setCellType("td");
+        $this->setMapping(new DataTablesMapping());
+        $this->setOrderable(true);
+        $this->setSearchable(true);
+        $this->setVisible(true);
     }
 
     /**
@@ -241,6 +252,15 @@ class DataTablesColumn implements JsonSerializable {
     }
 
     /**
+     * Get the search.
+     *
+     * @return DataTablesSearch Returns the search.
+     */
+    public function getSearch() {
+        return $this->search;
+    }
+
+    /**
      * Get the searchable.
      *
      * @return boolean Returns the searchable.
@@ -321,14 +341,7 @@ class DataTablesColumn implements JsonSerializable {
      * @return DataTablesColumn Returns this DataTables column.
      */
     public function setCellType($cellType) {
-        switch ($cellType) {
-            case "td":
-            case "th":
-                $this->cellType = $cellType;
-                break;
-            default:
-                $this->cellType = "td";
-        }
+        $this->cellType = (true === in_array($cellType, ["td", "th"]) ? $cellType : "td");
         return $this;
     }
 
@@ -377,6 +390,17 @@ class DataTablesColumn implements JsonSerializable {
     }
 
     /**
+     * Set the mapping.
+     *
+     * @param DataTablesMapping $mapping The mapping.
+     * @return DataTablesColumn Returns this DataTables column.
+     */
+    protected function setMapping(DataTablesMapping $mapping) {
+        $this->mapping = $mapping;
+        return $this;
+    }
+
+    /**
      * Set the name.
      *
      * @param string $name The name.
@@ -416,14 +440,7 @@ class DataTablesColumn implements JsonSerializable {
      * @return DataTablesColumn Returns this DataTables column.
      */
     public function setOrderSequence($orderSequence) {
-        switch ($orderSequence) {
-            case "asc":
-            case "desc":
-                $this->orderSequence = $orderSequence;
-                break;
-            default:
-                $this->orderSequence = null;
-        }
+        $this->orderSequence = (true === in_array($orderSequence, ["asc", "desc"]) ? $orderSequence : null);
         return $this;
     }
 
@@ -435,6 +452,17 @@ class DataTablesColumn implements JsonSerializable {
      */
     public function setOrderable($orderable) {
         $this->orderable = $orderable;
+        return $this;
+    }
+
+    /**
+     * Set the search.
+     *
+     * @param DataTablesSearch $search The search.
+     * @return DataTablesColumn Returns this DataTables column.
+     */
+    public function setSearch(DataTablesSearch $search) {
+        $this->search = $search;
         return $this;
     }
 
@@ -467,18 +495,7 @@ class DataTablesColumn implements JsonSerializable {
      * @return DataTablesColumn Returns this DataTables column.
      */
     public function setType($type) {
-        switch ($type) {
-            case "date":
-            case "num":
-            case "num-fmt":
-            case "html":
-            case "html-num":
-            case "string":
-                $this->type = $type;
-                break;
-            default:
-                $this->type = null;
-        }
+        $this->type = (true === in_array($type, ["date", "num", "num-fmt", "html", "html-num", "string"]) ? $type : null);
         return $this;
     }
 

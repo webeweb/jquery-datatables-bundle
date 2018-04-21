@@ -42,6 +42,7 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
         $this->assertNull($obj->getOrderData());
         $this->assertNull($obj->getOrderDataType());
         $this->assertNull($obj->getOrderSequence());
+        $this->assertNull($obj->getSearch());
         $this->assertTrue($obj->getSearchable());
         $this->assertEquals("title", $obj->getTitle());
         $this->assertNull($obj->getType());
@@ -58,14 +59,14 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
 
         $obj = DataTablesColumn::newInstance("name", "title");
 
-        $obj->setCellType("exception");
-        $this->assertEquals("td", $obj->getCellType());
-
         $obj->setCellType("td");
         $this->assertEquals("td", $obj->getCellType());
 
         $obj->setCellType("th");
         $this->assertEquals("th", $obj->getCellType());
+
+        $obj->setCellType("exception");
+        $this->assertEquals("td", $obj->getCellType());
     }
 
     /**
