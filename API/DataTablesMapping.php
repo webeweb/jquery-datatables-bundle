@@ -41,6 +41,18 @@ class DataTablesMapping {
     }
 
     /**
+     * Get the alias.
+     *
+     * @return string Returns the alias.
+     */
+    public function getAlias() {
+        if (null === $this->column) {
+            return null;
+        }
+        return null !== $this->prefix ? implode(".", [$this->prefix, $this->column]) : $this->column;
+    }
+
+    /**
      * Get the column.
      *
      * @return string Returns the column.

@@ -32,6 +32,7 @@ final class DataTablesMappingTest extends PHPUnit_Framework_TestCase {
 
         $obj = new DataTablesMapping();
 
+        $this->assertEquals("", $obj->getAlias());
         $this->assertNull($obj->getColumn());
         $this->assertNull($obj->getPrefix());
     }
@@ -46,6 +47,7 @@ final class DataTablesMappingTest extends PHPUnit_Framework_TestCase {
         $obj = new DataTablesMapping();
 
         $obj->setColumn("column");
+        $this->assertEquals("column", $obj->getAlias());
         $this->assertEquals("column", $obj->getColumn());
     }
 
@@ -59,6 +61,7 @@ final class DataTablesMappingTest extends PHPUnit_Framework_TestCase {
         $obj = new DataTablesMapping();
 
         $obj->setPrefix("prefix");
+        $this->assertNull($obj->getAlias());
         $this->assertEquals("prefix", $obj->getPrefix());
     }
 

@@ -140,8 +140,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
 
             //
             $sort   = [];
-            $sort[] = $dtColumn->getMapping()->getPrefix();
-            $sort[] = $dtColumn->getMapping()->getColumn();
+            $sort[] = $dtColumn->getMapping()->getAlias();
 
             // Add the order by.
             $queryBuilder->addOrderBy(implode(".", $sort), $order->getDir());
@@ -177,13 +176,12 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
             // Check the DataTables column.
             if (null !== $dtColumn && true === $dtColumn->getSearchable() && ("OR" === $operator || "" !== $column["search"]["value"])) {
 
-                //
-                $mPrefix = $dtColumn->getMapping()->getPrefix();
-                $mColumn = $dtColumn->getMapping()->getColumn();
+                // Get the column mapping.
+                $mapping = $dtColumn->getMapping();
 
                 // Add.
-                $wheres[] = $mPrefix . "." . $mColumn . " LIKE :" . $mPrefix . $mColumn;
-                $params[] = ":" . $mPrefix . $mColumn;
+                $wheres[] = $mapping->getAlias() . " LIKE :" . $mapping->getPrefix() . $mapping->getColumn();
+                $params[] = ":" . $mapping->getPrefix() . $mapping->getColumn();
                 $values[] = "%" . ("AND" === $operator ? $column["search"]["value"] : $dtWrapper->getRequest()->getSearch()->getValue()) . "%";
             }
         }
