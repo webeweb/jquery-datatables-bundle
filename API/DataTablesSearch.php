@@ -38,7 +38,7 @@ class DataTablesSearch {
     /**
      * Constructor.
      */
-    public function __construct() {
+    private function __construct() {
         // NOTHING TO DO.
     }
 

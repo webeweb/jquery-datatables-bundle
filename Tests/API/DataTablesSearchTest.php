@@ -25,50 +25,9 @@ use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractFrameworkTestCase;
 final class DataTablesSearchTest extends PHPUnit_Framework_TestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstructor() {
-
-        $obj = new DataTablesSearch();
-
-        $this->assertNull($obj->getRegex());
-        $this->assertNull($obj->getValue());
-    }
-
-    /**
-     * Tests the setRegex() method.
-     *
-     * @return void
-     */
-    public function testSetRegex() {
-
-        $obj = new DataTablesSearch();
-
-        $obj->setRegex(true);
-        $this->assertTrue($obj->getRegex());
-    }
-
-    /**
-     * Tests the setValue() method.
-     *
-     * @return void
-     */
-    public function testSetValue() {
-
-        $obj = new DataTablesSearch();
-
-        $obj->setValue("value");
-        $this->assertEquals("value", $obj->getValue());
-    }
-
-    /**
      * Tests the parse() method.
      *
      * @return void
-     * @depends testSetRegex
-     * @depends testSetValue
      */
     public function testParse() {
 
