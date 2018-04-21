@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DatatablesBundle\Column;
 
 use JsonSerializable;
-use WBW\Bundle\JQuery\DatatablesBundle\Mapping\DataTablesMapping;
+use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesMapping;
 use WBW\Library\Core\Utility\Argument\ArrayUtility;
 
 /**

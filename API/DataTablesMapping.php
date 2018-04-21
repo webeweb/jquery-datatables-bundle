@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Mapping;
+namespace WBW\Bundle\JQuery\DatatablesBundle\API;
 
 /**
  * DataTables mapping.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Mapping
+ * @package WBW\Bundle\JQuery\DatatablesBundle\API
  * @final
  */
 final class DataTablesMapping {
