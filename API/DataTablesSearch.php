@@ -11,6 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DatatablesBundle\API;
 
+use WBW\Library\Core\Utility\Argument\BooleanUtility;
+
 /**
  * DataTables search.
  *
@@ -56,6 +58,31 @@ class DataTablesSearch {
      */
     public function getValue() {
         return $this->value;
+    }
+
+    /**
+     * Parse a raw search array.
+     *
+     * @param array $rawSearch The raw search array.
+     * @return DataTablesSearch Returns the DataTables search in case of success, null otherwise.
+     */
+    public static function parse(array $rawSearch = []) {
+
+        // Determines if the raw search is valid.
+        if (false === array_key_exists("regex", $rawSearch)) {
+            return null;
+        }
+        if (false === array_key_exists("value", $rawSearch)) {
+            return null;
+        }
+
+        // Create a DataTable search.
+        $dtSearch = new DataTablesSearch();
+        $dtSearch->setRegex(BooleanUtility::parseString($rawSearch["regex"]));
+        $dtSearch->setValue($rawSearch["value"]);
+
+        // Return the DataTables search.
+        return $dtSearch;
     }
 
     /**

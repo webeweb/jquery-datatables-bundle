@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\API;
 
 use PHPUnit_Framework_TestCase;
 use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesSearch;
+use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
  * DataTables search test.
@@ -34,6 +35,44 @@ final class DataTablesSearchTest extends PHPUnit_Framework_TestCase {
 
         $this->assertNull($obj->getRegex());
         $this->assertNull($obj->getValue());
+    }
+
+    /**
+     * Tests the parse() method.
+     *
+     * @return void
+     */
+    public function testParse() {
+
+        // Get the POST data.
+        $postData = AbstractFrameworkTestCase::getPostData();
+
+        //
+        $res0 = DataTablesSearch::parse($postData["search"]);
+        $this->assertFalse($res0->getRegex());
+        $this->assertEquals("", $res0->getValue());
+
+        // Set a different search.
+        $postData["search"]["regex"] = "true";
+        $postData["search"]["value"] = "value";
+
+        $res1 = DataTablesSearch::parse($postData["search"]);
+        $this->assertTrue($res1->getRegex());
+        $this->assertEquals("value", $res1->getValue());
+
+        // Set an invalid search.
+        $postData["search"]["regex"] = "false";
+        unset($postData["search"]["value"]);
+
+        $res2 = DataTablesSearch::parse($postData["search"]);
+        $this->assertNull($res2);
+
+        // Set an invalid search.
+        unset($postData["search"]["regex"]);
+        unset($postData["search"]["value"]);
+
+        $res3 = DataTablesSearch::parse($postData["search"]);
+        $this->assertNull($res3);
     }
 
     /**
