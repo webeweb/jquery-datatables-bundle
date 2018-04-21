@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Response;
 
 use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesColumn;
-use WBW\Bundle\JQuery\DatatablesBundle\Response\DataTablesResponse;
+use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesResponse;
 use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractFrameworkTestCase;
 use WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\App\TestFixtures;
 
@@ -20,7 +20,7 @@ use WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\App\TestFixtures;
  * DataTables response test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\Response
+ * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\API
  * @final
  */
 final class DataTablesResponseTest extends AbstractFrameworkTestCase {

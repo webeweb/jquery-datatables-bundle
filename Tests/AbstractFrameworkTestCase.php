@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\DatatablesBundle\Tests;
 use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractFrameworkTestCase as BaseFrameworkTestCase;
 use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesRequest;
-use WBW\Bundle\JQuery\DatatablesBundle\Response\DataTablesResponse;
+use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesResponse;
 use WBW\Bundle\JQuery\DatatablesBundle\Wrapper\DataTablesWrapper;
 
 /**

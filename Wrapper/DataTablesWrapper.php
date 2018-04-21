@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesMapping;
 use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesRequest;
-use WBW\Bundle\JQuery\DatatablesBundle\Response\DataTablesResponse;
+use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesResponse;
 use WBW\Library\Core\IO\HTTPInterface;
 
 /**
