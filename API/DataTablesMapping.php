@@ -62,7 +62,7 @@ class DataTablesMapping {
      * Set the column.
      *
      * @param string $column The column.
-     * @return DataTablesMapping Returns the DataTables mapping.
+     * @return DataTablesMapping Returns this DataTables mapping.
      */
     public function setColumn($column) {
         $this->column = $column;
@@ -73,7 +73,7 @@ class DataTablesMapping {
      * Set the prefix.
      *
      * @param string $prefix The prefix.
-     * @return DataTablesMapping Returns the DataTables mapping.
+     * @return DataTablesMapping Returns this DataTables mapping.
      */
     public function setPrefix($prefix) {
         $this->prefix = $prefix;
