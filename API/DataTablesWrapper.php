@@ -238,7 +238,7 @@ class DataTablesWrapper implements HTTPInterface {
      */
     public function parse(Request $request) {
         $this->request  = DataTablesRequest::parse($this, $request);
-        $this->response = new DataTablesResponse($this, $this->request);
+        $this->response = DataTablesResponse::parse($this, $this->request);
         return $this;
     }
 

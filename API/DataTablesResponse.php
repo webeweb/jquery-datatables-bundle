@@ -65,16 +65,11 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
 
     /**
      * Constructor.
-     *
-     * @param DataTablesWrapper $wrapper The DataTables wrapper.
-     * @param DataTablesRequest $request The DataTables request.
      */
-    public function __construct(DataTablesWrapper $wrapper, DataTablesRequest $request) {
+    protected function __construct(DataTablesWrapper $wrapper, DataTablesRequest $request) {
         $this->setData([]);
-        $this->setDraw($request->getDraw());
         $this->setRecordsFiltered(0);
         $this->setRecordsTotal(0);
-        $this->setWrapper($wrapper);
     }
 
     /**
@@ -160,12 +155,30 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     }
 
     /**
+     * Create a DataTables response instance.
+     *
+     * @param DataTablesWrapper $wrapper The wrapper.
+     * @param DataTablesRequest $request The request.
+     * @return DataTablesResponse Returns the DataTables response.
+     */
+    public static function parse(DataTablesWrapper $wrapper, DataTablesRequest $request) {
+
+        // Initialize a DataTables response.
+        $dtResponse = new DataTablesResponse($wrapper, $request);
+        $dtResponse->setDraw($request->getDraw());
+        $dtResponse->setWrapper($wrapper);
+
+        // Return the DataTables response.
+        return $dtResponse;
+    }
+
+    /**
      * Set the data.
      *
      * @param array $data The data.
      * @return DataTablesResponse Returns this DataTables response.
      */
-    private function setData(array $data) {
+    protected function setData(array $data) {
         $this->data = $data;
         return $this;
     }
@@ -176,7 +189,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      * @param integer $draw The draw.
      * @return DataTablesResponse Returns the DataTables response.
      */
-    private function setDraw($draw) {
+    protected function setDraw($draw) {
         $this->draw = $draw;
         return $this;
     }
@@ -248,7 +261,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      * @param DataTablesWrapper $wrapper The wrapper.
      * @return DataTablesResponse Returns this DataTables request.
      */
-    private function setWrapper(DataTablesWrapper $wrapper) {
+    protected function setWrapper(DataTablesWrapper $wrapper) {
         $this->wrapper = $wrapper;
         return $this;
     }
