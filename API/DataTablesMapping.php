@@ -16,9 +16,8 @@ namespace WBW\Bundle\JQuery\DatatablesBundle\API;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DatatablesBundle\API
- * @final
  */
-final class DataTablesMapping {
+class DataTablesMapping {
 
     /**
      * Column.
