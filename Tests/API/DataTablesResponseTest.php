@@ -105,12 +105,12 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
 
         // Add the columns.
         $this->dataTablesWrapper
-            ->addColumn(new DataTablesColumn("name", "name"))
-            ->addColumn(new DataTablesColumn("position", "position"))
-            ->addColumn(new DataTablesColumn("office", "office"))
-            ->addColumn(new DataTablesColumn("age", "age"))
-            ->addColumn(new DataTablesColumn("startDate", "startDate"))
-            ->addColumn(new DataTablesColumn("salary", "salary"));
+            ->addColumn(DataTablesColumn::newInstance("name", "name"))
+            ->addColumn(DataTablesColumn::newInstance("position", "position"))
+            ->addColumn(DataTablesColumn::newInstance("office", "office"))
+            ->addColumn(DataTablesColumn::newInstance("age", "age"))
+            ->addColumn(DataTablesColumn::newInstance("startDate", "startDate"))
+            ->addColumn(DataTablesColumn::newInstance("salary", "salary"));
 
         $obj = $this->dataTablesWrapper->parse($this->request)->getResponse();
 

@@ -66,8 +66,8 @@ class DataTablesOrder {
      */
     public static function parse(array $rawOrders) {
 
-        // Initialize the output.
-        $output = [];
+        // Initialize the DataTables orders.
+        $dtOrders = [];
 
         // Handle each raw order.
         foreach ($rawOrders as $current) {
@@ -86,11 +86,11 @@ class DataTablesOrder {
             $dtOrder->setDir($current["dir"]);
 
             // Add the DataTables order.
-            $output[] = $dtOrder;
+            $dtOrders[] = $dtOrder;
         }
 
-        // Return the output.
-        return $output;
+        // Return the DataTables orders.
+        return $dtOrders;
     }
 
     /**

@@ -136,19 +136,9 @@ class DataTablesColumn implements JsonSerializable {
 
     /**
      * Constructor.
-     *
-     * @param string $name The column name.
-     * @param string $title The column title.
-     * @param string $cellType The column cell type.
      */
-    public function __construct($name, $title, $cellType = "td") {
+    protected function __construct() {
         $this->mapping = new DataTablesMapping();
-        $this->mapping->setColumn($name);
-
-        $this->setCellType($cellType);
-        $this->setData($name);
-        $this->setName($name);
-        $this->setTitle($title);
     }
 
     /**
@@ -303,6 +293,28 @@ class DataTablesColumn implements JsonSerializable {
     }
 
     /**
+     * Create a DataTables column instance.
+     *
+     * @param string $name The column name.
+     * @param string $title The column title.
+     * @param string $cellType The column cell type.
+     * @return DataTablesColumn Returns a DataTables column.
+     */
+    public static function newInstance($name, $title, $cellType = "td") {
+
+        // Initialize a DataTables column.
+        $dtColumn = new DataTablesColumn();
+        $dtColumn->setCellType($cellType);
+        $dtColumn->setData($name);
+        $dtColumn->setName($name);
+        $dtColumn->setTitle($title);
+        $dtColumn->mapping->setColumn($name);
+
+        // Return the DataTables column.
+        return $dtColumn;
+    }
+
+    /**
      * Set the cell type.
      *
      * @param string $cellType The cell type.
@@ -370,7 +382,7 @@ class DataTablesColumn implements JsonSerializable {
      * @param string $name The name.
      * @return DataTablesColumn Returns this DataTables column.
      */
-    public function setName($name) {
+    protected function setName($name) {
         $this->name = $name;
         return $this;
     }

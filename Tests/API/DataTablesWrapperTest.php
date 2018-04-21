@@ -54,12 +54,12 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
 
         $obj = new DataTablesWrapper("prefix", "POST", "route");
 
-        $obj->addColumn(new DataTablesColumn("name1", "title1"));
+        $obj->addColumn(DataTablesColumn::newInstance("name1", "title1"));
         $this->assertCount(1, $obj->getColumns());
         $this->assertEquals("name1", $obj->getColumns()["name1"]->getMapping()->getColumn());
         $this->assertEquals("prefix", $obj->getColumns()["name1"]->getMapping()->getPrefix());
 
-        $obj->addColumn(new DataTablesColumn("name2", "title2"));
+        $obj->addColumn(DataTablesColumn::newInstance("name2", "title2"));
         $this->assertCount(2, $obj->getColumns());
         $this->assertEquals("name2", $obj->getColumns()["name2"]->getMapping()->getColumn());
         $this->assertEquals("prefix", $obj->getColumns()["name2"]->getMapping()->getPrefix());
@@ -73,12 +73,12 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
     public function testGetColumn() {
 
         $obj = new DataTablesWrapper("prefix", "POST", "route");
-        $arg = new DataTablesColumn("name1", "title1");
+        $arg = DataTablesColumn::newInstance("name1", "title1");
 
         $this->assertNull($obj->getColumn("name1"));
 
         $obj->addColumn($arg);
-        $this->assertEquals($arg, $obj->getColumn("name1"));
+        $this->assertSame($arg, $obj->getColumn("name1"));
     }
 
     /**
@@ -104,8 +104,8 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
 
         $obj = new DataTablesWrapper("prefix", "POST", "route");
 
-        $col1 = new DataTablesColumn("name1", "title1");
-        $col2 = new DataTablesColumn("name2", "title2");
+        $col1 = DataTablesColumn::newInstance("name1", "title1");
+        $col2 = DataTablesColumn::newInstance("name2", "title2");
 
         $obj->addColumn($col1);
         $obj->addColumn($col2);

@@ -31,13 +31,13 @@ final class EmployeeDataTablesProvider implements DataTablesProviderInterface {
         // Initialize the columns.
         $dtColumns = [];
 
-        $dtColumns[] = new DataTablesColumn("name", "Name");
-        $dtColumns[] = new DataTablesColumn("position", "Position");
-        $dtColumns[] = new DataTablesColumn("office", "Office");
-        $dtColumns[] = new DataTablesColumn("age", "Age");
-        $dtColumns[] = new DataTablesColumn("startDate", "Start date");
-        $dtColumns[] = new DataTablesColumn("salary", "Salary");
-        $dtColumns[] = new DataTablesColumn("actions", "Actions");
+        $dtColumns[] = DataTablesColumn::newInstance("name", "Name");
+        $dtColumns[] = DataTablesColumn::newInstance("position", "Position");
+        $dtColumns[] = DataTablesColumn::newInstance("office", "Office");
+        $dtColumns[] = DataTablesColumn::newInstance("age", "Age");
+        $dtColumns[] = DataTablesColumn::newInstance("startDate", "Start date");
+        $dtColumns[] = DataTablesColumn::newInstance("salary", "Salary");
+        $dtColumns[] = DataTablesColumn::newInstance("actions", "Actions");
 
         // Returns the columns.
         return $dtColumns;

@@ -24,13 +24,13 @@ use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesColumn;
 final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
 
     /**
-     * Tests the __construct() method.
+     * Tests the newInstance() method.
      *
      * @return void
      */
-    public function testConstructor() {
+    public function testNewInstance() {
 
-        $obj = new DataTablesColumn("name", "title");
+        $obj = DataTablesColumn::newInstance("name", "title");
 
         $this->assertEquals("td", $obj->getCellType());
         $this->assertNull($obj->getClassname());
@@ -56,7 +56,7 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetCellType() {
 
-        $obj = new DataTablesColumn("name", "title");
+        $obj = DataTablesColumn::newInstance("name", "title");
 
         $obj->setCellType("exception");
         $this->assertEquals("td", $obj->getCellType());
@@ -75,7 +75,7 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetClassname() {
 
-        $obj = new DataTablesColumn("name", "title");
+        $obj = DataTablesColumn::newInstance("name", "title");
 
         $obj->setClassname("classname");
         $this->assertEquals("classname", $obj->getClassname());
@@ -88,7 +88,7 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetContentPadding() {
 
-        $obj = new DataTablesColumn("name", "title");
+        $obj = DataTablesColumn::newInstance("name", "title");
 
         $obj->setContentPadding("contentPadding");
         $this->assertEquals("contentPadding", $obj->getContentPadding());
@@ -101,7 +101,7 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetData() {
 
-        $obj = new DataTablesColumn("name", "title");
+        $obj = DataTablesColumn::newInstance("name", "title");
 
         $obj->setData("data");
         $this->assertEquals("data", $obj->getData());
@@ -114,23 +114,10 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetDefaultContent() {
 
-        $obj = new DataTablesColumn("name", "title");
+        $obj = DataTablesColumn::newInstance("name", "title");
 
         $obj->setDefaultContent("defaultContent");
         $this->assertEquals("defaultContent", $obj->getDefaultContent());
-    }
-
-    /**
-     * Tests the setName() method.
-     *
-     * @return void
-     */
-    public function testSetName() {
-
-        $obj = new DataTablesColumn("name", "title");
-
-        $obj->setName("anotherName");
-        $this->assertEquals("anotherName", $obj->getName());
     }
 
     /**
@@ -140,7 +127,7 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetOrderData() {
 
-        $obj = new DataTablesColumn("name", "title");
+        $obj = DataTablesColumn::newInstance("name", "title");
 
         $obj->setOrderData(1);
         $this->assertEquals(1, $obj->getOrderData());
@@ -153,7 +140,7 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetOrderDataType() {
 
-        $obj = new DataTablesColumn("name", "title");
+        $obj = DataTablesColumn::newInstance("name", "title");
 
         $obj->setOrderDataType("orderDataType");
         $this->assertEquals("orderDataType", $obj->getOrderDataType());
@@ -166,7 +153,7 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetOrderSequence() {
 
-        $obj = new DataTablesColumn("name", "title");
+        $obj = DataTablesColumn::newInstance("name", "title");
 
         $obj->setOrderSequence("exception");
         $this->assertNull($obj->getOrderSequence());
@@ -185,7 +172,7 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetOrderable() {
 
-        $obj = new DataTablesColumn("name", "title");
+        $obj = DataTablesColumn::newInstance("name", "title");
 
         $obj->setOrderable(false);
         $this->assertFalse($obj->getOrderable());
@@ -198,7 +185,7 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetSearchable() {
 
-        $obj = new DataTablesColumn("name", "title");
+        $obj = DataTablesColumn::newInstance("name", "title");
 
         $obj->setSearchable(false);
         $this->assertFalse($obj->getSearchable());
@@ -211,7 +198,7 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetTitle() {
 
-        $obj = new DataTablesColumn("name", "title");
+        $obj = DataTablesColumn::newInstance("name", "title");
 
         $obj->setTitle("anotherTitle");
         $this->assertEquals("anotherTitle", $obj->getTitle());
@@ -224,7 +211,7 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetType() {
 
-        $obj = new DataTablesColumn("name", "title");
+        $obj = DataTablesColumn::newInstance("name", "title");
 
         $obj->setType("exception");
         $this->assertNull($obj->getType());
@@ -255,7 +242,7 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetVisible() {
 
-        $obj = new DataTablesColumn("name", "title");
+        $obj = DataTablesColumn::newInstance("name", "title");
 
         $obj->setVisible(false);
         $this->assertFalse($obj->getVisible());
@@ -268,7 +255,7 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetWidth() {
 
-        $obj = new DataTablesColumn("name", "title");
+        $obj = DataTablesColumn::newInstance("name", "title");
 
         $obj->setWidth("width");
         $this->assertEquals("width", $obj->getWidth());
@@ -281,82 +268,76 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
      */
     public function testToArray() {
 
-        $obj = new DataTablesColumn("name", "title");
+        $obj = DataTablesColumn::newInstance("name", "title");
         $obj->setData(null);
-        $obj->setName(null);
         $obj->setTitle(null);
 
-        $res1 = ["cellType" => "td"];
+        $res1 = ["name" => "name", "cellType" => "td"];
         $this->assertEquals($res1, $obj->toArray());
 
         $obj->setClassname("classname");
-        $res2 = ["cellType" => "td", "classname" => "classname"];
+        $res2 = ["name" => "name", "cellType" => "td", "classname" => "classname"];
         $this->assertEquals($res2, $obj->toArray());
 
         $obj->setClassname(null);
         $obj->setContentPadding("contentPadding");
-        $res3 = ["cellType" => "td", "contentPadding" => "contentPadding"];
+        $res3 = ["name" => "name", "cellType" => "td", "contentPadding" => "contentPadding"];
         $this->assertEquals($res3, $obj->toArray());
 
         $obj->setContentPadding(null);
         $obj->setData("data");
-        $res4 = ["cellType" => "td", "data" => "data"];
+        $res4 = ["name" => "name", "cellType" => "td", "data" => "data"];
         $this->assertEquals($res4, $obj->toArray());
 
         $obj->setData(null);
         $obj->setDefaultContent("defaultContent");
-        $res5 = ["cellType" => "td", "defaultContent" => "defaultContent"];
+        $res5 = ["name" => "name", "cellType" => "td", "defaultContent" => "defaultContent"];
         $this->assertEquals($res5, $obj->toArray());
 
         $obj->setDefaultContent(null);
-        $obj->setName("name");
-        $res6 = ["cellType" => "td", "name" => "name"];
-        $this->assertEquals($res6, $obj->toArray());
-
-        $obj->setName(null);
         $obj->setOrderData("orderData");
-        $res7 = ["cellType" => "td", "orderData" => "orderData"];
-        $this->assertEquals($res7, $obj->toArray());
+        $res6 = ["name" => "name", "cellType" => "td", "orderData" => "orderData"];
+        $this->assertEquals($res6, $obj->toArray());
 
         $obj->setOrderData(null);
         $obj->setOrderDataType("orderDataType");
-        $res8 = ["cellType" => "td", "orderDataType" => "orderDataType"];
-        $this->assertEquals($res8, $obj->toArray());
+        $res7 = ["name" => "name", "cellType" => "td", "orderDataType" => "orderDataType"];
+        $this->assertEquals($res7, $obj->toArray());
 
         $obj->setOrderDataType(null);
         $obj->setOrderSequence("asc");
-        $res9 = ["cellType" => "td", "orderSequence" => "asc"];
-        $this->assertEquals($res9, $obj->toArray());
+        $res8 = ["name" => "name", "cellType" => "td", "orderSequence" => "asc"];
+        $this->assertEquals($res8, $obj->toArray());
 
         $obj->setOrderSequence(null);
         $obj->setOrderable(false);
-        $res10 = ["cellType" => "td", "orderable" => false];
-        $this->assertEquals($res10, $obj->toArray());
+        $res9 = ["name" => "name", "cellType" => "td", "orderable" => false];
+        $this->assertEquals($res9, $obj->toArray());
 
         $obj->setOrderable(true);
         $obj->setSearchable(false);
-        $res11 = ["cellType" => "td", "searchable" => false];
-        $this->assertEquals($res11, $obj->toArray());
+        $res10 = ["name" => "name", "cellType" => "td", "searchable" => false];
+        $this->assertEquals($res10, $obj->toArray());
 
         $obj->setSearchable(true);
         $obj->setTitle("title");
-        $res12 = ["cellType" => "td", "title" => "title"];
-        $this->assertEquals($res12, $obj->toArray());
+        $res11 = ["name" => "name", "cellType" => "td", "title" => "title"];
+        $this->assertEquals($res11, $obj->toArray());
 
         $obj->setTitle(null);
         $obj->setType("string");
-        $res13 = ["cellType" => "td", "type" => "string"];
-        $this->assertEquals($res13, $obj->toArray());
+        $res12 = ["name" => "name", "cellType" => "td", "type" => "string"];
+        $this->assertEquals($res12, $obj->toArray());
 
         $obj->setType(null);
         $obj->setVisible(false);
-        $res14 = ["cellType" => "td", "visible" => false];
-        $this->assertEquals($res14, $obj->toArray());
+        $res13 = ["name" => "name", "cellType" => "td", "visible" => false];
+        $this->assertEquals($res13, $obj->toArray());
 
         $obj->setVisible(true);
         $obj->setWidth("width");
-        $res15 = ["cellType" => "td", "width" => "width"];
-        $this->assertEquals($res15, $obj->toArray());
+        $res14 = ["name" => "name", "cellType" => "td", "width" => "width"];
+        $this->assertEquals($res14, $obj->toArray());
     }
 
     /**
@@ -367,7 +348,7 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
      */
     public function testJsonSerialize() {
 
-        $obj = new DataTablesColumn("name", "title");
+        $obj = DataTablesColumn::newInstance("name", "title");
 
         $res = ["cellType" => "td", "data" => "name", "name" => "name", "title" => "title"];
         $this->assertEquals($res, $obj->jsonSerialize());
