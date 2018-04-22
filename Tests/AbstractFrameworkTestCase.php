@@ -64,61 +64,53 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTestCase {
         // Initialize.
         $output = [];
 
-        // ID
-        $output["columns"][0]["data"]            = "id";
-        $output["columns"][0]["name"]            = "#";
+        // Name
+        $output["columns"][0]["data"]            = "name";
+        $output["columns"][0]["name"]            = "Name";
         $output["columns"][0]["orderable"]       = "true";
         $output["columns"][0]["search"]["regex"] = "false";
         $output["columns"][0]["search"]["value"] = "";
-        $output["columns"][0]["searchable"]      = "false";
+        $output["columns"][0]["searchable"]      = "true";
 
-        // Name
-        $output["columns"][1]["data"]            = "name";
-        $output["columns"][1]["name"]            = "Name";
+        // Position
+        $output["columns"][1]["data"]            = "position";
+        $output["columns"][1]["name"]            = "Position";
         $output["columns"][1]["orderable"]       = "true";
         $output["columns"][1]["search"]["regex"] = "false";
         $output["columns"][1]["search"]["value"] = "";
         $output["columns"][1]["searchable"]      = "true";
 
-        // Position
-        $output["columns"][2]["data"]            = "position";
-        $output["columns"][2]["name"]            = "Position";
+        // Office
+        $output["columns"][2]["data"]            = "office";
+        $output["columns"][2]["name"]            = "Office";
         $output["columns"][2]["orderable"]       = "true";
         $output["columns"][2]["search"]["regex"] = "false";
         $output["columns"][2]["search"]["value"] = "";
         $output["columns"][2]["searchable"]      = "true";
 
-        // Office
-        $output["columns"][3]["data"]            = "office";
-        $output["columns"][3]["name"]            = "Office";
+        // Age
+        $output["columns"][3]["data"]            = "age";
+        $output["columns"][3]["name"]            = "Age";
         $output["columns"][3]["orderable"]       = "true";
         $output["columns"][3]["search"]["regex"] = "false";
         $output["columns"][3]["search"]["value"] = "";
         $output["columns"][3]["searchable"]      = "true";
 
-        // Age
-        $output["columns"][4]["data"]            = "age";
-        $output["columns"][4]["name"]            = "Age";
+        // Start date
+        $output["columns"][4]["data"]            = "startDate";
+        $output["columns"][4]["name"]            = "Start date";
         $output["columns"][4]["orderable"]       = "true";
         $output["columns"][4]["search"]["regex"] = "false";
         $output["columns"][4]["search"]["value"] = "";
         $output["columns"][4]["searchable"]      = "true";
 
-        // Start date
-        $output["columns"][5]["data"]            = "startDate";
-        $output["columns"][5]["name"]            = "Start date";
+        // Salary
+        $output["columns"][5]["data"]            = "salary";
+        $output["columns"][5]["name"]            = "Salary";
         $output["columns"][5]["orderable"]       = "true";
         $output["columns"][5]["search"]["regex"] = "false";
         $output["columns"][5]["search"]["value"] = "";
         $output["columns"][5]["searchable"]      = "true";
-
-        // Salary
-        $output["columns"][6]["data"]            = "salary";
-        $output["columns"][6]["name"]            = "Salary";
-        $output["columns"][6]["orderable"]       = "true";
-        $output["columns"][6]["search"]["regex"] = "false";
-        $output["columns"][6]["search"]["value"] = "";
-        $output["columns"][6]["searchable"]      = "true";
 
         //
         $output["draw"]   = "1";
