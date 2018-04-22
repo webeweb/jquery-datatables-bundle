@@ -44,7 +44,7 @@ doctrine:
 monolog:
     handlers:
         main:
-            level: info
+            level: debug
             path:  "%kernel.logs_dir%/test.log"
             type:  stream
 
