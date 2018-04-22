@@ -131,7 +131,7 @@ class DataTablesWrapper implements HTTPInterface {
      * Get a column.
      *
      * @param string $data The column data.
-     * @return DataTablesColumn Returns the DataTables column in case of success, null otherwise.
+     * @return DataTablesColumn Returns the column in case of success, null otherwise.
      */
     public function getColumn($data) {
         if (true === array_key_exists($data, $this->columns)) {
@@ -234,7 +234,7 @@ class DataTablesWrapper implements HTTPInterface {
      * Parse a request.
      *
      * @param Request $request The request.
-     * @return DataTablesWrapper Returns the DataTables wrapper.
+     * @return DataTablesWrapper Returns this DataTables wrapper.
      */
     public function parse(Request $request) {
         $this->request  = DataTablesRequest::parse($this, $request);
@@ -274,14 +274,7 @@ class DataTablesWrapper implements HTTPInterface {
      * @return DataTablesWrapper Returns this DataTables wrapper.
      */
     public function setMethod($method) {
-        switch ($method) {
-            case self::HTTP_METHOD_GET:
-            case self::HTTP_METHOD_POST:
-                $this->method = $method;
-                break;
-            default:
-                $this->method = self::HTTP_METHOD_GET;
-        }
+        $this->method = (true === in_array($method, [self::HTTP_METHOD_GET, self::HTTP_METHOD_POST]) ? $method : self::HTTP_METHOD_GET);
         return $this;
     }
 
@@ -303,15 +296,7 @@ class DataTablesWrapper implements HTTPInterface {
      * @return DataTablesWrapper Returns this DataTables wrapper.
      */
     public function setProcessing($processing) {
-        switch (true) {
-            case (false === $processing):
-            case (true === $processing):
-                $this->processing = $processing;
-                break;
-            default:
-                $this->processing = true;
-                break;
-        }
+        $this->processing = (false === $processing ? false : true);
         return $this;
     }
 
@@ -344,15 +329,7 @@ class DataTablesWrapper implements HTTPInterface {
      * @return DataTablesWrapper Returns this DataTables wrapper.
      */
     public function setServerSide($serverSide) {
-        switch (true) {
-            case (false === $serverSide):
-            case (true === $serverSide):
-                $this->serverSide = $serverSide;
-                break;
-            default:
-                $this->serverSide = true;
-                break;
-        }
+        $this->serverSide = (false === $serverSide ? false : true);
         return $this;
     }
 
