@@ -66,7 +66,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     /**
      * Constructor.
      */
-    protected function __construct(DataTablesWrapper $wrapper, DataTablesRequest $request) {
+    protected function __construct() {
         $this->setData([]);
         $this->setRecordsFiltered(0);
         $this->setRecordsTotal(0);
@@ -75,7 +75,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     /**
      * Add a row.
      *
-     * @return DataTablesResponse Returns the DataTables response.
+     * @return DataTablesResponse Returns this DataTables response.
      */
     public function addRow() {
 
@@ -85,9 +85,9 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
         // Count the rows.
         $index = count($this->data);
 
-        // Set each column name in the new row.
-        foreach ($this->wrapper->getColumns() as $column) {
-            $this->data[$index - 1][$column->getName()] = null;
+        // Set each column data in the new row.
+        foreach ($this->wrapper->getColumns() as $dtColumn) {
+            $this->data[$index - 1][$dtColumn->getData()] = null;
         }
 
         return $this;
@@ -164,7 +164,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     public static function parse(DataTablesWrapper $wrapper, DataTablesRequest $request) {
 
         // Initialize a DataTables response.
-        $dtResponse = new DataTablesResponse($wrapper, $request);
+        $dtResponse = new DataTablesResponse();
         $dtResponse->setDraw($request->getDraw());
         $dtResponse->setWrapper($wrapper);
 
@@ -230,11 +230,11 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     /**
      * Set a row value.
      *
-     * @param string $name The column name.
+     * @param string $data The column data.
      * @param string $value The column value.
      * @return DataTablesResponse Returns this DataTables response.
      */
-    public function setRow($name, $value) {
+    public function setRow($data, $value) {
 
         // Count the rows.
         $index = count($this->data);
@@ -248,8 +248,8 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
         ]);
 
         // Check the column name.
-        if (true === in_array($name, $names)) {
-            $this->data[$index - 1][$name] = $value;
+        if (true === in_array($data, $names)) {
+            $this->data[$index - 1][$data] = $value;
         }
 
         return $this;
@@ -259,7 +259,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      * Set the wrapper.
      *
      * @param DataTablesWrapper $wrapper The wrapper.
-     * @return DataTablesResponse Returns this DataTables request.
+     * @return DataTablesResponse Returns this DataTables response.
      */
     protected function setWrapper(DataTablesWrapper $wrapper) {
         $this->wrapper = $wrapper;
