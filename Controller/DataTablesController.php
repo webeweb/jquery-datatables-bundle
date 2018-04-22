@@ -14,11 +14,12 @@ namespace WBW\Bundle\JQuery\DatatablesBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesResponse;
+use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DatatablesBundle\Exception\BadDataTablesRepositoryException;
 use WBW\Bundle\JQuery\DatatablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DatatablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DatatablesBundle\Repository\DataTablesRepositoryInterface;
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesWrapper;
 use WBW\Library\Core\IO\HTTPInterface;
 
 /**
@@ -76,12 +77,20 @@ final class DataTablesController extends Controller {
             // Handle each entity.
             foreach ($entities as $entity) {
 
-                // Create the row.
+                // Count the rows.
+                $rows = count($dtWrapper->getResponse()->getData());
+
+                // Create a row.
                 $dtWrapper->getResponse()->addRow();
 
+                // Render each optional parameters.
+                foreach (DataTablesResponse::dtRow() as $dtRow) {
+                    $dtWrapper->getResponse()->setRow($dtRow, $dtProvider->renderRow($dtRow, $entity, $rows));
+                }
+
                 // Render each column.
-                foreach ($dtWrapper->getColumns() as $column) {
-                    $dtWrapper->getResponse()->setRow($column->getName(), $dtProvider->render($column, $entity));
+                foreach ($dtWrapper->getColumns() as $dtColumn) {
+                    $dtWrapper->getResponse()->setRow($dtColumn->getData(), $dtProvider->renderColumn($dtColumn, $entity));
                 }
             }
 
