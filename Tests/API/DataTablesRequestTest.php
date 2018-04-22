@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\API;
 
 use Symfony\Component\HttpFoundation\Request;
+use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesRequest;
 use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractFrameworkTestCase;
 
@@ -48,6 +49,15 @@ final class DataTablesRequestTest extends AbstractFrameworkTestCase {
      * @return void
      */
     public function testGetColumn() {
+
+        $this->dataTablesWrapper
+            ->addColumn(DataTablesColumn::newInstance("id", "#"))
+            ->addColumn(DataTablesColumn::newInstance("name", "Name"))
+            ->addColumn(DataTablesColumn::newInstance("position", "Position"))
+            ->addColumn(DataTablesColumn::newInstance("office", "Office"))
+            ->addColumn(DataTablesColumn::newInstance("age", "Age"))
+            ->addColumn(DataTablesColumn::newInstance("startDate", "Start date"))
+            ->addColumn(DataTablesColumn::newInstance("salary", "Salary"));
 
         $obj = DataTablesRequest::parse($this->dataTablesWrapper, $this->request);
 

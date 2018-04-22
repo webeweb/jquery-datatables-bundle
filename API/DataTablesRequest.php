@@ -25,7 +25,7 @@ class DataTablesRequest implements HTTPInterface {
     /**
      * Columns.
      *
-     * @var array
+     * @var DataTablesColumn[]
      */
     private $columns;
 
@@ -85,12 +85,12 @@ class DataTablesRequest implements HTTPInterface {
     /**
      * Get a column.
      *
-     * @param string $name The column name.
+     * @param string $data The column data.
      * @return array Returns the column in case of success, null otherwise.
      */
-    public function getColumn($name) {
+    public function getColumn($data) {
         foreach ($this->columns as $current) {
-            if ($name === $current["name"]) {
+            if ($data === $current->getData()) {
                 return $current;
             }
         }
@@ -100,7 +100,7 @@ class DataTablesRequest implements HTTPInterface {
     /**
      * Get the columns.
      *
-     * @return array Returns the columns.
+     * @return DataTablesColumn[] Returns the columns.
      */
     public function getColumns() {
         return $this->columns;
@@ -179,16 +179,17 @@ class DataTablesRequest implements HTTPInterface {
             $parameterBag = $request->request;
         }
 
-        // Parse.
-        $dtOrders = DataTablesOrder::parse(null !== $parameterBag->get("order") ? $parameterBag->get("order") : []);
-        $dtSearch = DataTablesSearch::parse(null !== $parameterBag->get("search") ? $parameterBag->get("search") : []);
+        // Get the request parameters.
+        $columns = null !== $parameterBag->get("columns") ? $parameterBag->get("columns") : [];
+        $orders  = null !== $parameterBag->get("order") ? $parameterBag->get("order") : [];
+        $search  = null !== $parameterBag->get("search") ? $parameterBag->get("search") : [];
 
         // Set the DataTables request.
-        $dtRequest->setColumns(null !== $parameterBag->get("columns") ? $parameterBag->get("columns") : []);
+        $dtRequest->setColumns(DataTablesColumn::parse($columns, $wrapper));
         $dtRequest->setDraw(intval($parameterBag->get("draw")));
         $dtRequest->setLength(intval($parameterBag->get("length")));
-        $dtRequest->setOrder($dtOrders);
-        $dtRequest->setSearch($dtSearch);
+        $dtRequest->setOrder(DataTablesOrder::parse($orders));
+        $dtRequest->setSearch(DataTablesSearch::parse($search));
         $dtRequest->setStart(intval($parameterBag->get("start")));
         $dtRequest->setWrapper($wrapper);
 
@@ -199,10 +200,10 @@ class DataTablesRequest implements HTTPInterface {
     /**
      * Set the columns.
      *
-     * @param array $columns The columns.
+     * @param DataTablesColumns $columns The columns.
      * @return DataTablesRequest Returns this DataTables request.
      */
-    protected function setColumns(array $columns) {
+    protected function setColumns($columns) {
         $this->columns = $columns;
         return $this;
     }
