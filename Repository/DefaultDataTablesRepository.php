@@ -81,32 +81,27 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     }
 
     /**
-     * Build the operator.
+     * Build a WHERE operator.
      *
      * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
-     * @return string Returns the operator.
+     * @return string Returns the WHERE operator.
      */
     protected static function dataTablesOperator(DataTablesWrapper $dtWrapper) {
 
-        // Initialize the operator.
-        $operator = null;
-
         // Check if the DataTables columns defines a search.
-        foreach ($dtWrapper->getRequest()->getColumns() as $column) {
-            $dtColumn = $dtWrapper->getColumn($column["name"]);
-            if (null !== $dtColumn && true === $dtColumn->getSearchable() && "" !== $column["search"]["value"]) {
-                $operator = "AND";
-                break;
+        foreach ($dtWrapper->getRequest()->getColumns() as $dtColumn) {
+            if ("" !== $dtColumn->getSearch()->getValue()) {
+                return "AND";
             }
         }
 
         // Check if the DataTables defines a search.
-        if (null === $operator && "" !== $dtWrapper->getRequest()->getSearch()) {
-            $operator = "OR";
+        if ("" !== $dtWrapper->getRequest()->getSearch()->getValue()) {
+            return "OR";
         }
 
         // Return the operator.
-        return $operator;
+        return null;
     }
 
     /**
@@ -118,32 +113,19 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
      */
     public static function dataTablesOrder(QueryBuilder $queryBuilder, DataTablesWrapper $dtWrapper) {
 
-        // Handle each column.
-        foreach ($dtWrapper->getRequest()->getOrder() as $order) {
-
-            // Get the column names.
-            $columnNames = array_keys($dtWrapper->getColumns());
-
-            // Get and check the column index.
-            $columnIndex = intval($order->getColumn());
-            if ($columnIndex < 0 && count($dtWrapper->getColumns()) < $columnIndex) {
-                continue;
-            }
+        // Handle each DataTables order.
+        foreach ($dtWrapper->getRequest()->getOrder() as $dtOrder) {
 
             // Get the DataTables column.
-            $dtColumn = $dtWrapper->getColumns()[$columnNames[$columnIndex]];
+            $dtColumn = array_values($dtWrapper->getColumns())[$dtOrder->getColumn()];
 
-            // Check if the column is orderable.
+            // Check if the DataTables column is orderable.
             if (false === $dtColumn->getOrderable()) {
                 continue;
             }
 
-            //
-            $sort   = [];
-            $sort[] = $dtColumn->getMapping()->getAlias();
-
             // Add the order by.
-            $queryBuilder->addOrderBy(implode(".", $sort), $order->getDir());
+            $queryBuilder->addOrderBy($dtColumn->getMapping()->getAlias(), $dtOrder->getDir());
         }
     }
 
@@ -167,14 +149,11 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
         $params = [];
         $values = [];
 
-        // Handle each column.
-        foreach ($dtWrapper->getRequest()->getColumns() as $column) {
-
-            // Get the DataTables column.
-            $dtColumn = $dtWrapper->getColumn($column["name"]);
+        // Handle each DataTables column.
+        foreach ($dtWrapper->getRequest()->getColumns() as $dtColumn) {
 
             // Check the DataTables column.
-            if (null !== $dtColumn && true === $dtColumn->getSearchable() && ("OR" === $operator || "" !== $column["search"]["value"])) {
+            if ("OR" === $operator || "" !== $dtColumn->getSearch()->getValue()) {
 
                 // Get the column mapping.
                 $mapping = $dtColumn->getMapping();
@@ -182,7 +161,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
                 // Add.
                 $wheres[] = $mapping->getAlias() . " LIKE :" . $mapping->getPrefix() . $mapping->getColumn();
                 $params[] = ":" . $mapping->getPrefix() . $mapping->getColumn();
-                $values[] = "%" . ("AND" === $operator ? $column["search"]["value"] : $dtWrapper->getRequest()->getSearch()->getValue()) . "%";
+                $values[] = "%" . ("AND" === $operator ? $dtColumn->getSearch()->getValue() : $dtWrapper->getRequest()->getSearch()->getValue()) . "%";
             }
         }
 
