@@ -68,6 +68,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      */
     protected function __construct() {
         $this->setData([]);
+        $this->setDraw(0);
         $this->setRecordsFiltered(0);
         $this->setRecordsTotal(0);
     }
@@ -83,14 +84,28 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
         $this->data[] = [];
 
         // Count the rows.
-        $index = count($this->data);
+        $index = count($this->data) - 1;
 
         // Set each column data in the new row.
         foreach ($this->wrapper->getColumns() as $dtColumn) {
-            $this->data[$index - 1][$dtColumn->getData()] = null;
+            $this->data[$index][$dtColumn->getData()] = null;
         }
 
         return $this;
+    }
+
+    /**
+     * Optional parameters.
+     *
+     * @return array Returns the optional parameters.
+     */
+    public static function dtRow() {
+        return [
+            self::DATATABLES_ROW_ATTR,
+            self::DATATABLES_ROW_CLASS,
+            self::DATATABLES_ROW_DATA,
+            self::DATATABLES_ROW_ID,
+        ];
     }
 
     /**
@@ -237,21 +252,17 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     public function setRow($data, $value) {
 
         // Count the rows.
-        $index = count($this->data);
+        $index = count($this->data) - 1;
 
-        // Determines the available column names.
-        $names = array_merge(array_keys($this->data[$index - 1]), [
-            self::DATATABLES_ROW_ATTR,
-            self::DATATABLES_ROW_CLASS,
-            self::DATATABLES_ROW_DATA,
-            self::DATATABLES_ROW_ID,
-        ]);
+        // Determines available column keys.
+        $keys = array_merge(self::dtRow(), array_keys($this->data[$index]));
 
-        // Check the column name.
-        if (true === in_array($data, $names)) {
-            $this->data[$index - 1][$data] = $value;
+        // Check the column data.
+        if (true === in_array($data, $keys)) {
+            $this->data[$index][$data] = $value;
         }
 
+        // Returns the DataTables response.
         return $this;
     }
 
