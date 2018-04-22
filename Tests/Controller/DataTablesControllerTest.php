@@ -47,7 +47,7 @@ final class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testIndexActionWithoutParameters() {
+    public function testIndexAction() {
 
         // Create a client.
         $client = static::createClient();
@@ -76,7 +76,13 @@ final class DataTablesControllerTest extends AbstractWebTestCase {
 
         // Check the JSON response.
         $res = json_decode($client->getResponse()->getContent(), true);
+
         $this->assertCount(10, $res["data"]);
+
+        $this->assertArrayHasKey("DT_RowId", $res["data"][0]);
+        $this->assertArrayHasKey("DT_RowClass", $res["data"][0]);
+        $this->assertArrayHasKey("DT_RowData", $res["data"][0]);
+
         $this->assertEquals("Airi Satou", $res["data"][0]["name"]);
         $this->assertEquals("Angelica Ramos", $res["data"][1]["name"]);
         $this->assertEquals("Ashton Cox", $res["data"][2]["name"]);
@@ -111,7 +117,13 @@ final class DataTablesControllerTest extends AbstractWebTestCase {
 
         // Check the JSON response.
         $res = json_decode($client->getResponse()->getContent(), true);
+
         $this->assertCount(20, $res["data"]);
+
+        $this->assertArrayHasKey("DT_RowId", $res["data"][0]);
+        $this->assertArrayHasKey("DT_RowClass", $res["data"][0]);
+        $this->assertArrayHasKey("DT_RowData", $res["data"][0]);
+
         $this->assertEquals("Airi Satou", $res["data"][0]["name"]);
         $this->assertEquals("Angelica Ramos", $res["data"][1]["name"]);
         $this->assertEquals("Ashton Cox", $res["data"][2]["name"]);
@@ -157,7 +169,13 @@ final class DataTablesControllerTest extends AbstractWebTestCase {
 
         // Check the JSON response.
         $res = json_decode($client->getResponse()->getContent(), true);
+
         $this->assertCount(10, $res["data"]);
+
+        $this->assertArrayHasKey("DT_RowId", $res["data"][0]);
+        $this->assertArrayHasKey("DT_RowClass", $res["data"][0]);
+        $this->assertArrayHasKey("DT_RowData", $res["data"][0]);
+
         $this->assertEquals("Zorita Serrano", $res["data"][0]["name"]);
         $this->assertEquals("Zenaida Frank", $res["data"][1]["name"]);
         $this->assertEquals("Yuri Berry", $res["data"][2]["name"]);
@@ -168,6 +186,80 @@ final class DataTablesControllerTest extends AbstractWebTestCase {
         $this->assertEquals("Thor Walton", $res["data"][7]["name"]);
         $this->assertEquals("Tatyana Fitzpatrick", $res["data"][8]["name"]);
         $this->assertEquals("Suki Burks", $res["data"][9]["name"]);
+    }
+
+    /**
+     * Tests the indexAction() method.
+     *
+     * @return void
+     */
+    public function testIndexActionWithSearch() {
+
+        // Get the POST data.
+        $parameters = AbstractFrameworkTestCase::getPostData();
+
+        // Change the search.
+        $parameters["search"]["value"] = "New York";
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a POST request with XML HTTP request.
+        $client->request("POST", "/datatables/index/employee", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
+        // Check the JSON response.
+        $res = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertCount(10, $res["data"]);
+
+        $this->assertArrayHasKey("DT_RowId", $res["data"][0]);
+        $this->assertArrayHasKey("DT_RowClass", $res["data"][0]);
+        $this->assertArrayHasKey("DT_RowData", $res["data"][0]);
+
+        $this->assertEquals("Brielle Williamson", $res["data"][0]["name"]);
+        $this->assertEquals("Caesar Vance", $res["data"][1]["name"]);
+        $this->assertEquals("Cara Stevens", $res["data"][2]["name"]);
+        $this->assertEquals("Donna Snider", $res["data"][3]["name"]);
+        $this->assertEquals("Gloria Little", $res["data"][4]["name"]);
+        $this->assertEquals("Jackson Bradshaw", $res["data"][5]["name"]);
+        $this->assertEquals("Jenette Caldwell", $res["data"][6]["name"]);
+        $this->assertEquals("Paul Byrd", $res["data"][7]["name"]);
+        $this->assertEquals("Thor Walton", $res["data"][8]["name"]);
+        $this->assertEquals("Yuri Berry", $res["data"][9]["name"]);
+    }
+
+    /**
+     * Tests the indexAction() method.
+     *
+     * @return void
+     */
+    public function testIndexActionWithSearchColumn() {
+
+        // Get the POST data.
+        $parameters = AbstractFrameworkTestCase::getPostData();
+
+        // Change the search.
+        $parameters["columns"][0]["search"]["value"] = "Brielle";
+        $parameters["columns"][2]["search"]["value"] = "New York";
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a POST request with XML HTTP request.
+        $client->request("POST", "/datatables/index/employee", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
+        // Check the JSON response.
+        $res = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertCount(1, $res["data"]);
+
+        $this->assertArrayHasKey("DT_RowId", $res["data"][0]);
+        $this->assertArrayHasKey("DT_RowClass", $res["data"][0]);
+        $this->assertArrayHasKey("DT_RowData", $res["data"][0]);
+
+        $this->assertEquals("Brielle Williamson", $res["data"][0]["name"]);
     }
 
     /**
