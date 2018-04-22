@@ -114,13 +114,6 @@ class DataTablesColumn implements JsonSerializable {
     private $searchable;
 
     /**
-     * Title.
-     *
-     * @var string
-     */
-    private $title;
-
-    /**
      * Type.
      *
      * @var string
@@ -270,15 +263,6 @@ class DataTablesColumn implements JsonSerializable {
     }
 
     /**
-     * Get the title.
-     *
-     * @return string Returns the title.
-     */
-    public function getTitle() {
-        return $this->title;
-    }
-
-    /**
      * Get the type.
      *
      * @return string Returns the type.
@@ -315,23 +299,59 @@ class DataTablesColumn implements JsonSerializable {
     /**
      * Create a DataTables column instance.
      *
+     * @param string $data The column data.
      * @param string $name The column name.
-     * @param string $title The column title.
      * @param string $cellType The column cell type.
      * @return DataTablesColumn Returns a DataTables column.
      */
-    public static function newInstance($name, $title, $cellType = "td") {
+    public static function newInstance($data, $name, $cellType = "td") {
 
         // Initialize a DataTables column.
         $dtColumn = new DataTablesColumn();
         $dtColumn->setCellType($cellType);
-        $dtColumn->setData($name);
+        $dtColumn->setData($data);
         $dtColumn->setName($name);
-        $dtColumn->setTitle($title);
-        $dtColumn->mapping->setColumn($name);
+        $dtColumn->mapping->setColumn($data);
 
         // Return the DataTables column.
         return $dtColumn;
+    }
+
+    /**
+     * Parse a raw columns array.
+     *
+     * @param array $rawColumns The raw columns array.
+     * @param DataTablesWrapper $wrapper The wrapper.
+     * @return void
+     */
+    public static function parse(array $rawColumns, DataTablesWrapper $wrapper) {
+
+        // Initialize the DataTables columns.
+        $dtColumns = [];
+
+        // Handle each column.
+        foreach ($rawColumns as $current) {
+
+            // Get the DataTables column.
+            $dtColumn = $wrapper->getColumn($current["data"]);
+
+            // Check the DataTables column..
+            if (null === $dtColumn) {
+                continue;
+            }
+            if ($current["name"] !== $dtColumn->getName()) {
+                continue;
+            }
+
+            // Set the DataTables search.
+            $dtColumn->setSearch(DataTablesSearch::parse($current["search"]));
+
+            // Add the DataTables columns.
+            $dtColumns[] = $dtColumn;
+        }
+
+        // Returns the DataTables columns.
+        return $dtColumns;
     }
 
     /**
@@ -373,7 +393,7 @@ class DataTablesColumn implements JsonSerializable {
      * @param integer|string $data The data.
      * @return DataTablesColumn Returns this DataTables column.
      */
-    public function setData($data) {
+    protected function setData($data) {
         $this->data = $data;
         return $this;
     }
@@ -406,7 +426,7 @@ class DataTablesColumn implements JsonSerializable {
      * @param string $name The name.
      * @return DataTablesColumn Returns this DataTables column.
      */
-    protected function setName($name) {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -461,7 +481,7 @@ class DataTablesColumn implements JsonSerializable {
      * @param DataTablesSearch $search The search.
      * @return DataTablesColumn Returns this DataTables column.
      */
-    public function setSearch(DataTablesSearch $search) {
+    protected function setSearch(DataTablesSearch $search) {
         $this->search = $search;
         return $this;
     }
@@ -474,17 +494,6 @@ class DataTablesColumn implements JsonSerializable {
      */
     public function setSearchable($searchable) {
         $this->searchable = $searchable;
-        return $this;
-    }
-
-    /**
-     * Set the title.
-     *
-     * @param string $title The title.
-     * @return DataTablesColumn Returns this DataTables column.
-     */
-    public function setTitle($title) {
-        $this->title = $title;
         return $this;
     }
 
@@ -542,7 +551,6 @@ class DataTablesColumn implements JsonSerializable {
         ArrayUtility::set($output, "orderDataType", $this->orderDataType, [null]);
         ArrayUtility::set($output, "orderSequence", $this->orderSequence, [null]);
         ArrayUtility::set($output, "searchable", $this->searchable, [null, true]);
-        ArrayUtility::set($output, "title", $this->title, [null]);
         ArrayUtility::set($output, "type", $this->type, [null]);
         ArrayUtility::set($output, "visible", $this->visible, [null, true]);
         ArrayUtility::set($output, "width", $this->width, [null]);
