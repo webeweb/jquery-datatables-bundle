@@ -120,7 +120,7 @@ final class EmployeeDataTablesProvider implements DataTablesProviderInterface {
     /**
      * {@inheritdoc}
      */
-    public function renderRow($dtRow, $entity) {
+    public function renderRow($dtRow, $entity, $rowNumber) {
 
         // Initialize the output.
         $output = null;
@@ -132,6 +132,7 @@ final class EmployeeDataTablesProvider implements DataTablesProviderInterface {
                 break;
 
             case self::DATATABLES_ROW_CLASS:
+                $output = (0 === $rowNumber % 2 ? "even" : "odd");
                 break;
 
             case self::DATATABLES_ROW_DATA:

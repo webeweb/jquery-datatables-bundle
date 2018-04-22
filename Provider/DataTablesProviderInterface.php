@@ -78,7 +78,8 @@ interface DataTablesProviderInterface extends DataTablesResponseInterface {
      *
      * @param string $dtRow The DataTables row.
      * @param mixed $entity The entity.
+     * @param integer $rowNumber The row number.
      * @return mixed Returns the rendered DataTables row.
      */
-    public function renderRow($dtRow, $entity);
+    public function renderRow($dtRow, $entity, $rowNumber);
 }
