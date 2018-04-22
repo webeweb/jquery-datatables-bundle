@@ -322,7 +322,7 @@ class DataTablesColumn implements JsonSerializable {
      *
      * @param array $rawColumns The raw columns array.
      * @param DataTablesWrapper $wrapper The wrapper.
-     * @return void
+     * @return DataTablesColumn[] Returns the DataTables columns.
      */
     public static function parse(array $rawColumns, DataTablesWrapper $wrapper) {
 
@@ -335,11 +335,15 @@ class DataTablesColumn implements JsonSerializable {
             // Get the DataTables column.
             $dtColumn = $wrapper->getColumn($current["data"]);
 
-            // Check the DataTables column..
+            // Check the DataTables column.
             if (null === $dtColumn) {
                 continue;
             }
             if ($current["name"] !== $dtColumn->getName()) {
+                continue;
+            }
+            if (false === $dtColumn->getSearchable()) {
+                $dtColumn->setSearch(DataTablesSearch::parse([])); // Set a defautl DataTables search.
                 continue;
             }
 
