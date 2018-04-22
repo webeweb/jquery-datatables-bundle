@@ -254,11 +254,8 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
         // Count the rows.
         $index = count($this->data) - 1;
 
-        // Determines available column keys.
-        $keys = array_merge(self::dtRow(), array_keys($this->data[$index]));
-
         // Check the column data.
-        if (true === in_array($data, $keys)) {
+        if ((true === in_array($data, self::dtRow()) && null !== $value) || (true === in_array($data, array_keys($this->data[$index])))) {
             $this->data[$index][$data] = $value;
         }
 
