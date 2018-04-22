@@ -112,6 +112,14 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTestCase {
         $output["columns"][5]["search"]["value"] = "";
         $output["columns"][5]["searchable"]      = "true";
 
+        // Actions.
+        $output["columns"][6]["data"]            = "actions";
+        $output["columns"][6]["name"]            = "Actions";
+        $output["columns"][6]["orderable"]       = "false";
+        $output["columns"][6]["search"]["regex"] = "false";
+        $output["columns"][6]["search"]["value"] = "";
+        $output["columns"][6]["searchable"]      = "false";
+
         //
         $output["draw"]   = "1";
         $output["length"] = "10";
