@@ -37,7 +37,7 @@ final class EmployeeDataTablesProvider implements DataTablesProviderInterface {
         $dtColumns[] = DataTablesColumn::newInstance("age", "Age");
         $dtColumns[] = DataTablesColumn::newInstance("startDate", "Start date");
         $dtColumns[] = DataTablesColumn::newInstance("salary", "Salary");
-        $dtColumns[] = DataTablesColumn::newInstance("actions", "Actions");
+        $dtColumns[] = DataTablesColumn::newInstance("actions", "Actions")->setOrderable(false)->setSearchable(false);
 
         // Returns the columns.
         return $dtColumns;
@@ -74,13 +74,13 @@ final class EmployeeDataTablesProvider implements DataTablesProviderInterface {
     /**
      * {@inheritdoc}
      */
-    public function render(DataTablesColumn $column, $entity) {
+    public function renderColumn(DataTablesColumn $dtColumn, $entity) {
 
         // Initialize the output.
         $output = null;
 
-        // Switch into column name.
-        switch ($column->getName()) {
+        // Switch into column data.
+        switch ($dtColumn->getData()) {
 
             case "actions":
                 $output = "";
@@ -110,6 +110,36 @@ final class EmployeeDataTablesProvider implements DataTablesProviderInterface {
                 if (null !== $entity->getStartDate()) {
                     $output = $entity->getStartDate()->format("Y-m-d");
                 }
+                break;
+        }
+
+        // Return the output.
+        return $output;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function renderRow($dtRow, $entity) {
+
+        // Initialize the output.
+        $output = null;
+
+        // Switch into column data.
+        switch ($dtRow) {
+
+            case self::DATATABLES_ROW_ATTR:
+                break;
+
+            case self::DATATABLES_ROW_CLASS:
+                break;
+
+            case self::DATATABLES_ROW_DATA:
+                $output = ["pkey" => $entity->getId()];
+                break;
+
+            case self::DATATABLES_ROW_ID:
+                $output = "row_" . $entity->getId();
                 break;
         }
 
