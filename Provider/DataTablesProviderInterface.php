@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DatatablesBundle\Provider;
 
 use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesColumn;
+use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesResponseInterface;
 
 /**
  * DataTables provider interface.
@@ -19,7 +20,7 @@ use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesColumn;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DatatablesBundle\Provider;
  */
-interface DataTablesProviderInterface {
+interface DataTablesProviderInterface extends DataTablesResponseInterface {
 
     /**
      * Tag name.
@@ -36,9 +37,9 @@ interface DataTablesProviderInterface {
     public function getColumns();
 
     /**
-     * Get the DataTables entity.
+     * Get the entity.
      *
-     * @return mixed Returns the DataTables entity (Entity::class for example).
+     * @return mixed Returns the entity (Entity::class for example).
      */
     public function getEntity();
 
@@ -50,9 +51,9 @@ interface DataTablesProviderInterface {
     public function getName();
 
     /**
-     * Get the prefix.
+     * Get the Doctrine prefix.
      *
-     * @return string Returns the prefix.
+     * @return string Returns the Doctrine prefix.
      */
     public function getPrefix();
 
@@ -66,9 +67,18 @@ interface DataTablesProviderInterface {
     /**
      * Render a DataTables column.
      *
-     * @param DataTablesColumn $column The DataTables column.
+     * @param DataTablesColumn $dtColumn The DataTables column.
      * @param mixed $entity The entity.
-     * @return mixed Returns the DataTables column rendered.
+     * @return mixed Returns the rendered DataTables column.
      */
-    public function render(DataTablesColumn $column, $entity);
+    public function renderColumn(DataTablesColumn $dtColumn, $entity);
+
+    /**
+     * Render a DataTables row.
+     *
+     * @param string $dtRow The DataTables row.
+     * @param mixed $entity The entity.
+     * @return mixed Returns the rendered DataTables row.
+     */
+    public function renderRow($dtRow, $entity);
 }
