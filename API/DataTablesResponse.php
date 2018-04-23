@@ -80,11 +80,11 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      */
     public function addRow() {
 
+        // Count the rows.
+        $index = $this->countRows();
+
         // Add a new row.
         $this->data[] = [];
-
-        // Count the rows.
-        $index = count($this->data) - 1;
 
         // Set each column data in the new row.
         foreach ($this->wrapper->getColumns() as $dtColumn) {
@@ -92,6 +92,15 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
         }
 
         return $this;
+    }
+
+    /**
+     * Count rows.
+     *
+     * @return integer Returns the rows count.
+     */
+    public function countRows() {
+        return count($this->data);
     }
 
     /**
@@ -252,7 +261,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     public function setRow($data, $value) {
 
         // Count the rows.
-        $index = count($this->data) - 1;
+        $index = $this->countRows() - 1;
 
         // Check the column data.
         if ((true === in_array($data, self::dtRow()) && null !== $value) || (true === in_array($data, array_keys($this->data[$index])))) {

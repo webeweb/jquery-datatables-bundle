@@ -132,7 +132,7 @@ final class DataTablesController extends Controller {
             foreach ($entities as $entity) {
 
                 // Count the rows.
-                $rows = count($dtWrapper->getResponse()->getData());
+                $rows = $dtWrapper->getResponse()->countRows();
 
                 // Create a row.
                 $dtWrapper->getResponse()->addRow();
