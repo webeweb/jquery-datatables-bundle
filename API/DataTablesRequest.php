@@ -200,7 +200,7 @@ class DataTablesRequest implements HTTPInterface {
     /**
      * Set the columns.
      *
-     * @param DataTablesColumns[] $columns The columns.
+     * @param DataTablesColumn[] $columns The columns.
      * @return DataTablesRequest Returns this DataTables request.
      */
     protected function setColumns($columns) {
