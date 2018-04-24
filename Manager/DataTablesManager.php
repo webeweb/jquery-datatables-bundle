@@ -20,9 +20,8 @@ use WBW\Bundle\JQuery\DatatablesBundle\Provider\DataTablesProviderInterface;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DatatablesBundle\Manager
- * @final
  */
-final class DataTablesManager {
+class DataTablesManager {
 
     /**
      * Service name.
