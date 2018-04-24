@@ -29,9 +29,8 @@ use WBW\Library\Core\IO\HTTPInterface;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DatatablesBundle\Controller
- * @final
  */
-final class DataTablesController extends Controller {
+class DataTablesController extends Controller {
 
     /**
      * Get the DataTables provider.
