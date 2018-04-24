@@ -16,9 +16,8 @@ namespace WBW\Bundle\JQuery\DatatablesBundle\Exception;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DatatablesBundle\Exception
- * @final
  */
-final class BadDataTablesRepositoryException extends AbstractDataTablesException {
+class BadDataTablesRepositoryException extends AbstractDataTablesException {
 
     /**
      * Constructor.
