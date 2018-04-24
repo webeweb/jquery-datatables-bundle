@@ -22,9 +22,8 @@ use WBW\Bundle\JQuery\DatatablesBundle\Provider\DataTablesProviderInterface;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DatatablesBundle\DependencyInjection\Compiler
- * @final
  */
-final class JQueryDataTablesCompilerPass implements CompilerPassInterface {
+class JQueryDataTablesCompilerPass implements CompilerPassInterface {
 
     /**
      * {@inheritdoc}
