@@ -146,7 +146,7 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTestCase {
         parent::setUp();
 
         // Set a DataTables wrappper mock.
-        $this->dataTablesWrapper = new DataTablesWrapper("prefix", "POST", "route");
+        $this->dataTablesWrapper = new DataTablesWrapper("prefix", "POST", "url");
 
         // Set a DataTables request mock.
         $this->dataTablesRequest = DataTablesRequest::parse($this->dataTablesWrapper, new Request());
