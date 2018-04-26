@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Manager;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Manager;
 
-use WBW\Bundle\JQuery\DatatablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
-use WBW\Bundle\JQuery\DatatablesBundle\Exception\UnregisteredDataTablesProviderException;
-use WBW\Bundle\JQuery\DatatablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
+use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 
 /**
  * DataTables manager.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Manager
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Manager
  */
 class DataTablesManager {
 

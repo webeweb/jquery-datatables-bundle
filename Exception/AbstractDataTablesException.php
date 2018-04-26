@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Exception;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Exception;
 
 use Exception;
 use WBW\Library\Core\Exception\AbstractCoreException;
@@ -18,7 +18,7 @@ use WBW\Library\Core\Exception\AbstractCoreException;
  * Abstract DataTables exception.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Exception
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Exception
  * @abstract
  */
 abstract class AbstractDataTablesException extends AbstractCoreException {

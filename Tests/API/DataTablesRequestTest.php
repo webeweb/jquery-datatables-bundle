@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\API;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use Symfony\Component\HttpFoundation\Request;
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesColumn;
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesRequest;
-use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequest;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
  * DataTables request test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\API
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\API
  * @final
  */
 final class DataTablesRequestTest extends AbstractFrameworkTestCase {

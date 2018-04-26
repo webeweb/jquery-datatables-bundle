@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Controller;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Controller;
 
-use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractFrameworkTestCase;
-use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractWebTestCase;
-use WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\App\TestFixtures;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractWebTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\App\TestFixtures;
 
 /**
  * DataTables controller test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\Controller
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Controller
  * @final
  */
 final class DataTablesControllerTest extends AbstractWebTestCase {
@@ -54,6 +54,7 @@ final class DataTablesControllerTest extends AbstractWebTestCase {
 
         // Make a GET request.
         $client->request("GET", "/datatables/index/employee");
+        echo $client->getResponse()->getContent();
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 

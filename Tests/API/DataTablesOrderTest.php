@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\API;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use PHPUnit_Framework_TestCase;
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesOrder;
-use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrder;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
  * DataTables order test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\API
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\API
  * @final
  */
 final class DataTablesOrderTest extends PHPUnit_Framework_TestCase {

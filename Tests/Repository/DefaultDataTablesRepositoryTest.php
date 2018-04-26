@@ -9,20 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Repository;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Repository;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\QueryBuilder;
 use PHPUnit_Framework_TestCase;
 use Symfony\Component\HttpFoundation\Request;
-use WBW\Bundle\JQuery\DatatablesBundle\Repository\DefaultDataTablesRepository;
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\Repository\DefaultDataTablesRepository;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 
 /**
  * Default DataTables repository test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\Repository
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Repository
  * @final
  */
 final class DefaultDataTablesRepositoryTest extends PHPUnit_Framework_TestCase {

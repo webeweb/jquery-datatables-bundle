@@ -9,20 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Manager;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Manager;
 
 use Exception;
-use WBW\Bundle\JQuery\DatatablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
-use WBW\Bundle\JQuery\DatatablesBundle\Exception\UnregisteredDataTablesProviderException;
-use WBW\Bundle\JQuery\DatatablesBundle\Manager\DataTablesManager;
-use WBW\Bundle\JQuery\DatatablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
+use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
+use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
  * DataTables manager test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Manager
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Manager
  * @final
  */
 final class DataTablesManagerTest extends AbstractFrameworkTestCase {

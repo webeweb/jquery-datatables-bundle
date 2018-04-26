@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Repository;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\QueryBuilder;
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 
 /**
  * Default DataTables repository.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Repository
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Repository
  * @abstract
  */
 abstract class DefaultDataTablesRepository extends EntityRepository implements DataTablesRepositoryInterface {

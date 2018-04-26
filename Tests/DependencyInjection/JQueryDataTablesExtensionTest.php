@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\DependencyInjection;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection;
 
-use WBW\Bundle\JQuery\DatatablesBundle\DependencyInjection\JQueryDataTablesExtension;
-use WBW\Bundle\JQuery\DatatablesBundle\Manager\DataTablesManager;
-use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\JQueryDataTablesExtension;
+use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
  * DataTables extension test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\DependencyInjection
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection
  */
 final class DataTablesExtensionTest extends AbstractFrameworkTestCase {
 

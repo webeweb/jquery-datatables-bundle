@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\API;
+namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
 use JsonSerializable;
 
@@ -17,7 +17,7 @@ use JsonSerializable;
  * DataTables response.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\API
+ * @package WBW\Bundle\JQuery\DataTablesBundle\API
  */
 class DataTablesResponse implements DataTablesResponseInterface, JsonSerializable {
 

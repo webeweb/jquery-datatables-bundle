@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\API;
+namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
 use JsonSerializable;
 use WBW\Library\Core\Utility\Argument\ArrayUtility;
@@ -18,7 +18,7 @@ use WBW\Library\Core\Utility\Argument\ArrayUtility;
  * DataTables column.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\API
+ * @package WBW\Bundle\JQuery\DataTablesBundle\API
  */
 class DataTablesColumn implements JsonSerializable {
 

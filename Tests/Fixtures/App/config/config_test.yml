@@ -38,7 +38,7 @@ doctrine:
                 dir:       "Tests/Fixtures/App/config/doctrine"
                 type:      "yml"
                 is_bundle: true
-                prefix:    "WBW\\Bundle\\JQuery\\DatatablesBundle\\Tests\\Fixtures\\Entity"
+                prefix:    "WBW\\Bundle\\JQuery\\DataTablesBundle\\Tests\\Fixtures\\Entity"
         naming_strategy:             doctrine.orm.naming_strategy.underscore
 
 monolog:

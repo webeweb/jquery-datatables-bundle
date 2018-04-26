@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Repository;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Repository;
 
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 
 /**
  * DataTables repository interface.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Provider;
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Provider;
  */
 interface DataTablesRepositoryInterface {
 

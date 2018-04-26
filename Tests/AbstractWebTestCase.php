@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
 
 use Doctrine\ORM\Tools\SchemaTool;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
@@ -18,7 +18,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
  * Abstract web test case.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Tests
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests
  * @abstract
  */
 abstract class AbstractWebTestCase extends WebTestCase {

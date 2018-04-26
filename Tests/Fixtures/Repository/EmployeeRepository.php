@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\Repository;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Repository;
 
-use WBW\Bundle\JQuery\DatatablesBundle\Repository\DefaultDataTablesRepository;
+use WBW\Bundle\JQuery\DataTablesBundle\Repository\DefaultDataTablesRepository;
 
 /**
  * Employee repository.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\Repository
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Repository
  * @final
  */
 final class EmployeeRepository extends DefaultDataTablesRepository {

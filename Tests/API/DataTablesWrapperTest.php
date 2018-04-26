@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\API;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use PHPUnit_Framework_TestCase;
 use Symfony\Component\HttpFoundation\Request;
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesColumn;
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 
 /**
  * DataTables wrapper test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\Wrapper
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Wrapper
  * @final
  */
 final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {

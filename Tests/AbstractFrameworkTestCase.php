@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
 
 use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractFrameworkTestCase as BaseFrameworkTestCase;
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesRequest;
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesResponse;
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequest;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 
 /**
  * Abstract framework test case.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Tests
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests
  * @abstract
  */
 abstract class AbstractFrameworkTestCase extends BaseFrameworkTestCase {

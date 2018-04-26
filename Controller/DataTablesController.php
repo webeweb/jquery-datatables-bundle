@@ -9,26 +9,26 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Controller;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Controller;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesResponse;
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesWrapper;
-use WBW\Bundle\JQuery\DatatablesBundle\Exception\BadDataTablesRepositoryException;
-use WBW\Bundle\JQuery\DatatablesBundle\Exception\UnregisteredDataTablesProviderException;
-use WBW\Bundle\JQuery\DatatablesBundle\Manager\DataTablesManager;
-use WBW\Bundle\JQuery\DatatablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Bundle\JQuery\DatatablesBundle\Repository\DataTablesRepositoryInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
+use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
+use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Repository\DataTablesRepositoryInterface;
 use WBW\Library\Core\IO\HTTPInterface;
 
 /**
  * DataTables controller.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Controller
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Controller
  */
 class DataTablesController extends Controller {
 

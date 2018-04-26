@@ -15,7 +15,7 @@ use Symfony\Component\HttpKernel\Kernel;
  * Test kernel.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\App
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\App
  * @final
  */
 final class TestKernel extends Kernel {
@@ -32,7 +32,7 @@ final class TestKernel extends Kernel {
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new WBW\Bundle\BootstrapBundle\BootstrapBundle(),
-            new WBW\Bundle\JQuery\DatatablesBundle\JQueryDataTablesBundle(),
+            new WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle(),
         ];
         return $bundles;
     }

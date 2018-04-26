@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\API;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use PHPUnit_Framework_TestCase;
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesMapping;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesMapping;
 
 /**
  * DataTables mapping test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\API
+ * @package WBW\Bundle\JQuery\DataTablesBundle\API
  * @final
  */
 final class DataTablesMappingTest extends PHPUnit_Framework_TestCase {

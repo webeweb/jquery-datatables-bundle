@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Provider;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
 
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesColumn;
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesResponseInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
 
 /**
  * DataTables provider interface.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Provider;
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Provider;
  */
 interface DataTablesProviderInterface extends DataTablesResponseInterface {
 

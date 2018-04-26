@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\API;
+namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
 use WBW\Library\Core\Utility\Argument\BooleanUtility;
 
@@ -17,7 +17,7 @@ use WBW\Library\Core\Utility\Argument\BooleanUtility;
  * DataTables search.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\API
+ * @package WBW\Bundle\JQuery\DataTablesBundle\API
  */
 class DataTablesSearch {
 

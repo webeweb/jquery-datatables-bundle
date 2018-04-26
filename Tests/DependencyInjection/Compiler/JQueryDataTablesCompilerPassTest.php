@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\DependencyInjection\Compiler;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection\Compiler;
 
-use WBW\Bundle\JQuery\DatatablesBundle\DependencyInjection\Compiler\JQueryDataTablesCompilerPass;
-use WBW\Bundle\JQuery\DatatablesBundle\Manager\DataTablesManager;
-use WBW\Bundle\JQuery\DatatablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Bundle\JQuery\DatatablesBundle\Tests\AbstractFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Compiler\JQueryDataTablesCompilerPass;
+use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
  * jQuery DataTables compiler pass test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\DependencyInjection\Compiler
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection\Compiler
  * @final
  */
 final class JQueryDataTablesCompilerPassTest extends AbstractFrameworkTestCase {

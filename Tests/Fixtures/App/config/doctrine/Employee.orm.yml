@@ -1,8 +1,8 @@
 # Tests/Fixtures/App/config/doctrine/Employee.orm.yml
-WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\Entity\Employee:
+WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee:
 
     type:            entity
-    repositoryClass: WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\Repository\EmployeeRepository
+    repositoryClass: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Repository\EmployeeRepository
     table:           datatables_employee
 
     id:

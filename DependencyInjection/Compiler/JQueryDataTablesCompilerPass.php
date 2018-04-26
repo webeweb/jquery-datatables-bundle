@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\DependencyInjection\Compiler;
+namespace WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
-use WBW\Bundle\JQuery\DatatablesBundle\Manager\DataTablesManager;
-use WBW\Bundle\JQuery\DatatablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 
 /**
  * jQuery DataTables compiler pass.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\DependencyInjection\Compiler
+ * @package WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Compiler
  */
 class JQueryDataTablesCompilerPass implements CompilerPassInterface {
 

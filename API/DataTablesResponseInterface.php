@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\API;
+namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
 /**
  * DataTables response interface.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\API
+ * @package WBW\Bundle\JQuery\DataTablesBundle\API
  */
 interface DataTablesResponseInterface {
 

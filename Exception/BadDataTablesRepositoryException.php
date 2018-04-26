@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Exception;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Exception;
 
 /**
  * Bad DataTables repository exception.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Exception
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Exception
  */
 class BadDataTablesRepositoryException extends AbstractDataTablesException {
 

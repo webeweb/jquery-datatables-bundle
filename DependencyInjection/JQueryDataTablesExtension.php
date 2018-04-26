@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\DependencyInjection;
+namespace WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -20,7 +20,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
  * jQuery DataTables extension.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\DependencyInjection
+ * @package WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection
  */
 class JQueryDataTablesExtension extends Extension {
 

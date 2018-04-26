@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle;
+namespace WBW\Bundle\JQuery\DataTablesBundle;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use WBW\Bundle\JQuery\DatatablesBundle\DependencyInjection\Compiler\JQueryDataTablesCompilerPass;
+use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Compiler\JQueryDataTablesCompilerPass;
 
 /**
  * jQuery DataTables bundle.

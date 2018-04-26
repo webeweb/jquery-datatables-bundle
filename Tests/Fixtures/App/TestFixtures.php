@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\App;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\App;
 
 use DateTime;
-use WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\Entity\Employee;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee;
 
 /**
  * Test fixtures.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\App
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\App
  * @final
  */
 final class TestFixtures {

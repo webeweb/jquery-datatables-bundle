@@ -34,7 +34,7 @@
     },
     "autoload": {
         "psr-4": {
-            "WBW\\Bundle\\JQuery\\DatatablesBundle\\": ""
+            "WBW\\Bundle\\JQuery\\DataTablesBundle\\": ""
         },
         "exclude-from-classmap": [
             "/Tests/"

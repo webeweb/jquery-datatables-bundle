@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Exception;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Exception;
 
 /**
  * Already registered DataTables provider exception.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Exception
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Exception
  */
 class AlreadyRegisteredDataTablesProviderException extends AbstractDataTablesException {
 

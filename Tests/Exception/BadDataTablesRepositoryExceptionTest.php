@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Exception;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception;
 
 use PHPUnit_Framework_TestCase;
-use WBW\Bundle\JQuery\DatatablesBundle\Exception\BadDataTablesRepositoryException;
+use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
 
 /**
  * Bad DataTables repository exception test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\Exception
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception
  * @final
  */
 final class BaDataTablesRepositoryException extends PHPUnit_Framework_TestCase {

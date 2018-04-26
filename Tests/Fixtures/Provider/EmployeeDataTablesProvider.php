@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\Provider;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider;
 
-use WBW\Bundle\JQuery\DatatablesBundle\API\DataTablesColumn;
-use WBW\Bundle\JQuery\DatatablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\Entity\Employee;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee;
 
 /**
  * Employee DataTables provider.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\Entity
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity
  */
 final class EmployeeDataTablesProvider implements DataTablesProviderInterface {
 

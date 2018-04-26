@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
 
-use WBW\Bundle\JQuery\DatatablesBundle\JQueryDataTablesBundle;
+use WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle;
 
 /**
  * jQuery DataTables bundle test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Tests
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests
  * @final
  */
 final class JQueryDataTablesBundleTest extends AbstractFrameworkTestCase {

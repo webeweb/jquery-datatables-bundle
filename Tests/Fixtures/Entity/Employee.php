@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\Entity;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity;
 
 use DateTime;
 
@@ -17,7 +17,7 @@ use DateTime;
  * Employee.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Tests\Fixtures\Entity
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity
  */
 class Employee {
 
