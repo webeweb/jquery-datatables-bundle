@@ -72,20 +72,6 @@ class DataTablesWrapper implements HTTPInterface {
     private $response;
 
     /**
-     * Route.
-     *
-     * @var string
-     */
-    private $route;
-
-    /**
-     * Route arguments.
-     *
-     * @var array
-     */
-    private $routeArguments;
-
-    /**
      * Server side.
      *
      * @var boolean
@@ -93,14 +79,20 @@ class DataTablesWrapper implements HTTPInterface {
     private $serverSide;
 
     /**
+     * URL.
+     *
+     * @var string
+     */
+    private $url;
+
+    /**
      * Constructor.
      *
      * @param string $prefix The prefix.
      * @param string $method The method.
-     * @param string $route The route.
-     * @param array $routeArguments The route arguments.
+     * @param string $url The URL.
      */
-    public function __construct($prefix, $method, $route, array $routeArguments = []) {
+    public function __construct($prefix, $method, $url) {
         $this->mapping = new DataTablesMapping();
         $this->mapping->setPrefix($prefix);
 
@@ -108,9 +100,8 @@ class DataTablesWrapper implements HTTPInterface {
         $this->setMethod($method);
         $this->setOrder([]);
         $this->setProcessing(true);
-        $this->setRoute($route);
-        $this->setRouteArguments($routeArguments);
         $this->setServerSide(true);
+        $this->setUrl($url);
     }
 
     /**
@@ -204,30 +195,21 @@ class DataTablesWrapper implements HTTPInterface {
     }
 
     /**
-     * Get the route.
-     *
-     * @return string Returns the route.
-     */
-    public function getRoute() {
-        return $this->route;
-    }
-
-    /**
-     * Get the route arguments.
-     *
-     * @return array Returns the route arguments.
-     */
-    public function getRouteArguments() {
-        return $this->routeArguments;
-    }
-
-    /**
      * Get the server side.
      *
      * @return boolean Returns the server side.
      */
     public function getServerSide() {
         return $this->serverSide;
+    }
+
+    /**
+     * Get the URL.
+     *
+     * @return string Returns the URL.
+     */
+    public function getUrl() {
+        return $this->url;
     }
 
     /**
@@ -301,28 +283,6 @@ class DataTablesWrapper implements HTTPInterface {
     }
 
     /**
-     * Set the route.
-     *
-     * @param string $route The route.
-     * @return DataTablesWrapper Returns this DataTables wrapper.
-     */
-    public function setRoute($route) {
-        $this->route = $route;
-        return $this;
-    }
-
-    /**
-     * Set the route arguments.
-     *
-     * @param array $routeArguments The route arguments.
-     * @return DataTablesWrapper Returns this DatTables wrapper.
-     */
-    public function setRouteArguments(array $routeArguments) {
-        $this->routeArguments = $routeArguments;
-        return $this;
-    }
-
-    /**
      * Set the server side.
      *
      * @param boolean $serverSide The server side.
@@ -330,6 +290,17 @@ class DataTablesWrapper implements HTTPInterface {
      */
     public function setServerSide($serverSide) {
         $this->serverSide = (false === $serverSide ? false : true);
+        return $this;
+    }
+
+    /**
+     * Set the URL.
+     *
+     * @param string $url The UTL.
+     * @return DataTablesWrapper Returns this DataTables wrapper.
+     */
+    public function setUrl($url) {
+        $this->url = $url;
         return $this;
     }
 

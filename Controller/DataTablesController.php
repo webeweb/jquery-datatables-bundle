@@ -15,6 +15,7 @@ use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\RouterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
@@ -61,7 +62,7 @@ class DataTablesController extends Controller {
     private function getDataTablesWrapper(DataTablesProviderInterface $dtProvider) {
 
         // Initialize the DataTables wrapper.
-        $dtWrapper = new DataTablesWrapper($dtProvider->getPrefix(), HTTPInterface::HTTP_METHOD_POST, "jquery_datatables_index", ["name" => $dtProvider->getName()]);
+        $dtWrapper = new DataTablesWrapper($dtProvider->getPrefix(), HTTPInterface::HTTP_METHOD_POST, $this->getRouter()->generate("jquery_datatables_index", ["name" => $dtProvider->getName()]));
 
         // Handle each column.
         foreach ($dtProvider->getColumns() as $dtColumn) {
@@ -84,6 +85,15 @@ class DataTablesController extends Controller {
      */
     private function getLogger() {
         return $this->get("logger");
+    }
+
+    /**
+     * Get the router.
+     *
+     * @return RouterInterface Returns the router.
+     */
+    private function getRouter() {
+        return $this->get("router");
     }
 
     /**

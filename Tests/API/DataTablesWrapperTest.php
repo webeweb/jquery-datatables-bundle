@@ -32,7 +32,7 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
      */
     public function testConstructor() {
 
-        $obj = new DataTablesWrapper("prefix", "POST", "route");
+        $obj = new DataTablesWrapper("prefix", "POST", "url");
 
         $this->assertEquals([], $obj->getColumns());
         $this->assertEquals("prefix", $obj->getMapping()->getPrefix());
@@ -41,8 +41,8 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue($obj->getProcessing());
         $this->assertNull($obj->getRequest());
         $this->assertNull($obj->getResponse());
-        $this->assertEquals("route", $obj->getRoute());
         $this->assertTrue($obj->getServerSide());
+        $this->assertEquals("url", $obj->getUrl());
     }
 
     /**
@@ -52,7 +52,7 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
      */
     public function testAddColumn() {
 
-        $obj = new DataTablesWrapper("prefix", "POST", "route");
+        $obj = new DataTablesWrapper("prefix", "POST", "url");
 
         $obj->addColumn(DataTablesColumn::newInstance("name1", "title1"));
         $this->assertCount(1, $obj->getColumns());
@@ -72,7 +72,7 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
      */
     public function testGetColumn() {
 
-        $obj = new DataTablesWrapper("prefix", "POST", "route");
+        $obj = new DataTablesWrapper("prefix", "POST", "url");
         $arg = DataTablesColumn::newInstance("name1", "title1");
 
         $this->assertNull($obj->getColumn("name1"));
@@ -88,7 +88,7 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
      */
     public function testParse() {
 
-        $obj = new DataTablesWrapper("prefix", "POST", "route");
+        $obj = new DataTablesWrapper("prefix", "POST", "url");
 
         $obj->parse(new Request());
         $this->assertNotNull($obj->getRequest());
@@ -102,7 +102,7 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
      */
     public function testRemoveColumn() {
 
-        $obj = new DataTablesWrapper("prefix", "POST", "route");
+        $obj = new DataTablesWrapper("prefix", "POST", "url");
 
         $col1 = DataTablesColumn::newInstance("name1", "title1");
         $col2 = DataTablesColumn::newInstance("name2", "title2");
@@ -127,7 +127,7 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetMethod() {
 
-        $obj = new DataTablesWrapper("prefix", "POST", "route");
+        $obj = new DataTablesWrapper("prefix", "POST", "url");
 
         $obj->setMethod("GET");
         $this->assertEquals("GET", $obj->getMethod());
@@ -143,7 +143,7 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetOrder() {
 
-        $obj = new DataTablesWrapper("prefix", "POST", "route");
+        $obj = new DataTablesWrapper("prefix", "POST", "url");
 
         $obj->setOrder(["order"]);
         $this->assertEquals(["order"], $obj->getOrder());
@@ -156,7 +156,7 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetProcessing() {
 
-        $obj = new DataTablesWrapper("prefix", "POST", "route");
+        $obj = new DataTablesWrapper("prefix", "POST", "url");
 
         $obj->setProcessing(false);
         $this->assertFalse($obj->getProcessing());
@@ -166,45 +166,32 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
-     * Tests the setRoute() method.
-     *
-     * @return void
-     */
-    public function testSetRoute() {
-
-        $obj = new DataTablesWrapper("prefix", "POST", "route");
-
-        $obj->setRoute("anotherRoute");
-        $this->assertEquals("anotherRoute", $obj->getRoute());
-    }
-
-    /**
-     * Tests the setRouteArguments() method.
-     *
-     * @return void
-     */
-    public function testSetRouteArguments() {
-
-        $obj = new DataTablesWrapper("prefix", "POST", "route");
-
-        $obj->setRouteArguments(["arg1" => "value1"]);
-        $this->assertEquals(["arg1" => "value1"], $obj->getRouteArguments());
-    }
-
-    /**
      * Tests the setServerSide() method.
      *
      * @return void
      */
     public function testSetServerSide() {
 
-        $obj = new DataTablesWrapper("prefix", "POST", "route");
+        $obj = new DataTablesWrapper("prefix", "POST", "url");
 
         $obj->setServerSide(false);
         $this->assertFalse($obj->getServerSide());
 
         $obj->setServerSide(null);
         $this->assertTrue($obj->getServerSide());
+    }
+
+    /**
+     * Tests the setUrl() method.
+     *
+     * @return void
+     */
+    public function testSetUrl() {
+
+        $obj = new DataTablesWrapper("prefix", "POST", "url");
+
+        $obj->setUrl("anotherUrl");
+        $this->assertEquals("anotherUrl", $obj->getUrl());
     }
 
 }
