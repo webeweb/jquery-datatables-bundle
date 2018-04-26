@@ -3,3 +3,8 @@ services:
 
     webeweb.bundle.datatablesbundle.manager.datatables:
         class: WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager
+
+    webeweb.bundle.datatablesbundle.twig.extension.datatables:
+        class: WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension
+        tags:
+            - { name: twig.extension }

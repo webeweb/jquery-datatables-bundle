@@ -9,13 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DatatablesBundle\Twig\Extension;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension;
+
+use Twig_SimpleFunction;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Library\Core\Utility\Argument\ArrayUtility;
 
 /**
  * DataTables Twig extension.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DatatablesBundle\Twig\Extension
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension
  */
 class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
 
@@ -31,6 +35,28 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      */
     public function __construct() {
         parent::__construct();
+    }
+
+    /**
+     * Displays a DataTables HTML.
+     *
+     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @param array $args The arguments.
+     * @return string Returns the DataTables HTML.
+     */
+    public function dataTablesHTMLFunction(DataTablesWrapper $dtWrapper, array $args = []) {
+        return $this->dataTablesTable($dtWrapper, ArrayUtility::get($args, "class"), ArrayUtility::get($args, "thead", true), ArrayUtility::get($args, "tfoot", true));
+    }
+
+    /**
+     * Get the Twig functions.
+     *
+     * @return array Returns the Twig functions.
+     */
+    public function getFunctions() {
+        return [
+            new Twig_SimpleFunction("dataTablesHTML", [$this, "dataTablesHTMLFunction"], ["is_safe" => ["html"]]),
+        ];
     }
 
 }

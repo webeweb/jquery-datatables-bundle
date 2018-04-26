@@ -14,6 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection;
 use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\JQueryDataTablesExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 
 /**
  * DataTables extension test.
@@ -41,6 +42,7 @@ final class DataTablesExtensionTest extends AbstractFrameworkTestCase {
 
         $obj->load([], $this->containerBuilder);
         $this->assertInstanceOf(DataTablesManager::class, $this->containerBuilder->get(DataTablesManager::SERVICE_NAME));
+        $this->assertInstanceOf(DataTablesTwigExtension::class, $this->containerBuilder->get(DataTablesTwigExtension::SERVICE_NAME));
     }
 
 }
