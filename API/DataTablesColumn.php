@@ -114,6 +114,13 @@ class DataTablesColumn implements JsonSerializable {
     private $searchable;
 
     /**
+     * Title.
+     *
+     * @var string
+     */
+    private $title;
+
+    /**
      * Type.
      *
      * @var string
@@ -263,6 +270,15 @@ class DataTablesColumn implements JsonSerializable {
     }
 
     /**
+     * Get the title.
+     *
+     * @return string Returns the title.
+     */
+    public function getTitle() {
+        return $this->title;
+    }
+
+    /**
      * Get the type.
      *
      * @return string Returns the type.
@@ -311,6 +327,7 @@ class DataTablesColumn implements JsonSerializable {
         $dtColumn->setCellType($cellType);
         $dtColumn->setData($data);
         $dtColumn->setName($name);
+        $dtColumn->setTitle($name);
         $dtColumn->mapping->setColumn($data);
 
         // Return the DataTables column.
@@ -498,6 +515,17 @@ class DataTablesColumn implements JsonSerializable {
      */
     public function setSearchable($searchable) {
         $this->searchable = $searchable;
+        return $this;
+    }
+
+    /**
+     * Set the title.
+     *
+     * @param string $title The title.
+     * @return DataTablesColumn Returns this DataTables column.
+     */
+    public function setTitle($title) {
+        $this->title = $title;
         return $this;
     }
 

@@ -44,6 +44,7 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
         $this->assertNull($obj->getOrderSequence());
         $this->assertNull($obj->getSearch());
         $this->assertTrue($obj->getSearchable());
+        $this->assertEquals("name", $obj->getTitle());
         $this->assertNull($obj->getType());
         $this->assertTrue($obj->getVisible());
         $this->assertNull($obj->getWidth());
@@ -189,6 +190,19 @@ final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
 
         $obj->setSearchable(false);
         $this->assertFalse($obj->getSearchable());
+    }
+
+    /**
+     * Tests the setTitle() method.
+     *
+     * @return void
+     */
+    public function testSetTitle() {
+
+        $obj = DataTablesColumn::newInstance("data", "name");
+
+        $obj->setTitle("title");
+        $this->assertEquals("title", $obj->getTitle());
     }
 
     /**
