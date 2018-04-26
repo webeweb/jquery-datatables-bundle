@@ -48,11 +48,17 @@ final class DataTablesTwigExtensionTest extends AbstractFrameworkTestCase {
 
         $res = $obj->getFunctions();
 
-        $this->assertCount(1, $res);
+        $this->assertCount(2, $res);
+
         $this->assertInstanceOf(Twig_SimpleFunction::class, $res[0]);
         $this->assertEquals("dataTablesHTML", $res[0]->getName());
         $this->assertEquals([$obj, "dataTablesHTMLFunction"], $res[0]->getCallable());
         $this->assertEquals(["html"], $res[0]->getSafe(new Twig_Node()));
+
+        $this->assertInstanceOf(Twig_SimpleFunction::class, $res[1]);
+        $this->assertEquals("dataTablesJS", $res[1]->getName());
+        $this->assertEquals([$obj, "dataTablesJSFunction"], $res[1]->getCallable());
+        $this->assertEquals(["html"], $res[1]->getSafe(new Twig_Node()));
     }
 
     /**
@@ -187,6 +193,46 @@ final class DataTablesTwigExtensionTest extends AbstractFrameworkTestCase {
 </tfoot>
 </table>";
         $this->assertEquals($res9, $obj->dataTablesHTMLFunction($this->dataTablesWrapper, $arg9));
+    }
+
+    /**
+     * Tests the dataTablesJSFunction() {
+     *
+     * @return void
+     */
+    public function testDataTablesJSFunction() {
+
+        $obj = new DataTablesTwigExtension();
+
+        $arg0 = [];
+        $res0 = "<script type=\"text/javascript\">
+\t$('.table').DataTable({
+\t\tajax: {
+\t\t\ttype: 'POST',
+\t\t\turl: 'url'
+\t\t},
+\t\tcolumns: [{\"cellType\":\"td\",\"data\":\"name\",\"name\":\"Name\"},{\"cellType\":\"td\",\"data\":\"position\",\"name\":\"Position\"},{\"cellType\":\"td\",\"data\":\"office\",\"name\":\"Office\"},{\"cellType\":\"td\",\"data\":\"age\",\"name\":\"Age\"},{\"cellType\":\"td\",\"data\":\"startDate\",\"name\":\"Start date\"},{\"cellType\":\"td\",\"data\":\"salary\",\"name\":\"Salary\"},{\"cellType\":\"td\",\"data\":\"actions\",\"name\":\"Actions\",\"orderable\":false,\"searchable\":false}],
+\t\torder: [],
+\t\tprocessing: true,
+\t\tserverSide: true
+\t});
+</script>";
+        $this->assertEquals($res0, $obj->dataTablesJSFunction($this->dataTablesWrapper, $arg0));
+
+        $arg9 = ["selector" => "#selector"];
+        $res9 = "<script type=\"text/javascript\">
+\t$('#selector').DataTable({
+\t\tajax: {
+\t\t\ttype: 'POST',
+\t\t\turl: 'url'
+\t\t},
+\t\tcolumns: [{\"cellType\":\"td\",\"data\":\"name\",\"name\":\"Name\"},{\"cellType\":\"td\",\"data\":\"position\",\"name\":\"Position\"},{\"cellType\":\"td\",\"data\":\"office\",\"name\":\"Office\"},{\"cellType\":\"td\",\"data\":\"age\",\"name\":\"Age\"},{\"cellType\":\"td\",\"data\":\"startDate\",\"name\":\"Start date\"},{\"cellType\":\"td\",\"data\":\"salary\",\"name\":\"Salary\"},{\"cellType\":\"td\",\"data\":\"actions\",\"name\":\"Actions\",\"orderable\":false,\"searchable\":false}],
+\t\torder: [],
+\t\tprocessing: true,
+\t\tserverSide: true
+\t});
+</script>";
+        $this->assertEquals($res9, $obj->dataTablesJSFunction($this->dataTablesWrapper, $arg9));
     }
 
 }

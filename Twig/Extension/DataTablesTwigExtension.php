@@ -14,6 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension;
 use Twig_SimpleFunction;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Library\Core\Utility\Argument\ArrayUtility;
+use WBW\Library\Core\Utility\Argument\StringUtility;
 
 /**
  * DataTables Twig extension.
@@ -29,6 +30,24 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      * @var string
      */
     const SERVICE_NAME = "webeweb.bundle.datatablesbundle.twig.extension.datatables";
+
+    /**
+     * Directory.
+     *
+     * @var string
+     */
+    const JS_TEMPLATE = "<script type=\"text/javascript\">
+\t$('__selector__').DataTable({
+\t\tajax: {
+\t\t\ttype: '__method__',
+\t\t\turl: '__url__'
+\t\t},
+\t\tcolumns: __columns__,
+\t\torder: __order__,
+\t\tprocessing: __processing__,
+\t\tserverSide: __serverSide__
+\t});
+</script>";
 
     /**
      * Constructor.
@@ -49,6 +68,28 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
     }
 
     /**
+     * Diplays a DataTables JS.
+     *
+     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @param array $args The arguments.
+     * @return string Returns the DataTables JS.
+     */
+    public function dataTablesJSFunction(DataTablesWrapper $dtWrapper, array $args = []) {
+
+        // Initialize the parameters.
+        $selector   = ArrayUtility::get($args, "selector", ".table");
+        $method     = $dtWrapper->getMethod();
+        $url        = $dtWrapper->getUrl();
+        $columns    = json_encode(array_values($dtWrapper->getColumns()));
+        $orders     = json_encode(array_values($dtWrapper->getOrder()));
+        $processing = StringUtility::parseBoolean($dtWrapper->getProcessing());
+        $serverSide = StringUtility::parseBoolean($dtWrapper->getServerSide());
+
+        // Return the Javascript.
+        return StringUtility::replace(self::JS_TEMPLATE, ["__selector__", "__method__", "__url__", "__columns__", "__order__", "__processing__", "__serverSide__"], [$selector, $method, $url, $columns, $orders, $processing, $serverSide]);
+    }
+
+    /**
      * Get the Twig functions.
      *
      * @return array Returns the Twig functions.
@@ -56,6 +97,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
     public function getFunctions() {
         return [
             new Twig_SimpleFunction("dataTablesHTML", [$this, "dataTablesHTMLFunction"], ["is_safe" => ["html"]]),
+            new Twig_SimpleFunction("dataTablesJS", [$this, "dataTablesJSFunction"], ["is_safe" => ["html"]]),
         ];
     }
 
