@@ -37,6 +37,7 @@ class DataTablesController extends Controller {
      * Get the DataTables provider.
      *
      * @return DataTablesProviderInterface Returns the DataTables provider.
+     * @throws UnregisteredDataTablesProviderException Throws an unregistered DataTables provider exception.
      */
     private function getDataTablesProvider($name) {
 
