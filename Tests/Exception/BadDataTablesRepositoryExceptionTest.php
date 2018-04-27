@@ -32,7 +32,7 @@ final class BaDataTablesRepositoryException extends PHPUnit_Framework_TestCase {
 
         $obj = new BadDataTablesRepositoryException("exception");
 
-        $this->assertEquals("The DataTables repository \"exception\" must implement DataTablesRepositoryInterface", $obj->getMessage());
+        $this->assertEquals("The DataTables repository \"Exception\" must implement DataTablesRepositoryInterface", $obj->getMessage());
     }
 
 }
