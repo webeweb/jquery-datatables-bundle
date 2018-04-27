@@ -29,7 +29,7 @@ abstract class AbstractDataTablesTwigExtension extends Twig_Extension {
      * Constructor.
      */
     public function __construct() {
-// NOTHING TO DO.
+        // NOTHING TO DO.
     }
 
     /**
@@ -38,7 +38,7 @@ abstract class AbstractDataTablesTwigExtension extends Twig_Extension {
      * @param DataTablesColumn $dtColumn The column.
      * @return string Returns the DataTables column.
      */
-    private function dataTablesColumn(DataTablesColumn $dtColumn, $rowScope = false) {
+    private function dataTablesColumn(DataTablesColumn $dtColumn, $scopeRow = false) {
 
         // Check if the column is visible.
         if (false === $dtColumn->getVisible()) {
@@ -51,7 +51,7 @@ abstract class AbstractDataTablesTwigExtension extends Twig_Extension {
         // Initialize the attributes.
         $attributes = [];
 
-        $attributes["row"]   = true === $rowScope ? "scope" : null;
+        $attributes["scope"] = true === $scopeRow ? "row" : null;
         $attributes["class"] = $dtColumn->getClassname();
         $attributes["width"] = $dtColumn->getWidth();
 

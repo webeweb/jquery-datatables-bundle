@@ -75,7 +75,7 @@ final class DataTablesTwigExtensionTest extends AbstractFrameworkTestCase {
         $res0 = "<table class=\"table\">
 <thead>
 <tr>
-<th row=\"scope\">Name</th>
+<th scope=\"row\">Name</th>
 <th>Position</th>
 <th>Office</th>
 <th>Age</th>
@@ -103,7 +103,7 @@ final class DataTablesTwigExtensionTest extends AbstractFrameworkTestCase {
         $res1 = "<table class=\"table class\">
 <thead>
 <tr>
-<th row=\"scope\">Name</th>
+<th scope=\"row\">Name</th>
 <th>Position</th>
 <th>Office</th>
 <th>Age</th>
@@ -148,7 +148,7 @@ final class DataTablesTwigExtensionTest extends AbstractFrameworkTestCase {
         $res3 = "<table class=\"table\">
 <thead>
 <tr>
-<th row=\"scope\">Name</th>
+<th scope=\"row\">Name</th>
 <th>Position</th>
 <th>Office</th>
 <th>Age</th>
@@ -164,14 +164,14 @@ final class DataTablesTwigExtensionTest extends AbstractFrameworkTestCase {
         $i = 0;
         foreach ($this->dataTablesWrapper->getColumns() as $dtColumn) {
             $dtColumn->setClassname($dtColumn->getData());
-            $dtColumn->setWidth( ++$i);
+            $dtColumn->setWidth(++$i);
         }
 
         $arg9 = ["class" => "class", "thead" => true, "tfoot" => true];
         $res9 = "<table class=\"table class\">
 <thead>
 <tr>
-<th row=\"scope\" class=\"name\" width=\"1\">Name</th>
+<th scope=\"row\" class=\"name\" width=\"1\">Name</th>
 <th class=\"position\" width=\"2\">Position</th>
 <th class=\"office\" width=\"3\">Office</th>
 <th class=\"age\" width=\"4\">Age</th>
