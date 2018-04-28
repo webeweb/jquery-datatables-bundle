@@ -57,7 +57,7 @@ in the `app/AppKernel.php` file of your project:
     public function registerBundles() {
         $bundles = [
             // ...
-            new WBW\Bundle\JQuery\DatatableBundle\JQueryDatatableBundle(),
+            new WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle(),
         ];
 
         // ...
