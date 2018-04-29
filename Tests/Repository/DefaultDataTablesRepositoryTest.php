@@ -54,29 +54,29 @@ final class DefaultDataTablesRepositoryTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
-     * Tests the dataTablesOrder() method.
+     * Tests the appendDataTablesOrder() method.
      *
      * @return void
      */
-    public function testDataTablesOrder() {
+    public function testAppendDataTablesOrder() {
 
         $arg = new DataTablesWrapper("prefix", "POST", "route");
         $arg->parse(new Request());
 
-        DefaultDataTablesRepository::dataTablesOrder($this->queryBuilder, $arg);
+        DefaultDataTablesRepository::appendDataTablesOrder($this->queryBuilder, $arg);
     }
 
     /**
-     * Tests the dataTablesWhere() method.
+     * Tests the appendDataTablesWhere() method.
      *
      * @return void
      */
-    public function testDataTablesWhere() {
+    public function testAppendDataTablesWhere() {
 
         $arg = new DataTablesWrapper("prefix", "POST", "route");
         $arg->parse(new Request());
 
-        DefaultDataTablesRepository::dataTablesWhere($this->queryBuilder, $arg);
+        DefaultDataTablesRepository::appendDataTablesWhere($this->queryBuilder, $arg);
     }
 
 }

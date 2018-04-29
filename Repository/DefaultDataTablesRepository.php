@@ -25,93 +25,13 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 abstract class DefaultDataTablesRepository extends EntityRepository implements DataTablesRepositoryInterface {
 
     /**
-     * {@inheritdoc}
-     */
-    public function dataTablesCountFiltered(DataTablesWrapper $dtWrapper) {
-
-        // Get the prefix.
-        $prefix = $dtWrapper->getMapping()->getPrefix();
-
-        // Create a query builder.
-        $qb = $this->createQueryBuilder($prefix)
-            ->select("COUNT(" . $prefix . ")");
-
-        // Build the where clause.
-        self::dataTablesWhere($qb, $dtWrapper);
-
-        // Return the single scalar result.
-        return intval($qb->getQuery()->getSingleScalarResult());
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function dataTablesCountTotal(DataTablesWrapper $dtWrapper) {
-
-        // Get the prefix.
-        $prefix = $dtWrapper->getMapping()->getPrefix();
-
-        // Create a query builder.
-        $qb = $this->createQueryBuilder($prefix)
-            ->select("COUNT(" . $prefix . ")");
-
-        // Return the single scalar result.
-        return intval($qb->getQuery()->getSingleScalarResult());
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function dataTablesFindAll(DataTablesWrapper $dtWrapper) {
-
-        // Get the prefix.
-        $prefix = $dtWrapper->getMapping()->getPrefix();
-
-        // Create a query builder.
-        $qb = $this->createQueryBuilder($prefix)
-            ->setFirstResult($dtWrapper->getRequest()->getStart())
-            ->setMaxResults($dtWrapper->getRequest()->getLength());
-
-        // Build the where and order clauses.
-        self::dataTablesWhere($qb, $dtWrapper);
-        self::dataTablesOrder($qb, $dtWrapper);
-
-        // Return the result.
-        return $qb->getQuery()->getResult();
-    }
-
-    /**
-     * Build a WHERE operator.
-     *
-     * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
-     * @return string Returns the WHERE operator.
-     */
-    protected static function dataTablesOperator(DataTablesWrapper $dtWrapper) {
-
-        // Check if the DataTables columns defines a search.
-        foreach ($dtWrapper->getRequest()->getColumns() as $dtColumn) {
-            if ("" !== $dtColumn->getSearch()->getValue()) {
-                return "AND";
-            }
-        }
-
-        // Check if the DataTables defines a search.
-        if ("" !== $dtWrapper->getRequest()->getSearch()->getValue()) {
-            return "OR";
-        }
-
-        // Return the operator.
-        return null;
-    }
-
-    /**
-     * Build an ORDER clause.
+     * Append a DataTables ORDER clause.
      *
      * @param QueryBuilder $queryBuilder The query builder.
      * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
      * @return void
      */
-    public static function dataTablesOrder(QueryBuilder $queryBuilder, DataTablesWrapper $dtWrapper) {
+    public static function appendDataTablesOrder(QueryBuilder $queryBuilder, DataTablesWrapper $dtWrapper) {
 
         // Handle each DataTables order.
         foreach ($dtWrapper->getRequest()->getOrder() as $dtOrder) {
@@ -130,16 +50,16 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     }
 
     /**
-     * Build a WHERE clause.
+     * Append a DataTables WHERE clause.
      *
      * @param QueryBuilder $queryBuilder The query builder.
      * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
      * @return void
      */
-    public static function dataTablesWhere(QueryBuilder $queryBuilder, DataTablesWrapper $dtWrapper) {
+    public static function appendDataTablesWhere(QueryBuilder $queryBuilder, DataTablesWrapper $dtWrapper) {
 
-        // Get and check the operator.
-        $operator = self::dataTablesOperator($dtWrapper);
+        // Detremines and check the operator.
+        $operator = self::determineDataTablesOperator($dtWrapper);
         if (null === $operator) {
             return;
         }
@@ -155,7 +75,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
             // Check the DataTables column.
             if ("OR" === $operator || "" !== $dtColumn->getSearch()->getValue()) {
 
-                // Get the column mapping.
+                // Get the DataTables mapping.
                 $mapping = $dtColumn->getMapping();
 
                 // Add.
@@ -165,11 +85,136 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
             }
         }
 
-        // Set the where.
+        // Set the where clause.
         $queryBuilder->andWhere("(" . implode(" " . $operator . " ", $wheres) . ")");
         for ($i = count($params) - 1; 0 <= $i; --$i) {
             $queryBuilder->setParameter($params[$i], $values[$i]);
         }
+    }
+
+    /**
+     * Build a DataTables query builder "Count filtered".
+     *
+     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @return QueryBuilder Returns the DataTables query builder "Count filtered".
+     */
+    protected function buildDataTablesCountFiltered(DataTablesWrapper $dtWrapper) {
+
+        // Get the prefix.
+        $prefix = $dtWrapper->getMapping()->getPrefix();
+
+        // Create a query builder.
+        $qb = $this->createQueryBuilder($prefix)
+            ->select("COUNT(" . $prefix . ")");
+
+        // Append the where clause.
+        self::appendDataTablesWhere($qb, $dtWrapper);
+
+        // Return the query builder.
+        return $qb;
+    }
+
+    /**
+     * Build a DataTables query builder "Count total".
+     *
+     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @return QueryBuilder Returns the DataTables query builder "Count total".
+     */
+    protected function buildDataTablesCountTotal(DataTablesWrapper $dtWrapper) {
+
+        // Get the prefix.
+        $prefix = $dtWrapper->getMapping()->getPrefix();
+
+        // Create a query builder.
+        $qb = $this->createQueryBuilder($prefix)
+            ->select("COUNT(" . $prefix . ")");
+
+        // Return the query builder.
+        return $qb;
+    }
+
+    /**
+     * Build a DataTables query builder "Find all".
+     *
+     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @return QueryBuilder Returns the DataTables query builder "Find all".
+     */
+    protected function buildDataTablesFindAll(DataTablesWrapper $dtWrapper) {
+
+        // Get the prefix.
+        $prefix = $dtWrapper->getMapping()->getPrefix();
+
+        // Create a query builder.
+        $qb = $this->createQueryBuilder($prefix)
+            ->setFirstResult($dtWrapper->getRequest()->getStart())
+            ->setMaxResults($dtWrapper->getRequest()->getLength());
+
+        // Build the where and order clauses.
+        self::appendDataTablesWhere($qb, $dtWrapper);
+        self::appendDataTablesOrder($qb, $dtWrapper);
+
+        // Return the query builder.
+        return $qb;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function dataTablesCountFiltered(DataTablesWrapper $dtWrapper) {
+
+        // Build a DataTables query builder.
+        $qb = $this->buildDataTablesCountFiltered($dtWrapper);
+
+        // Return the single scalar result.
+        return intval($qb->getQuery()->getSingleScalarResult());
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function dataTablesCountTotal(DataTablesWrapper $dtWrapper) {
+
+        // Build a DataTables query builder.
+        $qb = $this->buildDataTablesCountTotal($dtWrapper);
+
+        // Return the single scalar result.
+        return intval($qb->getQuery()->getSingleScalarResult());
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function dataTablesFindAll(DataTablesWrapper $dtWrapper) {
+
+        // Build a DataTables query builder.
+        $qb = $this->buildDataTablesFindAll($dtWrapper);
+
+        // Return the result.
+        return $qb->getQuery()->getResult();
+    }
+
+    /**
+     * Determines a DataTables operator.
+     *
+     * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
+     * @return string Returns the DataTables operator.
+     */
+    protected static function determineDataTablesOperator(DataTablesWrapper $dtWrapper) {
+
+        // Check if the DataTables columns defines a search.
+        foreach ($dtWrapper->getRequest()->getColumns() as $dtColumn) {
+            if ("" !== $dtColumn->getSearch()->getValue()) {
+                return "AND";
+            }
+        }
+
+        // Check if the DataTables defines a search.
+        if ("" !== $dtWrapper->getRequest()->getSearch()->getValue()) {
+            return "OR";
+        }
+
+        // Return the operator.
+        return null;
     }
 
 }
