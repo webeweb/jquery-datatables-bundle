@@ -360,7 +360,7 @@ class DataTablesColumn implements JsonSerializable {
                 continue;
             }
             if (false === $dtColumn->getSearchable()) {
-                $dtColumn->setSearch(DataTablesSearch::parse([])); // Set a defautl DataTables search.
+                $dtColumn->setSearch(DataTablesSearch::parse([])); // Set a default DataTables search.
                 continue;
             }
 
