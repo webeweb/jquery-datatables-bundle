@@ -1,5 +1,5 @@
 # Resources/config/routing/datatables.yml
 jquery_datatables_index:
-    path:     /datatables/index/{name}
+    path:     "/datatables/index/{name}"
     defaults: { _controller: "JQueryDataTablesBundle:DataTables:index" }
-    methods: [GET,POST]
+    methods:  [GET,POST]
