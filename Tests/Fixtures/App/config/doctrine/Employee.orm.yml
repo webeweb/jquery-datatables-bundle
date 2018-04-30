@@ -1,45 +1,45 @@
 # Tests/Fixtures/App/config/doctrine/Employee.orm.yml
 WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee:
 
-    type:            entity
+    type:            "entity"
     repositoryClass: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Repository\EmployeeRepository
-    table:           datatables_employee
+    table:           "dt_employee"
 
     id:
         id:
-            name: id
-            type: integer
-            generator: { strategy: auto }
+            name: "id"
+            type: "integer"
+            generator: { strategy: "auto" }
 
     fields:
         age:
-            column:   age
-            type:     integer
+            column:   "age"
+            type:     "integer"
             nullable: false
             options:
                 default: 0
         name:
-            column:   name
-            type:     string
+            column:   "name"
+            type:     "string"
             length:   45
             nullable: false
         office:
-            column:   office
-            type:     string
+            column:   "office"
+            type:     "string"
             length:   45
             nullable: false
         position:
-            column:   position
-            type:     string
+            column:   "position"
+            type:     "string"
             length:   45
             nullable: false
         salary:
-            column:   salary
-            type:     integer
+            column:   "salary"
+            type:     "integer"
             nullable: false
             options:
                 default: 0
         startDate:
-            column:   start_date
-            type:     datetime
+            column:   "start_date"
+            type:     "datetime"
             nullable: false

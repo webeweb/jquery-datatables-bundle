@@ -4,4 +4,4 @@ services:
     app.datatables.provider.employee:
         class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider
         tags:
-            - { name: webeweb.jquerydatatables.provider }
+            - { name: "webeweb.jquerydatatables.provider" }
