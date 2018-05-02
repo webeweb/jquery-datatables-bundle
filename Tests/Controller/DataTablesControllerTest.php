@@ -367,7 +367,9 @@ final class DataTablesControllerTest extends AbstractWebTestCase {
 
         // Check the JSON response.
         $res = json_decode($client->getResponse()->getContent(), true);
+
         $this->assertCount(7, $res["data"]);
+
         $this->assertEquals("Tiger Nixon", $res["data"][0]["name"]);
         $this->assertEquals("Timothy Mooney", $res["data"][1]["name"]);
         $this->assertEquals("Unity Butler", $res["data"][2]["name"]);
