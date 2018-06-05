@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Twig\Extension;
 
 use Twig_Node;
 use Twig_SimpleFunction;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Cases\AbstractJQueryDataTablesFrameworkTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider;
 use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 
@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Twig\Extension
  */
-final class DataTablesTwigExtensionTest extends AbstractFrameworkTestCase {
+final class DataTablesTwigExtensionTest extends AbstractJQueryDataTablesFrameworkTestCase {
 
     /**
      * {@inheritdoc}
@@ -164,7 +164,7 @@ final class DataTablesTwigExtensionTest extends AbstractFrameworkTestCase {
         $i = 0;
         foreach ($this->dataTablesWrapper->getColumns() as $dtColumn) {
             $dtColumn->setClassname($dtColumn->getData());
-            $dtColumn->setWidth(++$i);
+            $dtColumn->setWidth( ++$i);
         }
 
         $arg9 = ["class" => "class", "thead" => true, "tfoot" => true];

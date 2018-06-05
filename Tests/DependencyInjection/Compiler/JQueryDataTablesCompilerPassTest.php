@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection\Compiler;
 use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Compiler\JQueryDataTablesCompilerPass;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Cases\AbstractJQueryDataTablesFrameworkTestCase;
 
 /**
  * jQuery DataTables compiler pass test.
@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection\Compiler
  * @final
  */
-final class JQueryDataTablesCompilerPassTest extends AbstractFrameworkTestCase {
+final class JQueryDataTablesCompilerPassTest extends AbstractJQueryDataTablesFrameworkTestCase {
 
     /**
      * DataTables manager.

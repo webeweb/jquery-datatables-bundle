@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use PHPUnit_Framework_TestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrder;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Cases\AbstractJQueryDataTablesFrameworkTestCase;
 
 /**
  * DataTables order test.
@@ -32,7 +32,7 @@ final class DataTablesOrderTest extends PHPUnit_Framework_TestCase {
     public function testParse() {
 
         // Get the POST data.
-        $postData = AbstractFrameworkTestCase::getPostData();
+        $postData = AbstractJQueryDataTablesFrameworkTestCase::getPostData();
 
         // Set the POST data.
         $postData["order"][0]["column"] = "0";

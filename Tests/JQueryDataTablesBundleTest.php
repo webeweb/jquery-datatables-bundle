@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
 
 use WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Cases\AbstractJQueryDataTablesFrameworkTestCase;
 
 /**
  * jQuery DataTables bundle test.
@@ -20,7 +21,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle;
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests
  * @final
  */
-final class JQueryDataTablesBundleTest extends AbstractFrameworkTestCase {
+final class JQueryDataTablesBundleTest extends AbstractJQueryDataTablesFrameworkTestCase {
 
     /**
      * {@inheritdoc}
