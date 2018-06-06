@@ -2,7 +2,7 @@
 {% extends "@Bootstrap/layout.html.twig" %}
 {% block bootstrapHeadStyles %}
     {{ parent() }}
-    {% include "@JQueryDataTables/layout/style.html.twig" %}
+    {% include "@JQueryDataTables/include/styles.html.twig" %}
     <style type="text/css">
         .content {
             margin: 70px 0 0;
@@ -35,7 +35,7 @@
 {% endblock %}
 {% block bootstrapBodyScripts %}
     {{ parent() }}
-    {% include "@JQueryDataTables/layout/script.html.twig" %}
+    {% include "@JQueryDataTables/include/scripts.html.twig" %}
     {% block jQueryDataTablesBodyScripts %}
     {% endblock %}
 {% endblock %}
