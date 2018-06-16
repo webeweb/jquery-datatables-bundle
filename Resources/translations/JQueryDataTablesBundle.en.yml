@@ -1,0 +1,6 @@
+# Resources/translations/JQueryDataTablesBundle.en.yml
+DataTablesController:
+    deleteAction:
+        danger:  "Record not found"
+        success: "Successful deletion"
+        warning: "Failed deletion"
