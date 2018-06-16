@@ -1,0 +1,6 @@
+# Resources/translations/JQueryDataTablesBundle.en.yml
+DataTablesController:
+    deleteAction:
+        danger:  "Enregistrement non trouvé"
+        success: "Suppression réussie"
+        warning: "Suppression échouée"
