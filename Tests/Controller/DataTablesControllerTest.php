@@ -415,4 +415,25 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         //$this->assertEquals("Successful deletion", $res["notify"]);
     }
 
+    /**
+     * Tests the deleteAction() method.
+     *
+     * @return void
+     */
+    public function testDeleteActionWithStatus404() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a POST request with XML HTTP request.
+        $client->request("GET", "/datatables/employee/delete/57", [], [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
+        // Check the JSON response.
+        $res = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertEquals(404, $res["status"]);
+        //$this->assertEquals("Successful deletion", $res["notify"]);
+    }
+
 }
