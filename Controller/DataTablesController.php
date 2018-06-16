@@ -44,65 +44,65 @@ class DataTablesController extends AbstractDataTablesController {
         $dtWrapper = $this->getDataTablesWrapper($dtProvider);
 
         // Check if the request is an XML HTTP request.
-        if (true === $request->isXmlHttpRequest()) {
+        if (false === $request->isXmlHttpRequest()) {
 
-            // Get the entities manager.
-            $em = $this->getDoctrine()->getManager();
+            // Initialize the default view.
+            $dtView = "@JQueryDataTables/DataTables/index.html.twig";
 
-            // Get and check the entities repository.
-            $repository = $em->getRepository($dtProvider->getEntity());
-            if (false === ($repository instanceOf DataTablesRepositoryInterface)) {
-                throw new BadDataTablesRepositoryException($repository);
-            }
-
-            // Parse the request.
-            $dtWrapper->parse($request);
-
-            //
-            $filtered = $repository->dataTablesCountFiltered($dtWrapper);
-            $total    = $repository->dataTablesCountTotal($dtWrapper);
-            $entities = $repository->dataTablesFindAll($dtWrapper);
-
-            // Set the response.
-            $dtWrapper->getResponse()->setRecordsFiltered($filtered);
-            $dtWrapper->getResponse()->setRecordsTotal($total);
-
-            // Handle each entity.
-            foreach ($entities as $entity) {
-
-                // Count the rows.
-                $rows = $dtWrapper->getResponse()->countRows();
-
-                // Create a row.
-                $dtWrapper->getResponse()->addRow();
-
-                // Render each optional parameters.
-                foreach (DataTablesResponse::dtRow() as $dtRow) {
-                    $dtWrapper->getResponse()->setRow($dtRow, $dtProvider->renderRow($dtRow, $entity, $rows));
-                }
-
-                // Render each column.
-                foreach ($dtWrapper->getColumns() as $dtColumn) {
-                    $dtWrapper->getResponse()->setRow($dtColumn->getData(), $dtProvider->renderColumn($dtColumn, $entity));
-                }
+            // Check the provider view.
+            if (null !== $dtProvider->getView()) {
+                $dtView = $dtProvider->getView();
             }
 
             // Return the response.
-            return new Response(json_encode($dtWrapper->getResponse()));
+            return $this->render($dtView, [
+                    "dtWrapper" => $dtWrapper,
+            ]);
         }
 
-        // Initialize the default view.
-        $dtView = "@JQueryDataTables/DataTables/index.html.twig";
+        // Get the entities manager.
+        $em = $this->getDoctrine()->getManager();
 
-        // Check the provider view.
-        if (null !== $dtProvider->getView()) {
-            $dtView = $dtProvider->getView();
+        // Get and check the entities repository.
+        $repository = $em->getRepository($dtProvider->getEntity());
+        if (false === ($repository instanceOf DataTablesRepositoryInterface)) {
+            throw new BadDataTablesRepositoryException($repository);
+        }
+
+        // Parse the request.
+        $dtWrapper->parse($request);
+
+        //
+        $filtered = $repository->dataTablesCountFiltered($dtWrapper);
+        $total    = $repository->dataTablesCountTotal($dtWrapper);
+        $entities = $repository->dataTablesFindAll($dtWrapper);
+
+        // Set the response.
+        $dtWrapper->getResponse()->setRecordsFiltered($filtered);
+        $dtWrapper->getResponse()->setRecordsTotal($total);
+
+        // Handle each entity.
+        foreach ($entities as $entity) {
+
+            // Count the rows.
+            $rows = $dtWrapper->getResponse()->countRows();
+
+            // Create a row.
+            $dtWrapper->getResponse()->addRow();
+
+            // Render each optional parameters.
+            foreach (DataTablesResponse::dtRow() as $dtRow) {
+                $dtWrapper->getResponse()->setRow($dtRow, $dtProvider->renderRow($dtRow, $entity, $rows));
+            }
+
+            // Render each column.
+            foreach ($dtWrapper->getColumns() as $dtColumn) {
+                $dtWrapper->getResponse()->setRow($dtColumn->getData(), $dtProvider->renderColumn($dtColumn, $entity));
+            }
         }
 
         // Return the response.
-        return $this->render($dtView, [
-                "dtWrapper" => $dtWrapper,
-        ]);
+        return new Response(json_encode($dtWrapper->getResponse()));
     }
 
 }
