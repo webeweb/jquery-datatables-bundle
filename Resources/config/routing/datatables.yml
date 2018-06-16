@@ -1,4 +1,9 @@
 # Resources/config/routing/datatables.yml
+jquery_datatables_delete:
+    path:     "/datatables/{name}/delete/{id}"
+    defaults: { _controller: "JQueryDataTablesBundle:DataTables:delete" }
+    methods:  ["GET"]
+
 jquery_datatables_index:
     path:     "/datatables/{name}/index"
     defaults: { _controller: "JQueryDataTablesBundle:DataTables:index" }
