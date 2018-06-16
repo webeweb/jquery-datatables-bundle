@@ -27,7 +27,9 @@ Includes :
 - [DataTables RowReorder 1.2.3](https://datatables.net/extensions/rowreorder/) (DataTables plugin)
 - [DataTables Scroller 1.4.4](https://datatables.net/extensions/scroller/) (DataTables plugin)
 - [DataTables Select 1.2.5](https://datatables.net/extensions/select/) (DataTables plugin)
+- [editableTable](https://github.com/mindmup/editable-table/)
 - [jQuery 3.2.1](http://jquery.com/) (DataTables dependency)
+
 
 ---
 
@@ -57,6 +59,7 @@ in the `app/AppKernel.php` file of your project:
     public function registerBundles() {
         $bundles = [
             // ...
+            new WBW\Bundle\BootstrapBundle\BootstrapBundle(), // for use bundle templates
             new WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle(),
         ];
 
@@ -66,6 +69,16 @@ in the `app/AppKernel.php` file of your project:
     }
 ```
 
+Add the bundle routing in the `app/config/routing.yml` file of your project:
+
+```yaml
+# ...
+jquery_datatables:
+    prefix:   "/"
+    resource: "@JQueryDataTablesBundle/Resources/config/routing.yml"
+
+```
+
 Once the bundle is added then do:
 
 ```bash
@@ -73,6 +86,380 @@ $ php bin/console assets:install
 ```
 
 ---
+
+## Usage
+
+### 1) Entity
+
+```php
+namespace AppBundle\Entity;
+
+use DateTime;
+
+/**
+ * Employee entity.
+ */
+class Employee {
+
+    /**
+     * Age.
+     *
+     * @var integer
+     */
+    private $age;
+
+    /**
+     * Id.
+     *
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * Name.
+     *
+     * @var string
+     */
+    private $name;
+
+    /**
+     * Office.
+     *
+     * @var string
+     */
+    private $office;
+
+    /**
+     * Position.
+     *
+     * @var string
+     */
+    private $position;
+
+    /**
+     * Salary.
+     *
+     * @var integer
+     */
+    private $salary;
+
+    /**
+     * Start date.
+     *
+     * @var DateTime
+     */
+    private $startDate;
+
+    /**
+     * Constructor.
+     */
+    public function __construct() {
+        // NOTHING TO DO.
+    }
+
+    /**
+     * Get the age.
+     *
+     * @return integer Returns the age.
+     */
+    public function getAge() {
+        return $this->age;
+    }
+
+    /**
+     * Get the id.
+     *
+     * @return integer Returns the id.
+     */
+    public function getId() {
+        return $this->id;
+    }
+
+    /**
+     * Get the name.
+     *
+     * @return string Returns the name.
+     */
+    public function getName() {
+        return $this->name;
+    }
+
+    /**
+     * Get the office.
+     *
+     * @return string Returns the office.
+     */
+    public function getOffice() {
+        return $this->office;
+    }
+
+    /**
+     * Get the position.
+     *
+     * @return string Returns the position.
+     */
+    public function getPosition() {
+        return $this->position;
+    }
+
+    /**
+     * Get the salary.
+     *
+     * @return integer Returns the salary.
+     */
+    public function getSalary() {
+        return $this->salary;
+    }
+
+    /**
+     * Get the start date.
+     *
+     * @return DateTime Returns the start date.
+     */
+    public function getStartDate() {
+        return $this->startDate;
+    }
+
+    /**
+     * Set the age.
+     *
+     * @param integer $age The age.
+     * @return Employee Returns the employee.
+     */
+    public function setAge($age) {
+        $this->age = $age;
+        return $this;
+    }
+
+    /**
+     * Set the name.
+     *
+     * @param string $name The name.
+     * @return Employee Returns the employee.
+     */
+    public function setName($name) {
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * Set the office.
+     *
+     * @param string $office The office.
+     * @return Employee Returns the employee.
+     */
+    public function setOffice($office) {
+        $this->office = $office;
+        return $this;
+    }
+
+    /**
+     * Set the position.
+     *
+     * @param string $position The position.
+     * @return Employee Returns the employee.
+     */
+    public function setPosition($position) {
+        $this->position = $position;
+        return $this;
+    }
+
+    /**
+     * Set the salary.
+     *
+     * @param integer $salary The salary.
+     * @return Employee Returns the employee.
+     */
+    public function setSalary($salary) {
+        $this->salary = $salary;
+        return $this;
+    }
+
+    /**
+     * Set the start date.
+     *
+     * @param DateTime $startDate The start date.
+     * @return Employee Returns the employee.
+     */
+    public function setStartDate($startDate) {
+        $this->startDate = $startDate;
+        return $this;
+    }
+
+}
+
+```
+
+### 2) Repository
+
+
+```php
+namespace AppBundle\Entity;
+
+use WBW\Bundle\JQuery\DataTablesBundle\Repository\DefaultDataTablesRepository;
+
+/**
+ * Employee repository.
+ */
+class EmployeeRepository extends DefaultDataTablesRepository {
+
+}
+```
+
+### 3) Provider
+
+```php
+namespace AppBundle\Provider;
+
+use AppBundle\Entity\Employee;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
+
+/**
+ * Employee DataTables provider.
+ */
+class EmployeeDataTablesProvider implements DataTablesProviderInterface {
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getColumns() {
+
+        // Initialize the columns.
+        $dtColumns = [];
+
+        $dtColumns[] = DataTablesColumn::newInstance("name", "Name");
+        $dtColumns[] = DataTablesColumn::newInstance("position", "Position");
+        $dtColumns[] = DataTablesColumn::newInstance("office", "Office");
+        $dtColumns[] = DataTablesColumn::newInstance("age", "Age");
+        $dtColumns[] = DataTablesColumn::newInstance("startDate", "Start date");
+        $dtColumns[] = DataTablesColumn::newInstance("salary", "Salary");
+        $dtColumns[] = DataTablesColumn::newInstance("actions", "Actions")->setOrderable(false)->setSearchable(false);
+
+        // Returns the columns.
+        return $dtColumns;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getEntity() {
+        return Employee::class;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getName() {
+        return "employee";
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getPrefix() {
+        return "e";
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getView() {
+        return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function renderColumn(DataTablesColumn $dtColumn, $entity) {
+
+        // Initialize the output.
+        $output = null;
+
+        // Switch into column data.
+        switch ($dtColumn->getData()) {
+
+            case "actions":
+                $output = "";
+                break;
+
+            case "age":
+                $output = $entity->getAge();
+                break;
+
+            case "name":
+                $output = $entity->getName();
+                break;
+
+            case "office":
+                $output = $entity->getOffice();
+                break;
+
+            case "position":
+                $output = $entity->getPosition();
+                break;
+
+            case "salary":
+                $output = $entity->getSalary();
+                break;
+
+            case "startDate":
+                if (null !== $entity->getStartDate()) {
+                    $output = $entity->getStartDate()->format("Y-m-d");
+                }
+                break;
+        }
+
+        // Return the output.
+        return $output;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function renderRow($dtRow, $entity, $rowNumber) {
+
+        // Initialize the output.
+        $output = null;
+
+        // Switch into column data.
+        switch ($dtRow) {
+
+            case self::DATATABLES_ROW_ATTR:
+                break;
+
+            case self::DATATABLES_ROW_CLASS:
+                $output = (0 === $rowNumber % 2 ? "even" : "odd");
+                break;
+
+            case self::DATATABLES_ROW_DATA:
+                $output = ["pkey" => $entity->getId()];
+                break;
+
+            case self::DATATABLES_ROW_ID:
+                $output = "row_" . $entity->getId();
+                break;
+        }
+
+        // Return the output.
+        return $output;
+    }
+
+}
+```
+
+Add this DataTables provider into `app/config/services.yml` file of your project:
+
+```yaml
+services:
+    # ...
+    app.datatables.provider.employee:
+        class: AppBundle\Provider\EmployeeDataTablesProvider
+        tags:
+            - { name: "webeweb.jquerydatatables.provider" }
+```
+
+Open you browser at http://localhost:8000/app_dev.php/datatables/employee/index.
 
 ## Testing
 
