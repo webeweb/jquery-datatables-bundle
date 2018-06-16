@@ -30,7 +30,6 @@ Includes :
 - [editableTable](https://github.com/mindmup/editable-table/)
 - [jQuery 3.2.1](http://jquery.com/) (DataTables dependency)
 
-
 ---
 
 ## Compatibility
@@ -287,7 +286,6 @@ class Employee {
     }
 
 }
-
 ```
 
 ### 2) Repository
@@ -307,6 +305,12 @@ class EmployeeRepository extends DefaultDataTablesRepository {
 ```
 
 ### 3) Provider
+
+> IMPORTANT NOTICE:
+> getName() return the parameter "name" used in the bundle route.
+> getView() return the view used by the DataTables controller.
+> - return something like "@App/Employe/index.html.twig" for use your template
+> - return null for use the bundle template
 
 ```php
 namespace AppBundle\Provider;
@@ -458,6 +462,23 @@ services:
         tags:
             - { name: "webeweb.jquerydatatables.provider" }
 ```
+
+You can add as many providers as you want as long as the name of the providers are different.
+
+### 4) Template (for custom rendering)
+
+```html
+{# src/AppBundle/Resources/Employee/index.html.twig #}
+{% block content %}
+	{{ dataTablesHTML(dtWrapper) }}
+{% endblock %}
+
+{% block javascript %}
+	{{ dataTablesJS(dtWrapper) }}
+{% endblock %}
+```
+
+### 5) Enjoy
 
 Open you browser at http://localhost:8000/app_dev.php/datatables/employee/index.
 
