@@ -433,7 +433,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         $res = json_decode($client->getResponse()->getContent(), true);
 
         $this->assertEquals(404, $res["status"]);
-        //$this->assertEquals("Successful deletion", $res["notify"]);
+        //$this->assertEquals("Record not found", $res["notify"]);
     }
 
 }
