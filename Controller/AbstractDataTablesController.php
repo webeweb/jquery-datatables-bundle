@@ -72,4 +72,14 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
         return $dtWrapper;
     }
 
+    /**
+     * Get the notification.
+     *
+     * @param string $id The notification id.
+     * @return string Returns the notification.
+     */
+    protected function getNotification($id) {
+        return $this->getTranslator()->trans($id, [], "JQueryDataTablesBundle");
+    }
+
 }
