@@ -53,7 +53,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         $client = static::createClient();
 
         // Make a GET request.
-        $client->request("GET", "/datatables/index/employee");
+        $client->request("GET", "/datatables/employee/index");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 
@@ -71,7 +71,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         $client = static::createClient();
 
         // Make a POST request with XML HTTP request.
-        $client->request("POST", "/datatables/index/employee", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
+        $client->request("POST", "/datatables/employee/index", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
         // Check the JSON response.
@@ -112,7 +112,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         $client = static::createClient();
 
         // Make a POST request with XML HTTP request.
-        $client->request("POST", "/datatables/index/employee", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
+        $client->request("POST", "/datatables/employee/index", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
         // Check the JSON response.
@@ -164,7 +164,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         $client = static::createClient();
 
         // Make a POST request with XML HTTP request.
-        $client->request("POST", "/datatables/index/employee", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
+        $client->request("POST", "/datatables/employee/index", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
         // Check the JSON response.
@@ -205,7 +205,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         $client = static::createClient();
 
         // Make a POST request with XML HTTP request.
-        $client->request("POST", "/datatables/index/employee", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
+        $client->request("POST", "/datatables/employee/index", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
         // Check the JSON response.
@@ -246,7 +246,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         $client = static::createClient();
 
         // Make a POST request with XML HTTP request.
-        $client->request("POST", "/datatables/index/employee", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
+        $client->request("POST", "/datatables/employee/index", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
         // Check the JSON response.
@@ -288,7 +288,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         $client = static::createClient();
 
         // Make a POST request with XML HTTP request.
-        $client->request("POST", "/datatables/index/employee", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
+        $client->request("POST", "/datatables/employee/index", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
         // Check the JSON response.
@@ -320,7 +320,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         $client = static::createClient();
 
         // Make a POST request with XML HTTP request.
-        $client->request("POST", "/datatables/index/employee", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
+        $client->request("POST", "/datatables/employee/index", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
         // Check the JSON response.
@@ -361,7 +361,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         $client = static::createClient();
 
         // Make a POST request with XML HTTP request.
-        $client->request("POST", "/datatables/index/employee", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
+        $client->request("POST", "/datatables/employee/index", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
         // Check the JSON response.
