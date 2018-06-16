@@ -8,8 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use Symfony\Component\Config\Loader\LoaderInterface;
-use Symfony\Component\HttpKernel\Kernel;
+use WBW\Bundle\BootstrapBundle\Tests\Cases\AbstractBootstrapKernel;
 
 /**
  * Test kernel.
@@ -18,7 +17,7 @@ use Symfony\Component\HttpKernel\Kernel;
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\App
  * @final
  */
-final class TestKernel extends Kernel {
+final class TestKernel extends AbstractBootstrapKernel {
 
     /**
      * {@inheritdoc}
@@ -40,22 +39,8 @@ final class TestKernel extends Kernel {
     /**
      * {@inheritdoc}
      */
-    public function registerContainerConfiguration(LoaderInterface $loader) {
-        $loader->load(__DIR__ . "/config/config_test.yml");
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getCacheDir() {
-        return __DIR__ . "/var/cache";
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getLogDir() {
-        return __DIR__ . "/var/logs";
+    public function getTestsDir() {
+        return __DIR__ . "/../..";
     }
 
 }
