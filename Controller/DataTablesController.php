@@ -11,19 +11,12 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Controller;
 
-use Psr\Log\LoggerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\RouterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
-use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Repository\DataTablesRepositoryInterface;
-use WBW\Library\Core\IO\HTTPInterface;
 
 /**
  * DataTables controller.
@@ -31,71 +24,7 @@ use WBW\Library\Core\IO\HTTPInterface;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Controller
  */
-class DataTablesController extends Controller {
-
-    /**
-     * Get the DataTables provider.
-     *
-     * @return DataTablesProviderInterface Returns the DataTables provider.
-     * @throws UnregisteredDataTablesProviderException Throws an unregistered DataTables provider exception.
-     */
-    private function getDataTablesProvider($name) {
-
-        // Log a debug trace.
-        $this->getLogger()->debug(sprintf("DataTables controller search for a DataTables provider with name \"%s\"", $name));
-
-        // Get the DataTables provider.
-        $dtProvider = $this->get(DataTablesManager::SERVICE_NAME)->getProvider($name);
-
-        // Log an info trace.
-        $this->getLogger()->info(sprintf("DataTables controller found a DataTables provider with name \"%s\"", $name));
-
-        // Return the DataTables provider.
-        return $dtProvider;
-    }
-
-    /**
-     * Get a DataTables wrapper.
-     *
-     * @param DataTablesProviderInterface $dtProvider The DataTables provider.
-     * @return DataTablesWrapper Returns the DataTables wrapper.
-     */
-    private function getDataTablesWrapper(DataTablesProviderInterface $dtProvider) {
-
-        // Initialize the DataTables wrapper.
-        $dtWrapper = new DataTablesWrapper($dtProvider->getPrefix(), HTTPInterface::HTTP_METHOD_POST, $this->getRouter()->generate("jquery_datatables_index", ["name" => $dtProvider->getName()]));
-
-        // Handle each column.
-        foreach ($dtProvider->getColumns() as $dtColumn) {
-
-            // Log a debug trace.
-            $this->getLogger()->debug(sprintf("DataTables provider add a DataTables column \"%s\"", $dtColumn->getData()));
-
-            // Add.
-            $dtWrapper->addColumn($dtColumn);
-        }
-
-        // Return the DataTables wrapper.
-        return $dtWrapper;
-    }
-
-    /**
-     * Get the logger.
-     *
-     * @return LoggerInterface Returns the logger.
-     */
-    private function getLogger() {
-        return $this->get("logger");
-    }
-
-    /**
-     * Get the router.
-     *
-     * @return RouterInterface Returns the router.
-     */
-    private function getRouter() {
-        return $this->get("router");
-    }
+class DataTablesController extends AbstractDataTablesController {
 
     /**
      * Lists all entities.
