@@ -19,10 +19,11 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Library\Core\IO\HTTPInterface;
 
 /**
- * AbstractDataTablesController.
+ * Abstract jQuery DataTables controller.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Controller
+ * @abstract
  */
 abstract class AbstractDataTablesController extends AbstractBootstrapController {
 
