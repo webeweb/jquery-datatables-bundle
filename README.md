@@ -295,7 +295,7 @@ class Employee {
 Create a repository in the `src/AppBundle/Repository` directory of your project:
 
 ```php
-namespace AppBundle\Entity;
+namespace AppBundle\Repository;
 
 use WBW\Bundle\JQuery\DataTablesBundle\Repository\DefaultDataTablesRepository;
 
@@ -452,9 +452,9 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface {
 ```
 
 > IMPORTANT NOTICE:
-> 
+>
 > getName() return the parameter "name" used in the bundle route.
-> 
+>
 > getView() return the view used by the DataTables controller.
 > - return something like "@App/Employe/index.html.twig" for use your template
 > - return null for use the bundle template
@@ -668,13 +668,41 @@ Modify the provider in the `src/AppBundle/Provider/EmployeeDataTablesProvider.ph
 
         // ...
 
-        $dtColumns[] = DataTablesColumn::newInstance("office", "Office")->getMapping()->setPrefix("o");
+        $dtColumns[] = DataTablesColumn::newInstance("office", "Office")->getMapping()->setColumn("name")->setPrefix("o");
 
         // ...
 
         // Returns the columns.
         return $dtColumns;
     }
+
+    // ...
+
+    /**
+     * {@inheritdoc}
+     */
+    public function renderColumn(DataTablesColumn $dtColumn, $entity) {
+
+        // Initialize the output.
+        $output = null;
+
+        // Switch into column data.
+        switch ($dtColumn->getData()) {
+
+            // ...
+
+            case "office":
+                $output = $entity->getOffice()->getName();
+                break;
+
+            // ...
+
+        }
+
+        // Return the output.
+        return $output;
+    }
+
 ```
 
 ## Testing
