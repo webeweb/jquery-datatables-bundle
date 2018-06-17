@@ -90,6 +90,8 @@ $ php bin/console assets:install
 
 ### 1) Entity
 
+Create an entity in the `src/AppBundle/Entity` directory of your project:
+
 ```php
 namespace AppBundle\Entity;
 
@@ -223,7 +225,7 @@ class Employee {
      * Set the age.
      *
      * @param integer $age The age.
-     * @return Employee Returns the employee.
+     * @return Employee Returns this employee.
      */
     public function setAge($age) {
         $this->age = $age;
@@ -234,7 +236,7 @@ class Employee {
      * Set the name.
      *
      * @param string $name The name.
-     * @return Employee Returns the employee.
+     * @return Employee Returns this employee.
      */
     public function setName($name) {
         $this->name = $name;
@@ -245,7 +247,7 @@ class Employee {
      * Set the office.
      *
      * @param string $office The office.
-     * @return Employee Returns the employee.
+     * @return Employee Returns this employee.
      */
     public function setOffice($office) {
         $this->office = $office;
@@ -256,7 +258,7 @@ class Employee {
      * Set the position.
      *
      * @param string $position The position.
-     * @return Employee Returns the employee.
+     * @return Employee Returns this employee.
      */
     public function setPosition($position) {
         $this->position = $position;
@@ -267,7 +269,7 @@ class Employee {
      * Set the salary.
      *
      * @param integer $salary The salary.
-     * @return Employee Returns the employee.
+     * @return Employee Returns this employee.
      */
     public function setSalary($salary) {
         $this->salary = $salary;
@@ -278,7 +280,7 @@ class Employee {
      * Set the start date.
      *
      * @param DateTime $startDate The start date.
-     * @return Employee Returns the employee.
+     * @return Employee Returns this employee.
      */
     public function setStartDate($startDate) {
         $this->startDate = $startDate;
@@ -290,6 +292,7 @@ class Employee {
 
 ### 2) Repository
 
+Create a repository in the `src/AppBundle/Repository` directory of your project:
 
 ```php
 namespace AppBundle\Entity;
@@ -306,11 +309,7 @@ class EmployeeRepository extends DefaultDataTablesRepository {
 
 ### 3) Provider
 
-> IMPORTANT NOTICE:
-> getName() return the parameter "name" used in the bundle route.
-> getView() return the view used by the DataTables controller.
-> - return something like "@App/Employe/index.html.twig" for use your template
-> - return null for use the bundle template
+Create a provider in the `src/AppBundle/Provider` directory of your project:
 
 ```php
 namespace AppBundle\Provider;
@@ -452,7 +451,15 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface {
 }
 ```
 
-Add this DataTables provider into `app/config/services.yml` file of your project:
+> IMPORTANT NOTICE:
+> 
+> getName() return the parameter "name" used in the bundle route.
+> 
+> getView() return the view used by the DataTables controller.
+> - return something like "@App/Employe/index.html.twig" for use your template
+> - return null for use the bundle template
+
+Add this provider in the `app/config/services.yml` file of your project:
 
 ```yaml
 services:
@@ -467,20 +474,208 @@ You can add as many providers as you want as long as the name of the providers a
 
 ### 4) Template (for custom rendering)
 
+Create a template in the `src/AppBundle/Resources/views/Employee`directory of your project:
+
 ```html
-{# src/AppBundle/Resources/Employee/index.html.twig #}
+{# src/AppBundle/Resources/views/Employee/index.html.twig #}
+
+{% block stylesheet %}
+    {% include "@JQueryDataTables/include/styles.html.twig" with {"theme": "bootstrap" } %}
+{% endblock %}
+
 {% block content %}
-	{{ dataTablesHTML(dtWrapper) }}
+    {{ dataTablesHTML(dtWrapper) }}
 {% endblock %}
 
 {% block javascript %}
-	{{ dataTablesJS(dtWrapper) }}
+    {% include "@JQueryDataTables/include/scripts.html.twig" with {"theme": "bootstrap" } %}
+    {{ dataTablesJS(dtWrapper) }}
 {% endblock %}
 ```
 
 ### 5) Enjoy
 
 Open you browser at http://localhost:8000/app_dev.php/datatables/employee/index.
+
+### 6) Join column
+
+Create a new entity in the `src/AppBundle/Entity`directory of your project:
+
+```php
+namespace AppBundle\Entity;
+
+use DateTime;
+
+/**
+ * Office entity.
+ */
+class Office {
+
+    /**
+     * Id.
+     *
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * Name.
+     *
+     * @var string
+     */
+    private $name;
+
+    /**
+     * Constructor.
+     */
+    public function __construct() {
+        // NOTHING TO DO.
+    }
+
+    /**
+     * Get the id.
+     *
+     * @return integer Returns the id.
+     */
+    public function getId() {
+        return $this->id;
+    }
+
+    /**
+     * Get the name.
+     *
+     * @return string Returns the name.
+     */
+    public function getName() {
+        return $this->name;
+    }
+
+    /**
+     * Set the name.
+     *
+     * @param string $name The name.
+     * @return Office Returns this office.
+     */
+    public function setName($name) {
+        $this->name = $name;
+        return $this;
+    }
+
+}
+```
+
+Modify the entity in the `src/AppBundle/Entity/Employee.php` file of your project like this:
+
+```php
+class Employee {
+
+    // ...
+
+    /**
+     * Office.
+     *
+     * @var Office
+     */
+    private $office;
+
+    // ...
+
+    /**
+     * Get the office.
+     *
+     * @return Office Returns the office.
+     */
+    public function getOffice() {
+        return $this->office;
+    }
+
+    // ...
+
+    /**
+     * Set the office.
+     *
+     * @param Office $office The office.
+     * @return Employee Returns this employee.
+     */
+    public function setOffice(Office $office) {
+        $this->office = $office;
+        return $this;
+    }
+
+    // ...
+
+}
+```
+
+Modify the repository in the `src/AppBundle/Repository/EmployeeRepository.php` file of your project like this:
+
+```php
+class EmployeeRepository extends DefaultDataTablesRepository {
+
+    /**
+     * {@inheritdoc}
+     */
+    public function dataTablesCountFiltered(DataTablesWrapper $dtWrapper) {
+
+        // Create a query builder.
+        $qb = $this->buildDataTablesCountFiltered($dtWrapper);
+        $qb->leftJoin("e.office", "o");
+
+        // Return the result.
+        return intval($qb->getQuery()->getSingleScalarResult());
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function dataTablesCountTotal(DataTablesWrapper $dtWrapper) {
+
+        // Create a query builder.
+        $qb = $this->buildDataTablesCountTotal($dtWrapper);
+        $qb->leftJoin("e.office", "o");
+
+        // Return the result.
+        return intval($qb->getQuery()->getSingleScalarResult());
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function dataTablesFindAll(DataTablesWrapper $dtWrapper) {
+
+        // Create a query builder.
+        $qb = $this->buildDataTablesFindAll($dtWrapper);
+        $qb->leftJoin("e.office", "o")
+            ->addSelect("o");
+
+        // Return the result.
+        return $qb->getQuery()->getResult();
+    }
+
+}
+```
+
+Modify the provider in the `src/AppBundle/Provider/EmployeeDataTablesProvider.php` file of your project like this:
+
+```php
+    /**
+     * {@inheritdoc}
+     */
+    public function getColumns() {
+
+        // Initialize the columns.
+        $dtColumns = [];
+
+        // ...
+
+        $dtColumns[] = DataTablesColumn::newInstance("office", "Office")->getMapping()->setPrefix("o");
+
+        // ...
+
+        // Returns the columns.
+        return $dtColumns;
+    }
+```
 
 ## Testing
 
