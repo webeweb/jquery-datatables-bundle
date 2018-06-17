@@ -189,7 +189,7 @@ class DataTablesController extends AbstractDataTablesController {
             // Create a row.
             $dtWrapper->getResponse()->addRow();
 
-            // Render each optional parameters.
+            // Render each optional parameter.
             foreach (DataTablesResponse::dtRow() as $dtRow) {
                 $dtWrapper->getResponse()->setRow($dtRow, $dtProvider->renderRow($dtRow, $entity, $rows));
             }

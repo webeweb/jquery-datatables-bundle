@@ -72,7 +72,7 @@ class DataTablesOrder {
         // Handle each raw order.
         foreach ($rawOrders as $current) {
 
-            // Detremines if the raw order is valid.
+            // Determines if the raw order is valid.
             if (false === array_key_exists("column", $current)) {
                 continue;
             }

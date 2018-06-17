@@ -144,7 +144,7 @@ class Employee {
      * Set the age.
      *
      * @param integer $age The age.
-     * @return Employee Returns the employee.
+     * @return Employee Returns this employee.
      */
     public function setAge($age) {
         $this->age = $age;
@@ -155,7 +155,7 @@ class Employee {
      * Set the name.
      *
      * @param string $name The name.
-     * @return Employee Returns the employee.
+     * @return Employee Returns this employee.
      */
     public function setName($name) {
         $this->name = $name;
@@ -166,7 +166,7 @@ class Employee {
      * Set the office.
      *
      * @param string $office The office.
-     * @return Employee Returns the employee.
+     * @return Employee Returns this employee.
      */
     public function setOffice($office) {
         $this->office = $office;
@@ -177,7 +177,7 @@ class Employee {
      * Set the position.
      *
      * @param string $position The position.
-     * @return Employee Returns the employee.
+     * @return Employee Returns this employee.
      */
     public function setPosition($position) {
         $this->position = $position;
@@ -188,7 +188,7 @@ class Employee {
      * Set the salary.
      *
      * @param integer $salary The salary.
-     * @return Employee Returns the employee.
+     * @return Employee Returns this employee.
      */
     public function setSalary($salary) {
         $this->salary = $salary;
@@ -199,7 +199,7 @@ class Employee {
      * Set the start date.
      *
      * @param DateTime $startDate The start date.
-     * @return Employee Returns the employee.
+     * @return Employee Returns this employee.
      */
     public function setStartDate($startDate) {
         $this->startDate = $startDate;
