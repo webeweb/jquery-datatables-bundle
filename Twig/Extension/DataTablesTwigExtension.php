@@ -36,18 +36,20 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      *
      * @var string
      */
-    const JS_TEMPLATE = "<script type=\"text/javascript\">
-\t$('__selector__').DataTable({
-\t\tajax: {
-\t\t\ttype: '__method__',
-\t\t\turl: '__url__'
-\t\t},
-\t\tcolumns: __columns__,
-\t\torder: __order__,
-\t\tprocessing: __processing__,
-\t\tserverSide: __serverSide__
-\t});
-</script>";
+    const JS_TEMPLATE = <<< 'EOTXT'
+<script type="text/javascript">
+    $('__selector__').DataTable({
+        ajax: {
+            type: '__method__',
+            url: '__url__'
+        },
+        columns: __columns__,
+        order: __order__,
+        processing: __processing__,
+        serverSide: __serverSide__
+    });
+</script>
+EOTXT;
 
     /**
      * Constructor.

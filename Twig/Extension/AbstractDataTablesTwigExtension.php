@@ -46,7 +46,7 @@ abstract class AbstractDataTablesTwigExtension extends Twig_Extension {
         }
 
         // Initialize the template.
-        $template = "<th%attributes%>%innerHTML%</th>";
+        $template = "            <th%attributes%>%innerHTML%</th>";
 
         // Initialize the attributes.
         $attributes = [];
@@ -71,7 +71,7 @@ abstract class AbstractDataTablesTwigExtension extends Twig_Extension {
     private function dataTablesTFoot(DataTablesWrapper $dtWrapper) {
 
         // Initialize the template.
-        $template = "<tfoot>\n<tr>\n%innerHTML%</tr>\n</tfoot>\n";
+        $template = "    <tfoot>\n        <tr>\n%innerHTML%        </tr>\n    </tfoot>\n";
 
         // Initialize the parameters.
         $innerHTML = "";
@@ -96,7 +96,7 @@ abstract class AbstractDataTablesTwigExtension extends Twig_Extension {
     private function dataTablesTHead(DataTablesWrapper $dtWrapper) {
 
         // Initialize the templates.
-        $template = "<thead>\n<tr>\n%innerHTML%</tr>\n</thead>\n";
+        $template = "    <thead>\n        <tr>\n%innerHTML%        </tr>\n    </thead>\n";
 
         // Count the columns.
         $count = count($dtWrapper->getColumns());

@@ -72,92 +72,100 @@ final class DataTablesTwigExtensionTest extends AbstractJQueryDataTablesFramewor
 
         // ===
         $arg0 = [];
-        $res0 = "<table class=\"table\">
-<thead>
-<tr>
-<th scope=\"row\">Name</th>
-<th>Position</th>
-<th>Office</th>
-<th>Age</th>
-<th>Start date</th>
-<th>Salary</th>
-<th>Actions</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<th>Name</th>
-<th>Position</th>
-<th>Office</th>
-<th>Age</th>
-<th>Start date</th>
-<th>Salary</th>
-<th>Actions</th>
-</tr>
-</tfoot>
-</table>";
+        $res0 = <<< 'EOTXT'
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="row">Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </tfoot>
+</table>
+EOTXT;
         $this->assertEquals($res0, $obj->dataTablesHTMLFunction($this->dataTablesWrapper, $arg0));
 
         // ===
         $arg1 = ["class" => "class"];
-        $res1 = "<table class=\"table class\">
-<thead>
-<tr>
-<th scope=\"row\">Name</th>
-<th>Position</th>
-<th>Office</th>
-<th>Age</th>
-<th>Start date</th>
-<th>Salary</th>
-<th>Actions</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<th>Name</th>
-<th>Position</th>
-<th>Office</th>
-<th>Age</th>
-<th>Start date</th>
-<th>Salary</th>
-<th>Actions</th>
-</tr>
-</tfoot>
-</table>";
+        $res1 = <<< 'EOTXT'
+<table class="table class">
+    <thead>
+        <tr>
+            <th scope="row">Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </tfoot>
+</table>
+EOTXT;
         $this->assertEquals($res1, $obj->dataTablesHTMLFunction($this->dataTablesWrapper, $arg1));
 
         // ===
         $arg2 = ["thead" => false];
-        $res2 = "<table class=\"table\">
-<tfoot>
-<tr>
-<th>Name</th>
-<th>Position</th>
-<th>Office</th>
-<th>Age</th>
-<th>Start date</th>
-<th>Salary</th>
-<th>Actions</th>
-</tr>
-</tfoot>
-</table>";
+        $res2 = <<< 'EOTXT'
+<table class="table">
+    <tfoot>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </tfoot>
+</table>
+EOTXT;
         $this->assertEquals($res2, $obj->dataTablesHTMLFunction($this->dataTablesWrapper, $arg2));
 
         // ===
         $arg3 = ["tfoot" => false];
-        $res3 = "<table class=\"table\">
-<thead>
-<tr>
-<th scope=\"row\">Name</th>
-<th>Position</th>
-<th>Office</th>
-<th>Age</th>
-<th>Start date</th>
-<th>Salary</th>
-<th>Actions</th>
-</tr>
-</thead>
-</table>";
+        $res3 = <<< 'EOTXT'
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="row">Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+</table>
+EOTXT;
         $this->assertEquals($res3, $obj->dataTablesHTMLFunction($this->dataTablesWrapper, $arg3));
 
         // ===
@@ -168,30 +176,32 @@ final class DataTablesTwigExtensionTest extends AbstractJQueryDataTablesFramewor
         }
 
         $arg9 = ["class" => "class", "thead" => true, "tfoot" => true];
-        $res9 = "<table class=\"table class\">
-<thead>
-<tr>
-<th scope=\"row\" class=\"name\" width=\"1\">Name</th>
-<th class=\"position\" width=\"2\">Position</th>
-<th class=\"office\" width=\"3\">Office</th>
-<th class=\"age\" width=\"4\">Age</th>
-<th class=\"startDate\" width=\"5\">Start date</th>
-<th class=\"salary\" width=\"6\">Salary</th>
-<th class=\"actions\" width=\"7\">Actions</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<th class=\"name\" width=\"1\">Name</th>
-<th class=\"position\" width=\"2\">Position</th>
-<th class=\"office\" width=\"3\">Office</th>
-<th class=\"age\" width=\"4\">Age</th>
-<th class=\"startDate\" width=\"5\">Start date</th>
-<th class=\"salary\" width=\"6\">Salary</th>
-<th class=\"actions\" width=\"7\">Actions</th>
-</tr>
-</tfoot>
-</table>";
+        $res9 = <<< 'EOTXT'
+<table class="table class">
+    <thead>
+        <tr>
+            <th scope="row" class="name" width="1">Name</th>
+            <th class="position" width="2">Position</th>
+            <th class="office" width="3">Office</th>
+            <th class="age" width="4">Age</th>
+            <th class="startDate" width="5">Start date</th>
+            <th class="salary" width="6">Salary</th>
+            <th class="actions" width="7">Actions</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th class="name" width="1">Name</th>
+            <th class="position" width="2">Position</th>
+            <th class="office" width="3">Office</th>
+            <th class="age" width="4">Age</th>
+            <th class="startDate" width="5">Start date</th>
+            <th class="salary" width="6">Salary</th>
+            <th class="actions" width="7">Actions</th>
+        </tr>
+    </tfoot>
+</table>
+EOTXT;
         $this->assertEquals($res9, $obj->dataTablesHTMLFunction($this->dataTablesWrapper, $arg9));
     }
 
@@ -205,33 +215,37 @@ final class DataTablesTwigExtensionTest extends AbstractJQueryDataTablesFramewor
         $obj = new DataTablesTwigExtension();
 
         $arg0 = [];
-        $res0 = "<script type=\"text/javascript\">
-\t$('.table').DataTable({
-\t\tajax: {
-\t\t\ttype: 'POST',
-\t\t\turl: 'url'
-\t\t},
-\t\tcolumns: [{\"cellType\":\"td\",\"data\":\"name\",\"name\":\"Name\"},{\"cellType\":\"td\",\"data\":\"position\",\"name\":\"Position\"},{\"cellType\":\"td\",\"data\":\"office\",\"name\":\"Office\"},{\"cellType\":\"td\",\"data\":\"age\",\"name\":\"Age\"},{\"cellType\":\"td\",\"data\":\"startDate\",\"name\":\"Start date\"},{\"cellType\":\"td\",\"data\":\"salary\",\"name\":\"Salary\"},{\"cellType\":\"td\",\"data\":\"actions\",\"name\":\"Actions\",\"orderable\":false,\"searchable\":false}],
-\t\torder: [],
-\t\tprocessing: true,
-\t\tserverSide: true
-\t});
-</script>";
+        $res0 = <<< 'EOTXT'
+<script type="text/javascript">
+    $('.table').DataTable({
+        ajax: {
+            type: 'POST',
+            url: 'url'
+        },
+        columns: [{"cellType":"td","data":"name","name":"Name"},{"cellType":"td","data":"position","name":"Position"},{"cellType":"td","data":"office","name":"Office"},{"cellType":"td","data":"age","name":"Age"},{"cellType":"td","data":"startDate","name":"Start date"},{"cellType":"td","data":"salary","name":"Salary"},{"cellType":"td","data":"actions","name":"Actions","orderable":false,"searchable":false}],
+        order: [],
+        processing: true,
+        serverSide: true
+    });
+</script>
+EOTXT;
         $this->assertEquals($res0, $obj->dataTablesJSFunction($this->dataTablesWrapper, $arg0));
 
         $arg9 = ["selector" => "#selector"];
-        $res9 = "<script type=\"text/javascript\">
-\t$('#selector').DataTable({
-\t\tajax: {
-\t\t\ttype: 'POST',
-\t\t\turl: 'url'
-\t\t},
-\t\tcolumns: [{\"cellType\":\"td\",\"data\":\"name\",\"name\":\"Name\"},{\"cellType\":\"td\",\"data\":\"position\",\"name\":\"Position\"},{\"cellType\":\"td\",\"data\":\"office\",\"name\":\"Office\"},{\"cellType\":\"td\",\"data\":\"age\",\"name\":\"Age\"},{\"cellType\":\"td\",\"data\":\"startDate\",\"name\":\"Start date\"},{\"cellType\":\"td\",\"data\":\"salary\",\"name\":\"Salary\"},{\"cellType\":\"td\",\"data\":\"actions\",\"name\":\"Actions\",\"orderable\":false,\"searchable\":false}],
-\t\torder: [],
-\t\tprocessing: true,
-\t\tserverSide: true
-\t});
-</script>";
+        $res9 = <<< 'EOTXT'
+<script type="text/javascript">
+    $('#selector').DataTable({
+        ajax: {
+            type: 'POST',
+            url: 'url'
+        },
+        columns: [{"cellType":"td","data":"name","name":"Name"},{"cellType":"td","data":"position","name":"Position"},{"cellType":"td","data":"office","name":"Office"},{"cellType":"td","data":"age","name":"Age"},{"cellType":"td","data":"startDate","name":"Start date"},{"cellType":"td","data":"salary","name":"Salary"},{"cellType":"td","data":"actions","name":"Actions","orderable":false,"searchable":false}],
+        order: [],
+        processing: true,
+        serverSide: true
+    });
+</script>
+EOTXT;
         $this->assertEquals($res9, $obj->dataTablesJSFunction($this->dataTablesWrapper, $arg9));
     }
 
