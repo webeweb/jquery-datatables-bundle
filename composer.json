@@ -31,6 +31,11 @@
         "symfony/templating": "^2.6|^3.0",
         "symfony/twig-bundle": "^2.6|^3.0"
     },
+    "suggest": {
+        "webeweb/highcharts-bundle": "Integrate Highcharts with Symfony 2",
+        "webeweb/jquery-querybuilder-bundle": "Integrate jQuery QueryBuilder with Symfony 2",
+        "webeweb/syntaxhighlighter-bundle": "Integrate SyntaxHighlighter with Symfony 2"
+    },
     "support": {
         "issues": "http://github.com/webeweb/jquery-datatables-bundle/issues"
     },
