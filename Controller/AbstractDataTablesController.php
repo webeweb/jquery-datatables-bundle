@@ -57,7 +57,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
     protected function getDataTablesWrapper(DataTablesProviderInterface $dtProvider) {
 
         // Initialize the DataTables wrapper.
-        $dtWrapper = new DataTablesWrapper($dtProvider->getPrefix(), HTTPInterface::HTTP_METHOD_POST, $this->getRouter()->generate("jquery_datatables_index", ["name" => $dtProvider->getName()]));
+        $dtWrapper = new DataTablesWrapper($dtProvider->getPrefix(), $dtProvider->getMethod(), $this->getRouter()->generate("jquery_datatables_index", ["name" => $dtProvider->getName()]));
 
         // Handle each column.
         foreach ($dtProvider->getColumns() as $dtColumn) {

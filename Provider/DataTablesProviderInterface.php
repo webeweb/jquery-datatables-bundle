@@ -44,6 +44,13 @@ interface DataTablesProviderInterface extends DataTablesResponseInterface {
     public function getEntity();
 
     /**
+     * Get the HTTP method.
+     *
+     * @return string Returns the HTTP method.
+     */
+    public function getMethod();
+
+    /**
      * Get the provider name.
      *
      * @return string Returns the provider name.
