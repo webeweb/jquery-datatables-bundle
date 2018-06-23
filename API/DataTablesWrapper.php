@@ -44,6 +44,13 @@ class DataTablesWrapper implements HTTPInterface {
     private $method;
 
     /**
+     * Name.
+     *
+     * @var string
+     */
+    private $name;
+
+    /**
      * Order.
      *
      * @var array
@@ -88,16 +95,18 @@ class DataTablesWrapper implements HTTPInterface {
     /**
      * Constructor.
      *
-     * @param string $prefix The prefix.
      * @param string $method The method.
      * @param string $url The URL.
+     * @param string $name The name.
+     * @param string $prefix The prefix.
      */
-    public function __construct($prefix, $method, $url) {
+    public function __construct($method, $url, $name, $prefix) {
         $this->mapping = new DataTablesMapping();
         $this->mapping->setPrefix($prefix);
 
         $this->setColumns([]);
         $this->setMethod($method);
+        $this->setName($name);
         $this->setOrder([]);
         $this->setProcessing(true);
         $this->setServerSide(true);
@@ -156,6 +165,15 @@ class DataTablesWrapper implements HTTPInterface {
      */
     public function getMethod() {
         return $this->method;
+    }
+
+    /**
+     * Get the name.
+     *
+     * @return string Returns the name.
+     */
+    public function getName() {
+        return $this->name;
     }
 
     /**
@@ -257,6 +275,17 @@ class DataTablesWrapper implements HTTPInterface {
      */
     public function setMethod($method) {
         $this->method = (true === in_array($method, [self::HTTP_METHOD_GET, self::HTTP_METHOD_POST]) ? $method : self::HTTP_METHOD_GET);
+        return $this;
+    }
+
+    /**
+     * Set the name.
+     *
+     * @param string $name The name.
+     * @return DataTablesWrapper Returns this DataTables wrapper.
+     */
+    public function setName($name) {
+        $this->name = $name;
         return $this;
     }
 

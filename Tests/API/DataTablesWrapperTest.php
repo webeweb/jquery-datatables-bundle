@@ -32,11 +32,12 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
      */
     public function testConstructor() {
 
-        $obj = new DataTablesWrapper("prefix", "POST", "url");
+        $obj = new DataTablesWrapper("POST", "url", "name", "prefix");
 
         $this->assertEquals([], $obj->getColumns());
         $this->assertEquals("prefix", $obj->getMapping()->getPrefix());
         $this->assertEquals("POST", $obj->getMethod());
+        $this->assertEquals("name", $obj->getName());
         $this->assertEquals([], $obj->getOrder());
         $this->assertTrue($obj->getProcessing());
         $this->assertNull($obj->getRequest());
@@ -52,7 +53,7 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
      */
     public function testAddColumn() {
 
-        $obj = new DataTablesWrapper("prefix", "POST", "url");
+        $obj = new DataTablesWrapper("POST", "url", "name", "prefix");
 
         $obj->addColumn(DataTablesColumn::newInstance("name1", "title1"));
         $this->assertCount(1, $obj->getColumns());
@@ -72,7 +73,7 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
      */
     public function testGetColumn() {
 
-        $obj = new DataTablesWrapper("prefix", "POST", "url");
+        $obj = new DataTablesWrapper("POST", "url", "name", "prefix");
         $arg = DataTablesColumn::newInstance("name1", "title1");
 
         $this->assertNull($obj->getColumn("name1"));
@@ -88,7 +89,7 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
      */
     public function testParse() {
 
-        $obj = new DataTablesWrapper("prefix", "POST", "url");
+        $obj = new DataTablesWrapper("POST", "url", "name", "prefix");
 
         $obj->parse(new Request());
         $this->assertNotNull($obj->getRequest());
@@ -102,7 +103,7 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
      */
     public function testRemoveColumn() {
 
-        $obj = new DataTablesWrapper("prefix", "POST", "url");
+        $obj = new DataTablesWrapper("POST", "url", "name", "prefix");
 
         $col1 = DataTablesColumn::newInstance("name1", "title1");
         $col2 = DataTablesColumn::newInstance("name2", "title2");
@@ -127,7 +128,7 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetMethod() {
 
-        $obj = new DataTablesWrapper("prefix", "POST", "url");
+        $obj = new DataTablesWrapper("POST", "url", "name", "prefix");
 
         $obj->setMethod("GET");
         $this->assertEquals("GET", $obj->getMethod());
@@ -137,13 +138,26 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
+     * Tests the setName() method.
+     *
+     * @return void
+     */
+    public function testSetName() {
+
+        $obj = new DataTablesWrapper("POST", "url", "name", "prefix");
+
+        $obj->setName("othername");
+        $this->assertEquals("othername", $obj->getName());
+    }
+
+    /**
      * Tests the setOrder() method.
      *
      * @return void
      */
     public function testSetOrder() {
 
-        $obj = new DataTablesWrapper("prefix", "POST", "url");
+        $obj = new DataTablesWrapper("POST", "url", "name", "prefix");
 
         $obj->setOrder(["order"]);
         $this->assertEquals(["order"], $obj->getOrder());
@@ -156,7 +170,7 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetProcessing() {
 
-        $obj = new DataTablesWrapper("prefix", "POST", "url");
+        $obj = new DataTablesWrapper("POST", "url", "name", "prefix");
 
         $obj->setProcessing(false);
         $this->assertFalse($obj->getProcessing());
@@ -172,7 +186,7 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetServerSide() {
 
-        $obj = new DataTablesWrapper("prefix", "POST", "url");
+        $obj = new DataTablesWrapper("POST", "url", "name", "prefix");
 
         $obj->setServerSide(false);
         $this->assertFalse($obj->getServerSide());
@@ -188,7 +202,7 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
      */
     public function testSetUrl() {
 
-        $obj = new DataTablesWrapper("prefix", "POST", "url");
+        $obj = new DataTablesWrapper("POST", "url", "name", "prefix");
 
         $obj->setUrl("anotherUrl");
         $this->assertEquals("anotherUrl", $obj->getUrl());

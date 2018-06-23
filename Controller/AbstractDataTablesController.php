@@ -16,7 +16,6 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Library\Core\IO\HTTPInterface;
 
 /**
  * Abstract jQuery DataTables controller.
@@ -56,8 +55,11 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
      */
     protected function getDataTablesWrapper(DataTablesProviderInterface $dtProvider) {
 
+        // Initialize the UTL.
+        $url = $this->getRouter()->generate("jquery_datatables_index", ["name" => $dtProvider->getName()]);
+
         // Initialize the DataTables wrapper.
-        $dtWrapper = new DataTablesWrapper($dtProvider->getPrefix(), $dtProvider->getMethod(), $this->getRouter()->generate("jquery_datatables_index", ["name" => $dtProvider->getName()]));
+        $dtWrapper = new DataTablesWrapper($dtProvider->getMethod(), $url, $dtProvider->getName(), $dtProvider->getPrefix());
 
         // Handle each column.
         foreach ($dtProvider->getColumns() as $dtColumn) {
