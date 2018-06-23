@@ -54,6 +54,7 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
     public function testAddColumn() {
 
         $obj = new DataTablesWrapper("POST", "url", "name");
+        $obj->getMapping()->setPrefix("prefix");
 
         $obj->addColumn(DataTablesColumn::newInstance("name1", "title1"));
         $this->assertCount(1, $obj->getColumns());
