@@ -98,11 +98,9 @@ class DataTablesWrapper implements HTTPInterface {
      * @param string $method The method.
      * @param string $url The URL.
      * @param string $name The name.
-     * @param string $prefix The prefix.
      */
-    public function __construct($method, $url, $name, $prefix) {
+    public function __construct($method, $url, $name) {
         $this->mapping = new DataTablesMapping();
-        $this->mapping->setPrefix($prefix);
 
         $this->setColumns([]);
         $this->setMethod($method);
@@ -152,7 +150,7 @@ class DataTablesWrapper implements HTTPInterface {
     /**
      * Get the mapping.
      *
-     * @return DataTablesMapping The mapping.
+     * @return DataTablesMapping Returns the mapping.
      */
     public function getMapping() {
         return $this->mapping;
