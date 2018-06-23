@@ -79,7 +79,7 @@ EOTXT;
     public function dataTablesJSFunction(DataTablesWrapper $dtWrapper, array $args = []) {
 
         // Initialize the parameters.
-        $var        = "dt" . $dtWrapper->getName();
+        $var        = $this->dataTablesName($dtWrapper);
         $selector   = ArrayUtility::get($args, "selector", "#" . $var);
         $method     = $dtWrapper->getMethod();
         $url        = $dtWrapper->getUrl();

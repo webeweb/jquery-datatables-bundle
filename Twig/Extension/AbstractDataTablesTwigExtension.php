@@ -63,6 +63,16 @@ abstract class AbstractDataTablesTwigExtension extends Twig_Extension {
     }
 
     /**
+     * Displays a DataTables name.
+     *
+     * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
+     * @return string Returns the DataTables name.
+     */
+    protected function dataTablesName(DataTablesWrapper $dtWrapper) {
+        return "dt" . preg_replace("/[^A-Za-z0-9]/", "", $dtWrapper->getName());
+    }
+
+    /**
      * Displays a DataTables footer.
      *
      * @param DataTablesWrapper $dtWrapper The wrapper.
@@ -134,7 +144,7 @@ abstract class AbstractDataTablesTwigExtension extends Twig_Extension {
         $attributes = [];
 
         $attributes["class"] = ["table", $class];
-        $attributes["id"]    = "dt" . $dtWrapper->getName();
+        $attributes["id"]    = $this->dataTablesName($dtWrapper);
 
         // Initialize the parameters.
         $thead = true === $includeTHead ? $this->dataTablesTHead($dtWrapper) : "";
