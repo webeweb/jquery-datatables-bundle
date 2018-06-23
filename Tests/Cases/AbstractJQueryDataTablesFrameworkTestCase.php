@@ -147,6 +147,7 @@ abstract class AbstractJQueryDataTablesFrameworkTestCase extends AbstractBootstr
 
         // Set a DataTables wrappper mock.
         $this->dataTablesWrapper = new DataTablesWrapper("POST", "url", "name");
+        $this->dataTablesWrapper->getMapping()->setPrefix("p");
 
         // Set a DataTables request mock.
         $this->dataTablesRequest = DataTablesRequest::parse($this->dataTablesWrapper, new Request());
