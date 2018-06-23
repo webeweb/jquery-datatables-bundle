@@ -40,8 +40,8 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
         // Get the DataTables provider.
         $dtProvider = $this->get(DataTablesManager::SERVICE_NAME)->getProvider($name);
 
-        // Log an info trace.
-        $this->getLogger()->info(sprintf("DataTables controller found a DataTables provider with name \"%s\"", $name));
+        // Log a debug trace.
+        $this->getLogger()->debug(sprintf("DataTables controller found a DataTables provider with name \"%s\"", $name));
 
         // Return the DataTables provider.
         return $dtProvider;
@@ -55,11 +55,12 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
      */
     protected function getDataTablesWrapper(DataTablesProviderInterface $dtProvider) {
 
-        // Initialize the UTL.
+        // Initialize the URL.
         $url = $this->getRouter()->generate("jquery_datatables_index", ["name" => $dtProvider->getName()]);
 
         // Initialize the DataTables wrapper.
-        $dtWrapper = new DataTablesWrapper($dtProvider->getMethod(), $url, $dtProvider->getName(), $dtProvider->getPrefix());
+        $dtWrapper = new DataTablesWrapper($dtProvider->getMethod(), $url, $dtProvider->getName());
+        $dtWrapper->getMapping()->setPrefix($dtProvider->getPrefix());
 
         // Handle each column.
         foreach ($dtProvider->getColumns() as $dtColumn) {
