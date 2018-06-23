@@ -135,7 +135,7 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals("GET", $obj->getMethod());
 
         $obj->setMethod("exception");
-        $this->assertEquals("GET", $obj->getMethod());
+        $this->assertEquals("POST", $obj->getMethod());
     }
 
     /**
