@@ -73,7 +73,7 @@ final class DataTablesTwigExtensionTest extends AbstractJQueryDataTablesFramewor
         // ===
         $arg0 = [];
         $res0 = <<< 'EOTXT'
-<table class="table">
+<table class="table" id="dtname">
     <thead>
         <tr>
             <th scope="row">Name</th>
@@ -103,7 +103,7 @@ EOTXT;
         // ===
         $arg1 = ["class" => "class"];
         $res1 = <<< 'EOTXT'
-<table class="table class">
+<table class="table class" id="dtname">
     <thead>
         <tr>
             <th scope="row">Name</th>
@@ -133,7 +133,7 @@ EOTXT;
         // ===
         $arg2 = ["thead" => false];
         $res2 = <<< 'EOTXT'
-<table class="table">
+<table class="table" id="dtname">
     <tfoot>
         <tr>
             <th>Name</th>
@@ -152,7 +152,7 @@ EOTXT;
         // ===
         $arg3 = ["tfoot" => false];
         $res3 = <<< 'EOTXT'
-<table class="table">
+<table class="table" id="dtname">
     <thead>
         <tr>
             <th scope="row">Name</th>
@@ -177,7 +177,7 @@ EOTXT;
 
         $arg9 = ["class" => "class", "thead" => true, "tfoot" => true];
         $res9 = <<< 'EOTXT'
-<table class="table class">
+<table class="table class" id="dtname">
     <thead>
         <tr>
             <th scope="row" class="name" width="1">Name</th>
@@ -217,7 +217,7 @@ EOTXT;
         $arg0 = [];
         $res0 = <<< 'EOTXT'
 <script type="text/javascript">
-    $('.table').DataTable({
+    var dtname = $('#dtname').DataTable({
         ajax: {
             type: 'POST',
             url: 'url'
@@ -234,7 +234,7 @@ EOTXT;
         $arg9 = ["selector" => "#selector"];
         $res9 = <<< 'EOTXT'
 <script type="text/javascript">
-    $('#selector').DataTable({
+    var dtname = $('#selector').DataTable({
         ajax: {
             type: 'POST',
             url: 'url'

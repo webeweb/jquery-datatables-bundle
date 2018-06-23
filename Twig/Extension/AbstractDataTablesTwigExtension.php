@@ -134,6 +134,7 @@ abstract class AbstractDataTablesTwigExtension extends Twig_Extension {
         $attributes = [];
 
         $attributes["class"] = ["table", $class];
+        $attributes["id"]    = "dt" . $dtWrapper->getName();
 
         // Initialize the parameters.
         $thead = true === $includeTHead ? $this->dataTablesTHead($dtWrapper) : "";

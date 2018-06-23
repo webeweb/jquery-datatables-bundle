@@ -38,15 +38,15 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      */
     const JS_TEMPLATE = <<< 'EOTXT'
 <script type="text/javascript">
-    $('__selector__').DataTable({
+    var %var% = $('%selector%').DataTable({
         ajax: {
-            type: '__method__',
-            url: '__url__'
+            type: '%method%',
+            url: '%url%'
         },
-        columns: __columns__,
-        order: __order__,
-        processing: __processing__,
-        serverSide: __serverSide__
+        columns: %columns%,
+        order: %order%,
+        processing: %processing%,
+        serverSide: %serverSide%
     });
 </script>
 EOTXT;
@@ -79,7 +79,8 @@ EOTXT;
     public function dataTablesJSFunction(DataTablesWrapper $dtWrapper, array $args = []) {
 
         // Initialize the parameters.
-        $selector   = ArrayUtility::get($args, "selector", ".table");
+        $var        = "dt" . $dtWrapper->getName();
+        $selector   = ArrayUtility::get($args, "selector", "#" . $var);
         $method     = $dtWrapper->getMethod();
         $url        = $dtWrapper->getUrl();
         $columns    = json_encode(array_values($dtWrapper->getColumns()));
@@ -88,7 +89,7 @@ EOTXT;
         $serverSide = StringUtility::parseBoolean($dtWrapper->getServerSide());
 
         // Return the Javascript.
-        return StringUtility::replace(self::JS_TEMPLATE, ["__selector__", "__method__", "__url__", "__columns__", "__order__", "__processing__", "__serverSide__"], [$selector, $method, $url, $columns, $orders, $processing, $serverSide]);
+        return StringUtility::replace(self::JS_TEMPLATE, ["%var%", "%selector%", "%method%", "%url%", "%columns%", "%order%", "%processing%", "%serverSide%"], [$var, $selector, $method, $url, $columns, $orders, $processing, $serverSide]);
     }
 
     /**
