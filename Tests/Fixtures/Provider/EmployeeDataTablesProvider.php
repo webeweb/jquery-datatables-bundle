@@ -14,6 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee;
+use WBW\Library\Core\IO\HTTPInterface;
 
 /**
  * Employee DataTables provider.
@@ -48,6 +49,13 @@ final class EmployeeDataTablesProvider implements DataTablesProviderInterface {
      */
     public function getEntity() {
         return Employee::class;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getMethod() {
+        return HTTPInterface::HTTP_METHOD_POST;
     }
 
     /**
