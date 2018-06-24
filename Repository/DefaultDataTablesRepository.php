@@ -14,6 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Repository;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\QueryBuilder;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 
 /**
  * Default DataTables repository.
@@ -134,6 +135,21 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     }
 
     /**
+     * Build a DataTables export query.
+     *
+     * @param DataTablesProviderInterface $dtProvider The provider.
+     * @return QueryBuilder Returns the DataTables export query.
+     */
+    protected function buildDataTablesExportQuery(DataTablesProviderInterface $dtProvider) {
+
+        // Create a query builder.
+        $qb = $this->createQueryBuilder($dtProvider->getPrefix());
+
+        // Return the query.
+        return $qb;
+    }
+
+    /**
      * Build a DataTables query builder "Find all".
      *
      * @param DataTablesWrapper $dtWrapper The wrapper.
@@ -215,6 +231,13 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
 
         // Return the operator.
         return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getDataTablesExportQuery(DataTablesProviderInterface $dtProvider) {
+        return $this->buildDataTablesExportQuery($dtProvider);
     }
 
 }

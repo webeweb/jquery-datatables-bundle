@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Repository;
 
-use Doctrine\ORM\Query;
+use Doctrine\ORM\QueryBuilder;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 
@@ -50,7 +50,7 @@ interface DataTablesRepositoryInterface {
     /**
      * Get a DataTables export query.
      *
-     * @return Query Returns the DataTables export query.
+     * @return QueryBuilder Returns the DataTables export query.
      */
     public function getDataTablesExportQuery(DataTablesProviderInterface $dtProvider);
 }
