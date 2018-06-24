@@ -379,6 +379,24 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
     }
 
     /**
+     * Tests the exportAction() method.
+     *
+     * @return void
+     */
+    public function testExportAction() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request.
+        $client->request("GET", "/datatables/employee/export");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
+        $this->assertRegExp("/attachment; filename=\"[0-9]{4}\.[0-9]{2}\.[0-9]{2}-[0-9]{2}\.[0-9]{2}\.[0-9]{2}-employee\.csv\"/", $client->getResponse()->headers->get("Content-Disposition"));
+        $this->assertEquals("text/csv; charset=utf-8", $client->getResponse()->headers->get("Content-Type"));
+    }
+
+    /**
      * Tests the deleteAction() method.
      *
      * @return void
@@ -391,6 +409,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         // Make a GET request.
         $client->request("GET", "/datatables/employee/delete/57");
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
+
         $this->assertEquals("/datatables/employee/index", $client->getResponse()->headers->get("location"));
     }
 

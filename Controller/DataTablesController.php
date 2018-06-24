@@ -11,10 +11,12 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Controller;
 
+use DateTime;
 use Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
 use Doctrine\ORM\EntityNotFoundException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
@@ -80,6 +82,63 @@ class DataTablesController extends AbstractDataTablesController {
 
         // Return the response.
         return $this->buildDataTablesResponse($request, $name, $output);
+    }
+
+    /**
+     * Export all entities.
+     *
+     * @param Request $request The request.
+     * @param string $name The provider name.
+     * @return Response Returns the response.
+     * @throws UnregisteredDataTablesProviderException Throws an unregistered DataTables provider exception.
+     */
+    public function exportAction(Request $request, $name) {
+
+        // Get the provider.
+        $dtProvider = $this->getDataTablesProvider($name);
+
+        // Get the entities manager.
+        $em = $this->getDoctrine()->getManager();
+
+        // Get the entities repository.
+        $repository = $this->getDataTablesRepository($dtProvider);
+
+        // Initialize the response.
+        $response = new StreamedResponse(function() use($dtProvider, $repository, $em) {
+
+            // Open the file.
+            $stream = fopen("php://output", "w+");
+
+            // Export the columns.
+            fputcsv($stream, $dtProvider->exportColumns());
+
+            // Get the export query.
+            $result = $repository->getDataTablesExportQuery($dtProvider)->getQuery()->iterate();
+
+            // Handle each entity.
+            while (false !== ($row = $result->next())) {
+
+                // Export the entity.
+                fputcsv($stream, $dtProvider->exportRow($row[0]));
+
+                // Detach the entity to avoid memomy consumption.
+                $em->detach($row[0]);
+            }
+
+            // Close the file.
+            fclose($stream);
+        });
+
+        // Initialize the filename.
+        $filename = (new DateTime())->format("Y.m.d-H.i.s") . "-" . $dtProvider->getName() . ".csv";
+
+        // Set the response.
+        $response->setStatusCode(200);
+        $response->headers->set("Content-Disposition", "attachment; filename=\"" . $filename . "\"");
+        $response->headers->set("Content-Type", "text/csv; charset=utf-8");
+
+        // Return the response.
+        return $response;
     }
 
     /**
