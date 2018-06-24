@@ -12,12 +12,12 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Controller;
 
 use Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
+use Doctrine\ORM\EntityNotFoundException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
-use WBW\Bundle\JQuery\DataTablesBundle\Repository\DataTablesRepositoryInterface;
 
 /**
  * DataTables controller.
@@ -26,40 +26,6 @@ use WBW\Bundle\JQuery\DataTablesBundle\Repository\DataTablesRepositoryInterface;
  * @package WBW\Bundle\JQuery\DataTablesBundle\Controller
  */
 class DataTablesController extends AbstractDataTablesController {
-
-    /**
-     * Build a response.
-     *
-     * @param Request $request The request.
-     * @param string $name The provider name.
-     * @param array $output The output.
-     * @return Response Return the response.
-     */
-    protected function buildResponse(Request $request, $name, array $output) {
-
-        // Determines if the request is an XML HTTP request.
-        if (true === $request->isXmlHttpRequest()) {
-
-            // Return the response.
-            return new Response(json_encode($output));
-        }
-
-        // Notify the user.
-        switch ($output["status"]) {
-            case 200:
-                $this->notifySuccess($output["notify"]);
-                break;
-            case 404:
-                $this->notifyDanger($output["notify"]);
-                break;
-            case 500:
-                $this->notifyWarning($output["notify"]);
-                break;
-        }
-
-        // Return the response.
-        return $this->redirectToRoute("jquery_datatables_index", ["name" => $name]);
-    }
 
     /**
      * Delete an existing entity.
@@ -75,42 +41,33 @@ class DataTablesController extends AbstractDataTablesController {
         // Get the provider.
         $dtProvider = $this->getDataTablesProvider($name);
 
-        // Get the entities manager.
-        $em = $this->getDoctrine()->getManager();
-
-        // Get and check the entities repository.
-        $repository = $em->getRepository($dtProvider->getEntity());
-        if (false === ($repository instanceOf DataTablesRepositoryInterface)) {
-            throw new BadDataTablesRepositoryException($repository);
-        }
-
         // Initialize the output.
         $output = [
             "status" => null,
             "notify" => null,
         ];
 
-        // Get and check the entity.
-        $entity = $repository->find($id);
-        if (null === $entity) {
-
-            // Set the output.
-            $output["status"] = 404;
-            $output["notify"] = $this->getNotification("DataTablesController.deleteAction.danger");
-
-            // Return the response.
-            return $this->buildResponse($request, $name, $output);
-        }
-
         try {
 
-            // Delete the entity.
+            // Get the entity.
+            $entity = $this->getDataTablesEntityById($dtProvider, $id);
+
+            // Get the entities manager and delete the entity.
+            $em = $this->getDoctrine()->getManager();
             $em->remove($entity);
             $em->flush();
 
             // Set the output.
             $output["status"] = 200;
             $output["notify"] = $this->getNotification("DataTablesController.deleteAction.success");
+        } catch (EntityNotFoundException $ex) {
+
+            // Log a debug trace.
+            $this->getLogger()->debug($ex->getMessage());
+
+            // Set the output.
+            $output["status"] = 404;
+            $output["notify"] = $this->getNotification("DataTablesController.deleteAction.danger");
         } catch (ForeignKeyConstraintViolationException $ex) {
 
             // Log a debug trace.
@@ -122,7 +79,7 @@ class DataTablesController extends AbstractDataTablesController {
         }
 
         // Return the response.
-        return $this->buildResponse($request, $name, $output);
+        return $this->buildDataTablesResponse($request, $name, $output);
     }
 
     /**
@@ -145,12 +102,10 @@ class DataTablesController extends AbstractDataTablesController {
         // Check if the request is an XML HTTP request.
         if (false === $request->isXmlHttpRequest()) {
 
-            // Initialize the default view.
-            $dtView = "@JQueryDataTables/DataTables/index.html.twig";
-
-            // Check the provider view.
-            if (null !== $dtProvider->getView()) {
-                $dtView = $dtProvider->getView();
+            // Get and check the provider view.
+            $dtView = $dtProvider->getView();
+            if (null === $dtProvider->getView()) {
+                $dtView = "@JQueryDataTables/DataTables/index.html.twig";
             }
 
             // Return the response.
@@ -159,17 +114,11 @@ class DataTablesController extends AbstractDataTablesController {
             ]);
         }
 
-        // Get the entities manager.
-        $em = $this->getDoctrine()->getManager();
-
-        // Get and check the entities repository.
-        $repository = $em->getRepository($dtProvider->getEntity());
-        if (false === ($repository instanceOf DataTablesRepositoryInterface)) {
-            throw new BadDataTablesRepositoryException($repository);
-        }
-
         // Parse the request.
         $dtWrapper->parse($request);
+
+        // Get the entities repository.
+        $repository = $this->getDataTablesRepository($dtProvider);
 
         //
         $filtered = $repository->dataTablesCountFiltered($dtWrapper);
