@@ -353,6 +353,13 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface {
     /**
      * {@inheritdoc}
      */
+    public function getMethod() {
+        return "POST";
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getName() {
         return "employee";
     }
@@ -480,6 +487,7 @@ Create a template in the `src/AppBundle/Resources/views/Employee`directory of yo
 {# src/AppBundle/Resources/views/Employee/index.html.twig #}
 
 {% block stylesheet %}
+    {{ parent() }}
     {% include "@JQueryDataTables/include/styles.html.twig" with {"theme": "bootstrap" } %}
 {% endblock %}
 
@@ -488,6 +496,7 @@ Create a template in the `src/AppBundle/Resources/views/Employee`directory of yo
 {% endblock %}
 
 {% block javascript %}
+    {{ parent() }}
     {% include "@JQueryDataTables/include/scripts.html.twig" with {"theme": "bootstrap" } %}
     {{ dataTablesJS(dtWrapper) }}
 {% endblock %}
