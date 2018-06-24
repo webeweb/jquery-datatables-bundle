@@ -110,7 +110,7 @@ class DataTablesController extends AbstractDataTablesController {
             $stream = fopen("php://output", "w+");
 
             // Export the columns.
-            fputcsv($stream, $dtProvider->exportColumns());
+            fputcsv($stream, $dtProvider->exportColumns(), ";");
 
             // Get the export query.
             $result = $repository->getDataTablesExportQuery($dtProvider)->getQuery()->iterate();
@@ -119,7 +119,7 @@ class DataTablesController extends AbstractDataTablesController {
             while (false !== ($row = $result->next())) {
 
                 // Export the entity.
-                fputcsv($stream, $dtProvider->exportRow($row[0]));
+                fputcsv($stream, $dtProvider->exportRow($row[0]), ";");
 
                 // Detach the entity to avoid memomy consumption.
                 $em->detach($row[0]);
