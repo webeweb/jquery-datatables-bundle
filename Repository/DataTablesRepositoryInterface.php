@@ -11,7 +11,9 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Repository;
 
+use Doctrine\ORM\Query;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 
 /**
  * DataTables repository interface.
@@ -44,4 +46,11 @@ interface DataTablesRepositoryInterface {
      * @return array Returns the entities.
      */
     public function dataTablesFindAll(DataTablesWrapper $dtWrapper);
+
+    /**
+     * Get a DataTables export query.
+     *
+     * @return Query Returns the DataTables export query.
+     */
+    public function getDataTablesExportQuery(DataTablesProviderInterface $dtProvider);
 }
