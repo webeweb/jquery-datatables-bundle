@@ -32,10 +32,9 @@ interface DataTablesProviderInterface extends DataTablesResponseInterface {
     /**
      * Export a DataTables columns.
      *
-     * @param array $columns The columns/
      * @return array Returns an array representing the columns.
      */
-    public function exportColumns(array $columns);
+    public function exportColumns();
 
     /**
      * Export a DataTables row.

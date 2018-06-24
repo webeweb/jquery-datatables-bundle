@@ -27,6 +27,50 @@ final class EmployeeDataTablesProvider implements DataTablesProviderInterface {
     /**
      * {@inheritdoc}
      */
+    public function exportColumns() {
+
+        // Initialize the output.
+        $output = [];
+
+        $output[] = "#";
+        $output[] = "Name";
+        $output[] = "Position";
+        $output[] = "Office";
+        $output[] = "Age";
+        $output[] = "Start date";
+        $output[] = "Salary";
+
+        // Return the output.
+        return $output;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function exportRow($entity) {
+
+        // Initialize the output.
+        $output = [];
+
+        $output[] = $entity->getId();
+        $output[] = $entity->getName();
+        $output[] = $entity->getPosition();
+        $output[] = $entity->getOffice();
+        $output[] = $entity->getAge();
+        if (null === $entity->getStartDate()) {
+            $output[] = "";
+        } else {
+            $output[] = $entity->getStartDate()->format("Y-m-d");
+        }
+        $output[] = $entity->getSalary();
+
+        // Return the output.
+        return $output;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getColumns() {
 
         // Initialize the columns.
