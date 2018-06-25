@@ -91,6 +91,7 @@ class DataTablesController extends AbstractDataTablesController {
      * @param string $name The provider name.
      * @return Response Returns the response.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered DataTables provider exception.
+     * @throws BadDataTablesRepositoryException Throws a bad DataTables repository exception.
      */
     public function exportAction(Request $request, $name) {
 
@@ -121,7 +122,7 @@ class DataTablesController extends AbstractDataTablesController {
                 // Export the entity.
                 fputcsv($stream, $dtProvider->exportRow($row[0]), ";");
 
-                // Detach the entity to avoid memomy consumption.
+                // Detach the entity to avoid memory consumption.
                 $em->detach($row[0]);
             }
 
