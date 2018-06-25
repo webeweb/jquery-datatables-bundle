@@ -57,10 +57,10 @@ final class EmployeeDataTablesProvider implements DataTablesProviderInterface {
         $output[] = $entity->getPosition();
         $output[] = $entity->getOffice();
         $output[] = $entity->getAge();
-        if (null === $entity->getStartDate()) {
-            $output[] = "";
-        } else {
+        if (null !== $entity->getStartDate()) {
             $output[] = $entity->getStartDate()->format("Y-m-d");
+        } else {
+            $output[] = "";
         }
         $output[] = $entity->getSalary();
 
