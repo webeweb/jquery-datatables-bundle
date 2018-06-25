@@ -51,12 +51,15 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
 
         // Notify the user.
         switch ($output["status"]) {
+
             case 200:
                 $this->notifySuccess($output["notify"]);
                 break;
+
             case 404:
                 $this->notifyDanger($output["notify"]);
                 break;
+
             case 500:
                 $this->notifyWarning($output["notify"]);
                 break;
@@ -77,7 +80,10 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
      */
     protected function getDataTablesEntityById(DataTablesProviderInterface $dtProvider, $id) {
 
-        // Get the DataTables repository.
+        // Log a debug trace.
+        $this->getLogger()->debug(sprintf("DataTables controller search for an entity [%s]", $id));
+
+        // Get the repository.
         $repository = $this->getDataTablesRepository($dtProvider);
 
         // Find and check the entity.
@@ -86,7 +92,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
             throw EntityNotFoundException::fromClassNameAndIdentifier($dtProvider->getEntity(), [$id]);
         }
 
-        // Return the DataTables entity.
+        // Return the entity.
         return $entity;
     }
 
@@ -99,13 +105,13 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
     protected function getDataTablesProvider($name) {
 
         // Log a debug trace.
-        $this->getLogger()->debug(sprintf("DataTables controller search for a DataTables provider with name \"%s\"", $name));
+        $this->getLogger()->debug(sprintf("DataTables controller search for a provider with name \"%s\"", $name));
 
         // Get the DataTables provider.
         $dtProvider = $this->get(DataTablesManager::SERVICE_NAME)->getProvider($name);
 
         // Log a debug trace.
-        $this->getLogger()->debug(sprintf("DataTables controller found a DataTables provider with name \"%s\"", $name));
+        $this->getLogger()->debug(sprintf("DataTables controller found a provider with name \"%s\"", $name));
 
         // Return the DataTables provider.
         return $dtProvider;
@@ -119,6 +125,9 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
      * @throws BadDataTablesRepositoryException Throws a bad DataTables repository exception.
      */
     protected function getDataTablesRepository(DataTablesProviderInterface $dtProvider) {
+
+        // Log a debug trace.
+        $this->getLogger()->debug(sprintf("DataTables controller search for a repository with name \"%s\"", $dtProvider->getName()));
 
         // Get the entities manager.
         $em = $this->getDoctrine()->getManager();
@@ -152,7 +161,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
         foreach ($dtProvider->getColumns() as $dtColumn) {
 
             // Log a debug trace.
-            $this->getLogger()->debug(sprintf("DataTables provider add a DataTables column \"%s\"", $dtColumn->getData()));
+            $this->getLogger()->debug(sprintf("DataTables provider add a column \"%s\"", $dtColumn->getData()));
 
             // Add.
             $dtWrapper->addColumn($dtColumn);
