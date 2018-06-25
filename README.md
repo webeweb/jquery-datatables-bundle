@@ -507,7 +507,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface {
 > getName() return the parameter "name" used in the bundle route.
 >
 > getView() return the view used by the DataTables controller.
-> - return something like "@App/Employe/index.html.twig" for use your template
+> - return something like "@App/Employee/index.html.twig" for use your template
 > - return null for use the bundle template
 
 Add this provider in the `app/config/services.yml` file of your project:
