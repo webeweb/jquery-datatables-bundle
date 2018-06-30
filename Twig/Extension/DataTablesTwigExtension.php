@@ -38,15 +38,17 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      */
     const JS_TEMPLATE = <<< 'EOTXT'
 <script type="text/javascript">
-    var %var% = $('%selector%').DataTable({
-        ajax: {
-            type: '%method%',
-            url: '%url%'
-        },
-        columns: %columns%,
-        order: %order%,
-        processing: %processing%,
-        serverSide: %serverSide%
+    $(document).ready(function () {
+        var %var% = $('%selector%').DataTable({
+            ajax: {
+                type: '%method%',
+                url: '%url%'
+            },
+            columns: %columns%,
+            order: %order%,
+            processing: %processing%,
+            serverSide: %serverSide%
+        });
     });
 </script>
 EOTXT;

@@ -217,15 +217,17 @@ EOTXT;
         $arg0 = [];
         $res0 = <<< 'EOTXT'
 <script type="text/javascript">
-    var dtname = $('#dtname').DataTable({
-        ajax: {
-            type: 'POST',
-            url: 'url'
-        },
-        columns: [{"cellType":"td","data":"name","name":"Name"},{"cellType":"td","data":"position","name":"Position"},{"cellType":"td","data":"office","name":"Office"},{"cellType":"td","data":"age","name":"Age"},{"cellType":"td","data":"startDate","name":"Start date"},{"cellType":"td","data":"salary","name":"Salary"},{"cellType":"td","data":"actions","name":"Actions","orderable":false,"searchable":false}],
-        order: [],
-        processing: true,
-        serverSide: true
+    $(document).ready(function () {
+        var dtname = $('#dtname').DataTable({
+            ajax: {
+                type: 'POST',
+                url: 'url'
+            },
+            columns: [{"cellType":"td","data":"name","name":"Name"},{"cellType":"td","data":"position","name":"Position"},{"cellType":"td","data":"office","name":"Office"},{"cellType":"td","data":"age","name":"Age"},{"cellType":"td","data":"startDate","name":"Start date"},{"cellType":"td","data":"salary","name":"Salary"},{"cellType":"td","data":"actions","name":"Actions","orderable":false,"searchable":false}],
+            order: [],
+            processing: true,
+            serverSide: true
+        });
     });
 </script>
 EOTXT;
@@ -234,15 +236,17 @@ EOTXT;
         $arg9 = ["selector" => "#selector"];
         $res9 = <<< 'EOTXT'
 <script type="text/javascript">
-    var dtname = $('#selector').DataTable({
-        ajax: {
-            type: 'POST',
-            url: 'url'
-        },
-        columns: [{"cellType":"td","data":"name","name":"Name"},{"cellType":"td","data":"position","name":"Position"},{"cellType":"td","data":"office","name":"Office"},{"cellType":"td","data":"age","name":"Age"},{"cellType":"td","data":"startDate","name":"Start date"},{"cellType":"td","data":"salary","name":"Salary"},{"cellType":"td","data":"actions","name":"Actions","orderable":false,"searchable":false}],
-        order: [],
-        processing: true,
-        serverSide: true
+    $(document).ready(function () {
+        var dtname = $('#selector').DataTable({
+            ajax: {
+                type: 'POST',
+                url: 'url'
+            },
+            columns: [{"cellType":"td","data":"name","name":"Name"},{"cellType":"td","data":"position","name":"Position"},{"cellType":"td","data":"office","name":"Office"},{"cellType":"td","data":"age","name":"Age"},{"cellType":"td","data":"startDate","name":"Start date"},{"cellType":"td","data":"salary","name":"Salary"},{"cellType":"td","data":"actions","name":"Actions","orderable":false,"searchable":false}],
+            order: [],
+            processing: true,
+            serverSide: true
+        });
     });
 </script>
 EOTXT;
