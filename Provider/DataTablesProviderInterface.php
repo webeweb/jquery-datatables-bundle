@@ -39,7 +39,7 @@ interface DataTablesProviderInterface extends DataTablesResponseInterface {
     /**
      * Export a DataTables row.
      *
-     * @param mixed $entity The entity.
+     * @param object $entity The entity.
      * @return array Returns an array representing this row.
      */
     public function exportRow($entity);
@@ -90,8 +90,8 @@ interface DataTablesProviderInterface extends DataTablesResponseInterface {
      * Render a DataTables column.
      *
      * @param DataTablesColumn $dtColumn The DataTables column.
-     * @param mixed $entity The entity.
-     * @return mixed Returns the rendered DataTables column.
+     * @param object $entity The entity.
+     * @return string Returns the rendered DataTables column.
      */
     public function renderColumn(DataTablesColumn $dtColumn, $entity);
 
@@ -99,9 +99,9 @@ interface DataTablesProviderInterface extends DataTablesResponseInterface {
      * Render a DataTables row.
      *
      * @param string $dtRow The DataTables row.
-     * @param mixed $entity The entity.
+     * @param object $entity The entity.
      * @param integer $rowNumber The row number.
-     * @return mixed Returns the rendered DataTables row.
+     * @return string Returns the rendered DataTables row.
      */
     public function renderRow($dtRow, $entity, $rowNumber);
 }

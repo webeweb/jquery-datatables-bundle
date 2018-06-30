@@ -29,7 +29,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      *
      * @var string
      */
-    const SERVICE_NAME = "webeweb.bundle.datatablesbundle.twig.extension.datatables";
+    const SERVICE_NAME = "webeweb.datatablesbundle.twig.extension.datatables";
 
     /**
      * Directory.

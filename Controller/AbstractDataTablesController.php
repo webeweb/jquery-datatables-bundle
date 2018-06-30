@@ -74,7 +74,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
      *
      * @param DataTablesProviderInterface $dtProvider The DataTables provider.
      * @param integer $id The entity id.
-     * @return mixed Returns the DataTables entity.
+     * @return object Returns the DataTables entity.
      * @throws BadDataTablesRepositoryException Throws a bad DataTables repository exception.
      * @throws EntityNotFoundException Throws an Entity not found exception.
      */
