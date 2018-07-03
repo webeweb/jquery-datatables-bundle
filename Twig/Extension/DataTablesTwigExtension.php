@@ -45,6 +45,9 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
                 url: '%url%'
             },
             columns: %columns%,
+            language: {
+                url: '/bundles/jquerydatatables/datatables-i18n-1.10.16/%language%.lang'
+            },
             order: %order%,
             processing: %processing%,
             serverSide: %serverSide%
@@ -86,12 +89,17 @@ EOTXT;
         $method     = $dtWrapper->getMethod();
         $url        = $dtWrapper->getUrl();
         $columns    = json_encode(array_values($dtWrapper->getColumns()));
+        $language   = ArrayUtility::get($args, "language", "English");
         $orders     = json_encode(array_values($dtWrapper->getOrder()));
         $processing = StringUtility::parseBoolean($dtWrapper->getProcessing());
         $serverSide = StringUtility::parseBoolean($dtWrapper->getServerSide());
 
+        //
+        $searches = ["%var%", "%selector%", "%method%", "%url%", "%columns%", "%language%", "%order%", "%processing%", "%serverSide%"];
+        $replaces = [$var, $selector, $method, $url, $columns, $language, $orders, $processing, $serverSide];
+
         // Return the Javascript.
-        return StringUtility::replace(self::JS_TEMPLATE, ["%var%", "%selector%", "%method%", "%url%", "%columns%", "%order%", "%processing%", "%serverSide%"], [$var, $selector, $method, $url, $columns, $orders, $processing, $serverSide]);
+        return StringUtility::replace(self::JS_TEMPLATE, $searches, $replaces);
     }
 
     /**
