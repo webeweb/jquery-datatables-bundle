@@ -225,7 +225,7 @@ EOTXT;
             },
             columns: [{"cellType":"td","data":"name","name":"Name"},{"cellType":"td","data":"position","name":"Position"},{"cellType":"td","data":"office","name":"Office"},{"cellType":"td","data":"age","name":"Age"},{"cellType":"td","data":"startDate","name":"Start date"},{"cellType":"td","data":"salary","name":"Salary"},{"cellType":"td","data":"actions","name":"Actions","orderable":false,"searchable":false}],
             language: {
-                url: '/bundles/jquerydatatables/datatables-i18n-1.10.16/English.lang'
+                url: '/bundles/jquerydatatables/datatables-i18n-1.10.16/English.json'
             },
             order: [],
             processing: true,
@@ -247,7 +247,7 @@ EOTXT;
             },
             columns: [{"cellType":"td","data":"name","name":"Name"},{"cellType":"td","data":"position","name":"Position"},{"cellType":"td","data":"office","name":"Office"},{"cellType":"td","data":"age","name":"Age"},{"cellType":"td","data":"startDate","name":"Start date"},{"cellType":"td","data":"salary","name":"Salary"},{"cellType":"td","data":"actions","name":"Actions","orderable":false,"searchable":false}],
             language: {
-                url: '/bundles/jquerydatatables/datatables-i18n-1.10.16/French.lang'
+                url: '/bundles/jquerydatatables/datatables-i18n-1.10.16/French.json'
             },
             order: [],
             processing: true,
@@ -257,6 +257,40 @@ EOTXT;
 </script>
 EOTXT;
         $this->assertEquals($res9, $obj->dataTablesJSFunction($this->dataTablesWrapper, $arg9));
+    }
+
+    /**
+     * Tests the datatables-i18n-<version> directory.
+     *
+     * @return void
+     */
+    public function testI18n() {
+
+        // Initialize the language directory.
+        $langDirectory = getcwd() . "/Resources/public/datatables-i18n-1.10.16";
+
+        //
+        $found = 0;
+
+        // Read the directory.
+        $stream = opendir($langDirectory);
+        while (false !== ($file   = readdir($stream))) {
+
+            // Check the filename.
+            if (true === in_array($file, [".", ".."])) {
+                continue;
+            }
+
+            // Count the filename.
+            ++$found;
+
+            // Check the JSON content.
+            $this->assertJson(file_get_contents($langDirectory . "/" . $file), $file);
+        }
+        closedir($stream);
+
+        // Check the translations count.
+        $this->assertEquals(70, $found);
     }
 
 }
