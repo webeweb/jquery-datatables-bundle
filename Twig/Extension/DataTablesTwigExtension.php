@@ -46,7 +46,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
             },
             columns: %columns%,
             language: {
-                url: '/bundles/jquerydatatables/datatables-i18n-1.10.16/%language%.lang'
+                url: '/bundles/jquerydatatables/datatables-i18n-1.10.16/%language%.json'
             },
             order: %order%,
             processing: %processing%,
@@ -75,7 +75,7 @@ EOTXT;
     }
 
     /**
-     * Diplays a DataTables JS.
+     * Displays a DataTables JS.
      *
      * @param DataTablesWrapper $dtWrapper The wrapper.
      * @param array $args The arguments.
