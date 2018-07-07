@@ -536,13 +536,13 @@ Create a template in the `src/AppBundle/Resources/views/Employee`directory of yo
 {% endblock %}
 
 {% block content %}
-    {{ dataTablesHTML(dtWrapper) }}
+    {{ renderDataTables(dtWrapper) }}
 {% endblock %}
 
 {% block javascript %}
     {{ parent() }}
     {% include "@JQueryDataTables/include/scripts.html.twig" with {"theme": "bootstrap" } %}
-    {{ dataTablesJS(dtWrapper) }}
+    {{ jQueryDataTables(dtWrapper) }}
 {% endblock %}
 ```
 
