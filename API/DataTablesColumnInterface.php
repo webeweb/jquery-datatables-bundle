@@ -42,6 +42,6 @@ interface DataTablesColumnInterface {
      *
      * @var string
      */
-    const DATATABLES_PARAMETER_SEARCH = DataTablesRequestInterface::DATATABLES_PARAMETER_SEARCH;
+    const DATATABLES_PARAMETER_SEARCH = "search";
 
 }
