@@ -39,17 +39,6 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
     }
 
     /**
-     * Displays a jQuery DataTables.
-     *
-     * @param DataTablesWrapper $dtWrapper The wrapper.
-     * @param array $args The arguments.
-     * @return string Returns the jQuery DataTables.
-     */
-    public function jQueryDataTablesFunction(DataTablesWrapper $dtWrapper, array $args = []) {
-        return $this->jQueryDataTables($dtWrapper, ArrayUtility::get($args, "selector"), ArrayUtility::get($args, "language", "English"));
-    }
-
-    /**
      * Get the Twig functions.
      *
      * @return array Returns the Twig functions.
@@ -62,11 +51,22 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
     }
 
     /**
-     * Displays a DataTables HTML.
+     * Displays a jQuery DataTables.
      *
      * @param DataTablesWrapper $dtWrapper The wrapper.
      * @param array $args The arguments.
-     * @return string Returns the DataTables HTML.
+     * @return string Returns the jQuery DataTables.
+     */
+    public function jQueryDataTablesFunction(DataTablesWrapper $dtWrapper, array $args = []) {
+        return $this->jQueryDataTables($dtWrapper, ArrayUtility::get($args, "selector"), ArrayUtility::get($args, "language", "English"));
+    }
+
+    /**
+     * Render a DataTables.
+     *
+     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @param array $args The arguments.
+     * @return string Returns the rendered DataTables.
      */
     public function renderDataTablesFunction(DataTablesWrapper $dtWrapper, array $args = []) {
         return $this->renderDataTables($dtWrapper, ArrayUtility::get($args, "class"), ArrayUtility::get($args, "thead", true), ArrayUtility::get($args, "tfoot", true));

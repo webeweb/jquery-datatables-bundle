@@ -73,7 +73,7 @@ EOTXT;
      * @param DataTablesWrapper $dtWrapper The wrapper.
      * @param string $selector The selector.
      * @param string $language The language.
-     * @return string Returns the DataTables JS.
+     * @return string Returns the jQuery DataTables.
      */
     protected function jQueryDataTables(DataTablesWrapper $dtWrapper, $selector, $language) {
 
@@ -95,13 +95,13 @@ EOTXT;
     }
 
     /**
-     * Displays a DataTables table.
+     * Render a DataTables.
      *
      * @param DataTablesWrapper $dtWrapper The wrapper.
      * @param string $class The class.
      * @param boolean $includeTHead Include thead ?.
      * @param boolean $includeTFoot Include tfoot ?
-     * @returns string Returns the DataTables table.
+     * @returns string Returns the rendered DataTables.
      */
     protected function renderDataTables(DataTablesWrapper $dtWrapper, $class, $includeTHead, $includeTFoot) {
 
@@ -123,10 +123,10 @@ EOTXT;
     }
 
     /**
-     * Displays a DataTables column.
+     * Render a DataTables column.
      *
      * @param DataTablesColumn $dtColumn The column.
-     * @return string Returns the DataTables column.
+     * @return string Returns the rendered DataTables column.
      */
     private function renderDataTablesColumn(DataTablesColumn $dtColumn, $scopeRow = false) {
 
@@ -153,10 +153,10 @@ EOTXT;
     }
 
     /**
-     * Displays a DataTables footer.
+     * Render a DataTables footer.
      *
      * @param DataTablesWrapper $dtWrapper The wrapper.
-     * @return string Returns the DataTables footer.
+     * @return string Returns the rendered DataTables footer.
      */
     private function renderDataTablesTFoot(DataTablesWrapper $dtWrapper) {
 
@@ -178,10 +178,10 @@ EOTXT;
     }
 
     /**
-     * Displays a DataTables header.
+     * Render a DataTables header.
      *
      * @param DataTablesWrapper $dtWrapper The wrapper.
-     * @return string Returns the DataTables header.
+     * @return string Returns the rendered DataTables header.
      */
     private function renderDataTablesTHead(DataTablesWrapper $dtWrapper) {
 
