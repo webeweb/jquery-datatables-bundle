@@ -38,6 +38,8 @@ final class DataTablesRequestTest extends AbstractJQueryDataTablesFrameworkTestC
         $this->assertEquals(0, $obj->getDraw());
         $this->assertEquals(0, $obj->getLength());
         $this->assertEquals([], $obj->getOrder());
+        $this->assertNotNull($obj->getQuery());
+        $this->assertNotNull($obj->getRequest());
         $this->assertNotNull($obj->getSearch());
         $this->assertEquals(0, $obj->getStart());
         $this->assertSame($this->dataTablesWrapper, $obj->getWrapper());
@@ -65,8 +67,13 @@ final class DataTablesRequestTest extends AbstractJQueryDataTablesFrameworkTestC
         $this->assertEquals(1, $obj->getDraw());
         $this->assertEquals(10, $obj->getLength());
         $this->assertCount(1, $obj->getOrder());
+        $this->assertCount(1, $obj->getQuery()->all());
+        $this->assertCount(1, $obj->getRequest()->all());
         $this->assertNotNull($obj->getSearch());
         $this->assertEquals(0, $obj->getStart());
+
+        $this->assertEquals("query", $obj->getQuery()->get("query"));
+        $this->assertEquals("request", $obj->getRequest()->get("request"));
 
         $this->assertNotNull($obj->getColumn("name"));
         $this->assertNotNull($obj->getColumn("position"));

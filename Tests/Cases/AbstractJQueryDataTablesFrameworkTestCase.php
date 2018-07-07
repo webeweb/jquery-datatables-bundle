@@ -156,7 +156,7 @@ abstract class AbstractJQueryDataTablesFrameworkTestCase extends AbstractBootstr
         $this->dataTablesResponse = DataTablesResponse::parse($this->dataTablesWrapper, $this->dataTablesRequest);
 
         // Set a Request mock.
-        $this->request = new Request([], self::getPostData(), [], [], [], ["REQUEST_METHOD" => "POST"]);
+        $this->request = new Request(["query" => "query"], array_merge(self::getPostData(), ["request" => "request"]), [], [], [], ["REQUEST_METHOD" => "POST"]);
     }
 
 }
