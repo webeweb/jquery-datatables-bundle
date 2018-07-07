@@ -32,31 +32,6 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
     const SERVICE_NAME = "webeweb.datatablesbundle.twig.extension.datatables";
 
     /**
-     * Directory.
-     *
-     * @var string
-     */
-    const JS_TEMPLATE = <<< 'EOTXT'
-<script type="text/javascript">
-    $(document).ready(function () {
-        var %var% = $('%selector%').DataTable({
-            ajax: {
-                type: '%method%',
-                url: '%url%'
-            },
-            columns: %columns%,
-            language: {
-                url: '/bundles/jquerydatatables/datatables-i18n-1.10.16/%language%.json'
-            },
-            order: %order%,
-            processing: %processing%,
-            serverSide: %serverSide%
-        });
-    });
-</script>
-EOTXT;
-
-    /**
      * Constructor.
      */
     public function __construct() {
@@ -64,42 +39,14 @@ EOTXT;
     }
 
     /**
-     * Displays a DataTables HTML.
+     * Displays a jQuery DataTables.
      *
      * @param DataTablesWrapper $dtWrapper The wrapper.
      * @param array $args The arguments.
-     * @return string Returns the DataTables HTML.
+     * @return string Returns the jQuery DataTables.
      */
-    public function dataTablesHTMLFunction(DataTablesWrapper $dtWrapper, array $args = []) {
-        return $this->dataTablesTable($dtWrapper, ArrayUtility::get($args, "class"), ArrayUtility::get($args, "thead", true), ArrayUtility::get($args, "tfoot", true));
-    }
-
-    /**
-     * Displays a DataTables JS.
-     *
-     * @param DataTablesWrapper $dtWrapper The wrapper.
-     * @param array $args The arguments.
-     * @return string Returns the DataTables JS.
-     */
-    public function dataTablesJSFunction(DataTablesWrapper $dtWrapper, array $args = []) {
-
-        // Initialize the parameters.
-        $var        = $this->dataTablesName($dtWrapper);
-        $selector   = ArrayUtility::get($args, "selector", "#" . $var);
-        $method     = $dtWrapper->getMethod();
-        $url        = $dtWrapper->getUrl();
-        $columns    = json_encode(array_values($dtWrapper->getColumns()));
-        $language   = ArrayUtility::get($args, "language", "English");
-        $orders     = json_encode(array_values($dtWrapper->getOrder()));
-        $processing = StringUtility::parseBoolean($dtWrapper->getProcessing());
-        $serverSide = StringUtility::parseBoolean($dtWrapper->getServerSide());
-
-        //
-        $searches = ["%var%", "%selector%", "%method%", "%url%", "%columns%", "%language%", "%order%", "%processing%", "%serverSide%"];
-        $replaces = [$var, $selector, $method, $url, $columns, $language, $orders, $processing, $serverSide];
-
-        // Return the Javascript.
-        return StringUtility::replace(self::JS_TEMPLATE, $searches, $replaces);
+    public function jQueryDataTablesFunction(DataTablesWrapper $dtWrapper, array $args = []) {
+        return $this->jQueryDataTables($dtWrapper, ArrayUtility::get($args, "selector"), ArrayUtility::get($args, "language", "English"));
     }
 
     /**
@@ -109,9 +56,20 @@ EOTXT;
      */
     public function getFunctions() {
         return [
-            new Twig_SimpleFunction("dataTablesHTML", [$this, "dataTablesHTMLFunction"], ["is_safe" => ["html"]]),
-            new Twig_SimpleFunction("dataTablesJS", [$this, "dataTablesJSFunction"], ["is_safe" => ["html"]]),
+            new Twig_SimpleFunction("jQueryDataTables", [$this, "jQueryDataTablesFunction"], ["is_safe" => ["html"]]),
+            new Twig_SimpleFunction("renderDataTables", [$this, "renderDataTablesFunction"], ["is_safe" => ["html"]]),
         ];
+    }
+
+    /**
+     * Displays a DataTables HTML.
+     *
+     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @param array $args The arguments.
+     * @return string Returns the DataTables HTML.
+     */
+    public function renderDataTablesFunction(DataTablesWrapper $dtWrapper, array $args = []) {
+        return $this->renderDataTables($dtWrapper, ArrayUtility::get($args, "class"), ArrayUtility::get($args, "thead", true), ArrayUtility::get($args, "tfoot", true));
     }
 
 }

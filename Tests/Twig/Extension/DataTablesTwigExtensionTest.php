@@ -51,212 +51,14 @@ final class DataTablesTwigExtensionTest extends AbstractJQueryDataTablesFramewor
         $this->assertCount(2, $res);
 
         $this->assertInstanceOf(Twig_SimpleFunction::class, $res[0]);
-        $this->assertEquals("dataTablesHTML", $res[0]->getName());
-        $this->assertEquals([$obj, "dataTablesHTMLFunction"], $res[0]->getCallable());
+        $this->assertEquals("jQueryDataTables", $res[0]->getName());
+        $this->assertEquals([$obj, "jQueryDataTablesFunction"], $res[0]->getCallable());
         $this->assertEquals(["html"], $res[0]->getSafe(new Twig_Node()));
 
         $this->assertInstanceOf(Twig_SimpleFunction::class, $res[1]);
-        $this->assertEquals("dataTablesJS", $res[1]->getName());
-        $this->assertEquals([$obj, "dataTablesJSFunction"], $res[1]->getCallable());
+        $this->assertEquals("renderDataTables", $res[1]->getName());
+        $this->assertEquals([$obj, "renderDataTablesFunction"], $res[1]->getCallable());
         $this->assertEquals(["html"], $res[1]->getSafe(new Twig_Node()));
-    }
-
-    /**
-     * Tests the dataTablesHTML() method.
-     *
-     * @return void
-     */
-    public function testDataTablesHTML() {
-
-        $obj = new DataTablesTwigExtension();
-
-        // ===
-        $arg0 = [];
-        $res0 = <<< 'EOTXT'
-<table class="table" id="dtname">
-    <thead>
-        <tr>
-            <th scope="row">Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tfoot>
-        <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-            <th>Actions</th>
-        </tr>
-    </tfoot>
-</table>
-EOTXT;
-        $this->assertEquals($res0, $obj->dataTablesHTMLFunction($this->dataTablesWrapper, $arg0));
-
-        // ===
-        $arg1 = ["class" => "class"];
-        $res1 = <<< 'EOTXT'
-<table class="table class" id="dtname">
-    <thead>
-        <tr>
-            <th scope="row">Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tfoot>
-        <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-            <th>Actions</th>
-        </tr>
-    </tfoot>
-</table>
-EOTXT;
-        $this->assertEquals($res1, $obj->dataTablesHTMLFunction($this->dataTablesWrapper, $arg1));
-
-        // ===
-        $arg2 = ["thead" => false];
-        $res2 = <<< 'EOTXT'
-<table class="table" id="dtname">
-    <tfoot>
-        <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-            <th>Actions</th>
-        </tr>
-    </tfoot>
-</table>
-EOTXT;
-        $this->assertEquals($res2, $obj->dataTablesHTMLFunction($this->dataTablesWrapper, $arg2));
-
-        // ===
-        $arg3 = ["tfoot" => false];
-        $res3 = <<< 'EOTXT'
-<table class="table" id="dtname">
-    <thead>
-        <tr>
-            <th scope="row">Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-</table>
-EOTXT;
-        $this->assertEquals($res3, $obj->dataTablesHTMLFunction($this->dataTablesWrapper, $arg3));
-
-        // ===
-        $i = 0;
-        foreach ($this->dataTablesWrapper->getColumns() as $dtColumn) {
-            $dtColumn->setClassname($dtColumn->getData());
-            $dtColumn->setWidth(++$i);
-        }
-
-        $arg9 = ["class" => "class", "thead" => true, "tfoot" => true];
-        $res9 = <<< 'EOTXT'
-<table class="table class" id="dtname">
-    <thead>
-        <tr>
-            <th scope="row" class="name" width="1">Name</th>
-            <th class="position" width="2">Position</th>
-            <th class="office" width="3">Office</th>
-            <th class="age" width="4">Age</th>
-            <th class="startDate" width="5">Start date</th>
-            <th class="salary" width="6">Salary</th>
-            <th class="actions" width="7">Actions</th>
-        </tr>
-    </thead>
-    <tfoot>
-        <tr>
-            <th class="name" width="1">Name</th>
-            <th class="position" width="2">Position</th>
-            <th class="office" width="3">Office</th>
-            <th class="age" width="4">Age</th>
-            <th class="startDate" width="5">Start date</th>
-            <th class="salary" width="6">Salary</th>
-            <th class="actions" width="7">Actions</th>
-        </tr>
-    </tfoot>
-</table>
-EOTXT;
-        $this->assertEquals($res9, $obj->dataTablesHTMLFunction($this->dataTablesWrapper, $arg9));
-    }
-
-    /**
-     * Tests the dataTablesJSFunction() {
-     *
-     * @return void
-     */
-    public function testDataTablesJSFunction() {
-
-        $obj = new DataTablesTwigExtension();
-
-        $arg0 = [];
-        $res0 = <<< 'EOTXT'
-<script type="text/javascript">
-    $(document).ready(function () {
-        var dtname = $('#dtname').DataTable({
-            ajax: {
-                type: 'POST',
-                url: 'url'
-            },
-            columns: [{"cellType":"td","data":"name","name":"Name"},{"cellType":"td","data":"position","name":"Position"},{"cellType":"td","data":"office","name":"Office"},{"cellType":"td","data":"age","name":"Age"},{"cellType":"td","data":"startDate","name":"Start date"},{"cellType":"td","data":"salary","name":"Salary"},{"cellType":"td","data":"actions","name":"Actions","orderable":false,"searchable":false}],
-            language: {
-                url: '/bundles/jquerydatatables/datatables-i18n-1.10.16/English.json'
-            },
-            order: [],
-            processing: true,
-            serverSide: true
-        });
-    });
-</script>
-EOTXT;
-        $this->assertEquals($res0, $obj->dataTablesJSFunction($this->dataTablesWrapper, $arg0));
-
-        $arg9 = ["selector" => "#selector", "language" => "French"];
-        $res9 = <<< 'EOTXT'
-<script type="text/javascript">
-    $(document).ready(function () {
-        var dtname = $('#selector').DataTable({
-            ajax: {
-                type: 'POST',
-                url: 'url'
-            },
-            columns: [{"cellType":"td","data":"name","name":"Name"},{"cellType":"td","data":"position","name":"Position"},{"cellType":"td","data":"office","name":"Office"},{"cellType":"td","data":"age","name":"Age"},{"cellType":"td","data":"startDate","name":"Start date"},{"cellType":"td","data":"salary","name":"Salary"},{"cellType":"td","data":"actions","name":"Actions","orderable":false,"searchable":false}],
-            language: {
-                url: '/bundles/jquerydatatables/datatables-i18n-1.10.16/French.json'
-            },
-            order: [],
-            processing: true,
-            serverSide: true
-        });
-    });
-</script>
-EOTXT;
-        $this->assertEquals($res9, $obj->dataTablesJSFunction($this->dataTablesWrapper, $arg9));
     }
 
     /**
@@ -291,6 +93,204 @@ EOTXT;
 
         // Check the translations count.
         $this->assertEquals(70, $found);
+    }
+
+    /**
+     * Tests the jQueryDataTablesFunction() {
+     *
+     * @return void
+     */
+    public function testjQueryDataTablesFunction() {
+
+        $obj = new DataTablesTwigExtension();
+
+        $arg0 = [];
+        $res0 = <<< 'EOTXT'
+<script type="text/javascript">
+    $(document).ready(function () {
+        var dtname = $("#dtname").DataTable({
+            ajax: {
+                type: "POST",
+                url: "url"
+            },
+            columns: [{"cellType":"td","data":"name","name":"Name"},{"cellType":"td","data":"position","name":"Position"},{"cellType":"td","data":"office","name":"Office"},{"cellType":"td","data":"age","name":"Age"},{"cellType":"td","data":"startDate","name":"Start date"},{"cellType":"td","data":"salary","name":"Salary"},{"cellType":"td","data":"actions","name":"Actions","orderable":false,"searchable":false}],
+            language: {
+                url: "/bundles/jquerydatatables/datatables-i18n-1.10.16/English.json"
+            },
+            order: [],
+            processing: true,
+            serverSide: true
+        });
+    });
+</script>
+EOTXT;
+        $this->assertEquals($res0, $obj->jQueryDataTablesFunction($this->dataTablesWrapper, $arg0));
+
+        $arg9 = ["selector" => "#selector", "language" => "French"];
+        $res9 = <<< 'EOTXT'
+<script type="text/javascript">
+    $(document).ready(function () {
+        var dtname = $("#selector").DataTable({
+            ajax: {
+                type: "POST",
+                url: "url"
+            },
+            columns: [{"cellType":"td","data":"name","name":"Name"},{"cellType":"td","data":"position","name":"Position"},{"cellType":"td","data":"office","name":"Office"},{"cellType":"td","data":"age","name":"Age"},{"cellType":"td","data":"startDate","name":"Start date"},{"cellType":"td","data":"salary","name":"Salary"},{"cellType":"td","data":"actions","name":"Actions","orderable":false,"searchable":false}],
+            language: {
+                url: "/bundles/jquerydatatables/datatables-i18n-1.10.16/French.json"
+            },
+            order: [],
+            processing: true,
+            serverSide: true
+        });
+    });
+</script>
+EOTXT;
+        $this->assertEquals($res9, $obj->jQueryDataTablesFunction($this->dataTablesWrapper, $arg9));
+    }
+
+    /**
+     * Tests the renderDataTablesFunction() method.
+     *
+     * @return void
+     */
+    public function testRenderDataTablesFunction() {
+
+        $obj = new DataTablesTwigExtension();
+
+        // ===
+        $arg0 = [];
+        $res0 = <<< 'EOTXT'
+<table class="table" id="dtname">
+    <thead>
+        <tr>
+            <th scope="row">Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </tfoot>
+</table>
+EOTXT;
+        $this->assertEquals($res0, $obj->renderDataTablesFunction($this->dataTablesWrapper, $arg0));
+
+        // ===
+        $arg1 = ["class" => "class"];
+        $res1 = <<< 'EOTXT'
+<table class="table class" id="dtname">
+    <thead>
+        <tr>
+            <th scope="row">Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </tfoot>
+</table>
+EOTXT;
+        $this->assertEquals($res1, $obj->renderDataTablesFunction($this->dataTablesWrapper, $arg1));
+
+        // ===
+        $arg2 = ["thead" => false];
+        $res2 = <<< 'EOTXT'
+<table class="table" id="dtname">
+    <tfoot>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </tfoot>
+</table>
+EOTXT;
+        $this->assertEquals($res2, $obj->renderDataTablesFunction($this->dataTablesWrapper, $arg2));
+
+        // ===
+        $arg3 = ["tfoot" => false];
+        $res3 = <<< 'EOTXT'
+<table class="table" id="dtname">
+    <thead>
+        <tr>
+            <th scope="row">Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+</table>
+EOTXT;
+        $this->assertEquals($res3, $obj->renderDataTablesFunction($this->dataTablesWrapper, $arg3));
+
+        // ===
+        $i = 0;
+        foreach ($this->dataTablesWrapper->getColumns() as $dtColumn) {
+            $dtColumn->setClassname($dtColumn->getData());
+            $dtColumn->setWidth( ++$i);
+        }
+
+        $arg9 = ["class" => "class", "thead" => true, "tfoot" => true];
+        $res9 = <<< 'EOTXT'
+<table class="table class" id="dtname">
+    <thead>
+        <tr>
+            <th scope="row" class="name" width="1">Name</th>
+            <th class="position" width="2">Position</th>
+            <th class="office" width="3">Office</th>
+            <th class="age" width="4">Age</th>
+            <th class="startDate" width="5">Start date</th>
+            <th class="salary" width="6">Salary</th>
+            <th class="actions" width="7">Actions</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th class="name" width="1">Name</th>
+            <th class="position" width="2">Position</th>
+            <th class="office" width="3">Office</th>
+            <th class="age" width="4">Age</th>
+            <th class="startDate" width="5">Start date</th>
+            <th class="salary" width="6">Salary</th>
+            <th class="actions" width="7">Actions</th>
+        </tr>
+    </tfoot>
+</table>
+EOTXT;
+        $this->assertEquals($res9, $obj->renderDataTablesFunction($this->dataTablesWrapper, $arg9));
     }
 
 }

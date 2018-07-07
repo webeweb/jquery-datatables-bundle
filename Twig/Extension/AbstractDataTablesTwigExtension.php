@@ -26,10 +26,100 @@ use WBW\Library\Core\Utility\Argument\StringUtility;
 abstract class AbstractDataTablesTwigExtension extends Twig_Extension {
 
     /**
+     * jQuery DataTables.
+     *
+     * @var string
+     */
+    const JQUERY_DATATABLES = <<< 'EOTXT'
+<script type="text/javascript">
+    $(document).ready(function () {
+        var %var% = $("%selector%").DataTable({
+            ajax: {
+                type: "%method%",
+                url: "%url%"
+            },
+            columns: %columns%,
+            language: {
+                url: "/bundles/jquerydatatables/datatables-i18n-1.10.16/%language%.json"
+            },
+            order: %order%,
+            processing: %processing%,
+            serverSide: %serverSide%
+        });
+    });
+</script>
+EOTXT;
+
+    /**
      * Constructor.
      */
-    public function __construct() {
+    protected function __construct() {
         // NOTHING TO DO.
+    }
+
+    /**
+     * Get a DataTables name.
+     *
+     * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
+     * @return string Returns the DataTables name.
+     */
+    protected function getDataTablesName(DataTablesWrapper $dtWrapper) {
+        return "dt" . preg_replace("/[^A-Za-z0-9]/", "", $dtWrapper->getName());
+    }
+
+    /**
+     * Displays a jQuery DataTables.
+     *
+     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @param string $selector The selector.
+     * @param string $language The language.
+     * @return string Returns the DataTables JS.
+     */
+    protected function jQueryDataTables(DataTablesWrapper $dtWrapper, $selector, $language) {
+
+        // Initialize the parameters.
+        $var        = $this->getDataTablesName($dtWrapper);
+        $method     = $dtWrapper->getMethod();
+        $url        = $dtWrapper->getUrl();
+        $columns    = json_encode(array_values($dtWrapper->getColumns()));
+        $orders     = json_encode(array_values($dtWrapper->getOrder()));
+        $processing = StringUtility::parseBoolean($dtWrapper->getProcessing());
+        $serverSide = StringUtility::parseBoolean($dtWrapper->getServerSide());
+
+        //
+        $searches = ["%var%", "%selector%", "%method%", "%url%", "%columns%", "%language%", "%order%", "%processing%", "%serverSide%"];
+        $replaces = [$var, null === $selector ? "#" . $var : $selector, $method, $url, $columns, $language, $orders, $processing, $serverSide];
+
+        // Return the Javascript.
+        return StringUtility::replace(self::JQUERY_DATATABLES, $searches, $replaces);
+    }
+
+    /**
+     * Displays a DataTables table.
+     *
+     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @param string $class The class.
+     * @param boolean $includeTHead Include thead ?.
+     * @param boolean $includeTFoot Include tfoot ?
+     * @returns string Returns the DataTables table.
+     */
+    protected function renderDataTables(DataTablesWrapper $dtWrapper, $class, $includeTHead, $includeTFoot) {
+
+        // Initialize the template.
+        $template = "<table %attributes%>\n%innerHTML%</table>";
+
+        // Initialize the attributes.
+        $attributes = [];
+
+        $attributes["class"] = ["table", $class];
+        $attributes["id"]    = $this->getDataTablesName($dtWrapper);
+
+        // Initialize the parameters.
+        $thead = true === $includeTHead ? $this->renderDataTablesTHead($dtWrapper) : "";
+        $tfoot = true === $includeTFoot ? $this->renderDataTablesTFoot($dtWrapper) : "";
+
+        // Return the HTML.
+        return StringUtility::replace($template, ["%attributes%", "%innerHTML%"], [StringUtility::parseArray($attributes), $thead . $tfoot]);
     }
 
     /**
@@ -38,7 +128,7 @@ abstract class AbstractDataTablesTwigExtension extends Twig_Extension {
      * @param DataTablesColumn $dtColumn The column.
      * @return string Returns the DataTables column.
      */
-    private function dataTablesColumn(DataTablesColumn $dtColumn, $scopeRow = false) {
+    private function renderDataTablesColumn(DataTablesColumn $dtColumn, $scopeRow = false) {
 
         // Check if the column is visible.
         if (false === $dtColumn->getVisible()) {
@@ -63,22 +153,12 @@ abstract class AbstractDataTablesTwigExtension extends Twig_Extension {
     }
 
     /**
-     * Displays a DataTables name.
-     *
-     * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
-     * @return string Returns the DataTables name.
-     */
-    protected function dataTablesName(DataTablesWrapper $dtWrapper) {
-        return "dt" . preg_replace("/[^A-Za-z0-9]/", "", $dtWrapper->getName());
-    }
-
-    /**
      * Displays a DataTables footer.
      *
      * @param DataTablesWrapper $dtWrapper The wrapper.
      * @return string Returns the DataTables footer.
      */
-    private function dataTablesTFoot(DataTablesWrapper $dtWrapper) {
+    private function renderDataTablesTFoot(DataTablesWrapper $dtWrapper) {
 
         // Initialize the template.
         $template = "    <tfoot>\n        <tr>\n%innerHTML%        </tr>\n    </tfoot>\n";
@@ -86,7 +166,7 @@ abstract class AbstractDataTablesTwigExtension extends Twig_Extension {
         // Initialize the parameters.
         $innerHTML = "";
         foreach ($dtWrapper->getColumns() as $dtColumn) {
-            $column = $this->dataTablesColumn($dtColumn);
+            $column = $this->renderDataTablesColumn($dtColumn);
             if ("" === $column) {
                 continue;
             }
@@ -103,7 +183,7 @@ abstract class AbstractDataTablesTwigExtension extends Twig_Extension {
      * @param DataTablesWrapper $dtWrapper The wrapper.
      * @return string Returns the DataTables header.
      */
-    private function dataTablesTHead(DataTablesWrapper $dtWrapper) {
+    private function renderDataTablesTHead(DataTablesWrapper $dtWrapper) {
 
         // Initialize the templates.
         $template = "    <thead>\n        <tr>\n%innerHTML%        </tr>\n    </thead>\n";
@@ -115,7 +195,7 @@ abstract class AbstractDataTablesTwigExtension extends Twig_Extension {
         $innerHTML = "";
         for ($i = 0; $i < $count; ++$i) {
             $dtColumn = array_values($dtWrapper->getColumns())[$i];
-            $column   = $this->dataTablesColumn($dtColumn, 0 === $i);
+            $column   = $this->renderDataTablesColumn($dtColumn, 0 === $i);
             if ("" === $column) {
                 continue;
             }
@@ -124,34 +204,6 @@ abstract class AbstractDataTablesTwigExtension extends Twig_Extension {
 
         // Return the HTML.
         return "" === $innerHTML ? "" : StringUtility::replace($template, ["%innerHTML%"], [$innerHTML]);
-    }
-
-    /**
-     * Displays a DataTables table.
-     *
-     * @param DataTablesWrapper $dtWrapper The wrapper.
-     * @param string $class The class.
-     * @param boolean $includeTHead Include thead ?.
-     * @param boolean $includeTFoot Include tfoot ?
-     * @returns string Returns the DataTables table.
-     */
-    protected function dataTablesTable(DataTablesWrapper $dtWrapper, $class, $includeTHead, $includeTFoot) {
-
-        // Initialize the template.
-        $template = "<table %attributes%>\n%innerHTML%</table>";
-
-        // Initialize the attributes.
-        $attributes = [];
-
-        $attributes["class"] = ["table", $class];
-        $attributes["id"]    = $this->dataTablesName($dtWrapper);
-
-        // Initialize the parameters.
-        $thead = true === $includeTHead ? $this->dataTablesTHead($dtWrapper) : "";
-        $tfoot = true === $includeTFoot ? $this->dataTablesTFoot($dtWrapper) : "";
-
-        // Return the HTML.
-        return StringUtility::replace($template, ["%attributes%", "%innerHTML%"], [StringUtility::parseArray($attributes), $thead . $tfoot]);
     }
 
 }

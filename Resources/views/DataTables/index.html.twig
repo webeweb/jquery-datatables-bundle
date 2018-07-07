@@ -5,7 +5,7 @@
         <div class="{{ bootstrapGrid({"lg": 12, "recopy": true}) }}">
             <div class="row clearfix">
                 <div class="{{ bootstrapGrid({"lg": 12, "recopy": true}) }} table-responsive">
-                    {{ dataTablesHTML(dtWrapper, {"class": "table-bordered table-striped"}) }}
+                    {{ renderDataTables(dtWrapper, {"class": "table-bordered table-striped"}) }}
                 </div>
             </div>
         </div>
@@ -13,5 +13,5 @@
 {% endblock %}
 {% block jQueryDataTablesBodyScripts %}
     {{ parent() }}
-    {{ dataTablesJS(dtWrapper) }}
+    {{ jQueryDataTables(dtWrapper) }}
 {% endblock %}
