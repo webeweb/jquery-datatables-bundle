@@ -20,6 +20,20 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 class DataTablesOrder {
 
     /**
+     * Column parameter.
+     *
+     * @var string
+     */
+    const COLUMN_PARAMETER = "column";
+
+    /**
+     * Dir parameter.
+     *
+     * @var string
+     */
+    const DIR_PARAMETER = "dir";
+
+    /**
      * Column.
      *
      * @var integer
@@ -73,17 +87,17 @@ class DataTablesOrder {
         foreach ($rawOrders as $current) {
 
             // Determines if the raw order is valid.
-            if (false === array_key_exists("column", $current)) {
+            if (false === array_key_exists(self::COLUMN_PARAMETER, $current)) {
                 continue;
             }
-            if (false === array_key_exists("dir", $current)) {
+            if (false === array_key_exists(self::DIR_PARAMETER, $current)) {
                 continue;
             }
 
             // Create a DataTables order.
             $dtOrder = new DataTablesOrder();
-            $dtOrder->setColumn(intval($current["column"]));
-            $dtOrder->setDir($current["dir"]);
+            $dtOrder->setColumn(intval($current[self::COLUMN_PARAMETER]));
+            $dtOrder->setDir($current[self::DIR_PARAMETER]);
 
             // Add the DataTables order.
             $dtOrders[] = $dtOrder;
