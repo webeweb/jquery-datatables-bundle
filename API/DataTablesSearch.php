@@ -22,6 +22,20 @@ use WBW\Library\Core\Utility\Argument\BooleanUtility;
 class DataTablesSearch {
 
     /**
+     * Regex parameter.
+     *
+     * @var string
+     */
+    const REGEX_PARAMETER = "regex";
+
+    /**
+     * Value parameter.
+     *
+     * @var string
+     */
+    const VALUE_PARAMETER = "value";
+
+    /**
      * Regex.
      *
      * @var boolean
@@ -73,16 +87,16 @@ class DataTablesSearch {
         $dtSearch = new DataTablesSearch();
 
         // Determines if the raw search is valid.
-        if (false === array_key_exists("regex", $rawSearch)) {
+        if (false === array_key_exists(self::REGEX_PARAMETER, $rawSearch)) {
             return $dtSearch;
         }
-        if (false === array_key_exists("value", $rawSearch)) {
+        if (false === array_key_exists(self::VALUE_PARAMETER, $rawSearch)) {
             return $dtSearch;
         }
 
         // Set the DataTables search.
-        $dtSearch->setRegex(BooleanUtility::parseString($rawSearch["regex"]));
-        $dtSearch->setValue($rawSearch["value"]);
+        $dtSearch->setRegex(BooleanUtility::parseString($rawSearch[self::REGEX_PARAMETER]));
+        $dtSearch->setValue($rawSearch[self::VALUE_PARAMETER]);
 
         // Return the DataTables search.
         return $dtSearch;
