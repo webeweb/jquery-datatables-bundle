@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
+use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
 use WBW\Library\Core\IO\HTTPInterface;
 
@@ -20,7 +21,7 @@ use WBW\Library\Core\IO\HTTPInterface;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\API
  */
-class DataTablesRequest implements HTTPInterface {
+class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
 
     /**
      * Columns.
@@ -51,6 +52,20 @@ class DataTablesRequest implements HTTPInterface {
     private $order;
 
     /**
+     * Query.
+     *
+     * @var ParameterBag
+     */
+    private $query;
+
+    /**
+     * Request.
+     *
+     * @var ParameterBag
+     */
+    private $request;
+
+    /**
      * Search.
      *
      * @var DataTablesSearch
@@ -79,7 +94,25 @@ class DataTablesRequest implements HTTPInterface {
         $this->setDraw(0);
         $this->setLength(10);
         $this->setOrder([]);
+        $this->setQuery(new ParameterBag());
+        $this->setRequest(new ParameterBag());
         $this->setStart(0);
+    }
+
+    /**
+     * DataTables parameters.
+     *
+     * @return array Returns the DataTables parameters.
+     */
+    public static function dtParameters() {
+        return [
+            self::DATATABLES_PARAMETER_COLUMNS,
+            self::DATATABLES_PARAMETER_DRAW,
+            self::DATATABLES_PARAMETER_LENGTH,
+            self::DATATABLES_PARAMETER_ORDER,
+            self::DATATABLES_PARAMETER_SEARCH,
+            self::DATATABLES_PARAMETER_START,
+        ];
     }
 
     /**
@@ -134,6 +167,24 @@ class DataTablesRequest implements HTTPInterface {
     }
 
     /**
+     * Get the query.
+     *
+     * @return ParameterBag Returns the query.
+     */
+    public function getQuery() {
+        return $this->query;
+    }
+
+    /**
+     * Get the request.
+     *
+     * @return ParameterBag Returns the request.
+     */
+    public function getRequest() {
+        return $this->request;
+    }
+
+    /**
      * Get the search.
      *
      * @return DatTablesSearch Returns the search.
@@ -172,6 +223,10 @@ class DataTablesRequest implements HTTPInterface {
         // Initialize a DataTables request.
         $dtRequest = new DataTablesRequest();
 
+        // Recopy the parameter bags.
+        self::recopy($request->query, $dtRequest->getQuery());
+        self::recopy($request->request, $dtRequest->getRequest());
+
         // Get the parameter bag.
         if (self::HTTP_METHOD_GET === $request->getMethod()) {
             $parameterBag = $request->query;
@@ -180,21 +235,37 @@ class DataTablesRequest implements HTTPInterface {
         }
 
         // Get the request parameters.
-        $columns = null !== $parameterBag->get("columns") ? $parameterBag->get("columns") : [];
-        $orders  = null !== $parameterBag->get("order") ? $parameterBag->get("order") : [];
-        $search  = null !== $parameterBag->get("search") ? $parameterBag->get("search") : [];
+        $columns = null !== $parameterBag->get(self::DATATABLES_PARAMETER_COLUMNS) ? $parameterBag->get(self::DATATABLES_PARAMETER_COLUMNS) : [];
+        $orders  = null !== $parameterBag->get(self::DATATABLES_PARAMETER_ORDER) ? $parameterBag->get(self::DATATABLES_PARAMETER_ORDER) : [];
+        $search  = null !== $parameterBag->get(self::DATATABLES_PARAMETER_SEARCH) ? $parameterBag->get(self::DATATABLES_PARAMETER_SEARCH) : [];
 
         // Set the DataTables request.
         $dtRequest->setColumns(DataTablesColumn::parse($columns, $wrapper));
-        $dtRequest->setDraw(intval($parameterBag->get("draw")));
-        $dtRequest->setLength(intval($parameterBag->get("length")));
+        $dtRequest->setDraw($parameterBag->getInt(self::DATATABLES_PARAMETER_DRAW));
+        $dtRequest->setLength($parameterBag->getInt(self::DATATABLES_PARAMETER_LENGTH));
         $dtRequest->setOrder(DataTablesOrder::parse($orders));
         $dtRequest->setSearch(DataTablesSearch::parse($search));
-        $dtRequest->setStart(intval($parameterBag->get("start")));
+        $dtRequest->setStart($parameterBag->getInt(self::DATATABLES_PARAMETER_START));
         $dtRequest->setWrapper($wrapper);
 
         // Return the DataTables request.
         return $dtRequest;
+    }
+
+    /**
+     * Recopy.
+     *
+     * @param ParameterBag $request The request.
+     * @param ParameterBag $bag The bag.
+     * @return void
+     */
+    protected static function recopy(ParameterBag $request, ParameterBag $bag) {
+        foreach ($request->keys() as $current) {
+            if (true === in_array($current, self::dtParameters())) {
+                continue;
+            }
+            $bag->set($current, $request->get($current));
+        }
     }
 
     /**
@@ -238,6 +309,28 @@ class DataTablesRequest implements HTTPInterface {
      */
     protected function setOrder($order) {
         $this->order = $order;
+        return $this;
+    }
+
+    /**
+     * Set the request.
+     *
+     * @param ParameterBag $query The query.
+     * @return DataTablesRequest Returns this DataTables request.
+     */
+    protected function setQuery(ParameterBag $query) {
+        $this->query = $query;
+        return $this;
+    }
+
+    /**
+     * Set the request.
+     *
+     * @param ParameterBag $request The request.
+     * @return DataTablesRequest Returns this DataTables request.
+     */
+    protected function setRequest(ParameterBag $request) {
+        $this->request = $request;
         return $this;
     }
 
