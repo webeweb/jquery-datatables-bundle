@@ -17,21 +17,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\API;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\API
  */
-class DataTablesOrder {
-
-    /**
-     * Column parameter.
-     *
-     * @var string
-     */
-    const COLUMN_PARAMETER = "column";
-
-    /**
-     * Dir parameter.
-     *
-     * @var string
-     */
-    const DIR_PARAMETER = "dir";
+class DataTablesOrder implements DataTablesOrderInterface {
 
     /**
      * Column.
@@ -87,17 +73,17 @@ class DataTablesOrder {
         foreach ($rawOrders as $current) {
 
             // Determines if the raw order is valid.
-            if (false === array_key_exists(self::COLUMN_PARAMETER, $current)) {
+            if (false === array_key_exists(self::DATATABLES_PARAMETER_COLUMN, $current)) {
                 continue;
             }
-            if (false === array_key_exists(self::DIR_PARAMETER, $current)) {
+            if (false === array_key_exists(self::DATATABLES_PARAMETER_DIR, $current)) {
                 continue;
             }
 
             // Create a DataTables order.
             $dtOrder = new DataTablesOrder();
-            $dtOrder->setColumn(intval($current[self::COLUMN_PARAMETER]));
-            $dtOrder->setDir($current[self::DIR_PARAMETER]);
+            $dtOrder->setColumn(intval($current[self::DATATABLES_PARAMETER_COLUMN]));
+            $dtOrder->setDir($current[self::DATATABLES_PARAMETER_DIR]);
 
             // Add the DataTables order.
             $dtOrders[] = $dtOrder;
