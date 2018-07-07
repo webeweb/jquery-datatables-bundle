@@ -19,21 +19,7 @@ use WBW\Library\Core\Utility\Argument\BooleanUtility;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\API
  */
-class DataTablesSearch {
-
-    /**
-     * Regex parameter.
-     *
-     * @var string
-     */
-    const REGEX_PARAMETER = "regex";
-
-    /**
-     * Value parameter.
-     *
-     * @var string
-     */
-    const VALUE_PARAMETER = "value";
+class DataTablesSearch implements DataTablesSearchInterface {
 
     /**
      * Regex.
@@ -87,16 +73,16 @@ class DataTablesSearch {
         $dtSearch = new DataTablesSearch();
 
         // Determines if the raw search is valid.
-        if (false === array_key_exists(self::REGEX_PARAMETER, $rawSearch)) {
+        if (false === array_key_exists(self::DATATABLES_PARAMETER_REGEX, $rawSearch)) {
             return $dtSearch;
         }
-        if (false === array_key_exists(self::VALUE_PARAMETER, $rawSearch)) {
+        if (false === array_key_exists(self::DATATABLES_PARAMETER_VALUE, $rawSearch)) {
             return $dtSearch;
         }
 
         // Set the DataTables search.
-        $dtSearch->setRegex(BooleanUtility::parseString($rawSearch[self::REGEX_PARAMETER]));
-        $dtSearch->setValue($rawSearch[self::VALUE_PARAMETER]);
+        $dtSearch->setRegex(BooleanUtility::parseString($rawSearch[self::DATATABLES_PARAMETER_REGEX]));
+        $dtSearch->setValue($rawSearch[self::DATATABLES_PARAMETER_VALUE]);
 
         // Return the DataTables search.
         return $dtSearch;
