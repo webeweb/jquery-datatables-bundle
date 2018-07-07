@@ -20,28 +20,28 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 interface DataTablesResponseInterface {
 
     /**
-     * DataTables row attr.
+     * DataTables row "attr".
      *
      * @var string
      */
     const DATATABLES_ROW_ATTR = "DT_RowAttr";
 
     /**
-     * DataTables row class.
+     * DataTables row "class".
      *
      * @var string
      */
     const DATATABLES_ROW_CLASS = "DT_RowClass";
 
     /**
-     * DataTables row data.
+     * DataTables row "data".
      *
      * @var string
      */
     const DATATABLES_ROW_DATA = "DT_RowData";
 
     /**
-     * DataTables row ID.
+     * DataTables row "ID".
      *
      * @var string
      */
