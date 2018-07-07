@@ -20,28 +20,7 @@ use WBW\Library\Core\Utility\Argument\ArrayUtility;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\API
  */
-class DataTablesColumn implements JsonSerializable {
-
-    /**
-     * Data parameter.
-     *
-     * @var string
-     */
-    const DATA_PARAMETER = "data";
-
-    /**
-     * Name parameter.
-     *
-     * @var string
-     */
-    const NAME_PARAMETER = "name";
-
-    /**
-     * Search parameter.
-     *
-     * @var string
-     */
-    const SEARCH_PARAMETER = DataTablesRequest::SEARCH_PARAMETER;
+class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
 
     /**
      * Cell type.
@@ -371,13 +350,13 @@ class DataTablesColumn implements JsonSerializable {
         foreach ($rawColumns as $current) {
 
             // Get the DataTables column.
-            $dtColumn = $wrapper->getColumn($current[self::DATA_PARAMETER]);
+            $dtColumn = $wrapper->getColumn($current[self::DATATABLES_PARAMETER_DATA]);
 
             // Check the DataTables column.
             if (null === $dtColumn) {
                 continue;
             }
-            if ($current[self::NAME_PARAMETER] !== $dtColumn->getName()) {
+            if ($current[self::DATATABLES_PARAMETER_NAME] !== $dtColumn->getName()) {
                 continue;
             }
             if (false === $dtColumn->getSearchable()) {
@@ -386,7 +365,7 @@ class DataTablesColumn implements JsonSerializable {
             }
 
             // Set the DataTables search.
-            $dtColumn->setSearch(DataTablesSearch::parse($current[self::SEARCH_PARAMETER]));
+            $dtColumn->setSearch(DataTablesSearch::parse($current[self::DATATABLES_PARAMETER_SEARCH]));
 
             // Add the DataTables columns.
             $dtColumns[] = $dtColumn;
