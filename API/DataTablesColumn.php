@@ -23,6 +23,27 @@ use WBW\Library\Core\Utility\Argument\ArrayUtility;
 class DataTablesColumn implements JsonSerializable {
 
     /**
+     * Data parameter.
+     *
+     * @var string
+     */
+    const DATA_PARAMETER = "data";
+
+    /**
+     * Name parameter.
+     *
+     * @var string
+     */
+    const NAME_PARAMETER = "name";
+
+    /**
+     * Search parameter.
+     *
+     * @var string
+     */
+    const SEARCH_PARAMETER = DataTablesRequest::SEARCH_PARAMETER;
+
+    /**
      * Cell type.
      *
      * @var string
@@ -350,13 +371,13 @@ class DataTablesColumn implements JsonSerializable {
         foreach ($rawColumns as $current) {
 
             // Get the DataTables column.
-            $dtColumn = $wrapper->getColumn($current["data"]);
+            $dtColumn = $wrapper->getColumn($current[self::DATA_PARAMETER]);
 
             // Check the DataTables column.
             if (null === $dtColumn) {
                 continue;
             }
-            if ($current["name"] !== $dtColumn->getName()) {
+            if ($current[self::NAME_PARAMETER] !== $dtColumn->getName()) {
                 continue;
             }
             if (false === $dtColumn->getSearchable()) {
@@ -365,7 +386,7 @@ class DataTablesColumn implements JsonSerializable {
             }
 
             // Set the DataTables search.
-            $dtColumn->setSearch(DataTablesSearch::parse($current["search"]));
+            $dtColumn->setSearch(DataTablesSearch::parse($current[self::SEARCH_PARAMETER]));
 
             // Add the DataTables columns.
             $dtColumns[] = $dtColumn;
