@@ -75,7 +75,6 @@ Add the bundle routing in the `app/config/routing.yml` file of your project:
 jquery_datatables:
     prefix:   "/"
     resource: "@JQueryDataTablesBundle/Resources/config/routing.yml"
-
 ```
 
 Once the bundle is added then do:
