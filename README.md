@@ -68,6 +68,12 @@ in the `app/AppKernel.php` file of your project:
     }
 ```
 
+Once the bundle is added then do:
+
+```bash
+$ php bin/console assets:install
+```
+
 Add the bundle routing in the `app/config/routing.yml` file of your project:
 
 ```yaml
@@ -75,12 +81,6 @@ Add the bundle routing in the `app/config/routing.yml` file of your project:
 jquery_datatables:
     prefix:   "/"
     resource: "@JQueryDataTablesBundle/Resources/config/routing.yml"
-```
-
-Once the bundle is added then do:
-
-```bash
-$ php bin/console assets:install
 ```
 
 ---
