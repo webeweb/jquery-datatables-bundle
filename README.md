@@ -315,12 +315,13 @@ namespace AppBundle\Provider;
 
 use AppBundle\Entity\Employee;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 
 /**
  * Employee DataTables provider.
  */
-class EmployeeDataTablesProvider implements DataTablesProviderInterface {
+class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTablesCSVExporterInterface {
 
     /**
      * {@inheritdoc}
