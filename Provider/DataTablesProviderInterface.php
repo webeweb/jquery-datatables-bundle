@@ -30,21 +30,6 @@ interface DataTablesProviderInterface extends DataTablesResponseInterface {
     const TAG_NAME = "webeweb.jquerydatatables.provider";
 
     /**
-     * Export a DataTables columns.
-     *
-     * @return array Returns an array representing the columns.
-     */
-    public function exportColumns();
-
-    /**
-     * Export a DataTables row.
-     *
-     * @param object $entity The entity.
-     * @return array Returns an array representing this row.
-     */
-    public function exportRow($entity);
-
-    /**
      * Get the DataTables columns.
      *
      * @return DataTablesColumn[] Returns the DataTables columns.
