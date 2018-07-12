@@ -96,7 +96,7 @@ class DataTablesController extends AbstractDataTablesController {
     public function exportAction(Request $request, $name) {
 
         // Get the provider.
-        $dtProvider = $this->getDataTablesProvider($name);
+        $dtProvider = $this->getDataTablesCSVExporter($name);
 
         // Get the entities manager.
         $em = $this->getDoctrine()->getManager();

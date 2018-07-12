@@ -17,9 +17,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use WBW\Bundle\BootstrapBundle\Controller\AbstractBootstrapController;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Repository\DataTablesRepositoryInterface;
 
@@ -70,6 +72,26 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
     }
 
     /**
+     * Get a DataTables CSV exporter.
+     *
+     * @param string $name The provider name.
+     * @return DataTablesCSVExporterInterface Returns the DataTables CSV exporter.
+     * @throws UnregisteredDataTablesProviderException Throws an unregistered DataTables provider exception.
+     * @throws BadDataTablesRepositoryException Throws a bad DataTables CSV exporter exception.
+     */
+    protected function getDataTablesCSVExporter($name) {
+
+        // Get and check the DataTables provider.
+        $dtProvider = $this->getDataTablesProvider($name);
+        if (false === ($dtProvider instanceOf DataTablesCSVExporterInterface)) {
+            throw new BadDataTablesCSVExporterException($dtProvider);
+        }
+
+        // Return the DataTables CSV exporter.
+        return $dtProvider;
+    }
+
+    /**
      * Get a DataTables entity by id.
      *
      * @param DataTablesProviderInterface $dtProvider The DataTables provider.
@@ -99,6 +121,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
     /**
      * Get the DataTables provider.
      *
+     * @param string $name The provider name.
      * @return DataTablesProviderInterface Returns the DataTables provider.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered DataTables provider exception.
      */

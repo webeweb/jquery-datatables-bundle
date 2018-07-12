@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee;
 use WBW\Library\Core\IO\HTTPInterface;
@@ -22,7 +23,7 @@ use WBW\Library\Core\IO\HTTPInterface;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity
  */
-final class EmployeeDataTablesProvider implements DataTablesProviderInterface {
+final class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTablesCSVExporterInterface {
 
     /**
      * {@inheritdoc}
