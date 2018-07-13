@@ -75,7 +75,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
      * Get a DataTables CSV exporter.
      *
      * @param string $name The provider name.
-     * @return DataTablesCSVExporterInterface Returns the DataTables CSV exporter.
+     * @return DataTablesProviderInterface Returns the DataTables CSV exporter.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered DataTables provider exception.
      * @throws BadDataTablesRepositoryException Throws a bad DataTables CSV exporter exception.
      */
@@ -87,7 +87,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
             throw new BadDataTablesCSVExporterException($dtProvider);
         }
 
-        // Return the DataTables CSV exporter.
+        // Return the DataTables provider.
         return $dtProvider;
     }
 
