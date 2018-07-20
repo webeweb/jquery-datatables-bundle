@@ -135,17 +135,17 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     }
 
     /**
-     * Build a DataTables export query.
+     * Build a DataTables query builder "Export all".
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
-     * @return QueryBuilder Returns the DataTables export query.
+     * @return QueryBuilder Returns the DataTables query builder "Export all".
      */
-    protected function buildDataTablesExportQuery(DataTablesProviderInterface $dtProvider) {
+    protected function buildDataTablesExportAll(DataTablesProviderInterface $dtProvider) {
 
         // Create a query builder.
         $qb = $this->createQueryBuilder($dtProvider->getPrefix());
 
-        // Return the query.
+        // Return the query builder.
         return $qb;
     }
 
@@ -200,6 +200,13 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     /**
      * {@inheritdoc}
      */
+    public function dataTablesExportAll(DataTablesProviderInterface $dtProvider) {
+        return $this->buildDataTablesExportAll($dtProvider);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function dataTablesFindAll(DataTablesWrapper $dtWrapper) {
 
         // Build a DataTables query builder.
@@ -231,13 +238,6 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
 
         // Return the operator.
         return null;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getDataTablesExportQuery(DataTablesProviderInterface $dtProvider) {
-        return $this->buildDataTablesExportQuery($dtProvider);
     }
 
 }

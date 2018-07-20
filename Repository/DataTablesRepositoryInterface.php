@@ -40,17 +40,17 @@ interface DataTablesRepositoryInterface {
     public function dataTablesCountTotal(DataTablesWrapper $dtWrapper);
 
     /**
+     * Export all query builder.
+     *
+     * @return QueryBuilder Returns the export all query builder.
+     */
+    public function dataTablesExportAll(DataTablesProviderInterface $dtProvider);
+
+    /**
      * Find all entities.
      *
      * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
      * @return array Returns the entities.
      */
     public function dataTablesFindAll(DataTablesWrapper $dtWrapper);
-
-    /**
-     * Get a DataTables export query.
-     *
-     * @return QueryBuilder Returns the DataTables export query.
-     */
-    public function getDataTablesExportQuery(DataTablesProviderInterface $dtProvider);
 }
