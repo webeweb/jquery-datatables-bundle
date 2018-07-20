@@ -87,22 +87,21 @@ class DataTablesController extends AbstractDataTablesController {
     /**
      * Export all entities.
      *
-     * @param Request $request The request.
      * @param string $name The provider name.
      * @return Response Returns the response.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered DataTables provider exception.
      * @throws BadDataTablesRepositoryException Throws a bad DataTables repository exception.
      */
-    public function exportAction(Request $request, $name) {
+    public function exportAction($name) {
 
         // Get the provider.
         $dtProvider = $this->getDataTablesCSVExporter($name);
 
-        // Get the entities manager.
-        $em = $this->getDoctrine()->getManager();
-
         // Get the entities repository.
         $repository = $this->getDataTablesRepository($dtProvider);
+
+        // Get the entities manager.
+        $em = $this->getDoctrine()->getManager();
 
         // Initialize the response.
         $response = new StreamedResponse(function() use($dtProvider, $repository, $em) {
@@ -114,7 +113,7 @@ class DataTablesController extends AbstractDataTablesController {
             fputcsv($stream, $dtProvider->exportColumns(), ";");
 
             // Get the export query.
-            $result = $repository->getDataTablesExportQuery($dtProvider)->getQuery()->iterate();
+            $result = $repository->dataTablesExportAll($dtProvider)->getQuery()->iterate();
 
             // Handle each entity.
             while (false !== ($row = $result->next())) {
@@ -153,26 +152,16 @@ class DataTablesController extends AbstractDataTablesController {
      */
     public function indexAction(Request $request, $name) {
 
+        // Check if the request is an XML HTTP request.
+        if (false === $request->isXmlHttpRequest()) {
+            return $this->renderAction($name);
+        }
+
         // Get the provider.
         $dtProvider = $this->getDataTablesProvider($name);
 
         // Get the wrapper.
         $dtWrapper = $this->getDataTablesWrapper($dtProvider);
-
-        // Check if the request is an XML HTTP request.
-        if (false === $request->isXmlHttpRequest()) {
-
-            // Get and check the provider view.
-            $dtView = $dtProvider->getView();
-            if (null === $dtProvider->getView()) {
-                $dtView = "@JQueryDataTables/DataTables/index.html.twig";
-            }
-
-            // Return the response.
-            return $this->render($dtView, [
-                    "dtWrapper" => $dtWrapper,
-            ]);
-        }
 
         // Parse the request.
         $dtWrapper->parse($request);
@@ -211,6 +200,32 @@ class DataTablesController extends AbstractDataTablesController {
 
         // Return the response.
         return new Response(json_encode($dtWrapper->getResponse()));
+    }
+
+    /**
+     * Render a DataTables.
+     *
+     * @param string $name The provider name.
+     * @return Response Returns the response.
+     */
+    public function renderAction($name) {
+
+        // Get the provider.
+        $dtProvider = $this->getDataTablesProvider($name);
+
+        // Get the wrapper.
+        $dtWrapper = $this->getDataTablesWrapper($dtProvider);
+
+        // Get and check the provider view.
+        $dtView = $dtProvider->getView();
+        if (null === $dtProvider->getView()) {
+            $dtView = "@JQueryDataTables/DataTables/index.html.twig";
+        }
+
+        // Return the response.
+        return $this->render($dtView, [
+                "dtWrapper" => $dtWrapper,
+        ]);
     }
 
 }

@@ -43,9 +43,25 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
     }
 
     /**
+     * Tests the renderAction() methode.
+     *
+     * @return void
+     */
+    public function testRenderAction() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request.
+        $client->request("GET", "/datatables/employee/render");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+    }
+
+    /**
      * Tests the indexAction() method.
      *
      * @return void
+     * @depends testRenderAction
      */
     public function testIndexAction() {
 
@@ -61,6 +77,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
      * Tests the indexAction() method.
      *
      * @return void
+     * @depends testIndexAction
      */
     public function testIndexActionWithParameters() {
 
@@ -99,6 +116,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
      * Tests the indexAction() method.
      *
      * @return void
+     * @depends testIndexAction
      */
     public function testIndexActionWithLength() {
 
@@ -151,6 +169,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
      * Tests the indexAction() method.
      *
      * @return void
+     * @depends testIndexAction
      */
     public function testIndexActionWithOrder() {
 
@@ -192,6 +211,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
      * Tests the indexAction() method.
      *
      * @return void
+     * @depends testIndexAction
      */
     public function testIndexActionWithOrderOnNoOrderableColumn() {
 
@@ -233,6 +253,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
      * Tests the indexAction() method.
      *
      * @return void
+     * @depends testIndexAction
      */
     public function testIndexActionWithSearch() {
 
@@ -274,6 +295,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
      * Tests the indexAction() method.
      *
      * @return void
+     * @depends testIndexAction
      */
     public function testIndexActionWithSearchColumn() {
 
@@ -307,6 +329,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
      * Tests the indexAction() method.
      *
      * @return void
+     * @depends testIndexAction
      */
     public function testIndexActionWithSearchColumnOnNoSearchableColumn() {
 
@@ -348,6 +371,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
      * Tests the indexAction() method.
      *
      * @return void
+     * @depends testIndexAction
      */
     public function testIndexActionWithStart() {
 
@@ -417,6 +441,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
      * Tests the deleteAction() method.
      *
      * @return void
+     * @depends testDeleteAction
      */
     public function testDeleteActionWithStatus200() {
 
@@ -430,6 +455,9 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         // Check the JSON response.
         $res = json_decode($client->getResponse()->getContent(), true);
 
+        $this->assertArrayHasKey("status", $res);
+        $this->assertArrayHasKey("notify", $res);
+
         $this->assertEquals(200, $res["status"]);
         //$this->assertEquals("Successful deletion", $res["notify"]);
     }
@@ -438,6 +466,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
      * Tests the deleteAction() method.
      *
      * @return void
+     * @depends testDeleteAction
      */
     public function testDeleteActionWithStatus404() {
 
@@ -450,6 +479,9 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
 
         // Check the JSON response.
         $res = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertArrayHasKey("status", $res);
+        $this->assertArrayHasKey("notify", $res);
 
         $this->assertEquals(404, $res["status"]);
         //$this->assertEquals("Record not found", $res["notify"]);

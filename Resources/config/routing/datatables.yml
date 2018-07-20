@@ -13,3 +13,8 @@ jquery_datatables_index:
     path:     "/datatables/{name}/index"
     defaults: { _controller: "JQueryDataTablesBundle:DataTables:index" }
     methods:  ["GET", "POST"]
+
+jquery_datatables_render:
+    path:     "/datatables/{name}/render"
+    defaults: { _controller: "JQueryDataTablesBundle:DataTables:render" }
+    methods:  ["GET", "POST"]
