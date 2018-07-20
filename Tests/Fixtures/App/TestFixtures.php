@@ -12,6 +12,8 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\App;
 
 use DateTime;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee;
 
 /**
@@ -93,6 +95,28 @@ final class TestFixtures {
 
         // Return the fixtures.
         return $fixtures;
+    }
+
+    /**
+     * Get a wrapper.
+     *
+     * @return DataTablesWrapper Returns the DataTables wrapper.
+     */
+    public static function getWrapper() {
+
+        // Initialize the fixture.
+        $fixture = new DataTablesWrapper("POST", "/datatables/employee/index", "employee");
+
+        $fixture->addColumn(DataTablesColumn::newInstance("name", "Name"));
+        $fixture->addColumn(DataTablesColumn::newInstance("position", "Position"));
+        $fixture->addColumn(DataTablesColumn::newInstance("office", "Office"));
+        $fixture->addColumn(DataTablesColumn::newInstance("age", "Age"));
+        $fixture->addColumn(DataTablesColumn::newInstance("startDate", "Start date"));
+        $fixture->addColumn(DataTablesColumn::newInstance("salary", "Salary"));
+        $fixture->addColumn(DataTablesColumn::newInstance("actions", "Actions")->setOrderable(false)->setSearchable(false));
+
+        // Return the fixture.
+        return $fixture;
     }
 
 }
