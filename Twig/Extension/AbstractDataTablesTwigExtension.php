@@ -14,6 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension;
 use Twig_Extension;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesHelper;
 use WBW\Library\Core\Utility\Argument\StringUtility;
 
 /**
@@ -77,14 +78,17 @@ EOTXT;
      */
     protected function jQueryDataTables(DataTablesWrapper $dtWrapper, $selector, $language) {
 
+        // Get the options.
+        $dtOptions = DataTablesHelper::getOptions($dtWrapper);
+
         // Initialize the parameters.
-        $var        = $this->getDataTablesName($dtWrapper);
-        $method     = $dtWrapper->getMethod();
-        $url        = $dtWrapper->getUrl();
-        $columns    = json_encode(array_values($dtWrapper->getColumns()));
-        $orders     = json_encode(array_values($dtWrapper->getOrder()));
-        $processing = StringUtility::parseBoolean($dtWrapper->getProcessing());
-        $serverSide = StringUtility::parseBoolean($dtWrapper->getServerSide());
+        $var        = DataTablesHelper::getName($dtWrapper);
+        $method     = $dtOptions["ajax"]["method"];
+        $url        = $dtOptions["ajax"]["url"];
+        $columns    = json_encode($dtOptions["columns"]);
+        $orders     = json_encode($dtOptions["order"]);
+        $processing = $dtOptions["processing"];
+        $serverSide = $dtOptions["serverSide"];
 
         //
         $searches = ["%var%", "%selector%", "%method%", "%url%", "%columns%", "%language%", "%order%", "%processing%", "%serverSide%"];
