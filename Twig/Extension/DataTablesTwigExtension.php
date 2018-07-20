@@ -14,7 +14,6 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension;
 use Twig_SimpleFunction;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Library\Core\Utility\Argument\ArrayUtility;
-use WBW\Library\Core\Utility\Argument\StringUtility;
 
 /**
  * DataTables Twig extension.
