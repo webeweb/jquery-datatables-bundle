@@ -43,6 +43,51 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
     }
 
     /**
+     * Tests the exportAction() method.
+     *
+     * @return void
+     */
+    public function testExportAction() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request.
+        $client->request("GET", "/datatables/employee/export");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
+        $this->assertRegExp("/attachment; filename=\"[0-9]{4}\.[0-9]{2}\.[0-9]{2}-[0-9]{2}\.[0-9]{2}\.[0-9]{2}-employee\.csv\"/", $client->getResponse()->headers->get("Content-Disposition"));
+        $this->assertEquals("text/csv; charset=utf-8", $client->getResponse()->headers->get("Content-Type"));
+    }
+
+    /**
+     * Tests the renderAction() methode.
+     *
+     * @return void
+     */
+    public function testOptionsAction() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request.
+        $client->request("GET", "/datatables/employee/options");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
+        // Check the JSON response.
+        $res = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertCount(5, $res);
+        $this->assertCount(7, $res["columns"]);
+
+        $this->assertEquals("POST", $res["ajax"]["method"]);
+        $this->assertEquals("/datatables/employee/index", $res["ajax"]["url"]);
+        $this->assertEquals([], $res["order"]);
+        $this->assertEquals("true", $res["processing"]);
+        $this->assertEquals("true", $res["serverSide"]);
+    }
+
+    /**
      * Tests the renderAction() methode.
      *
      * @return void
@@ -400,24 +445,6 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         $this->assertEquals("Yuri Berry", $res["data"][4]["name"]);
         $this->assertEquals("Zenaida Frank", $res["data"][5]["name"]);
         $this->assertEquals("Zorita Serrano", $res["data"][6]["name"]);
-    }
-
-    /**
-     * Tests the exportAction() method.
-     *
-     * @return void
-     */
-    public function testExportAction() {
-
-        // Create a client.
-        $client = static::createClient();
-
-        // Make a GET request.
-        $client->request("GET", "/datatables/employee/export");
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-
-        $this->assertRegExp("/attachment; filename=\"[0-9]{4}\.[0-9]{2}\.[0-9]{2}-[0-9]{2}\.[0-9]{2}\.[0-9]{2}-employee\.csv\"/", $client->getResponse()->headers->get("Content-Disposition"));
-        $this->assertEquals("text/csv; charset=utf-8", $client->getResponse()->headers->get("Content-Type"));
     }
 
     /**

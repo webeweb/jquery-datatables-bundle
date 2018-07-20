@@ -20,6 +20,7 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
+use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesHelper;
 
 /**
  * DataTables controller.
@@ -200,6 +201,27 @@ class DataTablesController extends AbstractDataTablesController {
 
         // Return the response.
         return new Response(json_encode($dtWrapper->getResponse()));
+    }
+
+    /**
+     * Options of a DataTables.
+     *
+     * @param string $name The provider name.
+     * @return Response Returns a response.
+     */
+    public function optionsAction($name) {
+
+        // Get the provider.
+        $dtProvider = $this->getDataTablesProvider($name);
+
+        // Get the wrapper.
+        $dtWrapper = $this->getDataTablesWrapper($dtProvider);
+
+        // Get the options.
+        $dtOptions = DataTablesHelper::getOptions($dtWrapper);
+
+        // Return the response.
+        return new Response(json_encode($dtOptions));
     }
 
     /**
