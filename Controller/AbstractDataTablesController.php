@@ -24,6 +24,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Repository\DataTablesRepositoryInterface;
+use WBW\Library\Core\Utility\Argument\IntegerUtility;
 
 /**
  * Abstract jQuery DataTables controller.
@@ -69,6 +70,55 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
 
         // Return the response.
         return $this->redirectToRoute("jquery_datatables_index", ["name" => $name]);
+    }
+
+    /**
+     * Export callback.
+     *
+     * @param DataTablesProviderInterface $dtProvider The DataTables provider.
+     * @param DataTablesRepositoryInterface $repository The DataTables repository.
+     * @return void
+     */
+    protected function exportCallback(DataTablesProviderInterface $dtProvider, DataTablesRepositoryInterface $repository) {
+
+        // Get the entities manager.
+        $em = $this->getDoctrine()->getManager();
+
+        // Open the file.
+        $stream = fopen("php://output", "w+");
+
+        // Export the columns.
+        fputcsv($stream, $dtProvider->exportColumns(), ";");
+
+        // Paginates.
+        $total = $repository->dataTablesCountExported($dtProvider);
+        $pages = IntegerUtility::getPagesCount($total, DataTablesRepositoryInterface::REPOSITORY_LIMIT);
+
+        // Handle each page.
+        for ($i = 0; $i < $pages; ++$i) {
+
+            // Get the offset and limit.
+            list($offset, $limit) = IntegerUtility::getLinesLimit($i, DataTablesRepositoryInterface::REPOSITORY_LIMIT, $total);
+
+            // Get the export query with offset and limit.
+            $result = $repository->dataTablesExportAll($dtProvider)
+                ->setFirstResult($offset) // Use offset
+                ->setMaxResults($limit) // Use limit
+                ->getQuery()
+                ->iterate();
+
+            // Handle each entity.
+            while (false !== ($row = $result->next())) {
+
+                // Export the entity.
+                fputcsv($stream, $dtProvider->exportRow($row[0]), ";");
+
+                // Detach the entity to avoid memory consumption.
+                $em->detach($row[0]);
+            }
+        }
+        // Close the file.
+        fclose($stream);
     }
 
     /**
