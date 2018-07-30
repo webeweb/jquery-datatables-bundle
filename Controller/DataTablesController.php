@@ -101,42 +101,17 @@ class DataTablesController extends AbstractDataTablesController {
         // Get the entities repository.
         $repository = $this->getDataTablesRepository($dtProvider);
 
-        // Get the entities manager.
-        $em = $this->getDoctrine()->getManager();
-
-        // Initialize the response.
-        $response = new StreamedResponse(function() use($dtProvider, $repository, $em) {
-
-            // Open the file.
-            $stream = fopen("php://output", "w+");
-
-            // Export the columns.
-            fputcsv($stream, $dtProvider->exportColumns(), ";");
-
-            // Get the export query.
-            $result = $repository->dataTablesExportAll($dtProvider)->getQuery()->iterate();
-
-            // Handle each entity.
-            while (false !== ($row = $result->next())) {
-
-                // Export the entity.
-                fputcsv($stream, $dtProvider->exportRow($row[0]), ";");
-
-                // Detach the entity to avoid memory consumption.
-                $em->detach($row[0]);
-            }
-
-            // Close the file.
-            fclose($stream);
-        });
-
         // Initialize the filename.
         $filename = (new DateTime())->format("Y.m.d-H.i.s") . "-" . $dtProvider->getName() . ".csv";
 
-        // Set the response.
-        $response->setStatusCode(200);
+        // Initialize the response.
+        $response = new StreamedResponse();
         $response->headers->set("Content-Disposition", "attachment; filename=\"" . $filename . "\"");
         $response->headers->set("Content-Type", "text/csv; charset=utf-8");
+        $response->setCallback(function() use($dtProvider, $repository) {
+            $this->exportCallback($dtProvider, $repository);
+        });
+        $response->setStatusCode(200);
 
         // Return the response.
         return $response;
