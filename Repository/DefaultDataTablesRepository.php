@@ -14,6 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Repository;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\QueryBuilder;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesRepositoryHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 
 /**
@@ -24,74 +25,6 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
  * @abstract
  */
 abstract class DefaultDataTablesRepository extends EntityRepository implements DataTablesRepositoryInterface {
-
-    /**
-     * Append a DataTables ORDER clause.
-     *
-     * @param QueryBuilder $queryBuilder The query builder.
-     * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
-     * @return void
-     */
-    public static function appendDataTablesOrder(QueryBuilder $queryBuilder, DataTablesWrapper $dtWrapper) {
-
-        // Handle each DataTables order.
-        foreach ($dtWrapper->getRequest()->getOrder() as $dtOrder) {
-
-            // Get the DataTables column.
-            $dtColumn = array_values($dtWrapper->getColumns())[$dtOrder->getColumn()];
-
-            // Check if the DataTables column is orderable.
-            if (false === $dtColumn->getOrderable()) {
-                continue;
-            }
-
-            // Add the order by.
-            $queryBuilder->addOrderBy($dtColumn->getMapping()->getAlias(), $dtOrder->getDir());
-        }
-    }
-
-    /**
-     * Append a DataTables WHERE clause.
-     *
-     * @param QueryBuilder $queryBuilder The query builder.
-     * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
-     * @return void
-     */
-    public static function appendDataTablesWhere(QueryBuilder $queryBuilder, DataTablesWrapper $dtWrapper) {
-
-        // Detremines and check the operator.
-        $operator = self::determineDataTablesOperator($dtWrapper);
-        if (null === $operator) {
-            return;
-        }
-
-        // Initialize.
-        $wheres = [];
-        $params = [];
-        $values = [];
-
-        // Handle each DataTables column.
-        foreach ($dtWrapper->getRequest()->getColumns() as $dtColumn) {
-
-            // Check the DataTables column.
-            if ("OR" === $operator || "" !== $dtColumn->getSearch()->getValue()) {
-
-                // Get the DataTables mapping.
-                $mapping = $dtColumn->getMapping();
-
-                // Add.
-                $wheres[] = $mapping->getAlias() . " LIKE :" . $mapping->getPrefix() . $mapping->getColumn();
-                $params[] = ":" . $mapping->getPrefix() . $mapping->getColumn();
-                $values[] = "%" . ("AND" === $operator ? $dtColumn->getSearch()->getValue() : $dtWrapper->getRequest()->getSearch()->getValue()) . "%";
-            }
-        }
-
-        // Set the where clause.
-        $queryBuilder->andWhere("(" . implode(" " . $operator . " ", $wheres) . ")");
-        for ($i = count($params) - 1; 0 <= $i; --$i) {
-            $queryBuilder->setParameter($params[$i], $values[$i]);
-        }
-    }
 
     /**
      * Build a DataTables query builder "Count filtered".
@@ -109,7 +42,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
             ->select("COUNT(" . $prefix . ")");
 
         // Append the where clause.
-        self::appendDataTablesWhere($qb, $dtWrapper);
+        DataTablesRepositoryHelper::appendWhere($qb, $dtWrapper);
 
         // Return the query builder.
         return $qb;
@@ -166,8 +99,8 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
             ->setMaxResults($dtWrapper->getRequest()->getLength());
 
         // Build the where and order clauses.
-        self::appendDataTablesWhere($qb, $dtWrapper);
-        self::appendDataTablesOrder($qb, $dtWrapper);
+        DataTablesRepositoryHelper::appendWhere($qb, $dtWrapper);
+        DataTablesRepositoryHelper::appendOrder($qb, $dtWrapper);
 
         // Return the query builder.
         return $qb;
@@ -214,30 +147,6 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
 
         // Return the result.
         return $qb->getQuery()->getResult();
-    }
-
-    /**
-     * Determines a DataTables operator.
-     *
-     * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
-     * @return string Returns the DataTables operator.
-     */
-    protected static function determineDataTablesOperator(DataTablesWrapper $dtWrapper) {
-
-        // Check if the DataTables columns defines a search.
-        foreach ($dtWrapper->getRequest()->getColumns() as $dtColumn) {
-            if ("" !== $dtColumn->getSearch()->getValue()) {
-                return "AND";
-            }
-        }
-
-        // Check if the DataTables defines a search.
-        if ("" !== $dtWrapper->getRequest()->getSearch()->getValue()) {
-            return "OR";
-        }
-
-        // Return the operator.
-        return null;
     }
 
 }
