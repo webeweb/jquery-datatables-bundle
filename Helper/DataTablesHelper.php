@@ -47,13 +47,17 @@ class DataTablesHelper {
         $output["ajax"]["method"] = $dtWrapper->getMethod();
         $output["ajax"]["url"]    = $dtWrapper->getUrl();
         $output["columns"]        = [];
+
         foreach ($dtWrapper->getColumns() as $current) {
             $output["columns"][] = $current->toArray();
         }
+
         $output["order"] = [];
+
         foreach ($dtWrapper->getOrder() as $current) {
             $output["order"][] = $current->toArray();
         }
+
         $output["processing"] = StringUtility::parseBoolean($dtWrapper->getProcessing());
         $output["serverSide"] = StringUtility::parseBoolean($dtWrapper->getServerSide());
 
