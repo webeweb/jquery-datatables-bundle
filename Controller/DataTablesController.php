@@ -208,6 +208,7 @@ class DataTablesController extends AbstractDataTablesController {
      *
      * @param string $name The provider name.
      * @return Response Returns a response.
+     * @throws UnregisteredDataTablesProviderException Throws an unregistered DataTables provider exception.
      */
     public function optionsAction($name) {
 
@@ -229,6 +230,7 @@ class DataTablesController extends AbstractDataTablesController {
      *
      * @param string $name The provider name.
      * @return Response Returns the response.
+     * @throws UnregisteredDataTablesProviderException Throws an unregistered DataTables provider exception.
      */
     public function renderAction($name) {
 
