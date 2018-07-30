@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension;
 use Twig_Extension;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
-use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesHelper;
+use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Library\Core\Utility\Argument\StringUtility;
 
 /**
@@ -59,16 +59,6 @@ EOTXT;
     }
 
     /**
-     * Get a DataTables name.
-     *
-     * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
-     * @return string Returns the DataTables name.
-     */
-    protected function getDataTablesName(DataTablesWrapper $dtWrapper) {
-        return "dt" . preg_replace("/[^A-Za-z0-9]/", "", $dtWrapper->getName());
-    }
-
-    /**
      * Displays a jQuery DataTables.
      *
      * @param DataTablesWrapper $dtWrapper The wrapper.
@@ -79,10 +69,10 @@ EOTXT;
     protected function jQueryDataTables(DataTablesWrapper $dtWrapper, $selector, $language) {
 
         // Get the options.
-        $dtOptions = DataTablesHelper::getOptions($dtWrapper);
+        $dtOptions = DataTablesWrapperHelper::getOptions($dtWrapper);
 
         // Initialize the parameters.
-        $var        = DataTablesHelper::getName($dtWrapper);
+        $var        = DataTablesWrapperHelper::getName($dtWrapper);
         $method     = $dtOptions["ajax"]["method"];
         $url        = $dtOptions["ajax"]["url"];
         $columns    = json_encode($dtOptions["columns"]);
@@ -116,7 +106,7 @@ EOTXT;
         $attributes = [];
 
         $attributes["class"] = ["table", $class];
-        $attributes["id"]    = $this->getDataTablesName($dtWrapper);
+        $attributes["id"]    = DataTablesWrapperHelper::getName($dtWrapper);
 
         // Initialize the parameters.
         $thead = true === $includeTHead ? $this->renderDataTablesTHead($dtWrapper) : "";
