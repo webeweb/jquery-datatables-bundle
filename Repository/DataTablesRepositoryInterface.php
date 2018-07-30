@@ -24,6 +24,13 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 interface DataTablesRepositoryInterface {
 
     /**
+     * Repository limit.
+     *
+     * @var integer
+     */
+    const REPOSITORY_LIMIT = 10000;
+
+    /**
      * Count exported entities.
      *
      * @param DataTablesProvider The DataTables provider.
