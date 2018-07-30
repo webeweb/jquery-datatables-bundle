@@ -1,16 +1,12 @@
 <?php
 
-/*
- * Disclaimer: This source code is protected by copyright law and by
- * international conventions.
+/**
+ * This file is part of the jquery-datatables-bundle package.
  *
- * Any reproduction or partial or total distribution of the source code, by any
- * means whatsoever, is strictly forbidden.
+ * (c) 2018 WEBEWEB
  *
- * Anyone not complying with these provisions will be guilty of the offense of
- * infringement and the penal sanctions provided for by law.
- *
- * © 2018 All rights reserved.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
