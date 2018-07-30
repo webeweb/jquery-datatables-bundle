@@ -15,12 +15,12 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Library\Core\Utility\Argument\StringUtility;
 
 /**
- * DataTables helper.
+ * DataTables wrapper helper.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Helper
  */
-class DataTablesHelper {
+class DataTablesWrapperHelper {
 
     /**
      * Get a DataTables name.

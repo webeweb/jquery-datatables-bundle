@@ -12,17 +12,17 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
-use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesHelper;
+use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Cases\AbstractJQueryDataTablesFrameworkTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\App\TestFixtures;
 
 /**
- * DataTables helper test.
+ * DataTables wrapper helper test.
  *
- * @author Camille A. <camille@ingeneo.eu>
+ * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper
  */
-final class DataTablesHelperTest extends AbstractJQueryDataTablesFrameworkTestCase {
+final class DataTablesWrapperHelperTest extends AbstractJQueryDataTablesFrameworkTestCase {
 
     /**
      * Tests the getName() method.
@@ -31,9 +31,9 @@ final class DataTablesHelperTest extends AbstractJQueryDataTablesFrameworkTestCa
      */
     public function testGetName() {
 
-        $this->assertEquals("dtemployee", DataTablesHelper::getName(new DataTablesWrapper("POST", "url", "employee")));
-        $this->assertEquals("dtemployee", DataTablesHelper::getName(new DataTablesWrapper("POST", "url", "employee_")));
-        $this->assertEquals("dtemployee", DataTablesHelper::getName(new DataTablesWrapper("POST", "url", "employee-")));
+        $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(new DataTablesWrapper("POST", "url", "employee")));
+        $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(new DataTablesWrapper("POST", "url", "employee_")));
+        $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(new DataTablesWrapper("POST", "url", "employee-")));
     }
 
     /**
@@ -63,7 +63,7 @@ final class DataTablesHelperTest extends AbstractJQueryDataTablesFrameworkTestCa
             "processing" => "true",
             "serverSide" => "true",
         ];
-        $this->assertEquals($res, DataTablesHelper::getOptions($obj));
+        $this->assertEquals($res, DataTablesWrapperHelper::getOptions($obj));
     }
 
 }
