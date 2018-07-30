@@ -24,6 +24,14 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 interface DataTablesRepositoryInterface {
 
     /**
+     * Count exported entities.
+     *
+     * @param DataTablesProvider The DataTables provider.
+     * @return integer Returns the exported entities count.
+     */
+    public function dataTablesCountExported(DataTablesProviderInterface $dtProvider);
+
+    /**
      * Count filtered entities.
      *
      * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
@@ -35,13 +43,14 @@ interface DataTablesRepositoryInterface {
      * Count all entities.
      *
      * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
-     * @return integer Returns the total count.
+     * @return integer Returns the all entities count.
      */
     public function dataTablesCountTotal(DataTablesWrapper $dtWrapper);
 
     /**
      * Export all query builder.
      *
+     * @param DataTablesProvider The DataTables provider.
      * @return QueryBuilder Returns the export all query builder.
      */
     public function dataTablesExportAll(DataTablesProviderInterface $dtProvider);

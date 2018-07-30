@@ -27,6 +27,25 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 abstract class DefaultDataTablesRepository extends EntityRepository implements DataTablesRepositoryInterface {
 
     /**
+     * Build a DataTables query builder "Count exported".
+     *
+     * @param DataTablesProviderInterface $dtProvider The provider.
+     * @return QueryBuilder Returns the DataTables query builder "Count exported".
+     */
+    protected function buildDataTablesCountExported(DataTablesProviderInterface $dtProvider) {
+
+        // Get the prefix.
+        $prefix = $dtProvider->getPrefix();
+
+        // Create a query builder.
+        $qb = $this->createQueryBuilder($prefix)
+            ->select("COUNT(" . $prefix . ")");
+
+        // Return the query builder.
+        return $qb;
+    }
+
+    /**
      * Build a DataTables query builder "Count filtered".
      *
      * @param DataTablesWrapper $dtWrapper The wrapper.
@@ -104,6 +123,18 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
 
         // Return the query builder.
         return $qb;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function dataTablesCountExported(DataTablesProviderInterface $dtProvider) {
+
+        // Build a DataTables query builder.
+        $qb = $this->buildDataTablesCountExported($dtProvider);
+
+        // Return the single scalar result.
+        return intval($qb->getQuery()->getSingleScalarResult());
     }
 
     /**
