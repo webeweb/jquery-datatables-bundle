@@ -43,25 +43,22 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
     }
 
     /**
-     * Tests the exportAction() method.
+     * Tests the renderAction() methode.
      *
      * @return void
      */
-    public function testExportAction() {
+    public function testRenderAction() {
 
         // Create a client.
         $client = static::createClient();
 
         // Make a GET request.
-        $client->request("GET", "/datatables/employee/export");
+        $client->request("GET", "/datatables/employee/render");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-
-        $this->assertRegExp("/attachment; filename=\"[0-9]{4}\.[0-9]{2}\.[0-9]{2}-[0-9]{2}\.[0-9]{2}\.[0-9]{2}-employee\.csv\"/", $client->getResponse()->headers->get("Content-Disposition"));
-        $this->assertEquals("text/csv; charset=utf-8", $client->getResponse()->headers->get("Content-Type"));
     }
 
     /**
-     * Tests the renderAction() methode.
+     * Tests the optionsAction() method.
      *
      * @return void
      */
@@ -85,21 +82,6 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         $this->assertEquals([], $res["order"]);
         $this->assertEquals("true", $res["processing"]);
         $this->assertEquals("true", $res["serverSide"]);
-    }
-
-    /**
-     * Tests the renderAction() methode.
-     *
-     * @return void
-     */
-    public function testRenderAction() {
-
-        // Create a client.
-        $client = static::createClient();
-
-        // Make a GET request.
-        $client->request("GET", "/datatables/employee/render");
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 
     /**
@@ -448,6 +430,24 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
     }
 
     /**
+     * Tests the indexAction() method.
+     *
+     * @return void
+     * @depends testIndexAction
+     */
+    public function testIndexActionWithBadDataTablesRepository() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request.
+        $client->request("GET", "/datatables/office/index", [], [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
+        $this->assertEquals(500, $client->getResponse()->getStatusCode());
+
+        $this->assertContains("BadDataTablesRepositoryException", $client->getResponse()->getContent());
+    }
+
+    /**
      * Tests the deleteAction() method.
      *
      * @return void
@@ -459,6 +459,24 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
 
         // Make a GET request.
         $client->request("GET", "/datatables/employee/delete/57");
+        $this->assertEquals(302, $client->getResponse()->getStatusCode());
+
+        $this->assertEquals("/datatables/employee/index", $client->getResponse()->headers->get("location"));
+    }
+
+    /**
+     * Tests the deleteAction() method.
+     *
+     * @return void
+     * @depends testDeleteAction
+     */
+    public function testDeleteActionWithNotify404() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a POST request with XML HTTP request.
+        $client->request("GET", "/datatables/employee/delete/57", [], [], []);
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
 
         $this->assertEquals("/datatables/employee/index", $client->getResponse()->headers->get("location"));
@@ -486,7 +504,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         $this->assertArrayHasKey("notify", $res);
 
         $this->assertEquals(200, $res["status"]);
-        //$this->assertEquals("Successful deletion", $res["notify"]);
+        $this->assertEquals("Successful deletion", $res["notify"]);
     }
 
     /**
@@ -511,7 +529,43 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         $this->assertArrayHasKey("notify", $res);
 
         $this->assertEquals(404, $res["status"]);
-        //$this->assertEquals("Record not found", $res["notify"]);
+        $this->assertEquals("Record not found", $res["notify"]);
+    }
+
+    /**
+     * Tests the exportAction() method.
+     *
+     * @return void
+     */
+    public function testExportAction() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request.
+        $client->request("GET", "/datatables/employee/export");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
+        $this->assertRegExp("/attachment; filename=\"[0-9]{4}\.[0-9]{2}\.[0-9]{2}-[0-9]{2}\.[0-9]{2}\.[0-9]{2}-employee\.csv\"/", $client->getResponse()->headers->get("Content-Disposition"));
+        $this->assertEquals("text/csv; charset=utf-8", $client->getResponse()->headers->get("Content-Type"));
+    }
+
+    /**
+     * Tests the exportAction() method.
+     *
+     * @return void
+     * @depends testExportAction
+     */
+    public function testExportActionWithBadDataTablesRepository() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request.
+        $client->request("GET", "/datatables/office/export");
+        $this->assertEquals(500, $client->getResponse()->getStatusCode());
+
+        $this->assertContains("BadDataTablesCSVExporterException", $client->getResponse()->getContent());
     }
 
 }
