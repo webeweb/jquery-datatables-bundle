@@ -2,7 +2,8 @@
 services:
 
     webeweb.datatablesbundle.manager.datatables:
-        class: WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager
+        class:  WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager
+        public: true
 
     webeweb.datatablesbundle.twig.extension.datatables:
         class: WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension
