@@ -22,6 +22,7 @@ use WBW\Library\Core\IO\HTTPInterface;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity
+ * @final
  */
 final class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTablesCSVExporterInterface {
 
@@ -193,7 +194,7 @@ final class EmployeeDataTablesProvider implements DataTablesProviderInterface, D
                 break;
 
             case self::DATATABLES_ROW_ID:
-                $output = "row_" . $entity->getId();
+                $output = "employee_" . $entity->getId();
                 break;
         }
 
