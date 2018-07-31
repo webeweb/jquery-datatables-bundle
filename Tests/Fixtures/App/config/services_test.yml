@@ -5,3 +5,8 @@ services:
         class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider
         tags:
             - { name: "webeweb.jquerydatatables.provider" }
+
+    app.datatables.provider.office:
+        class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\OfficeDataTablesProvider
+        tags:
+            - { name: "webeweb.jquerydatatables.provider" }
