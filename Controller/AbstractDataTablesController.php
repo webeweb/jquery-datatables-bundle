@@ -131,11 +131,19 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
      */
     protected function getDataTablesCSVExporter($name) {
 
-        // Get and check the DataTables provider.
+        // Get the DataTables provider.
         $dtProvider = $this->getDataTablesProvider($name);
+
+        // Log a debug trace.
+        $this->getLogger()->debug(sprintf("DataTables controller search for a CSV exporter with name \"%s\"", $name));
+
+        // Check the DataTables CSV exporter.
         if (false === ($dtProvider instanceOf DataTablesCSVExporterInterface)) {
             throw new BadDataTablesCSVExporterException($dtProvider);
         }
+
+        // Log a debug trace.
+        $this->getLogger()->debug(sprintf("DataTables controller found a CSV exporter with name \"%s\"", $name));
 
         // Return the DataTables provider.
         return $dtProvider;
@@ -152,17 +160,20 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
      */
     protected function getDataTablesEntityById(DataTablesProviderInterface $dtProvider, $id) {
 
-        // Log a debug trace.
-        $this->getLogger()->debug(sprintf("DataTables controller search for an entity [%s]", $id));
-
         // Get the repository.
         $repository = $this->getDataTablesRepository($dtProvider);
+
+        // Log a debug trace.
+        $this->getLogger()->debug(sprintf("DataTables controller search for an entity [%s]", $id));
 
         // Find and check the entity.
         $entity = $repository->find($id);
         if (null === $entity) {
             throw EntityNotFoundException::fromClassNameAndIdentifier($dtProvider->getEntity(), [$id]);
         }
+
+        // Log a debug trace.
+        $this->getLogger()->debug(sprintf("DataTables controller found an entity [%s]", $id));
 
         // Return the entity.
         return $entity;
