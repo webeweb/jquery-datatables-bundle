@@ -9,6 +9,11 @@ jquery_datatables_export:
     defaults: { _controller: "JQueryDataTablesBundle:DataTables:export" }
     methods:  ["GET"]
 
+jquery_datatables_get:
+    path:     "/datatables/{name}/get/{id}"
+    defaults: { _controller: "JQueryDataTablesBundle:DataTables:get" }
+    methods:  ["GET"]
+
 jquery_datatables_index:
     path:     "/datatables/{name}/index"
     defaults: { _controller: "JQueryDataTablesBundle:DataTables:index" }

@@ -118,6 +118,39 @@ class DataTablesController extends AbstractDataTablesController {
     }
 
     /**
+     * Get an existing entity.
+     *
+     * @param Request $request The request.
+     * @param string $name The provider name.
+     * @param string $id The entity id.
+     * @return Response Returns the response.
+     */
+    public function getAction(Request $request, $name, $id) {
+
+        // Get the provider.
+        $dtProvider = $this->getDataTablesProvider($name);
+
+        // Initialize the entity.
+        $entity = [];
+
+        try {
+
+            // Get the entity.
+            $entity = $this->getDataTablesEntityById($dtProvider, $id);
+        } catch (EntityNotFoundException $ex) {
+
+            // Log a debug trace.
+            $this->getLogger()->debug($ex->getMessage());
+        }
+
+        // Get the serializer.
+        $serializer = $this->getDataTablesSerializer();
+
+        // Return the response.
+        return new Response($serializer->serialize($entity, "json"));
+    }
+
+    /**
      * Lists all entities.
      *
      * @param Request $request The request.

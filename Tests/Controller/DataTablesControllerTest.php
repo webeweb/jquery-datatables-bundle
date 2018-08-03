@@ -475,8 +475,8 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         // Create a client.
         $client = static::createClient();
 
-        // Make a POST request with XML HTTP request.
-        $client->request("GET", "/datatables/employee/delete/57", [], [], []);
+        // Make a GET request.
+        $client->request("GET", "/datatables/employee/delete/57");
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
 
         $this->assertEquals("/datatables/employee/index", $client->getResponse()->headers->get("location"));
@@ -493,7 +493,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         // Create a client.
         $client = static::createClient();
 
-        // Make a POST request with XML HTTP request.
+        // Make a GET request with XML HTTP request.
         $client->request("GET", "/datatables/employee/delete/56", [], [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
@@ -518,7 +518,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         // Create a client.
         $client = static::createClient();
 
-        // Make a POST request with XML HTTP request.
+        // Make a GET request with XML HTTP request.
         $client->request("GET", "/datatables/employee/delete/57", [], [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
@@ -566,6 +566,52 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         $this->assertEquals(500, $client->getResponse()->getStatusCode());
 
         $this->assertContains("BadDataTablesCSVExporterException", $client->getResponse()->getContent());
+    }
+
+    /**
+     * Tests the getAction() method.
+     *
+     * @return void
+     */
+    public function testGetAction() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request.
+        $client->request("GET", "/datatables/employee/get/55");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
+        // Check the JSON response.
+        $res = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertEquals("Shad Decker", $res["name"]);
+        $this->assertEquals("Regional Director", $res["position"]);
+        $this->assertEquals("Edinburgh", $res["office"]);
+        $this->assertEquals(51, $res["age"]);
+        $this->assertEquals(1226534400, $res["startDate"]["timestamp"]);
+        $this->assertEquals(183000, $res["salary"]);
+    }
+
+    /**
+     * Tests the getAction() method.
+     *
+     * @return void
+     * @depends testGetAction
+     */
+    public function testGetActionWithStatus404() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request.
+        $client->request("GET", "/datatables/employee/get/57");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
+        // Check the JSON response.
+        $res = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertCount(0, $res);
     }
 
 }
