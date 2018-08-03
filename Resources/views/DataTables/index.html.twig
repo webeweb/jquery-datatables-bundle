@@ -1,16 +1,16 @@
 {# Resources/views/DataTables/index.html.twig #}
 {% extends "@JQueryDataTables/layout.html.twig" %}
+
 {% block jQueryDataTablesBodyContent %}
     <div class="row clearfix">
         <div class="{{ bootstrapGrid({"lg": 12, "recopy": true}) }}">
             <div class="row clearfix">
-                <div class="{{ bootstrapGrid({"lg": 12, "recopy": true}) }} table-responsive">
-                    {{ renderDataTables(dtWrapper, {"class": "table-bordered table-striped"}) }}
-                </div>
+                {% include "@JQueryDataTables/DataTables/index_content.html.twig" %}
             </div>
         </div>
     </div>
 {% endblock %}
+
 {% block jQueryDataTablesBodyScripts %}
     {{ parent() }}
     {{ jQueryDataTables(dtWrapper) }}
