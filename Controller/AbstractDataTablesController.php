@@ -15,6 +15,9 @@ use Doctrine\ORM\EntityNotFoundException;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 use WBW\Bundle\BootstrapBundle\Controller\AbstractBootstrapController;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
@@ -224,6 +227,15 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
 
         // Return the DataTables repository.
         return $repository;
+    }
+
+    /**
+     * Get a DataTables serializer.
+     *
+     * @return Serializer Returns the DataTables serializer.
+     */
+    protected function getDataTablesSerializer() {
+        return new Serializer([new ObjectNormalizer()], [new JsonEncoder()]);
     }
 
     /**
