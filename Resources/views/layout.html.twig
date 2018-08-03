@@ -1,5 +1,6 @@
 {# Resources/views/layout.html.twig #}
 {% extends "@Bootstrap/layout.html.twig" %}
+
 {% block bootstrapHeadStyles %}
     {{ parent() }}
     {% include "@JQueryDataTables/include/styles.html.twig" %}
@@ -11,7 +12,9 @@
     {% block jQueryDataTablesHeadStyles %}
     {% endblock %}
 {% endblock %}
+
 {% block bootstrapHeadTitle %}webeweb/jqeury-detatabales-bundle{% endblock %}
+
 {% block bootstrapBodyContent %}
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
@@ -33,6 +36,7 @@
         </div>
     </section>
 {% endblock %}
+
 {% block bootstrapBodyScripts %}
     {{ parent() }}
     {% include "@JQueryDataTables/include/scripts.html.twig" %}
