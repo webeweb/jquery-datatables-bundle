@@ -28,7 +28,7 @@ final class AlreadyRegisteredDataTablesProviderExceptionTest extends PHPUnit_Fra
      *
      * @return void
      */
-    public function testConstructor() {
+    public function testConstruct() {
 
         $obj = new AlreadyRegisteredDataTablesProviderException("exception");
 

@@ -30,7 +30,7 @@ final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
      *
      * @return void
      */
-    public function testConstructor() {
+    public function testConstruct() {
 
         $obj = new DataTablesWrapper("POST", "url", "name");
 

@@ -30,7 +30,7 @@ final class DataTablesResponseTest extends AbstractJQueryDataTablesFrameworkTest
      *
      * @return void
      */
-    public function testConstructor() {
+    public function testConstruct() {
 
         $obj = DataTablesResponse::parse($this->dataTablesWrapper, $this->dataTablesRequest);
 

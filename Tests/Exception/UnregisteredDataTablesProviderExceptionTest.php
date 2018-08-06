@@ -28,7 +28,7 @@ final class UnregisteredDataTablesProviderExceptionTest extends PHPUnit_Framewor
      *
      * @return void
      */
-    public function testConstructor() {
+    public function testConstruct() {
 
         $obj = new UnregisteredDataTablesProviderException("exception");
 
