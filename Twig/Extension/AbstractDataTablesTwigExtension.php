@@ -52,6 +52,19 @@ abstract class AbstractDataTablesTwigExtension extends Twig_Extension {
 EOTXT;
 
     /**
+     * jQuery DataTables.
+     *
+     * @var string
+     */
+    const JQUERY_DATATABLES_STANDALONE = <<< 'EOTXT'
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("%selector%").DataTable(%options%);
+    });
+</script>
+EOTXT;
+
+    /**
      * Constructor.
      */
     protected function __construct() {
@@ -86,6 +99,33 @@ EOTXT;
 
         // Return the Javascript.
         return StringHelper::replace(self::JQUERY_DATATABLES, $searches, $replaces);
+    }
+
+    /**
+     * Displays a jQuery DataTables "Standalone".
+     *
+     * @param string $selector The selector.
+     * @param string $language The language.
+     * @param array $options The options.
+     * @return string Returns the jQuery DataTables "Standalone".
+     */
+    protected function jQueryDataTablesStandalone($selector, $language, array $options) {
+
+        // Initialize the language.
+        $options["language"] = ["url" => "/bundles/jquerydatatables/datatables-i18n-1.10.16/" . $language . ".json"];
+
+        // Sort the options.
+        ksort($options);
+
+        //
+        $searches = ["%selector%", "%options%"];
+        $replaces = [$selector, json_encode($options, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)];
+
+        // Re-indent.
+        $replaces[1] = str_replace("\n", "\n        ", $replaces[1]);
+
+        // Return the Javascript.
+        return StringHelper::replace(self::JQUERY_DATATABLES_STANDALONE, $searches, $replaces);
     }
 
     /**

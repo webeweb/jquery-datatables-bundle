@@ -48,7 +48,7 @@ final class DataTablesTwigExtensionTest extends AbstractJQueryDataTablesFramewor
 
         $res = $obj->getFunctions();
 
-        $this->assertCount(2, $res);
+        $this->assertCount(3, $res);
 
         $this->assertInstanceOf(Twig_SimpleFunction::class, $res[0]);
         $this->assertEquals("jQueryDataTables", $res[0]->getName());
@@ -56,9 +56,14 @@ final class DataTablesTwigExtensionTest extends AbstractJQueryDataTablesFramewor
         $this->assertEquals(["html"], $res[0]->getSafe(new Twig_Node()));
 
         $this->assertInstanceOf(Twig_SimpleFunction::class, $res[1]);
-        $this->assertEquals("renderDataTables", $res[1]->getName());
-        $this->assertEquals([$obj, "renderDataTablesFunction"], $res[1]->getCallable());
+        $this->assertEquals("jQueryDataTablesStandalone", $res[1]->getName());
+        $this->assertEquals([$obj, "jQueryDataTablesStandaloneFunction"], $res[1]->getCallable());
         $this->assertEquals(["html"], $res[1]->getSafe(new Twig_Node()));
+
+        $this->assertInstanceOf(Twig_SimpleFunction::class, $res[2]);
+        $this->assertEquals("renderDataTables", $res[2]->getName());
+        $this->assertEquals([$obj, "renderDataTablesFunction"], $res[2]->getCallable());
+        $this->assertEquals(["html"], $res[2]->getSafe(new Twig_Node()));
     }
 
     /**
@@ -100,7 +105,7 @@ final class DataTablesTwigExtensionTest extends AbstractJQueryDataTablesFramewor
      *
      * @return void
      */
-    public function testjQueryDataTablesFunction() {
+    public function testJQueryDataTablesFunction() {
 
         $obj = new DataTablesTwigExtension();
 
@@ -147,6 +152,49 @@ EOTXT;
 </script>
 EOTXT;
         $this->assertEquals($res9, $obj->jQueryDataTablesFunction($this->dataTablesWrapper, $arg9));
+    }
+
+    /**
+     * Tests the jQueryDataTablesStandaloneFunction() {
+     *
+     * @return void
+     */
+    public function testJQueryDataTablesStandaloneFunction() {
+
+        $obj = new DataTablesTwigExtension();
+
+        $res0 = <<< 'EOTXT'
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".table").DataTable({
+            "language": {
+                "url": "/bundles/jquerydatatables/datatables-i18n-1.10.16/English.json"
+            }
+        });
+    });
+</script>
+EOTXT;
+        $this->assertEquals($res0, $obj->jQueryDataTablesStandaloneFunction());
+
+        $arg9 = ["selector" => "#selector", "language" => "French", "options" => ["columnDefs" => [["orderable" => false, "targets" => -1]]]];
+        $res9 = <<< 'EOTXT'
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#selector").DataTable({
+            "columnDefs": [
+                {
+                    "orderable": false,
+                    "targets": -1
+                }
+            ],
+            "language": {
+                "url": "/bundles/jquerydatatables/datatables-i18n-1.10.16/French.json"
+            }
+        });
+    });
+</script>
+EOTXT;
+        $this->assertEquals($res9, $obj->jQueryDataTablesStandaloneFunction($arg9));
     }
 
     /**
