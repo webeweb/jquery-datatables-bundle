@@ -120,18 +120,14 @@ class DataTablesController extends AbstractDataTablesController {
     /**
      * Get an existing entity.
      *
-     * @param Request $request The request.
      * @param string $name The provider name.
      * @param string $id The entity id.
      * @return Response Returns the response.
      */
-    public function getAction(Request $request, $name, $id) {
+    public function getAction($name, $id) {
 
         // Get the provider.
         $dtProvider = $this->getDataTablesProvider($name);
-
-        // Initialize the entity.
-        $entity = [];
 
         try {
 
@@ -141,6 +137,9 @@ class DataTablesController extends AbstractDataTablesController {
 
             // Log a debug trace.
             $this->getLogger()->debug($ex->getMessage());
+
+            // Initialize the entity.
+            $entity = [];
         }
 
         // Get the serializer.
