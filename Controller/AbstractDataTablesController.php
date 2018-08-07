@@ -27,7 +27,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Repository\DataTablesRepositoryInterface;
-use WBW\Library\Core\Helper\Argument\IntegerHelper;
+use WBW\Library\Core\Helper\Database\PaginateHelper;
 
 /**
  * Abstract jQuery DataTables controller.
@@ -95,18 +95,18 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
 
         // Paginates.
         $total = $repository->dataTablesCountExported($dtProvider);
-        $pages = IntegerHelper::getPagesCount($total, DataTablesRepositoryInterface::REPOSITORY_LIMIT);
+        $pages = PaginateHelper::getPagesCount($total, DataTablesRepositoryInterface::REPOSITORY_LIMIT);
 
         // Handle each page.
         for ($i = 0; $i < $pages; ++$i) {
 
             // Get the offset and limit.
-            list($offset, $limit) = IntegerHelper::getLinesLimit($i, DataTablesRepositoryInterface::REPOSITORY_LIMIT, $total);
+            list($offset, $limit) = PaginateHelper::getPageOffsetAndLimit($i, DataTablesRepositoryInterface::REPOSITORY_LIMIT, $total);
 
             // Get the export query with offset and limit.
             $result = $repository->dataTablesExportAll($dtProvider)
-                ->setFirstResult($offset) // Use offset
-                ->setMaxResults($limit) // Use limit
+                ->setFirstResult($offset)
+                ->setMaxResults($limit)
                 ->getQuery()
                 ->iterate();
 
