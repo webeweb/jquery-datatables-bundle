@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
-use WBW\Library\Core\Utility\Argument\StringUtility;
+use WBW\Library\Core\Helper\Argument\StringHelper;
 
 /**
  * DataTables wrapper helper.
@@ -58,8 +58,8 @@ class DataTablesWrapperHelper {
             $output["order"][] = $current->toArray();
         }
 
-        $output["processing"] = StringUtility::parseBoolean($dtWrapper->getProcessing());
-        $output["serverSide"] = StringUtility::parseBoolean($dtWrapper->getServerSide());
+        $output["processing"] = StringHelper::parseBoolean($dtWrapper->getProcessing());
+        $output["serverSide"] = StringHelper::parseBoolean($dtWrapper->getServerSide());
 
         // Return the output.
         return $output;

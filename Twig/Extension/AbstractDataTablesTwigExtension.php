@@ -15,7 +15,7 @@ use Twig_Extension;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
-use WBW\Library\Core\Utility\Argument\StringUtility;
+use WBW\Library\Core\Helper\Argument\StringHelper;
 
 /**
  * Abstract DataTables Twig extension.
@@ -85,7 +85,7 @@ EOTXT;
         $replaces = [$var, null === $selector ? "#" . $var : $selector, $method, $url, $columns, $language, $orders, $processing, $serverSide];
 
         // Return the Javascript.
-        return StringUtility::replace(self::JQUERY_DATATABLES, $searches, $replaces);
+        return StringHelper::replace(self::JQUERY_DATATABLES, $searches, $replaces);
     }
 
     /**
@@ -113,7 +113,7 @@ EOTXT;
         $tfoot = true === $includeTFoot ? $this->renderDataTablesTFoot($dtWrapper) : "";
 
         // Return the HTML.
-        return StringUtility::replace($template, ["%attributes%", "%innerHTML%"], [StringUtility::parseArray($attributes), $thead . $tfoot]);
+        return StringHelper::replace($template, ["%attributes%", "%innerHTML%"], [StringHelper::parseArray($attributes), $thead . $tfoot]);
     }
 
     /**
@@ -143,7 +143,7 @@ EOTXT;
         $innerHTML = $dtColumn->getTitle();
 
         // Return the HTML.
-        return StringUtility::replace($template, ["%attributes%", "%innerHTML%"], [preg_replace("/^\ $/", "", " " . StringUtility::parseArray($attributes)), $innerHTML]);
+        return StringHelper::replace($template, ["%attributes%", "%innerHTML%"], [preg_replace("/^\ $/", "", " " . StringHelper::parseArray($attributes)), $innerHTML]);
     }
 
     /**
@@ -168,7 +168,7 @@ EOTXT;
         }
 
         // Return the HTML.
-        return "" === $innerHTML ? "" : StringUtility::replace($template, ["%innerHTML%"], [$innerHTML]);
+        return "" === $innerHTML ? "" : StringHelper::replace($template, ["%innerHTML%"], [$innerHTML]);
     }
 
     /**
@@ -197,7 +197,7 @@ EOTXT;
         }
 
         // Return the HTML.
-        return "" === $innerHTML ? "" : StringUtility::replace($template, ["%innerHTML%"], [$innerHTML]);
+        return "" === $innerHTML ? "" : StringHelper::replace($template, ["%innerHTML%"], [$innerHTML]);
     }
 
 }

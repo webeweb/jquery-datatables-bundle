@@ -27,7 +27,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Repository\DataTablesRepositoryInterface;
-use WBW\Library\Core\Utility\Argument\IntegerUtility;
+use WBW\Library\Core\Helper\Argument\IntegerHelper;
 
 /**
  * Abstract jQuery DataTables controller.
@@ -95,13 +95,13 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
 
         // Paginates.
         $total = $repository->dataTablesCountExported($dtProvider);
-        $pages = IntegerUtility::getPagesCount($total, DataTablesRepositoryInterface::REPOSITORY_LIMIT);
+        $pages = IntegerHelper::getPagesCount($total, DataTablesRepositoryInterface::REPOSITORY_LIMIT);
 
         // Handle each page.
         for ($i = 0; $i < $pages; ++$i) {
 
             // Get the offset and limit.
-            list($offset, $limit) = IntegerUtility::getLinesLimit($i, DataTablesRepositoryInterface::REPOSITORY_LIMIT, $total);
+            list($offset, $limit) = IntegerHelper::getLinesLimit($i, DataTablesRepositoryInterface::REPOSITORY_LIMIT, $total);
 
             // Get the export query with offset and limit.
             $result = $repository->dataTablesExportAll($dtProvider)

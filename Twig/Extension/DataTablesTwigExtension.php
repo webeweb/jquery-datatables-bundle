@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension;
 
 use Twig_SimpleFunction;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
-use WBW\Library\Core\Utility\Argument\ArrayUtility;
+use WBW\Library\Core\Helper\Argument\ArrayHelper;
 
 /**
  * DataTables Twig extension.
@@ -57,7 +57,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      * @return string Returns the jQuery DataTables.
      */
     public function jQueryDataTablesFunction(DataTablesWrapper $dtWrapper, array $args = []) {
-        return $this->jQueryDataTables($dtWrapper, ArrayUtility::get($args, "selector"), ArrayUtility::get($args, "language", "English"));
+        return $this->jQueryDataTables($dtWrapper, ArrayHelper::get($args, "selector"), ArrayHelper::get($args, "language", "English"));
     }
 
     /**
@@ -68,7 +68,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      * @return string Returns the rendered DataTables.
      */
     public function renderDataTablesFunction(DataTablesWrapper $dtWrapper, array $args = []) {
-        return $this->renderDataTables($dtWrapper, ArrayUtility::get($args, "class"), ArrayUtility::get($args, "thead", true), ArrayUtility::get($args, "tfoot", true));
+        return $this->renderDataTables($dtWrapper, ArrayHelper::get($args, "class"), ArrayHelper::get($args, "thead", true), ArrayHelper::get($args, "tfoot", true));
     }
 
 }

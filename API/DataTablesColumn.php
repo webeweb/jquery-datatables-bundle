@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
 use JsonSerializable;
-use WBW\Library\Core\Utility\Argument\ArrayUtility;
+use WBW\Library\Core\Helper\Argument\ArrayHelper;
 
 /**
  * DataTables column.
@@ -572,20 +572,20 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
         // Initialize the output.
         $output = [];
 
-        ArrayUtility::set($output, "cellType", $this->cellType, [null]);
-        ArrayUtility::set($output, "classname", $this->classname, [null]);
-        ArrayUtility::set($output, "contentPadding", $this->contentPadding, [null]);
-        ArrayUtility::set($output, "data", $this->data, [null]);
-        ArrayUtility::set($output, "defaultContent", $this->defaultContent, [null]);
-        ArrayUtility::set($output, "name", $this->name, [null]);
-        ArrayUtility::set($output, "orderable", $this->orderable, [null, true]);
-        ArrayUtility::set($output, "orderData", $this->orderData, [null]);
-        ArrayUtility::set($output, "orderDataType", $this->orderDataType, [null]);
-        ArrayUtility::set($output, "orderSequence", $this->orderSequence, [null]);
-        ArrayUtility::set($output, "searchable", $this->searchable, [null, true]);
-        ArrayUtility::set($output, "type", $this->type, [null]);
-        ArrayUtility::set($output, "visible", $this->visible, [null, true]);
-        ArrayUtility::set($output, "width", $this->width, [null]);
+        ArrayHelper::set($output, "cellType", $this->cellType, [null]);
+        ArrayHelper::set($output, "classname", $this->classname, [null]);
+        ArrayHelper::set($output, "contentPadding", $this->contentPadding, [null]);
+        ArrayHelper::set($output, "data", $this->data, [null]);
+        ArrayHelper::set($output, "defaultContent", $this->defaultContent, [null]);
+        ArrayHelper::set($output, "name", $this->name, [null]);
+        ArrayHelper::set($output, "orderable", $this->orderable, [null, true]);
+        ArrayHelper::set($output, "orderData", $this->orderData, [null]);
+        ArrayHelper::set($output, "orderDataType", $this->orderDataType, [null]);
+        ArrayHelper::set($output, "orderSequence", $this->orderSequence, [null]);
+        ArrayHelper::set($output, "searchable", $this->searchable, [null, true]);
+        ArrayHelper::set($output, "type", $this->type, [null]);
+        ArrayHelper::set($output, "visible", $this->visible, [null, true]);
+        ArrayHelper::set($output, "width", $this->width, [null]);
 
         // Return the output.
         return $output;

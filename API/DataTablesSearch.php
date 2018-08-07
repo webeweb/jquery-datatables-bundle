@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
-use WBW\Library\Core\Utility\Argument\BooleanUtility;
+use WBW\Library\Core\Helper\Argument\BooleanHelper;
 
 /**
  * DataTables search.
@@ -81,7 +81,7 @@ class DataTablesSearch implements DataTablesSearchInterface {
         }
 
         // Set the DataTables search.
-        $dtSearch->setRegex(BooleanUtility::parseString($rawSearch[self::DATATABLES_PARAMETER_REGEX]));
+        $dtSearch->setRegex(BooleanHelper::parseString($rawSearch[self::DATATABLES_PARAMETER_REGEX]));
         $dtSearch->setValue($rawSearch[self::DATATABLES_PARAMETER_VALUE]);
 
         // Return the DataTables search.
