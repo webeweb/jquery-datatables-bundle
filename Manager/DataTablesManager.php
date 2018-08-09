@@ -28,7 +28,7 @@ class DataTablesManager {
      *
      * @var string
      */
-    const SERVICE_NAME = "webeweb.datatablesbundle.manager.datatables";
+    const SERVICE_NAME = "webeweb.jquerydatatables.manager.datatables";
 
     /**
      * Providers.
