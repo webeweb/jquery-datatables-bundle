@@ -11,7 +11,6 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Exception;
 
-use Exception;
 use WBW\Library\Core\Exception\AbstractCoreException;
 
 /**
@@ -27,10 +26,9 @@ abstract class AbstractDataTablesException extends AbstractCoreException {
      * Constructor.
      *
      * @param string $message The message.
-     * @param Exception $previous The previous.
      */
-    public function __construct($message, Exception $previous = null) {
-        parent::__construct($message, $previous);
+    public function __construct($message) {
+        parent::__construct($message);
     }
 
 }
