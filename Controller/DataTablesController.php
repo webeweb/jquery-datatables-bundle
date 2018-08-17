@@ -147,7 +147,7 @@ class DataTablesController extends AbstractDataTablesController {
         $serializer = $this->getDataTablesSerializer();
 
         // Return the response.
-        return new JsonResponse($serializer->serialize($entity, "json"), 200, [], true);
+        return new Response($serializer->serialize($entity, "json"), 200, ["Content-type" => "application/json"], true);
     }
 
     /**
