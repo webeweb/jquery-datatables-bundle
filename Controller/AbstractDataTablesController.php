@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Controller;
 
 use Doctrine\ORM\EntityNotFoundException;
 use Doctrine\ORM\EntityRepository;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
@@ -52,7 +53,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
         if (true === $request->isXmlHttpRequest()) {
 
             // Return the response.
-            return new Response(json_encode($output));
+            return new JsonResponse($output);
         }
 
         // Notify the user.
