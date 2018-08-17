@@ -14,6 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Controller;
 use DateTime;
 use Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
 use Doctrine\ORM\EntityNotFoundException;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
@@ -146,7 +147,7 @@ class DataTablesController extends AbstractDataTablesController {
         $serializer = $this->getDataTablesSerializer();
 
         // Return the response.
-        return new Response($serializer->serialize($entity, "json"));
+        return new JsonResponse($serializer->serialize($entity, "json"), 200, [], true);
     }
 
     /**
@@ -207,7 +208,7 @@ class DataTablesController extends AbstractDataTablesController {
         }
 
         // Return the response.
-        return new Response(json_encode($dtWrapper->getResponse()));
+        return new JsonResponse($dtWrapper->getResponse());
     }
 
     /**
@@ -229,7 +230,7 @@ class DataTablesController extends AbstractDataTablesController {
         $dtOptions = DataTablesWrapperHelper::getOptions($dtWrapper);
 
         // Return the response.
-        return new Response(json_encode($dtOptions));
+        return new JsonResponse($dtOptions);
     }
 
     /**
