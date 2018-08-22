@@ -28,7 +28,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Repository\DataTablesRepositoryInterface;
-use WBW\Library\Core\Helper\Database\PaginateHelper;
+use WBW\Library\Core\Database\PaginateHelper;
 
 /**
  * Abstract jQuery DataTables controller.

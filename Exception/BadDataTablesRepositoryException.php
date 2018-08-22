@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Exception;
 
-use WBW\Library\Core\Helper\Argument\ObjectHelper;
+use WBW\Library\Core\Argument\ObjectHelper;
 
 /**
  * Bad DataTables repository exception.

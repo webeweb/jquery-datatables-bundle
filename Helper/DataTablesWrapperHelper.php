@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
-use WBW\Library\Core\Helper\Argument\StringHelper;
+use WBW\Library\Core\Argument\StringHelper;
 
 /**
  * DataTables wrapper helper.

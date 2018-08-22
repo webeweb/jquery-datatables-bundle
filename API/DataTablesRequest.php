@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
-use WBW\Library\Core\Helper\IO\HTTPInterface;
+use WBW\Library\Core\IO\HTTPInterface;
 
 /**
  * DataTables request.

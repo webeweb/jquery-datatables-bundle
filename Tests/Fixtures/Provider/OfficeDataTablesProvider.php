@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Office;
-use WBW\Library\Core\Helper\IO\HTTPInterface;
+use WBW\Library\Core\IO\HTTPInterface;
 
 /**
  * Office DataTables provider.

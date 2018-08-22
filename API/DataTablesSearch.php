@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
-use WBW\Library\Core\Helper\Argument\BooleanHelper;
+use WBW\Library\Core\Argument\BooleanHelper;
 
 /**
  * DataTables search.
