@@ -48,8 +48,8 @@ class DataTablesManager {
      * Get a provider.
      *
      * @param string $name The provider name.
-     * @return DataTablesProviderInterface Returns the DataTables provider.
-     * @throws UnregisteredDataTablesProviderException Throws an unregistered DataTables provider exception.
+     * @return DataTablesProviderInterface Returns the provider.
+     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
     public function getProvider($name) {
         if (false === array_key_exists($name, $this->providers)) {
@@ -71,7 +71,7 @@ class DataTablesManager {
      * Register a provider.
      *
      * @param DataTablesProviderInterface $provider The provider.
-     * @throws AlreadyRegisteredDataTablesProviderException Throws an already registered DataTables provider exception.
+     * @throws AlreadyRegisteredDataTablesProviderException Throws an already registered provider exception.
      */
     public function registerProvider(DataTablesProviderInterface $provider) {
         if (true === array_key_exists($provider->getName(), $this->providers)) {
