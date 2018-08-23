@@ -27,10 +27,10 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 abstract class DefaultDataTablesRepository extends EntityRepository implements DataTablesRepositoryInterface {
 
     /**
-     * Build a DataTables query builder "Count exported".
+     * Build a query builder "Count exported".
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
-     * @return QueryBuilder Returns the DataTables query builder "Count exported".
+     * @return QueryBuilder Returns the query builder "Count exported".
      */
     protected function buildDataTablesCountExported(DataTablesProviderInterface $dtProvider) {
 
@@ -46,10 +46,10 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     }
 
     /**
-     * Build a DataTables query builder "Count filtered".
+     * Build a query builder "Count filtered".
      *
      * @param DataTablesWrapper $dtWrapper The wrapper.
-     * @return QueryBuilder Returns the DataTables query builder "Count filtered".
+     * @return QueryBuilder Returns the query builder "Count filtered".
      */
     protected function buildDataTablesCountFiltered(DataTablesWrapper $dtWrapper) {
 
@@ -68,10 +68,10 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     }
 
     /**
-     * Build a DataTables query builder "Count total".
+     * Build a query builder "Count total".
      *
      * @param DataTablesWrapper $dtWrapper The wrapper.
-     * @return QueryBuilder Returns the DataTables query builder "Count total".
+     * @return QueryBuilder Returns the query builder "Count total".
      */
     protected function buildDataTablesCountTotal(DataTablesWrapper $dtWrapper) {
 
@@ -87,10 +87,10 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     }
 
     /**
-     * Build a DataTables query builder "Export all".
+     * Build a query builder "Export all".
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
-     * @return QueryBuilder Returns the DataTables query builder "Export all".
+     * @return QueryBuilder Returns the query builder "Export all".
      */
     protected function buildDataTablesExportAll(DataTablesProviderInterface $dtProvider) {
 
@@ -102,10 +102,10 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     }
 
     /**
-     * Build a DataTables query builder "Find all".
+     * Build a query builder "Find all".
      *
      * @param DataTablesWrapper $dtWrapper The wrapper.
-     * @return QueryBuilder Returns the DataTables query builder "Find all".
+     * @return QueryBuilder Returns the query builder "Find all".
      */
     protected function buildDataTablesFindAll(DataTablesWrapper $dtWrapper) {
 
@@ -130,7 +130,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
      */
     public function dataTablesCountExported(DataTablesProviderInterface $dtProvider) {
 
-        // Build a DataTables query builder.
+        // Build a query builder.
         $qb = $this->buildDataTablesCountExported($dtProvider);
 
         // Return the single scalar result.
@@ -142,7 +142,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
      */
     public function dataTablesCountFiltered(DataTablesWrapper $dtWrapper) {
 
-        // Build a DataTables query builder.
+        // Build a query builder.
         $qb = $this->buildDataTablesCountFiltered($dtWrapper);
 
         // Return the single scalar result.
@@ -154,7 +154,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
      */
     public function dataTablesCountTotal(DataTablesWrapper $dtWrapper) {
 
-        // Build a DataTables query builder.
+        // Build a query builder.
         $qb = $this->buildDataTablesCountTotal($dtWrapper);
 
         // Return the single scalar result.
@@ -173,7 +173,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
      */
     public function dataTablesFindAll(DataTablesWrapper $dtWrapper) {
 
-        // Build a DataTables query builder.
+        // Build a query builder.
         $qb = $this->buildDataTablesFindAll($dtWrapper);
 
         // Return the result.

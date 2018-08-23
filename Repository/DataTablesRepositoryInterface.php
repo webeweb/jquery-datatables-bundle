@@ -33,7 +33,7 @@ interface DataTablesRepositoryInterface {
     /**
      * Count exported entities.
      *
-     * @param DataTablesProvider The DataTables provider.
+     * @param DataTablesProvider The provider.
      * @return integer Returns the exported entities count.
      */
     public function dataTablesCountExported(DataTablesProviderInterface $dtProvider);
@@ -41,7 +41,7 @@ interface DataTablesRepositoryInterface {
     /**
      * Count filtered entities.
      *
-     * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
+     * @param DataTablesWrapper $dtWrapper The wrapper.
      * @return integer Returns the filtered entities count.
      */
     public function dataTablesCountFiltered(DataTablesWrapper $dtWrapper);
@@ -49,7 +49,7 @@ interface DataTablesRepositoryInterface {
     /**
      * Count all entities.
      *
-     * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
+     * @param DataTablesWrapper $dtWrapper The wrapper.
      * @return integer Returns the all entities count.
      */
     public function dataTablesCountTotal(DataTablesWrapper $dtWrapper);
@@ -57,7 +57,7 @@ interface DataTablesRepositoryInterface {
     /**
      * Export all query builder.
      *
-     * @param DataTablesProvider The DataTables provider.
+     * @param DataTablesProvider The provider.
      * @return QueryBuilder Returns the export all query builder.
      */
     public function dataTablesExportAll(DataTablesProviderInterface $dtProvider);
@@ -65,7 +65,7 @@ interface DataTablesRepositoryInterface {
     /**
      * Find all entities.
      *
-     * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
+     * @param DataTablesWrapper $dtWrapper The wrapper.
      * @return array Returns the entities.
      */
     public function dataTablesFindAll(DataTablesWrapper $dtWrapper);
