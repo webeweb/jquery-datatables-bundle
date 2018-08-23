@@ -40,12 +40,12 @@ use WBW\Library\Core\Database\PaginateHelper;
 abstract class AbstractDataTablesController extends AbstractBootstrapController {
 
     /**
-     * Build a DataTables response.
+     * Build a response.
      *
      * @param Request $request The request.
      * @param string $name The provider name.
      * @param array $output The output.
-     * @return Response Returns the DataTables response.
+     * @return Response Returns the response.
      */
     protected function buildDataTablesResponse(Request $request, $name, array $output) {
 
@@ -79,8 +79,8 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
     /**
      * Export callback.
      *
-     * @param DataTablesProviderInterface $dtProvider The DataTables provider.
-     * @param DataTablesRepositoryInterface $repository The DataTables repository.
+     * @param DataTablesProviderInterface $dtProvider The provider.
+     * @param DataTablesRepositoryInterface $repository The repository.
      * @return void
      */
     protected function exportCallback(DataTablesProviderInterface $dtProvider, DataTablesRepositoryInterface $repository) {
@@ -126,22 +126,22 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
     }
 
     /**
-     * Get a DataTables CSV exporter.
+     * Get a CSV exporter.
      *
      * @param string $name The provider name.
-     * @return DataTablesProviderInterface Returns the DataTables CSV exporter.
-     * @throws UnregisteredDataTablesProviderException Throws an unregistered DataTables provider exception.
-     * @throws BadDataTablesCSVExporterException Throws a bad DataTables CSV exporter exception.
+     * @return DataTablesProviderInterface Returns the CSV exporter.
+     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
+     * @throws BadDataTablesCSVExporterException Throws a bad CSV exporter exception.
      */
     protected function getDataTablesCSVExporter($name) {
 
-        // Get the DataTables provider.
+        // Get the provider.
         $dtProvider = $this->getDataTablesProvider($name);
 
         // Log a debug trace.
         $this->getLogger()->debug(sprintf("DataTables controller search for a CSV exporter with name \"%s\"", $name));
 
-        // Check the DataTables CSV exporter.
+        // Check the CSV exporter.
         if (false === ($dtProvider instanceOf DataTablesCSVExporterInterface)) {
             throw new BadDataTablesCSVExporterException($dtProvider);
         }
@@ -149,17 +149,17 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
         // Log a debug trace.
         $this->getLogger()->debug(sprintf("DataTables controller found a CSV exporter with name \"%s\"", $name));
 
-        // Return the DataTables provider.
+        // Return the provider.
         return $dtProvider;
     }
 
     /**
-     * Get a DataTables entity by id.
+     * Get an entity by id.
      *
-     * @param DataTablesProviderInterface $dtProvider The DataTables provider.
+     * @param DataTablesProviderInterface $dtProvider The provider.
      * @param integer $id The entity id.
-     * @return object Returns the DataTables entity.
-     * @throws BadDataTablesRepositoryException Throws a bad DataTables repository exception.
+     * @return object Returns the entity.
+     * @throws BadDataTablesRepositoryException Throws a bad repository exception.
      * @throws EntityNotFoundException Throws an Entity not found exception.
      */
     protected function getDataTablesEntityById(DataTablesProviderInterface $dtProvider, $id) {
@@ -184,33 +184,33 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
     }
 
     /**
-     * Get the DataTables provider.
+     * Get the provider.
      *
      * @param string $name The provider name.
-     * @return DataTablesProviderInterface Returns the DataTables provider.
-     * @throws UnregisteredDataTablesProviderException Throws an unregistered DataTables provider exception.
+     * @return DataTablesProviderInterface Returns the provider.
+     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
     protected function getDataTablesProvider($name) {
 
         // Log a debug trace.
         $this->getLogger()->debug(sprintf("DataTables controller search for a provider with name \"%s\"", $name));
 
-        // Get the DataTables provider.
+        // Get the provider.
         $dtProvider = $this->get(DataTablesManager::SERVICE_NAME)->getProvider($name);
 
         // Log a debug trace.
         $this->getLogger()->debug(sprintf("DataTables controller found a provider with name \"%s\"", $name));
 
-        // Return the DataTables provider.
+        // Return the provider.
         return $dtProvider;
     }
 
     /**
-     * Get a DataTables repository.
+     * Get a repository.
      *
-     * @param DataTablesProviderInterface The DataTables provider.
-     * @return EntityRepository Returns the DataTables repository.
-     * @throws BadDataTablesRepositoryException Throws a bad DataTables repository exception.
+     * @param DataTablesProviderInterface $dtProvider The provider.
+     * @return EntityRepository Returns the repository.
+     * @throws BadDataTablesRepositoryException Throws a bad repository exception.
      */
     protected function getDataTablesRepository(DataTablesProviderInterface $dtProvider) {
 
@@ -226,31 +226,31 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
             throw new BadDataTablesRepositoryException($repository);
         }
 
-        // Return the DataTables repository.
+        // Return the repository.
         return $repository;
     }
 
     /**
-     * Get a DataTables serializer.
+     * Get a serializer.
      *
-     * @return Serializer Returns the DataTables serializer.
+     * @return Serializer Returns the serializer.
      */
     protected function getDataTablesSerializer() {
         return new Serializer([new ObjectNormalizer()], [new JsonEncoder()]);
     }
 
     /**
-     * Get a DataTables wrapper.
+     * Get a wrapper.
      *
-     * @param DataTablesProviderInterface $dtProvider The DataTables provider.
-     * @return DataTablesWrapper Returns the DataTables wrapper.
+     * @param DataTablesProviderInterface $dtProvider The provider.
+     * @return DataTablesWrapper Returns the wrapper.
      */
     protected function getDataTablesWrapper(DataTablesProviderInterface $dtProvider) {
 
         // Initialize the URL.
         $url = $this->getRouter()->generate("jquery_datatables_index", ["name" => $dtProvider->getName()]);
 
-        // Initialize the DataTables wrapper.
+        // Initialize the wrapper.
         $dtWrapper = new DataTablesWrapper($dtProvider->getMethod(), $url, $dtProvider->getName());
         $dtWrapper->getMapping()->setPrefix($dtProvider->getPrefix());
 
@@ -264,7 +264,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
             $dtWrapper->addColumn($dtColumn);
         }
 
-        // Return the DataTables wrapper.
+        // Return the wrapper.
         return $dtWrapper;
     }
 

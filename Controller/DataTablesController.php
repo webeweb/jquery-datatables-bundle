@@ -37,8 +37,8 @@ class DataTablesController extends AbstractDataTablesController {
      * @param Request $request The request.
      * @param string $name The provider name.
      * @param string $id The entity id.
-     * @throws UnregisteredDataTablesProviderException Throws an unregistered DataTables provider exception.
-     * @throws BadDataTablesRepositoryException Throws a bad DataTables repository exception.
+     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
+     * @throws BadDataTablesRepositoryException Throws a bad repository exception.
      */
     public function deleteAction(Request $request, $name, $id) {
 
@@ -91,8 +91,8 @@ class DataTablesController extends AbstractDataTablesController {
      *
      * @param string $name The provider name.
      * @return Response Returns the response.
-     * @throws UnregisteredDataTablesProviderException Throws an unregistered DataTables provider exception.
-     * @throws BadDataTablesRepositoryException Throws a bad DataTables repository exception.
+     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
+     * @throws BadDataTablesRepositoryException Throws a bad repository exception.
      */
     public function exportAction($name) {
 
@@ -156,8 +156,8 @@ class DataTablesController extends AbstractDataTablesController {
      * @param Request $request The request.
      * @param string $name The provider name.
      * @return Response Returns the response.
-     * @throws UnregisteredDataTablesProviderException Throws an unregistered DataTables provider exception.
-     * @throws BadDataTablesRepositoryException Throws a bad DataTables repository exception.
+     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
+     * @throws BadDataTablesRepositoryException Throws a bad repository exception.
      */
     public function indexAction(Request $request, $name) {
 
@@ -216,7 +216,7 @@ class DataTablesController extends AbstractDataTablesController {
      *
      * @param string $name The provider name.
      * @return Response Returns a response.
-     * @throws UnregisteredDataTablesProviderException Throws an unregistered DataTables provider exception.
+     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
     public function optionsAction($name) {
 
@@ -238,7 +238,7 @@ class DataTablesController extends AbstractDataTablesController {
      *
      * @param string $name The provider name.
      * @return Response Returns the response.
-     * @throws UnregisteredDataTablesProviderException Throws an unregistered DataTables provider exception.
+     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
     public function renderAction($name) {
 
