@@ -157,10 +157,10 @@ EOTXT;
     }
 
     /**
-     * Render a DataTables column.
+     * Render a column.
      *
      * @param DataTablesColumn $dtColumn The column.
-     * @return string Returns the rendered DataTables column.
+     * @return string Returns the rendered column.
      */
     private function renderDataTablesColumn(DataTablesColumn $dtColumn, $scopeRow = false) {
 
@@ -187,10 +187,10 @@ EOTXT;
     }
 
     /**
-     * Render a DataTables footer.
+     * Render a footer.
      *
      * @param DataTablesWrapper $dtWrapper The wrapper.
-     * @return string Returns the rendered DataTables footer.
+     * @return string Returns the rendered footer.
      */
     private function renderDataTablesTFoot(DataTablesWrapper $dtWrapper) {
 
@@ -212,10 +212,10 @@ EOTXT;
     }
 
     /**
-     * Render a DataTables header.
+     * Render a header.
      *
      * @param DataTablesWrapper $dtWrapper The wrapper.
-     * @return string Returns the rendered DataTables header.
+     * @return string Returns the rendered header.
      */
     private function renderDataTablesTHead(DataTablesWrapper $dtWrapper) {
 
