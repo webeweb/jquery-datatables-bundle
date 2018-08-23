@@ -24,24 +24,94 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 interface DataTablesColumnInterface {
 
     /**
-     * DataTables parameter "data".
+     * Cell type "td".
+     *
+     * @var string
+     */
+    const DATATABLES_CELL_TYPE_TD = "td";
+
+    /**
+     * Cell type "th".
+     *
+     * @var string
+     */
+    const DATATABLES_CELL_TYPE_TH = "th";
+
+    /**
+     * Order sequence "asc".
+     *
+     * @var string
+     */
+    const DATATABLES_ORDER_SEQUENCE_ASC = "asc";
+
+    /**
+     * Order sequence "desc".
+     *
+     * @var string
+     */
+    const DATATABLES_ORDER_SEQUENCE_DESC = "desc";
+
+    /**
+     * Parameter "data".
      *
      * @var string
      */
     const DATATABLES_PARAMETER_DATA = "data";
 
     /**
-     * DataTables parameter "name".
+     * Parameter "name".
      *
      * @var string
      */
     const DATATABLES_PARAMETER_NAME = "name";
 
     /**
-     * DataTables parameter "search".
+     * Parameter "search".
      *
      * @var string
      */
     const DATATABLES_PARAMETER_SEARCH = "search";
+
+    /**
+     * Type "date".
+     *
+     * @var string
+     */
+    const DATATABLES_TYPE_DATE = "date";
+
+    /**
+     * Type "html".
+     *
+     * @var string
+     */
+    const DATATABLES_TYPE_HTML = "html";
+
+    /**
+     * Type "html-num".
+     *
+     * @var string
+     */
+    const DATATABLES_TYPE_HTML_NUM = "html-num";
+
+    /**
+     * Type "num".
+     *
+     * @var string
+     */
+    const DATATABLES_TYPE_NUM = "num";
+
+    /**
+     * Type "num-fmt".
+     *
+     * @var string
+     */
+    const DATATABLES_TYPE_NUM_FMT = "num-fmt";
+
+    /**
+     * Type "string".
+     *
+     * @var string
+     */
+    const DATATABLES_TYPE_STRING = "string";
 
 }

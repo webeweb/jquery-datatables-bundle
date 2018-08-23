@@ -145,11 +145,51 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
      * Constructor.
      */
     protected function __construct() {
-        $this->setCellType("td");
+        $this->setCellType(self::DATATABLES_CELL_TYPE_TD);
         $this->setMapping(new DataTablesMapping());
         $this->setOrderable(true);
         $this->setSearchable(true);
         $this->setVisible(true);
+    }
+
+    /**
+     * DataTables cell types.
+     *
+     * @return array Returns the cell types.
+     */
+    public static function dtCellTypes() {
+        return [
+            self::DATATABLES_CELL_TYPE_TD,
+            self::DATATABLES_CELL_TYPE_TH,
+        ];
+    }
+
+    /**
+     * DataTables order sequences.
+     *
+     * @return array Returns the order sequences.
+     */
+    public static function dtOrderSequences() {
+        return [
+            self::DATATABLES_ORDER_SEQUENCE_ASC,
+            self::DATATABLES_ORDER_SEQUENCE_DESC,
+        ];
+    }
+
+    /**
+     * DataTables types.
+     *
+     * @return array Returns the types.
+     */
+    public static function dtTypes() {
+        return [
+            self::DATATABLES_TYPE_DATE,
+            self::DATATABLES_TYPE_HTML,
+            self::DATATABLES_TYPE_HTML_NUM,
+            self::DATATABLES_TYPE_NUM,
+            self::DATATABLES_TYPE_NUM_FMT,
+            self::DATATABLES_TYPE_STRING,
+        ];
     }
 
     /**
@@ -320,7 +360,7 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
      * @param string $cellType The column cell type.
      * @return DataTablesColumn Returns a column.
      */
-    public static function newInstance($data, $name, $cellType = "td") {
+    public static function newInstance($data, $name, $cellType = self::DATATABLES_CELL_TYPE_TD) {
 
         // Initialize a column.
         $dtColumn = new DataTablesColumn();
@@ -382,7 +422,10 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
      * @return DataTablesColumn Returns this column.
      */
     public function setCellType($cellType) {
-        $this->cellType = (true === in_array($cellType, ["td", "th"]) ? $cellType : "td");
+        if (false === in_array($cellType, self::dtCellTypes())) {
+            $cellType = self::DATATABLES_CELL_TYPE_TD;
+        }
+        $this->cellType = $cellType;
         return $this;
     }
 
@@ -481,7 +524,10 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
      * @return DataTablesColumn Returns this column.
      */
     public function setOrderSequence($orderSequence) {
-        $this->orderSequence = (true === in_array($orderSequence, ["asc", "desc"]) ? $orderSequence : null);
+        if (false === in_array($orderSequence, self::dtOrderSequences())) {
+            $orderSequence = null;
+        }
+        $this->orderSequence = $orderSequence;
         return $this;
     }
 
@@ -536,7 +582,10 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
      * @return DataTablesColumn Returns this column.
      */
     public function setType($type) {
-        $this->type = (true === in_array($type, ["date", "num", "num-fmt", "html", "html-num", "string"]) ? $type : null);
+        if (false === in_array($type, self::dtTypes())) {
+            $type = null;
+        }
+        $this->type = $type;
         return $this;
     }
 
