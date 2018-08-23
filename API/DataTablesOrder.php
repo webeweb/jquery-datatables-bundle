@@ -41,6 +41,18 @@ class DataTablesOrder implements DataTablesOrderInterface {
     }
 
     /**
+     * DataTables dirs.
+     *
+     * @return array Returns the dirs.
+     */
+    public static function dtDirs() {
+        return [
+            self::DATATABLES_DIR_ASC,
+            self::DATATABLES_DIR_DESC,
+        ];
+    }
+
+    /**
      * Get the column.
      *
      * @return integer Returns the column.
@@ -111,7 +123,10 @@ class DataTablesOrder implements DataTablesOrderInterface {
      * @return DataTablesOrder Returns this order.
      */
     protected function setDir($dir) {
-        $this->dir = strtoupper(true === in_array($dir, ["asc", "desc"]) ? $dir : "asc");
+        if (false === in_array($dir, self::dtDirs())) {
+            $dir = self::DATATABLES_DIR_ASC;
+        }
+        $this->dir = strtoupper($dir);
         return $this;
     }
 

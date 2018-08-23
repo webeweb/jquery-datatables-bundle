@@ -24,6 +24,20 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 interface DataTablesOrderInterface {
 
     /**
+     * Dir "asc".
+     *
+     * @var string
+     */
+    const DATATABLES_DIR_ASC = "asc";
+
+    /**
+     * Dir "desc".
+     *
+     * @var string
+     */
+    const DATATABLES_DIR_DESC = "desc";
+
+    /**
      * Parameter "column".
      *
      * @var string
