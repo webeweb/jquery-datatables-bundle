@@ -20,14 +20,14 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
 interface DataTablesCSVExporterInterface {
 
     /**
-     * Export a DataTables columns.
+     * Export a columns.
      *
      * @return array Returns an array representing the columns.
      */
     public function exportColumns();
 
     /**
-     * Export a DataTables row.
+     * Export a row.
      *
      * @param object $entity The entity.
      * @return array Returns an array representing this row.

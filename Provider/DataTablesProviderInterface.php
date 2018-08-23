@@ -30,9 +30,9 @@ interface DataTablesProviderInterface extends DataTablesResponseInterface {
     const TAG_NAME = "webeweb.jquerydatatables.provider";
 
     /**
-     * Get the DataTables columns.
+     * Get the columns.
      *
-     * @return DataTablesColumn[] Returns the DataTables columns.
+     * @return DataTablesColumn[] Returns the columns.
      */
     public function getColumns();
 
@@ -72,21 +72,21 @@ interface DataTablesProviderInterface extends DataTablesResponseInterface {
     public function getView();
 
     /**
-     * Render a DataTables column.
+     * Render a column.
      *
-     * @param DataTablesColumn $dtColumn The DataTables column.
+     * @param DataTablesColumn $dtColumn The column.
      * @param object $entity The entity.
-     * @return string Returns the rendered DataTables column.
+     * @return string Returns the rendered column.
      */
     public function renderColumn(DataTablesColumn $dtColumn, $entity);
 
     /**
-     * Render a DataTables row.
+     * Render a row.
      *
-     * @param string $dtRow The DataTables row.
+     * @param string $dtRow The row.
      * @param object $entity The entity.
      * @param integer $rowNumber The row number.
-     * @return string Returns the rendered DataTables row.
+     * @return string Returns the rendered row.
      */
     public function renderRow($dtRow, $entity, $rowNumber);
 }
