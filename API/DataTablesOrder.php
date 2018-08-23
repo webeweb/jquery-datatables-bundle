@@ -62,11 +62,11 @@ class DataTablesOrder implements DataTablesOrderInterface {
      * Parse a raw orders.
      *
      * @param array $rawOrders The raw orders.
-     * @return DataTablesOrder[] Returns the DataTables orders.
+     * @return DataTablesOrder[] Returns the orders.
      */
     public static function parse(array $rawOrders) {
 
-        // Initialize the DataTables orders.
+        // Initialize the orders.
         $dtOrders = [];
 
         // Handle each raw order.
@@ -80,16 +80,16 @@ class DataTablesOrder implements DataTablesOrderInterface {
                 continue;
             }
 
-            // Create a DataTables order.
+            // Create a order.
             $dtOrder = new DataTablesOrder();
             $dtOrder->setColumn(intval($current[self::DATATABLES_PARAMETER_COLUMN]));
             $dtOrder->setDir($current[self::DATATABLES_PARAMETER_DIR]);
 
-            // Add the DataTables order.
+            // Add the order.
             $dtOrders[] = $dtOrder;
         }
 
-        // Return the DataTables orders.
+        // Return the orders.
         return $dtOrders;
     }
 
@@ -97,7 +97,7 @@ class DataTablesOrder implements DataTablesOrderInterface {
      * Set the column.
      *
      * @param integer $column The column.
-     * @return DataTablesOrder Returns this DataTables order.
+     * @return DataTablesOrder Returns this order.
      */
     protected function setColumn($column) {
         $this->column = (0 <= $column ? $column : null);
@@ -108,7 +108,7 @@ class DataTablesOrder implements DataTablesOrderInterface {
      * Set the dir.
      *
      * @param string $dir The dir.
-     * @return DataTablesOrder Returns this DataTables order.
+     * @return DataTablesOrder Returns this order.
      */
     protected function setDir($dir) {
         $this->dir = strtoupper(true === in_array($dir, ["asc", "desc"]) ? $dir : "asc");

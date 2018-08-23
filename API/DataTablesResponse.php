@@ -76,7 +76,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     /**
      * Add a row.
      *
-     * @return DataTablesResponse Returns this DataTables response.
+     * @return DataTablesResponse Returns this response.
      */
     public function addRow() {
 
@@ -179,20 +179,20 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     }
 
     /**
-     * Create a DataTables response instance.
+     * Create a response instance.
      *
      * @param DataTablesWrapper $wrapper The wrapper.
      * @param DataTablesRequest $request The request.
-     * @return DataTablesResponse Returns the DataTables response.
+     * @return DataTablesResponse Returns the response.
      */
     public static function parse(DataTablesWrapper $wrapper, DataTablesRequest $request) {
 
-        // Initialize a DataTables response.
+        // Initialize a response.
         $dtResponse = new DataTablesResponse();
         $dtResponse->setDraw($request->getDraw());
         $dtResponse->setWrapper($wrapper);
 
-        // Return the DataTables response.
+        // Return the response.
         return $dtResponse;
     }
 
@@ -200,7 +200,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      * Set the data.
      *
      * @param array $data The data.
-     * @return DataTablesResponse Returns this DataTables response.
+     * @return DataTablesResponse Returns this response.
      */
     protected function setData(array $data) {
         $this->data = $data;
@@ -211,7 +211,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      * Set the draw.
      *
      * @param integer $draw The draw.
-     * @return DataTablesResponse Returns the DataTables response.
+     * @return DataTablesResponse Returns the response.
      */
     protected function setDraw($draw) {
         $this->draw = $draw;
@@ -222,7 +222,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      * Set the error.
      *
      * @param string $error The error.
-     * @return DataTablesResponse Returns this DataTables response.
+     * @return DataTablesResponse Returns this response.
      */
     public function setError($error) {
         $this->error = $error;
@@ -233,7 +233,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      * Set the records filtered.
      *
      * @param integer $recordsFiltered The records filtered.
-     * @return DataTablesResponse Returns this DataTables response.
+     * @return DataTablesResponse Returns this response.
      */
     public function setRecordsFiltered($recordsFiltered) {
         $this->recordsFiltered = $recordsFiltered;
@@ -244,7 +244,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      * Set the records total.
      *
      * @param integer $recordsTotal The records total.
-     * @return DataTablesResponse Returns this DataTables response.
+     * @return DataTablesResponse Returns this response.
      */
     public function setRecordsTotal($recordsTotal) {
         $this->recordsTotal = $recordsTotal;
@@ -256,7 +256,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      *
      * @param string $data The column data.
      * @param string $value The column value.
-     * @return DataTablesResponse Returns this DataTables response.
+     * @return DataTablesResponse Returns this response.
      */
     public function setRow($data, $value) {
 
@@ -268,7 +268,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
             $this->data[$index][$data] = $value;
         }
 
-        // Returns the DataTables response.
+        // Returns the response.
         return $this;
     }
 
@@ -276,7 +276,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      * Set the wrapper.
      *
      * @param DataTablesWrapper $wrapper The wrapper.
-     * @return DataTablesResponse Returns this DataTables response.
+     * @return DataTablesResponse Returns this response.
      */
     protected function setWrapper(DataTablesWrapper $wrapper) {
         $this->wrapper = $wrapper;

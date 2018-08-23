@@ -115,7 +115,7 @@ class DataTablesWrapper implements HTTPInterface {
      * Add a column.
      *
      * @param DataTablesColumn $column The column.
-     * @return DataTablesWrapper Returns this DataTables wrapper.
+     * @return DataTablesWrapper Returns this wrapper.
      */
     public function addColumn(DataTablesColumn $column) {
         if (null === $column->getMapping()->getPrefix()) {
@@ -232,7 +232,7 @@ class DataTablesWrapper implements HTTPInterface {
      * Parse a request.
      *
      * @param Request $request The request.
-     * @return DataTablesWrapper Returns this DataTables wrapper.
+     * @return DataTablesWrapper Returns this wrapper.
      */
     public function parse(Request $request) {
         $this->request  = DataTablesRequest::parse($this, $request);
@@ -244,7 +244,7 @@ class DataTablesWrapper implements HTTPInterface {
      * Remove a column.
      *
      * @param DataTablesColumn $column The column.
-     * @return DataTablesWrapper Returns this DataTables wrapper.
+     * @return DataTablesWrapper Returns this wrapper.
      */
     public function removeColumn(DataTablesColumn $column) {
         if (true === array_key_exists($column->getData(), $this->columns)) {
@@ -258,7 +258,7 @@ class DataTablesWrapper implements HTTPInterface {
      * Set the columns.
      *
      * @param DataTablesColumn[] $columns The columns.
-     * @return DataTablesWrapper Returns this DataTables wrapper.
+     * @return DataTablesWrapper Returns this wrapper.
      */
     private function setColumns(array $columns) {
         $this->columns = $columns;
@@ -269,7 +269,7 @@ class DataTablesWrapper implements HTTPInterface {
      * Set the method.
      *
      * @param string $method The method.
-     * @return DataTablesWrapper Returns this DataTables wrapper.
+     * @return DataTablesWrapper Returns this wrapper.
      */
     public function setMethod($method) {
         $this->method = (true === in_array($method, [self::HTTP_METHOD_GET, self::HTTP_METHOD_POST]) ? $method : self::HTTP_METHOD_POST);
@@ -280,7 +280,7 @@ class DataTablesWrapper implements HTTPInterface {
      * Set the name.
      *
      * @param string $name The name.
-     * @return DataTablesWrapper Returns this DataTables wrapper.
+     * @return DataTablesWrapper Returns this wrapper.
      */
     public function setName($name) {
         $this->name = $name;
@@ -291,7 +291,7 @@ class DataTablesWrapper implements HTTPInterface {
      * Set the order.
      *
      * @param array $order The order.
-     * @return DataTablesWrapper Returns this DataTables wrapper.
+     * @return DataTablesWrapper Returns this wrapper.
      */
     public function setOrder(array $order) {
         $this->order = $order;
@@ -302,7 +302,7 @@ class DataTablesWrapper implements HTTPInterface {
      * Set the processing.
      *
      * @param boolean $processing The processing.
-     * @return DataTablesWrapper Returns this DataTables wrapper.
+     * @return DataTablesWrapper Returns this wrapper.
      */
     public function setProcessing($processing) {
         $this->processing = (false === $processing ? false : true);
@@ -313,7 +313,7 @@ class DataTablesWrapper implements HTTPInterface {
      * Set the server side.
      *
      * @param boolean $serverSide The server side.
-     * @return DataTablesWrapper Returns this DataTables wrapper.
+     * @return DataTablesWrapper Returns this wrapper.
      */
     public function setServerSide($serverSide) {
         $this->serverSide = (false === $serverSide ? false : true);
@@ -324,7 +324,7 @@ class DataTablesWrapper implements HTTPInterface {
      * Set the URL.
      *
      * @param string $url The UTL.
-     * @return DataTablesWrapper Returns this DataTables wrapper.
+     * @return DataTablesWrapper Returns this wrapper.
      */
     public function setUrl($url) {
         $this->url = $url;

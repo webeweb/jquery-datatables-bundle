@@ -24,14 +24,14 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 interface DataTablesSearchInterface {
 
     /**
-     * DataTables parameter "regex".
+     * Parameter "regex".
      *
      * @var string
      */
     const DATATABLES_PARAMETER_REGEX = "regex";
 
     /**
-     * DataTables parameter "value".
+     * Parameter "value".
      *
      * @var string
      */

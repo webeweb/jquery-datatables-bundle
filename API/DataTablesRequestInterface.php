@@ -24,42 +24,42 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 interface DataTablesRequestInterface {
 
     /**
-     * DataTables parameter "columns".
+     * Parameter "columns".
      *
      * @var string
      */
     const DATATABLES_PARAMETER_COLUMNS = "columns";
 
     /**
-     * DataTables parameter "draw".
+     * Parameter "draw".
      *
      * @var string
      */
     const DATATABLES_PARAMETER_DRAW = "draw";
 
     /**
-     * DataTables parameter "length".
+     * Parameter "length".
      *
      * @var string
      */
     const DATATABLES_PARAMETER_LENGTH = "length";
 
     /**
-     * DataTables parameter "order".
+     * Parameter "order".
      *
      * @var string
      */
     const DATATABLES_PARAMETER_ORDER = "order";
 
     /**
-     * DataTables parameter "search".
+     * Parameter "search".
      *
      * @var string
      */
     const DATATABLES_PARAMETER_SEARCH = "search";
 
     /**
-     * DataTables parameter "search".
+     * Parameter "search".
      *
      * @var string
      */

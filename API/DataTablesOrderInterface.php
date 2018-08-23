@@ -24,14 +24,14 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 interface DataTablesOrderInterface {
 
     /**
-     * DataTables parameter "column".
+     * Parameter "column".
      *
      * @var string
      */
     const DATATABLES_PARAMETER_COLUMN = "column";
 
     /**
-     * DataTables parameter "dir".
+     * Parameter "dir".
      *
      * @var string
      */
