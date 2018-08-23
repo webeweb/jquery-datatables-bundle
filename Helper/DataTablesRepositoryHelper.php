@@ -77,8 +77,8 @@ class DataTablesRepositoryHelper {
                 $mapping = $dtColumn->getMapping();
 
                 // Add.
-                $wheres[] = $mapping->getAlias() . " LIKE :" . $mapping->getPrefix() . $mapping->getColumn();
-                $params[] = ":" . $mapping->getPrefix() . $mapping->getColumn();
+                $wheres[] = DataTablesMappingHelper::getWhere($mapping);
+                $params[] = DataTablesMappingHelper::getParam($mapping);
                 $values[] = "%" . ("AND" === $operator ? $dtColumn->getSearch()->getValue() : $dtWrapper->getRequest()->getSearch()->getValue()) . "%";
             }
         }
