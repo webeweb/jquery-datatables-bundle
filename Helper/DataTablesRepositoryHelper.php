@@ -23,21 +23,21 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 class DataTablesRepositoryHelper {
 
     /**
-     * Append a DataTables ORDER clause.
+     * Append an ORDER clause.
      *
      * @param QueryBuilder $queryBuilder The query builder.
-     * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
+     * @param DataTablesWrapper $dtWrapper The wrapper.
      * @return void
      */
     public static function appendOrder(QueryBuilder $queryBuilder, DataTablesWrapper $dtWrapper) {
 
-        // Handle each DataTables order.
+        // Handle each order.
         foreach ($dtWrapper->getRequest()->getOrder() as $dtOrder) {
 
-            // Get the DataTables column.
+            // Get the column.
             $dtColumn = array_values($dtWrapper->getColumns())[$dtOrder->getColumn()];
 
-            // Check if the DataTables column is orderable.
+            // Check if the column is orderable.
             if (false === $dtColumn->getOrderable()) {
                 continue;
             }
@@ -48,10 +48,10 @@ class DataTablesRepositoryHelper {
     }
 
     /**
-     * Append a DataTables WHERE clause.
+     * Append a WHERE clause.
      *
      * @param QueryBuilder $queryBuilder The query builder.
-     * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
+     * @param DataTablesWrapper $dtWrapper The wrapper.
      * @return void
      */
     public static function appendWhere(QueryBuilder $queryBuilder, DataTablesWrapper $dtWrapper) {
@@ -67,13 +67,13 @@ class DataTablesRepositoryHelper {
         $params = [];
         $values = [];
 
-        // Handle each DataTables column.
+        // Handle each column.
         foreach ($dtWrapper->getRequest()->getColumns() as $dtColumn) {
 
-            // Check the DataTables column.
+            // Check the column.
             if ("OR" === $operator || "" !== $dtColumn->getSearch()->getValue()) {
 
-                // Get the DataTables mapping.
+                // Get the mapping.
                 $mapping = $dtColumn->getMapping();
 
                 // Add.
@@ -91,21 +91,21 @@ class DataTablesRepositoryHelper {
     }
 
     /**
-     * Determines a DataTables operator.
+     * Determines a operator.
      *
-     * @param DataTablesWrapper $dtWrapper The DataTables wrapper.
-     * @return string Returns the DataTables operator.
+     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @return string Returns the operator.
      */
     public static function determineOperator(DataTablesWrapper $dtWrapper) {
 
-        // Check if the DataTables columns defines a search.
+        // Check if a column defines a search.
         foreach ($dtWrapper->getRequest()->getColumns() as $dtColumn) {
             if ("" !== $dtColumn->getSearch()->getValue()) {
                 return "AND";
             }
         }
 
-        // Check if the DataTables defines a search.
+        // Check if the wrappe defines a search.
         if ("" !== $dtWrapper->getRequest()->getSearch()->getValue()) {
             return "OR";
         }

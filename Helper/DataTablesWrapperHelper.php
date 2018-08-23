@@ -23,20 +23,20 @@ use WBW\Library\Core\Argument\StringHelper;
 class DataTablesWrapperHelper {
 
     /**
-     * Get a DataTables name.
+     * Get a name.
      *
      * @param DataTablesWrapper $dtWrapper The wrapper.
-     * @return string Returns the DataTables name.
+     * @return string Returns the name.
      */
     public static function getName(DataTablesWrapper $dtWrapper) {
         return "dt" . preg_replace("/[^A-Za-z0-9]/", "", $dtWrapper->getName());
     }
 
     /**
-     * Get a DataTables options.
+     * Get a options.
      *
      * @param DataTablesWrapper $dtWrapper The wrapper.
-     * @return array Returns the DataTables options.
+     * @return array Returns the options.
      */
     public static function getOptions(DataTablesWrapper $dtWrapper) {
 
