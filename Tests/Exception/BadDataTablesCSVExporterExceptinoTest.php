@@ -32,7 +32,7 @@ final class BaDataTablesCSVExporterException extends AbstractJQueryDataTablesFra
 
         $obj = new BadDataTablesCSVExporterException("exception");
 
-        $this->assertEquals("The DataTables provider \"Exception\" must implement DataTablesCSVExporterInterface", $obj->getMessage());
+        $this->assertEquals("The DataTables CSV exporter \"Exception\" must implement DataTablesCSVExporterInterface", $obj->getMessage());
     }
 
 }
