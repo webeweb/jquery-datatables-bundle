@@ -51,6 +51,13 @@ class DataTablesWrapper implements HTTPInterface {
     private $name;
 
     /**
+     * Options.
+     *
+     * @var DataTablesOptions
+     */
+    private $options;
+
+    /**
      * Order.
      *
      * @var array
@@ -175,6 +182,15 @@ class DataTablesWrapper implements HTTPInterface {
     }
 
     /**
+     * Get the options.
+     *
+     * @return DataTablesOptions Returns the options.
+     */
+    public function getOptions() {
+        return $this->options;
+    }
+
+    /**
      * Get the order.
      *
      * @return array Returns the order.
@@ -284,6 +300,17 @@ class DataTablesWrapper implements HTTPInterface {
      */
     public function setName($name) {
         $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * Set the options.
+     *
+     * @param DataTablesOptions $options The options.
+     * @return DataTablesWrapper Returns this wrapper.
+     */
+    public function setOptions(DataTablesOptions $options) {
+        $this->options = $options;
         return $this;
     }
 

@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Cases\AbstractJQueryDataTablesFrameworkTestCase;
 
@@ -37,6 +38,7 @@ final class DataTablesWrapperTest extends AbstractJQueryDataTablesFrameworkTestC
         $this->assertEquals([], $obj->getColumns());
         $this->assertNull($obj->getMapping()->getPrefix());
         $this->assertEquals("POST", $obj->getMethod());
+        $this->assertNull($obj->getOptions());
         $this->assertEquals("name", $obj->getName());
         $this->assertEquals([], $obj->getOrder());
         $this->assertTrue($obj->getProcessing());
@@ -149,6 +151,21 @@ final class DataTablesWrapperTest extends AbstractJQueryDataTablesFrameworkTestC
 
         $obj->setName("othername");
         $this->assertEquals("othername", $obj->getName());
+    }
+
+    /**
+     * Tests the setOptions() method.
+     *
+     * @return void
+     */
+    public function testSetOptions() {
+
+        $obj = new DataTablesWrapper("POST", "url", "name");
+
+        $arg = new DataTablesOptions();
+
+        $obj->setOptions($arg);
+        $this->assertSame($arg, $obj->getOptions());
     }
 
     /**
