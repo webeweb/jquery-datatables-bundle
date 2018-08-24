@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Cases\AbstractJQueryDataTablesFrameworkTestCase;
 
 /**
  * DataTables column test.
@@ -21,7 +21,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Column
  * @final
  */
-final class DataTablesColumnTest extends PHPUnit_Framework_TestCase {
+final class DataTablesColumnTest extends AbstractJQueryDataTablesFrameworkTestCase {
 
     /**
      * Tests the newInstance() method.

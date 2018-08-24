@@ -11,10 +11,10 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
-use PHPUnit_Framework_TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Cases\AbstractJQueryDataTablesFrameworkTestCase;
 
 /**
  * DataTables wrapper test.
@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Wrapper
  * @final
  */
-final class DataTablesWrapperTest extends PHPUnit_Framework_TestCase {
+final class DataTablesWrapperTest extends AbstractJQueryDataTablesFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

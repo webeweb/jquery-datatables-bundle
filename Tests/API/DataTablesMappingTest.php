@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesMapping;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Cases\AbstractJQueryDataTablesFrameworkTestCase;
 
 /**
  * DataTables mapping test.
@@ -21,7 +21,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesMapping;
  * @package WBW\Bundle\JQuery\DataTablesBundle\API
  * @final
  */
-final class DataTablesMappingTest extends PHPUnit_Framework_TestCase {
+final class DataTablesMappingTest extends AbstractJQueryDataTablesFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

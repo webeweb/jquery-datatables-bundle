@@ -11,7 +11,6 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrder;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Cases\AbstractJQueryDataTablesFrameworkTestCase;
 
@@ -22,7 +21,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Cases\AbstractJQueryDataTablesFrame
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\API
  * @final
  */
-final class DataTablesOrderTest extends PHPUnit_Framework_TestCase {
+final class DataTablesOrderTest extends AbstractJQueryDataTablesFrameworkTestCase {
 
     /**
      * Tests the parse() method.
