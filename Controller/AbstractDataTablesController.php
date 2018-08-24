@@ -264,6 +264,11 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
             $dtWrapper->addColumn($dtColumn);
         }
 
+        // Set the options.
+        if (null !== $dtProvider->getOptions()) {
+            $dtWrapper->setOptions($dtProvider->getOptions());
+        }
+
         // Return the wrapper.
         return $dtWrapper;
     }
