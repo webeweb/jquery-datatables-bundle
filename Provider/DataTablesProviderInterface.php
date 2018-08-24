@@ -38,6 +38,13 @@ interface DataTablesProviderInterface extends DataTablesResponseInterface {
     public function getColumns();
 
     /**
+     * Get the CSV exporter.
+     *
+     * @return DataTablesCSVExporterInterface Returns the CSV exporter.
+     */
+    public function getCSVExporter();
+
+    /**
      * Get the entity.
      *
      * @return mixed Returns the entity (Entity::class for example).

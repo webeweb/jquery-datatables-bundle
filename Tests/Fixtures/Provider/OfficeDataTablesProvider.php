@@ -43,6 +43,13 @@ final class OfficeDataTablesProvider implements DataTablesProviderInterface {
     /**
      * {@inheritdoc}
      */
+    public function getCSVExporter() {
+        return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getEntity() {
         return Office::class;
     }
