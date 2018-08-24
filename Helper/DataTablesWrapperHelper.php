@@ -43,6 +43,11 @@ class DataTablesWrapperHelper {
         // Initialize the output.
         $output = [];
 
+        // Check the options.
+        if (null !== $dtWrapper->getOptions()) {
+            $output = $dtWrapper->getOptions()->getOptions();
+        }
+
         $output["ajax"]           = [];
         $output["ajax"]["method"] = $dtWrapper->getMethod();
         $output["ajax"]["url"]    = $dtWrapper->getUrl();
