@@ -46,8 +46,23 @@ class DataTablesOptions {
      */
     public function addOption($name, $value) {
         ArgumentHelper::isTypeOf($name, ArgumentHelper::ARGUMENT_STRING);
-        $this->options[$name] = $value;
+        if (false === array_key_exists($name, $this->options)) {
+            $this->options[$name] = $value;
+        }
         return $this;
+    }
+
+    /**
+     * Get an option.
+     *
+     * @param string $name The name.
+     * @return mixed Returns the option in case of success, null otherwise.
+     */
+    public function getOption($name) {
+        if (true === array_key_exists($name, $this->options)) {
+            return $this->options[$name];
+        }
+        return null;
     }
 
     /**
@@ -60,15 +75,39 @@ class DataTablesOptions {
     }
 
     /**
+     * Determines if an option exists.
+     *
+     * @param string $name The name.
+     * @return bool Returns true in case of success, false otherwise.
+     */
+    public function hasOption($name) {
+        return array_key_exists($name, $this->options);
+    }
+
+    /**
      * Remove an option.
      *
      * @param string $name The name.
      * @return DataTablesOptions Returns this option.
      */
     public function removeOption($name) {
-        if (true === in_array($name, array_key_exists($name, $this->options))) {
+        if (true === array_key_exists($name, $this->options)) {
             unset($this->options[$name]);
         }
+        return $this;
+    }
+
+    /**
+     * Set an option.
+     *
+     * @param string $name The name.
+     * @param mixed $value The value.
+     * @return DataTablesOptions Returns this options.
+     * @throws StringArgumentException Throws a string argument exception if the argument is not a string.
+     */
+    public function setOption($name, $value) {
+        ArgumentHelper::isTypeOf($name, ArgumentHelper::ARGUMENT_STRING);
+        $this->options[$name] = $value;
         return $this;
     }
 

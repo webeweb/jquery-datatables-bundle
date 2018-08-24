@@ -54,6 +54,80 @@ final class DataTablesOptionsTest extends AbstractJQueryDataTablesFrameworkTestC
             $this->assertInstanceOf(IllegalArgumentException::class, $ex);
             $this->assertEquals("The argument \"1\" is not a string", $ex->getMessage());
         }
+
+        $obj->addOption("name", "value");
+        $this->assertEquals(["name" => "value"], $obj->getOptions());
+    }
+
+    /**
+     * Tests the getOption() method.
+     *
+     * @return void
+     * @depends testAddOption
+     */
+    public function testGetOption() {
+
+        $obj = new DataTablesOptions();
+
+        $obj->addOption("name", "value");
+
+        $this->assertNotNull($obj->getOption("name"));
+        $this->assertNull($obj->getOption("exception"));
+    }
+
+    /**
+     * Tests the hasOption() method.
+     *
+     * @return void
+     * @depends testAddOption
+     */
+    public function testHasOption() {
+
+        $obj = new DataTablesOptions();
+
+        $obj->addOption("name", "value");
+
+        $this->assertTrue($obj->hasOption("name"));
+        $this->assertFalse($obj->hasOption("exception"));
+    }
+
+    /**
+     * Tests the removeOption() method.
+     *
+     * @return void
+     * @depends testAddOption
+     */
+    public function testRemoveOption() {
+
+        $obj = new DataTablesOptions();
+
+        $obj->addOption("name", "value");
+        $this->assertEquals(["name" => "value"], $obj->getOptions());
+
+        $obj->removeOption("name");
+        $this->assertEquals([], $obj->getOptions());
+    }
+
+    /**
+     * Tests the setOption() method.
+     *
+     * @return void
+     */
+    public function testSetOption() {
+
+        $obj = new DataTablesOptions();
+
+        try {
+
+            $obj->setOption(1, "value");
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(IllegalArgumentException::class, $ex);
+            $this->assertEquals("The argument \"1\" is not a string", $ex->getMessage());
+        }
+
+        $obj->setOption("name", "value");
+        $this->assertEquals(["name" => "value"], $obj->getOptions());
     }
 
 }
