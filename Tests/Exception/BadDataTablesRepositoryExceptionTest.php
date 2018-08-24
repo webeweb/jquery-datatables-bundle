@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Cases\AbstractJQueryDataTablesFrameworkTestCase;
 
 /**
  * Bad DataTables repository exception test.
@@ -21,7 +21,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryExceptio
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception
  * @final
  */
-final class BaDataTablesRepositoryException extends PHPUnit_Framework_TestCase {
+final class BaDataTablesRepositoryException extends AbstractJQueryDataTablesFrameworkTestCase {
 
     /**
      * Tests the __construct() method.
