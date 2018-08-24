@@ -64,6 +64,13 @@ final class OfficeDataTablesProvider implements DataTablesProviderInterface {
     /**
      * {@inheritdoc}
      */
+    public function getOptions() {
+        return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getPrefix() {
         return "o";
     }

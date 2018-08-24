@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
 
 /**
@@ -56,6 +57,13 @@ interface DataTablesProviderInterface extends DataTablesResponseInterface {
      * @return string Returns the provider name.
      */
     public function getName();
+
+    /**
+     * Get the options.
+     *
+     * @return DataTablesOptions Returns the options.
+     */
+    public function getOptions();
 
     /**
      * Get the Doctrine prefix.

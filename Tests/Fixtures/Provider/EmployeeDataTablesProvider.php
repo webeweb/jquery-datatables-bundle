@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee;
@@ -109,6 +110,13 @@ final class EmployeeDataTablesProvider implements DataTablesProviderInterface, D
      */
     public function getName() {
         return "employee";
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getOptions() {
+        return new DataTablesOptions();
     }
 
     /**
