@@ -150,8 +150,8 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
         // Log a debug trace.
         $this->getLogger()->debug(sprintf("DataTables controller found a CSV exporter with name \"%s\"", $dtProvider->getName()));
 
-        // Return the provider.
-        return $dtProvider;
+        // Return the exporter.
+        return $dtExporter;
     }
 
     /**
