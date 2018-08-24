@@ -81,9 +81,10 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
      * @param DataTablesRepositoryInterface $repository The repository.
+     * @param DataTablesCSVExporterInterface $dtExporter The exporter.
      * @return void
      */
-    protected function exportCallback(DataTablesProviderInterface $dtProvider, DataTablesRepositoryInterface $repository) {
+    protected function exportCallback(DataTablesProviderInterface $dtProvider, DataTablesRepositoryInterface $repository, DataTablesCSVExporterInterface $dtExporter) {
 
         // Get the entities manager.
         $em = $this->getDoctrine()->getManager();
@@ -92,7 +93,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
         $stream = fopen("php://output", "w+");
 
         // Export the columns.
-        fputcsv($stream, $dtProvider->exportColumns(), ";");
+        fputcsv($stream, $dtExporter->exportColumns(), ";");
 
         // Paginates.
         $total = $repository->dataTablesCountExported($dtProvider);
@@ -115,7 +116,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
             while (false !== ($row = $result->next())) {
 
                 // Export the entity.
-                fputcsv($stream, $dtProvider->exportRow($row[0]), ";");
+                fputcsv($stream, $dtExporter->exportRow($row[0]), ";");
 
                 // Detach the entity to avoid memory consumption.
                 $em->detach($row[0]);
@@ -128,26 +129,26 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
     /**
      * Get a CSV exporter.
      *
-     * @param string $name The provider name.
-     * @return DataTablesProviderInterface Returns the CSV exporter.
+     * @param DataTablesProviderInterface $dtProvider The provider.
+     * @return DataTablesCSVExporterInterface Returns the CSV exporter.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      * @throws BadDataTablesCSVExporterException Throws a bad CSV exporter exception.
      */
-    protected function getDataTablesCSVExporter($name) {
+    protected function getDataTablesCSVExporter(DataTablesProviderInterface $dtProvider) {
 
         // Get the provider.
-        $dtProvider = $this->getDataTablesProvider($name);
+        $dtExporter = $dtProvider->getCSVExporter();
 
         // Log a debug trace.
-        $this->getLogger()->debug(sprintf("DataTables controller search for a CSV exporter with name \"%s\"", $name));
+        $this->getLogger()->debug(sprintf("DataTables controller search for a CSV exporter with name \"%s\"", $dtProvider->getName()));
 
         // Check the CSV exporter.
-        if (false === ($dtProvider instanceOf DataTablesCSVExporterInterface)) {
-            throw new BadDataTablesCSVExporterException($dtProvider);
+        if (false === ($dtExporter instanceOf DataTablesCSVExporterInterface)) {
+            throw new BadDataTablesCSVExporterException(null !== $dtExporter ? $dtExporter : "null");
         }
 
         // Log a debug trace.
-        $this->getLogger()->debug(sprintf("DataTables controller found a CSV exporter with name \"%s\"", $name));
+        $this->getLogger()->debug(sprintf("DataTables controller found a CSV exporter with name \"%s\"", $dtProvider->getName()));
 
         // Return the provider.
         return $dtProvider;

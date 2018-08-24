@@ -97,9 +97,12 @@ class DataTablesController extends AbstractDataTablesController {
     public function exportAction($name) {
 
         // Get the provider.
-        $dtProvider = $this->getDataTablesCSVExporter($name);
+        $dtProvider = $this->getDataTablesProvider($name);
 
-        // Get the entities repository.
+        // Get the exporter.
+        $dtExporter = $this->getDataTablesCSVExporter($dtProvider);
+
+        // Get the entity repository.
         $repository = $this->getDataTablesRepository($dtProvider);
 
         // Initialize the filename.
@@ -109,8 +112,8 @@ class DataTablesController extends AbstractDataTablesController {
         $response = new StreamedResponse();
         $response->headers->set("Content-Disposition", "attachment; filename=\"" . $filename . "\"");
         $response->headers->set("Content-Type", "text/csv; charset=utf-8");
-        $response->setCallback(function() use($dtProvider, $repository) {
-            $this->exportCallback($dtProvider, $repository);
+        $response->setCallback(function() use($dtProvider, $repository, $dtExporter) {
+            $this->exportCallback($dtProvider, $repository, $dtExporter);
         });
         $response->setStatusCode(200);
 
