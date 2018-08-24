@@ -731,9 +731,9 @@ Modify the provider in the `src/AppBundle/Provider/EmployeeDataTablesProvider.ph
 
         // ...
 
-        $dtColumns[] = DataTablesColumn::newInstance("office", "Office")->getMapping()->setColumn("name")->setPrefix("o");
-
-        // ...
+        $dtColumns[2]->getMapping()
+            ->setColumn("name")
+            ->setPrefix("o");
 
         // Returns the columns.
         return $dtColumns;
