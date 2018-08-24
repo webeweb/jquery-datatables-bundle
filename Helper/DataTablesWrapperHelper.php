@@ -12,7 +12,6 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
-use WBW\Library\Core\Argument\StringHelper;
 
 /**
  * DataTables wrapper helper.
@@ -48,10 +47,10 @@ class DataTablesWrapperHelper {
             $output = $dtWrapper->getOptions()->getOptions();
         }
 
-        $output["ajax"]           = [];
-        $output["ajax"]["method"] = $dtWrapper->getMethod();
-        $output["ajax"]["url"]    = $dtWrapper->getUrl();
-        $output["columns"]        = [];
+        $output["ajax"]         = [];
+        $output["ajax"]["type"] = $dtWrapper->getMethod();
+        $output["ajax"]["url"]  = $dtWrapper->getUrl();
+        $output["columns"]      = [];
 
         foreach ($dtWrapper->getColumns() as $current) {
             $output["columns"][] = $current->toArray();
@@ -63,8 +62,8 @@ class DataTablesWrapperHelper {
             $output["order"][] = $current->toArray();
         }
 
-        $output["processing"] = StringHelper::parseBoolean($dtWrapper->getProcessing());
-        $output["serverSide"] = StringHelper::parseBoolean($dtWrapper->getServerSide());
+        $output["processing"] = $dtWrapper->getProcessing();
+        $output["serverSide"] = $dtWrapper->getServerSide();
 
         // Return the output.
         return $output;

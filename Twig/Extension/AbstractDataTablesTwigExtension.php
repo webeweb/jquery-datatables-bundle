@@ -34,19 +34,7 @@ abstract class AbstractDataTablesTwigExtension extends Twig_Extension {
     const JQUERY_DATATABLES = <<< 'EOTXT'
 <script type="text/javascript">
     $(document).ready(function () {
-        var %var% = $("%selector%").DataTable({
-            ajax: {
-                type: "%method%",
-                url: "%url%"
-            },
-            columns: %columns%,
-            language: {
-                url: "/bundles/jquerydatatables/datatables-i18n-1.10.16/%language%.json"
-            },
-            order: %order%,
-            processing: %processing%,
-            serverSide: %serverSide%
-        });
+        var %var% = $("%selector%").DataTable(%options%);
     });
 </script>
 EOTXT;
@@ -85,17 +73,19 @@ EOTXT;
         $dtOptions = DataTablesWrapperHelper::getOptions($dtWrapper);
 
         // Initialize the parameters.
-        $var        = DataTablesWrapperHelper::getName($dtWrapper);
-        $method     = $dtOptions["ajax"]["method"];
-        $url        = $dtOptions["ajax"]["url"];
-        $columns    = json_encode($dtOptions["columns"]);
-        $orders     = json_encode($dtOptions["order"]);
-        $processing = $dtOptions["processing"];
-        $serverSide = $dtOptions["serverSide"];
+        $var                 = DataTablesWrapperHelper::getName($dtWrapper);
+        $options             = $dtOptions;
+        $options["language"] = ["url" => "/bundles/jquerydatatables/datatables-i18n-1.10.16/" . $language . ".json"];
+
+        // Sort the options.
+        ksort($options);
 
         //
-        $searches = ["%var%", "%selector%", "%method%", "%url%", "%columns%", "%language%", "%order%", "%processing%", "%serverSide%"];
-        $replaces = [$var, null === $selector ? "#" . $var : $selector, $method, $url, $columns, $language, $orders, $processing, $serverSide];
+        $searches = ["%var%", "%selector%", "%options%"];
+        $replaces = [$var, null === $selector ? "#" . $var : $selector, json_encode($options, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)];
+
+        // Re-indent.
+        $replaces[2] = str_replace("\n", "\n        ", $replaces[2]);
 
         // Return the Javascript.
         return StringHelper::replace(self::JQUERY_DATATABLES, $searches, $replaces);

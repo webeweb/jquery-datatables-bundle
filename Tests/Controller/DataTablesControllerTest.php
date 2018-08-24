@@ -79,11 +79,11 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         $this->assertCount(5, $res);
         $this->assertCount(7, $res["columns"]);
 
-        $this->assertEquals("POST", $res["ajax"]["method"]);
+        $this->assertEquals("POST", $res["ajax"]["type"]);
         $this->assertEquals("/datatables/employee/index", $res["ajax"]["url"]);
         $this->assertEquals([], $res["order"]);
-        $this->assertEquals("true", $res["processing"]);
-        $this->assertEquals("true", $res["serverSide"]);
+        $this->assertEquals(true, $res["processing"]);
+        $this->assertEquals(true, $res["serverSide"]);
     }
 
     /**

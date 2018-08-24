@@ -47,8 +47,8 @@ final class DataTablesWrapperHelperTest extends AbstractJQueryDataTablesFramewor
 
         $res = [
             "ajax"       => [
-                "method" => "POST",
-                "url"    => "/datatables/employee/index",
+                "type" => "POST",
+                "url"  => "/datatables/employee/index",
             ],
             "order"      => [],
             "columns"    => [
@@ -60,8 +60,8 @@ final class DataTablesWrapperHelperTest extends AbstractJQueryDataTablesFramewor
                 ["cellType" => "td", "data" => "salary", "name" => "Salary"],
                 ["cellType" => "td", "data" => "actions", "name" => "Actions", "orderable" => false, "searchable" => false],
             ],
-            "processing" => "true",
-            "serverSide" => "true",
+            "processing" => true,
+            "serverSide" => true,
         ];
         $this->assertEquals($res, DataTablesWrapperHelper::getOptions($obj));
     }

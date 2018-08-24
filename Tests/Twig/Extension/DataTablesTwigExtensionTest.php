@@ -114,17 +114,55 @@ final class DataTablesTwigExtensionTest extends AbstractJQueryDataTablesFramewor
 <script type="text/javascript">
     $(document).ready(function () {
         var dtname = $("#dtname").DataTable({
-            ajax: {
-                type: "POST",
-                url: "url"
+            "ajax": {
+                "type": "POST",
+                "url": "url"
             },
-            columns: [{"cellType":"td","data":"name","name":"Name"},{"cellType":"td","data":"position","name":"Position"},{"cellType":"td","data":"office","name":"Office"},{"cellType":"td","data":"age","name":"Age"},{"cellType":"td","data":"startDate","name":"Start date"},{"cellType":"td","data":"salary","name":"Salary"},{"cellType":"td","data":"actions","name":"Actions","orderable":false,"searchable":false}],
-            language: {
-                url: "/bundles/jquerydatatables/datatables-i18n-1.10.16/English.json"
+            "columns": [
+                {
+                    "cellType": "td",
+                    "data": "name",
+                    "name": "Name"
+                },
+                {
+                    "cellType": "td",
+                    "data": "position",
+                    "name": "Position"
+                },
+                {
+                    "cellType": "td",
+                    "data": "office",
+                    "name": "Office"
+                },
+                {
+                    "cellType": "td",
+                    "data": "age",
+                    "name": "Age"
+                },
+                {
+                    "cellType": "td",
+                    "data": "startDate",
+                    "name": "Start date"
+                },
+                {
+                    "cellType": "td",
+                    "data": "salary",
+                    "name": "Salary"
+                },
+                {
+                    "cellType": "td",
+                    "data": "actions",
+                    "name": "Actions",
+                    "orderable": false,
+                    "searchable": false
+                }
+            ],
+            "language": {
+                "url": "/bundles/jquerydatatables/datatables-i18n-1.10.16/English.json"
             },
-            order: [],
-            processing: true,
-            serverSide: true
+            "order": [],
+            "processing": true,
+            "serverSide": true
         });
     });
 </script>
@@ -136,17 +174,55 @@ EOTXT;
 <script type="text/javascript">
     $(document).ready(function () {
         var dtname = $("#selector").DataTable({
-            ajax: {
-                type: "POST",
-                url: "url"
+            "ajax": {
+                "type": "POST",
+                "url": "url"
             },
-            columns: [{"cellType":"td","data":"name","name":"Name"},{"cellType":"td","data":"position","name":"Position"},{"cellType":"td","data":"office","name":"Office"},{"cellType":"td","data":"age","name":"Age"},{"cellType":"td","data":"startDate","name":"Start date"},{"cellType":"td","data":"salary","name":"Salary"},{"cellType":"td","data":"actions","name":"Actions","orderable":false,"searchable":false}],
-            language: {
-                url: "/bundles/jquerydatatables/datatables-i18n-1.10.16/French.json"
+            "columns": [
+                {
+                    "cellType": "td",
+                    "data": "name",
+                    "name": "Name"
+                },
+                {
+                    "cellType": "td",
+                    "data": "position",
+                    "name": "Position"
+                },
+                {
+                    "cellType": "td",
+                    "data": "office",
+                    "name": "Office"
+                },
+                {
+                    "cellType": "td",
+                    "data": "age",
+                    "name": "Age"
+                },
+                {
+                    "cellType": "td",
+                    "data": "startDate",
+                    "name": "Start date"
+                },
+                {
+                    "cellType": "td",
+                    "data": "salary",
+                    "name": "Salary"
+                },
+                {
+                    "cellType": "td",
+                    "data": "actions",
+                    "name": "Actions",
+                    "orderable": false,
+                    "searchable": false
+                }
+            ],
+            "language": {
+                "url": "/bundles/jquerydatatables/datatables-i18n-1.10.16/French.json"
             },
-            order: [],
-            processing: true,
-            serverSide: true
+            "order": [],
+            "processing": true,
+            "serverSide": true
         });
     });
 </script>
@@ -308,7 +384,7 @@ EOTXT;
         $i = 0;
         foreach ($this->dataTablesWrapper->getColumns() as $dtColumn) {
             $dtColumn->setClassname($dtColumn->getData());
-            $dtColumn->setWidth( ++$i);
+            $dtColumn->setWidth(++$i);
         }
 
         $arg9 = ["class" => "class", "thead" => true, "tfoot" => true];
