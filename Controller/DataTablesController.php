@@ -92,6 +92,7 @@ class DataTablesController extends AbstractDataTablesController {
      * @param string $name The provider name.
      * @return Response Returns the response.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
+     * @throws BadDataTablesCSVExporterException Throws a bad CSV exporter exception.
      * @throws BadDataTablesRepositoryException Throws a bad repository exception.
      */
     public function exportAction($name) {
