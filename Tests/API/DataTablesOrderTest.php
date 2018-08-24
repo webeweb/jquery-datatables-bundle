@@ -45,17 +45,26 @@ final class DataTablesOrderTest extends AbstractJQueryDataTablesFrameworkTestCas
 
         // Set an invalid order.
         $postData["order"][0]["column"] = "0";
-        unset($postData["order"][0]["dir"]);
+        $postData["order"][0]["dir"]    = "exception";
 
         $res1 = DataTablesOrder::parse($postData["order"]);
-        $this->assertCount(0, $res1);
+        $this->assertCount(1, $res1);
+        $this->assertEquals(0, $res1[0]->getColumn());
+        $this->assertEquals("ASC", $res1[0]->getDir());
+
+        // Set an invalid order.
+        $postData["order"][0]["column"] = "0";
+        unset($postData["order"][0]["dir"]);
+
+        $res2 = DataTablesOrder::parse($postData["order"]);
+        $this->assertCount(0, $res2);
 
         // Set an invalid order.
         unset($postData["order"][0]["column"]);
         unset($postData["order"][0]["dir"]);
 
-        $res2 = DataTablesOrder::parse($postData["order"]);
-        $this->assertCount(0, $res2);
+        $res3 = DataTablesOrder::parse($postData["order"]);
+        $this->assertCount(0, $res3);
     }
 
 }
