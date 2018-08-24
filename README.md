@@ -311,6 +311,7 @@ namespace AppBundle\Provider;
 
 use AppBundle\Entity\Employee;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 
@@ -402,6 +403,19 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
      */
     public function getName() {
         return "employee";
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getOptions() {
+
+        return null;
+
+        // Custom some options with the following code :
+        // $dtOptions = new DataTablesOptions();
+        // $dtOptions->addOption("searchDelay", 1000);
+        // return $dtOptions;
     }
 
     /**
