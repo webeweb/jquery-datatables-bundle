@@ -387,6 +387,13 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     /**
      * {@inheritdoc}
      */
+    public function getCSVExporter() {
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getEntity() {
         return Employee::class;
     }
@@ -430,6 +437,9 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
      */
     public function getView() {
         return null;
+
+        // Custom template can be use withe the following code :
+        // return "@App/Employee/index.html.twig";
     }
 
     /**
