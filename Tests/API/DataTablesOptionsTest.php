@@ -46,6 +46,7 @@ final class DataTablesOptionsTest extends AbstractJQueryDataTablesFrameworkTestC
 
         $obj = new DataTablesOptions();
 
+        // ===
         try {
 
             $obj->addOption(1, "value");
@@ -55,6 +56,7 @@ final class DataTablesOptionsTest extends AbstractJQueryDataTablesFrameworkTestC
             $this->assertEquals("The argument \"1\" is not a string", $ex->getMessage());
         }
 
+        // ===
         $obj->addOption("name", "value");
         $this->assertEquals(["name" => "value"], $obj->getOptions());
     }
@@ -117,6 +119,7 @@ final class DataTablesOptionsTest extends AbstractJQueryDataTablesFrameworkTestC
 
         $obj = new DataTablesOptions();
 
+        // ===
         try {
 
             $obj->setOption(1, "value");
@@ -126,6 +129,7 @@ final class DataTablesOptionsTest extends AbstractJQueryDataTablesFrameworkTestC
             $this->assertEquals("The argument \"1\" is not a string", $ex->getMessage());
         }
 
+        // ===
         $obj->setOption("name", "value");
         $this->assertEquals(["name" => "value"], $obj->getOptions());
     }

@@ -52,8 +52,10 @@ final class DataTablesResponseTest extends AbstractJQueryDataTablesFrameworkTest
 
         $obj = DataTablesResponse::parse($this->dataTablesWrapper, $this->dataTablesRequest);
 
+        // ===
         $this->assertCount(0, $obj->getData());
 
+        // ===
         $obj->addRow();
         $this->assertCount(1, $obj->getData());
     }

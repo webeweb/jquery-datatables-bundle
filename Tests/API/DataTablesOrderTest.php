@@ -37,7 +37,7 @@ final class DataTablesOrderTest extends AbstractJQueryDataTablesFrameworkTestCas
         $postData["order"][0]["column"] = "0";
         $postData["order"][0]["dir"]    = "asc";
 
-        //
+        // ===
         $res = DataTablesOrder::parse($postData["order"]);
         $this->assertCount(1, $res);
         $this->assertEquals(0, $res[0]->getColumn());

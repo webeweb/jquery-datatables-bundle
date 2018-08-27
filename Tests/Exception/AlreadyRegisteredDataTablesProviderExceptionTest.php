@@ -32,7 +32,8 @@ final class AlreadyRegisteredDataTablesProviderExceptionTest extends AbstractJQu
 
         $obj = new AlreadyRegisteredDataTablesProviderException("exception");
 
-        $this->assertEquals("A DataTables provider with name \"exception\" is already registered", $obj->getMessage());
+        $res = "A DataTables provider with name \"exception\" is already registered";
+        $this->assertEquals($res, $obj->getMessage());
     }
 
 }

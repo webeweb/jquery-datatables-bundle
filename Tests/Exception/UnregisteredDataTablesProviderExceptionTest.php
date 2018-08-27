@@ -32,7 +32,8 @@ final class UnregisteredDataTablesProviderExceptionTest extends AbstractJQueryDa
 
         $obj = new UnregisteredDataTablesProviderException("exception");
 
-        $this->assertEquals("None DataTables provider registered with name \"exception\"", $obj->getMessage());
+        $res = "None DataTables provider registered with name \"exception\"";
+        $this->assertEquals($res, $obj->getMessage());
     }
 
 }

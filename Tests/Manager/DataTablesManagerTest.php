@@ -66,12 +66,16 @@ final class DataTablesManagerTest extends AbstractJQueryDataTablesFrameworkTestC
 
         $obj = new DataTablesManager();
 
+        // ===
         $obj->registerProvider($this->dataTablesProvider);
         $this->assertCount(1, $obj->getProviders());
 
+        // ===
         try {
+
             $obj->registerProvider($this->dataTablesProvider);
         } catch (Exception $ex) {
+
             $this->assertInstanceOf(AlreadyRegisteredDataTablesProviderException::class, $ex);
             $this->assertEquals("A DataTables provider with name \"name\" is already registered", $ex->getMessage());
         }
@@ -86,12 +90,16 @@ final class DataTablesManagerTest extends AbstractJQueryDataTablesFrameworkTestC
 
         $obj = new DataTablesManager();
 
+        // ===
         $obj->registerProvider($this->dataTablesProvider);
         $this->assertSame($this->dataTablesProvider, $obj->getProvider($this->dataTablesProvider->getName()));
 
+        // ===
         try {
+
             $obj->getProvider("exception");
         } catch (Exception $ex) {
+
             $this->assertInstanceOf(UnregisteredDataTablesProviderException::class, $ex);
             $this->assertEquals("None DataTables provider registered with name \"exception\"", $ex->getMessage());
         }

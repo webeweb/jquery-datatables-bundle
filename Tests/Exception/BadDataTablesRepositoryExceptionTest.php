@@ -32,7 +32,8 @@ final class BaDataTablesRepositoryException extends AbstractJQueryDataTablesFram
 
         $obj = new BadDataTablesRepositoryException("exception");
 
-        $this->assertEquals("The DataTables repository \"Exception\" must implement DataTablesRepositoryInterface", $obj->getMessage());
+        $res = "The DataTables repository \"Exception\" must implement DataTablesRepositoryInterface";
+        $this->assertEquals($res, $obj->getMessage());
     }
 
 }

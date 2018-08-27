@@ -59,14 +59,17 @@ final class DataTablesColumnTest extends AbstractJQueryDataTablesFrameworkTestCa
 
         $obj = DataTablesColumn::newInstance("data", "name");
 
+        // ===
+        $obj->setCellType("exception");
+        $this->assertEquals("td", $obj->getCellType());
+
+        // ===
         $obj->setCellType("td");
         $this->assertEquals("td", $obj->getCellType());
 
+        // ===
         $obj->setCellType("th");
         $this->assertEquals("th", $obj->getCellType());
-
-        $obj->setCellType("exception");
-        $this->assertEquals("td", $obj->getCellType());
     }
 
     /**
@@ -156,12 +159,15 @@ final class DataTablesColumnTest extends AbstractJQueryDataTablesFrameworkTestCa
 
         $obj = DataTablesColumn::newInstance("data", "name");
 
+        // ===
         $obj->setOrderSequence("exception");
         $this->assertNull($obj->getOrderSequence());
 
+        // ===
         $obj->setOrderSequence("asc");
         $this->assertEquals("asc", $obj->getOrderSequence());
 
+        // ===
         $obj->setOrderSequence("desc");
         $this->assertEquals("desc", $obj->getOrderSequence());
     }
@@ -214,26 +220,33 @@ final class DataTablesColumnTest extends AbstractJQueryDataTablesFrameworkTestCa
 
         $obj = DataTablesColumn::newInstance("data", "name");
 
+        // ===
+        $obj->setType("exception");
+        $this->assertNull($obj->getType());
+
+        // ===
         $obj->setType("date");
         $this->assertEquals("date", $obj->getType());
 
+        // ===
         $obj->setType("num");
         $this->assertEquals("num", $obj->getType());
 
+        // ===
         $obj->setType("num-fmt");
         $this->assertEquals("num-fmt", $obj->getType());
 
+        // ===
         $obj->setType("html");
         $this->assertEquals("html", $obj->getType());
 
+        // ===
         $obj->setType("html-num");
         $this->assertEquals("html-num", $obj->getType());
 
+        // ===
         $obj->setType("string");
         $this->assertEquals("string", $obj->getType());
-
-        $obj->setType("exception");
-        $this->assertNull($obj->getType());
     }
 
     /**
@@ -271,62 +284,75 @@ final class DataTablesColumnTest extends AbstractJQueryDataTablesFrameworkTestCa
 
         $obj = DataTablesColumn::newInstance("data", "name");
 
-        $res1 = ["cellType" => "td", "data" => "data", "name" => "name"];
-        $this->assertEquals($res1, $obj->toArray());
+        // ===
+        $res01 = ["cellType" => "td", "data" => "data", "name" => "name"];
+        $this->assertEquals($res01, $obj->toArray());
 
+        // ===
         $obj->setClassname("classname");
-        $res2 = ["cellType" => "td", "classname" => "classname", "data" => "data", "name" => "name"];
-        $this->assertEquals($res2, $obj->toArray());
+        $res02 = ["cellType" => "td", "classname" => "classname", "data" => "data", "name" => "name"];
+        $this->assertEquals($res02, $obj->toArray());
 
+        // ===
         $obj->setClassname(null);
         $obj->setContentPadding("contentPadding");
-        $res3 = ["cellType" => "td", "contentPadding" => "contentPadding", "data" => "data", "name" => "name"];
-        $this->assertEquals($res3, $obj->toArray());
+        $res03 = ["cellType" => "td", "contentPadding" => "contentPadding", "data" => "data", "name" => "name"];
+        $this->assertEquals($res03, $obj->toArray());
 
+        // ===
         $obj->setContentPadding(null);
         $obj->setDefaultContent("defaultContent");
-        $res4 = ["cellType" => "td", "data" => "data", "defaultContent" => "defaultContent", "name" => "name"];
-        $this->assertEquals($res4, $obj->toArray());
+        $res04 = ["cellType" => "td", "data" => "data", "defaultContent" => "defaultContent", "name" => "name"];
+        $this->assertEquals($res04, $obj->toArray());
 
+        // ===
         $obj->setDefaultContent(null);
         $obj->setName("othername");
-        $res5 = ["cellType" => "td", "data" => "data", "name" => "othername"];
-        $this->assertEquals($res5, $obj->toArray());
+        $res05 = ["cellType" => "td", "data" => "data", "name" => "othername"];
+        $this->assertEquals($res05, $obj->toArray());
 
+        // ===
         $obj->setOrderData("orderData");
-        $res6 = ["cellType" => "td", "data" => "data", "name" => "othername", "orderData" => "orderData"];
-        $this->assertEquals($res6, $obj->toArray());
+        $res06 = ["cellType" => "td", "data" => "data", "name" => "othername", "orderData" => "orderData"];
+        $this->assertEquals($res06, $obj->toArray());
 
+        // ===
         $obj->setOrderData(null);
         $obj->setOrderDataType("orderDataType");
-        $res7 = ["cellType" => "td", "data" => "data", "name" => "othername", "orderDataType" => "orderDataType"];
-        $this->assertEquals($res7, $obj->toArray());
+        $res07 = ["cellType" => "td", "data" => "data", "name" => "othername", "orderDataType" => "orderDataType"];
+        $this->assertEquals($res07, $obj->toArray());
 
+        // ===
         $obj->setOrderDataType(null);
         $obj->setOrderSequence("asc");
-        $res8 = ["cellType" => "td", "data" => "data", "name" => "othername", "orderSequence" => "asc"];
-        $this->assertEquals($res8, $obj->toArray());
+        $res08 = ["cellType" => "td", "data" => "data", "name" => "othername", "orderSequence" => "asc"];
+        $this->assertEquals($res08, $obj->toArray());
 
+        // ===
         $obj->setOrderSequence(null);
         $obj->setOrderable(false);
-        $res9 = ["cellType" => "td", "data" => "data", "name" => "othername", "orderable" => false];
-        $this->assertEquals($res9, $obj->toArray());
+        $res09 = ["cellType" => "td", "data" => "data", "name" => "othername", "orderable" => false];
+        $this->assertEquals($res09, $obj->toArray());
 
+        // ===
         $obj->setOrderable(true);
         $obj->setSearchable(false);
         $res10 = ["cellType" => "td", "data" => "data", "name" => "othername", "searchable" => false];
         $this->assertEquals($res10, $obj->toArray());
 
+        // ===
         $obj->setSearchable(true);
         $obj->setType("string");
         $res11 = ["cellType" => "td", "data" => "data", "name" => "othername", "type" => "string"];
         $this->assertEquals($res11, $obj->toArray());
 
+        // ===
         $obj->setType(null);
         $obj->setVisible(false);
         $res12 = ["cellType" => "td", "data" => "data", "name" => "othername", "visible" => false];
         $this->assertEquals($res12, $obj->toArray());
 
+        // ===
         $obj->setVisible(true);
         $obj->setWidth("width");
         $res13 = ["cellType" => "td", "data" => "data", "name" => "othername", "width" => "width"];

@@ -33,11 +33,14 @@ final class DataTablesMappingHelperTest extends AbstractJQueryDataTablesFramewor
 
         $obj = new DataTablesMapping();
 
+        // ===
         $this->assertNull(DataTablesMappingHelper::getAlias($obj));
 
+        // ===
         $obj->setColumn("column");
         $this->assertEquals("column", DataTablesMappingHelper::getAlias($obj));
 
+        // ===
         $obj->setPrefix("prefix");
         $this->assertEquals("prefix.column", DataTablesMappingHelper::getAlias($obj));
     }

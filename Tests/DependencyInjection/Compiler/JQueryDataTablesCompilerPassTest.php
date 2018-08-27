@@ -62,20 +62,24 @@ final class JQueryDataTablesCompilerPassTest extends AbstractJQueryDataTablesFra
 
         $obj = new JQueryDataTablesCompilerPass();
 
+        // ===
         $obj->process($this->containerBuilder);
         $this->assertFalse($this->containerBuilder->hasDefinition(DataTablesManager::SERVICE_NAME));
 
+        // ===
         $this->containerBuilder->register(DataTablesManager::SERVICE_NAME, $this->dataTablesManager);
         $obj->process($this->containerBuilder);
         $this->assertTrue($this->containerBuilder->hasDefinition(DataTablesManager::SERVICE_NAME));
         $this->assertFalse($this->containerBuilder->getDefinition(DataTablesManager::SERVICE_NAME)->hasMethodCall("registerProvider"));
 
+        // ===
         $this->containerBuilder->register("datatables.provider.test", $this->dataTablesProvider)->addTag(DataTablesProviderInterface::TAG_NAME);
         $this->assertTrue($this->containerBuilder->hasDefinition(DataTablesManager::SERVICE_NAME));
         $this->assertFalse($this->containerBuilder->getDefinition(DataTablesManager::SERVICE_NAME)->hasMethodCall("registerProvider"));
         $this->assertTrue($this->containerBuilder->hasDefinition("datatables.provider.test"));
         $this->assertTrue($this->containerBuilder->getDefinition("datatables.provider.test")->hasTag(DataTablesProviderInterface::TAG_NAME));
 
+        // ===
         $obj->process($this->containerBuilder);
         $this->assertTrue($this->containerBuilder->hasDefinition(DataTablesManager::SERVICE_NAME));
         $this->assertTrue($this->containerBuilder->getDefinition(DataTablesManager::SERVICE_NAME)->hasMethodCall("registerProvider"));

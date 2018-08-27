@@ -37,7 +37,7 @@ final class DataTablesSearchTest extends AbstractJQueryDataTablesFrameworkTestCa
         $postData["search"]["regex"] = "true";
         $postData["search"]["value"] = "value";
 
-        //
+        // ===
         $res = DataTablesSearch::parse($postData["search"]);
         $this->assertTrue($res->getRegex());
         $this->assertEquals("value", $res->getValue());

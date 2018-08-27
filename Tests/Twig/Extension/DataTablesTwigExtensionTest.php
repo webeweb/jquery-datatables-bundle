@@ -76,7 +76,7 @@ final class DataTablesTwigExtensionTest extends AbstractJQueryDataTablesFramewor
         // Initialize the language directory.
         $langDirectory = getcwd() . "/Resources/public/datatables-i18n-1.10.16";
 
-        //
+        // ===
         $found = 0;
 
         // Read the directory.
@@ -109,6 +109,7 @@ final class DataTablesTwigExtensionTest extends AbstractJQueryDataTablesFramewor
 
         $obj = new DataTablesTwigExtension();
 
+        // ===
         $arg0 = [];
         $res0 = <<< 'EOTXT'
 <script type="text/javascript">
@@ -169,6 +170,7 @@ final class DataTablesTwigExtensionTest extends AbstractJQueryDataTablesFramewor
 EOTXT;
         $this->assertEquals($res0, $obj->jQueryDataTablesFunction($this->dataTablesWrapper, $arg0));
 
+        // ===
         $arg9 = ["selector" => "#selector", "language" => "French"];
         $res9 = <<< 'EOTXT'
 <script type="text/javascript">
@@ -239,6 +241,7 @@ EOTXT;
 
         $obj = new DataTablesTwigExtension();
 
+        // ===
         $res0 = <<< 'EOTXT'
 <script type="text/javascript">
     $(document).ready(function () {
@@ -252,6 +255,7 @@ EOTXT;
 EOTXT;
         $this->assertEquals($res0, $obj->jQueryDataTablesStandaloneFunction());
 
+        // ===
         $arg9 = ["selector" => "#selector", "language" => "French", "options" => ["columnDefs" => [["orderable" => false, "targets" => -1]]]];
         $res9 = <<< 'EOTXT'
 <script type="text/javascript">
@@ -384,7 +388,7 @@ EOTXT;
         $i = 0;
         foreach ($this->dataTablesWrapper->getColumns() as $dtColumn) {
             $dtColumn->setClassname($dtColumn->getData());
-            $dtColumn->setWidth(++$i);
+            $dtColumn->setWidth( ++$i);
         }
 
         $arg9 = ["class" => "class", "thead" => true, "tfoot" => true];
