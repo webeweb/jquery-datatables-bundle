@@ -585,17 +585,17 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
     }
 
     /**
-     * Tests the getAction() method.
+     * Tests the showAction() method.
      *
      * @return void
      */
-    public function testGetAction() {
+    public function testShowAction() {
 
         // Create a client.
         $client = static::createClient();
 
         // Make a GET request.
-        $client->request("GET", "/datatables/employee/get/55");
+        $client->request("GET", "/datatables/employee/show/55");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
 
@@ -611,18 +611,18 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
     }
 
     /**
-     * Tests the getAction() method.
+     * Tests the showAction() method.
      *
      * @return void
-     * @depends testGetAction
+     * @depends testShowAction
      */
-    public function testGetActionWithStatus404() {
+    public function testShowActionWithStatus404() {
 
         // Create a client.
         $client = static::createClient();
 
         // Make a GET request.
-        $client->request("GET", "/datatables/employee/get/57");
+        $client->request("GET", "/datatables/employee/show/57");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
 

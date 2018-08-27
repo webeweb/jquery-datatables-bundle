@@ -123,38 +123,6 @@ class DataTablesController extends AbstractDataTablesController {
     }
 
     /**
-     * Get an existing entity.
-     *
-     * @param string $name The provider name.
-     * @param string $id The entity id.
-     * @return Response Returns the response.
-     */
-    public function getAction($name, $id) {
-
-        // Get the provider.
-        $dtProvider = $this->getDataTablesProvider($name);
-
-        try {
-
-            // Get the entity.
-            $entity = $this->getDataTablesEntityById($dtProvider, $id);
-        } catch (EntityNotFoundException $ex) {
-
-            // Log a debug trace.
-            $this->getLogger()->debug($ex->getMessage());
-
-            // Initialize the entity.
-            $entity = [];
-        }
-
-        // Get the serializer.
-        $serializer = $this->getDataTablesSerializer();
-
-        // Return the response.
-        return new Response($serializer->serialize($entity, "json"), 200, ["Content-type" => "application/json"]);
-    }
-
-    /**
      * Lists all entities.
      *
      * @param Request $request The request.
@@ -262,6 +230,38 @@ class DataTablesController extends AbstractDataTablesController {
         return $this->render($dtView, [
                 "dtWrapper" => $dtWrapper,
         ]);
+    }
+
+    /**
+     * Show an existing entity.
+     *
+     * @param string $name The provider name.
+     * @param string $id The entity id.
+     * @return Response Returns the response.
+     */
+    public function showAction($name, $id) {
+
+        // Get the provider.
+        $dtProvider = $this->getDataTablesProvider($name);
+
+        try {
+
+            // Get the entity.
+            $entity = $this->getDataTablesEntityById($dtProvider, $id);
+        } catch (EntityNotFoundException $ex) {
+
+            // Log a debug trace.
+            $this->getLogger()->debug($ex->getMessage());
+
+            // Initialize the entity.
+            $entity = [];
+        }
+
+        // Get the serializer.
+        $serializer = $this->getDataTablesSerializer();
+
+        // Return the response.
+        return new Response($serializer->serialize($entity, "json"), 200, ["Content-type" => "application/json"]);
     }
 
 }
