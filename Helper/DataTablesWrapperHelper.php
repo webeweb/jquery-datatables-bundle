@@ -47,23 +47,24 @@ class DataTablesWrapperHelper {
             $output = $dtWrapper->getOptions()->getOptions();
         }
 
+        // Set the options.
         $output["ajax"]         = [];
         $output["ajax"]["type"] = $dtWrapper->getMethod();
         $output["ajax"]["url"]  = $dtWrapper->getUrl();
         $output["columns"]      = [];
+        $output["order"]        = [];
+        $output["processing"]   = $dtWrapper->getProcessing();
+        $output["serverSide"]   = $dtWrapper->getServerSide();
 
+        // Handle each column.
         foreach ($dtWrapper->getColumns() as $current) {
             $output["columns"][] = $current->toArray();
         }
 
-        $output["order"] = [];
-
+        // Handle each order.
         foreach ($dtWrapper->getOrder() as $current) {
             $output["order"][] = $current->toArray();
         }
-
-        $output["processing"] = $dtWrapper->getProcessing();
-        $output["serverSide"] = $dtWrapper->getServerSide();
 
         // Return the output.
         return $output;
