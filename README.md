@@ -3,7 +3,14 @@ jquery-datatables-bundle
 
 [![Build Status](https://travis-ci.org/webeweb/jquery-datatables-bundle.svg?branch=master)](https://travis-ci.org/webeweb/jquery-datatables-bundle) [![Coverage Status](https://coveralls.io/repos/github/webeweb/jquery-datatables-bundle/badge.svg?branch=master)](https://coveralls.io/github/webeweb/jquery-datatables-bundle?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/webeweb/jquery-datatables-bundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/webeweb/jquery-datatables-bundle/?branch=master) [![Latest Stable Version](https://poser.pugx.org/webeweb/jquery-datatables-bundle/v/stable)](https://packagist.org/packages/webeweb/jquery-datatables-bundle) [![Latest Unstable Version](https://poser.pugx.org/webeweb/jquery-datatables-bundle/v/unstable)](https://packagist.org/packages/webeweb/jquery-datatables-bundle) [![License](https://poser.pugx.org/webeweb/jquery-datatables-bundle/license)](https://packagist.org/packages/webeweb/jquery-datatables-bundle) [![composer.lock](https://poser.pugx.org/webeweb/jquery-datatables-bundle/composerlock)](https://packagist.org/packages/webeweb/jquery-datatables-bundle)
 
-Integrate jQuery Datatable with Symfony 2.
+Integrate jQuery DataTables with Symfony 2.
+
+`jquery-datatables-bundle` eases the use of jQuery DataTables to display rich
+DataTables in your Symfony application by providing Twig extensions and PHP
+objects to do the leavy lifting. The bundle include the excellent JS library
+[jQuery DataTables](https://datatables.net/) and this plug-ins.
+
+Dry out your DataTables code by writing it all in PHP !
 
 <img src="https://raw.githubusercontent.com/webeweb/jquery-datatables-bundle/master/Resources/doc/images/jquery-datatables-bundle_380x550.png" alt="jQuery DataTables bundle" align="right" height="456"/>
 
@@ -25,6 +32,15 @@ Includes :
 - [DataTables Select 1.2.5](https://datatables.net/extensions/select/) (DataTables plugin)
 - [editableTable](https://github.com/mindmup/editable-table/)
 - [jQuery 3.2.1](http://jquery.com/) (DataTables dependency)
+
+Provides :
+
+- a "jquery_datatables_delete" route to delete a managed entity by a DataTable
+- a "jquery_datatables_export" route to export all managed entities by a DataTable
+- a "jquery_datatables_index" route to display a DataTable (main and columns searches is also provide with a generic implementation)
+- a "jquery_datatables_options" route to retrieve with an XML HTTP request the options of a DataTable
+- a "jquery_datatables_render" route to retrieve with an XML HTTP request the HTML rendering of a DataTable
+- a "jquery_datatables_show" route to retrieve with an XML HTTP request a managed entity by a DataTable into JSON format
 
 ---
 
@@ -801,5 +817,5 @@ $ vendor/bin/phpunit
 
 ## License
 
-jquery-datatables-bundle is released under the LGPL License. See the bundled
+`jquery-datatables-bundle` is released under the LGPL License. See the bundled
 [LICENSE](LICENSE) file for details.
