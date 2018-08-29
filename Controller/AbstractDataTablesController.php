@@ -29,6 +29,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Repository\DataTablesRepositoryInterface;
 use WBW\Library\Core\Database\PaginateHelper;
+use WBW\Library\Core\Model\Response\ActionResponse;
 
 /**
  * Abstract jQuery DataTables controller.
@@ -47,7 +48,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
      * @param array $output The output.
      * @return Response Returns the response.
      */
-    protected function buildDataTablesResponse(Request $request, $name, array $output) {
+    protected function buildDataTablesResponse(Request $request, $name, ActionResponse $output) {
 
         // Determines if the request is an XML HTTP request.
         if (true === $request->isXmlHttpRequest()) {
@@ -57,18 +58,18 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
         }
 
         // Notify the user.
-        switch ($output["status"]) {
+        switch ($output->getStatus()) {
 
             case 200:
-                $this->notifySuccess($output["notify"]);
+                $this->notifySuccess($output->getNotify());
                 break;
 
             case 404:
-                $this->notifyDanger($output["notify"]);
+                $this->notifyDanger($output->getNotify());
                 break;
 
             case 500:
-                $this->notifyWarning($output["notify"]);
+                $this->notifyWarning($output->getNotify());
                 break;
         }
 

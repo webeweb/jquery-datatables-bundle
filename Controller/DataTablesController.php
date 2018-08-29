@@ -19,9 +19,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
+use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
+use WBW\Library\Core\Model\Response\ActionResponse;
 
 /**
  * DataTables controller.
@@ -46,10 +48,7 @@ class DataTablesController extends AbstractDataTablesController {
         $dtProvider = $this->getDataTablesProvider($name);
 
         // Initialize the output.
-        $output = [
-            "status" => null,
-            "notify" => null,
-        ];
+        $output = new ActionResponse();
 
         try {
 
@@ -62,24 +61,24 @@ class DataTablesController extends AbstractDataTablesController {
             $em->flush();
 
             // Set the output.
-            $output["status"] = 200;
-            $output["notify"] = $this->getNotification("DataTablesController.deleteAction.success");
+            $output->setStatus(200);
+            $output->setNotify($this->getNotification("DataTablesController.deleteAction.success"));
         } catch (EntityNotFoundException $ex) {
 
             // Log a debug trace.
             $this->getLogger()->debug($ex->getMessage());
 
             // Set the output.
-            $output["status"] = 404;
-            $output["notify"] = $this->getNotification("DataTablesController.deleteAction.danger");
+            $output->setStatus(404);
+            $output->setNotify($this->getNotification("DataTablesController.deleteAction.danger"));
         } catch (ForeignKeyConstraintViolationException $ex) {
 
             // Log a debug trace.
             $this->getLogger()->debug(sprintf("%s:%s %s", $ex->getErrorCode(), $ex->getSQLState(), $ex->getMessage()));
 
             // Set the output.
-            $output["status"] = 500;
-            $output["notify"] = $this->getNotification("DataTablesController.deleteAction.warning");
+            $output->setStatus(500);
+            $output->setNotify($this->getNotification("DataTablesController.deleteAction.warning"));
         }
 
         // Return the response.
