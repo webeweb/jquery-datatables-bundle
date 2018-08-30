@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
 use Symfony\Component\HttpFoundation\Request;
-use WBW\Library\Core\IO\HTTPInterface;
+use WBW\Library\Core\Network\HTTP\HTTPInterface;
 
 /**
  * DataTables wrapper.

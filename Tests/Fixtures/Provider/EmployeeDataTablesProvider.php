@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee;
-use WBW\Library\Core\IO\HTTPInterface;
+use WBW\Library\Core\Network\HTTP\HTTPInterface;
 
 /**
  * Employee DataTables provider.
