@@ -24,6 +24,13 @@ use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Compiler\JQueryDataTa
 class JQueryDataTablesBundle extends Bundle {
 
     /**
+     * DataTables version.
+     *
+     * @var string
+     */
+    const DATATABLES_VERSION = "1.10.16";
+
+    /**
      * {@inheritdoc}
      */
     public function build(ContainerBuilder $container) {
