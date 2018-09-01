@@ -1,7 +1,13 @@
 jquery-datatables-bundle
 ========================
 
-[![Build Status](https://travis-ci.org/webeweb/jquery-datatables-bundle.svg?branch=master)](https://travis-ci.org/webeweb/jquery-datatables-bundle) [![Coverage Status](https://coveralls.io/repos/github/webeweb/jquery-datatables-bundle/badge.svg?branch=master)](https://coveralls.io/github/webeweb/jquery-datatables-bundle?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/webeweb/jquery-datatables-bundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/webeweb/jquery-datatables-bundle/?branch=master) [![Latest Stable Version](https://poser.pugx.org/webeweb/jquery-datatables-bundle/v/stable)](https://packagist.org/packages/webeweb/jquery-datatables-bundle) [![Latest Unstable Version](https://poser.pugx.org/webeweb/jquery-datatables-bundle/v/unstable)](https://packagist.org/packages/webeweb/jquery-datatables-bundle) [![License](https://poser.pugx.org/webeweb/jquery-datatables-bundle/license)](https://packagist.org/packages/webeweb/jquery-datatables-bundle) [![composer.lock](https://poser.pugx.org/webeweb/jquery-datatables-bundle/composerlock)](https://packagist.org/packages/webeweb/jquery-datatables-bundle)
+[![Build Status](https://travis-ci.org/webeweb/jquery-datatables-bundle.svg?branch=master)](https://travis-ci.org/webeweb/jquery-datatables-bundle)
+[![Coverage Status](https://coveralls.io/repos/github/webeweb/jquery-datatables-bundle/badge.svg?branch=master)](https://coveralls.io/github/webeweb/jquery-datatables-bundle?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/webeweb/jquery-datatables-bundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/webeweb/jquery-datatables-bundle/?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/webeweb/jquery-datatables-bundle/v/stable)](https://packagist.org/packages/webeweb/jquery-datatables-bundle)
+[![Latest Unstable Version](https://poser.pugx.org/webeweb/jquery-datatables-bundle/v/unstable)](https://packagist.org/packages/webeweb/jquery-datatables-bundle)
+[![License](https://poser.pugx.org/webeweb/jquery-datatables-bundle/license)](https://packagist.org/packages/webeweb/jquery-datatables-bundle)
+[![composer.lock](https://poser.pugx.org/webeweb/jquery-datatables-bundle/composerlock)](https://packagist.org/packages/webeweb/jquery-datatables-bundle)
 
 Integrate jQuery DataTables with Symfony 2.
 
