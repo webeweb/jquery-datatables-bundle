@@ -58,7 +58,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      * @return string Returns the jQuery DataTables.
      */
     public function jQueryDataTablesFunction(DataTablesWrapper $dtWrapper, array $args = []) {
-        return $this->jQueryDataTables($dtWrapper, ArrayHelper::get($args, "selector"), ArrayHelper::get($args, "language", "English"));
+        return $this->jQueryDataTables($dtWrapper, ArrayHelper::get($args, "selector"), ArrayHelper::get($args, "language"));
     }
 
     /**
@@ -68,7 +68,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      * @return string Returns the jQuery DataTables "Standalone".
      */
     public function jQueryDataTablesStandaloneFunction(array $args = []) {
-        return $this->jQueryDataTablesStandalone(ArrayHelper::get($args, "selector", ".table"), ArrayHelper::get($args, "language", "English"), ArrayHelper::get($args, "options", []));
+        return $this->jQueryDataTablesStandalone(ArrayHelper::get($args, "selector", ".table"), ArrayHelper::get($args, "language"), ArrayHelper::get($args, "options", []));
     }
 
     /**

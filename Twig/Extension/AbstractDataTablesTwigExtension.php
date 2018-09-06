@@ -16,6 +16,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Library\Core\Argument\StringHelper;
+use WBW\Library\Core\Exception\IO\FileNotFoundException;
 
 /**
  * Abstract DataTables Twig extension.
@@ -60,12 +61,28 @@ EOTXT;
     }
 
     /**
+     * Encode the options.
+     *
+     * @param array $options The options.
+     * @return string Returns the encoded options.
+     */
+    protected function encodeOptions(array $options) {
+        if (0 === count($options)) {
+            return "{}";
+        }
+        ksort($options);
+        $output = json_encode($options, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        return str_replace("\n", "\n        ", $output);
+    }
+
+    /**
      * Displays a jQuery DataTables.
      *
      * @param DataTablesWrapper $dtWrapper The wrapper.
      * @param string $selector The selector.
      * @param string $language The language.
      * @return string Returns the jQuery DataTables.
+     * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
      */
     protected function jQueryDataTables(DataTablesWrapper $dtWrapper, $selector, $language) {
 
@@ -73,19 +90,15 @@ EOTXT;
         $dtOptions = DataTablesWrapperHelper::getOptions($dtWrapper);
 
         // Initialize the parameters.
-        $var                 = DataTablesWrapperHelper::getName($dtWrapper);
-        $options             = $dtOptions;
-        $options["language"] = ["url" => "/bundles/jquerydatatables/datatables-i18n-1.10.16/" . $language . ".json"];
-
-        // Sort the options.
-        ksort($options);
+        $var     = DataTablesWrapperHelper::getName($dtWrapper);
+        $options = $dtOptions;
+        if (null !== $language) {
+            $options["language"] = ["url" => DataTablesWrapperHelper::getLanguageURL($language)];
+        }
 
         //
         $searches = ["%var%", "%selector%", "%options%"];
-        $replaces = [$var, null === $selector ? "#" . $var : $selector, json_encode($options, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)];
-
-        // Re-indent.
-        $replaces[2] = str_replace("\n", "\n        ", $replaces[2]);
+        $replaces = [$var, null === $selector ? "#" . $var : $selector, $this->encodeOptions($options)];
 
         // Return the Javascript.
         return StringHelper::replace(self::JQUERY_DATATABLES, $searches, $replaces);
@@ -98,21 +111,18 @@ EOTXT;
      * @param string $language The language.
      * @param array $options The options.
      * @return string Returns the jQuery DataTables "Standalone".
+     * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
      */
     protected function jQueryDataTablesStandalone($selector, $language, array $options) {
 
         // Initialize the language.
-        $options["language"] = ["url" => "/bundles/jquerydatatables/datatables-i18n-1.10.16/" . $language . ".json"];
-
-        // Sort the options.
-        ksort($options);
+        if (null !== $language) {
+            $options["language"] = ["url" => DataTablesWrapperHelper::getLanguageURL($language)];
+        }
 
         //
         $searches = ["%selector%", "%options%"];
-        $replaces = [$selector, json_encode($options, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)];
-
-        // Re-indent.
-        $replaces[1] = str_replace("\n", "\n        ", $replaces[1]);
+        $replaces = [$selector, $this->encodeOptions($options)];
 
         // Return the Javascript.
         return StringHelper::replace(self::JQUERY_DATATABLES_STANDALONE, $searches, $replaces);

@@ -158,9 +158,6 @@ final class DataTablesTwigExtensionTest extends AbstractJQueryDataTablesFramewor
                     "searchable": false
                 }
             ],
-            "language": {
-                "url": "/bundles/jquerydatatables/datatables-i18n-1.10.16/English.json"
-            },
             "order": [],
             "processing": true,
             "serverSide": true
@@ -245,11 +242,7 @@ EOTXT;
         $res0 = <<< 'EOTXT'
 <script type="text/javascript">
     $(document).ready(function () {
-        $(".table").DataTable({
-            "language": {
-                "url": "/bundles/jquerydatatables/datatables-i18n-1.10.16/English.json"
-            }
-        });
+        $(".table").DataTable({});
     });
 </script>
 EOTXT;
