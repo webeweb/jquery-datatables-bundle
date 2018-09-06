@@ -20,7 +20,7 @@
         "symfony/translation": "^2.6|^3.0",
         "twig/twig": "^1.0||^2.0",
         "webeweb/bootstrap-bundle": "^1.0",
-        "webeweb/core-library": "^4.2"
+        "webeweb/core-library": "^4.3"
     },
     "require-dev": {
         "phpunit/phpunit": "5.7.*",
