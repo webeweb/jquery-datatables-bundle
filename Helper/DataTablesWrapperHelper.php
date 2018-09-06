@@ -12,6 +12,10 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle;
+use WBW\Library\Core\Argument\ObjectHelper;
+use WBW\Library\Core\Argument\StringHelper;
+use WBW\Library\Core\Exception\IO\FileNotFoundException;
 
 /**
  * DataTables wrapper helper.
@@ -20,6 +24,35 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
  * @package WBW\Bundle\JQuery\DataTablesBundle\Helper
  */
 class DataTablesWrapperHelper {
+
+    /**
+     * Get a language URL.
+     *
+     * @param string $language The language.
+     * @return string Returns the language URL.
+     * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
+     */
+    public static function getLanguageURL($language) {
+
+        // Initialize the directory.
+        $dir = ObjectHelper::getDirectory(JQueryDataTablesBundle::class);
+        $dir .= "/Resources/public/datatables-i18n-%version%/%language%.json";
+
+        // Initialize the URI.
+        $uri = "/bundles/jquerydatatables/datatables-i18n-%version%/%language%.json";
+
+        // Initialize the URL.
+        $url = StringHelper::replace($uri, ["%version%", "%language%"], [JQueryDataTablesBundle::DATATABLES_VERSION, $language]);
+
+        // Initialize and check the filename.
+        $file = StringHelper::replace($dir, ["%version%", "%language%"], [JQueryDataTablesBundle::DATATABLES_VERSION, $language]);
+        if (false === file_exists($file)) {
+            throw new FileNotFoundException($url);
+        }
+
+        // Return the URL.
+        return $url;
+    }
 
     /**
      * Get a name.

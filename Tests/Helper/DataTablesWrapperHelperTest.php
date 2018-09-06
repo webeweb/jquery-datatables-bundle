@@ -11,10 +11,12 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
 
+use Exception;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Cases\AbstractJQueryDataTablesFrameworkTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\App\TestFixtures;
+use WBW\Library\Core\Exception\IO\FileNotFoundException;
 
 /**
  * DataTables wrapper helper test.
@@ -23,6 +25,26 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\App\TestFixtures;
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper
  */
 final class DataTablesWrapperHelperTest extends AbstractJQueryDataTablesFrameworkTestCase {
+
+    /**
+     * Tests the getLanguageURL() method.
+     *
+     * @return void
+     */
+    public function testGetLanguageURL() {
+
+        try {
+
+            DataTablesWrapperHelper::getLanguageURL("exception");
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(FileNotFoundException::class, $ex);
+            $this->assertEquals("The file \"/bundles/jquerydatatables/datatables-i18n-1.10.16/exception.json\" is not found", $ex->getMessage());
+        }
+
+        $res = "/bundles/jquerydatatables/datatables-i18n-1.10.16/French.json";
+        $this->assertEquals($res, DataTablesWrapperHelper::getLanguageURL("French"));
+    }
 
     /**
      * Tests the getName() method.
