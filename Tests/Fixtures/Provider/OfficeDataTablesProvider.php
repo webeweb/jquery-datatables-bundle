@@ -50,6 +50,13 @@ final class OfficeDataTablesProvider implements DataTablesProviderInterface {
     /**
      * {@inheritdoc}
      */
+    public function getEditor() {
+        return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getEntity() {
         return Office::class;
     }

@@ -101,6 +101,13 @@ final class EmployeeDataTablesProvider implements DataTablesProviderInterface, D
     /**
      * {@inheritdoc}
      */
+    public function getEditor() {
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getEntity() {
         return Employee::class;
     }
