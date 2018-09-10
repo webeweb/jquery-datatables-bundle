@@ -42,6 +42,7 @@ Includes :
 Provides :
 
 - a "jquery_datatables_delete" route to delete a managed entity by a DataTable
+- a "jquery_datatables_edit" route to edit all columns provided by a DataTable
 - a "jquery_datatables_export" route to export all managed entities by a DataTable
 - a "jquery_datatables_index" route to display a DataTable (main and columns searches is also provide with a generic implementation)
 - a "jquery_datatables_options" route to retrieve with an XML HTTP request the options of a DataTable
