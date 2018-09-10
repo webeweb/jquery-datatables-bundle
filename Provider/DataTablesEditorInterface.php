@@ -26,7 +26,7 @@ interface DataTablesEditorInterface {
      *
      * @param DataTablesColumn $dtColumn The column.
      * @param object $entity The entity.
-     * @return void.
+     * @return void
      */
     public function editColumn(DataTablesColumn $dtColumn, $entity, $value);
 }
