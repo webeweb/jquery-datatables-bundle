@@ -332,16 +332,53 @@ Create a provider in the `src/AppBundle/Provider` directory of your project:
 ```php
 namespace AppBundle\Provider;
 
+use DateTime;
 use AppBundle\Entity\Employee;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 
 /**
  * Employee DataTables provider.
  */
-class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTablesCSVExporterInterface {
+class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTablesCSVExporterInterface, DataTablesEditorInterface {
+
+
+    /**
+     * {@inheritdoc}
+     */
+    public function editColumn(DataTablesColumn $dtColumn, $entity, $value) {
+
+        // Switch into column data.
+        switch ($dtColumn->getData()) {
+
+            case "age":
+                $entity->setAge($value);
+                break;
+
+            case "name":
+                $entity->setName($value);
+                break;
+
+            case "office":
+                $entity->setOffice($value);
+                break;
+
+            case "position":
+                $entity->setPosition($value);
+                break;
+
+            case "salary":
+                $entity->setSalary($value);
+                break;
+
+            case "startDate":
+                $entity->setStartDate(new DateTime($value));
+                break;
+        }
+    }
 
     /**
      * {@inheritdoc}
