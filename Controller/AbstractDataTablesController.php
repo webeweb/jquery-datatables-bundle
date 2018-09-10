@@ -197,22 +197,22 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
      */
     protected function getDataTablesEditor(DataTablesProviderInterface $dtProvider) {
 
-        // Get the provider.
-        $dtExporter = $dtProvider->getEditor();
+        // Get the editor.
+        $dtEditor = $dtProvider->getEditor();
 
         // Log a debug trace.
         $this->getLogger()->debug(sprintf("DataTables controller search for an editor with name \"%s\"", $dtProvider->getName()));
 
         // Check the CSV exporter.
-        if (false === ($dtExporter instanceOf DataTablesEditorInterface)) {
-            throw new BadDataTablesEditorException(null !== $dtExporter ? $dtExporter : "null");
+        if (false === ($dtEditor instanceOf DataTablesEditorInterface)) {
+            throw new BadDataTablesEditorException(null !== $dtEditor ? $dtEditor : "null");
         }
 
         // Log a debug trace.
         $this->getLogger()->debug(sprintf("DataTables controller found an editor with name \"%s\"", $dtProvider->getName()));
 
         // Return the exporter.
-        return $dtExporter;
+        return $dtEditor;
     }
 
     /**
