@@ -454,6 +454,13 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     /**
      * {@inheritdoc}
      */
+    public function getEditor() {
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getEntity() {
         return Employee::class;
     }
