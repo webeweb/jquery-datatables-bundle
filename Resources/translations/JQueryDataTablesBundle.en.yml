@@ -4,3 +4,7 @@ DataTablesController:
         danger:  "Record not found"
         success: "Successful deletion"
         warning: "Failed deletion"
+    editAction:
+        danger:  "Record not found"
+        success: "Successful editing"
+        warning: "Failed editing"

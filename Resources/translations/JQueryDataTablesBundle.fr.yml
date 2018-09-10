@@ -4,3 +4,7 @@ DataTablesController:
         danger:  "Enregistrement non trouvé"
         success: "Suppression réussie"
         warning: "Suppression échouée"
+    editAction:
+        danger:  "Enregistrement non trouvé"
+        success: "Edition réussie"
+        warning: "Edition échouée"
