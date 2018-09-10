@@ -20,7 +20,9 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use WBW\Bundle\BootstrapBundle\Controller\AbstractBootstrapController;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesColumnException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesEditorException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
@@ -127,6 +129,34 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
         }
         // Close the file.
         fclose($stream);
+    }
+
+    /**
+     * Get a column.
+     *
+     * @param DataTableProviderInterface $dtProvider The provider.
+     * @param string $data The data.
+     * @return DataTablesColumn Returns the column.
+     * @throws BadDataTablesColumnException Throws a bad column exception.
+     */
+    protected function getDataTablesColumn(DataTablesProviderInterface $dtProvider, $data) {
+
+        // Get the column.
+        $dtColumn = $this->getDataTablesWrapper($dtProvider)->getColumn($data);
+
+        // Log a debug trace.
+        $this->getLogger()->debug(sprintf("DataTables controller search for a column with name \"%s\"", $data));
+
+        // Check the column.
+        if (null === $dtColumn) {
+            throw new BadDataTablesColumnException($data);
+        }
+
+        // Log a debug trace.
+        $this->getLogger()->debug(sprintf("DataTables controller found a column with name \"%s\"", $data));
+
+        // Return the column.
+        return $dtColumn;
     }
 
     /**
