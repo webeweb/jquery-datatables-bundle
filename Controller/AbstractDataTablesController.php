@@ -315,4 +315,22 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
         return $this->getTranslator()->trans($id, [], "JQueryDataTablesBundle");
     }
 
+    /**
+     * Prepare an action response.
+     *
+     * @param int $statusCode The status code.
+     * @param string $content The content.
+     * @return ActionResponse Returns the action response.
+     */
+    protected function prepareActionResponse($statusCode, $content) {
+
+        // Initialize the action response.
+        $response = new ActionResponse();
+        $response->setStatus($statusCode);
+        $response->setNotify($this->getNotification($content));
+
+        // Return the action response.
+        return $response;
+    }
+
 }
