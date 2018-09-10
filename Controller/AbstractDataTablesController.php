@@ -22,10 +22,12 @@ use Symfony\Component\Serializer\Serializer;
 use WBW\Bundle\BootstrapBundle\Controller\AbstractBootstrapController;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
+use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesEditorException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Repository\DataTablesRepositoryInterface;
 use WBW\Library\Core\Database\PaginateHelper;
@@ -150,6 +152,34 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
 
         // Log a debug trace.
         $this->getLogger()->debug(sprintf("DataTables controller found a CSV exporter with name \"%s\"", $dtProvider->getName()));
+
+        // Return the exporter.
+        return $dtExporter;
+    }
+
+    /**
+     * Get an editor.
+     *
+     * @param DataTablesProviderInterface $dtProvider The provider.
+     * @return DataTablesEditorInterface Returns the editor.
+     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
+     * @throws BadDataTablesEditorException Throws a bad editor exception.
+     */
+    protected function getDataTablesEditor(DataTablesProviderInterface $dtProvider) {
+
+        // Get the provider.
+        $dtExporter = $dtProvider->getEditor();
+
+        // Log a debug trace.
+        $this->getLogger()->debug(sprintf("DataTables controller search for an editor with name \"%s\"", $dtProvider->getName()));
+
+        // Check the CSV exporter.
+        if (false === ($dtExporter instanceOf DataTablesEditorInterface)) {
+            throw new BadDataTablesEditorException(null !== $dtExporter ? $dtExporter : "null");
+        }
+
+        // Log a debug trace.
+        $this->getLogger()->debug(sprintf("DataTables controller found an editor with name \"%s\"", $dtProvider->getName()));
 
         // Return the exporter.
         return $dtExporter;
