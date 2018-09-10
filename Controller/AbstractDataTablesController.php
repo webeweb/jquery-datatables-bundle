@@ -318,16 +318,16 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
     /**
      * Prepare an action response.
      *
-     * @param int $statusCode The status code.
-     * @param string $content The content.
+     * @param int $status The status.
+     * @param string $notify The notify.
      * @return ActionResponse Returns the action response.
      */
-    protected function prepareActionResponse($statusCode, $content) {
+    protected function prepareActionResponse($status, $notify) {
 
         // Initialize the action response.
         $response = new ActionResponse();
-        $response->setStatus($statusCode);
-        $response->setNotify($this->getNotification($content));
+        $response->setStatus($status);
+        $response->setNotify($this->getNotification($notify));
 
         // Return the action response.
         return $response;
