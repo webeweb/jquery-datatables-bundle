@@ -16,6 +16,7 @@ use WBW\Bundle\BootstrapBundle\Tests\Cases\AbstractBootstrapFrameworkTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequest;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\App\TestFixtures;
 
 /**
  * Abstract jQuery DataTables framework test case.
@@ -55,91 +56,6 @@ abstract class AbstractJQueryDataTablesFrameworkTestCase extends AbstractBootstr
     protected $request;
 
     /**
-     * Get the POST data.
-     *
-     * @return array Returns the POST data.
-     */
-    public static function getPostData() {
-
-        // Initialize.
-        $output = [];
-
-        // Name
-        $output["columns"][0]["data"]            = "name";
-        $output["columns"][0]["name"]            = "Name";
-        $output["columns"][0]["orderable"]       = "true";
-        $output["columns"][0]["search"]["regex"] = "false";
-        $output["columns"][0]["search"]["value"] = "";
-        $output["columns"][0]["searchable"]      = "true";
-
-        // Position
-        $output["columns"][1]["data"]            = "position";
-        $output["columns"][1]["name"]            = "Position";
-        $output["columns"][1]["orderable"]       = "true";
-        $output["columns"][1]["search"]["regex"] = "false";
-        $output["columns"][1]["search"]["value"] = "";
-        $output["columns"][1]["searchable"]      = "true";
-
-        // Office
-        $output["columns"][2]["data"]            = "office";
-        $output["columns"][2]["name"]            = "Office";
-        $output["columns"][2]["orderable"]       = "true";
-        $output["columns"][2]["search"]["regex"] = "false";
-        $output["columns"][2]["search"]["value"] = "";
-        $output["columns"][2]["searchable"]      = "true";
-
-        // Age
-        $output["columns"][3]["data"]            = "age";
-        $output["columns"][3]["name"]            = "Age";
-        $output["columns"][3]["orderable"]       = "true";
-        $output["columns"][3]["search"]["regex"] = "false";
-        $output["columns"][3]["search"]["value"] = "";
-        $output["columns"][3]["searchable"]      = "true";
-
-        // Start date
-        $output["columns"][4]["data"]            = "startDate";
-        $output["columns"][4]["name"]            = "Start date";
-        $output["columns"][4]["orderable"]       = "true";
-        $output["columns"][4]["search"]["regex"] = "false";
-        $output["columns"][4]["search"]["value"] = "";
-        $output["columns"][4]["searchable"]      = "true";
-
-        // Salary
-        $output["columns"][5]["data"]            = "salary";
-        $output["columns"][5]["name"]            = "Salary";
-        $output["columns"][5]["orderable"]       = "true";
-        $output["columns"][5]["search"]["regex"] = "false";
-        $output["columns"][5]["search"]["value"] = "";
-        $output["columns"][5]["searchable"]      = "true";
-
-        // Actions.
-        $output["columns"][6]["data"]            = "actions";
-        $output["columns"][6]["name"]            = "Actions";
-        $output["columns"][6]["orderable"]       = "false";
-        $output["columns"][6]["search"]["regex"] = "false";
-        $output["columns"][6]["search"]["value"] = "";
-        $output["columns"][6]["searchable"]      = "false";
-
-        //
-        $output["draw"]   = "1";
-        $output["length"] = "10";
-
-        // Order
-        $output["order"][0]["column"] = "0";
-        $output["order"][0]["dir"]    = "asc";
-
-        // Search
-        $output["search"]["regex"] = "false";
-        $output["search"]["value"] = "";
-
-        // Start
-        $output["start"] = "0";
-
-        // Return
-        return $output;
-    }
-
-    /**
      * {@inheritdoc}
      */
     protected function setUp() {
@@ -156,7 +72,7 @@ abstract class AbstractJQueryDataTablesFrameworkTestCase extends AbstractBootstr
         $this->dataTablesResponse = DataTablesResponse::parse($this->dataTablesWrapper, $this->dataTablesRequest);
 
         // Set a Request mock.
-        $this->request = new Request(["query" => "query"], array_merge(self::getPostData(), ["request" => "request"]), [], [], [], ["REQUEST_METHOD" => "POST"]);
+        $this->request = new Request(["query" => "query"], array_merge(TestFixtures::getPostData(), ["request" => "request"]), [], [], [], ["REQUEST_METHOD" => "POST"]);
     }
 
 }
