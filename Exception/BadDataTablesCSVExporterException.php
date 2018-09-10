@@ -24,7 +24,7 @@ class BadDataTablesCSVExporterException extends AbstractDataTablesException {
     /**
      * Constructor.
      *
-     * @param object $object The exporter.
+     * @param mixed $object The exporter.
      */
     public function __construct($object) {
         parent::__construct(sprintf("The DataTables CSV exporter \"%s\" must implement DataTablesCSVExporterInterface", ObjectHelper::getName($object)));
