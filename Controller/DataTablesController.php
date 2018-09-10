@@ -20,10 +20,11 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
+use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesEditorException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
-use WBW\Library\Core\Model\Response\ActionResponse;
+use WBW\Library\Core\Network\HTTP\HTTPInterface;
 
 /**
  * DataTables controller.
@@ -47,9 +48,6 @@ class DataTablesController extends AbstractDataTablesController {
         // Get the provider.
         $dtProvider = $this->getDataTablesProvider($name);
 
-        // Initialize the output.
-        $output = new ActionResponse();
-
         try {
 
             // Get the entity.
@@ -61,28 +59,88 @@ class DataTablesController extends AbstractDataTablesController {
             $em->flush();
 
             // Set the output.
-            $output->setStatus(200);
-            $output->setNotify($this->getNotification("DataTablesController.deleteAction.success"));
+            $output = $this->prepareActionResponse(200, "DataTablesController.deleteAction.success");
         } catch (EntityNotFoundException $ex) {
 
             // Log a debug trace.
             $this->getLogger()->debug($ex->getMessage());
 
             // Set the output.
-            $output->setStatus(404);
-            $output->setNotify($this->getNotification("DataTablesController.deleteAction.danger"));
+            $output = $this->prepareActionResponse(404, "DataTablesController.deleteAction.danger");
         } catch (ForeignKeyConstraintViolationException $ex) {
 
             // Log a debug trace.
             $this->getLogger()->debug(sprintf("%s:%s %s", $ex->getErrorCode(), $ex->getSQLState(), $ex->getMessage()));
 
             // Set the output.
-            $output->setStatus(500);
-            $output->setNotify($this->getNotification("DataTablesController.deleteAction.warning"));
+            $output = $this->prepareActionResponse(500, "DataTablesController.deleteAction.warning");
         }
 
         // Return the response.
         return $this->buildDataTablesResponse($request, $name, $output);
+    }
+
+    /**
+     * Edit an existing entity.
+     *
+     * @param Request $request The request.
+     * @param string $name The provider name
+     * @param string $id The entity id.
+     * @param string $data The data.
+     * @param mixed $value The value
+     * @return Response Returns the response.
+     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
+     * @throws BadDataTablesEditorException Throws a bad editor exception.
+     */
+    public function editAction(Request $request, $name, $id, $data, $value) {
+
+        // Get the provider.
+        $dtProvider = $this->getDataTablesProvider($name);
+
+        // Get the editor.
+        $dtEditor = $this->getDataTablesEditor($dtProvider);
+
+        // Get the column.
+        $dtColumn = $this->getDataTablesColumn($dtProvider, $data);
+
+        try {
+
+            // Get the entity.
+            $entity = $this->getDataTablesEntityById($dtProvider, $id);
+
+            // Set the value.
+            if (true === $request->isMethod(HTTPInterface::HTTP_METHOD_POST)) {
+                $value = $request->request->get("value");
+            }
+
+            // Set the entity.
+            $dtEditor->editColumn($dtColumn, $entity, $value);
+
+            // Get the entities manager and delete the entity.
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($entity);
+            $em->flush();
+
+            // Set the output.
+            $output = $this->prepareActionResponse(200, "DataTablesController.editAction.success");
+        } catch (EntityNotFoundException $ex) {
+
+            // Log a debug trace.
+            $this->getLogger()->debug($ex->getMessage());
+
+            // Set the output.
+            $output = $this->prepareActionResponse(404, "DataTablesController.editAction.danger");
+        } catch (ForeignKeyConstraintViolationException $ex) {
+
+            // Log a debug trace.
+            $this->getLogger()->debug(sprintf("%s:%s %s", $ex->getErrorCode(), $ex->getSQLState(), $ex->getMessage()));
+
+            // Set the output.
+            $output = $this->prepareActionResponse(500, "DataTablesController.editAction.warning");
+        }
+
+        // Return the response.
+        return new JsonResponse($output);
     }
 
     /**

@@ -548,6 +548,92 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
     }
 
     /**
+     * Tests the editAction() method.
+     *
+     * @return void
+     */
+    public function testEditAction() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a POST request.
+        $client->request("POST", "/datatables/employee/edit/55/name", ["value" => "Shad decker"]);
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
+
+        // Check the JSON response.
+        $res = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertArrayHasKey("status", $res);
+        $this->assertArrayHasKey("notify", $res);
+
+        $this->assertEquals(200, $res["status"]);
+        $this->assertEquals("Successful editing", $res["notify"]);
+    }
+
+    /**
+     * Tests the deleteAction() method.
+     *
+     * @return void
+     */
+    public function testEditActionWithStatus404() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request with XML HTTP request.
+        $client->request("GET", "/datatables/employee/edit/57/name/value");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
+
+        // Check the JSON response.
+        $res = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertArrayHasKey("status", $res);
+        $this->assertArrayHasKey("notify", $res);
+
+        $this->assertEquals(404, $res["status"]);
+        $this->assertEquals("Record not found", $res["notify"]);
+    }
+
+    /**
+     * Tests the editAction() method.
+     *
+     * @return void
+     */
+    public function testEditActionWithBadDatatablesEditorException() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request.
+        $client->request("GET", "/datatables/office/edit/1/name/value");
+        $this->assertEquals(500, $client->getResponse()->getStatusCode());
+        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
+
+        $this->assertContains("BadDataTablesEditorException", $client->getResponse()->getContent());
+    }
+
+    /**
+     * Tests the editAction() method.
+     *
+     * @return void
+     */
+    public function testEditActionWithBadDatatablesColumnException() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request.
+        $client->request("GET", "/datatables/employee/edit/55/data/value");
+        $this->assertEquals(500, $client->getResponse()->getStatusCode());
+        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
+
+        $this->assertContains("BadDataTablesColumnException", $client->getResponse()->getContent());
+    }
+
+    /**
      * Tests the exportAction() method.
      *
      * @return void
@@ -587,6 +673,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
      * Tests the showAction() method.
      *
      * @return void
+     * @depends testEditAction
      */
     public function testShowAction() {
 
@@ -601,7 +688,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         // Check the JSON response.
         $res = json_decode($client->getResponse()->getContent(), true);
 
-        $this->assertEquals("Shad Decker", $res["name"]);
+        $this->assertEquals("Shad decker", $res["name"]);
         $this->assertEquals("Regional Director", $res["position"]);
         $this->assertEquals("Edinburgh", $res["office"]);
         $this->assertEquals(51, $res["age"]);

@@ -4,6 +4,11 @@ jquery_datatables_delete:
     defaults: { _controller: "JQueryDataTablesBundle:DataTables:delete" }
     methods:  ["GET"]
 
+jquery_datatables_edit:
+    path:     "/datatables/{name}/edit/{id}/{data}/{value}"
+    defaults: { _controller: "JQueryDataTablesBundle:DataTables:edit", value: null }
+    methods:  ["GET", "POST"]
+
 jquery_datatables_export:
     path:     "/datatables/{name}/export"
     defaults: { _controller: "JQueryDataTablesBundle:DataTables:export" }
