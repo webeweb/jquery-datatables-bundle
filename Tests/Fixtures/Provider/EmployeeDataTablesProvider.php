@@ -11,9 +11,11 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider;
 
+use DateTime;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee;
 use WBW\Library\Core\Network\HTTP\HTTPInterface;
@@ -25,7 +27,41 @@ use WBW\Library\Core\Network\HTTP\HTTPInterface;
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity
  * @final
  */
-final class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTablesCSVExporterInterface {
+final class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTablesCSVExporterInterface, DataTablesEditorInterface {
+
+    /**
+     * {@inheritdoc}
+     */
+    public function editColumn(DataTablesColumn $dtColumn, $entity, $value) {
+
+        // Switch into column data.
+        switch ($dtColumn->getData()) {
+
+            case "age":
+                $entity->setAge($value);
+                break;
+
+            case "name":
+                $entity->setName($value);
+                break;
+
+            case "office":
+                $entity->setOffice($value);
+                break;
+
+            case "position":
+                $entity->setPosition($value);
+                break;
+
+            case "salary":
+                $entity->setSalary($value);
+                break;
+
+            case "startDate":
+                $entity->setStartDate(new DateTime($value));
+                break;
+        }
+    }
 
     /**
      * {@inheritdoc}
