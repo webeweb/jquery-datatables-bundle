@@ -45,6 +45,13 @@ interface DataTablesProviderInterface extends DataTablesResponseInterface {
     public function getCSVExporter();
 
     /**
+     * Get the editor.
+     *
+     * @return DataTablesEditorInterface Returns the editor.
+     */
+    public function getEditor();
+
+    /**
      * Get the entity.
      *
      * @return mixed Returns the entity (Entity::class for example).
