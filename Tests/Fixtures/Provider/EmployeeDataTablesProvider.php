@@ -38,7 +38,7 @@ final class EmployeeDataTablesProvider implements DataTablesProviderInterface, D
         switch ($dtColumn->getData()) {
 
             case "age":
-                $entity->setAge($value);
+                $entity->setAge(intval($value));
                 break;
 
             case "name":
@@ -54,7 +54,7 @@ final class EmployeeDataTablesProvider implements DataTablesProviderInterface, D
                 break;
 
             case "salary":
-                $entity->setSalary($value);
+                $entity->setSalary(intval($value));
                 break;
 
             case "startDate":
