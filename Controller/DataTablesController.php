@@ -67,7 +67,7 @@ class DataTablesController extends AbstractDataTablesController {
 
             // Set the output.
             $output = $this->prepareActionResponse(404, "DataTablesController.deleteAction.danger");
-        } catch (ForeignKeyConstraintViolationException $ex) {
+        } catch (Exception $ex) {
 
             // Log a debug trace.
             $this->getLogger()->debug(sprintf("%s:%s %s", $ex->getErrorCode(), $ex->getSQLState(), $ex->getMessage()));
@@ -130,7 +130,7 @@ class DataTablesController extends AbstractDataTablesController {
 
             // Set the output.
             $output = $this->prepareActionResponse(404, "DataTablesController.editAction.danger");
-        } catch (ForeignKeyConstraintViolationException $ex) {
+        } catch (Exception $ex) {
 
             // Log a debug trace.
             $this->getLogger()->debug(sprintf("%s:%s %s", $ex->getErrorCode(), $ex->getSQLState(), $ex->getMessage()));
