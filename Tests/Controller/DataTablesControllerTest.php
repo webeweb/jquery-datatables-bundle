@@ -582,7 +582,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         // Create a client.
         $client = static::createClient();
 
-        // Make a GET request with XML HTTP request.
+        // Make a GET request.
         $client->request("GET", "/datatables/employee/edit/57/name/value");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
