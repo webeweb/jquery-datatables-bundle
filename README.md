@@ -339,6 +339,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Library\Core\Exception\Argument\IntegerArgumentException;
 
 /**
  * Employee DataTables provider.
@@ -355,7 +356,10 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
         switch ($dtColumn->getData()) {
 
             case "age":
-                $entity->setAge($value);
+                if (1 !== preg_match("/[0-9]{1,}/", $value)) {
+                    throw new IntegerArgumentException($value);
+                }
+                $entity->setAge(intval($value));
                 break;
 
             case "name":
@@ -371,7 +375,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
                 break;
 
             case "salary":
-                $entity->setSalary($value);
+                $entity->setSalary(intval($value));
                 break;
 
             case "startDate":
