@@ -177,7 +177,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
 
         // Check the CSV exporter.
         if (false === ($dtExporter instanceOf DataTablesCSVExporterInterface)) {
-            throw new BadDataTablesCSVExporterException(null !== $dtExporter ? $dtExporter : "null");
+            throw new BadDataTablesCSVExporterException($dtExporter);
         }
 
         // Log a debug trace.
@@ -205,7 +205,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
 
         // Check the CSV exporter.
         if (false === ($dtEditor instanceOf DataTablesEditorInterface)) {
-            throw new BadDataTablesEditorException(null !== $dtEditor ? $dtEditor : "null");
+            throw new BadDataTablesEditorException($dtEditor);
         }
 
         // Log a debug trace.
