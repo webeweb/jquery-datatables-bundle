@@ -18,6 +18,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee;
+use WBW\Library\Core\Exception\Argument\IntegerArgumentException;
 use WBW\Library\Core\Network\HTTP\HTTPInterface;
 
 /**
@@ -38,6 +39,9 @@ final class EmployeeDataTablesProvider implements DataTablesProviderInterface, D
         switch ($dtColumn->getData()) {
 
             case "age":
+                if (1 !== preg_match("/[0-9]{1,}/", $value)) {
+                    throw new IntegerArgumentException($value);
+                }
                 $entity->setAge(intval($value));
                 break;
 
