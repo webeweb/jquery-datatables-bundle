@@ -598,6 +598,31 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
     }
 
     /**
+     * Tests the deleteAction() method.
+     *
+     * @return void
+     */
+    public function testEditActionWithStatus500() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request.
+        $client->request("GET", "/datatables/employee/edit/55/age/value");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
+
+        // Check the JSON response.
+        $res = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertArrayHasKey("status", $res);
+        $this->assertArrayHasKey("notify", $res);
+
+        $this->assertEquals(500, $res["status"]);
+        $this->assertEquals("Failed editing", $res["notify"]);
+    }
+
+    /**
      * Tests the editAction() method.
      *
      * @return void
