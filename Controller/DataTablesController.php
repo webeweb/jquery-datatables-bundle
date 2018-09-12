@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Controller;
 
 use DateTime;
-use Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
+use Exception;
 use Doctrine\ORM\EntityNotFoundException;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -70,7 +70,7 @@ class DataTablesController extends AbstractDataTablesController {
         } catch (Exception $ex) {
 
             // Log a debug trace.
-            $this->getLogger()->debug(sprintf("%s:%s %s", $ex->getErrorCode(), $ex->getSQLState(), $ex->getMessage()));
+            $this->getLogger()->debug(sprintf("%s", $ex->getMessage()));
 
             // Set the output.
             $output = $this->prepareActionResponse(500, "DataTablesController.deleteAction.warning");
@@ -133,7 +133,7 @@ class DataTablesController extends AbstractDataTablesController {
         } catch (Exception $ex) {
 
             // Log a debug trace.
-            $this->getLogger()->debug(sprintf("%s:%s %s", $ex->getErrorCode(), $ex->getSQLState(), $ex->getMessage()));
+            $this->getLogger()->debug(sprintf("%s", $ex->getMessage()));
 
             // Set the output.
             $output = $this->prepareActionResponse(500, "DataTablesController.editAction.warning");
