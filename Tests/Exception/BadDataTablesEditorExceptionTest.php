@@ -36,4 +36,17 @@ final class BaDataTablesEditorException extends AbstractJQueryDataTablesFramewor
         $this->assertEquals($res, $obj->getMessage());
     }
 
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function testConstructWithNull() {
+
+        $obj = new BadDataTablesEditorException(null);
+
+        $res = "The DataTables editor is null";
+        $this->assertEquals($res, $obj->getMessage());
+    }
+
 }
