@@ -492,6 +492,8 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
 
         // Custom some options with the following code :
         // $dtOptions = new DataTablesOptions();
+        // $dtOptions->addOption("language", ["url" => DataTablesWrapperHelper::getLanguageURL("French")]);
+        // $dtOptions->addOption("responsive", true);
         // $dtOptions->addOption("searchDelay", 1000);
         // return $dtOptions;
     }
