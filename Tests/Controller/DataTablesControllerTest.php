@@ -30,7 +30,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
         parent::setUpBeforeClass();
 
         // Get the entity manager.
-        $em = self::$kernel->getContainer()->get("doctrine.orm.entity_manager");
+        $em = static::$kernel->getContainer()->get("doctrine.orm.entity_manager");
 
         // Persist each entity.
         foreach (TestFixtures::getEmployees() as $entity) {
