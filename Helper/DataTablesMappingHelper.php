@@ -63,9 +63,9 @@ class DataTablesMappingHelper {
     public static function getWhere(DataTablesMapping $mapping) {
 
         // Initialize the where.
-        $where = self::getAlias($mapping);
+        $where = static::getAlias($mapping);
         $where .= " LIKE ";
-        $where .= self::getParam($mapping);
+        $where .= static::getParam($mapping);
 
         // Return the where.
         return $where;
