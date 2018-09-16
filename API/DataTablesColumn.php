@@ -422,7 +422,7 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
      * @return DataTablesColumn Returns this column.
      */
     public function setCellType($cellType) {
-        if (false === in_array($cellType, self::dtCellTypes())) {
+        if (false === in_array($cellType, static::dtCellTypes())) {
             $cellType = self::DATATABLES_CELL_TYPE_TD;
         }
         $this->cellType = $cellType;
@@ -524,7 +524,7 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
      * @return DataTablesColumn Returns this column.
      */
     public function setOrderSequence($orderSequence) {
-        if (false === in_array($orderSequence, self::dtOrderSequences())) {
+        if (false === in_array($orderSequence, static::dtOrderSequences())) {
             $orderSequence = null;
         }
         $this->orderSequence = $orderSequence;
@@ -582,7 +582,7 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
      * @return DataTablesColumn Returns this column.
      */
     public function setType($type) {
-        if (false === in_array($type, self::dtTypes())) {
+        if (false === in_array($type, static::dtTypes())) {
             $type = null;
         }
         $this->type = $type;

@@ -264,7 +264,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
         $index = $this->countRows() - 1;
 
         // Check the column data.
-        if ((true === in_array($data, self::dtRows()) && null !== $value) || (true === in_array($data, array_keys($this->data[$index])))) {
+        if ((true === in_array($data, static::dtRows()) && null !== $value) || (true === in_array($data, array_keys($this->data[$index])))) {
             $this->data[$index][$data] = $value;
         }
 

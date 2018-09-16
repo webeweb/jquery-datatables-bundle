@@ -224,8 +224,8 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
         $dtRequest = new DataTablesRequest();
 
         // Recopy the parameter bags.
-        self::recopy($request->query, $dtRequest->getQuery());
-        self::recopy($request->request, $dtRequest->getRequest());
+        static::recopy($request->query, $dtRequest->getQuery());
+        static::recopy($request->request, $dtRequest->getRequest());
 
         // Get the parameter bag.
         if (self::HTTP_METHOD_GET === $request->getMethod()) {
@@ -261,7 +261,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
      */
     protected static function recopy(ParameterBag $request, ParameterBag $bag) {
         foreach ($request->keys() as $current) {
-            if (true === in_array($current, self::dtParameters())) {
+            if (true === in_array($current, static::dtParameters())) {
                 continue;
             }
             $bag->set($current, $request->get($current));

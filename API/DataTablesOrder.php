@@ -123,7 +123,7 @@ class DataTablesOrder implements DataTablesOrderInterface {
      * @return DataTablesOrder Returns this order.
      */
     protected function setDir($dir) {
-        if (false === in_array($dir, self::dtDirs())) {
+        if (false === in_array($dir, static::dtDirs())) {
             $dir = self::DATATABLES_DIR_ASC;
         }
         $this->dir = strtoupper($dir);
