@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Controller;
 
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesWebTestCase;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\App\TestFixtures;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
 /**
  * DataTables controller test.
@@ -111,7 +111,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
     public function testIndexActionWithParameters() {
 
         // Get the POST data.
-        $parameters = TestFixtures::getPostData();
+        $parameters = TestFixtures::getPOSTData();
 
         // Create a client.
         $client = static::createClient();
@@ -151,7 +151,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
     public function testIndexActionWithLength() {
 
         // Get the POST data.
-        $parameters = TestFixtures::getPostData();
+        $parameters = TestFixtures::getPOSTData();
 
         // Change the length.
         $parameters["length"] = "20";
@@ -205,7 +205,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
     public function testIndexActionWithOrder() {
 
         // Get the POST data.
-        $parameters = TestFixtures::getPostData();
+        $parameters = TestFixtures::getPOSTData();
 
         // Change the column order.
         $parameters["order"][0]["dir"] = "desc";
@@ -248,7 +248,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
     public function testIndexActionWithOrderOnNoOrderableColumn() {
 
         // Get the POST data.
-        $parameters = TestFixtures::getPostData();
+        $parameters = TestFixtures::getPOSTData();
 
         // Change the column order.
         $parameters["order"][6]["dir"] = "desc";
@@ -291,7 +291,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
     public function testIndexActionWithSearch() {
 
         // Get the POST data.
-        $parameters = TestFixtures::getPostData();
+        $parameters = TestFixtures::getPOSTData();
 
         // Change the search.
         $parameters["search"]["value"] = "New York";
@@ -334,7 +334,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
     public function testIndexActionWithSearchColumn() {
 
         // Get the POST data.
-        $parameters = TestFixtures::getPostData();
+        $parameters = TestFixtures::getPOSTData();
 
         // Change the search.
         $parameters["columns"][0]["search"]["value"] = "Brielle";
@@ -369,7 +369,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
     public function testIndexActionWithSearchColumnOnNoSearchableColumn() {
 
         // Get the POST data.
-        $parameters = TestFixtures::getPostData();
+        $parameters = TestFixtures::getPOSTData();
 
         // Change the column order.
         $parameters["column"][6]["search"]["value"] = "search";
@@ -412,7 +412,7 @@ final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase
     public function testIndexActionWithStart() {
 
         // Get the POST data.
-        $parameters = TestFixtures::getPostData();
+        $parameters = TestFixtures::getPOSTData();
 
         // Change the start.
         $parameters["start"] = "50";
