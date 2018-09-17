@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use Exception;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Cases\AbstractJQueryDataTablesFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTestCase;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 
 /**
