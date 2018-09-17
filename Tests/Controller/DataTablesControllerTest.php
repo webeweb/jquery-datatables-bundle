@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Controller;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Cases\AbstractJQueryDataTablesWebTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesWebTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\App\TestFixtures;
 
 /**
