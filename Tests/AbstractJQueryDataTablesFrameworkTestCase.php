@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Cases;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
 
 use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\BootstrapBundle\Tests\Cases\AbstractBootstrapFrameworkTestCase;
