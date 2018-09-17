@@ -16,7 +16,7 @@ use WBW\Bundle\BootstrapBundle\Tests\Cases\AbstractBootstrapFrameworkTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequest;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\App\TestFixtures;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
 /**
  * Abstract jQuery DataTables framework test case.
@@ -72,7 +72,7 @@ abstract class AbstractJQueryDataTablesFrameworkTestCase extends AbstractBootstr
         $this->dataTablesResponse = DataTablesResponse::parse($this->dataTablesWrapper, $this->dataTablesRequest);
 
         // Set a Request mock.
-        $this->request = new Request(["query" => "query"], array_merge(TestFixtures::getPostData(), ["request" => "request"]), [], [], [], ["REQUEST_METHOD" => "POST"]);
+        $this->request = new Request(["query" => "query"], array_merge(TestFixtures::getPOSTData(), ["request" => "request"]), [], [], [], ["REQUEST_METHOD" => "POST"]);
     }
 
 }
