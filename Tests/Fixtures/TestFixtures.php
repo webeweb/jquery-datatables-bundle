@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\App;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures;
 
 use DateTime;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
@@ -102,7 +102,7 @@ final class TestFixtures {
      *
      * @return array Returns the POST data.
      */
-    public static function getPostData() {
+    public static function getPOSTData() {
 
         // Initialize.
         $output = [];
