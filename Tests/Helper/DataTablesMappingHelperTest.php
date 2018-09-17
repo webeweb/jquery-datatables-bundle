@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesMapping;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesMappingHelper;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Cases\AbstractJQueryDataTablesFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTestCase;
 
 /**
  * DataTables mapping helper test.
