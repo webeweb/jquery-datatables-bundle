@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Cases;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
 
 use Doctrine\ORM\Tools\SchemaTool;
 use WBW\Bundle\BootstrapBundle\Tests\Cases\AbstractBootstrapWebTestCase;
