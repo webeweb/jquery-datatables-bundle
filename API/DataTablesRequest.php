@@ -274,7 +274,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
      * @param DataTablesColumn[] $columns The columns.
      * @return DataTablesRequest Returns this request.
      */
-    protected function setColumns($columns) {
+    protected function setColumns(array $columns) {
         $this->columns = $columns;
         return $this;
     }
@@ -307,7 +307,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
      * @param DataTablesOrder[] $order The order.
      * @return DataTablesRequest Returns this request.
      */
-    protected function setOrder($order) {
+    protected function setOrder(array $order) {
         $this->order = $order;
         return $this;
     }
