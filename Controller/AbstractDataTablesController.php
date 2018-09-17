@@ -49,7 +49,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
      *
      * @param Request $request The request.
      * @param string $name The provider name.
-     * @param array $output The output.
+     * @param ActionResponse $output The output.
      * @return Response Returns the response.
      */
     protected function buildDataTablesResponse(Request $request, $name, ActionResponse $output) {
