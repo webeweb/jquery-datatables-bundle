@@ -59,13 +59,13 @@ final class DataTablesWrapperTest extends AbstractJQueryDataTablesFrameworkTestC
         $obj->getMapping()->setPrefix("prefix");
 
         // ===
-        $obj->addColumn(DataTablesColumn::newInstance("name1", "title1"));
+        $this->assertSame($obj, $obj->addColumn(DataTablesColumn::newInstance("name1", "title1")));
         $this->assertCount(1, $obj->getColumns());
         $this->assertEquals("name1", $obj->getColumns()["name1"]->getMapping()->getColumn());
         $this->assertEquals("prefix", $obj->getColumns()["name1"]->getMapping()->getPrefix());
 
         // ===
-        $obj->addColumn(DataTablesColumn::newInstance("name2", "title2"));
+        $this->assertSame($obj, $obj->addColumn(DataTablesColumn::newInstance("name2", "title2")));
         $this->assertCount(2, $obj->getColumns());
         $this->assertEquals("name2", $obj->getColumns()["name2"]->getMapping()->getColumn());
         $this->assertEquals("prefix", $obj->getColumns()["name2"]->getMapping()->getPrefix());
@@ -85,7 +85,7 @@ final class DataTablesWrapperTest extends AbstractJQueryDataTablesFrameworkTestC
         $this->assertNull($obj->getColumn("name1"));
 
         // ===
-        $obj->addColumn($arg);
+        $this->assertSame($obj, $obj->addColumn($arg));
         $this->assertSame($arg, $obj->getColumn("name1"));
     }
 
@@ -116,17 +116,17 @@ final class DataTablesWrapperTest extends AbstractJQueryDataTablesFrameworkTestC
         $col2 = DataTablesColumn::newInstance("name2", "title2");
 
         // ===
-        $obj->addColumn($col1);
-        $obj->addColumn($col2);
+        $this->assertSame($obj, $obj->addColumn($col1));
+        $this->assertSame($obj, $obj->addColumn($col2));
         $this->assertCount(2, $obj->getColumns());
 
         // ===
-        $obj->removeColumn($col1);
+        $this->assertSame($obj, $obj->removeColumn($col1));
         $this->assertCount(1, $obj->getColumns());
         $this->assertNull($col1->getMapping()->getPrefix());
 
         // ===
-        $obj->removeColumn($col2);
+        $this->assertSame($obj, $obj->removeColumn($col2));
         $this->assertCount(0, $obj->getColumns());
         $this->assertNull($col2->getMapping()->getPrefix());
     }

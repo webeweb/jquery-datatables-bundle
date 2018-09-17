@@ -46,7 +46,19 @@ final class DataTablesOptionsTest extends AbstractJQueryDataTablesFrameworkTestC
 
         $obj = new DataTablesOptions();
 
-        // ===
+        $this->assertSame($obj, $obj->addOption("name", "value"));
+        $this->assertEquals(["name" => "value"], $obj->getOptions());
+    }
+
+    /**
+     * Tests the addOption() method.
+     *
+     * @return void
+     */
+    public function testAddOptionWithIllegalArgumentException() {
+
+        $obj = new DataTablesOptions();
+
         try {
 
             $obj->addOption(1, "value");
@@ -55,10 +67,6 @@ final class DataTablesOptionsTest extends AbstractJQueryDataTablesFrameworkTestC
             $this->assertInstanceOf(IllegalArgumentException::class, $ex);
             $this->assertEquals("The argument \"1\" is not a string", $ex->getMessage());
         }
-
-        // ===
-        $obj->addOption("name", "value");
-        $this->assertEquals(["name" => "value"], $obj->getOptions());
     }
 
     /**
@@ -71,8 +79,7 @@ final class DataTablesOptionsTest extends AbstractJQueryDataTablesFrameworkTestC
 
         $obj = new DataTablesOptions();
 
-        $obj->addOption("name", "value");
-
+        $this->assertSame($obj, $obj->addOption("name", "value"));
         $this->assertNotNull($obj->getOption("name"));
         $this->assertNull($obj->getOption("exception"));
     }
@@ -87,8 +94,7 @@ final class DataTablesOptionsTest extends AbstractJQueryDataTablesFrameworkTestC
 
         $obj = new DataTablesOptions();
 
-        $obj->addOption("name", "value");
-
+        $this->assertSame($obj, $obj->addOption("name", "value"));
         $this->assertTrue($obj->hasOption("name"));
         $this->assertFalse($obj->hasOption("exception"));
     }
@@ -103,10 +109,10 @@ final class DataTablesOptionsTest extends AbstractJQueryDataTablesFrameworkTestC
 
         $obj = new DataTablesOptions();
 
-        $obj->addOption("name", "value");
+        $this->assertSame($obj, $obj->addOption("name", "value"));
         $this->assertEquals(["name" => "value"], $obj->getOptions());
 
-        $obj->removeOption("name");
+        $this->assertSame($obj, $obj->removeOption("name"));
         $this->assertEquals([], $obj->getOptions());
     }
 

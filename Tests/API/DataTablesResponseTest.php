@@ -56,7 +56,7 @@ final class DataTablesResponseTest extends AbstractJQueryDataTablesFrameworkTest
         $this->assertCount(0, $obj->getData());
 
         // ===
-        $obj->addRow();
+        $this->assertSame($obj, $obj->addRow());
         $this->assertCount(1, $obj->getData());
     }
 
