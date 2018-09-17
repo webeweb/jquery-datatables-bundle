@@ -15,7 +15,7 @@ use Exception;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTestCase;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\App\TestFixtures;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 use WBW\Library\Core\Exception\IO\FileNotFoundException;
 
 /**
