@@ -22,7 +22,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
  * Abstract jQuery DataTables framework test case.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Cases
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests
  * @abstract
  */
 abstract class AbstractJQueryDataTablesFrameworkTestCase extends AbstractBootstrapFrameworkTestCase {

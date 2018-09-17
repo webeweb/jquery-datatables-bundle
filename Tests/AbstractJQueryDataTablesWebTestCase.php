@@ -18,7 +18,7 @@ use WBW\Bundle\BootstrapBundle\Tests\Cases\AbstractBootstrapWebTestCase;
  * Abstract jQuery DataTables web test case.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Cases
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests
  * @abstract
  */
 abstract class AbstractJQueryDataTablesWebTestCase extends AbstractBootstrapWebTestCase {
