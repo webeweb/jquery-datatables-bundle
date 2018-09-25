@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
 use Symfony\Component\HttpFoundation\Request;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Library\Core\Network\HTTP\HTTPInterface;
 
 /**
@@ -70,6 +71,13 @@ class DataTablesWrapper implements HTTPInterface {
      * @var boolean
      */
     private $processing;
+
+    /**
+     * Provider.
+     *
+     * @var DataTablesProviderInterface
+     */
+    private $provider;
 
     /**
      * Request.
@@ -209,6 +217,15 @@ class DataTablesWrapper implements HTTPInterface {
     }
 
     /**
+     * Get the provider.
+     *
+     * @return DataTablesProviderInterface Returns the provider.
+     */
+    public function getProvider() {
+        return $this->provider;
+    }
+
+    /**
      * Get the request.
      *
      * @return DataTablesRequest The request.
@@ -333,6 +350,17 @@ class DataTablesWrapper implements HTTPInterface {
      */
     public function setProcessing($processing) {
         $this->processing = (false === $processing ? false : true);
+        return $this;
+    }
+
+    /**
+     * Set the provider.
+     *
+     * @param DataTablesProviderInterface $provider The provider.
+     * @return DataTablesWrapper Returns this wrapper.
+     */
+    public function setProvider(DataTablesProviderInterface $provider) {
+        $this->provider = $provider;
         return $this;
     }
 

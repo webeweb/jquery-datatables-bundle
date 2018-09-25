@@ -16,6 +16,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider;
 
 /**
  * DataTables wrapper test.
@@ -42,6 +43,7 @@ final class DataTablesWrapperTest extends AbstractJQueryDataTablesFrameworkTestC
         $this->assertEquals("name", $obj->getName());
         $this->assertEquals([], $obj->getOrder());
         $this->assertTrue($obj->getProcessing());
+        $this->assertNull($obj->getProvider());
         $this->assertNull($obj->getRequest());
         $this->assertNull($obj->getResponse());
         $this->assertTrue($obj->getServerSide());
@@ -206,6 +208,21 @@ final class DataTablesWrapperTest extends AbstractJQueryDataTablesFrameworkTestC
         // ===
         $obj->setProcessing(false);
         $this->assertFalse($obj->getProcessing());
+    }
+
+    /**
+     * Tests the setProvider() method.
+     *
+     * @return void
+     */
+    public function testSetProvider() {
+
+        $obj = new DataTablesWrapper("POST", "url", "name");
+
+        $arg = new EmployeeDataTablesProvider();
+
+        $obj->setProvider($arg);
+        $this->assertSame($arg, $obj->getProvider());
     }
 
     /**
