@@ -315,6 +315,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
         // Initialize the wrapper.
         $dtWrapper = new DataTablesWrapper($dtProvider->getMethod(), $url, $dtProvider->getName());
         $dtWrapper->getMapping()->setPrefix($dtProvider->getPrefix());
+        $dtWrapper->setProvider($dtProvider);
 
         // Handle each column.
         foreach ($dtProvider->getColumns() as $dtColumn) {
