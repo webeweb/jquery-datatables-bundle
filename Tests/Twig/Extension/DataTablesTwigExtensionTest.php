@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Twig\Extension;
 
 use Twig_Node;
 use Twig_SimpleFunction;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider;
 use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 
@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Twig\Extension
  */
-final class DataTablesTwigExtensionTest extends AbstractJQueryDataTablesFrameworkTestCase {
+final class DataTablesTwigExtensionTest extends AbstractFrameworkTestCase {
 
     /**
      * {@inheritdoc}

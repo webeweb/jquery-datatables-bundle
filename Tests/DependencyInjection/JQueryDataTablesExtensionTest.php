@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection;
 
 use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\JQueryDataTablesExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 
 /**
@@ -22,7 +22,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection
  */
-final class DataTablesExtensionTest extends AbstractJQueryDataTablesFrameworkTestCase {
+final class DataTablesExtensionTest extends AbstractFrameworkTestCase {
 
     /**
      * {@inheritdoc}

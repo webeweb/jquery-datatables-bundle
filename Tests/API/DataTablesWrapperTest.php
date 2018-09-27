@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider;
 
 /**
@@ -25,7 +25,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTable
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Wrapper
  * @final
  */
-final class DataTablesWrapperTest extends AbstractJQueryDataTablesFrameworkTestCase {
+final class DataTablesWrapperTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequest;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
  * DataTables request test.
@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTe
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\API
  * @final
  */
-final class DataTablesRequestTest extends AbstractJQueryDataTablesFrameworkTestCase {
+final class DataTablesRequestTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the parse() method.

@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception;
 
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
  * Bad DataTables CSV exporter exception test.
@@ -21,7 +21,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTe
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception
  * @final
  */
-final class BaDataTablesCSVExporterException extends AbstractJQueryDataTablesFrameworkTestCase {
+final class BaDataTablesCSVExporterException extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

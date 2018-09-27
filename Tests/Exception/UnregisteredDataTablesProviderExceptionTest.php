@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception;
 
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
  * Unregistered DataTables provider exception test.
@@ -21,7 +21,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTe
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception
  * @final
  */
-final class UnregisteredDataTablesProviderExceptionTest extends AbstractJQueryDataTablesFrameworkTestCase {
+final class UnregisteredDataTablesProviderExceptionTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

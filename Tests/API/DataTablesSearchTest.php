@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearch;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
 /**
@@ -22,7 +22,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\API
  * @final
  */
-final class DataTablesSearchTest extends AbstractJQueryDataTablesFrameworkTestCase {
+final class DataTablesSearchTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the parse() method.

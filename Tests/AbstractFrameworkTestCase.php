@@ -25,7 +25,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests
  * @abstract
  */
-abstract class AbstractJQueryDataTablesFrameworkTestCase extends AbstractBootstrapFrameworkTestCase {
+abstract class AbstractFrameworkTestCase extends AbstractBootstrapFrameworkTestCase {
 
     /**
      * DataTables request.

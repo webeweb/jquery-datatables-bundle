@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception;
 
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
  * Already registered DataTables provider exception test.
@@ -21,7 +21,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTe
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception
  * @final
  */
-final class AlreadyRegisteredDataTablesProviderExceptionTest extends AbstractJQueryDataTablesFrameworkTestCase {
+final class AlreadyRegisteredDataTablesProviderExceptionTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

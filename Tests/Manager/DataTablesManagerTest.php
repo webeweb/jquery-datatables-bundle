@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Exception\AlreadyRegisteredDataTablesProv
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
  * DataTables manager test.
@@ -25,7 +25,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTe
  * @package WBW\Bundle\JQuery\DataTablesBundle\Manager
  * @final
  */
-final class DataTablesManagerTest extends AbstractJQueryDataTablesFrameworkTestCase {
+final class DataTablesManagerTest extends AbstractFrameworkTestCase {
 
     /**
      * DataTables provider.

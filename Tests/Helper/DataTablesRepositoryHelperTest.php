@@ -16,7 +16,7 @@ use Doctrine\ORM\QueryBuilder;
 use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesRepositoryHelper;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
  * DataTables repository helper test.
@@ -24,7 +24,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTe
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper
  */
-final class DataTablesRepositoryHelperTest extends AbstractJQueryDataTablesFrameworkTestCase {
+final class DataTablesRepositoryHelperTest extends AbstractFrameworkTestCase {
 
     /**
      * Entity manager.

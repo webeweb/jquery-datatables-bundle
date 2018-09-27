@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
 /**
@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\API
  * @final
  */
-final class DataTablesResponseTest extends AbstractJQueryDataTablesFrameworkTestCase {
+final class DataTablesResponseTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

@@ -20,7 +20,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle;
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests
  * @final
  */
-final class JQueryDataTablesBundleTest extends AbstractJQueryDataTablesFrameworkTestCase {
+final class JQueryDataTablesBundleTest extends AbstractFrameworkTestCase {
 
     /**
      * {@inheritdoc}

@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception;
 
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesEditorException;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
  * Bad DataTables editor exception test.
@@ -21,7 +21,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTe
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception
  * @final
  */
-final class BaDataTablesEditorException extends AbstractJQueryDataTablesFrameworkTestCase {
+final class BaDataTablesEditorException extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesMapping;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesMappingHelper;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
  * DataTables mapping helper test.
@@ -22,7 +22,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesFrameworkTe
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper
  * @final
  */
-final class DataTablesMappingHelperTest extends AbstractJQueryDataTablesFrameworkTestCase {
+final class DataTablesMappingHelperTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the getAlias() method.
