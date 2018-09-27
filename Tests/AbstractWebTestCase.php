@@ -21,7 +21,7 @@ use WBW\Bundle\BootstrapBundle\Tests\Cases\AbstractBootstrapWebTestCase;
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests
  * @abstract
  */
-abstract class AbstractJQueryDataTablesWebTestCase extends AbstractBootstrapWebTestCase {
+abstract class AbstractWebTestCase extends AbstractBootstrapWebTestCase {
 
     /**
      * {@inheritdoc}

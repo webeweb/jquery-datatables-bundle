@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Controller;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractJQueryDataTablesWebTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractWebTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
 /**
@@ -21,7 +21,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Controller
  * @final
  */
-final class DataTablesControllerTest extends AbstractJQueryDataTablesWebTestCase {
+final class DataTablesControllerTest extends AbstractWebTestCase {
 
     /**
      * {@inheritdoc}
