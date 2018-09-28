@@ -62,7 +62,7 @@ final class DataTablesRepositoryHelperTest extends AbstractFrameworkTestCase {
         $arg = new DataTablesWrapper("POST", "url", "name");
         $arg->parse(new Request());
 
-        DataTablesRepositoryHelper::appendOrder($this->queryBuilder, $arg);
+        $this->assertNull(DataTablesRepositoryHelper::appendOrder($this->queryBuilder, $arg));
     }
 
     /**
@@ -75,7 +75,7 @@ final class DataTablesRepositoryHelperTest extends AbstractFrameworkTestCase {
         $arg = new DataTablesWrapper("POST", "url", "name");
         $arg->parse(new Request());
 
-        DataTablesRepositoryHelper::appendWhere($this->queryBuilder, $arg);
+        $this->assertNull(DataTablesRepositoryHelper::appendWhere($this->queryBuilder, $arg));
     }
 
 }

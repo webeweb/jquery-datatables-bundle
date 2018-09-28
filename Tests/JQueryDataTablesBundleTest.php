@@ -38,7 +38,7 @@ final class JQueryDataTablesBundleTest extends AbstractFrameworkTestCase {
 
         $obj = new JQueryDataTablesBundle();
 
-        $obj->build($this->containerBuilder);
+        $this->assertNull($obj->build($this->containerBuilder));
     }
 
 }
