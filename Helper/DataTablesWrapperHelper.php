@@ -15,7 +15,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle;
 use WBW\Library\Core\Argument\ObjectHelper;
 use WBW\Library\Core\Argument\StringHelper;
-use WBW\Library\Core\Exception\IO\FileNotFoundException;
+use WBW\Library\Core\Exception\FileSystem\FileNotFoundException;
 
 /**
  * DataTables wrapper helper.
