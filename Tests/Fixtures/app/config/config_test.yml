@@ -35,7 +35,7 @@ doctrine:
         auto_mapping:                true
         mappings:
             JQueryDataTablesBundle:
-                dir:       "Tests/Fixtures/App/config/doctrine"
+                dir:       "Tests/Fixtures/app/config/doctrine"
                 type:      "yml"
                 is_bundle: true
                 prefix:    "WBW\\Bundle\\JQuery\\DataTablesBundle\\Tests\\Fixtures\\Entity"

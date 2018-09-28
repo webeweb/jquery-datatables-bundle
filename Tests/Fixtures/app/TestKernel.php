@@ -8,16 +8,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use WBW\Bundle\BootstrapBundle\Tests\Cases\AbstractBootstrapKernel;
+use WBW\Bundle\BootstrapBundle\Tests\AbstractKernel as BaseKernel;
 
 /**
  * Test kernel.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\App
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\app
  * @final
  */
-final class TestKernel extends AbstractBootstrapKernel {
+final class TestKernel extends BaseKernel {
 
     /**
      * {@inheritdoc}
@@ -34,13 +34,6 @@ final class TestKernel extends AbstractBootstrapKernel {
             new WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle(),
         ];
         return $bundles;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getTestsDir() {
-        return __DIR__ . "/../..";
     }
 
 }
