@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
 
 use Symfony\Component\HttpFoundation\Request;
-use WBW\Bundle\BootstrapBundle\Tests\Cases\AbstractBootstrapFrameworkTestCase;
+use WBW\Bundle\BootstrapBundle\Tests\AbstractFrameworkTestCase as BaseFrameworkTest;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequest;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
@@ -25,7 +25,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests
  * @abstract
  */
-abstract class AbstractFrameworkTestCase extends AbstractBootstrapFrameworkTestCase {
+abstract class AbstractFrameworkTestCase extends BaseFrameworkTest {
 
     /**
      * DataTables request.
