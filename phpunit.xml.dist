@@ -21,9 +21,6 @@
             </exclude>
         </whitelist>
     </filter>
-    <php>
-        <server name="KERNEL_DIR" value="./Tests/Fixtures/App" />
-    </php>
     <testsuites>
         <testsuite name="webeweb/jquery-datatables-bundle">
             <directory suffix="Test.php">./Tests</directory>
