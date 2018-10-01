@@ -111,7 +111,7 @@ final class DataTablesTwigExtensionTest extends AbstractFrameworkTestCase {
 
         // ===
         $arg0 = [];
-        $res0 = <<< 'EOT'
+        $res0 = <<<'EOT'
 <script type="text/javascript">
     $(document).ready(function () {
         var dtname = $("#dtname").DataTable({
@@ -169,7 +169,7 @@ EOT;
 
         // ===
         $arg9 = ["selector" => "#selector", "language" => "French"];
-        $res9 = <<< 'EOT'
+        $res9 = <<<'EOT'
 <script type="text/javascript">
     $(document).ready(function () {
         var dtname = $("#selector").DataTable({
@@ -239,7 +239,7 @@ EOT;
         $obj = new DataTablesTwigExtension();
 
         // ===
-        $res0 = <<< 'EOT'
+        $res0 = <<<'EOT'
 <script type="text/javascript">
     $(document).ready(function () {
         $(".table").DataTable({});
@@ -250,7 +250,7 @@ EOT;
 
         // ===
         $arg9 = ["selector" => "#selector", "language" => "French", "options" => ["columnDefs" => [["orderable" => false, "targets" => -1]]]];
-        $res9 = <<< 'EOT'
+        $res9 = <<<'EOT'
 <script type="text/javascript">
     $(document).ready(function () {
         $("#selector").DataTable({
@@ -281,7 +281,7 @@ EOT;
 
         // ===
         $arg0 = [];
-        $res0 = <<< 'EOT'
+        $res0 = <<<'EOT'
 <table class="table" id="dtname">
     <thead>
         <tr>
@@ -311,7 +311,7 @@ EOT;
 
         // ===
         $arg1 = ["class" => "class"];
-        $res1 = <<< 'EOT'
+        $res1 = <<<'EOT'
 <table class="table class" id="dtname">
     <thead>
         <tr>
@@ -341,7 +341,7 @@ EOT;
 
         // ===
         $arg2 = ["thead" => false];
-        $res2 = <<< 'EOT'
+        $res2 = <<<'EOT'
 <table class="table" id="dtname">
     <tfoot>
         <tr>
@@ -360,7 +360,7 @@ EOT;
 
         // ===
         $arg3 = ["tfoot" => false];
-        $res3 = <<< 'EOT'
+        $res3 = <<<'EOT'
 <table class="table" id="dtname">
     <thead>
         <tr>
@@ -381,11 +381,11 @@ EOT;
         $i = 0;
         foreach ($this->dataTablesWrapper->getColumns() as $dtColumn) {
             $dtColumn->setClassname($dtColumn->getData());
-            $dtColumn->setWidth( ++$i);
+            $dtColumn->setWidth(++$i);
         }
 
         $arg9 = ["class" => "class", "thead" => true, "tfoot" => true];
-        $res9 = <<< 'EOT'
+        $res9 = <<<'EOT'
 <table class="table class" id="dtname">
     <thead>
         <tr>

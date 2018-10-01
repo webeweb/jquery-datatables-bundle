@@ -32,7 +32,7 @@ abstract class AbstractDataTablesTwigExtension extends Twig_Extension {
      *
      * @var string
      */
-    const JQUERY_DATATABLES = <<< 'EOT'
+    const JQUERY_DATATABLES = <<<'EOT'
 <script type="text/javascript">
     $(document).ready(function () {
         var %var% = $("%selector%").DataTable(%options%);
@@ -45,7 +45,7 @@ EOT;
      *
      * @var string
      */
-    const JQUERY_DATATABLES_STANDALONE = <<< 'EOT'
+    const JQUERY_DATATABLES_STANDALONE = <<<'EOT'
 <script type="text/javascript">
     $(document).ready(function () {
         $("%selector%").DataTable(%options%);
