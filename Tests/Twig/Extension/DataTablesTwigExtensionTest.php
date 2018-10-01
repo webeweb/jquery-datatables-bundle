@@ -111,7 +111,7 @@ final class DataTablesTwigExtensionTest extends AbstractFrameworkTestCase {
 
         // ===
         $arg0 = [];
-        $res0 = <<< 'EOTXT'
+        $res0 = <<< 'EOT'
 <script type="text/javascript">
     $(document).ready(function () {
         var dtname = $("#dtname").DataTable({
@@ -164,12 +164,12 @@ final class DataTablesTwigExtensionTest extends AbstractFrameworkTestCase {
         });
     });
 </script>
-EOTXT;
+EOT;
         $this->assertEquals($res0, $obj->jQueryDataTablesFunction($this->dataTablesWrapper, $arg0));
 
         // ===
         $arg9 = ["selector" => "#selector", "language" => "French"];
-        $res9 = <<< 'EOTXT'
+        $res9 = <<< 'EOT'
 <script type="text/javascript">
     $(document).ready(function () {
         var dtname = $("#selector").DataTable({
@@ -225,7 +225,7 @@ EOTXT;
         });
     });
 </script>
-EOTXT;
+EOT;
         $this->assertEquals($res9, $obj->jQueryDataTablesFunction($this->dataTablesWrapper, $arg9));
     }
 
@@ -239,18 +239,18 @@ EOTXT;
         $obj = new DataTablesTwigExtension();
 
         // ===
-        $res0 = <<< 'EOTXT'
+        $res0 = <<< 'EOT'
 <script type="text/javascript">
     $(document).ready(function () {
         $(".table").DataTable({});
     });
 </script>
-EOTXT;
+EOT;
         $this->assertEquals($res0, $obj->jQueryDataTablesStandaloneFunction());
 
         // ===
         $arg9 = ["selector" => "#selector", "language" => "French", "options" => ["columnDefs" => [["orderable" => false, "targets" => -1]]]];
-        $res9 = <<< 'EOTXT'
+        $res9 = <<< 'EOT'
 <script type="text/javascript">
     $(document).ready(function () {
         $("#selector").DataTable({
@@ -266,7 +266,7 @@ EOTXT;
         });
     });
 </script>
-EOTXT;
+EOT;
         $this->assertEquals($res9, $obj->jQueryDataTablesStandaloneFunction($arg9));
     }
 
@@ -281,7 +281,7 @@ EOTXT;
 
         // ===
         $arg0 = [];
-        $res0 = <<< 'EOTXT'
+        $res0 = <<< 'EOT'
 <table class="table" id="dtname">
     <thead>
         <tr>
@@ -306,12 +306,12 @@ EOTXT;
         </tr>
     </tfoot>
 </table>
-EOTXT;
+EOT;
         $this->assertEquals($res0, $obj->renderDataTablesFunction($this->dataTablesWrapper, $arg0));
 
         // ===
         $arg1 = ["class" => "class"];
-        $res1 = <<< 'EOTXT'
+        $res1 = <<< 'EOT'
 <table class="table class" id="dtname">
     <thead>
         <tr>
@@ -336,12 +336,12 @@ EOTXT;
         </tr>
     </tfoot>
 </table>
-EOTXT;
+EOT;
         $this->assertEquals($res1, $obj->renderDataTablesFunction($this->dataTablesWrapper, $arg1));
 
         // ===
         $arg2 = ["thead" => false];
-        $res2 = <<< 'EOTXT'
+        $res2 = <<< 'EOT'
 <table class="table" id="dtname">
     <tfoot>
         <tr>
@@ -355,12 +355,12 @@ EOTXT;
         </tr>
     </tfoot>
 </table>
-EOTXT;
+EOT;
         $this->assertEquals($res2, $obj->renderDataTablesFunction($this->dataTablesWrapper, $arg2));
 
         // ===
         $arg3 = ["tfoot" => false];
-        $res3 = <<< 'EOTXT'
+        $res3 = <<< 'EOT'
 <table class="table" id="dtname">
     <thead>
         <tr>
@@ -374,18 +374,18 @@ EOTXT;
         </tr>
     </thead>
 </table>
-EOTXT;
+EOT;
         $this->assertEquals($res3, $obj->renderDataTablesFunction($this->dataTablesWrapper, $arg3));
 
         // ===
         $i = 0;
         foreach ($this->dataTablesWrapper->getColumns() as $dtColumn) {
             $dtColumn->setClassname($dtColumn->getData());
-            $dtColumn->setWidth(++$i);
+            $dtColumn->setWidth( ++$i);
         }
 
         $arg9 = ["class" => "class", "thead" => true, "tfoot" => true];
-        $res9 = <<< 'EOTXT'
+        $res9 = <<< 'EOT'
 <table class="table class" id="dtname">
     <thead>
         <tr>
@@ -410,7 +410,7 @@ EOTXT;
         </tr>
     </tfoot>
 </table>
-EOTXT;
+EOT;
         $this->assertEquals($res9, $obj->renderDataTablesFunction($this->dataTablesWrapper, $arg9));
     }
 
