@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection;
 
+use WBW\Bundle\BootstrapBundle\Twig\Extension\BootstrapRendererTwigExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\JQueryDataTablesExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
@@ -29,6 +30,9 @@ final class DataTablesExtensionTest extends AbstractFrameworkTestCase {
      */
     protected function setUp() {
         parent::setUp();
+
+        // Set a Bootstrap renderer Twig extension mock
+        $this->containerBuilder->set("webeweb.bootstrap.twig.extension.renderer", new BootstrapRendererTwigExtension());
     }
 
     /**

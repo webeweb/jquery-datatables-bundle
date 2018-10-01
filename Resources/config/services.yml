@@ -6,7 +6,8 @@ services:
         public: true
 
     webeweb.jquerydatatables.twig.extension.datatables:
-        class:  WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension
-        public: true
+        class:     WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension
+        arguments: ["@webeweb.bootstrap.twig.extension.renderer"]
+        public:    true
         tags:
             - { name: "twig.extension" }

@@ -31,13 +31,6 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
     const SERVICE_NAME = "webeweb.jquerydatatables.twig.extension.datatables";
 
     /**
-     * Constructor.
-     */
-    public function __construct() {
-        parent::__construct();
-    }
-
-    /**
      * Get the Twig functions.
      *
      * @return array Returns the Twig functions.

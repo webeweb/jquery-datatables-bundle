@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension;
 
 use Twig_Extension;
+use WBW\Bundle\BootstrapBundle\Twig\Extension\BootstrapRendererTwigExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
@@ -33,11 +34,9 @@ abstract class AbstractDataTablesTwigExtension extends Twig_Extension {
      * @var string
      */
     const JQUERY_DATATABLES = <<<'EOT'
-<script type="text/javascript">
     $(document).ready(function () {
         var %var% = $("%selector%").DataTable(%options%);
     });
-</script>
 EOT;
 
     /**
@@ -46,18 +45,25 @@ EOT;
      * @var string
      */
     const JQUERY_DATATABLES_STANDALONE = <<<'EOT'
-<script type="text/javascript">
     $(document).ready(function () {
         $("%selector%").DataTable(%options%);
     });
-</script>
 EOT;
 
     /**
-     * Constructor.
+     * Renderer
+     *
+     * @var BootstrapRendererTwigExtension
      */
-    protected function __construct() {
-        // NOTHING TO DO.
+    private $renderer;
+
+    /**
+     * Constructor.
+     *
+     * @param BootstrapRendererTwigExtension $renderer The renderer.
+     */
+    public function __construct(BootstrapRendererTwigExtension $renderer) {
+        $this->setRenderer($renderer);
     }
 
     /**
@@ -73,6 +79,15 @@ EOT;
         ksort($options);
         $output = json_encode($options, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
         return str_replace("\n", "\n        ", $output);
+    }
+
+    /**
+     * Get the renderer.
+     *
+     * @return BootstrapRendererTwigExtension Returns the renderer.
+     */
+    public function getRenderer() {
+        return $this->renderer;
     }
 
     /**
@@ -101,7 +116,8 @@ EOT;
         $replaces = [$var, null === $selector ? "#" . $var : $selector, $this->encodeOptions($options)];
 
         // Return the Javascript.
-        return StringHelper::replace(self::JQUERY_DATATABLES, $searches, $replaces);
+        $javascript = StringHelper::replace(self::JQUERY_DATATABLES, $searches, $replaces);
+        return $this->getRenderer()->bootstrapScriptFilter($javascript);
     }
 
     /**
@@ -125,7 +141,8 @@ EOT;
         $replaces = [$selector, $this->encodeOptions($options)];
 
         // Return the Javascript.
-        return StringHelper::replace(self::JQUERY_DATATABLES_STANDALONE, $searches, $replaces);
+        $javascript = StringHelper::replace(self::JQUERY_DATATABLES_STANDALONE, $searches, $replaces);
+        return $this->getRenderer()->bootstrapScriptFilter($javascript);
     }
 
     /**
@@ -238,6 +255,17 @@ EOT;
 
         // Return the HTML.
         return "" === $innerHTML ? "" : StringHelper::replace($template, ["%innerHTML%"], [$innerHTML]);
+    }
+
+    /**
+     * Set the renderer.
+     *
+     * @param BootstrapRendererTwigExtension $renderer The renderer.
+     * @return AbstractDataTablesTwigExtension Returns this Twig extension.
+     */
+    protected function setRenderer(BootstrapRendererTwigExtension $renderer) {
+        $this->renderer = $renderer;
+        return $this;
     }
 
 }
