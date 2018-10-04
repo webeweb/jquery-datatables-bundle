@@ -472,8 +472,10 @@ final class DataTablesControllerTest extends AbstractWebTestCase {
         $client->request("GET", "/datatables/employee/delete/57");
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
-
         $this->assertEquals("/datatables/employee/index", $client->getResponse()->headers->get("location"));
+
+        $client->followRedirect();
+        $this->assertContains("Successful deletion", $client->getResponse()->getContent());
     }
 
     /**
@@ -491,8 +493,10 @@ final class DataTablesControllerTest extends AbstractWebTestCase {
         $client->request("GET", "/datatables/employee/delete/57");
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
-
         $this->assertEquals("/datatables/employee/index", $client->getResponse()->headers->get("location"));
+
+        $client->followRedirect();
+        $this->assertContains("Record not found", $client->getResponse()->getContent());
     }
 
     /**

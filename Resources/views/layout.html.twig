@@ -31,6 +31,13 @@
     </nav>
     <section class="content">
         <div class="container-fluid">
+            {% if (0 < app.session.flashbag.peekAll()|length) %}
+                <div class="row clearfix">
+                    <div class="{{ bootstrapGrid({"lg": 12, "recopy": true}) }}">
+                        {% include "@Bootstrap/include/flashbag.html.twig" %}
+                    </div>
+                </div>
+            {% endif %}
             {% block jQueryDataTablesBodyContent %}
             {% endblock %}
         </div>
