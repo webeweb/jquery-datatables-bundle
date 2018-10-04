@@ -95,7 +95,7 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
     /**
      * Orderable.
      *
-     * @var boolean
+     * @var bool
      */
     private $orderable;
 
@@ -109,7 +109,7 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
     /**
      * Searchable.
      *
-     * @var boolean
+     * @var bool
      */
     private $searchable;
 
@@ -130,7 +130,7 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
     /**
      * Visible.
      *
-     * @var boolean
+     * @var bool
      */
     private $visible;
 
@@ -285,7 +285,7 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
     /**
      * Get the orderable.
      *
-     * @return boolean Returns the orderable.
+     * @return bool Returns the orderable.
      */
     public function getOrderable() {
         return $this->orderable;
@@ -303,7 +303,7 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
     /**
      * Get the searchable.
      *
-     * @return boolean Returns the searchable.
+     * @return bool Returns the searchable.
      */
     public function getSearchable() {
         return $this->searchable;
@@ -330,7 +330,7 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
     /**
      * Get the visible.
      *
-     * @return boolean Returns the visible.
+     * @return bool Returns the visible.
      */
     public function getVisible() {
         return $this->visible;
@@ -534,7 +534,7 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
     /**
      * Set the orderable.
      *
-     * @param boolean $orderable The orderable.
+     * @param bool $orderable The orderable.
      * @return DataTablesColumn Returns this column.
      */
     public function setOrderable($orderable) {
@@ -556,7 +556,7 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
     /**
      * Set the searchable.
      *
-     * @param boolean $searchable The searchable.
+     * @param bool $searchable The searchable.
      * @return DataTablesColumn Returns this column.
      */
     public function setSearchable($searchable) {
@@ -592,7 +592,7 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
     /**
      * Set the visible.
      *
-     * @param boolean $visible The visible.
+     * @param bool $visible The visible.
      * @return DataTablesColumn Returns this column.
      */
     public function setVisible($visible) {

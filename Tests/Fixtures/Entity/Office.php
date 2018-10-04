@@ -22,7 +22,7 @@ class Office {
     /**
      * Id.
      *
-     * @var integer
+     * @var int
      */
     private $id;
 
@@ -43,7 +43,7 @@ class Office {
     /**
      * Get the id.
      *
-     * @return integer Returns the id.
+     * @return int Returns the id.
      */
     public function getId() {
         return $this->id;

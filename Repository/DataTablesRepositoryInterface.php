@@ -26,7 +26,7 @@ interface DataTablesRepositoryInterface {
     /**
      * Repository limit.
      *
-     * @var integer
+     * @var int
      */
     const REPOSITORY_LIMIT = 10000;
 
@@ -34,7 +34,7 @@ interface DataTablesRepositoryInterface {
      * Count exported entities.
      *
      * @param DataTablesProvider The provider.
-     * @return integer Returns the exported entities count.
+     * @return int Returns the exported entities count.
      */
     public function dataTablesCountExported(DataTablesProviderInterface $dtProvider);
 
@@ -42,7 +42,7 @@ interface DataTablesRepositoryInterface {
      * Count filtered entities.
      *
      * @param DataTablesWrapper $dtWrapper The wrapper.
-     * @return integer Returns the filtered entities count.
+     * @return int Returns the filtered entities count.
      */
     public function dataTablesCountFiltered(DataTablesWrapper $dtWrapper);
 
@@ -50,7 +50,7 @@ interface DataTablesRepositoryInterface {
      * Count all entities.
      *
      * @param DataTablesWrapper $dtWrapper The wrapper.
-     * @return integer Returns the all entities count.
+     * @return int Returns the all entities count.
      */
     public function dataTablesCountTotal(DataTablesWrapper $dtWrapper);
 

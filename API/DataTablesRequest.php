@@ -33,14 +33,14 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
     /**
      * Draw.
      *
-     * @var integer
+     * @var int
      */
     private $draw;
 
     /**
      * Length.
      *
-     * @var integer
+     * @var int
      */
     private $length;
 
@@ -75,7 +75,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
     /**
      * Start.
      *
-     * @var integer
+     * @var int
      */
     private $start;
 
@@ -142,7 +142,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
     /**
      * Get the draw.
      *
-     * @return integer Returns the draw.
+     * @return int Returns the draw.
      */
     public function getDraw() {
         return $this->draw;
@@ -151,7 +151,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
     /**
      * Get the length.
      *
-     * @return integer Returns the length.
+     * @return int Returns the length.
      */
     public function getLength() {
         return $this->length;
@@ -196,7 +196,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
     /**
      * Get the start.
      *
-     * @return integer Returns the start.
+     * @return int Returns the start.
      */
     public function getStart() {
         return $this->start;
@@ -282,7 +282,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
     /**
      * Set the draw.
      *
-     * @param integer $draw The draw.
+     * @param int $draw The draw.
      * @return DataTablesRequest Returns this request.
      */
     protected function setDraw($draw) {
@@ -293,7 +293,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
     /**
      * Set the length.
      *
-     * @param integer $length The length.
+     * @param int $length The length.
      * @return DataTablesRequest Returns this request.
      */
     protected function setLength($length) {
@@ -348,7 +348,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
     /**
      * Set the start.
      *
-     * @param integer $start The start.
+     * @param int $start The start.
      * @return DataTablesRequest Returns this request.
      */
     protected function setStart($start) {

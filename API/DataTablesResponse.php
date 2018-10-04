@@ -31,7 +31,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     /**
      * Draw.
      *
-     * @var integer
+     * @var int
      */
     private $draw;
 
@@ -45,14 +45,14 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     /**
      * Records filtered.
      *
-     * @var integer
+     * @var int
      */
     private $recordsFiltered;
 
     /**
      * Records total.
      *
-     * @var integer
+     * @var int
      */
     private $recordsTotal;
 
@@ -97,7 +97,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     /**
      * Count rows.
      *
-     * @return integer Returns the rows count.
+     * @return int Returns the rows count.
      */
     public function countRows() {
         return count($this->data);
@@ -129,7 +129,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     /**
      * Get the draw
      *
-     * @return integer Returns the draw.
+     * @return int Returns the draw.
      */
     public function getDraw() {
         return $this->draw;
@@ -147,7 +147,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     /**
      * Get the records filtered.
      *
-     * @return integer The records filtered.
+     * @return int The records filtered.
      */
     public function getRecordsFiltered() {
         return $this->recordsFiltered;
@@ -156,7 +156,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     /**
      * Get the records total.
      *
-     * @return integer Returns the records total.
+     * @return int Returns the records total.
      */
     public function getRecordsTotal() {
         return $this->recordsTotal;
@@ -210,7 +210,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     /**
      * Set the draw.
      *
-     * @param integer $draw The draw.
+     * @param int $draw The draw.
      * @return DataTablesResponse Returns the response.
      */
     protected function setDraw($draw) {
@@ -232,7 +232,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     /**
      * Set the records filtered.
      *
-     * @param integer $recordsFiltered The records filtered.
+     * @param int $recordsFiltered The records filtered.
      * @return DataTablesResponse Returns this response.
      */
     public function setRecordsFiltered($recordsFiltered) {
@@ -243,7 +243,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     /**
      * Set the records total.
      *
-     * @param integer $recordsTotal The records total.
+     * @param int $recordsTotal The records total.
      * @return DataTablesResponse Returns this response.
      */
     public function setRecordsTotal($recordsTotal) {

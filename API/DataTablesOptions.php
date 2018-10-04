@@ -78,7 +78,7 @@ class DataTablesOptions {
      * Determines if an option exists.
      *
      * @param string $name The name.
-     * @return boolean Returns true in case of success, false otherwise.
+     * @return bool Returns true in case of success, false otherwise.
      */
     public function hasOption($name) {
         return array_key_exists($name, $this->options);

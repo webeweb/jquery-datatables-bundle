@@ -24,7 +24,7 @@ class DataTablesSearch implements DataTablesSearchInterface {
     /**
      * Regex.
      *
-     * @var boolean
+     * @var bool
      */
     private $regex;
 
@@ -46,7 +46,7 @@ class DataTablesSearch implements DataTablesSearchInterface {
     /**
      * Get the regex.
      *
-     * @return boolean Returns the regex.
+     * @return bool Returns the regex.
      */
     public function getRegex() {
         return $this->regex;
@@ -91,7 +91,7 @@ class DataTablesSearch implements DataTablesSearchInterface {
     /**
      * Set the regex.
      *
-     * @param boolean $regex The regex.
+     * @param bool $regex The regex.
      * @return DataTablesSearch Returns this search.
      */
     protected function setRegex($regex) {

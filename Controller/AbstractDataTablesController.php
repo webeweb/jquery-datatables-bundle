@@ -219,7 +219,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
      * Get an entity by id.
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
-     * @param integer $id The entity id.
+     * @param int $id The entity id.
      * @return object Returns the entity.
      * @throws BadDataTablesRepositoryException Throws a bad repository exception.
      * @throws EntityNotFoundException Throws an Entity not found exception.
@@ -349,7 +349,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
     /**
      * Prepare an action response.
      *
-     * @param integer $status The status.
+     * @param int $status The status.
      * @param string $notify The notify.
      * @return ActionResponse Returns the action response.
      */

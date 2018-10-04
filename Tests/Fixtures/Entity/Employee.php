@@ -24,14 +24,14 @@ class Employee {
     /**
      * Age.
      *
-     * @var integer
+     * @var int
      */
     private $age;
 
     /**
      * Id.
      *
-     * @var integer
+     * @var int
      */
     private $id;
 
@@ -59,7 +59,7 @@ class Employee {
     /**
      * Salary.
      *
-     * @var integer
+     * @var int
      */
     private $salary;
 
@@ -80,7 +80,7 @@ class Employee {
     /**
      * Get the age.
      *
-     * @return integer Returns the age.
+     * @return int Returns the age.
      */
     public function getAge() {
         return $this->age;
@@ -89,7 +89,7 @@ class Employee {
     /**
      * Get the id.
      *
-     * @return integer Returns the id.
+     * @return int Returns the id.
      */
     public function getId() {
         return $this->id;
@@ -125,7 +125,7 @@ class Employee {
     /**
      * Get the salary.
      *
-     * @return integer Returns the salary.
+     * @return int Returns the salary.
      */
     public function getSalary() {
         return $this->salary;
@@ -143,7 +143,7 @@ class Employee {
     /**
      * Set the age.
      *
-     * @param integer $age The age.
+     * @param int $age The age.
      * @return Employee Returns this employee.
      */
     public function setAge($age) {
@@ -187,7 +187,7 @@ class Employee {
     /**
      * Set the salary.
      *
-     * @param integer $salary The salary.
+     * @param int $salary The salary.
      * @return Employee Returns this employee.
      */
     public function setSalary($salary) {

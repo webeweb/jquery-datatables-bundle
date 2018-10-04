@@ -22,7 +22,7 @@ class DataTablesOrder implements DataTablesOrderInterface {
     /**
      * Column.
      *
-     * @var integer
+     * @var int
      */
     private $column;
 
@@ -55,7 +55,7 @@ class DataTablesOrder implements DataTablesOrderInterface {
     /**
      * Get the column.
      *
-     * @return integer Returns the column.
+     * @return int Returns the column.
      */
     public function getColumn() {
         return $this->column;
@@ -108,7 +108,7 @@ class DataTablesOrder implements DataTablesOrderInterface {
     /**
      * Set the column.
      *
-     * @param integer $column The column.
+     * @param int $column The column.
      * @return DataTablesOrder Returns this order.
      */
     protected function setColumn($column) {

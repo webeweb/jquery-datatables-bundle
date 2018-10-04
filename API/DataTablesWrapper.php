@@ -68,7 +68,7 @@ class DataTablesWrapper implements HTTPInterface {
     /**
      * Processing.
      *
-     * @var boolean
+     * @var bool
      */
     private $processing;
 
@@ -96,7 +96,7 @@ class DataTablesWrapper implements HTTPInterface {
     /**
      * Server side.
      *
-     * @var boolean
+     * @var bool
      */
     private $serverSide;
 
@@ -210,7 +210,7 @@ class DataTablesWrapper implements HTTPInterface {
     /**
      * Get the processing.
      *
-     * @return boolean Returns the processing.
+     * @return bool Returns the processing.
      */
     public function getProcessing() {
         return $this->processing;
@@ -246,7 +246,7 @@ class DataTablesWrapper implements HTTPInterface {
     /**
      * Get the server side.
      *
-     * @return boolean Returns the server side.
+     * @return bool Returns the server side.
      */
     public function getServerSide() {
         return $this->serverSide;
@@ -345,7 +345,7 @@ class DataTablesWrapper implements HTTPInterface {
     /**
      * Set the processing.
      *
-     * @param boolean $processing The processing.
+     * @param bool $processing The processing.
      * @return DataTablesWrapper Returns this wrapper.
      */
     public function setProcessing($processing) {
@@ -367,7 +367,7 @@ class DataTablesWrapper implements HTTPInterface {
     /**
      * Set the server side.
      *
-     * @param boolean $serverSide The server side.
+     * @param bool $serverSide The server side.
      * @return DataTablesWrapper Returns this wrapper.
      */
     public function setServerSide($serverSide) {
