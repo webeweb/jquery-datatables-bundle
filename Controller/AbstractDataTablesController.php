@@ -349,7 +349,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
     /**
      * Prepare an action response.
      *
-     * @param int $status The status.
+     * @param integer $status The status.
      * @param string $notify The notify.
      * @return ActionResponse Returns the action response.
      */
