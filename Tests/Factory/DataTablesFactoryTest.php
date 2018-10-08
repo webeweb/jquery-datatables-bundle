@@ -38,26 +38,53 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         $postData["search"]["regex"] = "true";
         $postData["search"]["value"] = "value";
 
-        // ===
         $res = DataTablesFactory::newSearch($postData["search"]);
         $this->assertTrue($res->getRegex());
         $this->assertEquals("value", $res->getValue());
+    }
 
-        // Set an invalid search.
+    /**
+     * Tests the newSearch() method.
+     *
+     * @return void
+     */
+    public function testNewSearchWithNoRegex() {
+
+        // Get the POST data.
+        $postData = TestFixtures::getPOSTData();
+
+        // Set the POST data.
         $postData["search"]["regex"] = "false";
-        unset($postData["search"]["value"]);
-
-        $res1 = DataTablesFactory::newSearch($postData["search"]);
-        $this->assertFalse($res1->getRegex());
-        $this->assertEquals("", $res1->getValue());
+        $postData["search"]["value"] = "value";
 
         // Set an invalid search.
         unset($postData["search"]["regex"]);
+
+        $res = DataTablesFactory::newSearch($postData["search"]);
+        $this->assertFalse($res->getRegex());
+        $this->assertEquals("", $res->getValue());
+    }
+
+    /**
+     * Tests the newSearch() method.
+     *
+     * @return void
+     */
+    public function testNewSearchWithNoValue() {
+
+        // Get the POST data.
+        $postData = TestFixtures::getPOSTData();
+
+        // Set the POST data.
+        $postData["search"]["regex"] = "true";
+        $postData["search"]["value"] = "value";
+
+        // Set an invalid search.
         unset($postData["search"]["value"]);
 
-        $res2 = DataTablesFactory::newSearch($postData["search"]);
-        $this->assertFalse($res2->getRegex());
-        $this->assertEquals("", $res2->getValue());
+        $res = DataTablesFactory::newSearch($postData["search"]);
+        $this->assertFalse($res->getRegex());
+        $this->assertEquals("", $res->getValue());
     }
 
 }
