@@ -11,6 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
+use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesOrderHelper;
+
 /**
  * DataTables order.
  *
@@ -38,18 +40,6 @@ class DataTablesOrder implements DataTablesOrderInterface {
      */
     protected function __construct() {
         // NOTHING TO DO
-    }
-
-    /**
-     * DataTables dirs.
-     *
-     * @return array Returns the dirs.
-     */
-    public static function dtDirs() {
-        return [
-            self::DATATABLES_DIR_ASC,
-            self::DATATABLES_DIR_DESC,
-        ];
     }
 
     /**
@@ -119,7 +109,7 @@ class DataTablesOrder implements DataTablesOrderInterface {
      * @return DataTablesOrderInterface Returns this order.
      */
     protected function setDir($dir) {
-        if (false === in_array($dir, static::dtDirs())) {
+        if (false === in_array($dir, DataTablesOrderHelper::dtDirs())) {
             $dir = self::DATATABLES_DIR_ASC;
         }
         $this->dir = strtoupper($dir);
