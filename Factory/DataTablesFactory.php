@@ -11,10 +11,12 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Factory;
 
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrder;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearch;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearchInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Library\Core\Argument\BooleanHelper;
 
 /**
@@ -24,6 +26,71 @@ use WBW\Library\Core\Argument\BooleanHelper;
  * @package WBW\Bundle\JQuery\DataTablesBundle\Factory
  */
 class DataTablesFactory {
+
+    /**
+     * Parse a raw column.
+     *
+     * @param array $rawColumn The raw column.
+     * @param DataTableWrapper $wrapper The wrapper.
+     * @return DataTablesColumnInterface Returns the column.
+     */
+    public static function parseColumn(array $rawColumn, DataTablesWrapper $wrapper) {
+
+        // Determines if the raw column is valid.
+        if (false === array_key_exists(DataTablesColumnInterface::DATATABLES_PARAMETER_DATA, $rawColumn)) {
+            return null;
+        }
+
+        // Check the column.
+        $dtColumn = $wrapper->getColumn($rawColumn[DataTablesColumnInterface::DATATABLES_PARAMETER_DATA]);
+        if (null === $dtColumn) {
+            return null;
+        }
+        if ($dtColumn->getName() !== $rawColumn[DataTablesColumnInterface::DATATABLES_PARAMETER_NAME]) {
+            return null;
+        }
+        if (false === $dtColumn->getSearchable()) {
+            $dtColumn->setSearch(static::parseSearch([])); // Set a default search.
+            return $dtColumn;
+        }
+
+        // Set the search.
+        $dtColumn->setSearch(static::parseSearch($rawColumn[DataTablesColumnInterface::DATATABLES_PARAMETER_SEARCH]));
+
+        // Return the column.
+        return $dtColumn;
+    }
+
+    /**
+     * Parse a raw columns.
+     *
+     * @param array $rawColumns The raw columns.
+     * @param DataTablesWrapper $wrapper The wrapper.
+     * @return DataTablesColumnInterface[] Returns the columns.
+     */
+    public static function parseColumns(array $rawColumns, DataTablesWrapper $wrapper) {
+
+        // Initialize the columns.
+        $dtColumns = [];
+
+        // Handle each column.
+        foreach ($rawColumns as $current) {
+
+            // Parse the column.
+            $dtColumn = static::parseColumn($current, $wrapper);
+
+            // Check the column.
+            if (null === $dtColumn) {
+                continue;
+            }
+
+            // Add the column.
+            $dtColumns[] = $dtColumn;
+        }
+
+        // Returns the columns.
+        return $dtColumns;
+    }
 
     /**
      * Parse a raw order.

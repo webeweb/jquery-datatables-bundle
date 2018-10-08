@@ -509,7 +509,7 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
      * @param DataTablesSearchInterface $search The search.
      * @return DataTablesColumn Returns this column.
      */
-    protected function setSearch(DataTablesSearchInterface $search) {
+    public function setSearch(DataTablesSearchInterface $search) {
         $this->search = $search;
         return $this;
     }
