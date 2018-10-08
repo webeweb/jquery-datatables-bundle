@@ -24,6 +24,7 @@
     <testsuites>
         <testsuite name="webeweb/jquery-datatables-bundle">
             <directory suffix="Test.php">./Tests</directory>
+            <exclude>Tests/Controller/DataTablesControllerTest.php</exclude>
         </testsuite>
     </testsuites>
 </phpunit>
