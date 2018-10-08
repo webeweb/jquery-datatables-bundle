@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
 use JsonSerializable;
+use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesColumnHelper;
 use WBW\Library\Core\Argument\ArrayHelper;
 
 /**
@@ -150,46 +151,6 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
         $this->setOrderable(true);
         $this->setSearchable(true);
         $this->setVisible(true);
-    }
-
-    /**
-     * DataTables cell types.
-     *
-     * @return array Returns the cell types.
-     */
-    public static function dtCellTypes() {
-        return [
-            self::DATATABLES_CELL_TYPE_TD,
-            self::DATATABLES_CELL_TYPE_TH,
-        ];
-    }
-
-    /**
-     * DataTables order sequences.
-     *
-     * @return array Returns the order sequences.
-     */
-    public static function dtOrderSequences() {
-        return [
-            self::DATATABLES_ORDER_SEQUENCE_ASC,
-            self::DATATABLES_ORDER_SEQUENCE_DESC,
-        ];
-    }
-
-    /**
-     * DataTables types.
-     *
-     * @return array Returns the types.
-     */
-    public static function dtTypes() {
-        return [
-            self::DATATABLES_TYPE_DATE,
-            self::DATATABLES_TYPE_HTML,
-            self::DATATABLES_TYPE_HTML_NUM,
-            self::DATATABLES_TYPE_NUM,
-            self::DATATABLES_TYPE_NUM_FMT,
-            self::DATATABLES_TYPE_STRING,
-        ];
     }
 
     /**
@@ -422,7 +383,7 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
      * @return DataTablesColumn Returns this column.
      */
     public function setCellType($cellType) {
-        if (false === in_array($cellType, static::dtCellTypes())) {
+        if (false === in_array($cellType, DataTablesColumnHelper::dtCellTypes())) {
             $cellType = self::DATATABLES_CELL_TYPE_TD;
         }
         $this->cellType = $cellType;
@@ -524,7 +485,7 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
      * @return DataTablesColumn Returns this column.
      */
     public function setOrderSequence($orderSequence) {
-        if (false === in_array($orderSequence, static::dtOrderSequences())) {
+        if (false === in_array($orderSequence, DataTablesColumnHelper::dtOrderSequences())) {
             $orderSequence = null;
         }
         $this->orderSequence = $orderSequence;
@@ -582,7 +543,7 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
      * @return DataTablesColumn Returns this column.
      */
     public function setType($type) {
-        if (false === in_array($type, static::dtTypes())) {
+        if (false === in_array($type, DataTablesColumnHelper::dtTypes())) {
             $type = null;
         }
         $this->type = $type;
