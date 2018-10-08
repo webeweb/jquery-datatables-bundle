@@ -11,6 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Factory;
 
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrder;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearch;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearchInterface;
 use WBW\Library\Core\Argument\BooleanHelper;
@@ -24,14 +26,63 @@ use WBW\Library\Core\Argument\BooleanHelper;
 class DataTablesFactory {
 
     /**
-     * Creates a new search.
+     * Create an order.
+     *
+     * @param array $rawOrder The raw order.
+     * @return DataTablesOrderInterface Returns the order.
+     */
+    public function newOrder(array $rawOrder) {
+
+        // Initialize an order.
+        $dtOrder = new DataTablesOrder();
+
+        // Determines if the raw order is valid.
+        if (false === array_key_exists(DataTablesOrderInterface::DATATABLES_PARAMETER_COLUMN, $rawOrder)) {
+            return $dtOrder;
+        }
+        if (false === array_key_exists(DataTablesOrderInterface::DATATABLES_PARAMETER_DIR, $rawOrder)) {
+            return $dtOrder;
+        }
+
+        // Set the order.
+        $dtOrder->setColumn(intval($rawOrder[DataTablesOrderInterface::DATATABLES_PARAMETER_COLUMN]));
+        $dtOrder->setDir($rawOrder[DataTablesOrderInterface::DATATABLES_PARAMETER_DIR]);
+
+        // Return the order.
+        return $dtOrder;
+    }
+
+    /**
+     * Create orders.
+     *
+     * @param array $rawOrders The raw orders.
+     * @return DataTablesOrderInterface[] Returns the orders.
+     */
+    public function newOrders(array $rawOrders) {
+
+        // Initialize the orders.
+        $dtOrders = [];
+
+        // Handle each raw order.
+        foreach ($rawOrders as $current) {
+
+            // Add the order.
+            $dtOrders[] = static::newOrder($current);
+        }
+
+        // Return the orders.
+        return $dtOrders;
+    }
+
+    /**
+     * Creates a search.
      *
      * @param array $rawSearch The raw search.
-     * @return DataTablesSearchInterface Returns a search instance.
+     * @return DataTablesSearchInterface Returns the search.
      */
     public static function newSearch(array $rawSearch) {
 
-        // Initialize a DataTables search.
+        // Initialize a search.
         $dtSearch = new DataTablesSearch();
 
         // Determines if the raw search is valid.

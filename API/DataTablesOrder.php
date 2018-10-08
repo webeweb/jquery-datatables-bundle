@@ -38,7 +38,7 @@ class DataTablesOrder implements DataTablesOrderInterface {
     /**
      * Constructor.
      */
-    protected function __construct() {
+    public function __construct() {
         // NOTHING TO DO
     }
 
@@ -97,7 +97,7 @@ class DataTablesOrder implements DataTablesOrderInterface {
      * @param int $column The column.
      * @return DataTablesOrderInterface Returns this order.
      */
-    protected function setColumn($column) {
+    public function setColumn($column) {
         $this->column = (0 <= $column ? $column : null);
         return $this;
     }
@@ -108,7 +108,7 @@ class DataTablesOrder implements DataTablesOrderInterface {
      * @param string $dir The dir.
      * @return DataTablesOrderInterface Returns this order.
      */
-    protected function setDir($dir) {
+    public function setDir($dir) {
         if (false === in_array($dir, DataTablesOrderHelper::dtDirs())) {
             $dir = self::DATATABLES_DIR_ASC;
         }

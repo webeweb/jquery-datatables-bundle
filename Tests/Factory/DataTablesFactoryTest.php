@@ -25,6 +25,88 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
 
     /**
+     * Tests the newOrder() method.
+     *
+     * @return void
+     */
+    public function testNewOrder() {
+
+        // Get the POST data.
+        $postData = TestFixtures::getPOSTData();
+
+        // Set the POST data.
+        $postData["order"][0]["column"] = "0";
+        $postData["order"][0]["dir"]    = "asc";
+
+        $res = DataTablesFactory::newOrder($postData["order"][0]);
+        $this->assertEquals(0, $res->getColumn());
+        $this->assertEquals("ASC", $res->getDir());
+    }
+
+    /**
+     * Tests the newOrder() method.
+     *
+     * @return void
+     */
+    public function testNewOrderWithNoColumn() {
+
+        // Get the POST data.
+        $postData = TestFixtures::getPOSTData();
+
+        // Set the POST data.
+        $postData["order"][0]["column"] = "0";
+        $postData["order"][0]["dir"]    = "asc";
+
+        // Set an invalid order.
+        unset($postData["order"][0]["column"]);
+
+        $res = DataTablesFactory::newOrder($postData["order"][0]);
+        $this->assertNull($res->getColumn());
+        $this->assertNull($res->getDir());
+    }
+
+    /**
+     * Tests the newOrder() method.
+     *
+     * @return void
+     */
+    public function testNewOrderWithNoDir() {
+
+        // Get the POST data.
+        $postData = TestFixtures::getPOSTData();
+
+        // Set the POST data.
+        $postData["order"][0]["column"] = "0";
+        $postData["order"][0]["dir"]    = "ASC";
+
+        // Set an invalid order.
+        unset($postData["order"][0]["dir"]);
+
+        $res = DataTablesFactory::newOrder($postData["order"][0]);
+        $this->assertNull($res->getColumn());
+        $this->assertNull($res->getDir());
+    }
+
+    /**
+     * Tests the newOrder() method.
+     *
+     * @return void
+     */
+    public function testNewOrderWithInvalidDir() {
+
+        // Get the POST data.
+        $postData = TestFixtures::getPOSTData();
+
+        // Set the POST data.
+        $postData["order"][0]["column"] = "0";
+        $postData["order"][0]["dir"]    = "exception";
+
+        $res = DataTablesFactory::newOrder($postData["order"][0]);
+        $this->assertEquals(0, $res->getColumn());
+        $this->assertEquals("ASC", $res->getDir());
+    }
+
+    /**
      * Tests the newSearch() method.
      *
      * @return void
