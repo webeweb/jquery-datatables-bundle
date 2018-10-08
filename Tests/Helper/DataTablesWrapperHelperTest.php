@@ -23,6 +23,7 @@ use WBW\Library\Core\Exception\FileSystem\FileNotFoundException;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper
+ * @final
  */
 final class DataTablesWrapperHelperTest extends AbstractFrameworkTestCase {
 
