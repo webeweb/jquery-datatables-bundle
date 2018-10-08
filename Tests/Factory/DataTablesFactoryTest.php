@@ -25,7 +25,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
 
     /**
-     * Tests the newOrder() method.
+     * Tests the parseOrder() method.
      *
      * @return void
      */
@@ -38,13 +38,13 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         $postData["order"][0]["column"] = "0";
         $postData["order"][0]["dir"]    = "asc";
 
-        $res = DataTablesFactory::newOrder($postData["order"][0]);
+        $res = DataTablesFactory::parseOrder($postData["order"][0]);
         $this->assertEquals(0, $res->getColumn());
         $this->assertEquals("ASC", $res->getDir());
     }
 
     /**
-     * Tests the newOrder() method.
+     * Tests the parseOrder() method.
      *
      * @return void
      */
@@ -60,13 +60,13 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         // Set an invalid order.
         unset($postData["order"][0]["column"]);
 
-        $res = DataTablesFactory::newOrder($postData["order"][0]);
+        $res = DataTablesFactory::parseOrder($postData["order"][0]);
         $this->assertNull($res->getColumn());
         $this->assertNull($res->getDir());
     }
 
     /**
-     * Tests the newOrder() method.
+     * Tests the parseOrder() method.
      *
      * @return void
      */
@@ -82,13 +82,13 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         // Set an invalid order.
         unset($postData["order"][0]["dir"]);
 
-        $res = DataTablesFactory::newOrder($postData["order"][0]);
+        $res = DataTablesFactory::parseOrder($postData["order"][0]);
         $this->assertNull($res->getColumn());
         $this->assertNull($res->getDir());
     }
 
     /**
-     * Tests the newOrder() method.
+     * Tests the parseOrder() method.
      *
      * @return void
      */
@@ -101,13 +101,13 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         $postData["order"][0]["column"] = "0";
         $postData["order"][0]["dir"]    = "exception";
 
-        $res = DataTablesFactory::newOrder($postData["order"][0]);
+        $res = DataTablesFactory::parseOrder($postData["order"][0]);
         $this->assertEquals(0, $res->getColumn());
         $this->assertEquals("ASC", $res->getDir());
     }
 
     /**
-     * Tests the newOrders() method.
+     * Tests the parseOrders() method.
      *
      * @return void
      */
@@ -120,14 +120,14 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         $postData["order"][0]["column"] = "0";
         $postData["order"][0]["dir"]    = "exception";
 
-        $res = DataTablesFactory::newOrders($postData["order"]);
+        $res = DataTablesFactory::parseOrders($postData["order"]);
         $this->assertCount(1, $res);
         $this->assertEquals(0, $res[0]->getColumn());
         $this->assertEquals("ASC", $res[0]->getDir());
     }
 
     /**
-     * Tests the newSearch() method.
+     * Tests the parseSearch() method.
      *
      * @return void
      */
@@ -140,13 +140,13 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         $postData["search"]["regex"] = "true";
         $postData["search"]["value"] = "value";
 
-        $res = DataTablesFactory::newSearch($postData["search"]);
+        $res = DataTablesFactory::parseSearch($postData["search"]);
         $this->assertTrue($res->getRegex());
         $this->assertEquals("value", $res->getValue());
     }
 
     /**
-     * Tests the newSearch() method.
+     * Tests the parseSearch() method.
      *
      * @return void
      */
@@ -162,13 +162,13 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         // Set an invalid search.
         unset($postData["search"]["regex"]);
 
-        $res = DataTablesFactory::newSearch($postData["search"]);
+        $res = DataTablesFactory::parseSearch($postData["search"]);
         $this->assertFalse($res->getRegex());
         $this->assertEquals("", $res->getValue());
     }
 
     /**
-     * Tests the newSearch() method.
+     * Tests the parseSearch() method.
      *
      * @return void
      */
@@ -184,7 +184,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         // Set an invalid search.
         unset($postData["search"]["value"]);
 
-        $res = DataTablesFactory::newSearch($postData["search"]);
+        $res = DataTablesFactory::parseSearch($postData["search"]);
         $this->assertFalse($res->getRegex());
         $this->assertEquals("", $res->getValue());
     }

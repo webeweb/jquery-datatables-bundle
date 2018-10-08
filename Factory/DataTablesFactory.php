@@ -26,12 +26,12 @@ use WBW\Library\Core\Argument\BooleanHelper;
 class DataTablesFactory {
 
     /**
-     * Create an order.
+     * Parse a raw order.
      *
      * @param array $rawOrder The raw order.
      * @return DataTablesOrderInterface Returns the order.
      */
-    public function newOrder(array $rawOrder) {
+    public static function parseOrder(array $rawOrder) {
 
         // Initialize an order.
         $dtOrder = new DataTablesOrder();
@@ -53,21 +53,19 @@ class DataTablesFactory {
     }
 
     /**
-     * Create orders.
+     * Parse raw orders.
      *
      * @param array $rawOrders The raw orders.
      * @return DataTablesOrderInterface[] Returns the orders.
      */
-    public function newOrders(array $rawOrders) {
+    public static function parseOrders(array $rawOrders) {
 
         // Initialize the orders.
         $dtOrders = [];
 
         // Handle each raw order.
         foreach ($rawOrders as $current) {
-
-            // Add the order.
-            $dtOrders[] = static::newOrder($current);
+            $dtOrders[] = static::parseOrder($current);
         }
 
         // Return the orders.
@@ -75,12 +73,12 @@ class DataTablesFactory {
     }
 
     /**
-     * Creates a search.
+     * Parse a raw search.
      *
      * @param array $rawSearch The raw search.
      * @return DataTablesSearchInterface Returns the search.
      */
-    public static function newSearch(array $rawSearch) {
+    public static function parseSearch(array $rawSearch) {
 
         // Initialize a search.
         $dtSearch = new DataTablesSearch();
