@@ -31,8 +31,8 @@ final class DataTablesSearchTest extends AbstractFrameworkTestCase {
 
         $obj = new DataTablesSearch();
 
-        $this->assertNull($obj->getRegex());
-        $this->assertNull($obj->getValue());
+        $this->assertFalse($obj->getRegex());
+        $this->assertEquals("", $obj->getValue());
     }
 
 }
