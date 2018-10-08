@@ -17,7 +17,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\API;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\API
  */
-class DataTablesMapping {
+class DataTablesMapping implements DataTablesMappingInterface {
 
     /**
      * Column.
@@ -41,9 +41,7 @@ class DataTablesMapping {
     }
 
     /**
-     * Get the alias.
-     *
-     * @return string Returns the alias.
+     * {@inheritdoc}
      */
     public function getAlias() {
         if (null === $this->column) {
@@ -53,28 +51,21 @@ class DataTablesMapping {
     }
 
     /**
-     * Get the column.
-     *
-     * @return string Returns the column.
+     * {@inheritdoc}
      */
     public function getColumn() {
         return $this->column;
     }
 
     /**
-     * Get the prefix.
-     *
-     * @return string Returns the prefix.
+     * {@inheritdoc}
      */
     public function getPrefix() {
         return $this->prefix;
     }
 
     /**
-     * Set the column.
-     *
-     * @param string $column The column.
-     * @return DataTablesMapping Returns this mapping.
+     * {@inheritdoc}
      */
     public function setColumn($column) {
         $this->column = $column;
@@ -82,10 +73,7 @@ class DataTablesMapping {
     }
 
     /**
-     * Set the prefix.
-     *
-     * @param string $prefix The prefix.
-     * @return DataTablesMapping Returns this mapping.
+     * {@inheritdoc}
      */
     public function setPrefix($prefix) {
         $this->prefix = $prefix;

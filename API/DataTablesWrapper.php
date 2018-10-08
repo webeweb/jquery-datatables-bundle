@@ -33,7 +33,7 @@ class DataTablesWrapper implements HTTPInterface {
     /**
      * Mapping.
      *
-     * @var DataTablesMapping
+     * @var DataTablesMappingInterface
      */
     private $mapping;
 
@@ -115,7 +115,7 @@ class DataTablesWrapper implements HTTPInterface {
      * @param string $name The name.
      */
     public function __construct($method, $url, $name) {
-        $this->mapping = new DataTablesMapping();
+        $this->setMapping(new DataTablesMapping());
 
         $this->setColumns([]);
         $this->setMethod($method);
@@ -165,7 +165,7 @@ class DataTablesWrapper implements HTTPInterface {
     /**
      * Get the mapping.
      *
-     * @return DataTablesMapping Returns the mapping.
+     * @return DataTablesMappingInterface Returns the mapping.
      */
     public function getMapping() {
         return $this->mapping;
@@ -306,6 +306,17 @@ class DataTablesWrapper implements HTTPInterface {
      */
     public function setMethod($method) {
         $this->method = (true === in_array($method, [self::HTTP_METHOD_GET, self::HTTP_METHOD_POST]) ? $method : self::HTTP_METHOD_POST);
+        return $this;
+    }
+
+    /**
+     * Set the mapping.
+     *
+     * @param DataTablesMappingInterface $mapping The mapping
+     * @return DataTablesWrapper Returns this wrapper.
+     */
+    protected function setMapping(DataTablesMappingInterface $mapping) {
+        $this->mapping = $mapping;
         return $this;
     }
 

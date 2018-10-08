@@ -60,7 +60,7 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
     /**
      * mapping.
      *
-     * @var DataTablesMapping
+     * @var DataTablesMappingInterface
      */
     private $mapping;
 
@@ -240,7 +240,7 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
     /**
      * Get the mapping.
      *
-     * @return DataTablesMapping The mapping.
+     * @return DataTablesMappingInterface The mapping.
      */
     public function getMapping() {
         return $this->mapping;
@@ -476,10 +476,10 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
     /**
      * Set the mapping.
      *
-     * @param DataTablesMapping $mapping The mapping.
+     * @param DataTablesMappingInterface $mapping The mapping.
      * @return DataTablesColumn Returns this column.
      */
-    protected function setMapping(DataTablesMapping $mapping) {
+    protected function setMapping(DataTablesMappingInterface $mapping) {
         $this->mapping = $mapping;
         return $this;
     }

@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
 
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesMapping;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesMappingInterface;
 
 /**
  * DataTables mapping helper.
@@ -24,10 +24,10 @@ class DataTablesMappingHelper {
     /**
      * Get an alias.
      *
-     * @param DataTablesMapping $mapping The mapping.
+     * @param DataTablesMappingInterface $mapping The mapping.
      * @return string Returns the alias.
      */
-    public static function getAlias(DataTablesMapping $mapping) {
+    public static function getAlias(DataTablesMappingInterface $mapping) {
         if (null === $mapping->getColumn()) {
             return null;
         }
@@ -40,10 +40,10 @@ class DataTablesMappingHelper {
     /**
      * Get a param.
      *
-     * @param DataTablesMapping $mapping The mapping.
+     * @param DataTablesMappingInterface $mapping The mapping.
      * @return string Returns the param.
      */
-    public static function getParam(DataTablesMapping $mapping) {
+    public static function getParam(DataTablesMappingInterface $mapping) {
 
         // Initialize the param.
         $param = ":";
@@ -57,10 +57,10 @@ class DataTablesMappingHelper {
     /**
      * Get a mapping where.
      *
-     * @param DataTablesMapping $mapping The mapping.
+     * @param DataTablesMappingInterface $mapping The mapping.
      * @return string Returns the where.
      */
-    public static function getWhere(DataTablesMapping $mapping) {
+    public static function getWhere(DataTablesMappingInterface $mapping) {
 
         // Initialize the where.
         $where = static::getAlias($mapping);
