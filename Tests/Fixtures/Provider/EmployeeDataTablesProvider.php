@@ -14,6 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider;
 use DateTime;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
@@ -244,18 +245,18 @@ final class EmployeeDataTablesProvider implements DataTablesProviderInterface, D
         // Switch into column data.
         switch ($dtRow) {
 
-            case self::DATATABLES_ROW_ATTR:
+            case DataTablesResponseInterface::DATATABLES_ROW_ATTR:
                 break;
 
-            case self::DATATABLES_ROW_CLASS:
+            case DataTablesResponseInterface::DATATABLES_ROW_CLASS:
                 $output = (0 === $rowNumber % 2 ? "even" : "odd");
                 break;
 
-            case self::DATATABLES_ROW_DATA:
+            case DataTablesResponseInterface::DATATABLES_ROW_DATA:
                 $output = ["pkey" => $entity->getId()];
                 break;
 
-            case self::DATATABLES_ROW_ID:
+            case DataTablesResponseInterface::DATATABLES_ROW_ID:
                 $output = "employee_" . $entity->getId();
                 break;
         }

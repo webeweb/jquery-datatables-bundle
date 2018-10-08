@@ -11,15 +11,13 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
-use JsonSerializable;
-
 /**
  * DataTables response.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\API
  */
-class DataTablesResponse implements DataTablesResponseInterface, JsonSerializable {
+class DataTablesResponse implements DataTablesResponseInterface {
 
     /**
      * Data.
@@ -74,9 +72,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     }
 
     /**
-     * Add a row.
-     *
-     * @return DataTablesResponse Returns this response.
+     * {@inheritdoc}
      */
     public function addRow() {
 
@@ -95,9 +91,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     }
 
     /**
-     * Count rows.
-     *
-     * @return int Returns the rows count.
+     * {@inheritdoc}
      */
     public function countRows() {
         return count($this->data);
@@ -118,54 +112,42 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     }
 
     /**
-     * Get the data.
-     *
-     * @return array Returns the data.
+     * {@inheritdoc}
      */
     public function getData() {
         return $this->data;
     }
 
     /**
-     * Get the draw
-     *
-     * @return int Returns the draw.
+     * {@inheritdoc}
      */
     public function getDraw() {
         return $this->draw;
     }
 
     /**
-     * Get the error.
-     *
-     * @return string Returns the error.
+     * {@inheritdoc}
      */
     public function getError() {
         return $this->error;
     }
 
     /**
-     * Get the records filtered.
-     *
-     * @return int The records filtered.
+     * {@inheritdoc}
      */
     public function getRecordsFiltered() {
         return $this->recordsFiltered;
     }
 
     /**
-     * Get the records total.
-     *
-     * @return int Returns the records total.
+     * {@inheritdoc}
      */
     public function getRecordsTotal() {
         return $this->recordsTotal;
     }
 
     /**
-     * Get the wrapper.
-     *
-     * @return DataTablesWrapper Returns the wrapper.
+     * {@inheritdoc}
      */
     public function getWrapper() {
         return $this->wrapper;
@@ -183,7 +165,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      *
      * @param DataTablesWrapper $wrapper The wrapper.
      * @param DataTablesRequestInterface $request The request.
-     * @return DataTablesResponse Returns the response.
+     * @return DataTablesResponseInterface Returns the response.
      */
     public static function parse(DataTablesWrapper $wrapper, DataTablesRequestInterface $request) {
 
@@ -200,7 +182,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      * Set the data.
      *
      * @param array $data The data.
-     * @return DataTablesResponse Returns this response.
+     * @return DataTablesResponseInterface Returns this response.
      */
     protected function setData(array $data) {
         $this->data = $data;
@@ -211,7 +193,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      * Set the draw.
      *
      * @param int $draw The draw.
-     * @return DataTablesResponse Returns the response.
+     * @return DataTablesResponseInterface Returns the response.
      */
     protected function setDraw($draw) {
         $this->draw = $draw;
@@ -219,10 +201,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     }
 
     /**
-     * Set the error.
-     *
-     * @param string $error The error.
-     * @return DataTablesResponse Returns this response.
+     * {@inheritdoc}
      */
     public function setError($error) {
         $this->error = $error;
@@ -230,10 +209,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     }
 
     /**
-     * Set the records filtered.
-     *
-     * @param int $recordsFiltered The records filtered.
-     * @return DataTablesResponse Returns this response.
+     * {@inheritdoc}
      */
     public function setRecordsFiltered($recordsFiltered) {
         $this->recordsFiltered = $recordsFiltered;
@@ -241,10 +217,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     }
 
     /**
-     * Set the records total.
-     *
-     * @param int $recordsTotal The records total.
-     * @return DataTablesResponse Returns this response.
+     * {@inheritdoc}
      */
     public function setRecordsTotal($recordsTotal) {
         $this->recordsTotal = $recordsTotal;
@@ -252,11 +225,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
     }
 
     /**
-     * Set a row value.
-     *
-     * @param string $data The column data.
-     * @param string $value The column value.
-     * @return DataTablesResponse Returns this response.
+     * {@inheritdoc}
      */
     public function setRow($data, $value) {
 
@@ -276,7 +245,7 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      * Set the wrapper.
      *
      * @param DataTablesWrapper $wrapper The wrapper.
-     * @return DataTablesResponse Returns this response.
+     * @return DataTablesResponseInterface Returns this response.
      */
     protected function setWrapper(DataTablesWrapper $wrapper) {
         $this->wrapper = $wrapper;

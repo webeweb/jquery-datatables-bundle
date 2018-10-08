@@ -11,13 +11,15 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
+use JsonSerializable;
+
 /**
  * DataTables response interface.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\API
  */
-interface DataTablesResponseInterface {
+interface DataTablesResponseInterface extends JsonSerializable {
 
     /**
      * Row "attr".
@@ -47,4 +49,92 @@ interface DataTablesResponseInterface {
      */
     const DATATABLES_ROW_ID = "DT_RowId";
 
+    /**
+     * Add a row.
+     *
+     * @return DataTablesResponseInterface Returns this response.
+     */
+    public function addRow();
+
+    /**
+     * Count rows.
+     *
+     * @return int Returns the rows count.
+     */
+    public function countRows();
+
+    /**
+     * Get the data.
+     *
+     * @return array Returns the data.
+     */
+    public function getData();
+
+    /**
+     * Get the draw
+     *
+     * @return int Returns the draw.
+     */
+    public function getDraw();
+
+    /**
+     * Get the error.
+     *
+     * @return string Returns the error.
+     */
+    public function getError();
+
+    /**
+     * Get the records filtered.
+     *
+     * @return int The records filtered.
+     */
+    public function getRecordsFiltered();
+
+    /**
+     * Get the records total.
+     *
+     * @return int Returns the records total.
+     */
+    public function getRecordsTotal();
+
+    /**
+     * Get the wrapper.
+     *
+     * @return DataTablesWrapper Returns the wrapper.
+     */
+    public function getWrapper();
+
+    /**
+     * Set the error.
+     *
+     * @param string $error The error.
+     * @return DataTablesResponseInterface Returns this response.
+     */
+    public function setError($error);
+
+    /**
+     * Set the records filtered.
+     *
+     * @param int $recordsFiltered The records filtered.
+     * @return DataTablesResponseInterface Returns this response.
+     */
+    public function setRecordsFiltered($recordsFiltered);
+
+    /**
+     * Set the records total.
+     *
+     * @param int $recordsTotal The records total.
+     * @return DataTablesResponseInterface Returns this response.
+     */
+    public function setRecordsTotal($recordsTotal);
+
+    /**
+     * Set a row value.
+     *
+     * @param string $data The column data.
+     * @param string $value The column value.
+     * @return DataTablesResponseInterface Returns this response.
+     */
+    public function setRow($data, $value);
 }
