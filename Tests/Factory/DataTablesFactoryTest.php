@@ -107,6 +107,26 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
     }
 
     /**
+     * Tests the newOrders() method.
+     *
+     * @return void
+     */
+    public function testNewOrders() {
+
+        // Get the POST data.
+        $postData = TestFixtures::getPOSTData();
+
+        // Set the POST data.
+        $postData["order"][0]["column"] = "0";
+        $postData["order"][0]["dir"]    = "exception";
+
+        $res = DataTablesFactory::newOrders($postData["order"]);
+        $this->assertCount(1, $res);
+        $this->assertEquals(0, $res[0]->getColumn());
+        $this->assertEquals("ASC", $res[0]->getDir());
+    }
+
+    /**
      * Tests the newSearch() method.
      *
      * @return void
