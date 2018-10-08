@@ -38,7 +38,7 @@ class DataTablesSearch implements DataTablesSearchInterface {
     /**
      * Constructor.
      */
-    protected function __construct() {
+    public function __construct() {
         $this->setRegex(false);
         $this->setValue("");
     }
@@ -90,7 +90,7 @@ class DataTablesSearch implements DataTablesSearchInterface {
      * @param bool $regex The regex.
      * @return DataTablesSearchInterface Returns this search.
      */
-    protected function setRegex($regex) {
+    public function setRegex($regex) {
         $this->regex = $regex;
         return $this;
     }
@@ -101,7 +101,7 @@ class DataTablesSearch implements DataTablesSearchInterface {
      * @param string $value The value.
      * @return DataTablesSearchInterface Returns this search.
      */
-    protected function setValue($value) {
+    public function setValue($value) {
         $this->value = $value;
         return $this;
     }
