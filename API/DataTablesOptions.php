@@ -12,7 +12,6 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
 use WBW\Library\Core\Argument\ArgumentHelper;
-use WBW\Library\Core\Exception\Argument\StringArgumentException;
 
 /**
  * DataTables options.
@@ -20,7 +19,7 @@ use WBW\Library\Core\Exception\Argument\StringArgumentException;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\API
  */
-class DataTablesOptions {
+class DataTablesOptions implements DataTablesOptionsInterface {
 
     /**
      * Options.
@@ -37,12 +36,7 @@ class DataTablesOptions {
     }
 
     /**
-     * Ad an option.
-     *
-     * @param string $name The name.
-     * @param mixed $value The value.
-     * @return DataTablesOptions Returns this options.
-     * @throws StringArgumentException Throws a string argument exception if the argument is not a string.
+     * {@inheritdoc}
      */
     public function addOption($name, $value) {
         ArgumentHelper::isTypeOf($name, ArgumentHelper::ARGUMENT_STRING);
@@ -53,10 +47,7 @@ class DataTablesOptions {
     }
 
     /**
-     * Get an option.
-     *
-     * @param string $name The name.
-     * @return mixed Returns the option in case of success, null otherwise.
+     * {@inheritdoc}
      */
     public function getOption($name) {
         if (true === array_key_exists($name, $this->options)) {
@@ -66,29 +57,21 @@ class DataTablesOptions {
     }
 
     /**
-     * Get the options.
-     *
-     * @return array Returns the options.
+     * {@inheritdoc}
      */
     public function getOptions() {
         return $this->options;
     }
 
     /**
-     * Determines if an option exists.
-     *
-     * @param string $name The name.
-     * @return bool Returns true in case of success, false otherwise.
+     * {@inheritdoc}
      */
     public function hasOption($name) {
         return array_key_exists($name, $this->options);
     }
 
     /**
-     * Remove an option.
-     *
-     * @param string $name The name.
-     * @return DataTablesOptions Returns this option.
+     * {@inheritdoc}
      */
     public function removeOption($name) {
         if (true === array_key_exists($name, $this->options)) {
@@ -98,12 +81,7 @@ class DataTablesOptions {
     }
 
     /**
-     * Set an option.
-     *
-     * @param string $name The name.
-     * @param mixed $value The value.
-     * @return DataTablesOptions Returns this options.
-     * @throws StringArgumentException Throws a string argument exception if the argument is not a string.
+     * {@inheritdoc}
      */
     public function setOption($name, $value) {
         ArgumentHelper::isTypeOf($name, ArgumentHelper::ARGUMENT_STRING);
@@ -112,10 +90,7 @@ class DataTablesOptions {
     }
 
     /**
-     * Set the options.
-     *
-     * @param array $options Thhe options.
-     * @return DataTablesOptions Returns this options.
+     * {@inheritdoc}
      */
     protected function setOptions(array $options) {
         $this->options = $options;

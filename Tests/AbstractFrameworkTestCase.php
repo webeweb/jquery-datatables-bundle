@@ -16,6 +16,7 @@ use WBW\Bundle\BootstrapBundle\Tests\AbstractFrameworkTestCase as BaseFrameworkT
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequest;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequestInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
@@ -38,7 +39,7 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTest {
     /**
      * DataTables response.
      *
-     * @var DataTablesResponse
+     * @var DataTablesResponseInterface
      */
     protected $dataTablesResponse;
 

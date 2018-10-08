@@ -74,7 +74,7 @@ interface DataTablesProviderInterface {
     /**
      * Get the options.
      *
-     * @return DataTablesOptions Returns the options.
+     * @return DataTablesOptionsInterface Returns the options.
      */
     public function getOptions();
 
