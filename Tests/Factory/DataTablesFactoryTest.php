@@ -29,7 +29,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      *
      * @return void
      */
-    public function testNewOrder() {
+    public function testParseOrder() {
 
         // Get the POST data.
         $postData = TestFixtures::getPOSTData();
@@ -48,7 +48,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      *
      * @return void
      */
-    public function testNewOrderWithNoColumn() {
+    public function testParseOrderWithNoColumn() {
 
         // Get the POST data.
         $postData = TestFixtures::getPOSTData();
@@ -70,7 +70,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      *
      * @return void
      */
-    public function testNewOrderWithNoDir() {
+    public function testParseOrderWithNoDir() {
 
         // Get the POST data.
         $postData = TestFixtures::getPOSTData();
@@ -92,7 +92,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      *
      * @return void
      */
-    public function testNewOrderWithInvalidDir() {
+    public function testParseOrderWithInvalidDir() {
 
         // Get the POST data.
         $postData = TestFixtures::getPOSTData();
@@ -111,7 +111,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      *
      * @return void
      */
-    public function testNewOrders() {
+    public function testParseOrders() {
 
         // Get the POST data.
         $postData = TestFixtures::getPOSTData();
@@ -131,7 +131,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      *
      * @return void
      */
-    public function testNewSearch() {
+    public function testParseSearch() {
 
         // Get the POST data.
         $postData = TestFixtures::getPOSTData();
@@ -150,7 +150,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      *
      * @return void
      */
-    public function testNewSearchWithNoRegex() {
+    public function testParseSearchWithNoRegex() {
 
         // Get the POST data.
         $postData = TestFixtures::getPOSTData();
@@ -172,7 +172,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      *
      * @return void
      */
-    public function testNewSearchWithNoValue() {
+    public function testParseSearchWithNoValue() {
 
         // Get the POST data.
         $postData = TestFixtures::getPOSTData();
