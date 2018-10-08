@@ -102,7 +102,7 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
     /**
      * Search.
      *
-     * @var DataTablesSearch
+     * @var DataTablesSearchInterface
      */
     private $search;
 
@@ -294,7 +294,7 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
     /**
      * Get the search.
      *
-     * @return DataTablesSearch Returns the search.
+     * @return DataTablesSearchInterface Returns the search.
      */
     public function getSearch() {
         return $this->search;
@@ -545,10 +545,10 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
     /**
      * Set the search.
      *
-     * @param DataTablesSearch $search The search.
+     * @param DataTablesSearchInterface $search The search.
      * @return DataTablesColumn Returns this column.
      */
-    protected function setSearch(DataTablesSearch $search) {
+    protected function setSearch(DataTablesSearchInterface $search) {
         $this->search = $search;
         return $this;
     }

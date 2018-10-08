@@ -44,18 +44,14 @@ class DataTablesSearch implements DataTablesSearchInterface {
     }
 
     /**
-     * Get the regex.
-     *
-     * @return bool Returns the regex.
+     * {@inheritdoc}
      */
     public function getRegex() {
         return $this->regex;
     }
 
     /**
-     * Get the value.
-     *
-     * @return string Returns the value.
+     * {@inheritdoc}
      */
     public function getValue() {
         return $this->value;
@@ -65,7 +61,7 @@ class DataTablesSearch implements DataTablesSearchInterface {
      * Parse a raw search array.
      *
      * @param array $rawSearch The raw search array.
-     * @return DataTablesSearch Returns the search.
+     * @return DataTablesSearchInterface Returns the search.
      */
     public static function parse(array $rawSearch) {
 
@@ -92,7 +88,7 @@ class DataTablesSearch implements DataTablesSearchInterface {
      * Set the regex.
      *
      * @param bool $regex The regex.
-     * @return DataTablesSearch Returns this search.
+     * @return DataTablesSearchInterface Returns this search.
      */
     protected function setRegex($regex) {
         $this->regex = $regex;
@@ -103,7 +99,7 @@ class DataTablesSearch implements DataTablesSearchInterface {
      * Set the value.
      *
      * @param string $value The value.
-     * @return DataTablesSearch Returns this search.
+     * @return DataTablesSearchInterface Returns this search.
      */
     protected function setValue($value) {
         $this->value = $value;

@@ -33,4 +33,17 @@ interface DataTablesSearchInterface {
      */
     const DATATABLES_PARAMETER_VALUE = "value";
 
+    /**
+     * Get the regex.
+     *
+     * @return bool Returns the regex.
+     */
+    public function getRegex();
+
+    /**
+     * Get the value.
+     *
+     * @return string Returns the value.
+     */
+    public function getValue();
 }

@@ -68,7 +68,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
     /**
      * Search.
      *
-     * @var DataTablesSearch
+     * @var DataTablesSearchInterface
      */
     private $search;
 
@@ -337,10 +337,10 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
     /**
      * Set the search.
      *
-     * @param DataTablesSearch $search The search.
+     * @param DataTablesSearchInterface $search The search.
      * @return DataTablesRequest Returns this request.
      */
-    protected function setSearch(DataTablesSearch $search) {
+    protected function setSearch(DataTablesSearchInterface $search) {
         $this->search = $search;
         return $this;
     }
