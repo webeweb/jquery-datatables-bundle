@@ -12,17 +12,17 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Controller;
 
 use DateTime;
-use Exception;
 use Doctrine\ORM\EntityNotFoundException;
+use Exception;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesEditorException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
+use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesResponseHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Library\Core\Network\HTTP\HTTPInterface;
 
@@ -226,7 +226,7 @@ class DataTablesController extends AbstractDataTablesController {
             $dtWrapper->getResponse()->addRow();
 
             // Render each row.
-            foreach (DataTablesResponse::dtRows() as $dtRow) {
+            foreach (DataTablesResponseHelper::dtRows() as $dtRow) {
                 $dtWrapper->getResponse()->setRow($dtRow, $dtProvider->renderRow($dtRow, $entity, $rows));
             }
 

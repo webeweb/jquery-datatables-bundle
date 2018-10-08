@@ -11,6 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
+use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesResponseHelper;
+
 /**
  * DataTables response.
  *
@@ -95,20 +97,6 @@ class DataTablesResponse implements DataTablesResponseInterface {
      */
     public function countRows() {
         return count($this->data);
-    }
-
-    /**
-     * DataTables rows.
-     *
-     * @return array Returns the rows.
-     */
-    public static function dtRows() {
-        return [
-            self::DATATABLES_ROW_ATTR,
-            self::DATATABLES_ROW_CLASS,
-            self::DATATABLES_ROW_DATA,
-            self::DATATABLES_ROW_ID,
-        ];
     }
 
     /**
@@ -233,7 +221,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
         $index = $this->countRows() - 1;
 
         // Check the column data.
-        if ((true === in_array($data, static::dtRows()) && null !== $value) || (true === in_array($data, array_keys($this->data[$index])))) {
+        if ((true === in_array($data, DataTablesResponseHelper::dtRows()) && null !== $value) || (true === in_array($data, array_keys($this->data[$index])))) {
             $this->data[$index][$data] = $value;
         }
 
