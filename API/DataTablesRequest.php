@@ -47,7 +47,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
     /**
      * Order.
      *
-     * @var DataTablesOrder[]
+     * @var DataTablesOrderInterface[]
      */
     private $order;
 
@@ -160,7 +160,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
     /**
      * Get the order.
      *
-     * @return DataTablesOrder[] Returns the order.
+     * @return DataTablesOrderInterface[] Returns the order.
      */
     public function getOrder() {
         return $this->order;
@@ -304,7 +304,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
     /**
      * Set the order.
      *
-     * @param DataTablesOrder[] $order The order.
+     * @param DataTablesOrderInterface[] $order The order.
      * @return DataTablesRequest Returns this request.
      */
     protected function setOrder(array $order) {

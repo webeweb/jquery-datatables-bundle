@@ -53,18 +53,14 @@ class DataTablesOrder implements DataTablesOrderInterface {
     }
 
     /**
-     * Get the column.
-     *
-     * @return int Returns the column.
+     * {@inheritdoc}
      */
     public function getColumn() {
         return $this->column;
     }
 
     /**
-     * Get the dir.
-     *
-     * @return string Returns the dir.
+     * {@inheritdoc}
      */
     public function getDir() {
         return $this->dir;
@@ -74,7 +70,7 @@ class DataTablesOrder implements DataTablesOrderInterface {
      * Parse a raw orders.
      *
      * @param array $rawOrders The raw orders.
-     * @return DataTablesOrder[] Returns the orders.
+     * @return DataTablesOrderInterface[] Returns the orders.
      */
     public static function parse(array $rawOrders) {
 
@@ -109,7 +105,7 @@ class DataTablesOrder implements DataTablesOrderInterface {
      * Set the column.
      *
      * @param int $column The column.
-     * @return DataTablesOrder Returns this order.
+     * @return DataTablesOrderInterface Returns this order.
      */
     protected function setColumn($column) {
         $this->column = (0 <= $column ? $column : null);
@@ -120,7 +116,7 @@ class DataTablesOrder implements DataTablesOrderInterface {
      * Set the dir.
      *
      * @param string $dir The dir.
-     * @return DataTablesOrder Returns this order.
+     * @return DataTablesOrderInterface Returns this order.
      */
     protected function setDir($dir) {
         if (false === in_array($dir, static::dtDirs())) {

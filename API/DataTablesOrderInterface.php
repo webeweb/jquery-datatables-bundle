@@ -47,4 +47,17 @@ interface DataTablesOrderInterface {
      */
     const DATATABLES_PARAMETER_DIR = "dir";
 
+    /**
+     * Get the column.
+     *
+     * @return int Returns the column.
+     */
+    public function getColumn();
+
+    /**
+     * Get the dir.
+     *
+     * @return string Returns the dir.
+     */
+    public function getDir();
 }
