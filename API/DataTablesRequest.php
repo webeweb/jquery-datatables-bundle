@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
+use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesRequestHelper;
 use WBW\Library\Core\Network\HTTP\HTTPInterface;
 
 /**
@@ -97,22 +98,6 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
         $this->setQuery(new ParameterBag());
         $this->setRequest(new ParameterBag());
         $this->setStart(0);
-    }
-
-    /**
-     * DataTables parameters.
-     *
-     * @return array Returns the parameters.
-     */
-    public static function dtParameters() {
-        return [
-            self::DATATABLES_PARAMETER_COLUMNS,
-            self::DATATABLES_PARAMETER_DRAW,
-            self::DATATABLES_PARAMETER_LENGTH,
-            self::DATATABLES_PARAMETER_ORDER,
-            self::DATATABLES_PARAMETER_SEARCH,
-            self::DATATABLES_PARAMETER_START,
-        ];
     }
 
     /**
@@ -240,7 +225,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
      */
     protected static function recopy(ParameterBag $request, ParameterBag $bag) {
         foreach ($request->keys() as $current) {
-            if (true === in_array($current, static::dtParameters())) {
+            if (true === in_array($current, DataTablesRequestHelper::dtParameters())) {
                 continue;
             }
             $bag->set($current, $request->get($current));
