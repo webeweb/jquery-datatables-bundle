@@ -114,8 +114,10 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
 
         // Create a query builder.
         $qb = $this->createQueryBuilder($prefix)
-            ->setFirstResult($dtWrapper->getRequest()->getStart())
-            ->setMaxResults($dtWrapper->getRequest()->getLength());
+            ->setFirstResult($dtWrapper->getRequest()->getStart());
+        if (0 < $dtWrapper->getRequest()->getLength()) {
+            $qb->setMaxResults($dtWrapper->getRequest()->getLength());
+        }
 
         // Build the where and order clauses.
         DataTablesRepositoryHelper::appendWhere($qb, $dtWrapper);

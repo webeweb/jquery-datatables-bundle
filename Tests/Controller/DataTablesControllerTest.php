@@ -202,6 +202,59 @@ final class DataTablesControllerTest extends AbstractWebTestCase {
      * @return void
      * @depends testIndexAction
      */
+    public function testIndexActionWithNegativeLength() {
+
+        // Get the POST data.
+        $parameters = TestFixtures::getPOSTData();
+
+        // Change the length.
+        $parameters["length"] = "-1";
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a POST request with XML HTTP request.
+        $client->request("POST", "/datatables/employee/index", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
+
+        // Check the JSON response.
+        $res = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertCount(57, $res["data"]);
+
+        $this->assertArrayHasKey("DT_RowId", $res["data"][0]);
+        $this->assertArrayHasKey("DT_RowClass", $res["data"][0]);
+        $this->assertArrayHasKey("DT_RowData", $res["data"][0]);
+
+        $this->assertEquals("Airi Satou", $res["data"][0]["name"]);
+        $this->assertEquals("Angelica Ramos", $res["data"][1]["name"]);
+        $this->assertEquals("Ashton Cox", $res["data"][2]["name"]);
+        $this->assertEquals("Bradley Greer", $res["data"][3]["name"]);
+        $this->assertEquals("Brenden Wagner", $res["data"][4]["name"]);
+        $this->assertEquals("Brielle Williamson", $res["data"][5]["name"]);
+        $this->assertEquals("Bruno Nash", $res["data"][6]["name"]);
+        $this->assertEquals("Caesar Vance", $res["data"][7]["name"]);
+        $this->assertEquals("Cara Stevens", $res["data"][8]["name"]);
+        $this->assertEquals("Cedric Kelly", $res["data"][9]["name"]);
+
+        // [...]
+
+        $this->assertEquals("Tiger Nixon", $res["data"][50]["name"]);
+        $this->assertEquals("Timothy Mooney", $res["data"][51]["name"]);
+        $this->assertEquals("Unity Butler", $res["data"][52]["name"]);
+        $this->assertEquals("Vivian Harrell", $res["data"][53]["name"]);
+        $this->assertEquals("Yuri Berry", $res["data"][54]["name"]);
+        $this->assertEquals("Zenaida Frank", $res["data"][55]["name"]);
+        $this->assertEquals("Zorita Serrano", $res["data"][56]["name"]);
+    }
+
+    /**
+     * Tests the indexAction() method.
+     *
+     * @return void
+     * @depends testIndexAction
+     */
     public function testIndexActionWithOrder() {
 
         // Get the POST data.
