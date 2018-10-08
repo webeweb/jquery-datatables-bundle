@@ -11,6 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
+use Symfony\Component\HttpFoundation\ParameterBag;
+
 /**
  * DataTables request interface.
  *
@@ -61,4 +63,74 @@ interface DataTablesRequestInterface {
      */
     const DATATABLES_PARAMETER_START = "start";
 
+    /**
+     * Get a column.
+     *
+     * @param string $data The column data.
+     * @return array Returns the column in case of success, null otherwise.
+     */
+    public function getColumn($data);
+
+    /**
+     * Get the columns.
+     *
+     * @return DataTablesColumn[] Returns the columns.
+     */
+    public function getColumns();
+
+    /**
+     * Get the draw.
+     *
+     * @return int Returns the draw.
+     */
+    public function getDraw();
+
+    /**
+     * Get the length.
+     *
+     * @return int Returns the length.
+     */
+    public function getLength();
+
+    /**
+     * Get the order.
+     *
+     * @return DataTablesOrderInterface[] Returns the order.
+     */
+    public function getOrder();
+
+    /**
+     * Get the query.
+     *
+     * @return ParameterBag Returns the query.
+     */
+    public function getQuery();
+
+    /**
+     * Get the request.
+     *
+     * @return ParameterBag Returns the request.
+     */
+    public function getRequest();
+
+    /**
+     * Get the search.
+     *
+     * @return DataTablesSearchInterface Returns the search.
+     */
+    public function getSearch();
+
+    /**
+     * Get the start.
+     *
+     * @return int Returns the start.
+     */
+    public function getStart();
+
+    /**
+     * Get the wrapper.
+     *
+     * @return DataTablesWrapper Returns the wrapper.
+     */
+    public function getWrapper();
 }

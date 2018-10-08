@@ -82,7 +82,7 @@ class DataTablesWrapper implements HTTPInterface {
     /**
      * Request.
      *
-     * @var DataTablesRequest
+     * @var DataTablesRequestInterface
      */
     private $request;
 
@@ -228,7 +228,7 @@ class DataTablesWrapper implements HTTPInterface {
     /**
      * Get the request.
      *
-     * @return DataTablesRequest The request.
+     * @return DataTablesRequestInterface The request.
      */
     public function getRequest() {
         return $this->request;

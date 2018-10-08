@@ -182,10 +182,10 @@ class DataTablesResponse implements DataTablesResponseInterface, JsonSerializabl
      * Create a response instance.
      *
      * @param DataTablesWrapper $wrapper The wrapper.
-     * @param DataTablesRequest $request The request.
+     * @param DataTablesRequestInterface $request The request.
      * @return DataTablesResponse Returns the response.
      */
-    public static function parse(DataTablesWrapper $wrapper, DataTablesRequest $request) {
+    public static function parse(DataTablesWrapper $wrapper, DataTablesRequestInterface $request) {
 
         // Initialize a response.
         $dtResponse = new DataTablesResponse();
