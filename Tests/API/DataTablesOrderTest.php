@@ -13,7 +13,6 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrder;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
 /**
  * DataTables order test.
@@ -25,47 +24,16 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 final class DataTablesOrderTest extends AbstractFrameworkTestCase {
 
     /**
-     * Tests the parse() method.
+     * Tests the __construct() method.
      *
      * @return void
      */
-    public function testParse() {
+    public function testConstrutor() {
 
-        // Get the POST data.
-        $postData = TestFixtures::getPOSTData();
+        $obj = new DataTablesOrder();
 
-        // Set the POST data.
-        $postData["order"][0]["column"] = "0";
-        $postData["order"][0]["dir"]    = "asc";
-
-        // ===
-        $res = DataTablesOrder::parse($postData["order"]);
-        $this->assertCount(1, $res);
-        $this->assertEquals(0, $res[0]->getColumn());
-        $this->assertEquals("ASC", $res[0]->getDir());
-
-        // Set an invalid order.
-        $postData["order"][0]["column"] = "0";
-        $postData["order"][0]["dir"]    = "exception";
-
-        $res1 = DataTablesOrder::parse($postData["order"]);
-        $this->assertCount(1, $res1);
-        $this->assertEquals(0, $res1[0]->getColumn());
-        $this->assertEquals("ASC", $res1[0]->getDir());
-
-        // Set an invalid order.
-        $postData["order"][0]["column"] = "0";
-        unset($postData["order"][0]["dir"]);
-
-        $res2 = DataTablesOrder::parse($postData["order"]);
-        $this->assertCount(0, $res2);
-
-        // Set an invalid order.
-        unset($postData["order"][0]["column"]);
-        unset($postData["order"][0]["dir"]);
-
-        $res3 = DataTablesOrder::parse($postData["order"]);
-        $this->assertCount(0, $res3);
+        $this->assertNull($obj->getColumn());
+        $this->assertNull($obj->getDir());
     }
 
 }
