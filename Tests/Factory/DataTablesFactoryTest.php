@@ -71,7 +71,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      *
      * @return
      */
-    public function testParseColumnWithInexistantData() {
+    public function testParseColumnWithBadData() {
 
         // Get the wrapper.
         $wrapper = TestFixtures::getWrapper();
@@ -81,6 +81,46 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
 
         // Set the POST data.
         $postData["columns"][0]["data"] = "exception";
+
+        $res = DataTablesFactory::parseColumn($postData["columns"][0], $wrapper);
+        $this->assertNull($res);
+    }
+
+    /**
+     * Tests the parseColumn() method.
+     *
+     * @return
+     */
+    public function testParseColumnWithNoName() {
+
+        // Get the wrapper.
+        $wrapper = TestFixtures::getWrapper();
+
+        // Get the POST data.
+        $postData = TestFixtures::getPOSTData();
+
+        // Set the POST data.
+        unset($postData["columns"][0]["name"]);
+
+        $res = DataTablesFactory::parseColumn($postData["columns"][0], $wrapper);
+        $this->assertNull($res);
+    }
+
+    /**
+     * Tests the parseColumn() method.
+     *
+     * @return
+     */
+    public function testParseColumnWithBadName() {
+
+        // Get the wrapper.
+        $wrapper = TestFixtures::getWrapper();
+
+        // Get the POST data.
+        $postData = TestFixtures::getPOSTData();
+
+        // Set the POST data.
+        $postData["columns"][0]["name"] = "exception";
 
         $res = DataTablesFactory::parseColumn($postData["columns"][0], $wrapper);
         $this->assertNull($res);
@@ -126,6 +166,26 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
 
         $res = DataTablesFactory::parseColumns($postData["columns"], $wrapper);
         $this->assertCount(7, $res);
+    }
+
+    /**
+     * Tests the parseColumns() method.
+     *
+     * @return void
+     */
+    public function testParseColumnsWithNoData() {
+
+        // Get the wrapper.
+        $wrapper = TestFixtures::getWrapper();
+
+        // Get the POST data.
+        $postData = TestFixtures::getPOSTData();
+
+        // Set the POST data.
+        unset($postData["columns"][6]["name"]);
+
+        $res = DataTablesFactory::parseColumns($postData["columns"], $wrapper);
+        $this->assertCount(6, $res);
     }
 
     /**
