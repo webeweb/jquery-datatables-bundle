@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Factory;
 
+use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
@@ -285,12 +286,39 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      *
      * @return void
      */
-    public function testParseRequest() {
+    public function testParseRequestWithGET() {
 
         // Get the wrapper.
         $wrapper = TestFixtures::getWrapper();
 
-        $res = DataTablesFactory::parseRequest($wrapper, $this->request);
+        // Create a request.
+        $request = new Request(array_merge(TestFixtures::getPOSTData(), ["query" => "query"]), ["request" => "request"], [], [], [], ["REQUEST_METHOD" => "GET"]);
+
+        $res = DataTablesFactory::parseRequest($wrapper, $request);
+
+        $this->assertEquals(1, $res->getDraw());
+        $this->assertEquals(10, $res->getLength());
+        $this->assertFalse($res->getSearch()->getRegex());
+        $this->assertEquals("", $res->getSearch()->getValue());
+        $this->assertEquals(0, $res->getStart());
+
+        $this->assertCount(7, $res->getColumns());
+    }
+
+    /**
+     * Tests the parseRequest() method.
+     *
+     * @return void
+     */
+    public function testParseRequestWithPOST() {
+
+        // Get the wrapper.
+        $wrapper = TestFixtures::getWrapper();
+
+        // Create a request.
+        $request = new Request(["query" => "query"], array_merge(TestFixtures::getPOSTData(), ["request" => "request"]), [], [], [], ["REQUEST_METHOD" => "POST"]);
+
+        $res = DataTablesFactory::parseRequest($wrapper, $request);
 
         $this->assertEquals(1, $res->getDraw());
         $this->assertEquals(10, $res->getLength());
