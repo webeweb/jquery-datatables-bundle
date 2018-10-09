@@ -281,6 +281,27 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
     }
 
     /**
+     * Tests the parseRequest() method.
+     *
+     * @return void
+     */
+    public function testParseRequest() {
+
+        // Get the wrapper.
+        $wrapper = TestFixtures::getWrapper();
+
+        $res = DataTablesFactory::parseRequest($wrapper, $this->request);
+
+        $this->assertEquals(1, $res->getDraw());
+        $this->assertEquals(10, $res->getLength());
+        $this->assertFalse($res->getSearch()->getRegex());
+        $this->assertEquals("", $res->getSearch()->getValue());
+        $this->assertEquals(0, $res->getStart());
+
+        $this->assertCount(7, $res->getColumns());
+    }
+
+    /**
      * Tests the parseSearch() method.
      *
      * @return void

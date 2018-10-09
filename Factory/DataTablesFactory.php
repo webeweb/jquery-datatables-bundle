@@ -11,13 +11,19 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Factory;
 
+use Symfony\Component\HttpFoundation\ParameterBag;
+use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrder;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrderInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequest;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequestInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearch;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearchInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesRequestHelper;
 use WBW\Library\Core\Argument\BooleanHelper;
+use WBW\Library\Core\Network\HTTP\HTTPInterface;
 
 /**
  * DataTables factory.
@@ -31,7 +37,7 @@ class DataTablesFactory {
      * Parse a raw column.
      *
      * @param array $rawColumn The raw column.
-     * @param DataTableWrapper $wrapper The wrapper.
+     * @param DataTablesWrapper $wrapper The wrapper.
      * @return DataTablesColumnInterface Returns the column.
      */
     public static function parseColumn(array $rawColumn, DataTablesWrapper $wrapper) {
@@ -140,6 +146,63 @@ class DataTablesFactory {
 
         // Return the orders.
         return $dtOrders;
+    }
+
+    /**
+     * Parse a parameter bag.
+     *
+     * @param ParameterBag $request The request.
+     * @param ParameterBag $bag The bag.
+     * @return void
+     */
+    protected static function parseParameterBag(ParameterBag $request, ParameterBag $bag) {
+        foreach ($request->keys() as $current) {
+            if (true === in_array($current, DataTablesRequestHelper::dtParameters())) {
+                continue;
+            }
+            $bag->set($current, $request->get($current));
+        }
+    }
+
+    /**
+     * Parse a request.
+     *
+     * @param DataTablesWrapper $wrapper The wrapper.
+     * @param Request $request The request.
+     * @return DataTablesRequestInterface Returns the request.
+     */
+    public static function parseRequest(DataTablesWrapper $wrapper, Request $request) {
+
+        // Initialize a request.
+        $dtRequest = new DataTablesRequest();
+
+        // Recopy the parameter bags.
+        static::parseParameterBag($request->query, $dtRequest->getQuery());
+        static::parseParameterBag($request->request, $dtRequest->getRequest());
+
+        // Get the parameter bag.
+        if (HTTPInterface::HTTP_METHOD_GET === $request->getMethod()) {
+            $parameterBag = $request->query;
+        } else {
+            $parameterBag = $request->request;
+        }
+
+        // Get the request parameters.
+        $columns = null !== $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_COLUMNS) ? $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_COLUMNS) : [];
+        $orders  = null !== $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_ORDER) ? $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_ORDER) : [];
+        $search  = null !== $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_SEARCH) ? $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_SEARCH) : [];
+
+        // Set the request.
+        $dtRequest->setColumns(static::parseColumns($columns, $wrapper));
+        $dtRequest->setDraw($parameterBag->getInt(DataTablesRequestInterface::DATATABLES_PARAMETER_DRAW));
+        $dtRequest->setLength($parameterBag->getInt(DataTablesRequestInterface::DATATABLES_PARAMETER_LENGTH));
+        $dtRequest->setOrder(static::parseOrders($orders));
+        $dtRequest->setSearch(static::parseSearch($search));
+        $dtRequest->setStart($parameterBag->getInt(DataTablesRequestInterface::DATATABLES_PARAMETER_START));
+        $dtRequest->setWrapper($wrapper);
+
+        // Return the request.
+        return $dtRequest;
     }
 
     /**

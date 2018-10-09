@@ -90,7 +90,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
     /**
      * Constructor.
      */
-    protected function __construct() {
+    public function __construct() {
         $this->setColumns([]);
         $this->setDraw(0);
         $this->setLength(10);
@@ -238,7 +238,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
      * @param DataTablesColumn[] $columns The columns.
      * @return DataTablesRequestInterface Returns this request.
      */
-    protected function setColumns(array $columns) {
+    public function setColumns(array $columns) {
         $this->columns = $columns;
         return $this;
     }
@@ -249,7 +249,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
      * @param int $draw The draw.
      * @return DataTablesRequestInterface Returns this request.
      */
-    protected function setDraw($draw) {
+    public function setDraw($draw) {
         $this->draw = $draw;
         return $this;
     }
@@ -260,7 +260,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
      * @param int $length The length.
      * @return DataTablesRequestInterface Returns this request.
      */
-    protected function setLength($length) {
+    public function setLength($length) {
         $this->length = $length;
         return $this;
     }
@@ -271,7 +271,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
      * @param DataTablesOrderInterface[] $order The order.
      * @return DataTablesRequestInterface Returns this request.
      */
-    protected function setOrder(array $order) {
+    public function setOrder(array $order) {
         $this->order = $order;
         return $this;
     }
@@ -304,7 +304,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
      * @param DataTablesSearchInterface $search The search.
      * @return DataTablesRequestInterface Returns this request.
      */
-    protected function setSearch(DataTablesSearchInterface $search) {
+    public function setSearch(DataTablesSearchInterface $search) {
         $this->search = $search;
         return $this;
     }
@@ -315,7 +315,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
      * @param int $start The start.
      * @return DataTablesRequestInterface Returns this request.
      */
-    protected function setStart($start) {
+    public function setStart($start) {
         $this->start = $start;
         return $this;
     }
@@ -326,7 +326,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
      * @param DataTablesWrapper $wrapper The wrapper.
      * @return DataTablesRequestInterface Returns this request.
      */
-    protected function setWrapper(DataTablesWrapper $wrapper) {
+    public function setWrapper(DataTablesWrapper $wrapper) {
         $this->wrapper = $wrapper;
         return $this;
     }
