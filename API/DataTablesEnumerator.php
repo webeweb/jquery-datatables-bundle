@@ -44,6 +44,20 @@ class DataTablesEnumerator {
     }
 
     /**
+     * Enumerates rows.
+     *
+     * @return array Returns the rows.
+     */
+    public static function enumRows() {
+        return [
+            DataTablesResponseInterface::DATATABLES_ROW_ATTR,
+            DataTablesResponseInterface::DATATABLES_ROW_CLASS,
+            DataTablesResponseInterface::DATATABLES_ROW_DATA,
+            DataTablesResponseInterface::DATATABLES_ROW_ID,
+        ];
+    }
+
+    /**
      * Enumerates types.
      *
      * @return array Returns the types.

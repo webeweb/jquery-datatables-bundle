@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesEnumerator;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
@@ -50,6 +51,22 @@ final class DataTablesEnumeratorTest extends AbstractFrameworkTestCase {
             DataTablesColumnInterface::DATATABLES_ORDER_SEQUENCE_DESC,
         ];
         $this->assertEquals($res, DataTablesEnumerator::enumOrderSequences());
+    }
+
+    /**
+     * Tests the enumRows() method.
+     *
+     * @@return void
+     */
+    public function testEnumRows() {
+
+        $res = [
+            DataTablesResponseInterface::DATATABLES_ROW_ATTR,
+            DataTablesResponseInterface::DATATABLES_ROW_CLASS,
+            DataTablesResponseInterface::DATATABLES_ROW_DATA,
+            DataTablesResponseInterface::DATATABLES_ROW_ID,
+        ];
+        $this->assertEquals($res, DataTablesEnumerator::enumRows());
     }
 
     /**
