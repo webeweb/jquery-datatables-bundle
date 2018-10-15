@@ -11,8 +11,6 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesResponseHelper;
-
 /**
  * DataTables response.
  *
@@ -194,7 +192,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
         $index = $this->countRows() - 1;
 
         // Check the column data.
-        if ((true === in_array($data, DataTablesResponseHelper::dtRows()) && null !== $value) || (true === in_array($data, array_keys($this->data[$index])))) {
+        if ((true === in_array($data, DataTablesEnumerator::enumRows()) && null !== $value) || (true === in_array($data, array_keys($this->data[$index])))) {
             $this->data[$index][$data] = $value;
         }
 
