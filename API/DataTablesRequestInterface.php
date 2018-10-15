@@ -74,7 +74,7 @@ interface DataTablesRequestInterface {
     /**
      * Get the columns.
      *
-     * @return DataTablesColumn[] Returns the columns.
+     * @return DataTablesColumnInterface[] Returns the columns.
      */
     public function getColumns();
 
