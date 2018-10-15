@@ -11,10 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
 /**
  * DataTables response test.
@@ -32,7 +30,7 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
      */
     public function testConstruct() {
 
-        $obj = DataTablesResponse::parse($this->dataTablesWrapper, $this->dataTablesRequest);
+        $obj = new DataTablesResponse();
 
         $this->assertEquals(0, $obj->countRows());
         $this->assertEquals([], $obj->getData());
@@ -40,7 +38,7 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
         $this->assertNull($obj->getError());
         $this->assertEquals(0, $obj->getRecordsFiltered());
         $this->assertEquals(0, $obj->getRecordsTotal());
-        $this->assertSame($this->dataTablesWrapper, $obj->getWrapper());
+        $this->assertNull($obj->getWrapper());
     }
 
     /**
@@ -50,7 +48,8 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
      */
     public function testAddRow() {
 
-        $obj = DataTablesResponse::parse($this->dataTablesWrapper, $this->dataTablesRequest);
+        $obj = new DataTablesResponse();
+        $obj->setWrapper($this->dataTablesWrapper);
 
         // ===
         $this->assertCount(0, $obj->getData());
@@ -67,7 +66,7 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
      */
     public function testSetError() {
 
-        $obj = DataTablesResponse::parse($this->dataTablesWrapper, $this->dataTablesRequest);
+        $obj = new DataTablesResponse();
 
         $obj->setError("error");
         $this->assertEquals("error", $obj->getError());
@@ -80,7 +79,7 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
      */
     public function testSetRecordFiltered() {
 
-        $obj = DataTablesResponse::parse($this->dataTablesWrapper, $this->dataTablesRequest);
+        $obj = new DataTablesResponse();
 
         $obj->setRecordsFiltered(1);
         $this->assertEquals(1, $obj->getRecordsFiltered());
@@ -93,7 +92,7 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
      */
     public function testSetRecordTotal() {
 
-        $obj = DataTablesResponse::parse($this->dataTablesWrapper, $this->dataTablesRequest);
+        $obj = new DataTablesResponse();
 
         $obj->setRecordsTotal(2);
         $this->assertEquals(2, $obj->getRecordsTotal());
@@ -106,31 +105,13 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
      */
     public function testSetRow() {
 
-        // Add the columns.
-        $this->dataTablesWrapper
-            ->addColumn(DataTablesColumn::newInstance("name", "name"))
-            ->addColumn(DataTablesColumn::newInstance("position", "position"))
-            ->addColumn(DataTablesColumn::newInstance("office", "office"))
-            ->addColumn(DataTablesColumn::newInstance("age", "age"))
-            ->addColumn(DataTablesColumn::newInstance("startDate", "startDate"))
-            ->addColumn(DataTablesColumn::newInstance("salary", "salary"));
-
-        $obj = $this->dataTablesWrapper->parse($this->request)->getResponse();
-
-        $arg = TestFixtures::getEmployees()[0];
-        $res = ["name" => "Tiger Nixon", "position" => "System Architect", "office" => "Edinburgh", "age" => 61, "startDate" => "2011-04-25", "salary" => 320800];
-
+        $obj = new DataTablesResponse();
+        $obj->setWrapper($this->dataTablesWrapper);
         $obj->addRow();
 
-        $obj->setRow("name", $arg->getName());
-        $obj->setRow("position", $arg->getPosition());
-        $obj->setRow("office", $arg->getOffice());
-        $obj->setRow("age", $arg->getAge());
-        $obj->setRow("startDate", $arg->getStartDate()->format("Y-m-d"));
-        $obj->setRow("salary", $arg->getSalary());
-
+        $obj->setRow("name", "name");
         $this->assertCount(1, $obj->getData());
-        $this->assertEquals($res, $obj->getData()[0]);
+        $this->assertEquals([], $obj->getData()[0]);
     }
 
     /**
@@ -140,7 +121,7 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
      */
     public function testToArray() {
 
-        $obj = DataTablesResponse::parse($this->dataTablesWrapper, $this->dataTablesRequest);
+        $obj = new DataTablesResponse();
 
         $obj->setError("error");
         $obj->setRecordsFiltered(1);
@@ -158,13 +139,9 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
      */
     public function testJsonSerialize() {
 
-        $obj = DataTablesResponse::parse($this->dataTablesWrapper, $this->dataTablesRequest);
+        $obj = new DataTablesResponse();
 
-        $obj->setError("error");
-        $obj->setRecordsFiltered(1);
-        $obj->setRecordsTotal(2);
-
-        $res = ["data" => [], "draw" => 0, "recordsFiltered" => 1, "recordsTotal" => 2];
+        $res = ["data" => [], "draw" => null, "recordsFiltered" => null, "recordsTotal" => null];
         $this->assertEquals($res, $obj->jsonSerialize());
     }
 

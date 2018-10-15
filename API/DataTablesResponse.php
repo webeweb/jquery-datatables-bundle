@@ -57,16 +57,14 @@ class DataTablesResponse implements DataTablesResponseInterface {
     private $recordsTotal;
 
     /**
-     * Wrapper.
-     *
-     * @var DataTablesWrapper
+     * @var DataTablesWrapperTrait
      */
-    private $wrapper;
+    use DataTablesWrapperTrait;
 
     /**
      * Constructor.
      */
-    protected function __construct() {
+    public function __construct() {
         $this->setData([]);
         $this->setDraw(0);
         $this->setRecordsFiltered(0);
@@ -85,7 +83,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
         $this->data[] = [];
 
         // Set each column data in the new row.
-        foreach ($this->wrapper->getColumns() as $dtColumn) {
+        foreach ($this->getWrapper()->getColumns() as $dtColumn) {
             $this->data[$index][$dtColumn->getData()] = null;
         }
 
@@ -137,33 +135,8 @@ class DataTablesResponse implements DataTablesResponseInterface {
     /**
      * {@inheritdoc}
      */
-    public function getWrapper() {
-        return $this->wrapper;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function jsonSerialize() {
         return $this->toArray();
-    }
-
-    /**
-     * Create a response instance.
-     *
-     * @param DataTablesWrapper $wrapper The wrapper.
-     * @param DataTablesRequestInterface $request The request.
-     * @return DataTablesResponseInterface Returns the response.
-     */
-    public static function parse(DataTablesWrapper $wrapper, DataTablesRequestInterface $request) {
-
-        // Initialize a response.
-        $dtResponse = new DataTablesResponse();
-        $dtResponse->setDraw($request->getDraw());
-        $dtResponse->setWrapper($wrapper);
-
-        // Return the response.
-        return $dtResponse;
     }
 
     /**
@@ -183,7 +156,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
      * @param int $draw The draw.
      * @return DataTablesResponseInterface Returns the response.
      */
-    protected function setDraw($draw) {
+    public function setDraw($draw) {
         $this->draw = $draw;
         return $this;
     }
@@ -226,17 +199,6 @@ class DataTablesResponse implements DataTablesResponseInterface {
         }
 
         // Returns the response.
-        return $this;
-    }
-
-    /**
-     * Set the wrapper.
-     *
-     * @param DataTablesWrapper $wrapper The wrapper.
-     * @return DataTablesResponseInterface Returns this response.
-     */
-    protected function setWrapper(DataTablesWrapper $wrapper) {
-        $this->wrapper = $wrapper;
         return $this;
     }
 
