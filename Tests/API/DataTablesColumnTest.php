@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearch;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
@@ -99,6 +100,19 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
     }
 
     /**
+     * Tests the setData() method.
+     *
+     * @return void
+     */
+    public function testSetData() {
+
+        $obj = new DataTablesColumn();
+
+        $obj->setData("data");
+        $this->assertEquals("data", $obj->getData());
+    }
+
+    /**
      * Tests the setDefaultContent() method.
      *
      * @return void
@@ -183,6 +197,21 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
 
         $obj->setOrderable(false);
         $this->assertFalse($obj->getOrderable());
+    }
+
+    /**
+     * Tests the setSearch() method.
+     *
+     * @return void
+     */
+    public function testSetSearch() {
+
+        $obj = new DataTablesColumn();
+
+        $arg = new DataTablesSearch();
+
+        $obj->setSearch($arg);
+        $this->assertSame($arg, $obj->getSearch());
     }
 
     /**
