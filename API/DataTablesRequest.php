@@ -25,7 +25,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
     /**
      * Columns.
      *
-     * @var DataTablesColumn[]
+     * @var DataTablesColumnInterface[]
      */
     private $columns;
 
