@@ -61,16 +61,16 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
         $obj = new DataTablesColumn();
 
         // ===
-        $obj->setCellType("exception");
-        $this->assertEquals("td", $obj->getCellType());
-
-        // ===
         $obj->setCellType("td");
         $this->assertEquals("td", $obj->getCellType());
 
         // ===
         $obj->setCellType("th");
         $this->assertEquals("th", $obj->getCellType());
+
+        // ===
+        $obj->setCellType("exception");
+        $this->assertEquals("td", $obj->getCellType());
     }
 
     /**
@@ -174,16 +174,16 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
         $obj = new DataTablesColumn();
 
         // ===
-        $obj->setOrderSequence("exception");
-        $this->assertNull($obj->getOrderSequence());
-
-        // ===
         $obj->setOrderSequence("asc");
         $this->assertEquals("asc", $obj->getOrderSequence());
 
         // ===
         $obj->setOrderSequence("desc");
         $this->assertEquals("desc", $obj->getOrderSequence());
+
+        // ===
+        $obj->setOrderSequence("exception");
+        $this->assertNull($obj->getOrderSequence());
     }
 
     /**
@@ -250,10 +250,6 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
         $obj = new DataTablesColumn();
 
         // ===
-        $obj->setType("exception");
-        $this->assertNull($obj->getType());
-
-        // ===
         $obj->setType("date");
         $this->assertEquals("date", $obj->getType());
 
@@ -276,6 +272,10 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
         // ===
         $obj->setType("string");
         $this->assertEquals("string", $obj->getType());
+
+        // ===
+        $obj->setType("exception");
+        $this->assertNull($obj->getType());
     }
 
     /**
@@ -312,82 +312,193 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
     public function testToArray() {
 
         $obj = new DataTablesColumn();
-        $obj->setData("data");
-        $obj->setName("name");
 
-        // ===
-        $res01 = ["cellType" => "td", "data" => "data", "name" => "name"];
-        $this->assertEquals($res01, $obj->toArray());
+        $res = ["cellType" => "td"];
+        $this->assertEquals($res, $obj->toArray());
+    }
 
-        // ===
+    /**
+     * Tests the toArray() method.
+     *
+     * @return void
+     */
+    public function testToArrayWithClassname() {
+
+        $obj = new DataTablesColumn();
+
         $obj->setClassname("classname");
-        $res02 = ["cellType" => "td", "classname" => "classname", "data" => "data", "name" => "name"];
-        $this->assertEquals($res02, $obj->toArray());
+        $res = ["cellType" => "td", "classname" => "classname"];
+        $this->assertEquals($res, $obj->toArray());
+    }
 
-        // ===
-        $obj->setClassname(null);
+    /**
+     * Tests the toArray() method.
+     *
+     * @return void
+     */
+    public function testToArrayWithContentPadding() {
+
+        $obj = new DataTablesColumn();
+
         $obj->setContentPadding("contentPadding");
-        $res03 = ["cellType" => "td", "contentPadding" => "contentPadding", "data" => "data", "name" => "name"];
-        $this->assertEquals($res03, $obj->toArray());
+        $res = ["cellType" => "td", "contentPadding" => "contentPadding"];
+        $this->assertEquals($res, $obj->toArray());
+    }
 
-        // ===
-        $obj->setContentPadding(null);
+    /**
+     * Tests the toArray() method.
+     *
+     * @return void
+     */
+    public function testToArrayWithData() {
+
+        $obj = new DataTablesColumn();
+
+
+        $obj->setData("data");
+        $res = ["cellType" => "td", "data" => "data"];
+        $this->assertEquals($res, $obj->toArray());
+    }
+
+    /**
+     * Tests the toArray() method.
+     *
+     * @return void
+     */
+    public function testToArrayWithDefaultContent() {
+
+        $obj = new DataTablesColumn();
+
+
         $obj->setDefaultContent("defaultContent");
-        $res04 = ["cellType" => "td", "data" => "data", "defaultContent" => "defaultContent", "name" => "name"];
-        $this->assertEquals($res04, $obj->toArray());
+        $res = ["cellType" => "td", "defaultContent" => "defaultContent"];
+        $this->assertEquals($res, $obj->toArray());
+    }
 
-        // ===
-        $obj->setDefaultContent(null);
-        $obj->setName("othername");
-        $res05 = ["cellType" => "td", "data" => "data", "name" => "othername"];
-        $this->assertEquals($res05, $obj->toArray());
+    /**
+     * Tests the toArray() method.
+     *
+     * @return void
+     */
+    public function testToArrayWithName() {
 
-        // ===
+        $obj = new DataTablesColumn();
+
+        $obj->setName("name");
+        $res = ["cellType" => "td", "name" => "name"];
+        $this->assertEquals($res, $obj->toArray());
+    }
+
+    /**
+     * Tests the toArray() method.
+     *
+     * @return void
+     */
+    public function testToArrayWithOrderData() {
+
+        $obj = new DataTablesColumn();
+
         $obj->setOrderData("orderData");
-        $res06 = ["cellType" => "td", "data" => "data", "name" => "othername", "orderData" => "orderData"];
-        $this->assertEquals($res06, $obj->toArray());
+        $res = ["cellType" => "td", "orderData" => "orderData"];
+        $this->assertEquals($res, $obj->toArray());
+    }
 
-        // ===
-        $obj->setOrderData(null);
+    /**
+     * Tests the toArray() method.
+     *
+     * @return void
+     */
+    public function testToArrayWithOrderDataType() {
+
+        $obj = new DataTablesColumn();
+
         $obj->setOrderDataType("orderDataType");
-        $res07 = ["cellType" => "td", "data" => "data", "name" => "othername", "orderDataType" => "orderDataType"];
-        $this->assertEquals($res07, $obj->toArray());
+        $res = ["cellType" => "td", "orderDataType" => "orderDataType"];
+        $this->assertEquals($res, $obj->toArray());
+    }
 
-        // ===
-        $obj->setOrderDataType(null);
+    /**
+     * Tests the toArray() method.
+     *
+     * @return void
+     */
+    public function testToArrayWithOrderSequence() {
+
+        $obj = new DataTablesColumn();
+
         $obj->setOrderSequence("asc");
-        $res08 = ["cellType" => "td", "data" => "data", "name" => "othername", "orderSequence" => "asc"];
-        $this->assertEquals($res08, $obj->toArray());
+        $res = ["cellType" => "td", "orderSequence" => "asc"];
+        $this->assertEquals($res, $obj->toArray());
+    }
 
-        // ===
-        $obj->setOrderSequence(null);
+    /**
+     * Tests the toArray() method.
+     *
+     * @return void
+     */
+    public function testToArrayWithOrderable() {
+
+        $obj = new DataTablesColumn();
+
         $obj->setOrderable(false);
-        $res09 = ["cellType" => "td", "data" => "data", "name" => "othername", "orderable" => false];
-        $this->assertEquals($res09, $obj->toArray());
+        $res = ["cellType" => "td", "orderable" => false];
+        $this->assertEquals($res, $obj->toArray());
+    }
 
-        // ===
-        $obj->setOrderable(true);
+    /**
+     * Tests the toArray() method.
+     *
+     * @return void
+     */
+    public function testToArrayWithSearchable() {
+
+        $obj = new DataTablesColumn();
+
         $obj->setSearchable(false);
-        $res10 = ["cellType" => "td", "data" => "data", "name" => "othername", "searchable" => false];
-        $this->assertEquals($res10, $obj->toArray());
+        $res = ["cellType" => "td", "searchable" => false];
+        $this->assertEquals($res, $obj->toArray());
+    }
 
-        // ===
-        $obj->setSearchable(true);
+    /**
+     * Tests the toArray() method.
+     *
+     * @return void
+     */
+    public function testToArrayWithType() {
+
+        $obj = new DataTablesColumn();
+
         $obj->setType("string");
-        $res11 = ["cellType" => "td", "data" => "data", "name" => "othername", "type" => "string"];
-        $this->assertEquals($res11, $obj->toArray());
+        $res = ["cellType" => "td", "type" => "string"];
+        $this->assertEquals($res, $obj->toArray());
+    }
 
-        // ===
-        $obj->setType(null);
+    /**
+     * Tests the toArray() method.
+     *
+     * @return void
+     */
+    public function testToArrayWithVisible() {
+
+        $obj = new DataTablesColumn();
+
         $obj->setVisible(false);
-        $res12 = ["cellType" => "td", "data" => "data", "name" => "othername", "visible" => false];
-        $this->assertEquals($res12, $obj->toArray());
+        $res = ["cellType" => "td", "visible" => false];
+        $this->assertEquals($res, $obj->toArray());
+    }
 
-        // ===
-        $obj->setVisible(true);
+    /**
+     * Tests the toArray() method.
+     *
+     * @return void
+     */
+    public function testToArrayWithWidth() {
+
+        $obj = new DataTablesColumn();
+
         $obj->setWidth("width");
-        $res13 = ["cellType" => "td", "data" => "data", "name" => "othername", "width" => "width"];
-        $this->assertEquals($res13, $obj->toArray());
+        $res = ["cellType" => "td", "width" => "width"];
+        $this->assertEquals($res, $obj->toArray());
     }
 
     /**
@@ -398,9 +509,9 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
      */
     public function testJsonSerialize() {
 
-        $obj = DataTablesColumn::newInstance("data", "name");
+        $obj = new DataTablesColumn();
 
-        $res = ["cellType" => "td", "data" => "data", "name" => "name"];
+        $res = ["cellType" => "td"];
         $this->assertEquals($res, $obj->jsonSerialize());
     }
 
