@@ -26,7 +26,6 @@
             <directory suffix="Test.php">./Tests</directory>
             <exclude>Tests/API/DataTablesRequestTest.php</exclude>
             <exclude>Tests/API/DataTablesResponseTest.php</exclude>
-            <exclude>Tests/API/DataTablesSearchTest.php</exclude>
             <exclude>Tests/API/DataTablesWrapperTest.php</exclude>
             <exclude>Tests/Controller/</exclude>
             <exclude>Tests/Factory/</exclude>
