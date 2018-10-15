@@ -23,10 +23,13 @@ use WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle;
 final class JQueryDataTablesBundleTest extends AbstractFrameworkTestCase {
 
     /**
-     * {@inheritdoc}
+     * Tests the __construct() method.
+     *
+     * @return void
      */
-    protected function setUp() {
-        parent::setUp();
+    public function testConstruct() {
+
+        $this->assertEquals("1.10.16", JQueryDataTablesBundle::DATATABLES_VERSION);
     }
 
     /**
