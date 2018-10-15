@@ -37,6 +37,7 @@ trait DataTablesWrapperTrait {
 
     /**
      * Set the wrapper.
+     * 
      * @param DataTablesWrapperInterface $wrapper The wrapper.
      */
     public function setWrapper(DataTablesWrapperInterface $wrapper) {
