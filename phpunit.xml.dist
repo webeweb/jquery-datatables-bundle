@@ -24,9 +24,18 @@
     <testsuites>
         <testsuite name="webeweb/jquery-datatables-bundle">
             <directory suffix="Test.php">./Tests</directory>
-            <exclude>Tests/API/</exclude>
-            <exclude>Tests/Controller/DataTablesControllerTest.php</exclude>
-            <exclude>Tests/Factory/DataTablesFactoryTest.php</exclude>
+            <exclude>Tests/API/DataTablesMappingTest.php</exclude>
+            <exclude>Tests/API/DataTablesOptionsTest.php</exclude>
+            <exclude>Tests/API/DataTablesOrderTest.php</exclude>
+            <exclude>Tests/API/DataTablesRequestTest.php</exclude>
+            <exclude>Tests/API/DataTablesResponseTest.php</exclude>
+            <exclude>Tests/API/DataTablesSearchTest.php</exclude>
+            <exclude>Tests/API/DataTablesWrapperTest.php</exclude>
+            <exclude>Tests/Controller/</exclude>
+            <exclude>Tests/Factory/</exclude>
+            <exclude>Tests/Helper/</exclude>
+            <exclude>Tests/Manager/</exclude>
+            <exclude>Tests/Twig/</exclude>
         </testsuite>
     </testsuites>
 </phpunit>
