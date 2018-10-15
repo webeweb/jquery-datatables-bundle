@@ -90,7 +90,10 @@ class DataTablesOptions implements DataTablesOptionsInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * Set the options.
+     *
+     * @param array $options The options.
+     * @return DataTablesOptionsInterface Returns this options.
      */
     protected function setOptions(array $options) {
         $this->options = $options;
