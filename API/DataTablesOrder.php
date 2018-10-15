@@ -57,41 +57,6 @@ class DataTablesOrder implements DataTablesOrderInterface {
     }
 
     /**
-     * Parse a raw orders.
-     *
-     * @param array $rawOrders The raw orders.
-     * @return DataTablesOrderInterface[] Returns the orders.
-     */
-    public static function parse(array $rawOrders) {
-
-        // Initialize the orders.
-        $dtOrders = [];
-
-        // Handle each raw order.
-        foreach ($rawOrders as $current) {
-
-            // Determines if the raw order is valid.
-            if (false === array_key_exists(self::DATATABLES_PARAMETER_COLUMN, $current)) {
-                continue;
-            }
-            if (false === array_key_exists(self::DATATABLES_PARAMETER_DIR, $current)) {
-                continue;
-            }
-
-            // Create a order.
-            $dtOrder = new DataTablesOrder();
-            $dtOrder->setColumn(intval($current[self::DATATABLES_PARAMETER_COLUMN]));
-            $dtOrder->setDir($current[self::DATATABLES_PARAMETER_DIR]);
-
-            // Add the order.
-            $dtOrders[] = $dtOrder;
-        }
-
-        // Return the orders.
-        return $dtOrders;
-    }
-
-    /**
      * Set the column.
      *
      * @param int $column The column.
