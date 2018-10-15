@@ -19,6 +19,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\API
+ * @final
  */
 final class DataTablesColumnInterfaceTest extends AbstractFrameworkTestCase {
 
