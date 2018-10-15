@@ -9,55 +9,55 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesColumnHelper;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesEnumerator;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
- * DataTables column helper test.
+ * DataTables enumerator test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\API
  * @final
  */
-final class DataTablesColumnHelperTest extends AbstractFrameworkTestCase {
+final class DataTablesEnumeratorTest extends AbstractFrameworkTestCase {
 
     /**
-     * Tests the dtCellTypes() method.
+     * Tests the enumCellTypes() method.
      *
      * @return void
      */
-    public function testDtCellTypes() {
+    public function testEnumCellTypes() {
 
         $res = [
             DataTablesColumnInterface::DATATABLES_CELL_TYPE_TD,
             DataTablesColumnInterface::DATATABLES_CELL_TYPE_TH,
         ];
-        $this->assertEquals($res, DataTablesColumnHelper::dtCellTypes());
+        $this->assertEquals($res, DataTablesEnumerator::enumCellTypes());
     }
 
     /**
-     * Tests the dtOrderSequences() method.
+     * Tests the enumOrderSequences() method.
      *
      * @return void
      */
-    public function testDtOrderSequences() {
+    public function testEnumOrderSequences() {
 
         $res = [
             DataTablesColumnInterface::DATATABLES_ORDER_SEQUENCE_ASC,
             DataTablesColumnInterface::DATATABLES_ORDER_SEQUENCE_DESC,
         ];
-        $this->assertEquals($res, DataTablesColumnHelper::dtOrderSequences());
+        $this->assertEquals($res, DataTablesEnumerator::enumOrderSequences());
     }
 
     /**
-     * Tests the dtTypes() method.
+     * Tests the enumTypes() method.
      *
      * @return void
      */
-    public function testDtTypes() {
+    public function testEnumTypes() {
 
         $res = [
             DataTablesColumnInterface::DATATABLES_TYPE_DATE,
@@ -67,7 +67,7 @@ final class DataTablesColumnHelperTest extends AbstractFrameworkTestCase {
             DataTablesColumnInterface::DATATABLES_TYPE_NUM_FMT,
             DataTablesColumnInterface::DATATABLES_TYPE_STRING,
         ];
-        $this->assertEquals($res, DataTablesColumnHelper::dtTypes());
+        $this->assertEquals($res, DataTablesEnumerator::enumTypes());
     }
 
 }

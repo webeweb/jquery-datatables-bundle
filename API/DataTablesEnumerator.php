@@ -1,36 +1,30 @@
 <?php
 
-/*
- * Disclaimer: This source code is protected by copyright law and by
- * international conventions.
+/**
+ * This file is part of the jquery-datatables-bundle package.
  *
- * Any reproduction or partial or total distribution of the source code, by any
- * means whatsoever, is strictly forbidden.
+ * (c) 2018 WEBEWEB
  *
- * Anyone not complying with these provisions will be guilty of the offense of
- * infringement and the penal sanctions provided for by law.
- *
- * © 2018 All rights reserved.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
-
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
+namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
 /**
- * DataTables column helper.
+ * DataTables enumerator.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Helper
+ * @package WBW\Bundle\JQuery\DataTablesBundle\API
  */
-class DataTablesColumnHelper {
+class DataTablesEnumerator {
 
     /**
-     * DataTables cell types.
+     * Enumerates cell types.
      *
      * @return array Returns the cell types.
      */
-    public static function dtCellTypes() {
+    public static function enumCellTypes() {
         return [
             DataTablesColumnInterface::DATATABLES_CELL_TYPE_TD,
             DataTablesColumnInterface::DATATABLES_CELL_TYPE_TH,
@@ -38,11 +32,11 @@ class DataTablesColumnHelper {
     }
 
     /**
-     * DataTables order sequences.
+     * Enumerates order sequences.
      *
      * @return array Returns the order sequences.
      */
-    public static function dtOrderSequences() {
+    public static function enumOrderSequences() {
         return [
             DataTablesColumnInterface::DATATABLES_ORDER_SEQUENCE_ASC,
             DataTablesColumnInterface::DATATABLES_ORDER_SEQUENCE_DESC,
@@ -50,11 +44,11 @@ class DataTablesColumnHelper {
     }
 
     /**
-     * DataTables types.
+     * Enumerates types.
      *
      * @return array Returns the types.
      */
-    public static function dtTypes() {
+    public static function enumTypes() {
         return [
             DataTablesColumnInterface::DATATABLES_TYPE_DATE,
             DataTablesColumnInterface::DATATABLES_TYPE_HTML,
