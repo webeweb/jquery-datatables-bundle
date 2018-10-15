@@ -36,4 +36,36 @@ final class DataTablesOrderTest extends AbstractFrameworkTestCase {
         $this->assertNull($obj->getDir());
     }
 
+    /**
+     * Tests the setColumn() method.
+     *
+     * @retrun void
+     */
+    public function testSetColumn() {
+
+        $obj = new DataTablesOrder();
+
+        $obj->setColumn("column");
+        $this->assertEquals("column", $obj->getColumn());
+    }
+
+    /**
+     * Tests the setDir() method.
+     *
+     * @retrun void
+     */
+    public function testSetDir() {
+
+        $obj = new DataTablesOrder();
+
+        $obj->setDir("exception");
+        $this->assertEquals("ASC", $obj->getDir());
+
+        $obj->setDir("asc");
+        $this->assertEquals("ASC", $obj->getDir());
+
+        $obj->setDir("desc");
+        $this->assertEquals("DESC", $obj->getDir());
+    }
+
 }
