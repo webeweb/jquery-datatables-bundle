@@ -52,7 +52,7 @@ final class DataTablesEnumeratorTest extends AbstractFrameworkTestCase {
             DataTablesOrderInterface::DATATABLES_DIR_ASC,
             DataTablesOrderInterface::DATATABLES_DIR_DESC,
         ];
-        $this->assertEquals($res, DataTablesEnumerator::dtDirs());
+        $this->assertEquals($res, DataTablesEnumerator::enumDirs());
     }
 
     /**
