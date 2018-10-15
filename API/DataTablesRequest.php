@@ -12,8 +12,6 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
-use Symfony\Component\HttpFoundation\Request;
-use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesRequestHelper;
 use WBW\Library\Core\Network\HTTP\HTTPInterface;
 
 /**
@@ -173,63 +171,6 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
      */
     public function getWrapper() {
         return $this->wrapper;
-    }
-
-    /**
-     * Parse a request.
-     *
-     * @param DataTablesWrapper $wrapper The wrapper.
-     * @param Request $request The request.
-     * @return DataTablesRequestInterface Returns the request.
-     */
-    public static function parse(DataTablesWrapper $wrapper, Request $request) {
-
-        // Initialize a request.
-        $dtRequest = new DataTablesRequest();
-
-        // Recopy the parameter bags.
-        static::recopy($request->query, $dtRequest->getQuery());
-        static::recopy($request->request, $dtRequest->getRequest());
-
-        // Get the parameter bag.
-        if (self::HTTP_METHOD_GET === $request->getMethod()) {
-            $parameterBag = $request->query;
-        } else {
-            $parameterBag = $request->request;
-        }
-
-        // Get the request parameters.
-        $columns = null !== $parameterBag->get(self::DATATABLES_PARAMETER_COLUMNS) ? $parameterBag->get(self::DATATABLES_PARAMETER_COLUMNS) : [];
-        $orders  = null !== $parameterBag->get(self::DATATABLES_PARAMETER_ORDER) ? $parameterBag->get(self::DATATABLES_PARAMETER_ORDER) : [];
-        $search  = null !== $parameterBag->get(self::DATATABLES_PARAMETER_SEARCH) ? $parameterBag->get(self::DATATABLES_PARAMETER_SEARCH) : [];
-
-        // Set the request.
-        $dtRequest->setColumns(DataTablesColumn::parse($columns, $wrapper));
-        $dtRequest->setDraw($parameterBag->getInt(self::DATATABLES_PARAMETER_DRAW));
-        $dtRequest->setLength($parameterBag->getInt(self::DATATABLES_PARAMETER_LENGTH));
-        $dtRequest->setOrder(DataTablesOrder::parse($orders));
-        $dtRequest->setSearch(DataTablesSearch::parse($search));
-        $dtRequest->setStart($parameterBag->getInt(self::DATATABLES_PARAMETER_START));
-        $dtRequest->setWrapper($wrapper);
-
-        // Return the request.
-        return $dtRequest;
-    }
-
-    /**
-     * Recopy.
-     *
-     * @param ParameterBag $request The request.
-     * @param ParameterBag $bag The bag.
-     * @return void
-     */
-    protected static function recopy(ParameterBag $request, ParameterBag $bag) {
-        foreach ($request->keys() as $current) {
-            if (true === in_array($current, DataTablesRequestHelper::dtParameters())) {
-                continue;
-            }
-            $bag->set($current, $request->get($current));
-        }
     }
 
     /**

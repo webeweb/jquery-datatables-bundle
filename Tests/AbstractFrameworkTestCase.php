@@ -13,11 +13,11 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
 
 use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractFrameworkTestCase as BaseFrameworkTest;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequest;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequestInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
 /**
@@ -68,7 +68,7 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTest {
         $this->dataTablesWrapper->getMapping()->setPrefix("p");
 
         // Set a DataTables request mock.
-        $this->dataTablesRequest = DataTablesRequest::parse($this->dataTablesWrapper, new Request());
+        $this->dataTablesRequest = DataTablesFactory::parseRequest($this->dataTablesWrapper, new Request());
 
         // Set a DataTables response mock.
         $this->dataTablesResponse = DataTablesResponse::parse($this->dataTablesWrapper, $this->dataTablesRequest);
