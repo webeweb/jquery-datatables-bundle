@@ -84,9 +84,11 @@ class DataTablesManager {
      * Set the providers.
      *
      * @param DataTablesProviderInterface[] $providers The providers.
+     * @return DataTablesManager Returns this manager.
      */
     private function setProviders(array $providers) {
         $this->providers = $providers;
+        return $this;
     }
 
 }
