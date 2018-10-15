@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesEnumerator;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequestInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
@@ -38,6 +39,20 @@ final class DataTablesEnumeratorTest extends AbstractFrameworkTestCase {
             DataTablesColumnInterface::DATATABLES_CELL_TYPE_TH,
         ];
         $this->assertEquals($res, DataTablesEnumerator::enumCellTypes());
+    }
+
+    /**
+     * Tests the enumDirs() method.
+     *
+     * @return void
+     */
+    public function testEnumDirs() {
+
+        $res = [
+            DataTablesOrderInterface::DATATABLES_DIR_ASC,
+            DataTablesOrderInterface::DATATABLES_DIR_DESC,
+        ];
+        $this->assertEquals($res, DataTablesEnumerator::dtDirs());
     }
 
     /**

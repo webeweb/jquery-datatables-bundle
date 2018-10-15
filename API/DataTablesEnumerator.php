@@ -32,6 +32,18 @@ class DataTablesEnumerator {
     }
 
     /**
+     * Enumerates dirs.
+     *
+     * @return array Returns the dirs.
+     */
+    public static function enumDirs() {
+        return [
+            DataTablesOrderInterface::DATATABLES_DIR_ASC,
+            DataTablesOrderInterface::DATATABLES_DIR_DESC,
+        ];
+    }
+
+    /**
      * Enumerates order sequences.
      *
      * @return array Returns the order sequences.
