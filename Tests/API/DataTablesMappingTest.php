@@ -38,6 +38,27 @@ final class DataTablesMappingTest extends AbstractFrameworkTestCase {
     }
 
     /**
+     * Tests the getAlias() method.
+     *
+     * @return void
+     */
+    public function testGetAlias() {
+
+        $obj = new DataTablesMapping();
+
+        $obj->setPrefix("prefix");
+        $this->assertNull($obj->getAlias());
+
+        $obj->setPrefix(null);
+        $obj->setColumn("column");
+        $this->assertEquals("column", $obj->getAlias());
+
+        $obj->setPrefix("prefix");
+        $obj->setColumn("column");
+        $this->assertEquals("prefix.column", $obj->getAlias());
+    }
+
+    /**
      * Tests the setColumn() method.
      *
      * @return void
