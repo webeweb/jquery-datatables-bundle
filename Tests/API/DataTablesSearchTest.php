@@ -13,7 +13,6 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearch;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
 /**
  * DataTables search test.
@@ -33,6 +32,32 @@ final class DataTablesSearchTest extends AbstractFrameworkTestCase {
 
         $this->assertFalse($obj->getRegex());
         $this->assertEquals("", $obj->getValue());
+    }
+
+    /**
+     * Tests the setRegex() method.
+     *
+     * @return void
+     */
+    public function testSetRegex() {
+
+        $obj = new DataTablesSearch();
+
+        $obj->setRegex(true);
+        $this->assertTrue($obj->getRegex());
+    }
+
+    /**
+     * Tests the setValue() method.
+     *
+     * @return void
+     */
+    public function testSetValue() {
+
+        $obj = new DataTablesSearch();
+
+        $obj->setValue("value");
+        $this->assertEquals("value", $obj->getValue());
     }
 
 }

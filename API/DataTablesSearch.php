@@ -11,8 +11,6 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
-use WBW\Library\Core\Argument\BooleanHelper;
-
 /**
  * DataTables search.
  *
@@ -55,33 +53,6 @@ class DataTablesSearch implements DataTablesSearchInterface {
      */
     public function getValue() {
         return $this->value;
-    }
-
-    /**
-     * Parse a raw search array.
-     *
-     * @param array $rawSearch The raw search array.
-     * @return DataTablesSearchInterface Returns the search.
-     */
-    public static function parse(array $rawSearch) {
-
-        // Initialize a DataTable search.
-        $dtSearch = new DataTablesSearch();
-
-        // Determines if the raw search is valid.
-        if (false === array_key_exists(self::DATATABLES_PARAMETER_REGEX, $rawSearch)) {
-            return $dtSearch;
-        }
-        if (false === array_key_exists(self::DATATABLES_PARAMETER_VALUE, $rawSearch)) {
-            return $dtSearch;
-        }
-
-        // Set the search.
-        $dtSearch->setRegex(BooleanHelper::parseString($rawSearch[self::DATATABLES_PARAMETER_REGEX]));
-        $dtSearch->setValue($rawSearch[self::DATATABLES_PARAMETER_VALUE]);
-
-        // Return the search.
-        return $dtSearch;
     }
 
     /**
