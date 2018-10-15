@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
 use Symfony\Component\HttpFoundation\Request;
+use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Library\Core\Network\HTTP\HTTPInterface;
 
@@ -21,7 +22,7 @@ use WBW\Library\Core\Network\HTTP\HTTPInterface;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\API
  */
-class DataTablesWrapper implements HTTPInterface {
+class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
 
     /**
      * Columns.
@@ -268,7 +269,7 @@ class DataTablesWrapper implements HTTPInterface {
      * @return DataTablesWrapper Returns this wrapper.
      */
     public function parse(Request $request) {
-        $this->request  = DataTablesRequest::parse($this, $request);
+        $this->request  = DataTablesFactory::parseRequest($this, $request);
         $this->response = DataTablesResponse::parse($this, $this->request);
         return $this;
     }
@@ -315,7 +316,7 @@ class DataTablesWrapper implements HTTPInterface {
      * @param DataTablesMappingInterface $mapping The mapping
      * @return DataTablesWrapper Returns this wrapper.
      */
-    protected function setMapping(DataTablesMappingInterface $mapping) {
+    public function setMapping(DataTablesMappingInterface $mapping) {
         $this->mapping = $mapping;
         return $this;
     }
