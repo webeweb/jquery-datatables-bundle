@@ -68,11 +68,9 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTest {
         $this->dataTablesWrapper->getMapping()->setPrefix("p");
 
         // Set a DataTables request mock.
-        $this->dataTablesRequest = DataTablesFactory::parseRequest($this->dataTablesWrapper, new Request());
-
+        //$this->dataTablesRequest = DataTablesFactory::parseRequest($this->dataTablesWrapper, new Request());
         // Set a DataTables response mock.
-        $this->dataTablesResponse = DataTablesResponse::parse($this->dataTablesWrapper, $this->dataTablesRequest);
-
+        //$this->dataTablesResponse = DataTablesFactory::newResponse($this->dataTablesWrapper);
         // Set a Request mock.
         $this->request = new Request(["query" => "query"], array_merge(TestFixtures::getPOSTData(), ["request" => "request"]), [], [], [], ["REQUEST_METHOD" => "POST"]);
     }
