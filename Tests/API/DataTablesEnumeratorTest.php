@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesEnumerator;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequestInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 
@@ -51,6 +52,24 @@ final class DataTablesEnumeratorTest extends AbstractFrameworkTestCase {
             DataTablesColumnInterface::DATATABLES_ORDER_SEQUENCE_DESC,
         ];
         $this->assertEquals($res, DataTablesEnumerator::enumOrderSequences());
+    }
+
+    /**
+     * Tests the enumParameters() method.
+     *
+     * @return void
+     */
+    public function testEnumParameters() {
+
+        $res = [
+            DataTablesRequestInterface::DATATABLES_PARAMETER_COLUMNS,
+            DataTablesRequestInterface::DATATABLES_PARAMETER_DRAW,
+            DataTablesRequestInterface::DATATABLES_PARAMETER_LENGTH,
+            DataTablesRequestInterface::DATATABLES_PARAMETER_ORDER,
+            DataTablesRequestInterface::DATATABLES_PARAMETER_SEARCH,
+            DataTablesRequestInterface::DATATABLES_PARAMETER_START,
+        ];
+        $this->assertEquals($res, DataTablesEnumerator::enumParameters());
     }
 
     /**

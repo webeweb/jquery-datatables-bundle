@@ -44,6 +44,22 @@ class DataTablesEnumerator {
     }
 
     /**
+     * Enumerates parameters.
+     *
+     * @return array Returns the parameters.
+     */
+    public static function enumParameters() {
+        return [
+            DataTablesRequestInterface::DATATABLES_PARAMETER_COLUMNS,
+            DataTablesRequestInterface::DATATABLES_PARAMETER_DRAW,
+            DataTablesRequestInterface::DATATABLES_PARAMETER_LENGTH,
+            DataTablesRequestInterface::DATATABLES_PARAMETER_ORDER,
+            DataTablesRequestInterface::DATATABLES_PARAMETER_SEARCH,
+            DataTablesRequestInterface::DATATABLES_PARAMETER_START,
+        ];
+    }
+
+    /**
      * Enumerates rows.
      *
      * @return array Returns the rows.
