@@ -116,10 +116,9 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
      * @param string $name The name.
      */
     public function __construct($method, $url, $name) {
-        $this->setMapping(new DataTablesMapping());
-
         $this->setColumns([]);
         $this->setMethod($method);
+        $this->setMapping(new DataTablesMapping());
         $this->setName($name);
         $this->setOrder([]);
         $this->setProcessing(true);
@@ -373,6 +372,28 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
      */
     public function setProvider(DataTablesProviderInterface $provider) {
         $this->provider = $provider;
+        return $this;
+    }
+
+    /**
+     * Set the request.
+     *
+     * @param DataTablesRequestInterface $request The request.
+     * @return DataTablesWrapperInterface Returns this wrapper.
+     */
+    public function setRequest(DataTablesRequestInterface $request) {
+        $this->request = $request;
+        return $this;
+    }
+
+    /**
+     * Set the response.
+     *
+     * @param DataTablesResponseInterface $response The response.
+     * @return DataTablesWrapperInterface Returns this wrapper.
+     */
+    public function setResponse(DataTablesResponseInterface $response) {
+        $this->response = $response;
         return $this;
     }
 
