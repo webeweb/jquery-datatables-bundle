@@ -22,7 +22,7 @@ class DataTablesEnumerator {
     /**
      * Enumerates cell types.
      *
-     * @return array Returns the cell types.
+     * @return array Returns the cell types enumeration.
      */
     public static function enumCellTypes() {
         return [
@@ -34,7 +34,7 @@ class DataTablesEnumerator {
     /**
      * Enumerates dirs.
      *
-     * @return array Returns the dirs.
+     * @return array Returns the dirs enumeration.
      */
     public static function enumDirs() {
         return [
@@ -46,7 +46,7 @@ class DataTablesEnumerator {
     /**
      * Enumerates order sequences.
      *
-     * @return array Returns the order sequences.
+     * @return array Returns the order sequences enumeration.
      */
     public static function enumOrderSequences() {
         return [
@@ -58,7 +58,7 @@ class DataTablesEnumerator {
     /**
      * Enumerates parameters.
      *
-     * @return array Returns the parameters.
+     * @return array Returns the parameters enumeration.
      */
     public static function enumParameters() {
         return [
@@ -74,7 +74,7 @@ class DataTablesEnumerator {
     /**
      * Enumerates rows.
      *
-     * @return array Returns the rows.
+     * @return array Returns the rows enumeration.
      */
     public static function enumRows() {
         return [
@@ -88,7 +88,7 @@ class DataTablesEnumerator {
     /**
      * Enumerates types.
      *
-     * @return array Returns the types.
+     * @return array Returns the types enumeration.
      */
     public static function enumTypes() {
         return [
