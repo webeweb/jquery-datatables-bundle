@@ -287,9 +287,6 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
 
         $obj = new DataTablesColumn();
 
-        $obj->setVisible(true);
-        $this->assertTrue($obj->getVisible());
-
         $obj->setVisible(false);
         $this->assertFalse($obj->getVisible());
     }
