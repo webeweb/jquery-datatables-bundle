@@ -24,27 +24,27 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 final class DataTablesColumnTest extends AbstractFrameworkTestCase {
 
     /**
-     * Tests the newInstance() method.
+     * Tests the __construct() method.
      *
      * @return void
      */
-    public function testNewInstance() {
+    public function __construct() {
 
-        $obj = DataTablesColumn::newInstance("data", "name");
+        $obj = new DataTablesColumn();
 
-        $this->assertEquals("td", $obj->getCellType());
+        $this->assertEquals(DataTablesColumn::DATATABLES_CELL_TYPE_TD, $obj->getCellType());
         $this->assertNull($obj->getClassname());
         $this->assertNull($obj->getContentPadding());
-        $this->assertEquals("data", $obj->getData());
-        $this->assertEquals("data", $obj->getMapping()->getColumn());
+        $this->assertNull($obj->getData());
         $this->assertNull($obj->getDefaultContent());
-        $this->assertEquals("name", $obj->getName());
+        $this->assertNotNull($obj->getMapping());
         $this->assertNull($obj->getOrderData());
         $this->assertNull($obj->getOrderDataType());
         $this->assertNull($obj->getOrderSequence());
+        $this->assertTrue($obj->getOrderable());
         $this->assertNull($obj->getSearch());
         $this->assertTrue($obj->getSearchable());
-        $this->assertEquals("name", $obj->getTitle());
+        $this->assertNull($obj->getTitle());
         $this->assertNull($obj->getType());
         $this->assertTrue($obj->getVisible());
         $this->assertNull($obj->getWidth());
@@ -57,7 +57,7 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
      */
     public function testSetCellType() {
 
-        $obj = DataTablesColumn::newInstance("data", "name");
+        $obj = new DataTablesColumn();
 
         // ===
         $obj->setCellType("exception");
@@ -79,7 +79,7 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
      */
     public function testSetClassname() {
 
-        $obj = DataTablesColumn::newInstance("data", "name");
+        $obj = new DataTablesColumn();
 
         $obj->setClassname("classname");
         $this->assertEquals("classname", $obj->getClassname());
@@ -92,7 +92,7 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
      */
     public function testSetContentPadding() {
 
-        $obj = DataTablesColumn::newInstance("data", "name");
+        $obj = new DataTablesColumn();
 
         $obj->setContentPadding("contentPadding");
         $this->assertEquals("contentPadding", $obj->getContentPadding());
@@ -105,7 +105,7 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
      */
     public function testSetDefaultContent() {
 
-        $obj = DataTablesColumn::newInstance("data", "name");
+        $obj = new DataTablesColumn();
 
         $obj->setDefaultContent("defaultContent");
         $this->assertEquals("defaultContent", $obj->getDefaultContent());
@@ -118,10 +118,10 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
      */
     public function testSetName() {
 
-        $obj = DataTablesColumn::newInstance("data", "name");
+        $obj = new DataTablesColumn();
 
-        $obj->setName("othername");
-        $this->assertEquals("othername", $obj->getName());
+        $obj->setName("name");
+        $this->assertEquals("name", $obj->getName());
     }
 
     /**
@@ -131,7 +131,7 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
      */
     public function testSetOrderData() {
 
-        $obj = DataTablesColumn::newInstance("data", "name");
+        $obj = new DataTablesColumn();
 
         $obj->setOrderData(1);
         $this->assertEquals(1, $obj->getOrderData());
@@ -144,7 +144,7 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
      */
     public function testSetOrderDataType() {
 
-        $obj = DataTablesColumn::newInstance("data", "name");
+        $obj = new DataTablesColumn();
 
         $obj->setOrderDataType("orderDataType");
         $this->assertEquals("orderDataType", $obj->getOrderDataType());
@@ -157,7 +157,7 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
      */
     public function testSetOrderSequence() {
 
-        $obj = DataTablesColumn::newInstance("data", "name");
+        $obj = new DataTablesColumn();
 
         // ===
         $obj->setOrderSequence("exception");
@@ -179,7 +179,7 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
      */
     public function testSetOrderable() {
 
-        $obj = DataTablesColumn::newInstance("data", "name");
+        $obj = new DataTablesColumn();
 
         $obj->setOrderable(false);
         $this->assertFalse($obj->getOrderable());
@@ -192,7 +192,7 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
      */
     public function testSetSearchable() {
 
-        $obj = DataTablesColumn::newInstance("data", "name");
+        $obj = new DataTablesColumn();
 
         $obj->setSearchable(false);
         $this->assertFalse($obj->getSearchable());
@@ -205,7 +205,7 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
      */
     public function testSetTitle() {
 
-        $obj = DataTablesColumn::newInstance("data", "name");
+        $obj = new DataTablesColumn();
 
         $obj->setTitle("title");
         $this->assertEquals("title", $obj->getTitle());
@@ -218,7 +218,7 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
      */
     public function testSetType() {
 
-        $obj = DataTablesColumn::newInstance("data", "name");
+        $obj = new DataTablesColumn();
 
         // ===
         $obj->setType("exception");
@@ -256,7 +256,10 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
      */
     public function testSetVisible() {
 
-        $obj = DataTablesColumn::newInstance("data", "name");
+        $obj = new DataTablesColumn();
+
+        $obj->setVisible(true);
+        $this->assertTrue($obj->getVisible());
 
         $obj->setVisible(false);
         $this->assertFalse($obj->getVisible());
@@ -269,7 +272,7 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
      */
     public function testSetWidth() {
 
-        $obj = DataTablesColumn::newInstance("data", "name");
+        $obj = new DataTablesColumn();
 
         $obj->setWidth("width");
         $this->assertEquals("width", $obj->getWidth());
@@ -282,7 +285,9 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
      */
     public function testToArray() {
 
-        $obj = DataTablesColumn::newInstance("data", "name");
+        $obj = new DataTablesColumn();
+        $obj->setData("data");
+        $obj->setName("name");
 
         // ===
         $res01 = ["cellType" => "td", "data" => "data", "name" => "name"];
