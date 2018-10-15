@@ -17,7 +17,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 /**
  * DataTables order interface test.
  *
- * @author Camille A. <camille@ingeneo.eu>
+ * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\API
  * @final
  */
@@ -32,6 +32,7 @@ final class DataTablesOrderInterfaceTest extends AbstractFrameworkTestCase {
 
         $this->assertEquals("asc", DataTablesOrderInterface::DATATABLES_DIR_ASC);
         $this->assertEquals("desc", DataTablesOrderInterface::DATATABLES_DIR_DESC);
+
         $this->assertEquals("column", DataTablesOrderInterface::DATATABLES_PARAMETER_COLUMN);
         $this->assertEquals("dir", DataTablesOrderInterface::DATATABLES_PARAMETER_DIR);
     }
