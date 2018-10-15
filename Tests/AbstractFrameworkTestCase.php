@@ -14,10 +14,8 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
 use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractFrameworkTestCase as BaseFrameworkTest;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequestInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
-use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
 /**
@@ -53,7 +51,7 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTest {
     /**
      * Request.
      *
-     * @var Request.
+     * @var Request
      */
     protected $request;
 
@@ -62,6 +60,10 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTest {
      */
     protected function setUp() {
         parent::setUp();
+
+        // Set the request parameters.
+        $get  = ["query" => "query"];
+        $post = array_merge(TestFixtures::getPOSTData(), ["request" => "request"]);
 
         // Set a DataTables wrappper mock.
         $this->dataTablesWrapper = new DataTablesWrapper("POST", "url", "name");
@@ -72,7 +74,7 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTest {
         // Set a DataTables response mock.
         //$this->dataTablesResponse = DataTablesFactory::newResponse($this->dataTablesWrapper);
         // Set a Request mock.
-        $this->request = new Request(["query" => "query"], array_merge(TestFixtures::getPOSTData(), ["request" => "request"]), [], [], [], ["REQUEST_METHOD" => "POST"]);
+        $this->request = new Request($get, $post, [], [], [], ["REQUEST_METHOD" => "POST"]);
     }
 
 }
