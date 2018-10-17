@@ -313,28 +313,6 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
     }
 
     /**
-     * Create a column instance.
-     *
-     * @param string $data The column data.
-     * @param string $name The column name.
-     * @param string $cellType The column cell type.
-     * @return DataTablesColumnInterface Returns a column.
-     */
-    public static function newInstance($data, $name, $cellType = self::DATATABLES_CELL_TYPE_TD) {
-
-        // Initialize a column.
-        $dtColumn = new DataTablesColumn();
-        $dtColumn->setCellType($cellType);
-        $dtColumn->setData($data);
-        $dtColumn->setName($name);
-        $dtColumn->setTitle($name);
-        $dtColumn->getMapping()->setColumn($data);
-
-        // Return the column.
-        return $dtColumn;
-    }
-
-    /**
      * Set the cell type.
      *
      * @param string $cellType The cell type.
