@@ -29,7 +29,7 @@ final class DataTablesColumnTest extends AbstractFrameworkTestCase {
      *
      * @return void
      */
-    public function __construct() {
+    public function testConstruct() {
 
         $obj = new DataTablesColumn();
 
