@@ -13,15 +13,18 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Factory;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesEnumerator;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrder;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequest;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequestInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearch;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearchInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
-use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesRequestHelper;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Library\Core\Argument\BooleanHelper;
 use WBW\Library\Core\Network\HTTP\HTTPInterface;
 
@@ -34,13 +37,64 @@ use WBW\Library\Core\Network\HTTP\HTTPInterface;
 class DataTablesFactory {
 
     /**
+     * Create a new column instance.
+     *
+     * @param string $data The column data.
+     * @param string $name The column name.
+     * @param string $cellType The column cell type.
+     * @return DataTablesColumnInterface Returns a column.
+     */
+    public static function newColumn($data, $name, $cellType = DataTablesColumnInterface::DATATABLES_CELL_TYPE_TD) {
+
+        // Initialize a column.
+        $dtColumn = new DataTablesColumn();
+        $dtColumn->setCellType($cellType);
+        $dtColumn->setData($data);
+        $dtColumn->setName($name);
+        $dtColumn->setTitle($name);
+        $dtColumn->getMapping()->setColumn($data);
+
+        // Return the column.
+        return $dtColumn;
+    }
+
+    /**
+     * Create a new response.
+     *
+     * @param DataTablesWrapperInterface $wrapper The wrapper.
+     * @return DataTablesResponse Returns a response.
+     */
+    public static function newResponse(DataTablesWrapperInterface $wrapper) {
+
+        // Initialize a response.
+        $dtResponse = new DataTablesResponse();
+        $dtResponse->setDraw($wrapper->getRequest()->getDraw());
+        $dtResponse->setWrapper($wrapper);
+
+        // Return the response.
+        return $dtResponse;
+    }
+
+    /**
+     * Create a new wrapper.
+     *
+     * @param string $method The method.
+     * @param string $url The URL.
+     * @param string $name The name.
+     * @return DataTablesWrapperInterface Returns a wrapper.
+     */
+    public static function newWrapper($method, $url, $name) {
+        return new DataTablesWrapper($method, $url, $name);
+    }
+
+    /**
      * Parse a raw column.
      *
      * @param array $rawColumn The raw column.
-     * @param DataTablesWrapper $wrapper The wrapper.
+     * @param DataTablesWrapperInterface $wrapper The wrapper.
      * @return DataTablesColumnInterface Returns the column.
      */
-    public static function parseColumn(array $rawColumn, DataTablesWrapper $wrapper) {
+    public static function parseColumn(array $rawColumn, DataTablesWrapperInterface $wrapper) {
 
         // Determines if the raw column is valid.
         if (false === array_key_exists(DataTablesColumnInterface::DATATABLES_PARAMETER_DATA, $rawColumn)) {
@@ -74,10 +128,10 @@ class DataTablesFactory {
      * Parse a raw columns.
      *
      * @param array $rawColumns The raw columns.
-     * @param DataTablesWrapper $wrapper The wrapper.
+     * @param DataTablesWrapperInterface $wrapper The wrapper.
      * @return DataTablesColumnInterface[] Returns the columns.
      */
-    public static function parseColumns(array $rawColumns, DataTablesWrapper $wrapper) {
+    public static function parseColumns(array $rawColumns, DataTablesWrapperInterface $wrapper) {
 
         // Initialize the columns.
         $dtColumns = [];
@@ -157,7 +211,7 @@ class DataTablesFactory {
      */
     protected static function parseParameterBag(ParameterBag $request, ParameterBag $bag) {
         foreach ($request->keys() as $current) {
-            if (true === in_array($current, DataTablesRequestHelper::dtParameters())) {
+            if (true === in_array($current, DataTablesEnumerator::enumParameters())) {
                 continue;
             }
             $bag->set($current, $request->get($current));
@@ -167,11 +221,11 @@ class DataTablesFactory {
     /**
      * Parse a request.
      *
-     * @param DataTablesWrapper $wrapper The wrapper.
+     * @param DataTablesWrapperInterface $wrapper The wrapper.
      * @param Request $request The request.
      * @return DataTablesRequestInterface Returns the request.
      */
-    public static function parseRequest(DataTablesWrapper $wrapper, Request $request) {
+    public static function parseRequest(DataTablesWrapperInterface $wrapper, Request $request) {
 
         // Initialize a request.
         $dtRequest = new DataTablesRequest();

@@ -11,8 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
-use Symfony\Component\HttpFoundation\Request;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
+use Symfony\Component\HttpFoundation\ParameterBag;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequest;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 
@@ -26,62 +25,23 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 final class DataTablesRequestTest extends AbstractFrameworkTestCase {
 
     /**
-     * Tests the parse() method.
+     * Tests the __construct() method.
      *
      * @return void
      */
-    public function testParse() {
+    public function testConstruct() {
 
-        $obj = DataTablesRequest::parse($this->dataTablesWrapper, new Request());
+        $obj = new DataTablesRequest();
 
         $this->assertEquals([], $obj->getColumns());
         $this->assertEquals(0, $obj->getDraw());
-        $this->assertEquals(0, $obj->getLength());
-        $this->assertEquals([], $obj->getOrder());
-        $this->assertNotNull($obj->getQuery());
-        $this->assertNotNull($obj->getRequest());
-        $this->assertNotNull($obj->getSearch());
-        $this->assertEquals(0, $obj->getStart());
-        $this->assertSame($this->dataTablesWrapper, $obj->getWrapper());
-    }
-
-    /**
-     * Tests the getColumn() method.
-     *
-     * @return void
-     */
-    public function testGetColumn() {
-
-        $this->dataTablesWrapper
-            ->addColumn(DataTablesColumn::newInstance("id", "#"))
-            ->addColumn(DataTablesColumn::newInstance("name", "Name"))
-            ->addColumn(DataTablesColumn::newInstance("position", "Position"))
-            ->addColumn(DataTablesColumn::newInstance("office", "Office"))
-            ->addColumn(DataTablesColumn::newInstance("age", "Age"))
-            ->addColumn(DataTablesColumn::newInstance("startDate", "Start date"))
-            ->addColumn(DataTablesColumn::newInstance("salary", "Salary"));
-
-        $obj = DataTablesRequest::parse($this->dataTablesWrapper, $this->request);
-
-        $this->assertCount(6, $obj->getColumns());
-        $this->assertEquals(1, $obj->getDraw());
         $this->assertEquals(10, $obj->getLength());
-        $this->assertCount(1, $obj->getOrder());
-        $this->assertCount(1, $obj->getQuery()->all());
-        $this->assertCount(1, $obj->getRequest()->all());
-        $this->assertNotNull($obj->getSearch());
+        $this->assertEquals([], $obj->getOrder());
+        $this->assertInstanceOf(ParameterBag::class, $obj->getQuery());
+        $this->assertInstanceOf(ParameterBag::class, $obj->getRequest());
+        $this->assertNull($obj->getSearch());
         $this->assertEquals(0, $obj->getStart());
-
-        $this->assertEquals("query", $obj->getQuery()->get("query"));
-        $this->assertEquals("request", $obj->getRequest()->get("request"));
-
-        $this->assertNotNull($obj->getColumn("name"));
-        $this->assertNotNull($obj->getColumn("position"));
-        $this->assertNotNull($obj->getColumn("office"));
-        $this->assertNotNull($obj->getColumn("age"));
-        $this->assertNotNull($obj->getColumn("startDate"));
-        $this->assertNotNull($obj->getColumn("salary"));
-        $this->assertNull($obj->getColumn("exception"));
+        $this->assertNull($obj->getWrapper());
     }
 
 }
