@@ -110,4 +110,122 @@ interface DataTablesColumnInterface {
      */
     const DATATABLES_TYPE_STRING = "string";
 
+    /**
+     * Get the cell type.
+     *
+     * @return string Returns the cell type.
+     */
+    public function getCellType();
+
+    /**
+     * Get the class name.
+     *
+     * @return string Returns the class name.
+     */
+    public function getClassname();
+
+    /**
+     * Get the content padding.
+     *
+     * @return string Returns the content padding.
+     */
+    public function getContentPadding();
+
+    /**
+     * Get the data.
+     *
+     * @return integer|string Returns the data.
+     */
+    public function getData();
+
+    /**
+     * Get the default content
+     *
+     * @return string Returns the default content.
+     */
+    public function getDefaultContent();
+
+    /**
+     * Get the mapping.
+     *
+     * @return DataTablesMappingInterface The mapping.
+     */
+    public function getMapping();
+
+    /**
+     * Get the name.
+     *
+     * @return string Returns the name.
+     */
+    public function getName();
+
+    /**
+     * Get the order data.
+     *
+     * @return integer|array Returns the order data.
+     */
+    public function getOrderData();
+
+    /**
+     * Get the order data type.
+     *
+     * @return string Returns the order data type.
+     */
+    public function getOrderDataType();
+
+    /**
+     * Get the order sequence.
+     *
+     * @return string Returns the order sequence.
+     */
+    public function getOrderSequence();
+
+    /**
+     * Get the orderable.
+     *
+     * @return bool Returns the orderable.
+     */
+    public function getOrderable();
+
+    /**
+     * Get the search.
+     *
+     * @return DataTablesSearchInterface Returns the search.
+     */
+    public function getSearch();
+
+    /**
+     * Get the searchable.
+     *
+     * @return bool Returns the searchable.
+     */
+    public function getSearchable();
+
+    /**
+     * Get the title.
+     *
+     * @return string Returns the title.
+     */
+    public function getTitle();
+
+    /**
+     * Get the type.
+     *
+     * @return string Returns the type.
+     */
+    public function getType();
+
+    /**
+     * Get the visible.
+     *
+     * @return bool Returns the visible.
+     */
+    public function getVisible();
+
+    /**
+     * Get the width.
+     *
+     * @return string Returns the width.
+     */
+    public function getWidth();
 }

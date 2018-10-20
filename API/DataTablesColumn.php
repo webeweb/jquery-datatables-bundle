@@ -153,153 +153,119 @@ class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
     }
 
     /**
-     * Get the cell type.
-     *
-     * @return string Returns the cell type.
+     * {@inheritdoc}
      */
     public function getCellType() {
         return $this->cellType;
     }
 
     /**
-     * Get the class name.
-     *
-     * @return string Returns the class name.
+     * {@inheritdoc}
      */
     public function getClassname() {
         return $this->classname;
     }
 
     /**
-     * Get the content padding.
-     *
-     * @return string Returns the content padding.
+     * {@inheritdoc}
      */
     public function getContentPadding() {
         return $this->contentPadding;
     }
 
     /**
-     * Get the data.
-     *
-     * @return integer|string Returns the data.
+     * {@inheritdoc}
      */
     public function getData() {
         return $this->data;
     }
 
     /**
-     * Get the default content
-     *
-     * @return string Returns the default content.
+     * {@inheritdoc}
      */
     public function getDefaultContent() {
         return $this->defaultContent;
     }
 
     /**
-     * Get the mapping.
-     *
-     * @return DataTablesMappingInterface The mapping.
+     * {@inheritdoc}
      */
     public function getMapping() {
         return $this->mapping;
     }
 
     /**
-     * Get the name.
-     *
-     * @return string Returns the name.
+     * {@inheritdoc}
      */
     public function getName() {
         return $this->name;
     }
 
     /**
-     * Get the order data.
-     *
-     * @return integer|array Returns the order data.
+     * {@inheritdoc}
      */
     public function getOrderData() {
         return $this->orderData;
     }
 
     /**
-     * Get the order data type.
-     *
-     * @return string Returns the order data type.
+     * {@inheritdoc}
      */
     public function getOrderDataType() {
         return $this->orderDataType;
     }
 
     /**
-     * Get the order sequence.
-     *
-     * @return string Returns the order sequence.
+     * {@inheritdoc}
      */
     public function getOrderSequence() {
         return $this->orderSequence;
     }
 
     /**
-     * Get the orderable.
-     *
-     * @return bool Returns the orderable.
+     * {@inheritdoc}
      */
     public function getOrderable() {
         return $this->orderable;
     }
 
     /**
-     * Get the search.
-     *
-     * @return DataTablesSearchInterface Returns the search.
+     * {@inheritdoc}
      */
     public function getSearch() {
         return $this->search;
     }
 
     /**
-     * Get the searchable.
-     *
-     * @return bool Returns the searchable.
+     * {@inheritdoc}
      */
     public function getSearchable() {
         return $this->searchable;
     }
 
     /**
-     * Get the title.
-     *
-     * @return string Returns the title.
+     * {@inheritdoc}
      */
     public function getTitle() {
         return $this->title;
     }
 
     /**
-     * Get the type.
-     *
-     * @return string Returns the type.
+     * {@inheritdoc}
      */
     public function getType() {
         return $this->type;
     }
 
     /**
-     * Get the visible.
-     *
-     * @return bool Returns the visible.
+     * {@inheritdoc}
      */
     public function getVisible() {
         return $this->visible;
     }
 
     /**
-     * Get the width.
-     *
-     * @return string Returns the width.
+     * {@inheritdoc}
      */
     public function getWidth() {
         return $this->width;
