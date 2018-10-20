@@ -23,6 +23,11 @@ use WBW\Library\Core\Network\HTTP\HTTPInterface;
 class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
 
     /**
+     * @var DataTablesWrapperTrait
+     */
+    use DataTablesWrapperTrait;
+
+    /**
      * Columns.
      *
      * @var DataTablesColumnInterface[]
@@ -77,13 +82,6 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
      * @var int
      */
     private $start;
-
-    /**
-     * Wrapper.
-     *
-     * @var DataTablesWrapper
-     */
-    private $wrapper;
 
     /**
      * Constructor.
@@ -164,13 +162,6 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
      */
     public function getStart() {
         return $this->start;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getWrapper() {
-        return $this->wrapper;
     }
 
     /**
@@ -258,17 +249,6 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
      */
     public function setStart($start) {
         $this->start = $start;
-        return $this;
-    }
-
-    /**
-     * Set the wrapper.
-     *
-     * @param DataTablesWrapper $wrapper The wrapper.
-     * @return DataTablesRequestInterface Returns this request.
-     */
-    public function setWrapper(DataTablesWrapper $wrapper) {
-        $this->wrapper = $wrapper;
         return $this;
     }
 
