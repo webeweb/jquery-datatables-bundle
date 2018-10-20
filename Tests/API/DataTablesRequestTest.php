@@ -13,7 +13,6 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequest;
-use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
@@ -54,9 +53,8 @@ final class DataTablesRequestTest extends AbstractFrameworkTestCase {
 
         $obj = new DataTablesRequest();
 
-        $obj->setColumns([DataTablesFactory::newColumn("data", "name")]);
-        $this->assertCount(1, $obj->getColumns());
-        $this->assertEquals("name", $obj->getColumn("data")->getName());
+        $obj->setColumns(["columns"]);
+        $this->assertEquals(["columns"], $obj->getColumns());
     }
 
     /**
