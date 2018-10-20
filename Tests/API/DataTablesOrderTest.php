@@ -58,14 +58,14 @@ final class DataTablesOrderTest extends AbstractFrameworkTestCase {
 
         $obj = new DataTablesOrder();
 
-        $obj->setDir("exception");
-        $this->assertEquals("ASC", $obj->getDir());
-
         $obj->setDir("asc");
         $this->assertEquals("ASC", $obj->getDir());
 
         $obj->setDir("desc");
         $this->assertEquals("DESC", $obj->getDir());
+
+        $obj->setDir("exception");
+        $this->assertEquals("ASC", $obj->getDir());
     }
 
 }
