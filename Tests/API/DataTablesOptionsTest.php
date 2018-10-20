@@ -125,7 +125,19 @@ final class DataTablesOptionsTest extends AbstractFrameworkTestCase {
 
         $obj = new DataTablesOptions();
 
-        // ===
+        $obj->setOption("name", "value");
+        $this->assertEquals(["name" => "value"], $obj->getOptions());
+    }
+
+    /**
+     * Tests the setOption() method.
+     *
+     * @return void
+     */
+    public function testSetOptionWithIllegalArgumentException() {
+
+        $obj = new DataTablesOptions();
+
         try {
 
             $obj->setOption(1, "value");
@@ -134,10 +146,6 @@ final class DataTablesOptionsTest extends AbstractFrameworkTestCase {
             $this->assertInstanceOf(IllegalArgumentException::class, $ex);
             $this->assertEquals("The argument \"1\" is not a string", $ex->getMessage());
         }
-
-        // ===
-        $obj->setOption("name", "value");
-        $this->assertEquals(["name" => "value"], $obj->getOptions());
     }
 
 }
