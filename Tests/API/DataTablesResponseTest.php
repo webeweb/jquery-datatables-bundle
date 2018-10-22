@@ -11,7 +11,9 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
@@ -48,13 +50,18 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
      */
     public function testAddRow() {
 
+        // Set a Column mock.
+        $col = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
+        $col->expects($this->any())->method("getData")->willReturn("data");
+
+        // Set a Wrapper mock.
+        $arg = $this->getMockBuilder(DataTablesWrapperInterface::class)->getMock();
+        $arg->expects($this->any())->method("getColumns")->willReturn([$col]);
+
         $obj = new DataTablesResponse();
-        $obj->setWrapper($this->dataTablesWrapper);
+        $obj->setWrapper($arg);
 
-        // ===
         $this->assertCount(0, $obj->getData());
-
-        // ===
         $this->assertSame($obj, $obj->addRow());
         $this->assertCount(1, $obj->getData());
     }
@@ -105,13 +112,20 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
      */
     public function testSetRow() {
 
-        $obj = new DataTablesResponse();
-        $obj->setWrapper($this->dataTablesWrapper);
-        $obj->addRow();
+        // Set a Column mock.
+        $col = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
+        $col->expects($this->any())->method("getData")->willReturn("data");
 
-        $obj->setRow("name", "name");
+        // Set a Wrapper mock.
+        $arg = $this->getMockBuilder(DataTablesWrapperInterface::class)->getMock();
+        $arg->expects($this->any())->method("getColumns")->willReturn([$col]);
+
+        $obj = new DataTablesResponse();
+        $obj->setWrapper($arg)->addRow();
+
+        $obj->setRow("data", "data");
         $this->assertCount(1, $obj->getData());
-        $this->assertEquals([], $obj->getData()[0]);
+        $this->assertEquals(["data" => "data"], $obj->getData()[0]);
     }
 
     /**
