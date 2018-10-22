@@ -27,7 +27,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
     /**
      * Columns.
      *
-     * @var DataTablesColumn[]
+     * @var DataTablesColumnInterface[]
      */
     private $columns;
 
@@ -129,10 +129,10 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
     /**
      * Add a column.
      *
-     * @param DataTablesColumn $column The column.
+     * @param DataTablesColumnInterface $column The column.
      * @return DataTablesWrapper Returns this wrapper.
      */
-    public function addColumn(DataTablesColumn $column) {
+    public function addColumn(DataTablesColumnInterface $column) {
         if (null === $column->getMapping()->getPrefix()) {
             $column->getMapping()->setPrefix($this->mapping->getPrefix());
         }
@@ -144,7 +144,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
      * Get a column.
      *
      * @param string $data The column data.
-     * @return DataTablesColumn Returns the column in case of success, null otherwise.
+     * @return DataTablesColumnInterface Returns the column in case of success, null otherwise.
      */
     public function getColumn($data) {
         if (true === array_key_exists($data, $this->columns)) {
@@ -156,7 +156,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
     /**
      * Get the columns.
      *
-     * @return DataTablesColumn[] Returns the columns.
+     * @return DataTablesColumnInterface[] Returns the columns.
      */
     public function getColumns() {
         return $this->columns;
@@ -269,17 +269,17 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
      */
     public function parse(Request $request) {
         $this->request  = DataTablesFactory::parseRequest($this, $request);
-        $this->response = DataTablesResponse::parse($this, $this->request);
+        $this->response = DataTablesFactory::parseResponse($this, $this->request);
         return $this;
     }
 
     /**
      * Remove a column.
      *
-     * @param DataTablesColumn $column The column.
+     * @param DataTablesColumnInterface $column The column.
      * @return DataTablesWrapper Returns this wrapper.
      */
-    public function removeColumn(DataTablesColumn $column) {
+    public function removeColumn(DataTablesColumnInterface $column) {
         if (true === array_key_exists($column->getData(), $this->columns)) {
             $this->columns[$column->getData()]->getMapping()->setPrefix(null);
             unset($this->columns[$column->getData()]);
@@ -290,7 +290,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
     /**
      * Set the columns.
      *
-     * @param DataTablesColumn[] $columns The columns.
+     * @param DataTablesColumnInterface[] $columns The columns.
      * @return DataTablesWrapper Returns this wrapper.
      */
     private function setColumns(array $columns) {

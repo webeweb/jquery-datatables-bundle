@@ -19,4 +19,10 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\API;
  */
 interface DataTablesWrapperInterface {
 
+    /**
+     * Get the columns.
+     *
+     * @return DataTablesColumnInterface[] Returns the columns.
+     */
+    public function getColumns();
 }
