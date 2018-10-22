@@ -11,12 +11,12 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
-use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider;
 
 /**
  * DataTables wrapper test.
@@ -57,20 +57,22 @@ final class DataTablesWrapperTest extends AbstractFrameworkTestCase {
      */
     public function testAddColumn() {
 
+        // Set a Column mock.
+        $col = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
+        $col->expects($this->any())->method("getData")->willReturn("col");
+        $col->expects($this->any())->method("getMapping")->willReturn($this->dtMapping);
+
         $obj = new DataTablesWrapper("POST", "url", "name");
-        $obj->getMapping()->setPrefix("prefix");
 
         // ===
-        $this->assertSame($obj, $obj->addColumn(DataTablesColumn::newInstance("name1", "title1")));
+        $this->assertSame($obj, $obj->addColumn($this->dtColumn));
         $this->assertCount(1, $obj->getColumns());
-        $this->assertEquals("name1", $obj->getColumns()["name1"]->getMapping()->getColumn());
-        $this->assertEquals("prefix", $obj->getColumns()["name1"]->getMapping()->getPrefix());
+        $this->assertSame($this->dtColumn, $obj->getColumns()["data"]);
 
         // ===
-        $this->assertSame($obj, $obj->addColumn(DataTablesColumn::newInstance("name2", "title2")));
+        $this->assertSame($obj, $obj->addColumn($col));
         $this->assertCount(2, $obj->getColumns());
-        $this->assertEquals("name2", $obj->getColumns()["name2"]->getMapping()->getColumn());
-        $this->assertEquals("prefix", $obj->getColumns()["name2"]->getMapping()->getPrefix());
+        $this->assertSame($col, $obj->getColumns()["col"]);
     }
 
     /**
@@ -81,28 +83,13 @@ final class DataTablesWrapperTest extends AbstractFrameworkTestCase {
     public function testGetColumn() {
 
         $obj = new DataTablesWrapper("POST", "url", "name");
-        $arg = DataTablesColumn::newInstance("name1", "title1");
 
         // ===
-        $this->assertNull($obj->getColumn("name1"));
+        $this->assertNull($obj->getColumn("data"));
 
         // ===
-        $this->assertSame($obj, $obj->addColumn($arg));
-        $this->assertSame($arg, $obj->getColumn("name1"));
-    }
-
-    /**
-     * Tests the parse() method.
-     *
-     * @return void
-     */
-    public function testParse() {
-
-        $obj = new DataTablesWrapper("POST", "url", "name");
-
-        $obj->parse(new Request());
-        $this->assertNotNull($obj->getRequest());
-        $this->assertNotNull($obj->getResponse());
+        $this->assertSame($obj, $obj->addColumn($this->dtColumn));
+        $this->assertSame($this->dtColumn, $obj->getColumn("data"));
     }
 
     /**
@@ -112,25 +99,25 @@ final class DataTablesWrapperTest extends AbstractFrameworkTestCase {
      */
     public function testRemoveColumn() {
 
+        // Set a Column mock.
+        $col = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
+        $col->expects($this->any())->method("getData")->willReturn("col");
+        $col->expects($this->any())->method("getMapping")->willReturn($this->dtMapping);
+
         $obj = new DataTablesWrapper("POST", "url", "name");
 
-        $col1 = DataTablesColumn::newInstance("name1", "title1");
-        $col2 = DataTablesColumn::newInstance("name2", "title2");
-
         // ===
-        $this->assertSame($obj, $obj->addColumn($col1));
-        $this->assertSame($obj, $obj->addColumn($col2));
+        $this->assertSame($obj, $obj->addColumn($this->dtColumn));
+        $this->assertSame($obj, $obj->addColumn($col));
         $this->assertCount(2, $obj->getColumns());
 
         // ===
-        $this->assertSame($obj, $obj->removeColumn($col1));
+        $this->assertSame($obj, $obj->removeColumn($col));
         $this->assertCount(1, $obj->getColumns());
-        $this->assertNull($col1->getMapping()->getPrefix());
 
         // ===
-        $this->assertSame($obj, $obj->removeColumn($col2));
+        $this->assertSame($obj, $obj->removeColumn($this->dtColumn));
         $this->assertCount(0, $obj->getColumns());
-        $this->assertNull($col2->getMapping()->getPrefix());
     }
 
     /**
@@ -171,9 +158,10 @@ final class DataTablesWrapperTest extends AbstractFrameworkTestCase {
      */
     public function testSetOptions() {
 
-        $obj = new DataTablesWrapper("POST", "url", "name");
+        // Set an Options mock.
+        $arg = $this->getMockBuilder(DataTablesOptionsInterface::class)->getMock();
 
-        $arg = new DataTablesOptions();
+        $obj = new DataTablesWrapper("POST", "url", "name");
 
         $obj->setOptions($arg);
         $this->assertSame($arg, $obj->getOptions());
@@ -217,9 +205,11 @@ final class DataTablesWrapperTest extends AbstractFrameworkTestCase {
      */
     public function testSetProvider() {
 
-        $obj = new DataTablesWrapper("POST", "url", "name");
+        // Set a Provider mock.
+        $arg = $this->getMockBuilder(DataTablesProviderInterface::class)->getMock();
+        $arg->expects($this->any())->method("getName")->willReturn("name");
 
-        $arg = new EmployeeDataTablesProvider();
+        $obj = new DataTablesWrapper("POST", "url", "name");
 
         $obj->setProvider($arg);
         $this->assertSame($arg, $obj->getProvider());
@@ -235,12 +225,12 @@ final class DataTablesWrapperTest extends AbstractFrameworkTestCase {
         $obj = new DataTablesWrapper("POST", "url", "name");
 
         // ===
-        $obj->setServerSide(null);
-        $this->assertTrue($obj->getServerSide());
-
-        // ===
         $obj->setServerSide(false);
         $this->assertFalse($obj->getServerSide());
+
+        // ===
+        $obj->setServerSide(null);
+        $this->assertTrue($obj->getServerSide());
     }
 
     /**

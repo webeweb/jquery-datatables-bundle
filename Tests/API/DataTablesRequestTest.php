@@ -12,9 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequest;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearchInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 
 /**
@@ -53,16 +51,12 @@ final class DataTablesRequestTest extends AbstractFrameworkTestCase {
      */
     public function testGetColumn() {
 
-        // Set a Column mock.
-        $arg = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
-        $arg->expects($this->any())->method("getData")->willReturn("data");
-
         $obj = new DataTablesRequest();
 
         $this->assertNull($obj->getColumn("data"));
 
-        $obj->setColumns([$arg]);
-        $this->assertSame($arg, $obj->getColumn("data"));
+        $obj->setColumns([$this->dtColumn]);
+        $this->assertSame($this->dtColumn, $obj->getColumn("data"));
     }
 
     /**
@@ -124,13 +118,10 @@ final class DataTablesRequestTest extends AbstractFrameworkTestCase {
      */
     public function testSetSearch() {
 
-        // Set a Search mock.
-        $arg = $this->getMockBuilder(DataTablesSearchInterface::class)->getMock();
-
         $obj = new DataTablesRequest();
 
-        $obj->setSearch($arg);
-        $this->assertSame($arg, $obj->getSearch());
+        $obj->setSearch($this->dtSearch);
+        $this->assertSame($this->dtSearch, $obj->getSearch());
     }
 
     /**
