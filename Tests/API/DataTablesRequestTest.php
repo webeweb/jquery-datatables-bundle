@@ -53,12 +53,13 @@ final class DataTablesRequestTest extends AbstractFrameworkTestCase {
      */
     public function testGetColumn() {
 
+        // Set a Column mock.
+        $arg = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
+        $arg->expects($this->any())->method("getData")->willReturn("data");
+
         $obj = new DataTablesRequest();
 
         $this->assertNull($obj->getColumn("data"));
-
-        $arg = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
-        $arg->expects($this->any())->method("getData")->willReturn("data");
 
         $obj->setColumns([$arg]);
         $this->assertSame($arg, $obj->getColumn("data"));
@@ -123,9 +124,10 @@ final class DataTablesRequestTest extends AbstractFrameworkTestCase {
      */
     public function testSetSearch() {
 
-        $obj = new DataTablesRequest();
-
+        // Set a Search mock.
         $arg = $this->getMockBuilder(DataTablesSearchInterface::class)->getMock();
+
+        $obj = new DataTablesRequest();
 
         $obj->setSearch($arg);
         $this->assertSame($arg, $obj->getSearch());
