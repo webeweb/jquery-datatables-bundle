@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesMappingInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
@@ -57,10 +57,13 @@ final class DataTablesWrapperTest extends AbstractFrameworkTestCase {
      */
     public function testAddColumn() {
 
+        // Set a Mapping mock.
+        $map = $this->getMockBuilder(DataTablesMappingInterface::class)->getMock();
+
         // Set a Column mock.
         $col = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
         $col->expects($this->any())->method("getData")->willReturn("col");
-        $col->expects($this->any())->method("getMapping")->willReturn($this->dtMapping);
+        $col->expects($this->any())->method("getMapping")->willReturn($map);
 
         $obj = new DataTablesWrapper("POST", "url", "name");
 
@@ -213,6 +216,32 @@ final class DataTablesWrapperTest extends AbstractFrameworkTestCase {
 
         $obj->setProvider($arg);
         $this->assertSame($arg, $obj->getProvider());
+    }
+
+    /**
+     * Tests the setRequest() method.
+     *
+     * @return void
+     */
+    public function testSetRequest() {
+
+        $obj = new DataTablesWrapper("POST", "url", "name");
+
+        $obj->setRequest($this->dtRequest);
+        $this->assertSame($this->dtRequest, $obj->getRequest());
+    }
+
+    /**
+     * Tests the setResponse() method.
+     *
+     * @return void
+     */
+    public function testSetResponse() {
+
+        $obj = new DataTablesWrapper("POST", "url", "name");
+
+        $obj->setResponse($this->dtResponse);
+        $this->assertSame($this->dtResponse, $obj->getResponse());
     }
 
     /**
