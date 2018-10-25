@@ -27,18 +27,6 @@ use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 final class DataTablesTwigExtensionTest extends AbstractFrameworkTestCase {
 
     /**
-     * {@inheritdoc}
-     */
-    protected function setUp() {
-        parent::setUp();
-
-        // Add each DataTables column.
-        foreach ((new EmployeeDataTablesProvider())->getColumns() as $dtColumn) {
-            $this->dataTablesWrapper->addColumn($dtColumn);
-        }
-    }
-
-    /**
      * Tests the getFunctions() method.
      *
      * @return void
@@ -115,10 +103,10 @@ final class DataTablesTwigExtensionTest extends AbstractFrameworkTestCase {
         $res0 = <<<'EOT'
 <script type="text/javascript">
     $(document).ready(function () {
-        var dtname = $("#dtname").DataTable({
+        var dtemployee = $("#dtemployee").DataTable({
             "ajax": {
                 "type": "POST",
-                "url": "url"
+                "url": "/datatables/employee/index"
             },
             "columns": [
                 {
@@ -166,17 +154,17 @@ final class DataTablesTwigExtensionTest extends AbstractFrameworkTestCase {
     });
 </script>
 EOT;
-        $this->assertEquals($res0, $obj->jQueryDataTablesFunction($this->dataTablesWrapper, $arg0));
+        $this->assertEquals($res0, $obj->jQueryDataTablesFunction($this->dtWrapper, $arg0));
 
         // ===
         $arg9 = ["selector" => "#selector", "language" => "French"];
         $res9 = <<<'EOT'
 <script type="text/javascript">
     $(document).ready(function () {
-        var dtname = $("#selector").DataTable({
+        var dtemployee = $("#selector").DataTable({
             "ajax": {
                 "type": "POST",
-                "url": "url"
+                "url": "/datatables/employee/index"
             },
             "columns": [
                 {
@@ -227,7 +215,7 @@ EOT;
     });
 </script>
 EOT;
-        $this->assertEquals($res9, $obj->jQueryDataTablesFunction($this->dataTablesWrapper, $arg9));
+        $this->assertEquals($res9, $obj->jQueryDataTablesFunction($this->dtWrapper, $arg9));
     }
 
     /**
@@ -283,7 +271,7 @@ EOT;
         // ===
         $arg0 = [];
         $res0 = <<<'EOT'
-<table class="table" id="dtname">
+<table class="table" id="dtemployee">
     <thead>
         <tr>
             <th scope="row">Name</th>
@@ -308,12 +296,12 @@ EOT;
     </tfoot>
 </table>
 EOT;
-        $this->assertEquals($res0, $obj->renderDataTablesFunction($this->dataTablesWrapper, $arg0));
+        $this->assertEquals($res0, $obj->renderDataTablesFunction($this->dtWrapper, $arg0));
 
         // ===
         $arg1 = ["class" => "class"];
         $res1 = <<<'EOT'
-<table class="table class" id="dtname">
+<table class="table class" id="dtemployee">
     <thead>
         <tr>
             <th scope="row">Name</th>
@@ -338,12 +326,12 @@ EOT;
     </tfoot>
 </table>
 EOT;
-        $this->assertEquals($res1, $obj->renderDataTablesFunction($this->dataTablesWrapper, $arg1));
+        $this->assertEquals($res1, $obj->renderDataTablesFunction($this->dtWrapper, $arg1));
 
         // ===
         $arg2 = ["thead" => false];
         $res2 = <<<'EOT'
-<table class="table" id="dtname">
+<table class="table" id="dtemployee">
     <tfoot>
         <tr>
             <th>Name</th>
@@ -357,12 +345,12 @@ EOT;
     </tfoot>
 </table>
 EOT;
-        $this->assertEquals($res2, $obj->renderDataTablesFunction($this->dataTablesWrapper, $arg2));
+        $this->assertEquals($res2, $obj->renderDataTablesFunction($this->dtWrapper, $arg2));
 
         // ===
         $arg3 = ["tfoot" => false];
         $res3 = <<<'EOT'
-<table class="table" id="dtname">
+<table class="table" id="dtemployee">
     <thead>
         <tr>
             <th scope="row">Name</th>
@@ -376,18 +364,18 @@ EOT;
     </thead>
 </table>
 EOT;
-        $this->assertEquals($res3, $obj->renderDataTablesFunction($this->dataTablesWrapper, $arg3));
+        $this->assertEquals($res3, $obj->renderDataTablesFunction($this->dtWrapper, $arg3));
 
         // ===
         $i = 0;
-        foreach ($this->dataTablesWrapper->getColumns() as $dtColumn) {
+        foreach ($this->dtWrapper->getColumns() as $dtColumn) {
             $dtColumn->setClassname($dtColumn->getData());
-            $dtColumn->setWidth( ++$i);
+            $dtColumn->setWidth(++$i);
         }
 
         $arg9 = ["class" => "class", "thead" => true, "tfoot" => true];
         $res9 = <<<'EOT'
-<table class="table class" id="dtname">
+<table class="table class" id="dtemployee">
     <thead>
         <tr>
             <th scope="row" class="name" width="1">Name</th>
@@ -412,7 +400,7 @@ EOT;
     </tfoot>
 </table>
 EOT;
-        $this->assertEquals($res9, $obj->renderDataTablesFunction($this->dataTablesWrapper, $arg9));
+        $this->assertEquals($res9, $obj->renderDataTablesFunction($this->dtWrapper, $arg9));
     }
 
 }

@@ -128,8 +128,7 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTest {
         $this->dtSearch = $this->getMockBuilder(DataTablesSearchInterface::class)->getMock();
 
         // Set a Wrapper mock.
-        $this->dtWrapper = $this->getMockBuilder(DataTablesWrapperInterface::class)->getMock();
-        $this->dtWrapper->expects($this->any())->method("getColumns")->willReturn([$this->dtColumn]);
+        $this->dtWrapper = TestFixtures::getWrapper();
 
 
         // Set the request parameters.
