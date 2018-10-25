@@ -109,14 +109,13 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
     /**
      * Constructor.
      *
-     * @param string $method The method.
      * @param string $url The URL.
      * @param string $name The name.
      */
-    public function __construct($method, $url, $name) {
+    public function __construct($url, $name) {
         $this->setColumns([]);
-        $this->setMethod($method);
         $this->setMapping(new DataTablesMapping());
+        $this->setMethod(HTTPInterface::HTTP_METHOD_POST);
         $this->setName($name);
         $this->setOrder([]);
         $this->setProcessing(true);
