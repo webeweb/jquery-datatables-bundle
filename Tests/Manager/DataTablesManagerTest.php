@@ -66,11 +66,20 @@ final class DataTablesManagerTest extends AbstractFrameworkTestCase {
 
         $obj = new DataTablesManager();
 
-        // ===
         $obj->registerProvider($this->dataTablesProvider);
         $this->assertCount(1, $obj->getProviders());
+    }
 
-        // ===
+    /**
+     * Tests the registerProvider() method.
+     *
+     * @return void
+     */
+    public function testRegisterProviderWithAlreadyRegisteredDataTablesProviderException() {
+
+        $obj = new DataTablesManager();
+        $obj->registerProvider($this->dataTablesProvider);
+
         try {
 
             $obj->registerProvider($this->dataTablesProvider);
@@ -90,11 +99,19 @@ final class DataTablesManagerTest extends AbstractFrameworkTestCase {
 
         $obj = new DataTablesManager();
 
-        // ===
         $obj->registerProvider($this->dataTablesProvider);
         $this->assertSame($this->dataTablesProvider, $obj->getProvider($this->dataTablesProvider->getName()));
+    }
 
-        // ===
+    /**
+     * Tests the getProvider() method.
+     *
+     * @return void
+     */
+    public function testGetProviderWithUnregisteredDataTablesProviderException() {
+
+        $obj = new DataTablesManager();
+
         try {
 
             $obj->getProvider("exception");
