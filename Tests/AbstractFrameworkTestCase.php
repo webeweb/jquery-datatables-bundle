@@ -21,6 +21,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequestInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearchInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
 /**
  * Abstract jQuery DataTables framework test case.
@@ -131,18 +132,12 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTest {
         $this->dtWrapper->expects($this->any())->method("getColumns")->willReturn([$this->dtColumn]);
 
 
-//        // Set the request parameters.
-//        $get  = ["query" => "query"];
-//        $post = array_merge(TestFixtures::getPOSTData(), ["request" => "request"]);
-//        // Set a DataTables wrappper mock.
-//        $this->dataTablesWrapper = new DataTablesWrapper("POST", "url", "name");
-//        $this->dataTablesWrapper->getMapping()->setPrefix("p");
-//        // Set a DataTables request mock.
-//        //$this->dataTablesRequest = DataTablesFactory::parseRequest($this->dataTablesWrapper, new Request());
-//        // Set a DataTables response mock.
-//        //$this->dataTablesResponse = DataTablesFactory::newResponse($this->dataTablesWrapper);
-//        // Set a Request mock.
-//        $this->request = new Request($get, $post, [], [], [], ["REQUEST_METHOD" => "POST"]);
+        // Set the request parameters.
+        $get  = ["query" => "query"];
+        $post = array_merge(TestFixtures::getPOSTData(), ["request" => "request"]);
+
+        // Set a Request mock.
+        $this->request = new Request($get, $post, [], [], [], ["REQUEST_METHOD" => "POST"]);
     }
 
 }

@@ -460,4 +460,20 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         $this->assertEquals("", $obj->getValue());
     }
 
+    /**
+     * Tests the parseWrapper() method.
+     *
+     * @return void
+     */
+    public function testParseWrapper() {
+
+        // Get the wrapper.
+        $wrapper = TestFixtures::getWrapper();
+
+        TestDataTablesFactory::parseWrapper($wrapper, $this->request);
+
+        $this->assertNotNull($wrapper->getRequest());
+        $this->assertNotNull($wrapper->getResponse());
+    }
+
 }
