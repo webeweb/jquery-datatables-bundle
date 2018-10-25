@@ -71,14 +71,11 @@ class DataTablesRepositoryHelper {
         foreach ($dtWrapper->getRequest()->getColumns() as $dtColumn) {
 
             // Check the column.
-            if ("OR" === $operator || "" !== $dtColumn->getSearch()->getValue()) {
-
-                // Get the mapping.
-                $mapping = $dtColumn->getMapping();
+            if (true === $dtColumn->getSearchable() && ("OR" === $operator || "" !== $dtColumn->getSearch()->getValue())) {
 
                 // Add.
-                $wheres[] = DataTablesMappingHelper::getWhere($mapping);
-                $params[] = DataTablesMappingHelper::getParam($mapping);
+                $wheres[] = DataTablesMappingHelper::getWhere($dtColumn->getMapping());
+                $params[] = DataTablesMappingHelper::getParam($dtColumn->getMapping());
                 $values[] = "%" . ("AND" === $operator ? $dtColumn->getSearch()->getValue() : $dtWrapper->getRequest()->getSearch()->getValue()) . "%";
             }
         }
@@ -100,6 +97,9 @@ class DataTablesRepositoryHelper {
 
         // Check if a column defines a search.
         foreach ($dtWrapper->getRequest()->getColumns() as $dtColumn) {
+            if (false === $dtColumn->getSearchable()) {
+                continue;
+            }
             if ("" !== $dtColumn->getSearch()->getValue()) {
                 return "AND";
             }

@@ -304,7 +304,8 @@ final class DataTablesControllerTest extends AbstractWebTestCase {
         $parameters = TestFixtures::getPOSTData();
 
         // Change the column order.
-        $parameters["order"][6]["dir"] = "desc";
+        $parameters["order"][6]["column"] = "6";
+        $parameters["order"][6]["dir"]    = "desc";
 
         // Create a client.
         $client = static::createClient();
