@@ -13,8 +13,8 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension;
 
 use Twig_Extension;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\BootstrapRendererTwigExtension;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Library\Core\Argument\StringHelper;
 use WBW\Library\Core\Exception\IO\FileNotFoundException;
@@ -93,13 +93,13 @@ EOT;
     /**
      * Displays a jQuery DataTables.
      *
-     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @param string $selector The selector.
      * @param string $language The language.
      * @return string Returns the jQuery DataTables.
      * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
      */
-    protected function jQueryDataTables(DataTablesWrapper $dtWrapper, $selector, $language) {
+    protected function jQueryDataTables(DataTablesWrapperInterface $dtWrapper, $selector, $language) {
 
         // Get the options.
         $dtOptions = DataTablesWrapperHelper::getOptions($dtWrapper);
@@ -148,13 +148,13 @@ EOT;
     /**
      * Render a DataTables.
      *
-     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @param string $class The class.
      * @param boolean $includeTHead Include thead ?.
      * @param boolean $includeTFoot Include tfoot ?
      * @returns string Returns the rendered DataTables.
      */
-    protected function renderDataTables(DataTablesWrapper $dtWrapper, $class, $includeTHead, $includeTFoot) {
+    protected function renderDataTables(DataTablesWrapperInterface $dtWrapper, $class, $includeTHead, $includeTFoot) {
 
         // Initialize the template.
         $template = "<table %attributes%>\n%innerHTML%</table>";
@@ -176,10 +176,10 @@ EOT;
     /**
      * Render a column.
      *
-     * @param DataTablesColumn $dtColumn The column.
+     * @param DataTablesColumnInterface $dtColumn The column.
      * @return string Returns the rendered column.
      */
-    private function renderDataTablesColumn(DataTablesColumn $dtColumn, $scopeRow = false) {
+    private function renderDataTablesColumn(DataTablesColumnInterface $dtColumn, $scopeRow = false) {
 
         // Check if the column is visible.
         if (false === $dtColumn->getVisible()) {
@@ -206,10 +206,10 @@ EOT;
     /**
      * Render a footer.
      *
-     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return string Returns the rendered footer.
      */
-    private function renderDataTablesTFoot(DataTablesWrapper $dtWrapper) {
+    private function renderDataTablesTFoot(DataTablesWrapperInterface $dtWrapper) {
 
         // Initialize the template.
         $template = "    <tfoot>\n        <tr>\n%innerHTML%        </tr>\n    </tfoot>\n";
@@ -231,10 +231,10 @@ EOT;
     /**
      * Render a header.
      *
-     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return string Returns the rendered header.
      */
-    private function renderDataTablesTHead(DataTablesWrapper $dtWrapper) {
+    private function renderDataTablesTHead(DataTablesWrapperInterface $dtWrapper) {
 
         // Initialize the templates.
         $template = "    <thead>\n        <tr>\n%innerHTML%        </tr>\n    </thead>\n";
