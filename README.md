@@ -333,34 +333,30 @@ Create a provider in the `src/AppBundle/Provider` directory of your project:
 ```php
 namespace AppBundle\Provider;
 
-use DateTime;
 use AppBundle\Entity\Employee;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
+use DateTime;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
-use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Library\Core\Exception\Argument\IntegerArgumentException;
 
 /**
  * Employee DataTables provider.
  */
 class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTablesCSVExporterInterface, DataTablesEditorInterface {
 
-
     /**
      * {@inheritdoc}
      */
-    public function editColumn(DataTablesColumn $dtColumn, $entity, $value) {
+    public function editColumn(DataTablesColumnInterface $dtColumn, $entity, $value) {
 
         // Switch into column data.
         switch ($dtColumn->getData()) {
 
             case "age":
-                if (1 !== preg_match("/[0-9]{1,}/", $value)) {
-                    throw new IntegerArgumentException($value);
-                }
                 $entity->setAge(intval($value));
                 break;
 
@@ -438,13 +434,13 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
         // Initialize the columns.
         $dtColumns = [];
 
-        $dtColumns[] = DataTablesColumn::newInstance("name", "Name");
-        $dtColumns[] = DataTablesColumn::newInstance("position", "Position");
-        $dtColumns[] = DataTablesColumn::newInstance("office", "Office");
-        $dtColumns[] = DataTablesColumn::newInstance("age", "Age");
-        $dtColumns[] = DataTablesColumn::newInstance("startDate", "Start date");
-        $dtColumns[] = DataTablesColumn::newInstance("salary", "Salary");
-        $dtColumns[] = DataTablesColumn::newInstance("actions", "Actions")->setOrderable(false)->setSearchable(false);
+        $dtColumns[] = DataTablesFactory::newColumn("name", "Name");
+        $dtColumns[] = DataTablesFactory::newColumn("position", "Position");
+        $dtColumns[] = DataTablesFactory::newColumn("office", "Office");
+        $dtColumns[] = DataTablesFactory::newColumn("age", "Age");
+        $dtColumns[] = DataTablesFactory::newColumn("startDate", "Start date");
+        $dtColumns[] = DataTablesFactory::newColumn("salary", "Salary");
+        $dtColumns[] = DataTablesFactory::newColumn("actions", "Actions")->setOrderable(false)->setSearchable(false);
 
         // Returns the columns.
         return $dtColumns;
@@ -489,10 +485,9 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
      * {@inheritdoc}
      */
     public function getOptions() {
-
         return null;
 
-        // Custom some options with the following code :
+        // Custom options with the following code :
         // $dtOptions = new DataTablesOptions();
         // $dtOptions->addOption("language", ["url" => DataTablesWrapperHelper::getLanguageURL("French")]);
         // $dtOptions->addOption("responsive", true);
@@ -520,7 +515,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     /**
      * {@inheritdoc}
      */
-    public function renderColumn(DataTablesColumn $dtColumn, $entity) {
+    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity) {
 
         // Initialize the output.
         $output = null;
@@ -574,19 +569,19 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
         // Switch into column data.
         switch ($dtRow) {
 
-            case self::DATATABLES_ROW_ATTR:
+            case DataTablesResponseInterface::DATATABLES_ROW_ATTR:
                 break;
 
-            case self::DATATABLES_ROW_CLASS:
+            case DataTablesResponseInterface::DATATABLES_ROW_CLASS:
                 $output = (0 === $rowNumber % 2 ? "even" : "odd");
                 break;
 
-            case self::DATATABLES_ROW_DATA:
+            case DataTablesResponseInterface::DATATABLES_ROW_DATA:
                 $output = ["pkey" => $entity->getId()];
                 break;
 
-            case self::DATATABLES_ROW_ID:
-                $output = "row_" . $entity->getId();
+            case DataTablesResponseInterface::DATATABLES_ROW_ID:
+                $output = "employee_" . $entity->getId();
                 break;
         }
 
@@ -596,14 +591,6 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
 
 }
 ```
-
-> IMPORTANT NOTICE:
->
-> getName() return the parameter "name" used in the bundle route.
->
-> getView() return the view used by the DataTables controller.
-> - return something like "@App/Employee/index.html.twig" for use your template
-> - return null for use the bundle template
 
 Add this provider in the `app/config/services.yml` file of your project:
 
@@ -763,7 +750,7 @@ class EmployeeRepository extends DefaultDataTablesRepository {
     /**
      * {@inheritdoc}
      */
-    public function dataTablesCountFiltered(DataTablesWrapper $dtWrapper) {
+    public function dataTablesCountFiltered(DataTablesWrapperInterface $dtWrapper) {
 
         // Create a query builder.
         $qb = $this->buildDataTablesCountFiltered($dtWrapper);
@@ -776,7 +763,7 @@ class EmployeeRepository extends DefaultDataTablesRepository {
     /**
      * {@inheritdoc}
      */
-    public function dataTablesCountTotal(DataTablesWrapper $dtWrapper) {
+    public function dataTablesCountTotal(DataTablesWrapperInterface $dtWrapper) {
 
         // Create a query builder.
         $qb = $this->buildDataTablesCountTotal($dtWrapper);
@@ -789,7 +776,7 @@ class EmployeeRepository extends DefaultDataTablesRepository {
     /**
      * {@inheritdoc}
      */
-    public function dataTablesFindAll(DataTablesWrapper $dtWrapper) {
+    public function dataTablesFindAll(DataTablesWrapperInterface $dtWrapper) {
 
         // Create a query builder.
         $qb = $this->buildDataTablesFindAll($dtWrapper);
@@ -829,7 +816,7 @@ Modify the provider in the `src/AppBundle/Provider/EmployeeDataTablesProvider.ph
     /**
      * {@inheritdoc}
      */
-    public function renderColumn(DataTablesColumn $dtColumn, $entity) {
+    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity) {
 
         // Initialize the output.
         $output = null;
