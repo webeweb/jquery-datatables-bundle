@@ -21,6 +21,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequest;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequestInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearch;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearchInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
@@ -37,6 +38,70 @@ use WBW\Library\Core\Network\HTTP\HTTPInterface;
 class DataTablesFactory {
 
     /**
+     * Copy a parameter bag.
+     *
+     * @param ParameterBag $src The source.
+     * @param ParameterBag $dst The destination.
+     * @return void
+     */
+    protected static function copyParameterBag(ParameterBag $src, ParameterBag $dst) {
+        foreach ($src->keys() as $current) {
+            if (true === in_array($current, DataTablesEnumerator::enumParameters())) {
+                continue;
+            }
+            $dst->set($current, $src->get($current));
+        }
+    }
+
+    /**
+     * Determines if a raw column is valid.
+     *
+     * @param array $rawColumn The raw column.
+     * @return bool Returns true in case of success, false otherwise.
+     */
+    protected static function isValidRawColumn(array $rawColumn) {
+        if (false === array_key_exists(DataTablesColumnInterface::DATATABLES_PARAMETER_DATA, $rawColumn)) {
+            return false;
+        }
+        if (false === array_key_exists(DataTablesColumnInterface::DATATABLES_PARAMETER_NAME, $rawColumn)) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Determines if a raw order is valid.
+     *
+     * @param array $rawOrder The raw order.
+     * @return bool Returns true in case of success, false otherwise.
+     */
+    protected static function isValidRawOrder(array $rawOrder) {
+        if (false === array_key_exists(DataTablesOrderInterface::DATATABLES_PARAMETER_COLUMN, $rawOrder)) {
+            return false;
+        }
+        if (false === array_key_exists(DataTablesOrderInterface::DATATABLES_PARAMETER_DIR, $rawOrder)) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Determines if a raw search is valid.
+     *
+     * @param array $rawSearch The raw search.
+     * @return bool Returns true in case of success, false otherwise.
+     */
+    protected static function isValidRawSearch(array $rawSearch) {
+        if (false === array_key_exists(DataTablesSearchInterface::DATATABLES_PARAMETER_REGEX, $rawSearch)) {
+            return false;
+        }
+        if (false === array_key_exists(DataTablesSearchInterface::DATATABLES_PARAMETER_VALUE, $rawSearch)) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
      * Create a new column instance.
      *
      * @param string $data The column data.
@@ -48,11 +113,11 @@ class DataTablesFactory {
 
         // Initialize a column.
         $dtColumn = new DataTablesColumn();
+        $dtColumn->getMapping()->setColumn($data);
         $dtColumn->setCellType($cellType);
         $dtColumn->setData($data);
         $dtColumn->setName($name);
         $dtColumn->setTitle($name);
-        $dtColumn->getMapping()->setColumn($data);
 
         // Return the column.
         return $dtColumn;
@@ -62,9 +127,9 @@ class DataTablesFactory {
      * Create a new response.
      *
      * @param DataTablesWrapperInterface $wrapper The wrapper.
-     * @return DataTablesResponse Returns a response.
+     * @return DataTablesResponseInterface Returns a response.
      */
-    public static function newResponse(DataTablesWrapperInterface $wrapper) {
+    protected static function newResponse(DataTablesWrapperInterface $wrapper) {
 
         // Initialize a response.
         $dtResponse = new DataTablesResponse();
@@ -78,13 +143,12 @@ class DataTablesFactory {
     /**
      * Create a new wrapper.
      *
-     * @param string $method The method.
      * @param string $url The URL.
      * @param string $name The name.
      * @return DataTablesWrapperInterface Returns a wrapper.
      */
-    public static function newWrapper($method, $url, $name) {
-        return new DataTablesWrapper($method, $url, $name);
+    public static function newWrapper($url, $name) {
+        return new DataTablesWrapper($url, $name);
     }
 
     /**
@@ -94,18 +158,17 @@ class DataTablesFactory {
      * @param DataTablesWrapperInterface $wrapper The wrapper.
      * @return DataTablesColumnInterface Returns the column.
      */
-    public static function parseColumn(array $rawColumn, DataTablesWrapperInterface $wrapper) {
+    protected static function parseColumn(array $rawColumn, DataTablesWrapperInterface $wrapper) {
 
         // Determines if the raw column is valid.
-        if (false === array_key_exists(DataTablesColumnInterface::DATATABLES_PARAMETER_DATA, $rawColumn)) {
-            return null;
-        }
-        if (false === array_key_exists(DataTablesColumnInterface::DATATABLES_PARAMETER_NAME, $rawColumn)) {
+        if (false === static::isValidRawColumn($rawColumn)) {
             return null;
         }
 
-        // Check the column.
+        // Get the column.
         $dtColumn = $wrapper->getColumn($rawColumn[DataTablesColumnInterface::DATATABLES_PARAMETER_DATA]);
+
+        // Check the column.
         if (null === $dtColumn) {
             return null;
         }
@@ -131,7 +194,7 @@ class DataTablesFactory {
      * @param DataTablesWrapperInterface $wrapper The wrapper.
      * @return DataTablesColumnInterface[] Returns the columns.
      */
-    public static function parseColumns(array $rawColumns, DataTablesWrapperInterface $wrapper) {
+    protected static function parseColumns(array $rawColumns, DataTablesWrapperInterface $wrapper) {
 
         // Initialize the columns.
         $dtColumns = [];
@@ -161,16 +224,13 @@ class DataTablesFactory {
      * @param array $rawOrder The raw order.
      * @return DataTablesOrderInterface Returns the order.
      */
-    public static function parseOrder(array $rawOrder) {
+    protected static function parseOrder(array $rawOrder) {
 
         // Initialize an order.
         $dtOrder = new DataTablesOrder();
 
         // Determines if the raw order is valid.
-        if (false === array_key_exists(DataTablesOrderInterface::DATATABLES_PARAMETER_COLUMN, $rawOrder)) {
-            return $dtOrder;
-        }
-        if (false === array_key_exists(DataTablesOrderInterface::DATATABLES_PARAMETER_DIR, $rawOrder)) {
+        if (false === static::isValidRawOrder($rawOrder)) {
             return $dtOrder;
         }
 
@@ -188,7 +248,7 @@ class DataTablesFactory {
      * @param array $rawOrders The raw orders.
      * @return DataTablesOrderInterface[] Returns the orders.
      */
-    public static function parseOrders(array $rawOrders) {
+    protected static function parseOrders(array $rawOrders) {
 
         // Initialize the orders.
         $dtOrders = [];
@@ -203,36 +263,20 @@ class DataTablesFactory {
     }
 
     /**
-     * Parse a parameter bag.
-     *
-     * @param ParameterBag $request The request.
-     * @param ParameterBag $bag The bag.
-     * @return void
-     */
-    protected static function parseParameterBag(ParameterBag $request, ParameterBag $bag) {
-        foreach ($request->keys() as $current) {
-            if (true === in_array($current, DataTablesEnumerator::enumParameters())) {
-                continue;
-            }
-            $bag->set($current, $request->get($current));
-        }
-    }
-
-    /**
      * Parse a request.
      *
      * @param DataTablesWrapperInterface $wrapper The wrapper.
      * @param Request $request The request.
      * @return DataTablesRequestInterface Returns the request.
      */
-    public static function parseRequest(DataTablesWrapperInterface $wrapper, Request $request) {
+    protected static function parseRequest(DataTablesWrapperInterface $wrapper, Request $request) {
 
         // Initialize a request.
         $dtRequest = new DataTablesRequest();
 
-        // Recopy the parameter bags.
-        static::parseParameterBag($request->query, $dtRequest->getQuery());
-        static::parseParameterBag($request->request, $dtRequest->getRequest());
+        // Copy the parameter bags.
+        static::copyParameterBag($request->query, $dtRequest->getQuery());
+        static::copyParameterBag($request->request, $dtRequest->getRequest());
 
         // Get the parameter bag.
         if (HTTPInterface::HTTP_METHOD_GET === $request->getMethod()) {
@@ -265,16 +309,13 @@ class DataTablesFactory {
      * @param array $rawSearch The raw search.
      * @return DataTablesSearchInterface Returns the search.
      */
-    public static function parseSearch(array $rawSearch) {
+    protected static function parseSearch(array $rawSearch) {
 
         // Initialize a search.
         $dtSearch = new DataTablesSearch();
 
         // Determines if the raw search is valid.
-        if (false === array_key_exists(DataTablesSearchInterface::DATATABLES_PARAMETER_REGEX, $rawSearch)) {
-            return $dtSearch;
-        }
-        if (false === array_key_exists(DataTablesSearchInterface::DATATABLES_PARAMETER_VALUE, $rawSearch)) {
+        if (false === static::isValidRawSearch($rawSearch)) {
             return $dtSearch;
         }
 
@@ -284,6 +325,18 @@ class DataTablesFactory {
 
         // Return the search.
         return $dtSearch;
+    }
+
+    /**
+     * Parse a request.
+     *
+     * @param DataTablesWrapperInterface $wrapper The wrapper.
+     * @param Request $request The request.
+     * @return void
+     */
+    public static function parseWrapper(DataTablesWrapperInterface $wrapper, Request $request) {
+        $wrapper->setRequest(static::parseRequest($wrapper, $request));
+        $wrapper->setResponse(static::newResponse($wrapper));
     }
 
 }
