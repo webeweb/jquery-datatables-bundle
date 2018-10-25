@@ -33,7 +33,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      */
     public function testNewResponse() {
 
-        // Get the wrapper.
+        // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
         $wrapper->setRequest($this->dtRequest);
 
@@ -80,7 +80,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      */
     public function testParseColumn() {
 
-        // Get the wrapper.
+        // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
 
         // Get the POST data.
@@ -103,7 +103,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      */
     public function testParseColumnWithNoData() {
 
-        // Get the wrapper.
+        // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
 
         // Get the POST data.
@@ -124,7 +124,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      */
     public function testParseColumnWithBadData() {
 
-        // Get the wrapper.
+        // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
 
         // Get the POST data.
@@ -145,7 +145,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      */
     public function testParseColumnWithNoName() {
 
-        // Get the wrapper.
+        // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
 
         // Get the POST data.
@@ -166,7 +166,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      */
     public function testParseColumnWithBadName() {
 
-        // Get the wrapper.
+        // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
 
         // Get the POST data.
@@ -187,7 +187,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      */
     public function testParseColumnWithNoSearchable() {
 
-        // Get the wrapper.
+        // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
 
         // Get the POST data.
@@ -213,7 +213,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      */
     public function testParseColumns() {
 
-        // Get the wrapper.
+        // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
 
         // Get the POST data.
@@ -231,7 +231,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      */
     public function testParseColumnsWithNoData() {
 
-        // Get the wrapper.
+        // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
 
         // Get the POST data.
@@ -349,7 +349,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      */
     public function testParseRequestWithGET() {
 
-        // Get the wrapper.
+        // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
 
         // Create a request.
@@ -375,7 +375,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      */
     public function testParseRequestWithPOST() {
 
-        // Get the wrapper.
+        // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
 
         // Create a request.
@@ -467,7 +467,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      */
     public function testParseWrapper() {
 
-        // Get the wrapper.
+        // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
 
         TestDataTablesFactory::parseWrapper($wrapper, $this->request);
