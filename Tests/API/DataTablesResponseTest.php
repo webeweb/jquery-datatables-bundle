@@ -105,9 +105,10 @@ final class DataTablesResponseTest extends AbstractFrameworkTestCase {
         $obj = new DataTablesResponse();
         $obj->setWrapper($this->dtWrapper)->addRow();
 
-        $obj->setRow("data", "data");
+        $obj->setRow("name", "GitHub");
+        $res = ["name" => "GitHub", "position" => null, "office" => null, "age" => null, "startDate" => null, "salary" => null, "actions" => null];
         $this->assertCount(1, $obj->getData());
-        $this->assertEquals(["data" => "data"], $obj->getData()[0]);
+        $this->assertEquals($res, $obj->getData()[0]);
     }
 
     /**
