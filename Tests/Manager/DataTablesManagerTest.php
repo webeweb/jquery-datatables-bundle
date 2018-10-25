@@ -22,7 +22,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
  * DataTables manager test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Manager
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Manager
  * @final
  */
 final class DataTablesManagerTest extends AbstractFrameworkTestCase {
@@ -51,6 +51,8 @@ final class DataTablesManagerTest extends AbstractFrameworkTestCase {
      * @return void
      */
     public function testConstruct() {
+
+        $this->assertEquals("webeweb.jquerydatatables.manager", DataTablesManager::SERVICE_NAME);
 
         $obj = new DataTablesManager();
 

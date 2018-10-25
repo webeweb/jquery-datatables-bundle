@@ -1,11 +1,11 @@
 # Resources/config/services.yml
 services:
 
-    webeweb.jquerydatatables.manager.datatables:
+    webeweb.jquerydatatables.manager:
         class:  WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager
         public: true
 
-    webeweb.jquerydatatables.twig.extension.datatables:
+    webeweb.jquerydatatables.twig.extension:
         class:     WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension
         arguments: ["@webeweb.bootstrap.twig.extension.renderer"]
         public:    true
