@@ -13,10 +13,10 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\QueryBuilder;
-use Symfony\Component\HttpFoundation\Request;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesRepositoryHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
 /**
  * DataTables repository helper test.
@@ -32,7 +32,7 @@ final class DataTablesRepositoryHelperTest extends AbstractFrameworkTestCase {
      *
      * @var EntityManagerInterface
      */
-    private $em;
+    private $entityManager;
 
     /**
      * Query builder.
@@ -45,12 +45,13 @@ final class DataTablesRepositoryHelperTest extends AbstractFrameworkTestCase {
      * {@inheritdoc}
      */
     protected function setUp() {
+        parent::setUp();
 
-        // Set an entity manager mock.
-        $this->em = $this->getMockBuilder(EntityManagerInterface::class)->getMock();
+        // Set an Entity manager mock.
+        $this->entityManager = $this->getMockBuilder(EntityManagerInterface::class)->getMock();
 
         // Set a query builder mock.
-        $this->queryBuilder = new QueryBuilder($this->em);
+        $this->queryBuilder = new QueryBuilder($this->entityManager);
     }
 
     /**
@@ -60,10 +61,11 @@ final class DataTablesRepositoryHelperTest extends AbstractFrameworkTestCase {
      */
     public function testAppendOrder() {
 
-        $arg = new DataTablesWrapper("POST", "url", "name");
-        $arg->parse(new Request());
+        // Get a wrapper.
+        $wrapper = TestFixtures::getWrapper();
+        DataTablesFactory::parseWrapper($wrapper, $this->request);
 
-        $this->assertNull(DataTablesRepositoryHelper::appendOrder($this->queryBuilder, $arg));
+        $this->assertNull(DataTablesRepositoryHelper::appendOrder($this->queryBuilder, $wrapper));
     }
 
     /**
@@ -73,10 +75,11 @@ final class DataTablesRepositoryHelperTest extends AbstractFrameworkTestCase {
      */
     public function testAppendWhere() {
 
-        $arg = new DataTablesWrapper("POST", "url", "name");
-        $arg->parse(new Request());
+        // Get a wrapper.
+        $wrapper = TestFixtures::getWrapper();
+        DataTablesFactory::parseWrapper($wrapper, $this->request);
 
-        $this->assertNull(DataTablesRepositoryHelper::appendWhere($this->queryBuilder, $arg));
+        $this->assertNull(DataTablesRepositoryHelper::appendWhere($this->queryBuilder, $wrapper));
     }
 
 }

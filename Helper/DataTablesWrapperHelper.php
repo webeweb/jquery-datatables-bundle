@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
 
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle;
 use WBW\Library\Core\Argument\ObjectHelper;
 use WBW\Library\Core\Argument\StringHelper;
@@ -57,20 +57,20 @@ class DataTablesWrapperHelper {
     /**
      * Get a name.
      *
-     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return string Returns the name.
      */
-    public static function getName(DataTablesWrapper $dtWrapper) {
+    public static function getName(DataTablesWrapperInterface $dtWrapper) {
         return "dt" . preg_replace("/[^A-Za-z0-9]/", "", $dtWrapper->getName());
     }
 
     /**
      * Get a options.
      *
-     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return array Returns the options.
      */
-    public static function getOptions(DataTablesWrapper $dtWrapper) {
+    public static function getOptions(DataTablesWrapperInterface $dtWrapper) {
 
         // Initialize the output.
         $output = [];

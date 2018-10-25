@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
 
 use Doctrine\ORM\QueryBuilder;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 
 /**
  * DataTables repository helper.
@@ -26,10 +26,10 @@ class DataTablesRepositoryHelper {
      * Append an ORDER clause.
      *
      * @param QueryBuilder $queryBuilder The query builder.
-     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return void
      */
-    public static function appendOrder(QueryBuilder $queryBuilder, DataTablesWrapper $dtWrapper) {
+    public static function appendOrder(QueryBuilder $queryBuilder, DataTablesWrapperInterface $dtWrapper) {
 
         // Handle each order.
         foreach ($dtWrapper->getRequest()->getOrder() as $dtOrder) {
@@ -51,10 +51,10 @@ class DataTablesRepositoryHelper {
      * Append a WHERE clause.
      *
      * @param QueryBuilder $queryBuilder The query builder.
-     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return void
      */
-    public static function appendWhere(QueryBuilder $queryBuilder, DataTablesWrapper $dtWrapper) {
+    public static function appendWhere(QueryBuilder $queryBuilder, DataTablesWrapperInterface $dtWrapper) {
 
         // Determines and check the operator.
         $operator = static::determineOperator($dtWrapper);
@@ -93,10 +93,10 @@ class DataTablesRepositoryHelper {
     /**
      * Determines a operator.
      *
-     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return string Returns the operator.
      */
-    public static function determineOperator(DataTablesWrapper $dtWrapper) {
+    public static function determineOperator(DataTablesWrapperInterface $dtWrapper) {
 
         // Check if a column defines a search.
         foreach ($dtWrapper->getRequest()->getColumns() as $dtColumn) {

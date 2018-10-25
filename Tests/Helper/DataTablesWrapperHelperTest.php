@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
 
 use Exception;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
@@ -34,6 +34,18 @@ final class DataTablesWrapperHelperTest extends AbstractFrameworkTestCase {
      */
     public function testGetLanguageURL() {
 
+
+        $res = "/bundles/jquerydatatables/datatables-i18n-1.10.16/French.json";
+        $this->assertEquals($res, DataTablesWrapperHelper::getLanguageURL("French"));
+    }
+
+    /**
+     * Tests the getLanguageURL() method.
+     *
+     * @return void
+     */
+    public function testGetLanguageURLWithFileNotFoundException() {
+
         try {
 
             DataTablesWrapperHelper::getLanguageURL("exception");
@@ -42,9 +54,6 @@ final class DataTablesWrapperHelperTest extends AbstractFrameworkTestCase {
             $this->assertInstanceOf(FileNotFoundException::class, $ex);
             $this->assertEquals("The file \"/bundles/jquerydatatables/datatables-i18n-1.10.16/exception.json\" is not found", $ex->getMessage());
         }
-
-        $res = "/bundles/jquerydatatables/datatables-i18n-1.10.16/French.json";
-        $this->assertEquals($res, DataTablesWrapperHelper::getLanguageURL("French"));
     }
 
     /**
@@ -54,9 +63,9 @@ final class DataTablesWrapperHelperTest extends AbstractFrameworkTestCase {
      */
     public function testGetName() {
 
-        $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(new DataTablesWrapper("POST", "url", "employee")));
-        $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(new DataTablesWrapper("POST", "url", "employee_")));
-        $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(new DataTablesWrapper("POST", "url", "employee-")));
+        $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(DataTablesFactory::newWrapper("url", "employee")));
+        $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(DataTablesFactory::newWrapper("url", "employee_")));
+        $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(DataTablesFactory::newWrapper("url", "employee-")));
     }
 
     /**
