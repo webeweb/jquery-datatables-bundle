@@ -12,9 +12,10 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider;
 
 use DateTime;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
@@ -34,7 +35,7 @@ final class EmployeeDataTablesProvider implements DataTablesProviderInterface, D
     /**
      * {@inheritdoc}
      */
-    public function editColumn(DataTablesColumn $dtColumn, $entity, $value) {
+    public function editColumn(DataTablesColumnInterface $dtColumn, $entity, $value) {
 
         // Switch into column data.
         switch ($dtColumn->getData()) {
@@ -120,13 +121,13 @@ final class EmployeeDataTablesProvider implements DataTablesProviderInterface, D
         // Initialize the columns.
         $dtColumns = [];
 
-        $dtColumns[] = DataTablesColumn::newInstance("name", "Name");
-        $dtColumns[] = DataTablesColumn::newInstance("position", "Position");
-        $dtColumns[] = DataTablesColumn::newInstance("office", "Office");
-        $dtColumns[] = DataTablesColumn::newInstance("age", "Age");
-        $dtColumns[] = DataTablesColumn::newInstance("startDate", "Start date");
-        $dtColumns[] = DataTablesColumn::newInstance("salary", "Salary");
-        $dtColumns[] = DataTablesColumn::newInstance("actions", "Actions")->setOrderable(false)->setSearchable(false);
+        $dtColumns[] = DataTablesFactory::newColumn("name", "Name");
+        $dtColumns[] = DataTablesFactory::newColumn("position", "Position");
+        $dtColumns[] = DataTablesFactory::newColumn("office", "Office");
+        $dtColumns[] = DataTablesFactory::newColumn("age", "Age");
+        $dtColumns[] = DataTablesFactory::newColumn("startDate", "Start date");
+        $dtColumns[] = DataTablesFactory::newColumn("salary", "Salary");
+        $dtColumns[] = DataTablesFactory::newColumn("actions", "Actions")->setOrderable(false)->setSearchable(false);
 
         // Returns the columns.
         return $dtColumns;
@@ -191,7 +192,7 @@ final class EmployeeDataTablesProvider implements DataTablesProviderInterface, D
     /**
      * {@inheritdoc}
      */
-    public function renderColumn(DataTablesColumn $dtColumn, $entity) {
+    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity) {
 
         // Initialize the output.
         $output = null;

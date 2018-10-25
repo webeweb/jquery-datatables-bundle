@@ -11,7 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider;
 
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Office;
 use WBW\Library\Core\Network\HTTP\HTTPInterface;
@@ -33,8 +34,8 @@ final class OfficeDataTablesProvider implements DataTablesProviderInterface {
         // Initialize the columns.
         $dtColumns = [];
 
-        $dtColumns[] = DataTablesColumn::newInstance("name", "Name");
-        $dtColumns[] = DataTablesColumn::newInstance("actions", "Actions")->setOrderable(false)->setSearchable(false);
+        $dtColumns[] = DataTablesFactory::newColumn("name", "Name");
+        $dtColumns[] = DataTablesFactory::newColumn("actions", "Actions")->setOrderable(false)->setSearchable(false);
 
         // Returns the columns.
         return $dtColumns;
@@ -99,7 +100,7 @@ final class OfficeDataTablesProvider implements DataTablesProviderInterface {
     /**
      * {@inheritdoc}
      */
-    public function renderColumn(DataTablesColumn $dtColumn, $entity) {
+    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity) {
 
         // Initialize the output.
         $output = null;

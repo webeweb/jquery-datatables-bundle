@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
 
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
 
 /**
  * DataTables provider interface.
@@ -32,7 +32,7 @@ interface DataTablesProviderInterface {
     /**
      * Get the columns.
      *
-     * @return DataTablesColumn[] Returns the columns.
+     * @return DataTablesColumnInterface[] Returns the columns.
      */
     public function getColumns();
 
@@ -95,11 +95,11 @@ interface DataTablesProviderInterface {
     /**
      * Render a column.
      *
-     * @param DataTablesColumn $dtColumn The column.
+     * @param DataTablesColumnInterface $dtColumn The column.
      * @param object $entity The entity.
      * @return string Returns the rendered column.
      */
-    public function renderColumn(DataTablesColumn $dtColumn, $entity);
+    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity);
 
     /**
      * Render a row.

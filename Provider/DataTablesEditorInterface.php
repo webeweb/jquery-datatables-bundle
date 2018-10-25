@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
 
 use Exception;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 
 /**
  * DataTables editor interface.
@@ -25,10 +25,10 @@ interface DataTablesEditorInterface {
     /**
      * Edit a column.
      *
-     * @param DataTablesColumn $dtColumn The column.
+     * @param DataTablesColumnInterface $dtColumn The column.
      * @param object $entity The entity.
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function editColumn(DataTablesColumn $dtColumn, $entity, $value);
+    public function editColumn(DataTablesColumnInterface $dtColumn, $entity, $value);
 }
