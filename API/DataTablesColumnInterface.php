@@ -230,4 +230,12 @@ interface DataTablesColumnInterface extends JsonSerializable {
      * @return string Returns the width.
      */
     public function getWidth();
+
+    /**
+     * Set the search.
+     *
+     * @param DataTablesSearchInterface $search The search.
+     * @return DataTablesColumnInterface Returns this column.
+     */
+    public function setSearch(DataTablesSearchInterface $search);
 }
