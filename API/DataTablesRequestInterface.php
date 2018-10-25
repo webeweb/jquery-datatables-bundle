@@ -130,7 +130,7 @@ interface DataTablesRequestInterface {
     /**
      * Get the wrapper.
      *
-     * @return DataTablesWrapper Returns the wrapper.
+     * @return DataTablesWrapperInterface Returns the wrapper.
      */
     public function getWrapper();
 }
