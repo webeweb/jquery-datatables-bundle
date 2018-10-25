@@ -118,6 +118,7 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTest {
 
         // Set a Request mock.
         $this->dtRequest = $this->getMockBuilder(DataTablesRequestInterface::class)->getMock();
+        $this->dtRequest->expects($this->any())->method("getDraw")->willReturn(0);
 
         // Set a Response mock.
         $this->dtResponse = $this->getMockBuilder(DataTablesResponseInterface::class)->getMock();

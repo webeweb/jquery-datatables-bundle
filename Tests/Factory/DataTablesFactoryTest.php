@@ -27,6 +27,28 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
 
     /**
+     * Tests the newResponse() method.
+     *
+     * @return void
+     */
+    public function testNewResponse() {
+
+        // Get the wrapper.
+        $wrapper = TestFixtures::getWrapper();
+        $wrapper->setRequest($this->dtRequest);
+
+        $obj = TestDataTablesFactory::newResponse($wrapper);
+
+        $this->assertEquals(0, $obj->countRows());
+        $this->assertEquals([], $obj->getData());
+        $this->assertEquals(0, $obj->getDraw());
+        $this->assertNull($obj->getError());
+        $this->assertEquals(0, $obj->getRecordsFiltered());
+        $this->assertEquals(0, $obj->getRecordsTotal());
+        $this->assertSame($wrapper, $obj->getWrapper());
+    }
+
+    /**
      * Tests the newWrapper() method.
      *
      * @return void
