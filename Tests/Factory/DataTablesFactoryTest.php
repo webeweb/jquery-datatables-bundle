@@ -33,22 +33,22 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      */
     public function testNewWrapper() {
 
-        $res = TestDataTablesFactory::newWrapper("url", "name");
+        $obj = TestDataTablesFactory::newWrapper("url", "name");
 
-        $this->assertInstanceOf(DataTablesWrapperInterface::class, $res);
+        $this->assertInstanceOf(DataTablesWrapperInterface::class, $obj);
 
-        $this->assertEquals([], $res->getColumns());
-        $this->assertNull($res->getMapping()->getPrefix());
-        $this->assertEquals("POST", $res->getMethod());
-        $this->assertNull($res->getOptions());
-        $this->assertEquals("name", $res->getName());
-        $this->assertEquals([], $res->getOrder());
-        $this->assertTrue($res->getProcessing());
-        $this->assertNull($res->getProvider());
-        $this->assertNull($res->getRequest());
-        $this->assertNull($res->getResponse());
-        $this->assertTrue($res->getServerSide());
-        $this->assertEquals("url", $res->getUrl());
+        $this->assertEquals([], $obj->getColumns());
+        $this->assertNull($obj->getMapping()->getPrefix());
+        $this->assertEquals("POST", $obj->getMethod());
+        $this->assertNull($obj->getOptions());
+        $this->assertEquals("name", $obj->getName());
+        $this->assertEquals([], $obj->getOrder());
+        $this->assertTrue($obj->getProcessing());
+        $this->assertNull($obj->getProvider());
+        $this->assertNull($obj->getRequest());
+        $this->assertNull($obj->getResponse());
+        $this->assertTrue($obj->getServerSide());
+        $this->assertEquals("url", $obj->getUrl());
     }
 
     /**
@@ -64,13 +64,14 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         // Get the POST data.
         $postData = TestFixtures::getPOSTData();
 
-        $res = TestDataTablesFactory::parseColumn($postData["columns"][0], $wrapper);
-        $this->assertEquals("name", $res->getData());
-        $this->assertEquals("Name", $res->getName());
-        $this->assertTrue($res->getOrderable());
-        $this->assertFalse($res->getSearch()->getRegex());
-        $this->assertEquals("", $res->getSearch()->getValue());
-        $this->assertTrue($res->getSearchable());
+        $obj = TestDataTablesFactory::parseColumn($postData["columns"][0], $wrapper);
+
+        $this->assertEquals("name", $obj->getData());
+        $this->assertEquals("Name", $obj->getName());
+        $this->assertTrue($obj->getOrderable());
+        $this->assertFalse($obj->getSearch()->getRegex());
+        $this->assertEquals("", $obj->getSearch()->getValue());
+        $this->assertTrue($obj->getSearchable());
     }
 
     /**
@@ -89,8 +90,9 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         // Set the POST data.
         unset($postData["columns"][0]["data"]);
 
-        $res = TestDataTablesFactory::parseColumn($postData["columns"][0], $wrapper);
-        $this->assertNull($res);
+        $obj = TestDataTablesFactory::parseColumn($postData["columns"][0], $wrapper);
+
+        $this->assertNull($obj);
     }
 
     /**
@@ -109,8 +111,9 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         // Set the POST data.
         $postData["columns"][0]["data"] = "exception";
 
-        $res = TestDataTablesFactory::parseColumn($postData["columns"][0], $wrapper);
-        $this->assertNull($res);
+        $obj = TestDataTablesFactory::parseColumn($postData["columns"][0], $wrapper);
+
+        $this->assertNull($obj);
     }
 
     /**
@@ -129,8 +132,9 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         // Set the POST data.
         unset($postData["columns"][0]["name"]);
 
-        $res = TestDataTablesFactory::parseColumn($postData["columns"][0], $wrapper);
-        $this->assertNull($res);
+        $obj = TestDataTablesFactory::parseColumn($postData["columns"][0], $wrapper);
+
+        $this->assertNull($obj);
     }
 
     /**
@@ -149,8 +153,9 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         // Set the POST data.
         $postData["columns"][0]["name"] = "exception";
 
-        $res = TestDataTablesFactory::parseColumn($postData["columns"][0], $wrapper);
-        $this->assertNull($res);
+        $obj = TestDataTablesFactory::parseColumn($postData["columns"][0], $wrapper);
+
+        $this->assertNull($obj);
     }
 
     /**
@@ -169,13 +174,14 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         // Set the POST data.
         $postData["columns"][0]["searchable"] = "false";
 
-        $res = TestDataTablesFactory::parseColumn($postData["columns"][0], $wrapper);
-        $this->assertEquals("name", $res->getData());
-        $this->assertEquals("Name", $res->getName());
-        $this->assertTrue($res->getOrderable());
-        $this->assertFalse($res->getSearch()->getRegex());
-        $this->assertEquals("", $res->getSearch()->getValue());
-        $this->assertTrue($res->getSearchable());
+        $obj = TestDataTablesFactory::parseColumn($postData["columns"][0], $wrapper);
+
+        $this->assertEquals("name", $obj->getData());
+        $this->assertEquals("Name", $obj->getName());
+        $this->assertTrue($obj->getOrderable());
+        $this->assertFalse($obj->getSearch()->getRegex());
+        $this->assertEquals("", $obj->getSearch()->getValue());
+        $this->assertTrue($obj->getSearchable());
     }
 
     /**
@@ -191,8 +197,9 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         // Get the POST data.
         $postData = TestFixtures::getPOSTData();
 
-        $res = TestDataTablesFactory::parseColumns($postData["columns"], $wrapper);
-        $this->assertCount(7, $res);
+        $obj = TestDataTablesFactory::parseColumns($postData["columns"], $wrapper);
+
+        $this->assertCount(7, $obj);
     }
 
     /**
@@ -211,8 +218,9 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         // Set the POST data.
         unset($postData["columns"][6]["name"]);
 
-        $res = TestDataTablesFactory::parseColumns($postData["columns"], $wrapper);
-        $this->assertCount(6, $res);
+        $obj = TestDataTablesFactory::parseColumns($postData["columns"], $wrapper);
+
+        $this->assertCount(6, $obj);
     }
 
     /**
@@ -229,9 +237,10 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         $postData["order"][0]["column"] = "0";
         $postData["order"][0]["dir"]    = "asc";
 
-        $res = TestDataTablesFactory::parseOrder($postData["order"][0]);
-        $this->assertEquals(0, $res->getColumn());
-        $this->assertEquals("ASC", $res->getDir());
+        $obj = TestDataTablesFactory::parseOrder($postData["order"][0]);
+
+        $this->assertEquals(0, $obj->getColumn());
+        $this->assertEquals("ASC", $obj->getDir());
     }
 
     /**
@@ -247,9 +256,10 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         // Set the POST data.
         unset($postData["order"][0]["column"]);
 
-        $res = TestDataTablesFactory::parseOrder($postData["order"][0]);
-        $this->assertNull($res->getColumn());
-        $this->assertNull($res->getDir());
+        $obj = TestDataTablesFactory::parseOrder($postData["order"][0]);
+
+        $this->assertNull($obj->getColumn());
+        $this->assertNull($obj->getDir());
     }
 
     /**
@@ -265,9 +275,10 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         // Set the POST data.
         unset($postData["order"][0]["dir"]);
 
-        $res = TestDataTablesFactory::parseOrder($postData["order"][0]);
-        $this->assertNull($res->getColumn());
-        $this->assertNull($res->getDir());
+        $obj = TestDataTablesFactory::parseOrder($postData["order"][0]);
+
+        $this->assertNull($obj->getColumn());
+        $this->assertNull($obj->getDir());
     }
 
     /**
@@ -283,9 +294,10 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         // Set the POST data.
         $postData["order"][0]["dir"] = "exception";
 
-        $res = TestDataTablesFactory::parseOrder($postData["order"][0]);
-        $this->assertEquals(0, $res->getColumn());
-        $this->assertEquals("ASC", $res->getDir());
+        $obj = TestDataTablesFactory::parseOrder($postData["order"][0]);
+
+        $this->assertEquals(0, $obj->getColumn());
+        $this->assertEquals("ASC", $obj->getDir());
     }
 
     /**
@@ -301,10 +313,11 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         // Set the POST data.
         $postData["order"][0]["dir"] = "exception";
 
-        $res = TestDataTablesFactory::parseOrders($postData["order"]);
-        $this->assertCount(1, $res);
-        $this->assertEquals(0, $res[0]->getColumn());
-        $this->assertEquals("ASC", $res[0]->getDir());
+        $obj = TestDataTablesFactory::parseOrders($postData["order"]);
+
+        $this->assertCount(1, $obj);
+        $this->assertEquals(0, $obj[0]->getColumn());
+        $this->assertEquals("ASC", $obj[0]->getDir());
     }
 
     /**
@@ -320,17 +333,17 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         // Create a request.
         $request = new Request(array_merge(TestFixtures::getPOSTData(), ["query" => "query"]), ["request" => "request"], [], [], [], ["REQUEST_METHOD" => "GET"]);
 
-        $res = TestDataTablesFactory::parseRequest($wrapper, $request);
+        $obj = TestDataTablesFactory::parseRequest($wrapper, $request);
 
-        $this->assertEquals(1, $res->getDraw());
-        $this->assertEquals(10, $res->getLength());
-        $this->assertEquals("query", $res->getQuery()->get("query"));
-        $this->assertEquals("request", $res->getRequest()->get("request"));
-        $this->assertFalse($res->getSearch()->getRegex());
-        $this->assertEquals("", $res->getSearch()->getValue());
-        $this->assertEquals(0, $res->getStart());
+        $this->assertEquals(1, $obj->getDraw());
+        $this->assertEquals(10, $obj->getLength());
+        $this->assertEquals("query", $obj->getQuery()->get("query"));
+        $this->assertEquals("request", $obj->getRequest()->get("request"));
+        $this->assertFalse($obj->getSearch()->getRegex());
+        $this->assertEquals("", $obj->getSearch()->getValue());
+        $this->assertEquals(0, $obj->getStart());
 
-        $this->assertCount(7, $res->getColumns());
+        $this->assertCount(7, $obj->getColumns());
     }
 
     /**
@@ -346,17 +359,17 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         // Create a request.
         $request = new Request(["query" => "query"], array_merge(TestFixtures::getPOSTData(), ["request" => "request"]), [], [], [], ["REQUEST_METHOD" => "POST"]);
 
-        $res = TestDataTablesFactory::parseRequest($wrapper, $request);
+        $obj = TestDataTablesFactory::parseRequest($wrapper, $request);
 
-        $this->assertEquals(1, $res->getDraw());
-        $this->assertEquals(10, $res->getLength());
-        $this->assertEquals("query", $res->getQuery()->get("query"));
-        $this->assertEquals("request", $res->getRequest()->get("request"));
-        $this->assertFalse($res->getSearch()->getRegex());
-        $this->assertEquals("", $res->getSearch()->getValue());
-        $this->assertEquals(0, $res->getStart());
+        $this->assertEquals(1, $obj->getDraw());
+        $this->assertEquals(10, $obj->getLength());
+        $this->assertEquals("query", $obj->getQuery()->get("query"));
+        $this->assertEquals("request", $obj->getRequest()->get("request"));
+        $this->assertFalse($obj->getSearch()->getRegex());
+        $this->assertEquals("", $obj->getSearch()->getValue());
+        $this->assertEquals(0, $obj->getStart());
 
-        $this->assertCount(7, $res->getColumns());
+        $this->assertCount(7, $obj->getColumns());
     }
 
     /**
@@ -373,9 +386,10 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         $postData["search"]["regex"] = "true";
         $postData["search"]["value"] = "value";
 
-        $res = TestDataTablesFactory::parseSearch($postData["search"]);
-        $this->assertTrue($res->getRegex());
-        $this->assertEquals("value", $res->getValue());
+        $obj = TestDataTablesFactory::parseSearch($postData["search"]);
+
+        $this->assertTrue($obj->getRegex());
+        $this->assertEquals("value", $obj->getValue());
     }
 
     /**
@@ -395,9 +409,10 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         // Set an invalid search.
         unset($postData["search"]["regex"]);
 
-        $res = TestDataTablesFactory::parseSearch($postData["search"]);
-        $this->assertFalse($res->getRegex());
-        $this->assertEquals("", $res->getValue());
+        $obj = TestDataTablesFactory::parseSearch($postData["search"]);
+
+        $this->assertFalse($obj->getRegex());
+        $this->assertEquals("", $obj->getValue());
     }
 
     /**
@@ -417,9 +432,10 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         // Set an invalid search.
         unset($postData["search"]["value"]);
 
-        $res = TestDataTablesFactory::parseSearch($postData["search"]);
-        $this->assertFalse($res->getRegex());
-        $this->assertEquals("", $res->getValue());
+        $obj = TestDataTablesFactory::parseSearch($postData["search"]);
+
+        $this->assertFalse($obj->getRegex());
+        $this->assertEquals("", $obj->getValue());
     }
 
 }
