@@ -11,6 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
+
 /**
  * DataTables wrapper interface.
  *
@@ -20,9 +22,102 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 interface DataTablesWrapperInterface {
 
     /**
+     * Add a column.
+     *
+     * @param DataTablesColumnInterface $column The column.
+     * @return DataTablesWrapperInterface Returns this wrapper.
+     */
+    public function addColumn(DataTablesColumnInterface $column);
+
+    /**
+     * Get a column.
+     *
+     * @param string $data The column data.
+     * @return DataTablesColumnInterface Returns the column in case of success, null otherwise.
+     */
+    public function getColumn($data);
+
+    /**
      * Get the columns.
      *
      * @return DataTablesColumnInterface[] Returns the columns.
      */
     public function getColumns();
+
+    /**
+     * Get the mapping.
+     *
+     * @return DataTablesMappingInterface Returns the mapping.
+     */
+    public function getMapping();
+
+    /**
+     * Get the method.
+     *
+     * @return string Returns the method.
+     */
+    public function getMethod();
+
+    /**
+     * Get the name.
+     *
+     * @return string Returns the name.
+     */
+    public function getName();
+
+    /**
+     * Get the options.
+     *
+     * @return DataTablesOptionsInterface Returns the options.
+     */
+    public function getOptions();
+
+    /**
+     * Get the order.
+     *
+     * @return array Returns the order.
+     */
+    public function getOrder();
+
+    /**
+     * Get the processing.
+     *
+     * @return bool Returns the processing.
+     */
+    public function getProcessing();
+
+    /**
+     * Get the provider.
+     *
+     * @return DataTablesProviderInterface Returns the provider.
+     */
+    public function getProvider();
+
+    /**
+     * Get the request.
+     *
+     * @return DataTablesRequestInterface The request.
+     */
+    public function getRequest();
+
+    /**
+     * Get the response.
+     *
+     * @return DataTablesResponseInterface Returns the response.
+     */
+    public function getResponse();
+
+    /**
+     * Get the server side.
+     *
+     * @return bool Returns the server side.
+     */
+    public function getServerSide();
+
+    /**
+     * Get the URL.
+     *
+     * @return string Returns the URL.
+     */
+    public function getUrl();
 }

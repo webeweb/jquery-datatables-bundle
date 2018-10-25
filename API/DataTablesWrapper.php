@@ -127,10 +127,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
     }
 
     /**
-     * Add a column.
-     *
-     * @param DataTablesColumnInterface $column The column.
-     * @return DataTablesWrapperInterface Returns this wrapper.
+     * {@inheritdoc}
      */
     public function addColumn(DataTablesColumnInterface $column) {
         if (null === $column->getMapping()->getPrefix()) {
@@ -141,10 +138,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
     }
 
     /**
-     * Get a column.
-     *
-     * @param string $data The column data.
-     * @return DataTablesColumnInterface Returns the column in case of success, null otherwise.
+     * {@inheritdoc}
      */
     public function getColumn($data) {
         if (true === array_key_exists($data, $this->columns)) {
@@ -154,108 +148,84 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
     }
 
     /**
-     * Get the columns.
-     *
-     * @return DataTablesColumnInterface[] Returns the columns.
+     * {@inheritdoc}
      */
     public function getColumns() {
         return $this->columns;
     }
 
     /**
-     * Get the mapping.
-     *
-     * @return DataTablesMappingInterface Returns the mapping.
+     * {@inheritdoc}
      */
     public function getMapping() {
         return $this->mapping;
     }
 
     /**
-     * Get the method.
-     *
-     * @return string Returns the method.
+     * {@inheritdoc}
      */
     public function getMethod() {
         return $this->method;
     }
 
     /**
-     * Get the name.
-     *
-     * @return string Returns the name.
+     * {@inheritdoc}
      */
     public function getName() {
         return $this->name;
     }
 
     /**
-     * Get the options.
-     *
-     * @return DataTablesOptionsInterface Returns the options.
+     * {@inheritdoc}
      */
     public function getOptions() {
         return $this->options;
     }
 
     /**
-     * Get the order.
-     *
-     * @return array Returns the order.
+     * {@inheritdoc}
      */
     public function getOrder() {
         return $this->order;
     }
 
     /**
-     * Get the processing.
-     *
-     * @return bool Returns the processing.
+     * {@inheritdoc}
      */
     public function getProcessing() {
         return $this->processing;
     }
 
     /**
-     * Get the provider.
-     *
-     * @return DataTablesProviderInterface Returns the provider.
+     * {@inheritdoc}
      */
     public function getProvider() {
         return $this->provider;
     }
 
     /**
-     * Get the request.
-     *
-     * @return DataTablesRequestInterface The request.
+     * {@inheritdoc}
      */
     public function getRequest() {
         return $this->request;
     }
 
     /**
-     * Get the response.
-     *
-     * @return DataTablesResponseInterface Returns the response.
+     * {@inheritdoc}
      */
     public function getResponse() {
         return $this->response;
     }
 
     /**
-     * Get the server side.
-     *
-     * @return bool Returns the server side.
+     * {@inheritdoc}
      */
     public function getServerSide() {
         return $this->serverSide;
     }
 
     /**
-     * Get the URL.
-     *
-     * @return string Returns the URL.
+     * {@inheritdoc}
      */
     public function getUrl() {
         return $this->url;
