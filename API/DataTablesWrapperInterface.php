@@ -120,4 +120,20 @@ interface DataTablesWrapperInterface {
      * @return string Returns the URL.
      */
     public function getUrl();
+
+    /**
+     * Set the request.
+     *
+     * @param DataTablesRequestInterface $request The request.
+     * @return DataTablesWrapperInterface Returns this wrapper.
+     */
+    public function setRequest(DataTablesRequestInterface $request);
+
+    /**
+     * Set the response.
+     *
+     * @param DataTablesResponseInterface $response The response.
+     * @return DataTablesWrapperInterface Returns this wrapper.
+     */
+    public function setResponse(DataTablesResponseInterface $response);
 }

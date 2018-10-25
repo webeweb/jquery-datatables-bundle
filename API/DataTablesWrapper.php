@@ -331,10 +331,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
     }
 
     /**
-     * Set the request.
-     *
-     * @param DataTablesRequestInterface $request The request.
-     * @return DataTablesWrapperInterface Returns this wrapper.
+     * {@inheritdoc}
      */
     public function setRequest(DataTablesRequestInterface $request) {
         $this->request = $request;
@@ -342,10 +339,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
     }
 
     /**
-     * Set the response.
-     *
-     * @param DataTablesResponseInterface $response The response.
-     * @return DataTablesWrapperInterface Returns this wrapper.
+     * {@inheritdoc}
      */
     public function setResponse(DataTablesResponseInterface $response) {
         $this->response = $response;
