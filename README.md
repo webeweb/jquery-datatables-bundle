@@ -78,7 +78,7 @@ in the `app/AppKernel.php` file of your project:
     public function registerBundles() {
         $bundles = [
             // ...
-            new WBW\Bundle\BootstrapBundle\BootstrapBundle(), // used by bundle templates
+            new WBW\Bundle\BootstrapBundle\BootstrapBundle(),
             new WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle(),
         ];
 
