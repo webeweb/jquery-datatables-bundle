@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures;
 
 use DateTime;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee;
 
@@ -185,12 +185,12 @@ final class TestFixtures {
     /**
      * Get a wrapper.
      *
-     * @return DataTablesWrapper Returns the DataTables wrapper.
+     * @return DataTablesWrapperInterface Returns the wrapper.
      */
     public static function getWrapper() {
 
         // Initialize the fixture.
-        $fixture = new DataTablesWrapper("POST", "/datatables/employee/index", "employee");
+        $fixture = DataTablesFactory::newWrapper("/datatables/employee/index", "employee");
 
         $fixture->addColumn(DataTablesFactory::newColumn("name", "Name"));
         $fixture->addColumn(DataTablesFactory::newColumn("position", "Position"));
