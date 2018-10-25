@@ -11,8 +11,6 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
-use Symfony\Component\HttpFoundation\Request;
-use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Library\Core\Network\HTTP\HTTPInterface;
 
@@ -229,18 +227,6 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
      */
     public function getUrl() {
         return $this->url;
-    }
-
-    /**
-     * Parse a request.
-     *
-     * @param Request $request The request.
-     * @return DataTablesWrapperInterface Returns this wrapper.
-     */
-    public function parse(Request $request) {
-        $this->request  = DataTablesFactory::parseRequest($this, $request);
-        $this->response = DataTablesFactory::parseResponse($this, $this->request);
-        return $this;
     }
 
     /**
