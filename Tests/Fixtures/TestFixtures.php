@@ -15,6 +15,7 @@ use DateTime;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider;
 
 /**
  * Test fixtures.
@@ -190,7 +191,7 @@ final class TestFixtures {
     public static function getWrapper() {
 
         // Initialize the fixture.
-        $fixture = DataTablesFactory::newWrapper("/datatables/employee/index", "employee");
+        $fixture = DataTablesFactory::newWrapper("/datatables/employee/index", new EmployeeDataTablesProvider());
 
         $fixture->addColumn(DataTablesFactory::newColumn("name", "Name"));
         $fixture->addColumn(DataTablesFactory::newColumn("position", "Position"));

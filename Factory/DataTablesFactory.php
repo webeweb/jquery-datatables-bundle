@@ -26,6 +26,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearch;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearchInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Library\Core\Argument\BooleanHelper;
 use WBW\Library\Core\Network\HTTP\HTTPInterface;
 
@@ -144,11 +145,20 @@ class DataTablesFactory {
      * Create a new wrapper.
      *
      * @param string $url The URL.
-     * @param string $name The name.
+     * @param DataTablesProviderInterface $provider The provider.
      * @return DataTablesWrapperInterface Returns a wrapper.
      */
-    public static function newWrapper($url, $name) {
-        return new DataTablesWrapper($url, $name);
+    public static function newWrapper($url, DataTablesProviderInterface $provider) {
+
+        // Initialize a wrapper.
+        $dtWrapper = new DataTablesWrapper();
+        $dtWrapper->getMapping()->setPrefix($provider->getPrefix());
+        $dtWrapper->setMethod($provider->getMethod());
+        $dtWrapper->setProvider($provider);
+        $dtWrapper->setUrl($url);
+
+        // Return the wrapper.
+        return $dtWrapper;
     }
 
     /**

@@ -21,6 +21,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequestInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearchInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
 /**
@@ -59,6 +60,13 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTest {
      * @var DataTablesOrderInterface
      */
     protected $dtOrder;
+
+    /**
+     * DataTables provider.
+     *
+     * @var DataTablesProviderInterface
+     */
+    protected $dtProvider;
 
     /**
      * DataTables request.
@@ -116,6 +124,9 @@ abstract class AbstractFrameworkTestCase extends BaseFrameworkTest {
 
         // Set an Order mock.
         $this->dtOrder = $this->getMockBuilder(DataTablesOrderInterface::class)->getMock();
+
+        // Set a Provider mock.
+        $this->dtProvider = $this->getMockBuilder(DataTablesProviderInterface::class)->getMock();
 
         // Set a Request mock.
         $this->dtRequest = $this->getMockBuilder(DataTablesRequestInterface::class)->getMock();

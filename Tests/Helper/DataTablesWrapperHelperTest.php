@@ -63,9 +63,14 @@ final class DataTablesWrapperHelperTest extends AbstractFrameworkTestCase {
      */
     public function testGetName() {
 
-        $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(DataTablesFactory::newWrapper("url", "employee")));
-        $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(DataTablesFactory::newWrapper("url", "employee_")));
-        $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(DataTablesFactory::newWrapper("url", "employee-")));
+        $this->dtProvider->expects($this->any())->method("getName")->willReturn("employee");
+        $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(DataTablesFactory::newWrapper("url", $this->dtProvider)));
+
+        $this->dtProvider->expects($this->any())->method("getName")->willReturn("employee_");
+        $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(DataTablesFactory::newWrapper("url", $this->dtProvider)));
+
+        $this->dtProvider->expects($this->any())->method("getName")->willReturn("employee-");
+        $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(DataTablesFactory::newWrapper("url", $this->dtProvider)));
     }
 
     /**

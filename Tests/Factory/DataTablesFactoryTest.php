@@ -55,7 +55,7 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      */
     public function testNewWrapper() {
 
-        $obj = TestDataTablesFactory::newWrapper("url", "name");
+        $obj = TestDataTablesFactory::newWrapper("url", $this->dtProvider);
 
         $this->assertInstanceOf(DataTablesWrapperInterface::class, $obj);
 
@@ -63,10 +63,9 @@ final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         $this->assertNull($obj->getMapping()->getPrefix());
         $this->assertEquals("POST", $obj->getMethod());
         $this->assertNull($obj->getOptions());
-        $this->assertEquals("name", $obj->getName());
         $this->assertEquals([], $obj->getOrder());
         $this->assertTrue($obj->getProcessing());
-        $this->assertNull($obj->getProvider());
+        $this->assertSame($this->dtProvider, $obj->getProvider());
         $this->assertNull($obj->getRequest());
         $this->assertNull($obj->getResponse());
         $this->assertTrue($obj->getServerSide());

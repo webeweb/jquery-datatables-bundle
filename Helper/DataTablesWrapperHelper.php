@@ -61,7 +61,7 @@ class DataTablesWrapperHelper {
      * @return string Returns the name.
      */
     public static function getName(DataTablesWrapperInterface $dtWrapper) {
-        return "dt" . preg_replace("/[^A-Za-z0-9]/", "", $dtWrapper->getName());
+        return "dt" . preg_replace("/[^A-Za-z0-9]/", "", $dtWrapper->getProvider()->getName());
     }
 
     /**

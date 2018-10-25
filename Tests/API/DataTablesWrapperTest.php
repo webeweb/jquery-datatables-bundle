@@ -34,20 +34,19 @@ final class DataTablesWrapperTest extends AbstractFrameworkTestCase {
      */
     public function testConstruct() {
 
-        $obj = new DataTablesWrapper("url", "name");
+        $obj = new DataTablesWrapper();
 
         $this->assertEquals([], $obj->getColumns());
         $this->assertNull($obj->getMapping()->getPrefix());
         $this->assertEquals("POST", $obj->getMethod());
         $this->assertNull($obj->getOptions());
-        $this->assertEquals("name", $obj->getName());
         $this->assertEquals([], $obj->getOrder());
         $this->assertTrue($obj->getProcessing());
         $this->assertNull($obj->getProvider());
         $this->assertNull($obj->getRequest());
         $this->assertNull($obj->getResponse());
         $this->assertTrue($obj->getServerSide());
-        $this->assertEquals("url", $obj->getUrl());
+        $this->assertNull($obj->getUrl());
     }
 
     /**
@@ -139,19 +138,6 @@ final class DataTablesWrapperTest extends AbstractFrameworkTestCase {
         // ===
         $obj->setMethod("GET");
         $this->assertEquals("GET", $obj->getMethod());
-    }
-
-    /**
-     * Tests the setName() method.
-     *
-     * @return void
-     */
-    public function testSetName() {
-
-        $obj = new DataTablesWrapper("url", "name");
-
-        $obj->setName("othername");
-        $this->assertEquals("othername", $obj->getName());
     }
 
     /**

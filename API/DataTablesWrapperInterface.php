@@ -59,13 +59,6 @@ interface DataTablesWrapperInterface {
     public function getMethod();
 
     /**
-     * Get the name.
-     *
-     * @return string Returns the name.
-     */
-    public function getName();
-
-    /**
      * Get the options.
      *
      * @return DataTablesOptionsInterface Returns the options.
