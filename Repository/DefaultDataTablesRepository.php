@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\QueryBuilder;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesRepositoryHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 
@@ -48,10 +48,10 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     /**
      * Build a query builder "Count filtered".
      *
-     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return QueryBuilder Returns the query builder "Count filtered".
      */
-    protected function buildDataTablesCountFiltered(DataTablesWrapper $dtWrapper) {
+    protected function buildDataTablesCountFiltered(DataTablesWrapperInterface $dtWrapper) {
 
         // Get the prefix.
         $prefix = $dtWrapper->getMapping()->getPrefix();
@@ -70,10 +70,10 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     /**
      * Build a query builder "Count total".
      *
-     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return QueryBuilder Returns the query builder "Count total".
      */
-    protected function buildDataTablesCountTotal(DataTablesWrapper $dtWrapper) {
+    protected function buildDataTablesCountTotal(DataTablesWrapperInterface $dtWrapper) {
 
         // Get the prefix.
         $prefix = $dtWrapper->getMapping()->getPrefix();
@@ -104,10 +104,10 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     /**
      * Build a query builder "Find all".
      *
-     * @param DataTablesWrapper $dtWrapper The wrapper.
+     * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return QueryBuilder Returns the query builder "Find all".
      */
-    protected function buildDataTablesFindAll(DataTablesWrapper $dtWrapper) {
+    protected function buildDataTablesFindAll(DataTablesWrapperInterface $dtWrapper) {
 
         // Get the prefix.
         $prefix = $dtWrapper->getMapping()->getPrefix();
@@ -142,7 +142,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     /**
      * {@inheritdoc}
      */
-    public function dataTablesCountFiltered(DataTablesWrapper $dtWrapper) {
+    public function dataTablesCountFiltered(DataTablesWrapperInterface $dtWrapper) {
 
         // Build a query builder.
         $qb = $this->buildDataTablesCountFiltered($dtWrapper);
@@ -154,7 +154,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     /**
      * {@inheritdoc}
      */
-    public function dataTablesCountTotal(DataTablesWrapper $dtWrapper) {
+    public function dataTablesCountTotal(DataTablesWrapperInterface $dtWrapper) {
 
         // Build a query builder.
         $qb = $this->buildDataTablesCountTotal($dtWrapper);
@@ -173,7 +173,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     /**
      * {@inheritdoc}
      */
-    public function dataTablesFindAll(DataTablesWrapper $dtWrapper) {
+    public function dataTablesFindAll(DataTablesWrapperInterface $dtWrapper) {
 
         // Build a query builder.
         $qb = $this->buildDataTablesFindAll($dtWrapper);
