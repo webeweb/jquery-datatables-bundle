@@ -20,13 +20,14 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use WBW\Bundle\BootstrapBundle\Controller\AbstractBootstrapController;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesColumnException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesEditorException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
+use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
@@ -136,7 +137,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
      *
      * @param DataTableProviderInterface $dtProvider The provider.
      * @param string $data The data.
-     * @return DataTablesColumn Returns the column.
+     * @return DataTablesColumnInterface Returns the column.
      * @throws BadDataTablesColumnException Throws a bad column exception.
      */
     protected function getDataTablesColumn(DataTablesProviderInterface $dtProvider, $data) {
@@ -246,6 +247,15 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
     }
 
     /**
+     * Get the manager.
+     *
+     * @return DataTablesManager Returns the manager.
+     */
+    protected function getDataTablesManager() {
+        return $this->get(DataTablesManager::SERVICE_NAME);
+    }
+
+    /**
      * Get the provider.
      *
      * @param string $name The provider name.
@@ -258,7 +268,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
         $this->getLogger()->debug(sprintf("DataTables controller search for a provider with name \"%s\"", $name));
 
         // Get the provider.
-        $dtProvider = $this->get(DataTablesManager::SERVICE_NAME)->getProvider($name);
+        $dtProvider = $this->getDataTablesManager()->getProvider($name);
 
         // Log a debug trace.
         $this->getLogger()->debug(sprintf("DataTables controller found a provider with name \"%s\"", $name));
@@ -305,7 +315,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
      * Get a wrapper.
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
-     * @return DataTablesWrapper Returns the wrapper.
+     * @return DataTablesWrapperInterface Returns the wrapper.
      */
     protected function getDataTablesWrapper(DataTablesProviderInterface $dtProvider) {
 
@@ -313,9 +323,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
         $url = $this->getRouter()->generate("jquery_datatables_index", ["name" => $dtProvider->getName()]);
 
         // Initialize the wrapper.
-        $dtWrapper = new DataTablesWrapper($dtProvider->getMethod(), $url, $dtProvider->getName());
-        $dtWrapper->getMapping()->setPrefix($dtProvider->getPrefix());
-        $dtWrapper->setProvider($dtProvider);
+        $dtWrapper = DataTablesFactory::newWrapper($url, $dtProvider);
 
         // Handle each column.
         foreach ($dtProvider->getColumns() as $dtColumn) {
@@ -323,7 +331,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
             // Log a debug trace.
             $this->getLogger()->debug(sprintf("DataTables provider add a column \"%s\"", $dtColumn->getData()));
 
-            // Add.
+            // Add the column.
             $dtWrapper->addColumn($dtColumn);
         }
 

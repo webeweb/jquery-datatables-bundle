@@ -18,11 +18,12 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesEnumerator;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesEditorException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
-use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesResponseHelper;
+use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Library\Core\Network\HTTP\HTTPInterface;
 
@@ -202,7 +203,7 @@ class DataTablesController extends AbstractDataTablesController {
         $dtWrapper = $this->getDataTablesWrapper($dtProvider);
 
         // Parse the request.
-        $dtWrapper->parse($request);
+        DataTablesFactory::parseWrapper($dtWrapper, $request);
 
         // Get the entities repository.
         $repository = $this->getDataTablesRepository($dtProvider);
@@ -226,7 +227,7 @@ class DataTablesController extends AbstractDataTablesController {
             $dtWrapper->getResponse()->addRow();
 
             // Render each row.
-            foreach (DataTablesResponseHelper::dtRows() as $dtRow) {
+            foreach (DataTablesEnumerator::enumRows() as $dtRow) {
                 $dtWrapper->getResponse()->setRow($dtRow, $dtProvider->renderRow($dtRow, $entity, $rows));
             }
 
