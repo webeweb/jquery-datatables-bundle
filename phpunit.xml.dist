@@ -25,7 +25,6 @@
         <testsuite name="webeweb/jquery-datatables-bundle">
             <directory suffix="Test.php">./Tests</directory>
             <exclude>Tests/Controller/</exclude>
-            <exclude>Tests/DependencyInjection/</exclude>
             <exclude>Tests/Factory/</exclude>
             <exclude>Tests/Helper/</exclude>
             <exclude>Tests/Twig/</exclude>
