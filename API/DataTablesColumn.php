@@ -11,7 +11,6 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
-use JsonSerializable;
 use WBW\Library\Core\Argument\ArrayHelper;
 
 /**
@@ -20,7 +19,7 @@ use WBW\Library\Core\Argument\ArrayHelper;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\API
  */
-class DataTablesColumn implements DataTablesColumnInterface, JsonSerializable {
+class DataTablesColumn implements DataTablesColumnInterface {
 
     /**
      * Cell type.
