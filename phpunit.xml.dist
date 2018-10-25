@@ -28,7 +28,6 @@
             <exclude>Tests/DependencyInjection/</exclude>
             <exclude>Tests/Factory/</exclude>
             <exclude>Tests/Helper/</exclude>
-            <exclude>Tests/Manager/</exclude>
             <exclude>Tests/Twig/</exclude>
         </testsuite>
     </testsuites>
