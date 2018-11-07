@@ -22,9 +22,8 @@ use WBW\Library\Core\Network\HTTP\HTTPInterface;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider
- * @final
  */
-final class OfficeDataTablesProvider implements DataTablesProviderInterface {
+class OfficeDataTablesProvider implements DataTablesProviderInterface {
 
     /**
      * {@inheritdoc}

@@ -22,9 +22,8 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTable
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\App
- * @final
  */
-final class TestFixtures {
+class TestFixtures {
 
     /**
      * Get the employees.

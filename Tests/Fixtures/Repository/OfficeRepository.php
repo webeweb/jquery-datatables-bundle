@@ -18,8 +18,7 @@ use Doctrine\ORM\EntityRepository;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Repository
- * @final
  */
-final class OfficeRepository extends EntityRepository {
+class OfficeRepository extends EntityRepository {
 
 }

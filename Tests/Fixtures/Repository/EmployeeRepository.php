@@ -18,8 +18,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Repository\DefaultDataTablesRepository;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Repository
- * @final
  */
-final class EmployeeRepository extends DefaultDataTablesRepository {
+class EmployeeRepository extends DefaultDataTablesRepository {
 
 }

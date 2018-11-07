@@ -15,9 +15,8 @@ use WBW\Bundle\BootstrapBundle\Tests\AbstractKernel as BaseKernel;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\app
- * @final
  */
-final class TestKernel extends BaseKernel {
+class TestKernel extends BaseKernel {
 
     /**
      * {@inheritdoc}
