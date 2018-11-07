@@ -19,9 +19,8 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Controller
- * @final
  */
-final class DataTablesControllerTest extends AbstractWebTestCase {
+class DataTablesControllerTest extends AbstractWebTestCase {
 
     /**
      * {@inheritdoc}
