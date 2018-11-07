@@ -23,9 +23,8 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper
- * @final
  */
-final class DataTablesRepositoryHelperTest extends AbstractFrameworkTestCase {
+class DataTablesRepositoryHelperTest extends AbstractFrameworkTestCase {
 
     /**
      * Entity manager.

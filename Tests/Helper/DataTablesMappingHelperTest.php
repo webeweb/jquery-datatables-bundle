@@ -20,9 +20,8 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper
- * @final
  */
-final class DataTablesMappingHelperTest extends AbstractFrameworkTestCase {
+class DataTablesMappingHelperTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the getAlias() method.
