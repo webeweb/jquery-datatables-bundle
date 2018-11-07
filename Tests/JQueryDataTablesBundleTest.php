@@ -18,9 +18,8 @@ use WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests
- * @final
  */
-final class JQueryDataTablesBundleTest extends AbstractFrameworkTestCase {
+class JQueryDataTablesBundleTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.
