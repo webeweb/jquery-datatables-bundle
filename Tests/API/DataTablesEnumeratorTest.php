@@ -23,9 +23,8 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\API
- * @final
  */
-final class DataTablesEnumeratorTest extends AbstractFrameworkTestCase {
+class DataTablesEnumeratorTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the enumCellTypes() method.

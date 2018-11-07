@@ -21,9 +21,8 @@ use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\API
- * @final
  */
-final class DataTablesOptionsTest extends AbstractFrameworkTestCase {
+class DataTablesOptionsTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

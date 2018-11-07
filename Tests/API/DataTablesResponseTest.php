@@ -19,9 +19,8 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\API
- * @final
  */
-final class DataTablesResponseTest extends AbstractFrameworkTestCase {
+class DataTablesResponseTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

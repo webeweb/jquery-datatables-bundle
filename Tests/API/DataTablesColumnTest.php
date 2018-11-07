@@ -20,9 +20,8 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Column
- * @final
  */
-final class DataTablesColumnTest extends AbstractFrameworkTestCase {
+class DataTablesColumnTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.
