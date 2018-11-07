@@ -21,9 +21,8 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection\Compiler
- * @final
  */
-final class JQueryDataTablesCompilerPassTest extends AbstractFrameworkTestCase {
+class JQueryDataTablesCompilerPassTest extends AbstractFrameworkTestCase {
 
     /**
      * DataTables manager.

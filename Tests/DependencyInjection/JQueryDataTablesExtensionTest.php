@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection
  */
-final class DataTablesExtensionTest extends AbstractFrameworkTestCase {
+class DataTablesExtensionTest extends AbstractFrameworkTestCase {
 
     /**
      * {@inheritdoc}
