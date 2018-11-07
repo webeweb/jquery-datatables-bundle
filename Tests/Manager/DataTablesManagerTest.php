@@ -23,9 +23,8 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Manager
- * @final
  */
-final class DataTablesManagerTest extends AbstractFrameworkTestCase {
+class DataTablesManagerTest extends AbstractFrameworkTestCase {
 
     /**
      * DataTables provider.
