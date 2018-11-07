@@ -22,9 +22,8 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Factory
- * @final
  */
-final class DataTablesFactoryTest extends AbstractFrameworkTestCase {
+class DataTablesFactoryTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the newResponse() method.
