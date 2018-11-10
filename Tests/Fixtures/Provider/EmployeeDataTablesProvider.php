@@ -13,7 +13,6 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider;
 
 use DateTime;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
@@ -171,7 +170,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
      * {@inheritdoc}
      */
     public function getOptions() {
-        return new DataTablesOptions();
+        return DataTablesFactory::newOptions();
     }
 
     /**

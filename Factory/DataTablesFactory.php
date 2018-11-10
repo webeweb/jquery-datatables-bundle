@@ -16,6 +16,8 @@ use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesEnumerator;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrder;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequest;
@@ -122,6 +124,15 @@ class DataTablesFactory {
 
         // Return the column.
         return $dtColumn;
+    }
+
+    /**
+     * Create a new options.
+     *
+     * @return DataTablesOptionsInterface Returns an options.
+     */
+    public static function newOptions() {
+        return new DataTablesOptions();
     }
 
     /**

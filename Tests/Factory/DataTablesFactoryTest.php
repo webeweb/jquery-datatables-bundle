@@ -12,6 +12,12 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Factory;
 
 use Symfony\Component\HttpFoundation\Request;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrderInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequestInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearchInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Factory\TestDataTablesFactory;
@@ -30,6 +36,18 @@ class DataTablesFactoryTest extends AbstractFrameworkTestCase {
      *
      * @return void
      */
+    public function testNewOptions() {
+
+        $obj = TestDataTablesFactory::newOptions();
+
+        $this->assertInstanceOf(DataTablesOptionsInterface::class, $obj);
+    }
+
+    /**
+     * Tests the newResponse() method.
+     *
+     * @return void
+     */
     public function testNewResponse() {
 
         // Get a wrapper.
@@ -37,6 +55,8 @@ class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         $wrapper->setRequest($this->dtRequest);
 
         $obj = TestDataTablesFactory::newResponse($wrapper);
+
+        $this->assertInstanceOf(DataTablesResponseInterface::class, $obj);
 
         $this->assertEquals(0, $obj->countRows());
         $this->assertEquals([], $obj->getData());
@@ -85,6 +105,8 @@ class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         $postData = TestFixtures::getPOSTData();
 
         $obj = TestDataTablesFactory::parseColumn($postData["columns"][0], $wrapper);
+
+        $this->assertInstanceOf(DataTablesColumnInterface::class, $obj);
 
         $this->assertEquals("name", $obj->getData());
         $this->assertEquals("Name", $obj->getName());
@@ -259,6 +281,8 @@ class DataTablesFactoryTest extends AbstractFrameworkTestCase {
 
         $obj = TestDataTablesFactory::parseOrder($postData["order"][0]);
 
+        $this->assertInstanceOf(DataTablesOrderInterface::class, $obj);
+
         $this->assertEquals(0, $obj->getColumn());
         $this->assertEquals("ASC", $obj->getDir());
     }
@@ -355,6 +379,8 @@ class DataTablesFactoryTest extends AbstractFrameworkTestCase {
 
         $obj = TestDataTablesFactory::parseRequest($wrapper, $request);
 
+        $this->assertInstanceOf(DataTablesRequestInterface::class, $obj);
+
         $this->assertEquals(1, $obj->getDraw());
         $this->assertEquals(10, $obj->getLength());
         $this->assertEquals("query", $obj->getQuery()->get("query"));
@@ -380,6 +406,8 @@ class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         $request = new Request(["query" => "query"], array_merge(TestFixtures::getPOSTData(), ["request" => "request"]), [], [], [], ["REQUEST_METHOD" => "POST"]);
 
         $obj = TestDataTablesFactory::parseRequest($wrapper, $request);
+
+        $this->assertInstanceOf(DataTablesRequestInterface::class, $obj);
 
         $this->assertEquals(1, $obj->getDraw());
         $this->assertEquals(10, $obj->getLength());
@@ -407,6 +435,8 @@ class DataTablesFactoryTest extends AbstractFrameworkTestCase {
         $postData["search"]["value"] = "value";
 
         $obj = TestDataTablesFactory::parseSearch($postData["search"]);
+
+        $this->assertInstanceOf(DataTablesSearchInterface::class, $obj);
 
         $this->assertTrue($obj->getRegex());
         $this->assertEquals("value", $obj->getValue());

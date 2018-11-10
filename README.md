@@ -336,7 +336,6 @@ namespace AppBundle\Provider;
 use AppBundle\Entity\Employee;
 use DateTime;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
@@ -488,7 +487,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
         return null;
 
         // Custom options with the following code :
-        // $dtOptions = new DataTablesOptions();
+        // $dtOptions = DataTablesFactory::newOptions();
         // $dtOptions->addOption("language", ["url" => DataTablesWrapperHelper::getLanguageURL("French")]);
         // $dtOptions->addOption("responsive", true);
         // $dtOptions->addOption("searchDelay", 1000);
