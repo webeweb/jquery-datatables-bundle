@@ -3,12 +3,12 @@
     "type": "symfony-bundle",
     "description": "Intregate jQuery Datatables with Symfony 2 and more",
     "keywords": ["webeweb", "bundle", "symfony", "jquery", "datatable"],
-    "homepage": "http://github.com/webeweb/jquery-datatables-bundle",
+    "homepage": "https://github.com/webeweb/jquery-datatables-bundle",
     "license": "LGPL-3.0-only",
     "authors": [
         {
             "name": "webeweb",
-            "homepage": "http://github.com/webeweb/"
+            "homepage": "https://github.com/webeweb/"
         }
     ],
     "require": {
@@ -32,7 +32,7 @@
         "symfony/twig-bundle": "^2.7|^3.0|^4.0"
     },
     "support": {
-        "issues": "http://github.com/webeweb/jquery-datatables-bundle/issues"
+        "issues": "https://github.com/webeweb/jquery-datatables-bundle/issues"
     },
     "autoload": {
         "psr-4": {
