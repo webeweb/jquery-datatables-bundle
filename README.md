@@ -611,7 +611,7 @@ Create a template in the `src/AppBundle/Resources/views/Employee`directory of yo
 ```html
 {# src/AppBundle/Resources/views/Employee/index.html.twig #}
 
-{% block stylesheet %}
+{% block stylesheets %}
     {{ parent() }}
     {% include "@JQueryDataTables/include/styles.html.twig" with {"theme": "bootstrap" } %}
 {% endblock %}
@@ -620,7 +620,7 @@ Create a template in the `src/AppBundle/Resources/views/Employee`directory of yo
     {{ renderDataTables(dtWrapper) }}
 {% endblock %}
 
-{% block javascript %}
+{% block javascripts %}
     {{ parent() }}
     {% include "@JQueryDataTables/include/scripts.html.twig" with {"theme": "bootstrap" } %}
     {{ jQueryDataTables(dtWrapper) }}
@@ -848,7 +848,7 @@ stable version of this package:
 ```bash
 $ mkdir jquery-datatables-bundle
 $ cd jquery-datatables-bundle
-$ git clone git@github.com:webeweb/jquery-datatables-bundle.git .
+$ git clone https://github.com/webeweb/jquery-datatables-bundle.git .
 $ composer install
 ```
 
