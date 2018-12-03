@@ -3,6 +3,7 @@ CHANGELOG
 
 ### master
 
+- Add Symfony 4.2 support
 - Add CHANGELOG
 - Remove keyword "final" into unit tests
 - Remove getName() method into DataTables wrapper
