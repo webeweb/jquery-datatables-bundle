@@ -181,11 +181,6 @@ EOT;
      */
     private function renderDataTablesColumn(DataTablesColumn $dtColumn, $scopeRow = false) {
 
-        // Check if the column is visible.
-        if (false === $dtColumn->getVisible()) {
-            return "";
-        }
-
         // Initialize the template.
         $template = "            <th%attributes%>%innerHTML%</th>";
 
