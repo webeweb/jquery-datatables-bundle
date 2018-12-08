@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use Exception;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 
 /**
@@ -22,7 +22,7 @@ use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\API
  */
-class DataTablesOptionsTest extends AbstractFrameworkTestCase {
+class DataTablesOptionsTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.

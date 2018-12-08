@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearch;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
  * DataTables search test.
@@ -20,7 +20,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\API
  */
-class DataTablesSearchTest extends AbstractFrameworkTestCase {
+class DataTablesSearchTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.

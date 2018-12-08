@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
  * DataTables order interface test.
@@ -20,7 +20,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\API
  */
-class DataTablesOrderInterfaceTest extends AbstractFrameworkTestCase {
+class DataTablesOrderInterfaceTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.

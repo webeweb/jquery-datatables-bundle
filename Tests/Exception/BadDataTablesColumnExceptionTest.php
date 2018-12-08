@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception;
 
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesColumnException;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
  * Bad DataTables column exception test.
@@ -20,7 +20,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception
  */
-class BadDataTablesColumnExceptionTest extends AbstractFrameworkTestCase {
+class BadDataTablesColumnExceptionTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.

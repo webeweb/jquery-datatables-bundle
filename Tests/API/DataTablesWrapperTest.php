@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesMappingInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
  * DataTables wrapper test.
@@ -24,7 +24,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Wrapper
  */
-class DataTablesWrapperTest extends AbstractFrameworkTestCase {
+class DataTablesWrapperTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.

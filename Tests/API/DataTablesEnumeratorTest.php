@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesEnumerator;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequestInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
  * DataTables enumerator test.
@@ -24,7 +24,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\API
  */
-class DataTablesEnumeratorTest extends AbstractFrameworkTestCase {
+class DataTablesEnumeratorTest extends AbstractTestCase {
 
     /**
      * Tests the enumCellTypes() method.

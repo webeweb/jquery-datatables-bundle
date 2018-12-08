@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
 use Exception;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractFrameworkTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 use WBW\Library\Core\Exception\FileSystem\FileNotFoundException;
 
@@ -24,7 +24,7 @@ use WBW\Library\Core\Exception\FileSystem\FileNotFoundException;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper
  */
-class DataTablesWrapperHelperTest extends AbstractFrameworkTestCase {
+class DataTablesWrapperHelperTest extends AbstractTestCase {
 
     /**
      * Tests the getLanguageURL() method.
