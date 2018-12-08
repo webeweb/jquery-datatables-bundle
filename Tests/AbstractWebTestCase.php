@@ -12,11 +12,10 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
 
 use Doctrine\ORM\Tools\SchemaTool;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use TestKernel;
+use WBW\Bundle\CoreBundle\Tests\AbstractWebTestCase as WebTestCase;
 
 /**
- * Abstract jQuery DataTables web test case.
+ * Abstract web test case.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests
@@ -27,20 +26,8 @@ abstract class AbstractWebTestCase extends WebTestCase {
     /**
      * {@inheritdoc}
      */
-    protected static function getKernelClass() {
-        require_once __DIR__ . "/Fixtures/app/TestKernel.php";
-        return TestKernel::class;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public static function setUpBeforeClass() {
         parent::setUpBeforeClass();
-
-        // Initialize and boot the kernel.
-        static::$kernel = static::createKernel();
-        static::$kernel->boot();
 
         // Get the entity manager.
         $em = static::$kernel->getContainer()->get("doctrine.orm.entity_manager");
