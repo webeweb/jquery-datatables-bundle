@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
 
 use Symfony\Component\HttpFoundation\Request;
-use WBW\Bundle\BootstrapBundle\Tests\AbstractFrameworkTestCase as BaseFrameworkTest;
+use WBW\Bundle\CoreBundle\Tests\AbstractTestCase as TestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesMappingInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
@@ -25,13 +25,13 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
 /**
- * Abstract jQuery DataTables framework test case.
+ * Abstract framework test case.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests
  * @abstract
  */
-abstract class AbstractFrameworkTestCase extends BaseFrameworkTest {
+abstract class AbstractFrameworkTestCase extends TestCase {
 
     /**
      * DataTables column.
