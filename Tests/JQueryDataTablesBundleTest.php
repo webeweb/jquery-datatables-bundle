@@ -43,4 +43,17 @@ class JQueryDataTablesBundleTest extends AbstractTestCase {
         $this->assertNull($obj->build($this->containerBuilder));
     }
 
+    /**
+     * Tests the getAssetsRelativeDirectory() method.
+     *
+     * @return void
+     */
+    public function testGetAssetsRelativeDirectory() {
+
+        $obj = new JQueryDataTablesBundle();
+
+        $res = "/Resources/assets";
+        $this->assertEquals($res, $obj->getAssetsRelativeDirectory());
+    }
+
 }

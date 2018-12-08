@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
+use WBW\Bundle\CoreBundle\Provider\AssetsProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Compiler\JQueryDataTablesCompilerPass;
 
 /**
@@ -21,7 +22,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Compiler\JQueryDataTa
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\jQuery\DatatablesBundle
  */
-class JQueryDataTablesBundle extends Bundle {
+class JQueryDataTablesBundle extends Bundle implements AssetsProviderInterface {
 
     /**
      * DataTables version.
@@ -35,6 +36,13 @@ class JQueryDataTablesBundle extends Bundle {
      */
     public function build(ContainerBuilder $container) {
         $container->addCompilerPass(new JQueryDataTablesCompilerPass());
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAssetsRelativeDirectory() {
+        return "/Resources/assets";
     }
 
 }
