@@ -11,13 +11,15 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
 
+use WBW\Bundle\CoreBundle\Provider\ProviderInterface;
+
 /**
  * DataTables CSV exporter interface.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Provider
  */
-interface DataTablesCSVExporterInterface {
+interface DataTablesCSVExporterInterface extends ProviderInterface {
 
     /**
      * Export a columns.
