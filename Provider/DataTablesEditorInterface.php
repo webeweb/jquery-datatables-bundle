@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
 
 use Exception;
+use WBW\Bundle\CoreBundle\Provider\ProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 
 /**
@@ -20,7 +21,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Provider
  */
-interface DataTablesEditorInterface {
+interface DataTablesEditorInterface extends ProviderInterface {
 
     /**
      * Edit a column.
