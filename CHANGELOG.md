@@ -3,6 +3,7 @@ CHANGELOG
 
 ### master
 
+- Update TAG_NAME constant
 - Add Symfony 4.2 support
 - Add CHANGELOG
 - Remove keyword "final" into unit tests
