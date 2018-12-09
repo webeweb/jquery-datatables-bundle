@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
 
+use WBW\Bundle\CoreBundle\Provider\ProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
 
@@ -20,7 +21,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Provider;
  */
-interface DataTablesProviderInterface {
+interface DataTablesProviderInterface extends ProviderInterface {
 
     /**
      * Tag name.
