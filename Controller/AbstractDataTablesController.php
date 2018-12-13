@@ -19,7 +19,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
-use WBW\Bundle\BootstrapBundle\Controller\AbstractBootstrapController;
+use WBW\Bundle\BootstrapBundle\Controller\AbstractController;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesColumnException;
@@ -43,7 +43,7 @@ use WBW\Library\Core\Model\Response\ActionResponse;
  * @package WBW\Bundle\JQuery\DataTablesBundle\Controller
  * @abstract
  */
-abstract class AbstractDataTablesController extends AbstractBootstrapController {
+abstract class AbstractDataTablesController extends AbstractController {
 
     /**
      * Build a response.
