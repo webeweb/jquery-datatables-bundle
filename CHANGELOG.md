@@ -3,6 +3,7 @@ CHANGELOG
 
 ### master
 
+- Add DataTables Twig extension trait
 - Add DataTables mananger trait
 - Update TAG_NAME constant
 - Add Symfony 4.2 support
