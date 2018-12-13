@@ -8,7 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-use WBW\Bundle\BootstrapBundle\Tests\AbstractKernel as BaseKernel;
+use WBW\Bundle\CoreBundle\Tests\AbstractKernel as BaseKernel;
 
 /**
  * Test kernel.
@@ -29,6 +29,7 @@ class TestKernel extends BaseKernel {
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
+            new WBW\Bundle\CoreBundle\CoreBundle(),
             new WBW\Bundle\BootstrapBundle\BootstrapBundle(),
             new WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle(),
         ];
