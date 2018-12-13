@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Twig\Extension;
 
 use Twig_Node;
 use Twig_SimpleFunction;
-use WBW\Bundle\BootstrapBundle\Twig\Extension\BootstrapRendererTwigExtension;
+use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 
@@ -26,13 +26,30 @@ use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 class DataTablesTwigExtensionTest extends AbstractTestCase {
 
     /**
+     * Renderer Twig extension.
+     *
+     * @var RendererTwigExtension
+     */
+    private $rendererTwigExtension;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function setUp() {
+        parent::setUp();
+
+        // Set a Renderer Twig extension mock.
+        $this->rendererTwigExtension = new RendererTwigExtension($this->twigEnvironment);
+    }
+
+    /**
      * Tests the getFunctions() method.
      *
      * @return void
      */
     public function testGetFunctions() {
 
-        $obj = new DataTablesTwigExtension(new BootstrapRendererTwigExtension());
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
 
         $res = $obj->getFunctions();
         $this->assertCount(3, $res);
@@ -94,7 +111,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testJQueryDataTablesFunction() {
 
-        $obj = new DataTablesTwigExtension(new BootstrapRendererTwigExtension());
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
 
         // ===
         $arg0 = [];
@@ -223,7 +240,7 @@ EOT;
      */
     public function testJQueryDataTablesStandaloneFunction() {
 
-        $obj = new DataTablesTwigExtension(new BootstrapRendererTwigExtension());
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
 
         // ===
         $res0 = <<<'EOT'
@@ -264,7 +281,7 @@ EOT;
      */
     public function testRenderDataTablesFunction() {
 
-        $obj = new DataTablesTwigExtension(new BootstrapRendererTwigExtension());
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
 
         // ===
         $arg0 = [];
@@ -368,7 +385,7 @@ EOT;
         $i = 0;
         foreach ($this->dtWrapper->getColumns() as $dtColumn) {
             $dtColumn->setClassname($dtColumn->getData());
-            $dtColumn->setWidth(++$i);
+            $dtColumn->setWidth( ++$i);
         }
 
         $arg9 = ["class" => "class", "thead" => true, "tfoot" => true];

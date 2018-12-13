@@ -11,8 +11,11 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension;
 
-use Twig_Extension;
-use WBW\Bundle\BootstrapBundle\Twig\Extension\BootstrapRendererTwigExtension;
+use Twig_Environment;
+use WBW\Bundle\CoreBundle\Service\TwigEnvironmentTrait;
+use WBW\Bundle\CoreBundle\Twig\Extension\AbstractTwigExtension;
+use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtension;
+use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtensionTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
@@ -26,7 +29,10 @@ use WBW\Library\Core\Exception\IO\FileNotFoundException;
  * @package WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension
  * @abstract
  */
-abstract class AbstractDataTablesTwigExtension extends Twig_Extension {
+abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
+
+    use RendererTwigExtensionTrait;
+    use TwigEnvironmentTrait;
 
     /**
      * jQuery DataTables.
@@ -51,19 +57,14 @@ EOT;
 EOT;
 
     /**
-     * Renderer
-     *
-     * @var BootstrapRendererTwigExtension
-     */
-    private $renderer;
-
-    /**
      * Constructor.
      *
-     * @param BootstrapRendererTwigExtension $renderer The renderer.
+     * @param Twig_Environment $twigEnvironment The Twig environment.
+     * @param RendererTwigExtension $rendererTwigExtension The renderer Twig extension.
      */
-    public function __construct(BootstrapRendererTwigExtension $renderer) {
-        $this->setRenderer($renderer);
+    protected function __construct(Twig_Environment $twigEnvironment, RendererTwigExtension $rendererTwigExtension) {
+        parent::__construct($twigEnvironment);
+        $this->setRendererTwigExtension($rendererTwigExtension);
     }
 
     /**
@@ -79,15 +80,6 @@ EOT;
         ksort($options);
         $output = json_encode($options, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
         return str_replace("\n", "\n        ", $output);
-    }
-
-    /**
-     * Get the renderer.
-     *
-     * @return BootstrapRendererTwigExtension Returns the renderer.
-     */
-    public function getRenderer() {
-        return $this->renderer;
     }
 
     /**
@@ -117,7 +109,7 @@ EOT;
 
         // Return the Javascript.
         $javascript = StringHelper::replace(self::JQUERY_DATATABLES, $searches, $replaces);
-        return $this->getRenderer()->bootstrapScriptFilter($javascript);
+        return $this->getRendererTwigExtension()->coreScriptFilter($javascript);
     }
 
     /**
@@ -142,7 +134,7 @@ EOT;
 
         // Return the Javascript.
         $javascript = StringHelper::replace(self::JQUERY_DATATABLES_STANDALONE, $searches, $replaces);
-        return $this->getRenderer()->bootstrapScriptFilter($javascript);
+        return $this->getRendererTwigExtension()->coreScriptFilter($javascript);
     }
 
     /**
@@ -250,17 +242,6 @@ EOT;
 
         // Return the HTML.
         return "" === $innerHTML ? "" : StringHelper::replace($template, ["%innerHTML%"], [$innerHTML]);
-    }
-
-    /**
-     * Set the renderer.
-     *
-     * @param BootstrapRendererTwigExtension $renderer The renderer.
-     * @return AbstractDataTablesTwigExtension Returns this Twig extension.
-     */
-    protected function setRenderer(BootstrapRendererTwigExtension $renderer) {
-        $this->renderer = $renderer;
-        return $this;
     }
 
 }
