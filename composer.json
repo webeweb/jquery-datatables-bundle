@@ -18,8 +18,8 @@
         "symfony/framework-bundle": "^2.7|^3.0|^4.0",
         "symfony/translation": "^2.7|^3.0|^4.0",
         "twig/twig": "^1.0||^2.0",
-        "webeweb/core-bundle": "^1.2@dev",
-        "webeweb/bootstrap-bundle": "^1.7",
+        "webeweb/core-bundle": "^1.0@dev",
+        "webeweb/bootstrap-bundle": "^2.0@dev",
         "webeweb/core-library": "^5.0"
     },
     "require-dev": {
