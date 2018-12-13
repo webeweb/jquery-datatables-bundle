@@ -11,8 +11,9 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\CoreBundle\Tests\Fixtures\Helper\TestAssetsHelper;
+use WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
  * Assets helper test.
@@ -49,7 +50,7 @@ class AssetsHelperTest extends AbstractTestCase {
         $res = TestAssetsHelper::listAssets($this->directoryAssets);
         $this->assertCount(16, $res);
 
-        $this->assertRegexp("/datatables\-.*\.zip$/", $res[0]);
+        $this->assertRegexp("/datatables\-" . preg_quote(JQueryDataTablesBundle::DATATABLES_VERSION, ".") . "\.zip$/", $res[0]);
         $this->assertRegexp("/datatables\-autofill\-.*\.zip$/", $res[1]);
         $this->assertRegexp("/datatables\-buttons\-.*\.zip$/", $res[2]);
         $this->assertRegexp("/datatables\-colreorder\-.*\.zip$/", $res[3]);
