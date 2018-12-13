@@ -1,7 +1,7 @@
 {# Resources/views/layout.html.twig #}
-{% extends "@Bootstrap/layout.html.twig" %}
+{% extends "@Bootstrap/layout3.html.twig" %}
 
-{% block bootstrapHeadStyles %}
+{% block bootstrapStylesheets %}
     {{ parent() }}
     {% include "@JQueryDataTables/include/styles.html.twig" %}
     <style type="text/css">
@@ -9,13 +9,13 @@
             margin: 70px 0 0;
         }
     </style>
-    {% block jQueryDataTablesHeadStyles %}
+    {% block jQueryDataTablesStylesheets %}
     {% endblock %}
 {% endblock %}
 
-{% block bootstrapHeadTitle %}webeweb/jqeury-detatabales-bundle{% endblock %}
+{% block bootstrapTitle %}webeweb/jqeury-detatabales-bundle{% endblock %}
 
-{% block bootstrapBodyContent %}
+{% block bootstrapContainer %}
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -34,19 +34,19 @@
             {% if (0 < app.session.flashbag.peekAll()|length) %}
                 <div class="row clearfix">
                     <div class="{{ bootstrapGrid({"lg": 12, "recopy": true}) }}">
-                        {% include "@Bootstrap/include/flashbag.html.twig" %}
+                        {% include "@Bootstrap/layout/flashbag.html.twig" %}
                     </div>
                 </div>
             {% endif %}
-            {% block jQueryDataTablesBodyContent %}
+            {% block jQueryDataTablesContent %}
             {% endblock %}
         </div>
     </section>
 {% endblock %}
 
-{% block bootstrapBodyScripts %}
+{% block bootstrapJavaScripts %}
     {{ parent() }}
     {% include "@JQueryDataTables/include/scripts.html.twig" %}
-    {% block jQueryDataTablesBodyScripts %}
+    {% block jQueryDataTablesJavacripts %}
     {% endblock %}
 {% endblock %}

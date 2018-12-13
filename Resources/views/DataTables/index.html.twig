@@ -1,7 +1,7 @@
 {# Resources/views/DataTables/index.html.twig #}
 {% extends "@JQueryDataTables/layout.html.twig" %}
 
-{% block jQueryDataTablesBodyContent %}
+{% block jQueryDataTablesContent %}
     <div class="row clearfix">
         <div class="{{ bootstrapGrid({"lg": 12, "recopy": true}) }}">
             <div class="row clearfix">
@@ -11,7 +11,7 @@
     </div>
 {% endblock %}
 
-{% block jQueryDataTablesBodyScripts %}
+{% block jQueryDataTablesJavascripts %}
     {{ parent() }}
     {{ jQueryDataTables(dtWrapper) }}
 {% endblock %}
