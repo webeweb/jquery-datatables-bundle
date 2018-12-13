@@ -3,6 +3,7 @@ CHANGELOG
 
 ### master
 
+- Add DataTables mananger trait
 - Update TAG_NAME constant
 - Add Symfony 4.2 support
 - Add CHANGELOG
@@ -18,6 +19,10 @@ CHANGELOG
 - Add a DataTables options interface
 - Add a DataTables request interface
 - Add a DataTables mapping interface
+
+### 1.5.6 (2018-12-05)
+
+- Fix invisible columns
 
 ### 1.5.5 (2018-10-08)
 
