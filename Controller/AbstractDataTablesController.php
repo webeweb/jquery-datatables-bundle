@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Controller;
 
 use Doctrine\ORM\EntityNotFoundException;
 use Doctrine\ORM\EntityRepository;
+use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,6 +23,8 @@ use Symfony\Component\Serializer\Serializer;
 use WBW\Bundle\BootstrapBundle\Controller\AbstractController;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Event\DataTablesEvent;
+use WBW\Bundle\JQuery\DataTablesBundle\Event\DataTablesEvents;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesColumnException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesEditorException;
@@ -83,6 +86,25 @@ abstract class AbstractDataTablesController extends AbstractController {
     }
 
     /**
+     * Dispatch an event.
+     *
+     * @param string $eventName The event name.
+     * @param array $entities The entities.
+     * @return Event Returns the event in case of succes, null otherwise.
+     */
+    protected function dispatchDataTablesEvent($eventName, array $entities) {
+
+        // Get and check the event dispatcher.
+        $eventDispatcher = $this->getEventDispatcher();
+        if (null !== $eventDispatcher && false === $eventDispatcher->hasListeners($eventName)) {
+            return null;
+        }
+
+        // Dispatch the event.
+        return $eventDispatcher->dispatch($eventName, new DataTablesEvent($eventName, $entities));
+    }
+
+    /**
      * Export callback.
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
@@ -121,13 +143,20 @@ abstract class AbstractDataTablesController extends AbstractController {
             // Handle each entity.
             while (false !== ($row = $result->next())) {
 
+                // Dispatch an event.
+                $this->dispatchDataTablesEvent(DataTablesEvents::DATATABLES_PRE_EXPORT, [$row[0]]);
+
                 // Export the entity.
                 fputcsv($stream, $dtExporter->exportRow($row[0]), ";");
 
                 // Detach the entity to avoid memory consumption.
                 $em->detach($row[0]);
+
+                // Dispatch an event.
+                $this->dispatchDataTablesEvent(DataTablesEvents::DATATABLES_PRE_EXPORT, [$row[0]]);
             }
         }
+
         // Close the file.
         fclose($stream);
     }
@@ -135,7 +164,7 @@ abstract class AbstractDataTablesController extends AbstractController {
     /**
      * Get a column.
      *
-     * @param DataTableProviderInterface $dtProvider The provider.
+     * @param DataTablesProviderInterface $dtProvider The provider.
      * @param string $data The data.
      * @return DataTablesColumnInterface Returns the column.
      * @throws BadDataTablesColumnException Throws a bad column exception.
