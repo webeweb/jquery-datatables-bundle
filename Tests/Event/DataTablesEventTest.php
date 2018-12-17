@@ -29,9 +29,10 @@ class DataTablesEventTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $obj = new DataTablesEvent("eventName");
+        $obj = new DataTablesEvent("eventName", []);
 
         $this->assertEquals("eventName", $obj->getEventName());
+        $this->assertEquals([], $obj->getEntities());
     }
 
 }
