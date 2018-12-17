@@ -32,11 +32,12 @@ class DataTablesEventsTest extends AbstractTestCase {
         $this->assertEquals("webeweb.jquery_datatables.event.pre_delete", DataTablesEvents::DATATABLES_PRE_DELETE);
         $this->assertEquals("webeweb.jquery_datatables.event.pre_edit", DataTablesEvents::DATATABLES_PRE_EDIT);
         $this->assertEquals("webeweb.jquery_datatables.event.pre_export", DataTablesEvents::DATATABLES_PRE_EXPORT);
+        $this->assertEquals("webeweb.jquery_datatables.event.pre_index", DataTablesEvents::DATATABLES_PRE_INDEX);
         $this->assertEquals("webeweb.jquery_datatables.event.pre_show", DataTablesEvents::DATATABLES_PRE_SHOW);
         $this->assertEquals("webeweb.jquery_datatables.event.post_delete", DataTablesEvents::DATATABLES_POST_DELETE);
         $this->assertEquals("webeweb.jquery_datatables.event.post_edit", DataTablesEvents::DATATABLES_POST_EDIT);
         $this->assertEquals("webeweb.jquery_datatables.event.post_export", DataTablesEvents::DATATABLES_POST_EXPORT);
-        $this->assertEquals("webeweb.jquery_datatables.event.post_show", DataTablesEvents::DATATABLES_POST_SHOW);
+        $this->assertEquals("webeweb.jquery_datatables.event.post_index", DataTablesEvents::DATATABLES_POST_INDEX);
     }
 
 }

@@ -41,6 +41,13 @@ class DataTablesEvents {
     const DATATABLES_PRE_EXPORT = "webeweb.jquery_datatables.event.pre_export";
 
     /**
+     * DataTables "Pre index".
+     *
+     * @var string
+     */
+    const DATATABLES_PRE_INDEX = "webeweb.jquery_datatables.event.pre_index";
+
+    /**
      * DataTables "Pre show".
      *
      * @var string
@@ -73,6 +80,6 @@ class DataTablesEvents {
      *
      * @var string
      */
-    const DATATABLES_POST_SHOW = "webeweb.jquery_datatables.event.post_show";
+    const DATATABLES_POST_INDEX = "webeweb.jquery_datatables.event.post_index";
 
 }
