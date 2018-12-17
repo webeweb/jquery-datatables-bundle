@@ -1,27 +1,28 @@
 {# Resources/views/layout/stylesheets.html.twig #}
-{% set themes = ["bootstrap", "bootstrap4", "datatables", "foundation", "jqueryui", "semanticui"] %}
-{% set path = theme|default("") in themes ? theme : "bootstrap" %}
+{% set _version = constant("WBW\\Bundle\\JQuery\\DataTablesBundle\\JQueryDataTablesBundle::DATATABLES_VERSION")%}
+{% set _themes = ["bootstrap", "bootstrap4", "datatables", "foundation", "jqueryui", "semanticui"] %}
+{% set _theme = theme|default("") in _themes ? theme : "bootstrap" %}
 <!-- DataTables -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-1.10.16/css/dataTables." ~ path ~ ".min.css") }}">
+<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-" ~ _version ~ "/css/dataTables." ~ _theme ~ ".min.css") }}">
 <!-- DataTables AutoFill plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-autofill-2.2.2/css/autoFill." ~ path ~ ".min.css") }}">
+<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-autofill-2.2.2/css/autoFill." ~ _theme ~ ".min.css") }}">
 <!-- DataTables Buttons plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-buttons-1.5.1/css/buttons." ~ path ~ ".min.css") }}">
+<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-buttons-1.5.1/css/buttons." ~ _theme ~ ".min.css") }}">
 <!-- DataTables ColReorder plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-colreorder-1.4.1/css/colReorder." ~ path ~ ".min.css") }}">
+<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-colreorder-1.4.1/css/colReorder." ~ _theme ~ ".min.css") }}">
 <!-- DataTables FixedColumns plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-fixedcolumns-3.2.4/css/fixedColumns." ~ path ~ ".min.css") }}">
+<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-fixedcolumns-3.2.4/css/fixedColumns." ~ _theme ~ ".min.css") }}">
 <!-- DataTables FixedHeader plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-fixedheader-3.1.3/css/fixedHeader." ~ path ~ ".min.css") }}">
+<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-fixedheader-3.1.3/css/fixedHeader." ~ _theme ~ ".min.css") }}">
 <!-- DataTables KeyTable plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-keytable-2.3.2/css/keyTable." ~ path ~ ".min.css") }}">
+<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-keytable-2.3.2/css/keyTable." ~ _theme ~ ".min.css") }}">
 <!-- DataTables Responsive plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-responsive-2.2.1/css/responsive." ~ path ~ ".min.css") }}">
+<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-responsive-2.2.1/css/responsive." ~ _theme ~ ".min.css") }}">
 <!-- DataTables RowGroup plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-rowgroup-1.0.2/css/rowGroup." ~ path ~ ".min.css") }}">
+<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-rowgroup-1.0.2/css/rowGroup." ~ _theme ~ ".min.css") }}">
 <!-- DataTables RowReorder plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-rowreorder-1.2.3/css/rowReorder." ~ path ~ ".min.css") }}">
+<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-rowreorder-1.2.3/css/rowReorder." ~ _theme ~ ".min.css") }}">
 <!-- DataTables Scroller plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-scroller-1.4.4/css/scroller." ~ path ~ ".min.css") }}">
+<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-scroller-1.4.4/css/scroller." ~ _theme ~ ".min.css") }}">
 <!-- DataTables Select plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-select-1.2.5/css/select." ~ path ~ ".min.css") }}">
+<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-select-1.2.5/css/select." ~ _theme ~ ".min.css") }}">

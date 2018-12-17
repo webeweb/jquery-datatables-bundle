@@ -1,12 +1,13 @@
 {# Resources/views/layout/javascripts.html.twig #}
-{% set themes = ["bootstrap", "bootstrap4", "datatables", "foundation", "jqueryui", "semanticui"] %}
-{% set path = theme|default("") in themes ? theme : "bootstrap" %}
+{% set _version = constant("WBW\\Bundle\\JQuery\\DataTablesBundle\\JQueryDataTablesBundle::DATATABLES_VERSION")%}
+{% set _themes = ["bootstrap", "bootstrap4", "datatables", "foundation", "jqueryui", "semanticui"] %}
+{% set _theme = theme|default("") in _themes ? theme : "bootstrap" %}
 <!-- DataTables -->
-<script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-1.10.16/js/jquery.dataTables.min.js") }}"></script>
-<script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-1.10.16/js/dataTables." ~ path ~ ".min.js") }}"></script>
+<script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-" ~ _version ~ "/js/jquery.dataTables.min.js") }}"></script>
+<script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-" ~ _version ~ "/js/dataTables." ~ _theme ~ ".min.js") }}"></script>
 <!-- DataTables AutoFill plugin -->
 <script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-autofill-2.2.2/js/dataTables.autoFill.min.js") }}"></script>
-<script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-autofill-2.2.2/js/autoFill." ~ path ~ ".min.js") }}"></script>
+<script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-autofill-2.2.2/js/autoFill." ~ _theme ~ ".min.js") }}"></script>
 <!-- DataTables Buttons plugin -->
 <script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-jszip-2.5.0/jszip.min.js") }}"></script>
 <script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-pdfmake-0.1.32/pdfmake.min.js") }}"></script>
@@ -16,7 +17,7 @@
 <script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-buttons-1.5.1/js/buttons.flash.min.js") }}"></script>
 <script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-buttons-1.5.1/js/buttons.html5.min.js") }}"></script>
 <script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-buttons-1.5.1/js/buttons.print.min.js") }}"></script>
-<script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-buttons-1.5.1/js/buttons." ~ path ~ ".min.js") }}"></script>
+<script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-buttons-1.5.1/js/buttons." ~ _theme ~ ".min.js") }}"></script>
 <!-- DataTables ColReorder plugin -->
 <script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-colreorder-1.4.1/js/dataTables.colReorder.min.js") }}"></script>
 <!-- DataTables FixedColumns plugin -->
@@ -27,7 +28,7 @@
 <script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-keytable-2.3.2/js/dataTables.keyTable.min.js") }}"></script>
 <!-- DataTables Responsive plugin -->
 <script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-responsive-2.2.1/js/dataTables.responsive.min.js") }}"></script>
-<script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-responsive-2.2.1/js/responsive." ~ path ~ ".min.js") }}"></script>
+<script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-responsive-2.2.1/js/responsive." ~ _theme ~ ".min.js") }}"></script>
 <!-- DataTables RowGroup plugin -->
 <script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-rowgroup-1.0.2/js/dataTables.rowGroup.min.js") }}"></script>
 <!-- DataTables RowReorder plugin -->
