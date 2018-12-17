@@ -100,6 +100,9 @@ abstract class AbstractDataTablesController extends AbstractController {
             return null;
         }
 
+        // Log a debug trace.
+        $this->getLogger()->debug(sprintf("DataTables controller dispatch a DataTables event with name \"%s\"", $eventName));
+
         // Dispatch the event.
         return $eventDispatcher->dispatch($eventName, new DataTablesEvent($eventName, $entities));
     }
