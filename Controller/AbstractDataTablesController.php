@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Controller;
 
 use Doctrine\ORM\EntityNotFoundException;
 use Doctrine\ORM\EntityRepository;
+use Exception;
 use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -384,6 +385,27 @@ abstract class AbstractDataTablesController extends AbstractController {
      */
     protected function getNotification($id) {
         return $this->getTranslator()->trans($id, [], "JQueryDataTablesBundle");
+    }
+
+    /**
+     * Handle a DataTables exception.
+     *
+     * @param Exception $ex The exception.
+     * @param string $notificationBaseId The notification base id.
+     * @return ActionResponse Returns the action response.
+     */
+    protected function handleDataTablesException(Exception $ex, $notificationBaseId) {
+
+        // Log a debug trace.
+        $this->getLogger()->debug($ex->getMessage());
+
+        // Check the exception.
+        if (true === ($ex instanceof EntityNotFoundException)) {
+            return $this->prepareActionResponse(404, $notificationBaseId . ".danger");
+        }
+
+        // Return a default action response.
+        return $this->prepareActionResponse(500, $notificationBaseId . ".warning");
     }
 
     /**

@@ -68,20 +68,10 @@ class DataTablesController extends AbstractDataTablesController {
 
             // Set the output.
             $output = $this->prepareActionResponse(200, "DataTablesController.deleteAction.success");
-        } catch (EntityNotFoundException $ex) {
-
-            // Log a debug trace.
-            $this->getLogger()->debug($ex->getMessage());
-
-            // Set the output.
-            $output = $this->prepareActionResponse(404, "DataTablesController.deleteAction.danger");
         } catch (Exception $ex) {
 
-            // Log a debug trace.
-            $this->getLogger()->debug(sprintf("%s", $ex->getMessage()));
-
             // Set the output.
-            $output = $this->prepareActionResponse(500, "DataTablesController.deleteAction.warning");
+            $output = $this->handleDataTablesException($ex, "DataTablesController.deleteAction");
         }
 
         // Return the response.
@@ -137,20 +127,10 @@ class DataTablesController extends AbstractDataTablesController {
 
             // Set the output.
             $output = $this->prepareActionResponse(200, "DataTablesController.editAction.success");
-        } catch (EntityNotFoundException $ex) {
-
-            // Log a debug trace.
-            $this->getLogger()->debug($ex->getMessage());
-
-            // Set the output.
-            $output = $this->prepareActionResponse(404, "DataTablesController.editAction.danger");
         } catch (Exception $ex) {
 
-            // Log a debug trace.
-            $this->getLogger()->debug(sprintf("%s", $ex->getMessage()));
-
             // Set the output.
-            $output = $this->prepareActionResponse(500, "DataTablesController.editAction.warning");
+            $output = $this->handleDataTablesException($ex, "DataTablesController.editAction");
         }
 
         // Return the response.
