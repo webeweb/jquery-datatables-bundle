@@ -1,6 +1,6 @@
 <?php
 
-/**
+/*
  * This file is part of the jquery-datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Manager;
 
+use WBW\Bundle\CoreBundle\Manager\AbstractManager;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
@@ -21,7 +22,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Manager
  */
-class DataTablesManager {
+class DataTablesManager extends AbstractManager {
 
     /**
      * Service name.
@@ -31,17 +32,37 @@ class DataTablesManager {
     const SERVICE_NAME = "webeweb.jquerydatatables.manager";
 
     /**
-     * Providers.
+     * Index.
      *
-     * @var DataTablesProviderInterface[]
+     * @var array
      */
-    private $providers;
+    private $index;
 
     /**
      * Constructor.
      */
     public function __construct() {
-        $this->setProviders([]);
+        parent::__construct();
+        $this->setIndex([]);
+    }
+
+    /**
+     * Determines if a name exists.
+     *
+     * @param string $name The name.
+     * @return bool Returns true in case of success, false otherwise.
+     */
+    protected function exists($name) {
+        return array_key_exists($name, $this->index);
+    }
+
+    /**
+     * Get the index.
+     *
+     * @return array Returns the index.
+     */
+    public function getIndex() {
+        return $this->index;
     }
 
     /**
@@ -52,42 +73,45 @@ class DataTablesManager {
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
     public function getProvider($name) {
-        if (false === array_key_exists($name, $this->providers)) {
+        if (false === $this->exists($name)) {
             throw new UnregisteredDataTablesProviderException($name);
         }
-        return $this->providers[$name];
+        return $this->getProviders()[$this->getIndex()[$name]];
     }
 
     /**
-     * Get the providers.
+     * Index a provider.
      *
-     * @return DataTablesProviderInterface[] Returns the providers.
+     * @param DataTablesProviderInterface $provider The provider.
+     * @return void
      */
-    public function getProviders() {
-        return $this->providers;
+    protected function indexProvider(DataTablesProviderInterface $provider) {
+        $this->index[$provider->getName()] = $this->size();
     }
 
     /**
      * Register a provider.
      *
      * @param DataTablesProviderInterface $provider The provider.
+     * @return ManagerInterface Returns this manager.
      * @throws AlreadyRegisteredDataTablesProviderException Throws an already registered provider exception.
      */
     public function registerProvider(DataTablesProviderInterface $provider) {
-        if (true === array_key_exists($provider->getName(), $this->providers)) {
+        if (true === $this->exists($provider->getName())) {
             throw new AlreadyRegisteredDataTablesProviderException($provider->getName());
         }
-        $this->providers[$provider->getName()] = $provider;
+        $this->indexProvider($provider);
+        return $this->addProvider($provider);
     }
 
     /**
-     * Set the providers.
+     * Set the index.
      *
-     * @param DataTablesProviderInterface[] $providers The providers.
-     * @return DataTablesManager Returns this manager.
+     * @param array $index The index.
+     * @return ManagerInterface Returns this manager.
      */
-    private function setProviders(array $providers) {
-        $this->providers = $providers;
+    protected function setIndex(array $index) {
+        $this->index = $index;
         return $this;
     }
 
