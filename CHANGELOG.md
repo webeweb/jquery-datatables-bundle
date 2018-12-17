@@ -3,6 +3,7 @@ CHANGELOG
 
 ### master
 
+- Add DataTabkes events
 - Add DataTables Twig extension trait
 - Add DataTables mananger trait
 - Update TAG_NAME constant
