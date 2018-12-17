@@ -289,6 +289,16 @@ abstract class AbstractDataTablesController extends AbstractController {
     }
 
     /**
+     * Get a notification.
+     *
+     * @param string $notificationId The notification id.
+     * @return string Returns the notification.
+     */
+    protected function getDataTablesNotification($notificationId) {
+        return $this->getTranslator()->trans($notificationId, [], "JQueryDataTablesBundle");
+    }
+
+    /**
      * Get the provider.
      *
      * @param string $name The provider name.
@@ -378,17 +388,7 @@ abstract class AbstractDataTablesController extends AbstractController {
     }
 
     /**
-     * Get the notification.
-     *
-     * @param string $id The notification id.
-     * @return string Returns the notification.
-     */
-    protected function getNotification($id) {
-        return $this->getTranslator()->trans($id, [], "JQueryDataTablesBundle");
-    }
-
-    /**
-     * Handle a DataTables exception.
+     * Handle an exception.
      *
      * @param Exception $ex The exception.
      * @param string $notificationBaseId The notification base id.
@@ -412,15 +412,15 @@ abstract class AbstractDataTablesController extends AbstractController {
      * Prepare an action response.
      *
      * @param int $status The status.
-     * @param string $notify The notify.
+     * @param string $notificationId The notification id.
      * @return ActionResponse Returns the action response.
      */
-    protected function prepareActionResponse($status, $notify) {
+    protected function prepareActionResponse($status, $notificationId) {
 
         // Initialize the action response.
         $response = new ActionResponse();
         $response->setStatus($status);
-        $response->setNotify($this->getNotification($notify));
+        $response->setNotify($this->getDataTablesNotification($notificationId));
 
         // Return the action response.
         return $response;
