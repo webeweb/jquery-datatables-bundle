@@ -1,6 +1,6 @@
 <?php
 
-/**
+/*
  * This file is part of the jquery-datatables package.
  *
  * (c) 2018 WEBEWEB
