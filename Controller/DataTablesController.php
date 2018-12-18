@@ -201,17 +201,15 @@ class DataTablesController extends AbstractDataTablesController {
         // Get the entities repository.
         $repository = $this->getDataTablesRepository($dtProvider);
 
-        //
-        $filtered = $repository->dataTablesCountFiltered($dtWrapper);
-        $total    = $repository->dataTablesCountTotal($dtWrapper);
+        // Set the response.
+        $dtWrapper->getResponse()->setRecordsFiltered($repository->dataTablesCountFiltered($dtWrapper));
+        $dtWrapper->getResponse()->setRecordsTotal($repository->dataTablesCountTotal($dtWrapper));
+
+        // Find all entities.
         $entities = $repository->dataTablesFindAll($dtWrapper);
 
         // Dispatch an event.
         $this->dispatchDataTablesEvent(DataTablesEvents::DATATABLES_PRE_INDEX, $entities);
-
-        // Set the response.
-        $dtWrapper->getResponse()->setRecordsFiltered($filtered);
-        $dtWrapper->getResponse()->setRecordsTotal($total);
 
         // Handle each entity.
         foreach ($entities as $entity) {
