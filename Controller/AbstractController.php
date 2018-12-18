@@ -21,7 +21,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
-use WBW\Bundle\BootstrapBundle\Controller\AbstractController;
+use WBW\Bundle\BootstrapBundle\Controller\AbstractController as BaseController;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Event\DataTablesEvent;
@@ -41,13 +41,13 @@ use WBW\Library\Core\Database\PaginateHelper;
 use WBW\Library\Core\Model\Response\ActionResponse;
 
 /**
- * Abstract jQuery DataTables controller.
+ * Abstract controller.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Controller
  * @abstract
  */
-abstract class AbstractDataTablesController extends AbstractController {
+abstract class AbstractController extends BaseController {
 
     /**
      * Build a response.

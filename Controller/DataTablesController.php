@@ -34,7 +34,7 @@ use WBW\Library\Core\Network\HTTP\HTTPInterface;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Controller
  */
-class DataTablesController extends AbstractDataTablesController {
+class DataTablesController extends AbstractController {
 
     /**
      * Delete an existing entity.
