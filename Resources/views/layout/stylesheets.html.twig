@@ -1,7 +1,7 @@
 {# Resources/views/layout/stylesheets.html.twig #}
 {% set _version = constant("WBW\\Bundle\\JQuery\\DataTablesBundle\\JQueryDataTablesBundle::DATATABLES_VERSION")%}
 {% set _themes = ["bootstrap", "bootstrap4", "datatables", "foundation", "jqueryui", "semanticui"] %}
-{% set _theme = theme|default("") in _themes ? theme : "bootstrap" %}
+{% set _theme = theme|default("") in _themes ? dtTheme : "bootstrap" %}
 <!-- DataTables -->
 <link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-" ~ _version ~ "/css/dataTables." ~ _theme ~ ".min.css") }}">
 <!-- DataTables AutoFill plugin -->
