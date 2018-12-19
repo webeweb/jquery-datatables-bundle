@@ -22,6 +22,10 @@ CHANGELOG
 - Add a DataTables request interface
 - Add a DataTables mapping interface
 
+### 1.5.7 (2018-12-19)
+
+- Add Windows client support for CSV export
+
 ### 1.5.6 (2018-12-05)
 
 - Fix invisible columns
