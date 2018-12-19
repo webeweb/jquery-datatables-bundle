@@ -116,7 +116,7 @@ abstract class AbstractController extends BaseController {
      * @param DataTablesCSVExporterInterface $dtExporter The exporter.
      * @return void
      */
-    protected function exportCallback(DataTablesProviderInterface $dtProvider, DataTablesRepositoryInterface $repository, DataTablesCSVExporterInterface $dtExporter) {
+    protected function exportDataTablesCallback(DataTablesProviderInterface $dtProvider, DataTablesRepositoryInterface $repository, DataTablesCSVExporterInterface $dtExporter) {
 
         // Get the entities manager.
         $em = $this->getDoctrine()->getManager();

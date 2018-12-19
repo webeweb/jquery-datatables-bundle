@@ -165,7 +165,7 @@ class DataTablesController extends AbstractController {
         $response->headers->set("Content-Disposition", "attachment; filename=\"" . $filename . "\"");
         $response->headers->set("Content-Type", "text/csv; charset=utf-8");
         $response->setCallback(function() use($dtProvider, $repository, $dtExporter) {
-            $this->exportCallback($dtProvider, $repository, $dtExporter);
+            $this->exportDataTablesCallback($dtProvider, $repository, $dtExporter);
         });
         $response->setStatusCode(200);
 
