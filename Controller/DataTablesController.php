@@ -12,8 +12,8 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Controller;
 
 use DateTime;
-use Exception;
 use Doctrine\ORM\EntityNotFoundException;
+use Exception;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,6 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesCSVExporterExcepti
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesEditorException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
+use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesExportHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Library\Core\Network\HTTP\HTTPInterface;
 
@@ -146,13 +147,17 @@ class DataTablesController extends AbstractDataTablesController {
     /**
      * Export all entities.
      *
+     * @param Request $request The request.
      * @param string $name The provider name.
      * @return Response Returns the response.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      * @throws BadDataTablesCSVExporterException Throws a bad CSV exporter exception.
      * @throws BadDataTablesRepositoryException Throws a bad repository exception.
      */
-    public function exportAction($name) {
+    public function exportAction(Request $request, $name) {
+
+        // Determines the client OS.
+        $windows = DataTablesExportHelper::isWindows($request);
 
         // Get the provider.
         $dtProvider = $this->getDataTablesProvider($name);
@@ -166,12 +171,15 @@ class DataTablesController extends AbstractDataTablesController {
         // Initialize the filename.
         $filename = (new DateTime())->format("Y.m.d-H.i.s") . "-" . $dtProvider->getName() . ".csv";
 
+        // Initialize the charset.
+        $charset = true === $windows ? "iso-8859-1" : "utf-8";
+
         // Initialize the response.
         $response = new StreamedResponse();
         $response->headers->set("Content-Disposition", "attachment; filename=\"" . $filename . "\"");
-        $response->headers->set("Content-Type", "text/csv; charset=utf-8");
-        $response->setCallback(function() use($dtProvider, $repository, $dtExporter) {
-            $this->exportCallback($dtProvider, $repository, $dtExporter);
+        $response->headers->set("Content-Type", "text/csv; charset=" . $charset);
+        $response->setCallback(function() use($dtProvider, $repository, $dtExporter, $windows) {
+            $this->exportCallback($dtProvider, $repository, $dtExporter, $windows);
         });
         $response->setStatusCode(200);
 

@@ -27,6 +27,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesCSVExporterExcepti
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesEditorException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
+use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesExportHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
@@ -87,9 +88,10 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
      * @param DataTablesProviderInterface $dtProvider The provider.
      * @param DataTablesRepositoryInterface $repository The repository.
      * @param DataTablesCSVExporterInterface $dtExporter The exporter.
+     * @param bool $windows Windows ?
      * @return void
      */
-    protected function exportCallback(DataTablesProviderInterface $dtProvider, DataTablesRepositoryInterface $repository, DataTablesCSVExporterInterface $dtExporter) {
+    protected function exportCallback(DataTablesProviderInterface $dtProvider, DataTablesRepositoryInterface $repository, DataTablesCSVExporterInterface $dtExporter, $windows) {
 
         // Get the entities manager.
         $em = $this->getDoctrine()->getManager();
@@ -98,7 +100,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
         $stream = fopen("php://output", "w+");
 
         // Export the columns.
-        fputcsv($stream, $dtExporter->exportColumns(), ";");
+        fputcsv($stream, DataTablesExportHelper::convert($dtExporter->exportColumns(), $windows), ";");
 
         // Paginates.
         $total = $repository->dataTablesCountExported($dtProvider);
@@ -121,7 +123,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
             while (false !== ($row = $result->next())) {
 
                 // Export the entity.
-                fputcsv($stream, $dtExporter->exportRow($row[0]), ";");
+                fputcsv($stream, DataTablesExportHelper::convert($dtExporter->exportRow($row[0]), $windows), ";");
 
                 // Detach the entity to avoid memory consumption.
                 $em->detach($row[0]);
@@ -134,7 +136,7 @@ abstract class AbstractDataTablesController extends AbstractBootstrapController 
     /**
      * Get a column.
      *
-     * @param DataTableProviderInterface $dtProvider The provider.
+     * @param DataTablesProviderInterface $dtProvider The provider.
      * @param string $data The data.
      * @return DataTablesColumn Returns the column.
      * @throws BadDataTablesColumnException Throws a bad column exception.
