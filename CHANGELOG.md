@@ -24,7 +24,7 @@ CHANGELOG
 
 ### 1.5.7 (2018-12-19)
 
-- Add Windows client support for CSV export
+- Fix Windows client support for CSV export
 
 ### 1.5.6 (2018-12-05)
 
