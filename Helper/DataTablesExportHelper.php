@@ -42,7 +42,7 @@ class DataTablesExportHelper {
      * Determines if the operating system is windows.
      *
      * @param Request $request The request.
-     * @return bool Returns true in case of success.
+     * @return bool Returns true in case of success, false otherwise.
      */
     public static function isWindows(Request $request) {
 
@@ -57,12 +57,9 @@ class DataTablesExportHelper {
 
         // Get the operating system.
         $os = $dd->getOs("name");
-        if (DeviceDetector::UNKNOWN === $os || 0 === preg_match("/Windows/", $os)) {
-            return false;
-        }
 
         //
-        return true;
+        return 1 === preg_match("/Windows/", $os);
     }
 
 }
