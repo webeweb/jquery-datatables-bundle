@@ -1,11 +1,11 @@
 CHANGELOG
 =========
 
-### master
+### 2.0.0 (2018-12-xx)
 
 - Add DataTabkes events
 - Add DataTables Twig extension trait
-- Add DataTables mananger trait
+- Add DataTables manager trait
 - Update TAG_NAME constant
 - Add Symfony 4.2 support
 - Add CHANGELOG
