@@ -3,6 +3,7 @@ CHANGELOG
 
 ### 2.0.0 (2018-12-xx)
 
+- Update dependencies (Bootstrap bundle 2.0.0)
 - Add DataTabkes events
 - Add DataTables Twig extension trait
 - Add DataTables manager trait
