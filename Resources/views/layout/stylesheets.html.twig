@@ -1,28 +1,12 @@
 {# Resources/views/layout/stylesheets.html.twig #}
-{% set _version = constant("WBW\\Bundle\\JQuery\\DataTablesBundle\\JQueryDataTablesBundle::DATATABLES_VERSION")%}
-{% set _themes = ["bootstrap", "bootstrap4", "datatables", "foundation", "jqueryui", "semanticui"] %}
-{% set _theme = dtTheme|default("") in _themes ? dtTheme : "bootstrap" %}
-<!-- DataTables -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-" ~ _version ~ "/css/dataTables." ~ _theme ~ ".min.css") }}">
-<!-- DataTables AutoFill plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-autofill-2.2.2/css/autoFill." ~ _theme ~ ".min.css") }}">
-<!-- DataTables Buttons plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-buttons-1.5.1/css/buttons." ~ _theme ~ ".min.css") }}">
-<!-- DataTables ColReorder plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-colreorder-1.4.1/css/colReorder." ~ _theme ~ ".min.css") }}">
-<!-- DataTables FixedColumns plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-fixedcolumns-3.2.4/css/fixedColumns." ~ _theme ~ ".min.css") }}">
-<!-- DataTables FixedHeader plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-fixedheader-3.1.3/css/fixedHeader." ~ _theme ~ ".min.css") }}">
-<!-- DataTables KeyTable plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-keytable-2.3.2/css/keyTable." ~ _theme ~ ".min.css") }}">
-<!-- DataTables Responsive plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-responsive-2.2.1/css/responsive." ~ _theme ~ ".min.css") }}">
-<!-- DataTables RowGroup plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-rowgroup-1.0.2/css/rowGroup." ~ _theme ~ ".min.css") }}">
-<!-- DataTables RowReorder plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-rowreorder-1.2.3/css/rowReorder." ~ _theme ~ ".min.css") }}">
-<!-- DataTables Scroller plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-scroller-1.4.4/css/scroller." ~ _theme ~ ".min.css") }}">
-<!-- DataTables Select plugin -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-select-1.2.5/css/select." ~ _theme ~ ".min.css") }}">
+{% include "@JQueryDataTables/layout/javascript/datatables.html.twig" with {"dtTheme": dtTheme|default("") } %}
+{% include "@JQueryDataTables/layout/javascript/datatables-autofill.html.twig" with {"dtTheme": dtTheme|default("") } %}
+{% include "@JQueryDataTables/layout/javascript/datatables-buttons.html.twig" with {"dtTheme": dtTheme|default("") } %}
+{% include "@JQueryDataTables/layout/javascript/datatables-colreorder.html.twig" with {"dtTheme": dtTheme|default("") } %}
+{% include "@JQueryDataTables/layout/javascript/datatables-fixedcolumns.html.twig" with {"dtTheme": dtTheme|default("") } %}
+{% include "@JQueryDataTables/layout/javascript/datatables-fixedheaders.html.twig" with {"dtTheme": dtTheme|default("") } %}
+{% include "@JQueryDataTables/layout/javascript/datatables-keytable.html.twig" with {"dtTheme": dtTheme|default("") } %}
+{% include "@JQueryDataTables/layout/javascript/datatables-responsive.html.twig" with {"dtTheme": dtTheme|default("") } %}
+{% include "@JQueryDataTables/layout/javascript/datatables-rowgroup.html.twig" with {"dtTheme": dtTheme|default("") } %}
+{% include "@JQueryDataTables/layout/javascript/datatables-rowreorder.html.twig" with {"dtTheme": dtTheme|default("") } %}
+{% include "@JQueryDataTables/layout/javascript/datatables-select.html.twig" with {"dtTheme": dtTheme|default("") } %}
