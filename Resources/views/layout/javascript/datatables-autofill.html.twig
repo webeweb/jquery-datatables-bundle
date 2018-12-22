@@ -1,0 +1,6 @@
+{# Resources/views/layout/javascript/datatables-autofill.html.twig #}
+{% set _themes = ["bootstrap", "bootstrap4", "datatables", "foundation", "jqueryui", "semanticui"] %}
+{% set _theme = dtTheme|default("") in _themes ? dtTheme : "bootstrap" %}
+<!-- DataTables AutoFill -->
+<script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-autofill-2.2.2/js/dataTables.autoFill.min.js") }}"></script>
+<script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-autofill-2.2.2/js/autoFill." ~ _theme ~ ".min.js") }}"></script>
