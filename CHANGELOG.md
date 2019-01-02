@@ -3,26 +3,26 @@ CHANGELOG
 
 ### 2.0.0 (2018-12-xx)
 
-- Split layout templates
-- Update dependencies (Bootstrap bundle 2.0.0)
-- Add DataTabkes events
-- Add DataTables Twig extension trait
-- Add DataTables manager trait
-- Update TAG_NAME constant
-- Add Symfony 4.2 support
 - Add CHANGELOG
-- Remove keyword "final" into unit tests
+- Add DataTables enumerator
+- Add DataTables events
+- Add DataTables factory
+- Add DataTables manager trait
+- Add DataTables mapping interface
+- Add DataTables options interface
+- Add DataTables request interface
+- Add DataTables Twig extension trait
+- Add DataTables wrapper interface
+- Add DataTables wrapper trait
+- Add Symfony 4.2 support
 - Remove getName() method into DataTables wrapper
-- Use "interface" for parameter types
+- Remove keyword "final" into unit tests
+- Split layout templates
 - Update comments
-- Add a DataTables enumerator
-- Add a DataTables wrapper trait
-- Add a DataTables wrapper interface
-- Add a DataTables factory
+- Update dependencies (Bootstrap bundle 2.0.0)
+- Update TAG_NAME constant
 - Update PHPDoc
-- Add a DataTables options interface
-- Add a DataTables request interface
-- Add a DataTables mapping interface
+- Use "interface" for parameter types
 
 ### 1.5.7 (2018-12-19)
 
@@ -38,8 +38,8 @@ CHANGELOG
 
 ### 1.5.4 (2018-10-04)
 
-- Update PHPDoc
 - Improve functional tests
+- Update PHPDoc
 
 ### 1.5.3 (2018-10-01)
 
@@ -51,16 +51,16 @@ CHANGELOG
 
 ### 1.5.1 (2018-09-28)
 
-- Improve unit tests
 - Add compatibility with Symfony 4.x
+- Improve unit tests
 - Update dependencies (core-library 5.0.0)
 - Update services configuration
 
 ### 1.5.0 (2018-09-25)
 
-- Inject DataTables provider into DataTables wrapper
 - Clean up code
 - Improve unit tests
+- Inject DataTables provider into DataTables wrapper
 - Fix inheritance support by calling static methods with static:: in place of self::
 
 ### 1.4.1 (2018-09-12)
@@ -73,43 +73,43 @@ CHANGELOG
 
 ### 1.4.0 (2018-09-10)
 
-- Update PHPDoc
-- Improve unit tests
-- Update translations
 - Add column edition support
+- Improve unit tests
+- Update PHPDoc
+- Update translations
 
 ### 1.3.0 (2018-09-06)
 
-- Add language option support
 - Add constants
+- Add language option support
 
 ### 1.2.1 (2018-08-30)
 
-- Update dependencies (core-library 4.2.0)
 - Refactoring controller
+- Update dependencies (core-library 4.2.0)
 
 ### 1.2.0 (2018-08-28)
 
-- Rename "get" route into "show" route (break compatibility)
 - Improve coding style
+- Rename "get" route into "show" route (break compatibility)
 
 ### 1.1.1 (2018-08-25)
 
-- Update PHPDoc
 - Add getCSVExporter()
+- Update PHPDoc
 
 ### 1.1.0 (2018-08-24)
 
-- Improve unit tests
-- Add a DataTables options
+- Add DataTables options
 - Add constants
-- Add a DataTables mapping helper
+- Add DataTables mapping helper
+- Improve unit tests
 - Update PHPDoc
 
 ### 1.0.3 (2018-08-22)
 
-- Update dependencies (core-library 4.0.0)
 - Improve unit tests
+- Update dependencies (core-library 4.0.0)
 
 ### 1.0.2 (2018-08-17)
 
