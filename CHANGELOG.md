@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-### 2.0.0 (2018-12-xx)
+### 2.0.0 (2019-01-xx)
 
 - Add CHANGELOG
 - Add DataTables enumerator
