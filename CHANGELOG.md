@@ -15,6 +15,8 @@ CHANGELOG
 - Add DataTables wrapper interface
 - Add DataTables wrapper trait
 - Add Symfony 4.2 support
+- Add UserInterface injection into DataTables wrapper
+- Improve unit tests
 - Remove getName() method into DataTables wrapper
 - Remove keyword "final" into unit tests
 - Split layout templates
