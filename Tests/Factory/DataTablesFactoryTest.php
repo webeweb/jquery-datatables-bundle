@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Factory;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\User\UserInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrderInterface;
@@ -74,7 +75,10 @@ class DataTablesFactoryTest extends AbstractTestCase {
      */
     public function testNewWrapper() {
 
-        $obj = TestDataTablesFactory::newWrapper("url", $this->dtProvider);
+        // Set an User mock.
+        $user = $this->getMockBuilder(UserInterface::class)->getMock();
+
+        $obj = TestDataTablesFactory::newWrapper("url", $this->dtProvider, $user);
 
         $this->assertInstanceOf(DataTablesWrapperInterface::class, $obj);
 
@@ -89,6 +93,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
         $this->assertNull($obj->getResponse());
         $this->assertTrue($obj->getServerSide());
         $this->assertEquals("url", $obj->getUrl());
+        $this->assertSame($user, $obj->getUser());
     }
 
     /**
@@ -121,27 +126,6 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return
      */
-    public function testParseColumnWithNoData() {
-
-        // Get a wrapper.
-        $wrapper = TestFixtures::getWrapper();
-
-        // Get the POST data.
-        $postData = TestFixtures::getPOSTData();
-
-        // Set the POST data.
-        unset($postData["columns"][0]["data"]);
-
-        $obj = TestDataTablesFactory::parseColumn($postData["columns"][0], $wrapper);
-
-        $this->assertNull($obj);
-    }
-
-    /**
-     * Tests the parseColumn() method.
-     *
-     * @return
-     */
     public function testParseColumnWithBadData() {
 
         // Get a wrapper.
@@ -163,7 +147,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return
      */
-    public function testParseColumnWithNoName() {
+    public function testParseColumnWithBadName() {
 
         // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
@@ -172,7 +156,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
         $postData = TestFixtures::getPOSTData();
 
         // Set the POST data.
-        unset($postData["columns"][0]["name"]);
+        $postData["columns"][0]["name"] = "exception";
 
         $obj = TestDataTablesFactory::parseColumn($postData["columns"][0], $wrapper);
 
@@ -184,7 +168,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return
      */
-    public function testParseColumnWithBadName() {
+    public function testParseColumnWithNoData() {
 
         // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
@@ -193,7 +177,28 @@ class DataTablesFactoryTest extends AbstractTestCase {
         $postData = TestFixtures::getPOSTData();
 
         // Set the POST data.
-        $postData["columns"][0]["name"] = "exception";
+        unset($postData["columns"][0]["data"]);
+
+        $obj = TestDataTablesFactory::parseColumn($postData["columns"][0], $wrapper);
+
+        $this->assertNull($obj);
+    }
+
+    /**
+     * Tests the parseColumn() method.
+     *
+     * @return
+     */
+    public function testParseColumnWithNoName() {
+
+        // Get a wrapper.
+        $wrapper = TestFixtures::getWrapper();
+
+        // Get the POST data.
+        $postData = TestFixtures::getPOSTData();
+
+        // Set the POST data.
+        unset($postData["columns"][0]["name"]);
 
         $obj = TestDataTablesFactory::parseColumn($postData["columns"][0], $wrapper);
 
@@ -292,6 +297,25 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
+    public function testParseOrderWithInvalidDir() {
+
+        // Get the POST data.
+        $postData = TestFixtures::getPOSTData();
+
+        // Set the POST data.
+        $postData["order"][0]["dir"] = "exception";
+
+        $obj = TestDataTablesFactory::parseOrder($postData["order"][0]);
+
+        $this->assertEquals(0, $obj->getColumn());
+        $this->assertEquals("ASC", $obj->getDir());
+    }
+
+    /**
+     * Tests the parseOrder() method.
+     *
+     * @return void
+     */
     public function testParseOrderWithNoColumn() {
 
         // Get the POST data.
@@ -323,25 +347,6 @@ class DataTablesFactoryTest extends AbstractTestCase {
 
         $this->assertNull($obj->getColumn());
         $this->assertNull($obj->getDir());
-    }
-
-    /**
-     * Tests the parseOrder() method.
-     *
-     * @return void
-     */
-    public function testParseOrderWithInvalidDir() {
-
-        // Get the POST data.
-        $postData = TestFixtures::getPOSTData();
-
-        // Set the POST data.
-        $postData["order"][0]["dir"] = "exception";
-
-        $obj = TestDataTablesFactory::parseOrder($postData["order"][0]);
-
-        $this->assertEquals(0, $obj->getColumn());
-        $this->assertEquals("ASC", $obj->getDir());
     }
 
     /**

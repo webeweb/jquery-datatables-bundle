@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Factory;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\User\UserInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesEnumerator;
@@ -157,15 +158,17 @@ class DataTablesFactory {
      *
      * @param string $url The URL.
      * @param DataTablesProviderInterface $provider The provider.
+     * @param UserInterface $user The user.
      * @return DataTablesWrapperInterface Returns a wrapper.
      */
-    public static function newWrapper($url, DataTablesProviderInterface $provider) {
+    public static function newWrapper($url, DataTablesProviderInterface $provider, UserInterface $user = null) {
 
         // Initialize a wrapper.
         $dtWrapper = new DataTablesWrapper();
         $dtWrapper->getMapping()->setPrefix($provider->getPrefix());
         $dtWrapper->setMethod($provider->getMethod());
         $dtWrapper->setProvider($provider);
+        $dtWrapper->setUser($user);
         $dtWrapper->setUrl($url);
 
         // Return the wrapper.

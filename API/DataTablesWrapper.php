@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
+use WBW\Bundle\CoreBundle\Model\UserTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Library\Core\Network\HTTP\HTTPInterface;
 
@@ -21,6 +22,10 @@ use WBW\Library\Core\Network\HTTP\HTTPInterface;
  * @package WBW\Bundle\JQuery\DataTablesBundle\API
  */
 class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
+
+    use UserTrait {
+        setUser as public;
+    }
 
     /**
      * Columns.
@@ -235,17 +240,6 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
     }
 
     /**
-     * Set the method.
-     *
-     * @param string $method The method.
-     * @return DataTablesWrapperInterface Returns this wrapper.
-     */
-    public function setMethod($method) {
-        $this->method = (true === in_array($method, [self::HTTP_METHOD_GET, self::HTTP_METHOD_POST]) ? $method : self::HTTP_METHOD_POST);
-        return $this;
-    }
-
-    /**
      * Set the mapping.
      *
      * @param DataTablesMappingInterface $mapping The mapping
@@ -253,6 +247,17 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
      */
     public function setMapping(DataTablesMappingInterface $mapping) {
         $this->mapping = $mapping;
+        return $this;
+    }
+
+    /**
+     * Set the method.
+     *
+     * @param string $method The method.
+     * @return DataTablesWrapperInterface Returns this wrapper.
+     */
+    public function setMethod($method) {
+        $this->method = (true === in_array($method, [self::HTTP_METHOD_GET, self::HTTP_METHOD_POST]) ? $method : self::HTTP_METHOD_POST);
         return $this;
     }
 

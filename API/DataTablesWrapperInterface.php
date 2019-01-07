@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
+use Symfony\Component\Security\Core\User\UserInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 
 /**
@@ -113,6 +114,13 @@ interface DataTablesWrapperInterface {
      * @return string Returns the URL.
      */
     public function getUrl();
+
+    /**
+     * Get the user.
+     *
+     * @return UserInterface Returns the user.
+     */
+    public function getUser();
 
     /**
      * Set the request.

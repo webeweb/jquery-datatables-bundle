@@ -368,7 +368,7 @@ abstract class AbstractController extends BaseController {
         $url = $this->getRouter()->generate("jquery_datatables_index", ["name" => $dtProvider->getName()]);
 
         // Initialize the wrapper.
-        $dtWrapper = DataTablesFactory::newWrapper($url, $dtProvider);
+        $dtWrapper = DataTablesFactory::newWrapper($url, $dtProvider, $this->getKernelEventListener()->getUser());
 
         // Handle each column.
         foreach ($dtProvider->getColumns() as $dtColumn) {
