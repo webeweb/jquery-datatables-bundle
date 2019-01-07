@@ -19,6 +19,10 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\API;
  */
 class DataTablesResponse implements DataTablesResponseInterface {
 
+    use DataTablesWrapperTrait {
+        setWrapper as public;
+    }
+
     /**
      * Data.
      *
@@ -53,11 +57,6 @@ class DataTablesResponse implements DataTablesResponseInterface {
      * @var int
      */
     private $recordsTotal;
-
-    /**
-     * @var DataTablesWrapperTrait
-     */
-    use DataTablesWrapperTrait;
 
     /**
      * Constructor.

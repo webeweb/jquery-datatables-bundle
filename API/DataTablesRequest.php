@@ -22,10 +22,9 @@ use WBW\Library\Core\Network\HTTP\HTTPInterface;
  */
 class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
 
-    /**
-     * @var DataTablesWrapperTrait
-     */
-    use DataTablesWrapperTrait;
+    use DataTablesWrapperTrait {
+        setWrapper as public;
+    }
 
     /**
      * Columns.
