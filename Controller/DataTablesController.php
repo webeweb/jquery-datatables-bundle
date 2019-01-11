@@ -20,6 +20,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesEnumerator;
 use WBW\Bundle\JQuery\DataTablesBundle\Event\DataTablesEvents;
+use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesColumnException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesEditorException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
@@ -43,8 +44,8 @@ class DataTablesController extends AbstractController {
      * @param Request $request The request.
      * @param string $name The provider name.
      * @param string $id The entity id.
+     * @return Response Returns the response.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
-     * @throws BadDataTablesRepositoryException Throws a bad repository exception.
      */
     public function deleteAction(Request $request, $name, $id) {
 
@@ -90,6 +91,7 @@ class DataTablesController extends AbstractController {
      * @return Response Returns the response.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      * @throws BadDataTablesEditorException Throws a bad editor exception.
+     * @throws BadDataTablesColumnException Throws a bad column exception.
      */
     public function editAction(Request $request, $name, $id, $data, $value) {
 
@@ -171,7 +173,7 @@ class DataTablesController extends AbstractController {
         $response = new StreamedResponse();
         $response->headers->set("Content-Disposition", "attachment; filename=\"" . $filename . "\"");
         $response->headers->set("Content-Type", "text/csv; charset=" . $charset);
-        $response->setCallback(function() use($dtProvider, $repository, $dtExporter, $windows) {
+        $response->setCallback(function() use ($dtProvider, $repository, $dtExporter, $windows) {
             $this->exportDataTablesCallback($dtProvider, $repository, $dtExporter, $windows);
         });
         $response->setStatusCode(200);
@@ -290,7 +292,7 @@ class DataTablesController extends AbstractController {
 
         // Return the response.
         return $this->render($dtView, [
-                "dtWrapper" => $dtWrapper,
+            "dtWrapper" => $dtWrapper,
         ]);
     }
 
@@ -300,6 +302,8 @@ class DataTablesController extends AbstractController {
      * @param string $name The provider name.
      * @param string $id The entity id.
      * @return Response Returns the response.
+     * @throws BadDataTablesRepositoryException Throws a bad repository exception.
+     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
     public function showAction($name, $id) {
 
