@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-### 2.0.0 (2019-01-xx)
+### 2.0.0 (2019-01-14)
 
 - Add abstract DataTables provider
 - Add CHANGELOG
@@ -18,6 +18,7 @@ CHANGELOG
 - Add DataTables wrapper trait
 - Add Symfony 4.2 support
 - Add UserInterface injection into DataTables wrapper
+- Improve code style
 - Improve unit tests
 - Remove getName() method into DataTables wrapper
 - Remove keyword "final" into unit tests
