@@ -3,6 +3,7 @@ CHANGELOG
 
 ### 2.0.0 (2019-01-xx)
 
+- Add abstract DataTables provider
 - Add CHANGELOG
 - Add DataTables enumerator
 - Add DataTables events
@@ -11,6 +12,7 @@ CHANGELOG
 - Add DataTables mapping interface
 - Add DataTables options interface
 - Add DataTables request interface
+- Add DataTables router interface
 - Add DataTables Twig extension trait
 - Add DataTables wrapper interface
 - Add DataTables wrapper trait
