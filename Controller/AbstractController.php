@@ -37,6 +37,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesRouterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Repository\DataTablesRepositoryInterface;
 use WBW\Library\Core\Database\PaginateHelper;
 use WBW\Library\Core\Model\Response\ActionResponse;
@@ -103,7 +104,7 @@ abstract class AbstractController extends BaseController {
         }
 
         // Log a debug trace.
-        $this->getLogger()->debug(sprintf("DataTables controller dispatch a DataTables event with name \"%s\"", $eventName));
+        $this->getLogger()->debug(sprintf("DataTables controller dispatch an event with name \"%s\"", $eventName));
 
         // Dispatch the event.
         return $eventDispatcher->dispatch($eventName, new DataTablesEvent($eventName, $entities));
@@ -168,6 +169,33 @@ abstract class AbstractController extends BaseController {
     }
 
     /**
+     * Get a CSV exporter.
+     *
+     * @param DataTablesProviderInterface $dtProvider The provider.
+     * @return DataTablesCSVExporterInterface Returns the CSV exporter.
+     * @throws BadDataTablesCSVExporterException Throws a bad CSV exporter exception.
+     */
+    protected function getDataTablesCSVExporter(DataTablesProviderInterface $dtProvider) {
+
+        // Get the provider.
+        $dtExporter = $dtProvider->getCSVExporter();
+
+        // Log a debug trace.
+        $this->getLogger()->debug(sprintf("DataTables controller search for a CSV exporter with name \"%s\"", $dtProvider->getName()));
+
+        // Check the CSV exporter.
+        if (false === ($dtExporter instanceOf DataTablesCSVExporterInterface)) {
+            throw new BadDataTablesCSVExporterException($dtExporter);
+        }
+
+        // Log a debug trace.
+        $this->getLogger()->debug(sprintf("DataTables controller found a CSV exporter with name \"%s\"", $dtProvider->getName()));
+
+        // Return the exporter.
+        return $dtExporter;
+    }
+
+    /**
      * Get a column.
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
@@ -196,39 +224,10 @@ abstract class AbstractController extends BaseController {
     }
 
     /**
-     * Get a CSV exporter.
-     *
-     * @param DataTablesProviderInterface $dtProvider The provider.
-     * @return DataTablesCSVExporterInterface Returns the CSV exporter.
-     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
-     * @throws BadDataTablesCSVExporterException Throws a bad CSV exporter exception.
-     */
-    protected function getDataTablesCSVExporter(DataTablesProviderInterface $dtProvider) {
-
-        // Get the provider.
-        $dtExporter = $dtProvider->getCSVExporter();
-
-        // Log a debug trace.
-        $this->getLogger()->debug(sprintf("DataTables controller search for a CSV exporter with name \"%s\"", $dtProvider->getName()));
-
-        // Check the CSV exporter.
-        if (false === ($dtExporter instanceOf DataTablesCSVExporterInterface)) {
-            throw new BadDataTablesCSVExporterException($dtExporter);
-        }
-
-        // Log a debug trace.
-        $this->getLogger()->debug(sprintf("DataTables controller found a CSV exporter with name \"%s\"", $dtProvider->getName()));
-
-        // Return the exporter.
-        return $dtExporter;
-    }
-
-    /**
      * Get an editor.
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
      * @return DataTablesEditorInterface Returns the editor.
-     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      * @throws BadDataTablesEditorException Throws a bad editor exception.
      */
     protected function getDataTablesEditor(DataTablesProviderInterface $dtProvider) {
@@ -357,6 +356,29 @@ abstract class AbstractController extends BaseController {
     }
 
     /**
+     * Get an URL.
+     *
+     * @param DataTablesProviderInterface $dtProvider The provider.
+     * @return string Returns the URL.
+     */
+    protected function getDataTablesURL(DataTablesProviderInterface $dtProvider) {
+
+        // Log a debug trace.
+        $this->getLogger()->debug(sprintf("DataTables controller search for an URL with name \"%s\"", $dtProvider->getName()));
+
+        // Check the provider.
+        if (false === ($dtProvider instanceof DataTablesRouterInterface)) {
+            return $this->getRouter()->generate("jquery_datatables_index", ["name" => $dtProvider->getName()]);
+        }
+
+        // Log a debug trace.
+        $this->getLogger()->debug(sprintf("DataTables controller found for an URL with name \"%s\"", $dtProvider->getName()));
+
+        // Return the URL.
+        return $dtProvider->getUrl();
+    }
+
+    /**
      * Get a wrapper.
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
@@ -365,7 +387,7 @@ abstract class AbstractController extends BaseController {
     protected function getDataTablesWrapper(DataTablesProviderInterface $dtProvider) {
 
         // Initialize the URL.
-        $url = $this->getRouter()->generate("jquery_datatables_index", ["name" => $dtProvider->getName()]);
+        $url = $this->getDataTablesURL($dtProvider);
 
         // Initialize the wrapper.
         $dtWrapper = DataTablesFactory::newWrapper($url, $dtProvider, $this->getKernelEventListener()->getUser());
@@ -374,7 +396,7 @@ abstract class AbstractController extends BaseController {
         foreach ($dtProvider->getColumns() as $dtColumn) {
 
             // Log a debug trace.
-            $this->getLogger()->debug(sprintf("DataTables provider add a column \"%s\"", $dtColumn->getData()));
+            $this->getLogger()->debug(sprintf("DataTables provider \"%s\" add a column \"%s\"", $dtProvider->getName(), $dtColumn->getData()));
 
             // Add the column.
             $dtWrapper->addColumn($dtColumn);

@@ -14,6 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesRouterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Office;
 use WBW\Library\Core\Network\HTTP\HTTPInterface;
 
@@ -23,7 +24,14 @@ use WBW\Library\Core\Network\HTTP\HTTPInterface;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider
  */
-class OfficeDataTablesProvider implements DataTablesProviderInterface {
+class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTablesRouterInterface {
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getCSVExporter() {
+        return null;
+    }
 
     /**
      * {@inheritdoc}
@@ -38,13 +46,6 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface {
 
         // Returns the columns.
         return $dtColumns;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getCSVExporter() {
-        return null;
     }
 
     /**
@@ -87,6 +88,13 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface {
      */
     public function getPrefix() {
         return "o";
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getUrl() {
+        return "url";
     }
 
     /**
