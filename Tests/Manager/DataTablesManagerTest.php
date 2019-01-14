@@ -51,44 +51,11 @@ class DataTablesManagerTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $this->assertEquals("webeweb.jquerydatatables.manager", DataTablesManager::SERVICE_NAME);
-
         $obj = new DataTablesManager();
 
+        $this->assertEquals("webeweb.jquery_datatables.manager", DataTablesManager::SERVICE_NAME);
+        $this->assertEquals([], $obj->getIndex());
         $this->assertEquals([], $obj->getProviders());
-    }
-
-    /**
-     * Tests the registerProvider() method.
-     *
-     * @return void
-     */
-    public function testRegisterProvider() {
-
-        $obj = new DataTablesManager();
-
-        $obj->registerProvider($this->dataTablesProvider);
-        $this->assertCount(1, $obj->getProviders());
-    }
-
-    /**
-     * Tests the registerProvider() method.
-     *
-     * @return void
-     */
-    public function testRegisterProviderWithAlreadyRegisteredDataTablesProviderException() {
-
-        $obj = new DataTablesManager();
-        $obj->registerProvider($this->dataTablesProvider);
-
-        try {
-
-            $obj->registerProvider($this->dataTablesProvider);
-        } catch (Exception $ex) {
-
-            $this->assertInstanceOf(AlreadyRegisteredDataTablesProviderException::class, $ex);
-            $this->assertEquals("A DataTables provider with name \"name\" is already registered", $ex->getMessage());
-        }
     }
 
     /**
@@ -120,6 +87,45 @@ class DataTablesManagerTest extends AbstractTestCase {
 
             $this->assertInstanceOf(UnregisteredDataTablesProviderException::class, $ex);
             $this->assertEquals("None DataTables provider registered with name \"exception\"", $ex->getMessage());
+        }
+    }
+
+    /**
+     * Tests the registerProvider() method.
+     *
+     * @return void
+     */
+    public function testRegisterProvider() {
+
+        $obj = new DataTablesManager();
+
+        $obj->registerProvider($this->dataTablesProvider);
+        $this->assertCount(1, $obj->getIndex());
+        $this->assertCount(1, $obj->getProviders());
+
+        $this->assertArrayHasKey("name", $obj->getIndex());
+        $this->assertEquals(0, $obj->getIndex()["name"]);
+
+        $this->assertSame($this->dataTablesProvider, $obj->getProviders()[0]);
+    }
+
+    /**
+     * Tests the registerProvider() method.
+     *
+     * @return void
+     */
+    public function testRegisterProviderWithAlreadyRegisteredDataTablesProviderException() {
+
+        $obj = new DataTablesManager();
+        $obj->registerProvider($this->dataTablesProvider);
+
+        try {
+
+            $obj->registerProvider($this->dataTablesProvider);
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(AlreadyRegisteredDataTablesProviderException::class, $ex);
+            $this->assertEquals("A DataTables provider with name \"name\" is already registered", $ex->getMessage());
         }
     }
 

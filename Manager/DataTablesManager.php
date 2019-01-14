@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Manager;
 
 use WBW\Bundle\CoreBundle\Manager\AbstractManager;
+use WBW\Bundle\CoreBundle\Manager\ManagerInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
@@ -29,7 +30,7 @@ class DataTablesManager extends AbstractManager {
      *
      * @var string
      */
-    const SERVICE_NAME = "webeweb.jquerydatatables.manager";
+    const SERVICE_NAME = "webeweb.jquery_datatables.manager";
 
     /**
      * Index.
@@ -47,7 +48,7 @@ class DataTablesManager extends AbstractManager {
     }
 
     /**
-     * Determines if a name exists.
+     * Determines if a provider exists.
      *
      * @param string $name The name.
      * @return bool Returns true in case of success, false otherwise.
@@ -68,7 +69,7 @@ class DataTablesManager extends AbstractManager {
     /**
      * Get a provider.
      *
-     * @param string $name The provider name.
+     * @param string $name The name.
      * @return DataTablesProviderInterface Returns the provider.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
@@ -76,17 +77,7 @@ class DataTablesManager extends AbstractManager {
         if (false === $this->exists($name)) {
             throw new UnregisteredDataTablesProviderException($name);
         }
-        return $this->getProviders()[$this->getIndex()[$name]];
-    }
-
-    /**
-     * Index a provider.
-     *
-     * @param DataTablesProviderInterface $provider The provider.
-     * @return void
-     */
-    protected function indexProvider(DataTablesProviderInterface $provider) {
-        $this->index[$provider->getName()] = $this->size();
+        return $this->getProviders()[$this->index[$name]];
     }
 
     /**
@@ -100,7 +91,7 @@ class DataTablesManager extends AbstractManager {
         if (true === $this->exists($provider->getName())) {
             throw new AlreadyRegisteredDataTablesProviderException($provider->getName());
         }
-        $this->indexProvider($provider);
+        $this->index[$provider->getName()] = $this->size();
         return $this->addProvider($provider);
     }
 
