@@ -28,6 +28,7 @@ interface DataTablesEditorInterface extends ProviderInterface {
      *
      * @param DataTablesColumnInterface $dtColumn The column.
      * @param object $entity The entity.
+     * @param string $value The value.
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
