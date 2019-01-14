@@ -149,5 +149,4 @@ abstract class AbstractTestCase extends TestCase {
         // Set a Request mock.
         $this->request = new Request($get, $post, [], [], [], ["REQUEST_METHOD" => "POST"]);
     }
-
 }

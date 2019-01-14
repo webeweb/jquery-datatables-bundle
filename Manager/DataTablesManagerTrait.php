@@ -44,5 +44,4 @@ trait DataTablesManagerTrait {
         $this->dataTablesManager = $dataTablesManager;
         return $this;
     }
-
 }

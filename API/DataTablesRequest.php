@@ -250,5 +250,4 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
         $this->start = $start;
         return $this;
     }
-
 }

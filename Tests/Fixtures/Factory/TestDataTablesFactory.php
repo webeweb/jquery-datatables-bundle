@@ -71,5 +71,4 @@ class TestDataTablesFactory extends DataTablesFactory {
     public static function parseSearch(array $rawSearch) {
         return parent::parseSearch($rawSearch);
     }
-
 }

@@ -58,5 +58,4 @@ class DataTablesSearchTest extends AbstractTestCase {
         $obj->setValue("value");
         $this->assertEquals("value", $obj->getValue());
     }
-
 }

@@ -85,5 +85,4 @@ class JQueryDataTablesCompilerPassTest extends AbstractTestCase {
         $this->assertTrue($this->containerBuilder->hasDefinition("datatables.provider.test"));
         $this->assertTrue($this->containerBuilder->getDefinition("datatables.provider.test")->hasTag(DataTablesProviderInterface::TAG_NAME));
     }
-
 }

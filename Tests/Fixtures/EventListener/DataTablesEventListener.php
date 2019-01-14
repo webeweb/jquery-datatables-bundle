@@ -111,5 +111,4 @@ class DataTablesEventListener {
     public function onPreShow(DataTablesEvent $event) {
         return $event;
     }
-
 }

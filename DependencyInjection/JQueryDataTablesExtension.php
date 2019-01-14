@@ -36,5 +36,4 @@ class JQueryDataTablesExtension extends Extension {
         $serviceLoader = new YamlFileLoader($container, $fileLocator);
         $serviceLoader->load("services.yml");
     }
-
 }

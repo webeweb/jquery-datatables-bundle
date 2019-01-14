@@ -71,5 +71,4 @@ class DataTablesMappingHelperTest extends AbstractTestCase {
 
         $this->assertEquals("prefix.column LIKE :prefixcolumn", DataTablesMappingHelper::getWhere($obj));
     }
-
 }

@@ -48,5 +48,4 @@ class DataTablesExtensionTest extends AbstractTestCase {
         $this->assertInstanceOf(DataTablesManager::class, $this->containerBuilder->get(DataTablesManager::SERVICE_NAME));
         $this->assertInstanceOf(DataTablesTwigExtension::class, $this->containerBuilder->get(DataTablesTwigExtension::SERVICE_NAME));
     }
-
 }

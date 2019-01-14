@@ -203,5 +203,4 @@ class TestFixtures {
         // Return the fixture.
         return $fixture;
     }
-
 }

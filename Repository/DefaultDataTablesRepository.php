@@ -181,5 +181,4 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
         // Return the result.
         return $qb->getQuery()->getResult();
     }
-
 }

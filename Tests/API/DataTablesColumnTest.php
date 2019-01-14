@@ -513,5 +513,4 @@ class DataTablesColumnTest extends AbstractTestCase {
         $res = ["cellType" => "td"];
         $this->assertEquals($res, $obj->jsonSerialize());
     }
-
 }

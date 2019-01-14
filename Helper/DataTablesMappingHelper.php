@@ -70,5 +70,4 @@ class DataTablesMappingHelper {
         // Return the where.
         return $where;
     }
-
 }

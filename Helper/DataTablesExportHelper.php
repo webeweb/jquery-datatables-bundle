@@ -61,5 +61,4 @@ class DataTablesExportHelper {
         //
         return 1 === preg_match("/Windows/", $os);
     }
-
 }

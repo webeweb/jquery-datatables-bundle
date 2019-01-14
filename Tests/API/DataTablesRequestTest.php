@@ -135,5 +135,4 @@ class DataTablesRequestTest extends AbstractTestCase {
         $obj->setStart(0);
         $this->assertEquals(0, $obj->getStart());
     }
-
 }

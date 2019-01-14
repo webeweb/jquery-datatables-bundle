@@ -67,5 +67,4 @@ class AssetsHelperTest extends AbstractTestCase {
         $this->assertRegexp("/datatables\-select\-.*\.zip$/", $res[14]);
         $this->assertRegexp("/editable\-table\.zip$/", $res[15]);
     }
-
 }

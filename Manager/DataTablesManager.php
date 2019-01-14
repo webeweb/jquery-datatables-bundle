@@ -105,5 +105,4 @@ class DataTablesManager extends AbstractManager {
         $this->index = $index;
         return $this;
     }
-
 }

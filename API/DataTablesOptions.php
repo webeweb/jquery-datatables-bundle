@@ -99,5 +99,4 @@ class DataTablesOptions implements DataTablesOptionsInterface {
         $this->options = $options;
         return $this;
     }
-
 }

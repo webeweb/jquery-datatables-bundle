@@ -46,5 +46,4 @@ class DataTablesColumnInterfaceTest extends AbstractTestCase {
         $this->assertEquals("num-fmt", DataTablesColumnInterface::DATATABLES_TYPE_NUM_FMT);
         $this->assertEquals("string", DataTablesColumnInterface::DATATABLES_TYPE_STRING);
     }
-
 }

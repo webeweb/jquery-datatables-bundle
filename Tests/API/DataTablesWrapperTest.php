@@ -259,5 +259,4 @@ class DataTablesWrapperTest extends AbstractTestCase {
         $obj->setUrl("anotherUrl");
         $this->assertEquals("anotherUrl", $obj->getUrl());
     }
-
 }

@@ -27,5 +27,4 @@ class BadDataTablesColumnException extends AbstractDataTablesException {
     public function __construct($name) {
         parent::__construct(sprintf("The DataTables column with name \"%s\" does not exist", $name));
     }
-
 }

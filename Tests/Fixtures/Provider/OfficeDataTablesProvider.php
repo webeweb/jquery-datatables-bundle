@@ -158,5 +158,4 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTable
         // Return the output.
         return $output;
     }
-
 }

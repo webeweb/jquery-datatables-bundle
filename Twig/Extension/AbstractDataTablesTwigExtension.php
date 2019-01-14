@@ -243,5 +243,4 @@ EOT;
         // Return the HTML.
         return "" === $innerHTML ? "" : StringHelper::replace($template, ["%innerHTML%"], [$innerHTML]);
     }
-
 }

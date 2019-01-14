@@ -119,5 +119,4 @@ class DataTablesEnumeratorTest extends AbstractTestCase {
         ];
         $this->assertEquals($res, DataTablesEnumerator::enumTypes());
     }
-
 }

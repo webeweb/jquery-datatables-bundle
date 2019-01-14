@@ -35,5 +35,4 @@ class DataTablesOrderInterfaceTest extends AbstractTestCase {
         $this->assertEquals("column", DataTablesOrderInterface::DATATABLES_PARAMETER_COLUMN);
         $this->assertEquals("dir", DataTablesOrderInterface::DATATABLES_PARAMETER_DIR);
     }
-
 }

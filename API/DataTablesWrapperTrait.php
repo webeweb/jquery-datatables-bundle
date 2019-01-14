@@ -44,5 +44,4 @@ trait DataTablesWrapperTrait {
         $this->wrapper = $wrapper;
         return $this;
     }
-
 }

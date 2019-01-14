@@ -34,5 +34,4 @@ class UnregisteredDataTablesProviderExceptionTest extends AbstractTestCase {
         $res = "None DataTables provider registered with name \"exception\"";
         $this->assertEquals($res, $obj->getMessage());
     }
-
 }

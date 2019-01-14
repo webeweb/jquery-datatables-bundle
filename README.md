@@ -307,7 +307,6 @@ class Employee {
         $this->startDate = $startDate;
         return $this;
     }
-
 }
 ```
 
@@ -589,7 +588,6 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
         // Return the output.
         return $output;
     }
-
 }
 ```
 
@@ -696,7 +694,6 @@ class Office {
         $this->name = $name;
         return $this;
     }
-
 }
 ```
 
@@ -787,7 +784,6 @@ class EmployeeRepository extends DefaultDataTablesRepository {
         // Return the result.
         return $qb->getQuery()->getResult();
     }
-
 }
 ```
 

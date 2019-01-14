@@ -113,5 +113,4 @@ class DataTablesRepositoryHelper {
         // Return the operator.
         return null;
     }
-
 }

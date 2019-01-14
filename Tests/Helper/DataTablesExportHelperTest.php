@@ -85,5 +85,4 @@ class DataTablesExportHelperTest extends AbstractTestCase {
 
         $this->assertFalse(DataTablesExportHelper::isWindows($request));
     }
-
 }

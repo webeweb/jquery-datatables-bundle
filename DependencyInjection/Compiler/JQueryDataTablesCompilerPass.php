@@ -46,5 +46,4 @@ class JQueryDataTablesCompilerPass implements CompilerPassInterface {
             $manager->addMethodCall("registerProvider", [new Reference($id)]);
         }
     }
-
 }

@@ -34,5 +34,4 @@ class DataTablesResponseInterfaceTest extends AbstractTestCase {
         $this->assertEquals("DT_RowData", DataTablesResponseInterface::DATATABLES_ROW_DATA);
         $this->assertEquals("DT_RowId", DataTablesResponseInterface::DATATABLES_ROW_ID);
     }
-
 }

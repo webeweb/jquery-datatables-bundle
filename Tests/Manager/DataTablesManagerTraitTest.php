@@ -50,5 +50,4 @@ class DataTablesManagerTraitTest extends AbstractTestCase {
         $obj->setDataTablesManager($dataTablesManager);
         $this->assertSame($dataTablesManager, $obj->getDataTablesManager());
     }
-
 }

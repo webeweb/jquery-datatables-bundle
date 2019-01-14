@@ -101,5 +101,4 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
         ];
         $this->assertEquals($res, DataTablesWrapperHelper::getOptions($obj));
     }
-
 }

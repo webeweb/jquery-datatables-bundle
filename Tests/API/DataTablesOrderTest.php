@@ -66,5 +66,4 @@ class DataTablesOrderTest extends AbstractTestCase {
         $obj->setDir("exception");
         $this->assertEquals("ASC", $obj->getDir());
     }
-
 }

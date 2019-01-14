@@ -47,5 +47,4 @@ class BaDataTablesCSVExporterException extends AbstractTestCase {
         $res = "The DataTables CSV exporter is null";
         $this->assertEquals($res, $obj->getMessage());
     }
-
 }

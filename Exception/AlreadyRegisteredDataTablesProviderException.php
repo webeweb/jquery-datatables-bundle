@@ -27,5 +27,4 @@ class AlreadyRegisteredDataTablesProviderException extends AbstractDataTablesExc
     public function __construct($name) {
         parent::__construct(sprintf("A DataTables provider with name \"%s\" is already registered", $name));
     }
-
 }

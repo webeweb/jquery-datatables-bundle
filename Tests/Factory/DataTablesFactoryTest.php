@@ -508,5 +508,4 @@ class DataTablesFactoryTest extends AbstractTestCase {
         $this->assertNotNull($wrapper->getRequest());
         $this->assertNotNull($wrapper->getResponse());
     }
-
 }

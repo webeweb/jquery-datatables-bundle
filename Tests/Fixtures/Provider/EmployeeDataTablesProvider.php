@@ -263,5 +263,4 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
         // Return the output.
         return $output;
     }
-
 }

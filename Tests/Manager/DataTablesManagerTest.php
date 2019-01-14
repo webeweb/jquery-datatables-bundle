@@ -128,5 +128,4 @@ class DataTablesManagerTest extends AbstractTestCase {
             $this->assertEquals("A DataTables provider with name \"name\" is already registered", $ex->getMessage());
         }
     }
-
 }

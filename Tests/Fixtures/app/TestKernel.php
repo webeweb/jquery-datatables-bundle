@@ -35,5 +35,4 @@ class TestKernel extends BaseKernel {
         ];
         return $bundles;
     }
-
 }

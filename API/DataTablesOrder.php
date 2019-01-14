@@ -78,5 +78,4 @@ class DataTablesOrder implements DataTablesOrderInterface {
         $this->dir = strtoupper($dir);
         return $this;
     }
-
 }

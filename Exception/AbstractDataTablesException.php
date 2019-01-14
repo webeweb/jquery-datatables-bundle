@@ -30,5 +30,4 @@ abstract class AbstractDataTablesException extends AbstractCoreException {
     public function __construct($message) {
         parent::__construct($message);
     }
-
 }

@@ -40,5 +40,4 @@ abstract class AbstractWebTestCase extends WebTestCase {
         $schemaTool->dropDatabase();
         $schemaTool->createSchema($entities);
     }
-
 }

@@ -44,5 +44,4 @@ trait DataTablesTwigExtensionTrait {
         $this->dataTablesTwigExtension = $dataTablesTwigExtension;
         return $this;
     }
-
 }

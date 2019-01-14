@@ -84,5 +84,4 @@ class DataTablesMappingTest extends AbstractTestCase {
         $this->assertNull($obj->getAlias());
         $this->assertEquals("prefix", $obj->getPrefix());
     }
-
 }

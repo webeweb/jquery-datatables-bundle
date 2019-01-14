@@ -34,5 +34,4 @@ class BaDataTablesRepositoryException extends AbstractTestCase {
         $res = "The DataTables repository \"Exception\" must implement DataTablesRepositoryInterface";
         $this->assertEquals($res, $obj->getMessage());
     }
-
 }

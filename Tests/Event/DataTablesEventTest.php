@@ -34,5 +34,4 @@ class DataTablesEventTest extends AbstractTestCase {
         $this->assertEquals("eventName", $obj->getEventName());
         $this->assertEquals([], $obj->getEntities());
     }
-
 }

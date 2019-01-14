@@ -100,5 +100,4 @@ class DataTablesEnumerator {
             DataTablesColumnInterface::DATATABLES_TYPE_STRING,
         ];
     }
-
 }

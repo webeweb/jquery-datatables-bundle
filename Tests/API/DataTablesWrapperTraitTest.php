@@ -50,5 +50,4 @@ class DataTablesWrapperTraitTest extends AbstractTestCase {
         $obj->setWrapper($wrapper);
         $this->assertSame($wrapper, $obj->getWrapper());
     }
-
 }

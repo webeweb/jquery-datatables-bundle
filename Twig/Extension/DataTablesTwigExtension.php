@@ -86,5 +86,4 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
     public function renderDataTablesFunction(DataTablesWrapperInterface $dtWrapper, array $args = []) {
         return $this->renderDataTables($dtWrapper, ArrayHelper::get($args, "class"), ArrayHelper::get($args, "thead", true), ArrayHelper::get($args, "tfoot", true));
     }
-
 }

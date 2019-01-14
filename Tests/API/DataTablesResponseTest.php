@@ -140,5 +140,4 @@ class DataTablesResponseTest extends AbstractTestCase {
         $res = ["data" => [], "draw" => null, "recordsFiltered" => null, "recordsTotal" => null];
         $this->assertEquals($res, $obj->jsonSerialize());
     }
-
 }

@@ -146,5 +146,4 @@ class DataTablesOptionsTest extends AbstractTestCase {
             $this->assertEquals("The argument \"1\" is not a string", $ex->getMessage());
         }
     }
-
 }

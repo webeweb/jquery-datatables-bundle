@@ -205,5 +205,4 @@ class Employee {
         $this->startDate = $startDate;
         return $this;
     }
-
 }

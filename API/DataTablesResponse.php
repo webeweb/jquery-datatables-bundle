@@ -217,5 +217,4 @@ class DataTablesResponse implements DataTablesResponseInterface {
         // Return the output.
         return $output;
     }
-
 }

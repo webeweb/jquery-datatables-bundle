@@ -39,5 +39,4 @@ class DataTablesEventsTest extends AbstractTestCase {
         $this->assertEquals("webeweb.jquery_datatables.event.post_export", DataTablesEvents::DATATABLES_POST_EXPORT);
         $this->assertEquals("webeweb.jquery_datatables.event.post_index", DataTablesEvents::DATATABLES_POST_INDEX);
     }
-
 }

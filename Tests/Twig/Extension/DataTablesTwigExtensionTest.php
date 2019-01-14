@@ -417,5 +417,4 @@ EOT;
 EOT;
         $this->assertEquals($res9, $obj->renderDataTablesFunction($this->dtWrapper, $arg9));
     }
-
 }

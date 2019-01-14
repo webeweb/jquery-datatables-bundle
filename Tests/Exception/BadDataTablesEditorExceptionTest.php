@@ -47,5 +47,4 @@ class BaDataTablesEditorException extends AbstractTestCase {
         $res = "The DataTables editor is null";
         $this->assertEquals($res, $obj->getMessage());
     }
-
 }

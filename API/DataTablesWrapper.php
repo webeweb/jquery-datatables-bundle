@@ -342,5 +342,4 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
         $this->url = $url;
         return $this;
     }
-
 }

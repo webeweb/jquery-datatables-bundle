@@ -68,5 +68,4 @@ class Office {
         $this->name = $name;
         return $this;
     }
-
 }

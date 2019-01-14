@@ -55,5 +55,4 @@ class JQueryDataTablesBundleTest extends AbstractTestCase {
         $res = "/Resources/assets";
         $this->assertEquals($res, $obj->getAssetsRelativeDirectory());
     }
-
 }

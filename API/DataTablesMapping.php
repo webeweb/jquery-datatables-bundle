@@ -79,5 +79,4 @@ class DataTablesMapping implements DataTablesMappingInterface {
         $this->prefix = $prefix;
         return $this;
     }
-
 }

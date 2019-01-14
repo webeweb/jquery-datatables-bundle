@@ -33,5 +33,4 @@ class BadDataTablesCSVExporterException extends AbstractDataTablesException {
         }
         parent::__construct($message);
     }
-
 }

@@ -501,5 +501,4 @@ class DataTablesColumn implements DataTablesColumnInterface {
         // Return the output.
         return $output;
     }
-
 }

@@ -57,5 +57,4 @@ class DataTablesEvent extends AbstractEvent {
         $this->entities = $entities;
         return $this;
     }
-
 }

@@ -80,5 +80,4 @@ class DataTablesRepositoryHelperTest extends AbstractTestCase {
 
         $this->assertNull(DataTablesRepositoryHelper::appendWhere($this->queryBuilder, $wrapper));
     }
-
 }

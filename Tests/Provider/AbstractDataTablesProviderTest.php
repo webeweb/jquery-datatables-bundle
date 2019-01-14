@@ -152,5 +152,4 @@ EOT;
         $this->assertEquals("1,000.000", $obj->renderFloat(1000, 3));
         $this->assertEquals("1 000,000", $obj->renderFloat(1000, 3, ",", " "));
     }
-
 }

@@ -76,5 +76,4 @@ class DataTablesSearch implements DataTablesSearchInterface {
         $this->value = $value;
         return $this;
     }
-
 }

@@ -362,5 +362,4 @@ class DataTablesFactory {
         $wrapper->setRequest(static::parseRequest($wrapper, $request));
         $wrapper->setResponse(static::newResponse($wrapper));
     }
-
 }

@@ -27,5 +27,4 @@ class UnregisteredDataTablesProviderException extends AbstractDataTablesExceptio
     public function __construct($name) {
         parent::__construct(sprintf("None DataTables provider registered with name \"%s\"", $name));
     }
-
 }

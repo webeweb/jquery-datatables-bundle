@@ -51,5 +51,4 @@ class DataTablesTwigExtensionTraitTest extends AbstractTestCase {
         $obj->setDataTablesTwigExtension($dataTablesTwigExtension);
         $this->assertSame($dataTablesTwigExtension, $obj->getDataTablesTwigExtension());
     }
-
 }

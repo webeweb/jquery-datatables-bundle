@@ -33,5 +33,4 @@ class BadDataTablesEditorException extends AbstractDataTablesException {
         }
         parent::__construct($message);
     }
-
 }

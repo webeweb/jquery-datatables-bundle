@@ -799,5 +799,4 @@ class DataTablesControllerTest extends AbstractWebTestCase {
 
         $this->assertCount(0, $res);
     }
-
 }

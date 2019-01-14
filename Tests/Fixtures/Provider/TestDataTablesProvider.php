@@ -58,5 +58,4 @@ class TestDataTablesProvider extends AbstractDataTablesProvider {
     public function renderFloat($number, $decimals = 2, $decPoint = ".", $thousandsSep = ",") {
         return parent::renderFloat($number, $decimals, $decPoint, $thousandsSep);
     }
-
 }

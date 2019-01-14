@@ -102,5 +102,4 @@ class DataTablesWrapperHelper {
         // Return the output.
         return $output;
     }
-
 }

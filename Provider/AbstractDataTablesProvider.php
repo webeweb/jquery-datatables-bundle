@@ -146,5 +146,4 @@ abstract class AbstractDataTablesProvider {
         }
         return number_format($number, $decimals, $decPoint, $thousandsSep);
     }
-
 }

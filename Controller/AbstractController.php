@@ -449,5 +449,4 @@ abstract class AbstractController extends BaseController {
         // Return the action response.
         return $response;
     }
-
 }
