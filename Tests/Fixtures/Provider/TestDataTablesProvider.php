@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider;
 
 use DateTime;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\AbstractDataTablesProvider;
 
 /**
@@ -23,9 +24,35 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\AbstractDataTablesProvider;
 class TestDataTablesProvider extends AbstractDataTablesProvider {
 
     /**
-     * Get the name.
-     *
-     * @return string Returns the name.
+     *{@inheritdoc}
+     */
+    public function getCSVExporter() {
+        return null;
+    }
+
+    /**
+     *{@inheritdoc}
+     */
+    public function getColumns() {
+        return null;
+    }
+
+    /**
+     *{@inheritdoc}
+     */
+    public function getEditor() {
+        return null;
+    }
+
+    /**
+     *{@inheritdoc}
+     */
+    public function getEntity() {
+        return null;
+    }
+
+    /**
+     * {@inheritdoc}
      */
     public function getName() {
         return "abstract";
@@ -34,8 +61,29 @@ class TestDataTablesProvider extends AbstractDataTablesProvider {
     /**
      *{@inheritdoc}
      */
+    public function getPrefix() {
+        return null;
+    }
+
+    /**
+     *{@inheritdoc}
+     */
+    public function getView() {
+        return null;
+    }
+
+    /**
+     *{@inheritdoc}
+     */
     public function renderButtons($entity, $editRoute, $deleteRoute = null, $enableDelete = true) {
         return parent::renderButtons($entity, $editRoute, $deleteRoute, $enableDelete);
+    }
+
+    /**
+     *{@inheritdoc}
+     */
+    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity) {
+        return null;
     }
 
     /**
@@ -57,5 +105,12 @@ class TestDataTablesProvider extends AbstractDataTablesProvider {
      */
     public function renderFloat($number, $decimals = 2, $decPoint = ".", $thousandsSep = ",") {
         return parent::renderFloat($number, $decimals, $decPoint, $thousandsSep);
+    }
+
+    /**
+     *{@inheritdoc}
+     */
+    public function renderRow($dtRow, $entity, $rowNumber) {
+        return null;
     }
 }

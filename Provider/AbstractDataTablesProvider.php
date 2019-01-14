@@ -27,7 +27,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Provider
  */
-abstract class AbstractDataTablesProvider {
+abstract class AbstractDataTablesProvider implements DataTablesProviderInterface {
 
     use ButtonTwigExtensionTrait;
     use RouterTrait;
