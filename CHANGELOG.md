@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### 2.0.1 (2019-01-18)
+
+- Fix resource includes
+
 ### 2.0.0 (2019-01-14)
 
 - Add abstract DataTables provider
