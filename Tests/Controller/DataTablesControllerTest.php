@@ -54,6 +54,10 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         $client->request("GET", "/datatables/employee/render");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
+
+        // Check the content.
+        $this->assertContains("dataTables.bootstrap.min.css", $client->getResponse()->getContent());
+        $this->assertContains("jquery.dataTables.min.js", $client->getResponse()->getContent());
     }
 
     /**
