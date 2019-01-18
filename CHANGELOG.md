@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### 2.0.2 (2019-01-18)
+
+- Fix resource includes
+- Improve functional tests
+
 ### 2.0.1 (2019-01-18)
 
 - Fix resource includes
