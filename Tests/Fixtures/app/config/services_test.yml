@@ -4,22 +4,22 @@ services:
     app.datatables.provider.employee:
         class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider
         tags:
-            - { name: "webeweb.jquery_datatables.provider" }
+            - { name: "webeweb.jquerydatatables.provider" }
 
     app.datatables.provider.office:
         class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\OfficeDataTablesProvider
         tags:
-            - { name: "webeweb.jquery_datatables.provider" }
+            - { name: "webeweb.jquerydatatables.provider" }
 
     app.datatables.event_listener:
         class:     WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\EventListener\DataTablesEventListener
         tags:
-            - { name: "kernel.event_listener", event: "webeweb.jquery_datatables.event.pre_delete",  method: "onPreDelete" }
-            - { name: "kernel.event_listener", event: "webeweb.jquery_datatables.event.pre_edit",    method: "onPreEdit" }
-            - { name: "kernel.event_listener", event: "webeweb.jquery_datatables.event.pre_export",  method: "onPreExport" }
-            - { name: "kernel.event_listener", event: "webeweb.jquery_datatables.event.pre_index",   method: "onPreIndex" }
-            - { name: "kernel.event_listener", event: "webeweb.jquery_datatables.event.pre_show",    method: "onPreShow" }
-            - { name: "kernel.event_listener", event: "webeweb.jquery_datatables.event.post_delete", method: "onPostDelete" }
-            - { name: "kernel.event_listener", event: "webeweb.jquery_datatables.event.post_edit",   method: "onPostEdit" }
-            - { name: "kernel.event_listener", event: "webeweb.jquery_datatables.event.post_export", method: "onPostExport" }
-            - { name: "kernel.event_listener", event: "webeweb.jquery_datatables.event.post_index",  method: "onPostIndex" }
+            - { name: "kernel.event_listener", event: "webeweb.jquerydatatables.event.pre_delete",  method: "onPreDelete" }
+            - { name: "kernel.event_listener", event: "webeweb.jquerydatatables.event.pre_edit",    method: "onPreEdit" }
+            - { name: "kernel.event_listener", event: "webeweb.jquerydatatables.event.pre_export",  method: "onPreExport" }
+            - { name: "kernel.event_listener", event: "webeweb.jquerydatatables.event.pre_index",   method: "onPreIndex" }
+            - { name: "kernel.event_listener", event: "webeweb.jquerydatatables.event.pre_show",    method: "onPreShow" }
+            - { name: "kernel.event_listener", event: "webeweb.jquerydatatables.event.post_delete", method: "onPostDelete" }
+            - { name: "kernel.event_listener", event: "webeweb.jquerydatatables.event.post_edit",   method: "onPostEdit" }
+            - { name: "kernel.event_listener", event: "webeweb.jquerydatatables.event.post_export", method: "onPostExport" }
+            - { name: "kernel.event_listener", event: "webeweb.jquerydatatables.event.post_index",  method: "onPostIndex" }
