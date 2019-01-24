@@ -20,7 +20,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Library\Core\Argument\StringHelper;
-use WBW\Library\Core\Exception\IO\FileNotFoundException;
+use WBW\Library\Core\Exception\FileSystem\FileNotFoundException;
 
 /**
  * Abstract DataTables Twig extension.
@@ -144,7 +144,7 @@ EOT;
      * @param string $class The class.
      * @param boolean $includeTHead Include thead ?.
      * @param boolean $includeTFoot Include tfoot ?
-     * @returns string Returns the rendered DataTables.
+     * @return string Returns the rendered DataTables.
      */
     protected function renderDataTables(DataTablesWrapperInterface $dtWrapper, $class, $includeTHead, $includeTFoot) {
 
