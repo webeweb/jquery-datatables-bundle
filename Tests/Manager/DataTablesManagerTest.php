@@ -51,9 +51,10 @@ class DataTablesManagerTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
+        $this->assertEquals("webeweb.jquerydatatables.manager", DataTablesManager::SERVICE_NAME);
+
         $obj = new DataTablesManager();
 
-        $this->assertEquals("webeweb.jquery_datatables.manager", DataTablesManager::SERVICE_NAME);
         $this->assertEquals([], $obj->getIndex());
         $this->assertEquals([], $obj->getProviders());
     }

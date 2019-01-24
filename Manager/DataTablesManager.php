@@ -30,7 +30,7 @@ class DataTablesManager extends AbstractManager {
      *
      * @var string
      */
-    const SERVICE_NAME = "webeweb.jquery_datatables.manager";
+    const SERVICE_NAME = "webeweb.jquerydatatables.manager";
 
     /**
      * Index.

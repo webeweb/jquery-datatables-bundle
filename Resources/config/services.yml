@@ -1,7 +1,7 @@
 # Resources/config/services.yml
 services:
 
-    webeweb.jquery_datatables.manager:
+    webeweb.jquerydatatables.manager:
         class:  WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager
         public: true
 
