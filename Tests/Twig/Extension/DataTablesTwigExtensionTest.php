@@ -12,10 +12,12 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Twig\Extension;
 
 use Twig_Node;
+use Twig_SimpleFilter;
 use Twig_SimpleFunction;
 use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
+use WBW\Library\Core\Exception\FileSystem\FileNotFoundException;
 
 /**
  * DataTables Twig extension test.
@@ -43,6 +45,29 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
+     * Tests the getFilters() method.
+     *
+     * @return void
+     */
+    public function testGetFilters() {
+
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+
+        $res = $obj->getFilters();
+        $this->assertCount(2, $res);
+
+        $this->assertInstanceOf(Twig_SimpleFilter::class, $res[0]);
+        $this->assertEquals("jQueryDataTablesName", $res[0]->getName());
+        $this->assertEquals([$obj, "jQueryDataTablesNameFunction"], $res[0]->getCallable());
+        $this->assertEquals(["html"], $res[0]->getSafe(new Twig_Node()));
+
+        $this->assertInstanceOf(Twig_SimpleFilter::class, $res[1]);
+        $this->assertEquals("jQueryDTName", $res[1]->getName());
+        $this->assertEquals([$obj, "jQueryDataTablesNameFunction"], $res[1]->getCallable());
+        $this->assertEquals(["html"], $res[1]->getSafe(new Twig_Node()));
+    }
+
+    /**
      * Tests the getFunctions() method.
      *
      * @return void
@@ -52,7 +77,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
 
         $res = $obj->getFunctions();
-        $this->assertCount(3, $res);
+        $this->assertCount(8, $res);
 
         $this->assertInstanceOf(Twig_SimpleFunction::class, $res[0]);
         $this->assertEquals("jQueryDataTables", $res[0]->getName());
@@ -60,14 +85,39 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         $this->assertEquals(["html"], $res[0]->getSafe(new Twig_Node()));
 
         $this->assertInstanceOf(Twig_SimpleFunction::class, $res[1]);
-        $this->assertEquals("jQueryDataTablesStandalone", $res[1]->getName());
-        $this->assertEquals([$obj, "jQueryDataTablesStandaloneFunction"], $res[1]->getCallable());
+        $this->assertEquals("jQueryDT", $res[1]->getName());
+        $this->assertEquals([$obj, "jQueryDataTablesFunction"], $res[1]->getCallable());
         $this->assertEquals(["html"], $res[1]->getSafe(new Twig_Node()));
 
         $this->assertInstanceOf(Twig_SimpleFunction::class, $res[2]);
         $this->assertEquals("renderDataTables", $res[2]->getName());
         $this->assertEquals([$obj, "renderDataTablesFunction"], $res[2]->getCallable());
         $this->assertEquals(["html"], $res[2]->getSafe(new Twig_Node()));
+
+        $this->assertInstanceOf(Twig_SimpleFunction::class, $res[3]);
+        $this->assertEquals("renderDT", $res[3]->getName());
+        $this->assertEquals([$obj, "renderDataTablesFunction"], $res[3]->getCallable());
+        $this->assertEquals(["html"], $res[3]->getSafe(new Twig_Node()));
+
+        $this->assertInstanceOf(Twig_SimpleFunction::class, $res[4]);
+        $this->assertEquals("jQueryDataTablesStandalone", $res[4]->getName());
+        $this->assertEquals([$obj, "jQueryDataTablesStandaloneFunction"], $res[4]->getCallable());
+        $this->assertEquals(["html"], $res[4]->getSafe(new Twig_Node()));
+
+        $this->assertInstanceOf(Twig_SimpleFunction::class, $res[5]);
+        $this->assertEquals("jQueryDTStandalone", $res[5]->getName());
+        $this->assertEquals([$obj, "jQueryDataTablesStandaloneFunction"], $res[5]->getCallable());
+        $this->assertEquals(["html"], $res[5]->getSafe(new Twig_Node()));
+
+        $this->assertInstanceOf(Twig_SimpleFunction::class, $res[6]);
+        $this->assertEquals("jQueryDataTablesName", $res[6]->getName());
+        $this->assertEquals([$obj, "jQueryDataTablesNameFunction"], $res[6]->getCallable());
+        $this->assertEquals(["html"], $res[6]->getSafe(new Twig_Node()));
+
+        $this->assertInstanceOf(Twig_SimpleFunction::class, $res[7]);
+        $this->assertEquals("jQueryDTName", $res[7]->getName());
+        $this->assertEquals([$obj, "jQueryDataTablesNameFunction"], $res[7]->getCallable());
+        $this->assertEquals(["html"], $res[7]->getSafe(new Twig_Node()));
     }
 
     /**
@@ -85,7 +135,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
 
         // Read the directory.
         $stream = opendir($langDirectory);
-        while (false !== ($file   = readdir($stream))) {
+        while (false !== ($file = readdir($stream))) {
 
             // Check the filename.
             if (true === in_array($file, [".", ".."])) {
@@ -108,72 +158,14 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      * Tests the jQueryDataTablesFunction() {
      *
      * @return void
+     * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
      */
     public function testJQueryDataTablesFunction() {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
 
-        // ===
-        $arg0 = [];
-        $res0 = <<<'EOT'
-<script type="text/javascript">
-    $(document).ready(function () {
-        var dtemployee = $("#dtemployee").DataTable({
-            "ajax": {
-                "type": "POST",
-                "url": "/datatables/employee/index"
-            },
-            "columns": [
-                {
-                    "cellType": "td",
-                    "data": "name",
-                    "name": "Name"
-                },
-                {
-                    "cellType": "td",
-                    "data": "position",
-                    "name": "Position"
-                },
-                {
-                    "cellType": "td",
-                    "data": "office",
-                    "name": "Office"
-                },
-                {
-                    "cellType": "td",
-                    "data": "age",
-                    "name": "Age"
-                },
-                {
-                    "cellType": "td",
-                    "data": "startDate",
-                    "name": "Start date"
-                },
-                {
-                    "cellType": "td",
-                    "data": "salary",
-                    "name": "Salary"
-                },
-                {
-                    "cellType": "td",
-                    "data": "actions",
-                    "name": "Actions",
-                    "orderable": false,
-                    "searchable": false
-                }
-            ],
-            "order": [],
-            "processing": true,
-            "serverSide": true
-        });
-    });
-</script>
-EOT;
-        $this->assertEquals($res0, $obj->jQueryDataTablesFunction($this->dtWrapper, $arg0));
-
-        // ===
-        $arg9 = ["selector" => "#selector", "language" => "French"];
-        $res9 = <<<'EOT'
+        $arg = ["selector" => "#selector", "language" => "French"];
+        $res = <<< EOT
 <script type="text/javascript">
     $(document).ready(function () {
         var dtemployee = $("#selector").DataTable({
@@ -230,31 +222,89 @@ EOT;
     });
 </script>
 EOT;
-        $this->assertEquals($res9, $obj->jQueryDataTablesFunction($this->dtWrapper, $arg9));
+        $this->assertEquals($res, $obj->jQueryDataTablesFunction($this->dtWrapper, $arg));
+    }
+
+    /**
+     * Tests the jQueryDataTablesFunction() {
+     *
+     * @return void
+     * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
+     */
+    public function testJQueryDataTablesFunctionWithoutArguments() {
+
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+
+        $arg = [];
+        $res = <<< EOT
+<script type="text/javascript">
+    $(document).ready(function () {
+        var dtemployee = $("#dtemployee").DataTable({
+            "ajax": {
+                "type": "POST",
+                "url": "/datatables/employee/index"
+            },
+            "columns": [
+                {
+                    "cellType": "td",
+                    "data": "name",
+                    "name": "Name"
+                },
+                {
+                    "cellType": "td",
+                    "data": "position",
+                    "name": "Position"
+                },
+                {
+                    "cellType": "td",
+                    "data": "office",
+                    "name": "Office"
+                },
+                {
+                    "cellType": "td",
+                    "data": "age",
+                    "name": "Age"
+                },
+                {
+                    "cellType": "td",
+                    "data": "startDate",
+                    "name": "Start date"
+                },
+                {
+                    "cellType": "td",
+                    "data": "salary",
+                    "name": "Salary"
+                },
+                {
+                    "cellType": "td",
+                    "data": "actions",
+                    "name": "Actions",
+                    "orderable": false,
+                    "searchable": false
+                }
+            ],
+            "order": [],
+            "processing": true,
+            "serverSide": true
+        });
+    });
+</script>
+EOT;
+        $this->assertEquals($res, $obj->jQueryDataTablesFunction($this->dtWrapper, $arg));
     }
 
     /**
      * Tests the jQueryDataTablesStandaloneFunction() {
      *
      * @return void
+     * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
      */
     public function testJQueryDataTablesStandaloneFunction() {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
 
-        // ===
-        $res0 = <<<'EOT'
-<script type="text/javascript">
-    $(document).ready(function () {
-        $(".table").DataTable({});
-    });
-</script>
-EOT;
-        $this->assertEquals($res0, $obj->jQueryDataTablesStandaloneFunction());
-
-        // ===
-        $arg9 = ["selector" => "#selector", "language" => "French", "options" => ["columnDefs" => [["orderable" => false, "targets" => -1]]]];
-        $res9 = <<<'EOT'
+        $arg = ["selector" => "#selector", "language" => "French", "options" => ["columnDefs" => [["orderable" => false, "targets" => -1]]]];
+        $res = <<< EOT
 <script type="text/javascript">
     $(document).ready(function () {
         $("#selector").DataTable({
@@ -271,7 +321,27 @@ EOT;
     });
 </script>
 EOT;
-        $this->assertEquals($res9, $obj->jQueryDataTablesStandaloneFunction($arg9));
+        $this->assertEquals($res, $obj->jQueryDataTablesStandaloneFunction($arg));
+    }
+
+    /**
+     * Tests the jQueryDataTablesStandaloneFunction() {
+     *
+     * @return void
+     * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
+     */
+    public function testJQueryDataTablesStandaloneFunctionWithoutArguments() {
+
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+
+        $res = <<< EOT
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".table").DataTable({});
+    });
+</script>
+EOT;
+        $this->assertEquals($res, $obj->jQueryDataTablesStandaloneFunction());
     }
 
     /**
@@ -283,113 +353,14 @@ EOT;
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
 
-        // ===
-        $arg0 = [];
-        $res0 = <<<'EOT'
-<table class="table" id="dtemployee">
-    <thead>
-        <tr>
-            <th scope="row">Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tfoot>
-        <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-            <th>Actions</th>
-        </tr>
-    </tfoot>
-</table>
-EOT;
-        $this->assertEquals($res0, $obj->renderDataTablesFunction($this->dtWrapper, $arg0));
-
-        // ===
-        $arg1 = ["class" => "class"];
-        $res1 = <<<'EOT'
-<table class="table class" id="dtemployee">
-    <thead>
-        <tr>
-            <th scope="row">Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tfoot>
-        <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-            <th>Actions</th>
-        </tr>
-    </tfoot>
-</table>
-EOT;
-        $this->assertEquals($res1, $obj->renderDataTablesFunction($this->dtWrapper, $arg1));
-
-        // ===
-        $arg2 = ["thead" => false];
-        $res2 = <<<'EOT'
-<table class="table" id="dtemployee">
-    <tfoot>
-        <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-            <th>Actions</th>
-        </tr>
-    </tfoot>
-</table>
-EOT;
-        $this->assertEquals($res2, $obj->renderDataTablesFunction($this->dtWrapper, $arg2));
-
-        // ===
-        $arg3 = ["tfoot" => false];
-        $res3 = <<<'EOT'
-<table class="table" id="dtemployee">
-    <thead>
-        <tr>
-            <th scope="row">Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-</table>
-EOT;
-        $this->assertEquals($res3, $obj->renderDataTablesFunction($this->dtWrapper, $arg3));
-
-        // ===
         $i = 0;
         foreach ($this->dtWrapper->getColumns() as $dtColumn) {
             $dtColumn->setClassname($dtColumn->getData());
-            $dtColumn->setWidth( ++$i);
+            $dtColumn->setWidth(++$i);
         }
 
-        $arg9 = ["class" => "class", "thead" => true, "tfoot" => true];
-        $res9 = <<<'EOT'
+        $arg = ["class" => "class", "thead" => true, "tfoot" => true];
+        $res = <<< EOT
 <table class="table class" id="dtemployee">
     <thead>
         <tr>
@@ -415,6 +386,140 @@ EOT;
     </tfoot>
 </table>
 EOT;
-        $this->assertEquals($res9, $obj->renderDataTablesFunction($this->dtWrapper, $arg9));
+        $this->assertEquals($res, $obj->renderDataTablesFunction($this->dtWrapper, $arg));
+    }
+
+    /**
+     * Tests the renderDataTablesFunction() method.
+     *
+     * @return void
+     */
+    public function testRenderDataTablesFunctionWithClass() {
+
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+
+        $arg = ["class" => "class"];
+        $res = <<< EOT
+<table class="table class" id="dtemployee">
+    <thead>
+        <tr>
+            <th scope="row">Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </tfoot>
+</table>
+EOT;
+        $this->assertEquals($res, $obj->renderDataTablesFunction($this->dtWrapper, $arg));
+    }
+
+    /**
+     * Tests the renderDataTablesFunction() method.
+     *
+     * @return void
+     */
+    public function testRenderDataTablesFunctionWithTFoot() {
+
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+
+        $arg = ["tfoot" => false];
+        $res = <<< EOT
+<table class="table" id="dtemployee">
+    <thead>
+        <tr>
+            <th scope="row">Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+</table>
+EOT;
+        $this->assertEquals($res, $obj->renderDataTablesFunction($this->dtWrapper, $arg));
+    }
+
+    /**
+     * Tests the renderDataTablesFunction() method.
+     *
+     * @return void
+     */
+    public function testRenderDataTablesFunctionWithTHead() {
+
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+
+        $arg = ["thead" => false];
+        $res = <<< EOT
+<table class="table" id="dtemployee">
+    <tfoot>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </tfoot>
+</table>
+EOT;
+        $this->assertEquals($res, $obj->renderDataTablesFunction($this->dtWrapper, $arg));
+    }
+
+    /**
+     * Tests the renderDataTablesFunction() method.
+     *
+     * @return void
+     */
+    public function testRenderDataTablesFunctionWithoutArguments() {
+
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+
+        $arg = [];
+        $res = <<< EOT
+<table class="table" id="dtemployee">
+    <thead>
+        <tr>
+            <th scope="row">Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start date</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </tfoot>
+</table>
+EOT;
+        $this->assertEquals($res, $obj->renderDataTablesFunction($this->dtWrapper, $arg));
     }
 }
