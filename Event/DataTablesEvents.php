@@ -24,62 +24,62 @@ class DataTablesEvents {
      *
      * @var string
      */
-    const DATATABLES_PRE_DELETE = "webeweb.jquerydatatables.event.pre_delete";
+    const DATATABLES_PRE_DELETE = "webeweb.jquery_datatables.event.pre_delete";
 
     /**
      * DataTables "Pre edit".
      *
      * @var string
      */
-    const DATATABLES_PRE_EDIT = "webeweb.jquerydatatables.event.pre_edit";
+    const DATATABLES_PRE_EDIT = "webeweb.jquery_datatables.event.pre_edit";
 
     /**
      * DataTables "Pre export".
      *
      * @var string
      */
-    const DATATABLES_PRE_EXPORT = "webeweb.jquerydatatables.event.pre_export";
+    const DATATABLES_PRE_EXPORT = "webeweb.jquery_datatables.event.pre_export";
 
     /**
      * DataTables "Pre index".
      *
      * @var string
      */
-    const DATATABLES_PRE_INDEX = "webeweb.jquerydatatables.event.pre_index";
+    const DATATABLES_PRE_INDEX = "webeweb.jquery_datatables.event.pre_index";
 
     /**
      * DataTables "Pre show".
      *
      * @var string
      */
-    const DATATABLES_PRE_SHOW = "webeweb.jquerydatatables.event.pre_show";
+    const DATATABLES_PRE_SHOW = "webeweb.jquery_datatables.event.pre_show";
 
     /**
      * DataTables "Post delete".
      *
      * @var string
      */
-    const DATATABLES_POST_DELETE = "webeweb.jquerydatatables.event.post_delete";
+    const DATATABLES_POST_DELETE = "webeweb.jquery_datatables.event.post_delete";
 
     /**
      * DataTables "Post edit".
      *
      * @var string
      */
-    const DATATABLES_POST_EDIT = "webeweb.jquerydatatables.event.post_edit";
+    const DATATABLES_POST_EDIT = "webeweb.jquery_datatables.event.post_edit";
 
     /**
      * DataTables "Post export".
      *
      * @var string
      */
-    const DATATABLES_POST_EXPORT = "webeweb.jquerydatatables.event.post_export";
+    const DATATABLES_POST_EXPORT = "webeweb.jquery_datatables.event.post_export";
 
     /**
      * DataTables "Post show".
      *
      * @var string
      */
-    const DATATABLES_POST_INDEX = "webeweb.jquerydatatables.event.post_index";
+    const DATATABLES_POST_INDEX = "webeweb.jquery_datatables.event.post_index";
 
 }
