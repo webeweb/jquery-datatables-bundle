@@ -1,11 +1,12 @@
 CHANGELOG
 =========
 
-### master
+### 2.0.3 (2019-01-25)
 
 - Add jQueryDataTablesName Twig function (retrieve a DataTables name with wrapper)
 - Explode DataTables Twig extension unit tests
 - Fix PHPDoc
+- Fix event, service and tag names (snake case)
 
 ### 2.0.2 (2019-01-18)
 
