@@ -45,6 +45,19 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function testConstruct() {
+
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+
+        $this->assertEquals("webeweb.jquery_datatables.twig.extension", DataTablesTwigExtension::SERVICE_NAME);
+        $this->assertSame($this->twigEnvironment, $obj->getTwigEnvironment());
+    }
+
+    /**
      * Tests the getFilters() method.
      *
      * @return void

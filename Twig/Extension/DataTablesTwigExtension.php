@@ -33,7 +33,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      *
      * @var string
      */
-    const SERVICE_NAME = "webeweb.jquerydatatables.twig.extension";
+    const SERVICE_NAME = "webeweb.jquery_datatables.twig.extension";
 
     /**
      * Constructor.
