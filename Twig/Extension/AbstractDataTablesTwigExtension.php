@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension;
 
+use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 use Twig_Environment;
 use WBW\Bundle\CoreBundle\Service\TwigEnvironmentTrait;
 use WBW\Bundle\CoreBundle\Twig\Extension\AbstractTwigExtension;
@@ -20,7 +21,6 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Library\Core\Argument\StringHelper;
-use WBW\Library\Core\Exception\FileSystem\FileNotFoundException;
 
 /**
  * Abstract DataTables Twig extension.
@@ -93,21 +93,17 @@ EOT;
      */
     protected function jQueryDataTables(DataTablesWrapperInterface $dtWrapper, $selector, $language) {
 
-        // Get the options.
         $dtOptions = DataTablesWrapperHelper::getOptions($dtWrapper);
 
-        // Initialize the parameters.
         $var     = DataTablesWrapperHelper::getName($dtWrapper);
         $options = $dtOptions;
         if (null !== $language) {
             $options["language"] = ["url" => DataTablesWrapperHelper::getLanguageURL($language)];
         }
 
-        //
         $searches = ["%var%", "%selector%", "%options%"];
         $replaces = [$var, null === $selector ? "#" . $var : $selector, $this->encodeOptions($options)];
 
-        // Return the Javascript.
         $javascript = StringHelper::replace(self::JQUERY_DATATABLES, $searches, $replaces);
         return $this->getRendererTwigExtension()->coreScriptFilter($javascript);
     }
@@ -123,7 +119,6 @@ EOT;
      */
     protected function jQueryDataTablesStandalone($selector, $language, array $options) {
 
-        // Initialize the language.
         if (null !== $language) {
             $options["language"] = ["url" => DataTablesWrapperHelper::getLanguageURL($language)];
         }
@@ -132,7 +127,6 @@ EOT;
         $searches = ["%selector%", "%options%"];
         $replaces = [$selector, $this->encodeOptions($options)];
 
-        // Return the Javascript.
         $javascript = StringHelper::replace(self::JQUERY_DATATABLES_STANDALONE, $searches, $replaces);
         return $this->getRendererTwigExtension()->coreScriptFilter($javascript);
     }
@@ -148,16 +142,13 @@ EOT;
      */
     protected function renderDataTables(DataTablesWrapperInterface $dtWrapper, $class, $includeTHead, $includeTFoot) {
 
-        // Initialize the template.
         $template = "<table %attributes%>\n%innerHTML%</table>";
 
-        // Initialize the attributes.
         $attributes = [];
 
         $attributes["class"] = ["table", $class];
         $attributes["id"]    = DataTablesWrapperHelper::getName($dtWrapper);
 
-        // Initialize the parameters.
         $thead = true === $includeTHead ? $this->renderDataTablesTHead($dtWrapper) : "";
         $tfoot = true === $includeTFoot ? $this->renderDataTablesTFoot($dtWrapper) : "";
 
@@ -173,20 +164,16 @@ EOT;
      */
     private function renderDataTablesColumn(DataTablesColumnInterface $dtColumn, $scopeRow = false) {
 
-        // Initialize the template.
         $template = "            <th%attributes%>%innerHTML%</th>";
 
-        // Initialize the attributes.
         $attributes = [];
 
         $attributes["scope"] = true === $scopeRow ? "row" : null;
         $attributes["class"] = $dtColumn->getClassname();
         $attributes["width"] = $dtColumn->getWidth();
 
-        // Initialize the parameters.
         $innerHTML = $dtColumn->getTitle();
 
-        // Return the HTML.
         return StringHelper::replace($template, ["%attributes%", "%innerHTML%"], [preg_replace("/^\ $/", "", " " . StringHelper::parseArray($attributes)), $innerHTML]);
     }
 
@@ -198,10 +185,8 @@ EOT;
      */
     private function renderDataTablesTFoot(DataTablesWrapperInterface $dtWrapper) {
 
-        // Initialize the template.
         $template = "    <tfoot>\n        <tr>\n%innerHTML%        </tr>\n    </tfoot>\n";
 
-        // Initialize the parameters.
         $innerHTML = "";
         foreach ($dtWrapper->getColumns() as $dtColumn) {
             $column = $this->renderDataTablesColumn($dtColumn);
@@ -211,7 +196,6 @@ EOT;
             $innerHTML .= $column . "\n";
         }
 
-        // Return the HTML.
         return "" === $innerHTML ? "" : StringHelper::replace($template, ["%innerHTML%"], [$innerHTML]);
     }
 
@@ -223,13 +207,10 @@ EOT;
      */
     private function renderDataTablesTHead(DataTablesWrapperInterface $dtWrapper) {
 
-        // Initialize the templates.
         $template = "    <thead>\n        <tr>\n%innerHTML%        </tr>\n    </thead>\n";
 
-        // Count the columns.
         $count = count($dtWrapper->getColumns());
 
-        // Initialize the parameters.
         $innerHTML = "";
         for ($i = 0; $i < $count; ++$i) {
             $dtColumn = array_values($dtWrapper->getColumns())[$i];
@@ -240,7 +221,6 @@ EOT;
             $innerHTML .= $column . "\n";
         }
 
-        // Return the HTML.
         return "" === $innerHTML ? "" : StringHelper::replace($template, ["%innerHTML%"], [$innerHTML]);
     }
 }
