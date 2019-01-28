@@ -49,34 +49,26 @@ class DataTablesController extends AbstractController {
      */
     public function deleteAction(Request $request, $name, $id) {
 
-        // Get the provider.
         $dtProvider = $this->getDataTablesProvider($name);
 
         try {
 
-            // Get the entity.
             $entity = $this->getDataTablesEntityById($dtProvider, $id);
 
-            // Dispatch an event.
             $this->dispatchDataTablesEvent(DataTablesEvents::DATATABLES_PRE_DELETE, [$entity]);
 
-            // Get the entities manager and delete the entity.
             $em = $this->getDoctrine()->getManager();
             $em->remove($entity);
             $em->flush();
 
-            // Dispatch an event.
             $this->dispatchDataTablesEvent(DataTablesEvents::DATATABLES_POST_DELETE, [$entity]);
 
-            // Set the output.
             $output = $this->prepareActionResponse(200, "DataTablesController.deleteAction.success");
         } catch (Exception $ex) {
 
-            // Set the output.
             $output = $this->handleDataTablesException($ex, "DataTablesController.deleteAction");
         }
 
-        // Return the response.
         return $this->buildDataTablesResponse($request, $name, $output);
     }
 
@@ -95,48 +87,36 @@ class DataTablesController extends AbstractController {
      */
     public function editAction(Request $request, $name, $id, $data, $value) {
 
-        // Get the provider.
         $dtProvider = $this->getDataTablesProvider($name);
 
-        // Get the editor.
         $dtEditor = $this->getDataTablesEditor($dtProvider);
 
-        // Get the column.
         $dtColumn = $this->getDataTablesColumn($dtProvider, $data);
 
         try {
 
-            // Get the entity.
             $entity = $this->getDataTablesEntityById($dtProvider, $id);
 
-            // Set the value.
             if (true === $request->isMethod(HTTPInterface::HTTP_METHOD_POST)) {
                 $value = $request->request->get("value");
             }
 
-            // Dispatch an event.
             $this->dispatchDataTablesEvent(DataTablesEvents::DATATABLES_PRE_EDIT, [$entity]);
 
-            // Set the entity.
             $dtEditor->editColumn($dtColumn, $entity, $value);
 
-            // Get the entities manager and delete the entity.
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
 
-            // Dispatch an event.
             $this->dispatchDataTablesEvent(DataTablesEvents::DATATABLES_POST_EDIT, [$entity]);
 
-            // Set the output.
             $output = $this->prepareActionResponse(200, "DataTablesController.editAction.success");
         } catch (Exception $ex) {
 
-            // Set the output.
             $output = $this->handleDataTablesException($ex, "DataTablesController.editAction");
         }
 
-        // Return the response.
         return new JsonResponse($output);
     }
 
@@ -151,25 +131,18 @@ class DataTablesController extends AbstractController {
      */
     public function exportAction(Request $request, $name) {
 
-        // Determines the client OS.
         $windows = DataTablesExportHelper::isWindows($request);
 
-        // Get the provider.
         $dtProvider = $this->getDataTablesProvider($name);
 
-        // Get the exporter.
         $dtExporter = $this->getDataTablesCSVExporter($dtProvider);
 
-        // Get the entity repository.
         $repository = $this->getDataTablesRepository($dtProvider);
 
-        // Initialize the filename.
         $filename = (new DateTime())->format("Y.m.d-H.i.s") . "-" . $dtProvider->getName() . ".csv";
 
-        // Initialize the charset.
         $charset = true === $windows ? "iso-8859-1" : "utf-8";
 
-        // Initialize the response.
         $response = new StreamedResponse();
         $response->headers->set("Content-Disposition", "attachment; filename=\"" . $filename . "\"");
         $response->headers->set("Content-Type", "text/csv; charset=" . $charset);
@@ -178,7 +151,6 @@ class DataTablesController extends AbstractController {
         });
         $response->setStatusCode(200);
 
-        // Return the response.
         return $response;
     }
 
@@ -193,40 +165,28 @@ class DataTablesController extends AbstractController {
      */
     public function indexAction(Request $request, $name) {
 
-        // Check if the request is an XML HTTP request.
         if (false === $request->isXmlHttpRequest()) {
             return $this->renderAction($name);
         }
 
-        // Get the provider.
         $dtProvider = $this->getDataTablesProvider($name);
 
-        // Get the wrapper.
         $dtWrapper = $this->getDataTablesWrapper($dtProvider);
-
-        // Parse the request.
         DataTablesFactory::parseWrapper($dtWrapper, $request);
 
-        // Get the entities repository.
         $repository = $this->getDataTablesRepository($dtProvider);
 
-        // Set the response.
         $dtWrapper->getResponse()->setRecordsFiltered($repository->dataTablesCountFiltered($dtWrapper));
         $dtWrapper->getResponse()->setRecordsTotal($repository->dataTablesCountTotal($dtWrapper));
 
-        // Find all entities.
         $entities = $repository->dataTablesFindAll($dtWrapper);
 
-        // Dispatch an event.
         $this->dispatchDataTablesEvent(DataTablesEvents::DATATABLES_PRE_INDEX, $entities);
 
-        // Handle each entity.
         foreach ($entities as $entity) {
 
-            // Count the rows.
             $rows = $dtWrapper->getResponse()->countRows();
 
-            // Create a row.
             $dtWrapper->getResponse()->addRow();
 
             // Render each row.
@@ -240,10 +200,8 @@ class DataTablesController extends AbstractController {
             }
         }
 
-        // Dispatch an event.
         $this->dispatchDataTablesEvent(DataTablesEvents::DATATABLES_POST_INDEX, $entities);
 
-        // Return the response.
         return new JsonResponse($dtWrapper->getResponse());
     }
 
@@ -256,16 +214,12 @@ class DataTablesController extends AbstractController {
      */
     public function optionsAction($name) {
 
-        // Get the provider.
         $dtProvider = $this->getDataTablesProvider($name);
 
-        // Get the wrapper.
         $dtWrapper = $this->getDataTablesWrapper($dtProvider);
 
-        // Get the options.
         $dtOptions = DataTablesWrapperHelper::getOptions($dtWrapper);
 
-        // Return the response.
         return new JsonResponse($dtOptions);
     }
 
@@ -278,19 +232,15 @@ class DataTablesController extends AbstractController {
      */
     public function renderAction($name) {
 
-        // Get the provider.
         $dtProvider = $this->getDataTablesProvider($name);
 
-        // Get the wrapper.
         $dtWrapper = $this->getDataTablesWrapper($dtProvider);
 
-        // Get and check the provider view.
         $dtView = $dtProvider->getView();
         if (null === $dtProvider->getView()) {
             $dtView = "@JQueryDataTables/DataTables/index.html.twig";
         }
 
-        // Return the response.
         return $this->render($dtView, [
             "dtWrapper" => $dtWrapper,
         ]);
@@ -307,29 +257,22 @@ class DataTablesController extends AbstractController {
      */
     public function showAction($name, $id) {
 
-        // Get the provider.
         $dtProvider = $this->getDataTablesProvider($name);
 
         try {
 
-            // Get the entity.
             $entity = $this->getDataTablesEntityById($dtProvider, $id);
 
-            // Dispatch an event.
             $this->dispatchDataTablesEvent(DataTablesEvents::DATATABLES_PRE_SHOW, [$entity]);
         } catch (EntityNotFoundException $ex) {
 
-            // Log a debug trace.
             $this->getLogger()->debug($ex->getMessage());
 
-            // Initialize the entity.
             $entity = [];
         }
 
-        // Get the serializer.
         $serializer = $this->getDataTablesSerializer();
 
-        // Return the response.
         return new Response($serializer->serialize($entity, "json"), 200, ["Content-type" => "application/json"]);
     }
 }
