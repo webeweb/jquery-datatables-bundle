@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
 
+use Exception;
 use WBW\Bundle\CoreBundle\Tests\Fixtures\Helper\TestAssetsHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
@@ -44,6 +45,7 @@ class AssetsHelperTest extends AbstractTestCase {
      * Tests the listAssets() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testListAssets() {
 
