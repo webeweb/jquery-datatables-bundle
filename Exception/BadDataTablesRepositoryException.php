@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Exception;
 
+use ReflectionException;
 use WBW\Library\Core\Argument\ObjectHelper;
 
 /**
@@ -25,6 +26,7 @@ class BadDataTablesRepositoryException extends AbstractDataTablesException {
      * Constructor.
      *
      * @param mixed $object The repository.
+     * @throws ReflectionException Throws a reflection exception if the $object class does not exists.
      */
     public function __construct($object) {
         parent::__construct(sprintf("The DataTables repository \"%s\" must implement DataTablesRepositoryInterface", ObjectHelper::getName($object)));
