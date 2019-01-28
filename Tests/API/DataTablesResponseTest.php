@@ -131,7 +131,6 @@ class DataTablesResponseTest extends AbstractTestCase {
      * Tests the jsonSerialize() method.
      *
      * @return void
-     * @depends testToArray
      */
     public function testJsonSerialize() {
 
