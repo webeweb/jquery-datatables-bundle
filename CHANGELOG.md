@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+### master
+
+- Clean up comments
+- Fix PHPDoc
+- Replace FileNotFoundException
+
 ### 2.0.3 (2019-01-25)
 
 - Add jQueryDataTablesName Twig function (retrieve a DataTables name with wrapper)
