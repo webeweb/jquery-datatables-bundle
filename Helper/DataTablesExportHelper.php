@@ -46,19 +46,15 @@ class DataTablesExportHelper {
      */
     public static function isWindows(Request $request) {
 
-        // Check the headers.
         if (false === $request->headers->has("user-agent")) {
             return false;
         }
 
-        // Initialize a device detector.
         $dd = new DeviceDetector($request->headers->get("user-agent"));
         $dd->parse();
 
-        // Get the operating system.
         $os = $dd->getOs("name");
 
-        //
         return 1 === preg_match("/Windows/", $os);
     }
 }

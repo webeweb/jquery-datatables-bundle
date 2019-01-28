@@ -45,12 +45,10 @@ class DataTablesMappingHelper {
      */
     public static function getParam(DataTablesMappingInterface $mapping) {
 
-        // Initialize the param.
         $param = ":";
         $param .= $mapping->getPrefix();
         $param .= $mapping->getColumn();
 
-        // Return the param.
         return $param;
     }
 
@@ -62,12 +60,10 @@ class DataTablesMappingHelper {
      */
     public static function getWhere(DataTablesMappingInterface $mapping) {
 
-        // Initialize the where.
         $where = static::getAlias($mapping);
         $where .= " LIKE ";
         $where .= static::getParam($mapping);
 
-        // Return the where.
         return $where;
     }
 }

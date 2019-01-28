@@ -31,18 +31,13 @@ class DataTablesRepositoryHelper {
      */
     public static function appendOrder(QueryBuilder $queryBuilder, DataTablesWrapperInterface $dtWrapper) {
 
-        // Handle each order.
         foreach ($dtWrapper->getRequest()->getOrder() as $dtOrder) {
 
-            // Get the column.
             $dtColumn = array_values($dtWrapper->getColumns())[$dtOrder->getColumn()];
-
-            // Check if the column is orderable.
             if (false === $dtColumn->getOrderable()) {
                 continue;
             }
 
-            // Add the order by.
             $queryBuilder->addOrderBy($dtColumn->getMapping()->getAlias(), $dtOrder->getDir());
         }
     }
@@ -56,31 +51,25 @@ class DataTablesRepositoryHelper {
      */
     public static function appendWhere(QueryBuilder $queryBuilder, DataTablesWrapperInterface $dtWrapper) {
 
-        // Determines and check the operator.
         $operator = static::determineOperator($dtWrapper);
         if (null === $operator) {
             return;
         }
 
-        // Initialize.
         $wheres = [];
         $params = [];
         $values = [];
 
-        // Handle each column.
         foreach ($dtWrapper->getRequest()->getColumns() as $dtColumn) {
 
-            // Check the column.
             if (true === $dtColumn->getSearchable() && ("OR" === $operator || "" !== $dtColumn->getSearch()->getValue())) {
 
-                // Add.
                 $wheres[] = DataTablesMappingHelper::getWhere($dtColumn->getMapping());
                 $params[] = DataTablesMappingHelper::getParam($dtColumn->getMapping());
                 $values[] = "%" . ("AND" === $operator ? $dtColumn->getSearch()->getValue() : $dtWrapper->getRequest()->getSearch()->getValue()) . "%";
             }
         }
 
-        // Set the where clause.
         $queryBuilder->andWhere("(" . implode(" " . $operator . " ", $wheres) . ")");
         for ($i = count($params) - 1; 0 <= $i; --$i) {
             $queryBuilder->setParameter($params[$i], $values[$i]);
@@ -95,7 +84,6 @@ class DataTablesRepositoryHelper {
      */
     public static function determineOperator(DataTablesWrapperInterface $dtWrapper) {
 
-        // Check if a column defines a search.
         foreach ($dtWrapper->getRequest()->getColumns() as $dtColumn) {
             if (false === $dtColumn->getSearchable()) {
                 continue;
@@ -105,12 +93,11 @@ class DataTablesRepositoryHelper {
             }
         }
 
-        // Check if the wrappe defines a search.
+        // Check if the wrapper defines a search.
         if ("" !== $dtWrapper->getRequest()->getSearch()->getValue()) {
             return "OR";
         }
 
-        // Return the operator.
         return null;
     }
 }
