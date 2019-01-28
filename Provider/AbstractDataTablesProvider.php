@@ -78,7 +78,7 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
      */
     protected function renderButtons($entity, $editRoute, $deleteRoute = null, $enableDelete = true) {
 
-        // Initialize the translations.
+        // Initialize the titles.
         $titles   = [];
         $titles[] = $this->getTranslator()->trans("label.edit", [], "CoreBundle");
         $titles[] = $this->getTranslator()->trans("label.delete", [], "CoreBundle");
@@ -105,7 +105,6 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
             $links[] = $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($actions[1], $routes[1]);
         }
 
-        // Return the row buttons.
         return implode(" ", $links);
     }
 
