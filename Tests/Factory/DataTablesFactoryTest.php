@@ -124,7 +124,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     /**
      * Tests the parseColumn() method.
      *
-     * @return
+     * @return void
      */
     public function testParseColumnWithBadData() {
 
@@ -145,7 +145,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     /**
      * Tests the parseColumn() method.
      *
-     * @return
+     * @return void
      */
     public function testParseColumnWithBadName() {
 
@@ -166,7 +166,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     /**
      * Tests the parseColumn() method.
      *
-     * @return
+     * @return void
      */
     public function testParseColumnWithNoData() {
 
@@ -187,7 +187,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     /**
      * Tests the parseColumn() method.
      *
-     * @return
+     * @return void
      */
     public function testParseColumnWithNoName() {
 
@@ -208,7 +208,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     /**
      * Tests the parseColumn() method.
      *
-     * @return
+     * @return void
      */
     public function testParseColumnWithNoSearchable() {
 
