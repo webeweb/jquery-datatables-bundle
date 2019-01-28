@@ -12,11 +12,11 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
 
 use Exception;
+use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
-use WBW\Library\Core\Exception\FileSystem\FileNotFoundException;
 
 /**
  * DataTables wrapper helper test.
@@ -30,6 +30,7 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
      * Tests the getLanguageURL() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testGetLanguageURL() {
 
@@ -51,7 +52,7 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(FileNotFoundException::class, $ex);
-            $this->assertEquals("The file \"/bundles/jquerydatatables/datatables-i18n-1.10.16/exception.json\" is not found", $ex->getMessage());
+            $this->assertEquals("File \"/bundles/jquerydatatables/datatables-i18n-1.10.16/exception.json\" could not be found.", $ex->getMessage());
         }
     }
 
