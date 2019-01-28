@@ -34,14 +34,11 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
      */
     protected function buildDataTablesCountExported(DataTablesProviderInterface $dtProvider) {
 
-        // Get the prefix.
         $prefix = $dtProvider->getPrefix();
 
-        // Create a query builder.
         $qb = $this->createQueryBuilder($prefix)
             ->select("COUNT(" . $prefix . ")");
 
-        // Return the query builder.
         return $qb;
     }
 
@@ -53,17 +50,13 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
      */
     protected function buildDataTablesCountFiltered(DataTablesWrapperInterface $dtWrapper) {
 
-        // Get the prefix.
         $prefix = $dtWrapper->getMapping()->getPrefix();
 
-        // Create a query builder.
         $qb = $this->createQueryBuilder($prefix)
             ->select("COUNT(" . $prefix . ")");
 
-        // Append the where clause.
         DataTablesRepositoryHelper::appendWhere($qb, $dtWrapper);
 
-        // Return the query builder.
         return $qb;
     }
 
@@ -75,14 +68,11 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
      */
     protected function buildDataTablesCountTotal(DataTablesWrapperInterface $dtWrapper) {
 
-        // Get the prefix.
         $prefix = $dtWrapper->getMapping()->getPrefix();
 
-        // Create a query builder.
         $qb = $this->createQueryBuilder($prefix)
             ->select("COUNT(" . $prefix . ")");
 
-        // Return the query builder.
         return $qb;
     }
 
@@ -94,10 +84,8 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
      */
     protected function buildDataTablesExportAll(DataTablesProviderInterface $dtProvider) {
 
-        // Create a query builder.
         $qb = $this->createQueryBuilder($dtProvider->getPrefix());
 
-        // Return the query builder.
         return $qb;
     }
 
@@ -109,21 +97,17 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
      */
     protected function buildDataTablesFindAll(DataTablesWrapperInterface $dtWrapper) {
 
-        // Get the prefix.
         $prefix = $dtWrapper->getMapping()->getPrefix();
 
-        // Create a query builder.
         $qb = $this->createQueryBuilder($prefix)
             ->setFirstResult($dtWrapper->getRequest()->getStart());
         if (0 < $dtWrapper->getRequest()->getLength()) {
             $qb->setMaxResults($dtWrapper->getRequest()->getLength());
         }
 
-        // Build the where and order clauses.
         DataTablesRepositoryHelper::appendWhere($qb, $dtWrapper);
         DataTablesRepositoryHelper::appendOrder($qb, $dtWrapper);
 
-        // Return the query builder.
         return $qb;
     }
 
@@ -132,10 +116,8 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
      */
     public function dataTablesCountExported(DataTablesProviderInterface $dtProvider) {
 
-        // Build a query builder.
         $qb = $this->buildDataTablesCountExported($dtProvider);
 
-        // Return the single scalar result.
         return intval($qb->getQuery()->getSingleScalarResult());
     }
 
@@ -144,10 +126,8 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
      */
     public function dataTablesCountFiltered(DataTablesWrapperInterface $dtWrapper) {
 
-        // Build a query builder.
         $qb = $this->buildDataTablesCountFiltered($dtWrapper);
 
-        // Return the single scalar result.
         return intval($qb->getQuery()->getSingleScalarResult());
     }
 
@@ -156,10 +136,8 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
      */
     public function dataTablesCountTotal(DataTablesWrapperInterface $dtWrapper) {
 
-        // Build a query builder.
         $qb = $this->buildDataTablesCountTotal($dtWrapper);
 
-        // Return the single scalar result.
         return intval($qb->getQuery()->getSingleScalarResult());
     }
 
@@ -175,10 +153,8 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
      */
     public function dataTablesFindAll(DataTablesWrapperInterface $dtWrapper) {
 
-        // Build a query builder.
         $qb = $this->buildDataTablesFindAll($dtWrapper);
 
-        // Return the result.
         return $qb->getQuery()->getResult();
     }
 }
