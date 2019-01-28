@@ -115,7 +115,6 @@ class DataTablesFactory {
      */
     public static function newColumn($data, $name, $cellType = DataTablesColumnInterface::DATATABLES_CELL_TYPE_TD) {
 
-        // Initialize a column.
         $dtColumn = new DataTablesColumn();
         $dtColumn->getMapping()->setColumn($data);
         $dtColumn->setCellType($cellType);
@@ -123,7 +122,6 @@ class DataTablesFactory {
         $dtColumn->setName($name);
         $dtColumn->setTitle($name);
 
-        // Return the column.
         return $dtColumn;
     }
 
@@ -144,12 +142,10 @@ class DataTablesFactory {
      */
     protected static function newResponse(DataTablesWrapperInterface $wrapper) {
 
-        // Initialize a response.
         $dtResponse = new DataTablesResponse();
         $dtResponse->setDraw($wrapper->getRequest()->getDraw());
         $dtResponse->setWrapper($wrapper);
 
-        // Return the response.
         return $dtResponse;
     }
 
@@ -163,7 +159,6 @@ class DataTablesFactory {
      */
     public static function newWrapper($url, DataTablesProviderInterface $provider, UserInterface $user = null) {
 
-        // Initialize a wrapper.
         $dtWrapper = new DataTablesWrapper();
         $dtWrapper->getMapping()->setPrefix($provider->getPrefix());
         $dtWrapper->setMethod($provider->getMethod());
@@ -171,7 +166,6 @@ class DataTablesFactory {
         $dtWrapper->setUser($user);
         $dtWrapper->setUrl($url);
 
-        // Return the wrapper.
         return $dtWrapper;
     }
 
@@ -184,15 +178,11 @@ class DataTablesFactory {
      */
     protected static function parseColumn(array $rawColumn, DataTablesWrapperInterface $wrapper) {
 
-        // Determines if the raw column is valid.
         if (false === static::isValidRawColumn($rawColumn)) {
             return null;
         }
 
-        // Get the column.
         $dtColumn = $wrapper->getColumn($rawColumn[DataTablesColumnInterface::DATATABLES_PARAMETER_DATA]);
-
-        // Check the column.
         if (null === $dtColumn) {
             return null;
         }
@@ -204,10 +194,8 @@ class DataTablesFactory {
             return $dtColumn;
         }
 
-        // Set the search.
         $dtColumn->setSearch(static::parseSearch($rawColumn[DataTablesColumnInterface::DATATABLES_PARAMETER_SEARCH]));
 
-        // Return the column.
         return $dtColumn;
     }
 
@@ -220,25 +208,18 @@ class DataTablesFactory {
      */
     protected static function parseColumns(array $rawColumns, DataTablesWrapperInterface $wrapper) {
 
-        // Initialize the columns.
         $dtColumns = [];
 
-        // Handle each column.
         foreach ($rawColumns as $current) {
 
-            // Parse the column.
             $dtColumn = static::parseColumn($current, $wrapper);
-
-            // Check the column.
             if (null === $dtColumn) {
                 continue;
             }
 
-            // Add the column.
             $dtColumns[] = $dtColumn;
         }
 
-        // Returns the columns.
         return $dtColumns;
     }
 
@@ -250,19 +231,15 @@ class DataTablesFactory {
      */
     protected static function parseOrder(array $rawOrder) {
 
-        // Initialize an order.
         $dtOrder = new DataTablesOrder();
 
-        // Determines if the raw order is valid.
         if (false === static::isValidRawOrder($rawOrder)) {
             return $dtOrder;
         }
 
-        // Set the order.
         $dtOrder->setColumn(intval($rawOrder[DataTablesOrderInterface::DATATABLES_PARAMETER_COLUMN]));
         $dtOrder->setDir($rawOrder[DataTablesOrderInterface::DATATABLES_PARAMETER_DIR]);
 
-        // Return the order.
         return $dtOrder;
     }
 
@@ -274,15 +251,12 @@ class DataTablesFactory {
      */
     protected static function parseOrders(array $rawOrders) {
 
-        // Initialize the orders.
         $dtOrders = [];
 
-        // Handle each raw order.
         foreach ($rawOrders as $current) {
             $dtOrders[] = static::parseOrder($current);
         }
 
-        // Return the orders.
         return $dtOrders;
     }
 
@@ -295,14 +269,11 @@ class DataTablesFactory {
      */
     protected static function parseRequest(DataTablesWrapperInterface $wrapper, Request $request) {
 
-        // Initialize a request.
         $dtRequest = new DataTablesRequest();
 
-        // Copy the parameter bags.
         static::copyParameterBag($request->query, $dtRequest->getQuery());
         static::copyParameterBag($request->request, $dtRequest->getRequest());
 
-        // Get the parameter bag.
         if (HTTPInterface::HTTP_METHOD_GET === $request->getMethod()) {
             $parameterBag = $request->query;
         } else {
@@ -323,7 +294,6 @@ class DataTablesFactory {
         $dtRequest->setStart($parameterBag->getInt(DataTablesRequestInterface::DATATABLES_PARAMETER_START));
         $dtRequest->setWrapper($wrapper);
 
-        // Return the request.
         return $dtRequest;
     }
 
@@ -335,19 +305,15 @@ class DataTablesFactory {
      */
     protected static function parseSearch(array $rawSearch) {
 
-        // Initialize a search.
         $dtSearch = new DataTablesSearch();
 
-        // Determines if the raw search is valid.
         if (false === static::isValidRawSearch($rawSearch)) {
             return $dtSearch;
         }
 
-        // Set the search.
         $dtSearch->setRegex(BooleanHelper::parseString($rawSearch[DataTablesSearchInterface::DATATABLES_PARAMETER_REGEX]));
         $dtSearch->setValue($rawSearch[DataTablesSearchInterface::DATATABLES_PARAMETER_VALUE]);
 
-        // Return the search.
         return $dtSearch;
     }
 
