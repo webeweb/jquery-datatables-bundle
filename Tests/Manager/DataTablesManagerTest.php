@@ -63,6 +63,7 @@ class DataTablesManagerTest extends AbstractTestCase {
      * Tests the getProvider() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testGetProvider() {
 
@@ -95,6 +96,7 @@ class DataTablesManagerTest extends AbstractTestCase {
      * Tests the registerProvider() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testRegisterProvider() {
 
@@ -114,6 +116,7 @@ class DataTablesManagerTest extends AbstractTestCase {
      * Tests the registerProvider() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testRegisterProviderWithAlreadyRegisteredDataTablesProviderException() {
 
