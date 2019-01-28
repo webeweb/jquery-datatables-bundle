@@ -480,7 +480,6 @@ class DataTablesColumn implements DataTablesColumnInterface {
      */
     public function toArray() {
 
-        // Initialize the output.
         $output = [];
 
         ArrayHelper::set($output, "cellType", $this->cellType, [null]);
@@ -498,7 +497,6 @@ class DataTablesColumn implements DataTablesColumnInterface {
         ArrayHelper::set($output, "visible", $this->visible, [null, true]);
         ArrayHelper::set($output, "width", $this->width, [null]);
 
-        // Return the output.
         return $output;
     }
 }
