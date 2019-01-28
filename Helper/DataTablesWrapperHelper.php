@@ -11,11 +11,11 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
 
+use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle;
 use WBW\Library\Core\Argument\ObjectHelper;
 use WBW\Library\Core\Argument\StringHelper;
-use WBW\Library\Core\Exception\FileSystem\FileNotFoundException;
 
 /**
  * DataTables wrapper helper.
@@ -47,10 +47,9 @@ class DataTablesWrapperHelper {
         // Initialize and check the filename.
         $file = StringHelper::replace($dir, ["%version%", "%language%"], [JQueryDataTablesBundle::DATATABLES_VERSION, $language]);
         if (false === file_exists($file)) {
-            throw new FileNotFoundException($url);
+            throw new FileNotFoundException(null, 500, null, $url);
         }
 
-        // Return the URL.
         return $url;
     }
 
@@ -72,15 +71,12 @@ class DataTablesWrapperHelper {
      */
     public static function getOptions(DataTablesWrapperInterface $dtWrapper) {
 
-        // Initialize the output.
         $output = [];
 
-        // Check the options.
         if (null !== $dtWrapper->getOptions()) {
             $output = $dtWrapper->getOptions()->getOptions();
         }
 
-        // Set the options.
         $output["ajax"]         = [];
         $output["ajax"]["type"] = $dtWrapper->getMethod();
         $output["ajax"]["url"]  = $dtWrapper->getUrl();
@@ -89,17 +85,14 @@ class DataTablesWrapperHelper {
         $output["processing"]   = $dtWrapper->getProcessing();
         $output["serverSide"]   = $dtWrapper->getServerSide();
 
-        // Handle each column.
         foreach ($dtWrapper->getColumns() as $current) {
             $output["columns"][] = $current->toArray();
         }
 
-        // Handle each order.
         foreach ($dtWrapper->getOrder() as $current) {
             $output["order"][] = $current->toArray();
         }
 
-        // Return the output.
         return $output;
     }
 }
