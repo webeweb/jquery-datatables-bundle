@@ -11,13 +11,13 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Twig\Extension;
 
+use Exception;
 use Twig_Node;
 use Twig_SimpleFilter;
 use Twig_SimpleFunction;
 use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
-use WBW\Library\Core\Exception\FileSystem\FileNotFoundException;
 
 /**
  * DataTables Twig extension test.
@@ -171,7 +171,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      * Tests the jQueryDataTablesFunction() {
      *
      * @return void
-     * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testJQueryDataTablesFunction() {
 
@@ -242,7 +242,7 @@ EOT;
      * Tests the jQueryDataTablesFunction() {
      *
      * @return void
-     * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testJQueryDataTablesFunctionWithoutArguments() {
 
@@ -310,7 +310,7 @@ EOT;
      * Tests the jQueryDataTablesStandaloneFunction() {
      *
      * @return void
-     * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testJQueryDataTablesStandaloneFunction() {
 
@@ -341,7 +341,7 @@ EOT;
      * Tests the jQueryDataTablesStandaloneFunction() {
      *
      * @return void
-     * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testJQueryDataTablesStandaloneFunctionWithoutArguments() {
 
