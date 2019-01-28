@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection;
 
+use Exception;
 use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\JQueryDataTablesExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
@@ -39,6 +40,7 @@ class DataTablesExtensionTest extends AbstractTestCase {
      * Tests the load() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testLoad() {
 
