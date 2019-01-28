@@ -33,7 +33,7 @@ interface DataTablesRepositoryInterface {
     /**
      * Count exported entities.
      *
-     * @param DataTablesProvider The provider.
+     * @param DataTablesProviderInterface $dtProvider The provider.
      * @return int Returns the exported entities count.
      */
     public function dataTablesCountExported(DataTablesProviderInterface $dtProvider);
@@ -57,7 +57,7 @@ interface DataTablesRepositoryInterface {
     /**
      * Export all query builder.
      *
-     * @param DataTablesProviderInterface The provider.
+     * @param DataTablesProviderInterface $dtProvider The provider.
      * @return QueryBuilder Returns the export all query builder.
      */
     public function dataTablesExportAll(DataTablesProviderInterface $dtProvider);
