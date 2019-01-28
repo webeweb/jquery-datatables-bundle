@@ -40,6 +40,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
      * Tests the addOption() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testAddOption() {
 
@@ -72,7 +73,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
      * Tests the getOption() method.
      *
      * @return void
-     * @depends testAddOption
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testGetOption() {
 
@@ -87,7 +88,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
      * Tests the hasOption() method.
      *
      * @return void
-     * @depends testAddOption
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testHasOption() {
 
@@ -102,7 +103,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
      * Tests the removeOption() method.
      *
      * @return void
-     * @depends testAddOption
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testRemoveOption() {
 
@@ -119,6 +120,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
      * Tests the setOption() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testSetOption() {
 
