@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Provider;
 
 use DateTime;
+use Exception;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
@@ -114,6 +115,7 @@ EOT;
      * Tests the renderDate() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testRenderDate() {
 
@@ -128,6 +130,7 @@ EOT;
      * Tests the renderDateTime() method.
      *
      * @return void
+     * @throws Exception Throws an exception if an error occurs.
      */
     public function testRenderDateTime() {
 
