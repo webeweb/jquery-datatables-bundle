@@ -38,13 +38,11 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTable
      */
     public function getColumns() {
 
-        // Initialize the columns.
         $dtColumns = [];
 
         $dtColumns[] = DataTablesFactory::newColumn("name", "Name");
         $dtColumns[] = DataTablesFactory::newColumn("actions", "Actions")->setOrderable(false)->setSearchable(false);
 
-        // Returns the columns.
         return $dtColumns;
     }
 
@@ -109,10 +107,8 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTable
      */
     public function renderColumn(DataTablesColumnInterface $dtColumn, $entity) {
 
-        // Initialize the output.
         $output = null;
 
-        // Switch into column data.
         switch ($dtColumn->getData()) {
 
             case "actions":
@@ -124,7 +120,6 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTable
                 break;
         }
 
-        // Return the output.
         return $output;
     }
 
@@ -133,10 +128,8 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTable
      */
     public function renderRow($dtRow, $entity, $rowNumber) {
 
-        // Initialize the output.
         $output = null;
 
-        // Switch into column data.
         switch ($dtRow) {
 
             case self::DATATABLES_ROW_ATTR:
@@ -155,7 +148,6 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTable
                 break;
         }
 
-        // Return the output.
         return $output;
     }
 }

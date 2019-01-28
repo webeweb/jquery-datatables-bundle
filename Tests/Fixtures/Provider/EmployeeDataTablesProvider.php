@@ -35,7 +35,6 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
      */
     public function editColumn(DataTablesColumnInterface $dtColumn, $entity, $value) {
 
-        // Switch into column data.
         switch ($dtColumn->getData()) {
 
             case "age":
@@ -72,7 +71,6 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
      */
     public function exportColumns() {
 
-        // Initialize the output.
         $output = [];
 
         $output[] = "#";
@@ -83,7 +81,6 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
         $output[] = "Start date";
         $output[] = "Salary";
 
-        // Return the output.
         return $output;
     }
 
@@ -92,7 +89,6 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
      */
     public function exportRow($entity) {
 
-        // Initialize the output.
         $output = [];
 
         $output[] = $entity->getId();
@@ -107,7 +103,6 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
         }
         $output[] = $entity->getSalary();
 
-        // Return the output.
         return $output;
     }
 
@@ -116,7 +111,6 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
      */
     public function getColumns() {
 
-        // Initialize the columns.
         $dtColumns = [];
 
         $dtColumns[] = DataTablesFactory::newColumn("name", "Name");
@@ -127,7 +121,6 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
         $dtColumns[] = DataTablesFactory::newColumn("salary", "Salary");
         $dtColumns[] = DataTablesFactory::newColumn("actions", "Actions")->setOrderable(false)->setSearchable(false);
 
-        // Returns the columns.
         return $dtColumns;
     }
 
@@ -192,10 +185,8 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
      */
     public function renderColumn(DataTablesColumnInterface $dtColumn, $entity) {
 
-        // Initialize the output.
         $output = null;
 
-        // Switch into column data.
         switch ($dtColumn->getData()) {
 
             case "actions":
@@ -229,7 +220,6 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
                 break;
         }
 
-        // Return the output.
         return $output;
     }
 
@@ -238,10 +228,8 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
      */
     public function renderRow($dtRow, $entity, $rowNumber) {
 
-        // Initialize the output.
         $output = null;
 
-        // Switch into column data.
         switch ($dtRow) {
 
             case DataTablesResponseInterface::DATATABLES_ROW_ATTR:
@@ -260,7 +248,6 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
                 break;
         }
 
-        // Return the output.
         return $output;
     }
 }
