@@ -201,7 +201,7 @@ class Employee {
      * @param DateTime $startDate The start date.
      * @return Employee Returns this employee.
      */
-    public function setStartDate($startDate) {
+    public function setStartDate(DateTime $startDate = null) {
         $this->startDate = $startDate;
         return $this;
     }
