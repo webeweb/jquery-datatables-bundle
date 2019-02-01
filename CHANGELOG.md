@@ -1,10 +1,12 @@
 CHANGELOG
 =========
 
-### master
+### 2.0.4 (2019-02-01)
 
+- Add DataTables normalizer
 - Clean up comments
 - Fix PHPDoc
+- Fix possible issue into DataTables wrapper helper
 - Replace FileNotFoundException
 
 ### 2.0.3 (2019-01-25)
