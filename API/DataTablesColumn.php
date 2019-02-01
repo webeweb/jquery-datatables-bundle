@@ -11,8 +11,6 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
-use WBW\Library\Core\Argument\ArrayHelper;
-
 /**
  * DataTables column.
  *
@@ -271,13 +269,6 @@ class DataTablesColumn implements DataTablesColumnInterface {
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function jsonSerialize() {
-        return $this->toArray();
-    }
-
-    /**
      * Set the cell type.
      *
      * @param string $cellType The cell type.
@@ -471,32 +462,5 @@ class DataTablesColumn implements DataTablesColumnInterface {
     public function setWidth($width) {
         $this->width = $width;
         return $this;
-    }
-
-    /**
-     * Convert into an array representing this instance.
-     *
-     * @return array Returns an array representing this instance.
-     */
-    public function toArray() {
-
-        $output = [];
-
-        ArrayHelper::set($output, "cellType", $this->cellType, [null]);
-        ArrayHelper::set($output, "classname", $this->classname, [null]);
-        ArrayHelper::set($output, "contentPadding", $this->contentPadding, [null]);
-        ArrayHelper::set($output, "data", $this->data, [null]);
-        ArrayHelper::set($output, "defaultContent", $this->defaultContent, [null]);
-        ArrayHelper::set($output, "name", $this->name, [null]);
-        ArrayHelper::set($output, "orderable", $this->orderable, [null, true]);
-        ArrayHelper::set($output, "orderData", $this->orderData, [null]);
-        ArrayHelper::set($output, "orderDataType", $this->orderDataType, [null]);
-        ArrayHelper::set($output, "orderSequence", $this->orderSequence, [null]);
-        ArrayHelper::set($output, "searchable", $this->searchable, [null, true]);
-        ArrayHelper::set($output, "type", $this->type, [null]);
-        ArrayHelper::set($output, "visible", $this->visible, [null, true]);
-        ArrayHelper::set($output, "width", $this->width, [null]);
-
-        return $output;
     }
 }

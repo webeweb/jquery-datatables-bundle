@@ -11,15 +11,13 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
-use JsonSerializable;
-
 /**
  * DataTables column interface.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\API
  */
-interface DataTablesColumnInterface extends JsonSerializable {
+interface DataTablesColumnInterface {
 
     /**
      * Cell type "td".
