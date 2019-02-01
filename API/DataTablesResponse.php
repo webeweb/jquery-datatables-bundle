@@ -11,6 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
+use WBW\Bundle\JQuery\DataTablesBundle\Normalizer\DataTablesNormalizer;
+
 /**
  * DataTables response.
  *
@@ -133,7 +135,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
      * {@inheritdoc}
      */
     public function jsonSerialize() {
-        return $this->toArray();
+        return DataTablesNormalizer::normalizeResponse($this);
     }
 
     /**
@@ -187,34 +189,12 @@ class DataTablesResponse implements DataTablesResponseInterface {
      */
     public function setRow($data, $value) {
 
-        // Count the rows.
         $index = $this->countRows() - 1;
 
-        // Check the column data.
         if ((true === in_array($data, DataTablesEnumerator::enumRows()) && null !== $value) || (true === in_array($data, array_keys($this->data[$index])))) {
             $this->data[$index][$data] = $value;
         }
 
-        // Returns the response.
         return $this;
-    }
-
-    /**
-     * Convert into an array representing this instance.
-     *
-     * @return array Returns an array representing this instance.
-     */
-    public function toArray() {
-
-        // Initialize the output.
-        $output = [];
-
-        $output["data"]            = $this->data;
-        $output["draw"]            = $this->draw;
-        $output["recordsFiltered"] = $this->recordsFiltered;
-        $output["recordsTotal"]    = $this->recordsTotal;
-
-        // Return the output.
-        return $output;
     }
 }

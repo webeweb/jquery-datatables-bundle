@@ -111,23 +111,6 @@ class DataTablesResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the toArray() method.
-     *
-     * @return void
-     */
-    public function testToArray() {
-
-        $obj = new DataTablesResponse();
-
-        $obj->setError("error");
-        $obj->setRecordsFiltered(1);
-        $obj->setRecordsTotal(2);
-
-        $res = ["data" => [], "draw" => 0, "recordsFiltered" => 1, "recordsTotal" => 2];
-        $this->assertEquals($res, $obj->toArray());
-    }
-
-    /**
      * Tests the jsonSerialize() method.
      *
      * @return void
