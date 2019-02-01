@@ -12,10 +12,13 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures;
 
 use DateTime;
+use Exception;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider;
+use WBW\Library\Core\Argument\StringHelper;
 
 /**
  * Test fixtures.
@@ -26,13 +29,53 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTable
 class TestFixtures {
 
     /**
+     * Build POST data.
+     *
+     * @param DataTablesProviderInterface $dtProvider The provider.
+     * @return array Returns the POST data.
+     */
+    public static function buildPOSTData(DataTablesProviderInterface $dtProvider) {
+
+        $postData = [];
+
+        $postData["columns"] = [];
+
+        foreach ($dtProvider->getColumns() as $current) {
+
+            $buffer = [];
+
+            $buffer["data"]            = $current->getData();
+            $buffer["name"]            = $current->getName();
+            $buffer["orderable"]       = StringHelper::parseBoolean($current->getOrderable());
+            $buffer["search"]["regex"] = StringHelper::parseBoolean(false);
+            $buffer["search"]["value"] = "";
+            $buffer["searchable"]      = StringHelper::parseBoolean($current->getSearchable());
+
+            $postData["columns"][] = $buffer;
+        }
+
+        $fixtures["draw"]   = "1";
+        $fixtures["length"] = "10";
+
+        $fixtures["order"][0]["column"] = "0";
+        $fixtures["order"][0]["dir"]    = "asc";
+
+        $fixtures["search"]["regex"] = "false";
+        $fixtures["search"]["value"] = "";
+
+        $fixtures["start"] = "0";
+
+        return $postData;
+    }
+
+    /**
      * Get the employees.
      *
      * @return Employee[] Returns the employee entities.
+     * @throws Exception Throws an exception if an error occurs.
      */
     public static function getEmployees() {
 
-        // Initialize the fixtures.
         $fixtures = [];
 
         $fixtures[] = (new Employee())->setName("Tiger Nixon")->setPosition("System Architect")->setOffice("Edinburgh")->setAge(61)->setStartDate(new DateTime("2011-04-25"))->setSalary(320800);
@@ -93,7 +136,6 @@ class TestFixtures {
         $fixtures[] = (new Employee())->setName("Michael Bruce")->setPosition("Javascript Developer")->setOffice("Singapore")->setAge(29)->setStartDate(new DateTime("2011-06-27"))->setSalary(183000);
         $fixtures[] = (new Employee())->setName("Donna Snider")->setPosition("Customer Support")->setOffice("New York")->setAge(27)->setStartDate(new DateTime("2011-01-25"))->setSalary(112000);
 
-        // Return the fixtures.
         return $fixtures;
     }
 
