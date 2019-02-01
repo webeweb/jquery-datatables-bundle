@@ -14,6 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle;
+use WBW\Bundle\JQuery\DataTablesBundle\Normalizer\DataTablesNormalizer;
 use WBW\Library\Core\Argument\ObjectHelper;
 use WBW\Library\Core\Argument\StringHelper;
 
@@ -64,7 +65,7 @@ class DataTablesWrapperHelper {
     }
 
     /**
-     * Get a options.
+     * Get the options.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return array Returns the options.
@@ -81,16 +82,12 @@ class DataTablesWrapperHelper {
         $output["ajax"]["type"] = $dtWrapper->getMethod();
         $output["ajax"]["url"]  = $dtWrapper->getUrl();
         $output["columns"]      = [];
-        $output["order"]        = [];
+        $output["order"]        = $dtWrapper->getOrder();
         $output["processing"]   = $dtWrapper->getProcessing();
         $output["serverSide"]   = $dtWrapper->getServerSide();
 
         foreach ($dtWrapper->getColumns() as $current) {
-            $output["columns"][] = $current->toArray();
-        }
-
-        foreach ($dtWrapper->getOrder() as $current) {
-            $output["order"][] = $current->toArray();
+            $output["columns"][] = DataTablesNormalizer::normalizeColumn($current);
         }
 
         return $output;
