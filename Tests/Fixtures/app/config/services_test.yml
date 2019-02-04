@@ -1,17 +1,7 @@
 # Tests/Fixtures/App/config/services_test.yml
 services:
 
-    app.datatables.provider.employee:
-        class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider
-        tags:
-            - { name: "webeweb.jquery_datatables.provider" }
-
-    app.datatables.provider.office:
-        class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\OfficeDataTablesProvider
-        tags:
-            - { name: "webeweb.jquery_datatables.provider" }
-
-    app.datatables.event_listener:
+    webeweb.jquery_datatables.event_listener:
         class:     WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\EventListener\DataTablesEventListener
         tags:
             - { name: "kernel.event_listener", event: "webeweb.jquery_datatables.event.pre_delete",  method: "onPreDelete" }
@@ -23,3 +13,13 @@ services:
             - { name: "kernel.event_listener", event: "webeweb.jquery_datatables.event.post_edit",   method: "onPostEdit" }
             - { name: "kernel.event_listener", event: "webeweb.jquery_datatables.event.post_export", method: "onPostExport" }
             - { name: "kernel.event_listener", event: "webeweb.jquery_datatables.event.post_index",  method: "onPostIndex" }
+
+    webeweb.jquery_datatables.provider.employee:
+        class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider
+        tags:
+            - { name: "webeweb.jquery_datatables.provider" }
+
+    webeweb.jquery_datatables.provider.office:
+        class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\OfficeDataTablesProvider
+        tags:
+            - { name: "webeweb.jquery_datatables.provider" }

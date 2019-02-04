@@ -1,4 +1,4 @@
 # Tests/Fixtures/App/config/routing_test.yml
-bundle:
+jquery_datatables:
     prefix:   "/"
     resource: "@JQueryDataTablesBundle/Resources/config/routing.yml"
