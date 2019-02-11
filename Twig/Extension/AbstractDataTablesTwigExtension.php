@@ -123,7 +123,6 @@ EOT;
             $options["language"] = ["url" => DataTablesWrapperHelper::getLanguageURL($language)];
         }
 
-        //
         $searches = ["%selector%", "%options%"];
         $replaces = [$selector, $this->encodeOptions($options)];
 
