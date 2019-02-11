@@ -113,4 +113,11 @@ class TestDataTablesProvider extends AbstractDataTablesProvider {
     public function renderRow($dtRow, $entity, $rowNumber) {
         return null;
     }
+
+    /**
+     *{@inheritdoc}
+     */
+    public function wrapContent($prefix, $content, $suffix) {
+        return parent::wrapContent($prefix, $content, $suffix);
+    }
 }

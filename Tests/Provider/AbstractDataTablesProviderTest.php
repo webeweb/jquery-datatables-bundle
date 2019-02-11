@@ -155,4 +155,19 @@ EOT;
         $this->assertEquals("1,000.000", $obj->renderFloat(1000, 3));
         $this->assertEquals("1 000,000", $obj->renderFloat(1000, 3, ",", " "));
     }
+
+    /**
+     * Tests the wrapContent() method.
+     *
+     * @return void
+     */
+    public function testWrapContent() {
+
+        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+
+        $this->assertEquals("content", $obj->wrapContent(null, "content", null));
+        $this->assertEquals("prefix-content", $obj->wrapContent("prefix-", "content", null));
+        $this->assertEquals("prefix-content-suffix", $obj->wrapContent("prefix-", "content", "-suffix"));
+        $this->assertEquals("content-suffix", $obj->wrapContent(null, "content", "-suffix"));
+    }
 }

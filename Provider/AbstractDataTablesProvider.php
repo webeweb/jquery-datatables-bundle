@@ -145,4 +145,27 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
         }
         return number_format($number, $decimals, $decPoint, $thousandsSep);
     }
+
+    /**
+     * Wrap a content.
+     *
+     * @param string|null $prefix The prefix
+     * @param string $content The content.
+     * @param string|null $suffix The suffix.
+     * @return string Returns the wrapped content.
+     */
+    protected function wrapContent($prefix, $content, $suffix) {
+
+        $output = [];
+
+        if (null !== $prefix) {
+            $output[] = $prefix;
+        }
+        $output[] = $content;
+        if (null !== $suffix) {
+            $output[] = $suffix;
+        }
+
+        return implode("", $output);
+    }
 }
