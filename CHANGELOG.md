@@ -3,6 +3,7 @@ CHANGELOG
 
 ### [2.1.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v2.1.0) (2019-02-14)
 
+- Add wrapContent() into abstract DataTables provider
 - Improve templates
 - Improve unit tests
 - Update DataTables to 1.10.18
