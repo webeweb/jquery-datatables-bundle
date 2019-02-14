@@ -1,3 +1,4 @@
 {# Resources/views/layout/javascript/datatables-keytable.html.twig #}
+{% set _version = constant("WBW\\Bundle\\JQuery\\DataTablesBundle\\DataTablesVersionInterface::DATATABLES_KEYTABLE_VERSION")%}
 <!-- DataTables KeyTable -->
-<script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-keytable-2.3.2/js/dataTables.keyTable.min.js") }}"></script>
+<script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-keytable-" ~ _version ~ "/js/dataTables.keyTable.min.js") }}"></script>

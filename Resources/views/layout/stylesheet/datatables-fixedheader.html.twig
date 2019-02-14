@@ -1,0 +1,6 @@
+{# Resources/views/layout/stylesheet/datatables-fixedheader.html.twig #}
+{% set _version = constant("WBW\\Bundle\\JQuery\\DataTablesBundle\\DataTablesVersionInterface::DATATABLES_FIXEDHEADER_VERSION")%}
+{% set _themes  = ["bootstrap", "bootstrap4", "datatables", "foundation", "jqueryui", "semanticui"] %}
+{% set _theme   = dtTheme|default("") in _themes ? dtTheme : "bootstrap" %}
+<!-- DataTables FixedHeader -->
+<link type="text/css" rel="stylesheet" href="{{ asset("bundles/jquerydatatables/datatables-fixedheader-" ~ _version ~ "/css/fixedHeader." ~ _theme ~ ".min.css") }}">
