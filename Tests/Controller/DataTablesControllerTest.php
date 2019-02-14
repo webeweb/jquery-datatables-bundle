@@ -59,43 +59,14 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         $content = $client->getResponse()->getContent();
 
         // Check the CSS.
-        $this->assertRegExp("/href=\"\/bundles\/jquerydatatables\/datatables\-.*\/css\/dataTables.bootstrap\.min\.css\"/", $content);
-        $this->assertRegExp("/href=\"\/bundles\/jquerydatatables\/datatables\-autofill\-.*\/css\/autoFill.bootstrap\.min\.css\"/", $content);
-        $this->assertRegExp("/href=\"\/bundles\/jquerydatatables\/datatables\-buttons\-.*\/css\/buttons.bootstrap\.min\.css\"/", $content);
-        $this->assertRegExp("/href=\"\/bundles\/jquerydatatables\/datatables\-colreorder\-.*\/css\/colReorder.bootstrap\.min\.css\"/", $content);
-        $this->assertRegExp("/href=\"\/bundles\/jquerydatatables\/datatables\-fixedcolumns\-.*\/css\/fixedColumns.bootstrap\.min\.css\"/", $content);
-        $this->assertRegExp("/href=\"\/bundles\/jquerydatatables\/datatables\-fixedheader\-.*\/css\/fixedHeader.bootstrap\.min\.css\"/", $content);
-        $this->assertRegExp("/href=\"\/bundles\/jquerydatatables\/datatables\-keytable\-.*\/css\/keyTable.bootstrap\.min\.css\"/", $content);
-        $this->assertRegExp("/href=\"\/bundles\/jquerydatatables\/datatables\-responsive\-.*\/css\/responsive.bootstrap\.min\.css\"/", $content);
-        $this->assertRegExp("/href=\"\/bundles\/jquerydatatables\/datatables\-rowgroup\-.*\/css\/rowGroup.bootstrap\.min\.css\"/", $content);
-        $this->assertRegExp("/href=\"\/bundles\/jquerydatatables\/datatables\-rowreorder\-.*\/css\/rowReorder.bootstrap\.min\.css\"/", $content);
-        $this->assertRegExp("/href=\"\/bundles\/jquerydatatables\/datatables\-select\-.*\/css\/select.bootstrap\.min\.css\"/", $content);
+        foreach (static::listCSSAssets() as $current) {
+            $this->assertRegExp("/" . preg_quote($current, "/") . "/", $content);
+        }
 
         // Check the Javascript.
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-.*\/js\/jquery.dataTables\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-.*\/js\/dataTables.bootstrap\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-autofill\-.*\/js\/dataTables.autoFill\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-autofill\-.*\/js\/autoFill.bootstrap\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-jszip-.*\/jszip\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-pdfmake\-.*\/pdfmake\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-pdfmake\-.*\/vfs_fonts\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-buttons\-.*\/js\/dataTables.buttons\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-buttons\-.*\/js\/buttons.colVis\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-buttons\-.*\/js\/buttons.flash\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-buttons\-.*\/js\/buttons.html5\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-buttons\-.*\/js\/buttons.print\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-buttons\-.*\/js\/buttons.bootstrap\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-colreorder\-.*\/js\/dataTables.colReorder\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-fixedcolumns\-.*\/js\/dataTables.fixedColumns\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-fixedheader\-.*\/js\/dataTables.fixedHeader\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-keytable\-.*\/js\/dataTables.keyTable\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-responsive\-.*\/js\/dataTables.responsive\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-responsive\-.*\/js\/responsive.bootstrap\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-rowgroup\-.*\/js\/dataTables.rowGroup\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-rowreorder\-.*\/js\/dataTables.rowReorder\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-scroller\-.*\/js\/dataTables.scroller\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/datatables\-select\-.*\/js\/dataTables.select\.min\.js\"/", $content);
-        $this->assertRegExp("/src=\"\/bundles\/jquerydatatables\/editable\-table\/mindmup-editabletable\.js\"/", $content);
+        foreach (static::listJavascriptAssets() as $current) {
+            $this->assertRegExp("/" . preg_quote($current, "/") . "/", $content);
+        }
     }
 
     /**
