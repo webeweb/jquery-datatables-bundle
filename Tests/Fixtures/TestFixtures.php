@@ -231,7 +231,6 @@ class TestFixtures {
      */
     public static function getWrapper() {
 
-        // Initialize the fixture.
         $fixture = DataTablesFactory::newWrapper("/datatables/employee/index", new EmployeeDataTablesProvider());
 
         $fixture->addColumn(DataTablesFactory::newColumn("name", "Name"));
@@ -242,7 +241,6 @@ class TestFixtures {
         $fixture->addColumn(DataTablesFactory::newColumn("salary", "Salary"));
         $fixture->addColumn(DataTablesFactory::newColumn("actions", "Actions")->setOrderable(false)->setSearchable(false));
 
-        // Return the fixture.
         return $fixture;
     }
 }
