@@ -141,7 +141,6 @@ abstract class AbstractTestCase extends TestCase {
         // Set a Wrapper mock.
         $this->dtWrapper = TestFixtures::getWrapper();
 
-
         // Set the request parameters.
         $get  = ["query" => "query"];
         $post = array_merge(TestFixtures::getPOSTData(), ["request" => "request"]);
