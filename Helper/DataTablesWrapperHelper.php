@@ -37,16 +37,16 @@ class DataTablesWrapperHelper {
 
         // Initialize the directory.
         $dir = ObjectHelper::getDirectory(JQueryDataTablesBundle::class);
-        $dir .= "/Resources/public/datatables-i18n-%version%/%language%.json";
+        $dir .= "/Resources/public/datatables-i18n/%language%.json";
 
         // Initialize the URI.
-        $uri = "/bundles/jquerydatatables/datatables-i18n-%version%/%language%.json";
+        $uri = "/bundles/jquerydatatables/datatables-i18n/%language%.json";
 
         // Initialize the URL.
-        $url = StringHelper::replace($uri, ["%version%", "%language%"], [JQueryDataTablesBundle::DATATABLES_VERSION, $language]);
+        $url = StringHelper::replace($uri, ["%language%"], [$language]);
 
         // Initialize and check the filename.
-        $file = StringHelper::replace($dir, ["%version%", "%language%"], [JQueryDataTablesBundle::DATATABLES_VERSION, $language]);
+        $file = StringHelper::replace($dir, ["%language%"], [$language]);
         if (false === file_exists($file)) {
             throw new FileNotFoundException(null, 500, null, $url);
         }

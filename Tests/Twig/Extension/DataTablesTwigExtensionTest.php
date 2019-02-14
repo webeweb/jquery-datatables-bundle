@@ -141,7 +141,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     public function testI18n() {
 
         // Initialize the language directory.
-        $langDirectory = getcwd() . "/Resources/public/datatables-i18n-1.10.16";
+        $langDirectory = getcwd() . "/Resources/public/datatables-i18n";
 
         // ===
         $found = 0;
@@ -226,7 +226,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
                 }
             ],
             "language": {
-                "url": "/bundles/jquerydatatables/datatables-i18n-1.10.16/French.json"
+                "url": "/bundles/jquerydatatables/datatables-i18n/French.json"
             },
             "order": [],
             "processing": true,
@@ -328,7 +328,7 @@ EOT;
                 }
             ],
             "language": {
-                "url": "/bundles/jquerydatatables/datatables-i18n-1.10.16/French.json"
+                "url": "/bundles/jquerydatatables/datatables-i18n/French.json"
             }
         });
     });

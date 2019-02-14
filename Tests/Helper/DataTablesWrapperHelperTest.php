@@ -35,7 +35,7 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
     public function testGetLanguageURL() {
 
 
-        $res = "/bundles/jquerydatatables/datatables-i18n-1.10.16/French.json";
+        $res = "/bundles/jquerydatatables/datatables-i18n/French.json";
         $this->assertEquals($res, DataTablesWrapperHelper::getLanguageURL("French"));
     }
 
@@ -52,7 +52,7 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(FileNotFoundException::class, $ex);
-            $this->assertEquals("File \"/bundles/jquerydatatables/datatables-i18n-1.10.16/exception.json\" could not be found.", $ex->getMessage());
+            $this->assertEquals("File \"/bundles/jquerydatatables/datatables-i18n/exception.json\" could not be found.", $ex->getMessage());
         }
     }
 
