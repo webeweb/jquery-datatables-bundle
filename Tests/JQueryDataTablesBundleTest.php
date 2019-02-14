@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
 
+use WBW\Bundle\JQuery\DataTablesBundle\DataTablesVersionInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle;
 
 /**
@@ -28,7 +29,7 @@ class JQueryDataTablesBundleTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $this->assertEquals("1.10.16", JQueryDataTablesBundle::DATATABLES_VERSION);
+        $this->assertEquals(DataTablesVersionInterface::DATATABLES_VERSION, JQueryDataTablesBundle::DATATABLES_VERSION);
     }
 
     /**

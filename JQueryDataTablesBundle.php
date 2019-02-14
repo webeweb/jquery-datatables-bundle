@@ -28,8 +28,9 @@ class JQueryDataTablesBundle extends Bundle implements AssetsProviderInterface {
      * DataTables version.
      *
      * @var string
+     * @deprecated since 2.1.0
      */
-    const DATATABLES_VERSION = "1.10.16";
+    const DATATABLES_VERSION = DataTablesVersionInterface::DATATABLES_VERSION;
 
     /**
      * {@inheritdoc}
