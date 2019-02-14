@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+### [2.1.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v2.1.0) (2019-02-14)
+
+- Improve templates
+- Improve unit tests
+- Update DataTables to 1.10.18
+
 ### [2.0.4](https://github.com/webeweb/jquery-datatables-bundle/tree/v2.0.4) (2019-02-01)
 
 - Add DataTables normalizer
