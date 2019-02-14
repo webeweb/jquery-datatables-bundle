@@ -22,22 +22,21 @@ Dry out your DataTables code by writing it all in PHP !
 
 Includes :
 
-- [DataTables 1.10.16](https://datatables.net/)
-- [DataTables AutoFill 2.2.2](https://datatables.net/extensions/autofill/) (DataTables plugin)
-- [DataTables Buttons 1.5.1](https://datatables.net/extensions/buttons/) (DataTables plugin)
+- [DataTables 1.10.18](https://datatables.net/)
+- [DataTables AutoFill 2.3.2](https://datatables.net/extensions/autofill/) (DataTables plugin)
+- [DataTables Buttons 1.5.4](https://datatables.net/extensions/buttons/) (DataTables plugin)
 - DataTables JSZip 2.5.0
-- DataTables pdfmake 0.1.32
-- [DataTables ColReorder 1.4.1](https://datatables.net/extensions/colreorder/) (DataTables plugin)
-- [DataTables FixedColumns 3.2.4](https://datatables.net/extensions/fixedcolumns/) (DataTables plugin)
-- [DataTables FixedHeader 3.1.3](https://datatables.net/extensions/fixedheader/) (DataTables plugin)
-- [DataTables KeyTable 2.3.2](https://datatables.net/extensions/keytable/) (DataTables plugin)
-- [DataTables Responsive 2.2.1](https://datatables.net/extensions/responsive/) (DataTables plugin)
-- [DataTables RowGroup 1.0.2](https://datatables.net/extensions/rowgroup/) (DataTables plugin)
-- [DataTables RowReorder 1.2.3](https://datatables.net/extensions/rowreorder/) (DataTables plugin)
-- [DataTables Scroller 1.4.4](https://datatables.net/extensions/scroller/) (DataTables plugin)
-- [DataTables Select 1.2.5](https://datatables.net/extensions/select/) (DataTables plugin)
+- DataTables pdfmake 0.1.36
+- [DataTables ColReorder 1.5.0](https://datatables.net/extensions/colreorder/) (DataTables plugin)
+- [DataTables FixedColumns 3.2.5](https://datatables.net/extensions/fixedcolumns/) (DataTables plugin)
+- [DataTables FixedHeader 3.1.4](https://datatables.net/extensions/fixedheader/) (DataTables plugin)
+- [DataTables KeyTable 2.5.0](https://datatables.net/extensions/keytable/) (DataTables plugin)
+- [DataTables Responsive 2.2.2](https://datatables.net/extensions/responsive/) (DataTables plugin)
+- [DataTables RowGroup 1.1.0](https://datatables.net/extensions/rowgroup/) (DataTables plugin)
+- [DataTables RowReorder 1.2.4](https://datatables.net/extensions/rowreorder/) (DataTables plugin)
+- [DataTables Scroller 1.5.0](https://datatables.net/extensions/scroller/) (DataTables plugin)
+- [DataTables Select 1.2.6](https://datatables.net/extensions/select/) (DataTables plugin)
 - [editableTable](https://github.com/mindmup/editable-table/)
-- [jQuery 3.2.1](http://jquery.com/) (DataTables dependency)
 
 Provides :
 
