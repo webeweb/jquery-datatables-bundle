@@ -12,10 +12,8 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension;
 
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
-use Twig_Environment;
 use Twig_SimpleFilter;
 use Twig_SimpleFunction;
-use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Library\Core\Argument\ArrayHelper;
@@ -34,16 +32,6 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      * @var string
      */
     const SERVICE_NAME = "webeweb.jquery_datatables.twig.extension";
-
-    /**
-     * Constructor.
-     *
-     * @param Twig_Environment $twigEnvironment The Twig environment.
-     * @param RendererTwigExtension $rendererTwigExtension The renderer Twig extension.
-     */
-    public function __construct(Twig_Environment $twigEnvironment, RendererTwigExtension $rendererTwigExtension) {
-        parent::__construct($twigEnvironment, $rendererTwigExtension);
-    }
 
     /**
      * Get the Twig filters.
