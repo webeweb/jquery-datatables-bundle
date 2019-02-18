@@ -62,7 +62,7 @@ EOT;
      * @param Twig_Environment $twigEnvironment The Twig environment.
      * @param RendererTwigExtension $rendererTwigExtension The renderer Twig extension.
      */
-    protected function __construct(Twig_Environment $twigEnvironment, RendererTwigExtension $rendererTwigExtension) {
+    public function __construct(Twig_Environment $twigEnvironment, RendererTwigExtension $rendererTwigExtension) {
         parent::__construct($twigEnvironment);
         $this->setRendererTwigExtension($rendererTwigExtension);
     }
