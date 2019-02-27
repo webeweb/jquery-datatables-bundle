@@ -119,9 +119,8 @@ Open a command console and execute the following commands to download the latest
 stable version of this package:
 
 ```bash
-$ mkdir jquery-datatables-bundle
+$ git clone https://github.com/webeweb/jquery-datatables-bundle.git
 $ cd jquery-datatables-bundle
-$ git clone https://github.com/webeweb/jquery-datatables-bundle.git .
 $ composer install
 ```
 
