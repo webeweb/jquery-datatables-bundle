@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesMapping;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 
@@ -69,6 +70,22 @@ class DataTablesMappingTest extends AbstractTestCase {
         $obj->setColumn("column");
         $this->assertEquals("column", $obj->getAlias());
         $this->assertEquals("column", $obj->getColumn());
+    }
+
+    /**
+     * Tests the setParent() method.
+     *
+     * @return void
+     */
+    public function testSetParent() {
+
+        // Set a Column mock.
+        $column = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
+
+        $obj = new DataTablesMapping();
+
+        $obj->setParent($column);
+        $this->assertSame($column, $obj->getParent());
     }
 
     /**

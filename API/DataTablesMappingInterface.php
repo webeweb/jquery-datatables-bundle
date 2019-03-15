@@ -23,6 +23,7 @@ interface DataTablesMappingInterface {
      * Get the alias.
      *
      * @return string Returns the alias.
+     * @deprecated since 2.2.0, use {@see WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesMappingHelper} instead.
      */
     public function getAlias();
 
@@ -32,6 +33,13 @@ interface DataTablesMappingInterface {
      * @return string Returns the column.
      */
     public function getColumn();
+
+    /**
+     * Get the parent.
+     *
+     * @return DataTablesColumnInterface Returns the parent.
+     */
+    public function getParent();
 
     /**
      * Get the prefix.

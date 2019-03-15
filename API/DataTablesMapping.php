@@ -27,6 +27,13 @@ class DataTablesMapping implements DataTablesMappingInterface {
     private $column;
 
     /**
+     * Parent.
+     *
+     * @var DataTablesColumnInterface
+     */
+    private $parent;
+
+    /**
      * Prefix.
      *
      * @var string
@@ -60,6 +67,13 @@ class DataTablesMapping implements DataTablesMappingInterface {
     /**
      * {@inheritdoc}
      */
+    public function getParent() {
+        return $this->parent;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getPrefix() {
         return $this->prefix;
     }
@@ -69,6 +83,17 @@ class DataTablesMapping implements DataTablesMappingInterface {
      */
     public function setColumn($column) {
         $this->column = $column;
+        return $this;
+    }
+
+    /**
+     * Set the parent.
+     *
+     * @param DataTablesColumnInterface $parent The parent.
+     * @return DataTablesMappingInterface Returns this mapping.
+     */
+    public function setParent(DataTablesColumnInterface $parent) {
+        $this->parent = $parent;
         return $this;
     }
 
