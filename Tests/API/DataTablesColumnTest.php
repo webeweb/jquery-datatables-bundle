@@ -59,15 +59,12 @@ class DataTablesColumnTest extends AbstractTestCase {
 
         $obj = new DataTablesColumn();
 
-        // ===
         $obj->setCellType("td");
         $this->assertEquals("td", $obj->getCellType());
 
-        // ===
         $obj->setCellType("th");
         $this->assertEquals("th", $obj->getCellType());
 
-        // ===
         $obj->setCellType("exception");
         $this->assertEquals("td", $obj->getCellType());
     }
@@ -172,15 +169,12 @@ class DataTablesColumnTest extends AbstractTestCase {
 
         $obj = new DataTablesColumn();
 
-        // ===
         $obj->setOrderSequence("asc");
         $this->assertEquals("asc", $obj->getOrderSequence());
 
-        // ===
         $obj->setOrderSequence("desc");
         $this->assertEquals("desc", $obj->getOrderSequence());
 
-        // ===
         $obj->setOrderSequence("exception");
         $this->assertNull($obj->getOrderSequence());
     }
@@ -248,31 +242,24 @@ class DataTablesColumnTest extends AbstractTestCase {
 
         $obj = new DataTablesColumn();
 
-        // ===
         $obj->setType("date");
         $this->assertEquals("date", $obj->getType());
 
-        // ===
         $obj->setType("num");
         $this->assertEquals("num", $obj->getType());
 
-        // ===
         $obj->setType("num-fmt");
         $this->assertEquals("num-fmt", $obj->getType());
 
-        // ===
         $obj->setType("html");
         $this->assertEquals("html", $obj->getType());
 
-        // ===
         $obj->setType("html-num");
         $this->assertEquals("html-num", $obj->getType());
 
-        // ===
         $obj->setType("string");
         $this->assertEquals("string", $obj->getType());
 
-        // ===
         $obj->setType("exception");
         $this->assertNull($obj->getType());
     }

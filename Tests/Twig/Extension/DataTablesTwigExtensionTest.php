@@ -143,7 +143,6 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         // Initialize the language directory.
         $langDirectory = getcwd() . "/Resources/public/datatables-i18n";
 
-        // ===
         $found = 0;
 
         // Read the directory.

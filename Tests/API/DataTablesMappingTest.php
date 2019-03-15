@@ -79,7 +79,7 @@ class DataTablesMappingTest extends AbstractTestCase {
      */
     public function testSetParent() {
 
-        // Set a Column mock.
+        // Set a DataTables column mock.
         $column = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
 
         $obj = new DataTablesMapping();

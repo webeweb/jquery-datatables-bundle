@@ -109,43 +109,43 @@ abstract class AbstractTestCase extends TestCase {
     protected function setUp() {
         parent::setUp();
 
-        // Set a Mapping mock.
+        // Set a DataTables mapping mock.
         $this->dtMapping = $this->getMockBuilder(DataTablesMappingInterface::class)->getMock();
         $this->dtMapping->expects($this->any())->method("getColumn")->willReturn("column");
         $this->dtMapping->expects($this->any())->method("getPrefix")->willReturn("prefix");
 
-        // Set a Column mock.
+        // Set a DataTables column mock.
         $this->dtColumn = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
         $this->dtColumn->expects($this->any())->method("getData")->willReturn("data");
         $this->dtColumn->expects($this->any())->method("getMapping")->willReturn($this->dtMapping);
 
-        // Set an Options mock.
+        // Set a DataTables options mock.
         $this->dtOptions = $this->getMockBuilder(DataTablesOptionsInterface::class)->getMock();
 
-        // Set an Order mock.
+        // Set a DataTables order mock.
         $this->dtOrder = $this->getMockBuilder(DataTablesOrderInterface::class)->getMock();
 
-        // Set a Provider mock.
+        // Set a DataTables provider mock.
         $this->dtProvider = $this->getMockBuilder(DataTablesProviderInterface::class)->getMock();
 
-        // Set a Request mock.
+        // Set a DataTables request mock.
         $this->dtRequest = $this->getMockBuilder(DataTablesRequestInterface::class)->getMock();
         $this->dtRequest->expects($this->any())->method("getDraw")->willReturn(0);
 
-        // Set a Response mock.
+        // Set a DataTables response mock.
         $this->dtResponse = $this->getMockBuilder(DataTablesResponseInterface::class)->getMock();
 
-        // Set a Search mock.
+        // Set a DataTables search mock.
         $this->dtSearch = $this->getMockBuilder(DataTablesSearchInterface::class)->getMock();
 
-        // Set a Wrapper mock.
+        // Set a DataTables wrapper mock.
         $this->dtWrapper = TestFixtures::getWrapper();
 
         // Set the request parameters.
         $get  = ["query" => "query"];
         $post = array_merge(TestFixtures::getPOSTData(), ["request" => "request"]);
 
-        // Set a Request mock.
+        // Set a DataTables request mock.
         $this->request = new Request($get, $post, [], [], [], ["REQUEST_METHOD" => "POST"]);
     }
 }

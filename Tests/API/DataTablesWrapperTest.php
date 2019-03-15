@@ -55,22 +55,20 @@ class DataTablesWrapperTest extends AbstractTestCase {
      */
     public function testAddColumn() {
 
-        // Set a Mapping mock.
+        // Set a DataTables mapping mock.
         $map = $this->getMockBuilder(DataTablesMappingInterface::class)->getMock();
 
-        // Set a Column mock.
+        // Set a DataTables column mock.
         $col = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
         $col->expects($this->any())->method("getData")->willReturn("col");
         $col->expects($this->any())->method("getMapping")->willReturn($map);
 
         $obj = new DataTablesWrapper("url", "name");
 
-        // ===
         $this->assertSame($obj, $obj->addColumn($this->dtColumn));
         $this->assertCount(1, $obj->getColumns());
         $this->assertSame($this->dtColumn, $obj->getColumns()["data"]);
 
-        // ===
         $this->assertSame($obj, $obj->addColumn($col));
         $this->assertCount(2, $obj->getColumns());
         $this->assertSame($col, $obj->getColumns()["col"]);
@@ -85,10 +83,8 @@ class DataTablesWrapperTest extends AbstractTestCase {
 
         $obj = new DataTablesWrapper("url", "name");
 
-        // ===
         $this->assertNull($obj->getColumn("data"));
 
-        // ===
         $this->assertSame($obj, $obj->addColumn($this->dtColumn));
         $this->assertSame($this->dtColumn, $obj->getColumn("data"));
     }
@@ -100,23 +96,20 @@ class DataTablesWrapperTest extends AbstractTestCase {
      */
     public function testRemoveColumn() {
 
-        // Set a Column mock.
+        // Set a DataTables column mock.
         $col = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
         $col->expects($this->any())->method("getData")->willReturn("col");
         $col->expects($this->any())->method("getMapping")->willReturn($this->dtMapping);
 
         $obj = new DataTablesWrapper("url", "name");
 
-        // ===
         $this->assertSame($obj, $obj->addColumn($this->dtColumn));
         $this->assertSame($obj, $obj->addColumn($col));
         $this->assertCount(2, $obj->getColumns());
 
-        // ===
         $this->assertSame($obj, $obj->removeColumn($col));
         $this->assertCount(1, $obj->getColumns());
 
-        // ===
         $this->assertSame($obj, $obj->removeColumn($this->dtColumn));
         $this->assertCount(0, $obj->getColumns());
     }
@@ -130,11 +123,9 @@ class DataTablesWrapperTest extends AbstractTestCase {
 
         $obj = new DataTablesWrapper("url", "name");
 
-        // ===
         $obj->setMethod("exception");
         $this->assertEquals("POST", $obj->getMethod());
 
-        // ===
         $obj->setMethod("GET");
         $this->assertEquals("GET", $obj->getMethod());
     }
@@ -146,7 +137,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
      */
     public function testSetOptions() {
 
-        // Set an Options mock.
+        // Set a DataTables options mock.
         $arg = $this->getMockBuilder(DataTablesOptionsInterface::class)->getMock();
 
         $obj = new DataTablesWrapper("url", "name");
@@ -177,11 +168,9 @@ class DataTablesWrapperTest extends AbstractTestCase {
 
         $obj = new DataTablesWrapper("url", "name");
 
-        // ===
         $obj->setProcessing(null);
         $this->assertTrue($obj->getProcessing());
 
-        // ===
         $obj->setProcessing(false);
         $this->assertFalse($obj->getProcessing());
     }
@@ -193,7 +182,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
      */
     public function testSetProvider() {
 
-        // Set a Provider mock.
+        // Set a DataTables provider mock.
         $arg = $this->getMockBuilder(DataTablesProviderInterface::class)->getMock();
         $arg->expects($this->any())->method("getName")->willReturn("name");
 
@@ -238,11 +227,9 @@ class DataTablesWrapperTest extends AbstractTestCase {
 
         $obj = new DataTablesWrapper("url", "name");
 
-        // ===
         $obj->setServerSide(false);
         $this->assertFalse($obj->getServerSide());
 
-        // ===
         $obj->setServerSide(null);
         $this->assertTrue($obj->getServerSide());
     }

@@ -42,7 +42,7 @@ class DataTablesWrapperTraitTest extends AbstractTestCase {
      */
     public function testSetWrapper() {
 
-        // Set a Wrapper mock.
+        // Set a DataTables wrapper mock.
         $wrapper = $this->getMockBuilder(DataTablesWrapperInterface::class)->getMock();
 
         $obj = new TestDataTablesWrapperTrait();

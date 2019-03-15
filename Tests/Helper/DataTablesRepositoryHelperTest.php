@@ -49,7 +49,7 @@ class DataTablesRepositoryHelperTest extends AbstractTestCase {
         // Set an Entity manager mock.
         $this->entityManager = $this->getMockBuilder(EntityManagerInterface::class)->getMock();
 
-        // Set a query builder mock.
+        // Set a Query builder mock.
         $this->queryBuilder = new QueryBuilder($this->entityManager);
     }
 
