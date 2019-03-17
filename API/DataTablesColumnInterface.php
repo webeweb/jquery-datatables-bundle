@@ -11,6 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
+use UnexpectedValueException;
+
 /**
  * DataTables column interface.
  *
@@ -230,10 +232,91 @@ interface DataTablesColumnInterface {
     public function getWidth();
 
     /**
+     * Set the cell type.
+     *
+     * @param string $cellType The cell type.
+     * @return DataTablesColumnInterface Returns this column.
+     */
+    public function setCellType($cellType);
+
+    /**
+     * Set the class name.
+     *
+     * @param string $classname The class name.
+     * @return DataTablesColumnInterface Returns this column.
+     */
+    public function setClassname($classname);
+
+    /**
+     * Set the content padding.
+     *
+     * @param string $contentPadding The content padding.
+     * @return DataTablesColumnInterface Returns this column.
+     */
+    public function setContentPadding($contentPadding);
+
+    /**
+     * Set the default content.
+     *
+     * @param string $defaultContent The default content.
+     * @return DataTablesColumnInterface Returns this column.
+     */
+    public function setDefaultContent($defaultContent);
+
+    /**
+     * Set the orderable.
+     *
+     * @param bool $orderable The orderable.
+     * @return DataTablesColumnInterface Returns this column.
+     */
+    public function setOrderable($orderable);
+
+    /**
      * Set the search.
      *
      * @param DataTablesSearchInterface $search The search.
      * @return DataTablesColumnInterface Returns this column.
      */
     public function setSearch(DataTablesSearchInterface $search);
+
+    /**
+     * Set the searchable.
+     *
+     * @param bool $searchable The searchable.
+     * @return DataTablesColumnInterface Returns this column.
+     */
+    public function setSearchable($searchable);
+
+    /**
+     * Set the title.
+     *
+     * @param string $title The title.
+     * @return DataTablesColumnInterface Returns this column.
+     */
+    public function setTitle($title);
+
+    /**
+     * Set the type.
+     *
+     * @param string $type The type.
+     * @return DataTablesColumnInterface Returns this column.
+     * @throws UnexpectedValueException Throws an unexpected value exception if the type is invalid.
+     */
+    public function setType($type);
+
+    /**
+     * Set the visible.
+     *
+     * @param bool $visible The visible.
+     * @return DataTablesColumnInterface Returns this column.
+     */
+    public function setVisible($visible);
+
+    /**
+     * Set the width.
+     *
+     * @param string $width The width.
+     * @return DataTablesColumnInterface Returns this column.
+     */
+    public function setWidth($width);
 }

@@ -11,6 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
+use Exception;
+use UnexpectedValueException;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearch;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
@@ -259,9 +261,25 @@ class DataTablesColumnTest extends AbstractTestCase {
 
         $obj->setType("string");
         $this->assertEquals("string", $obj->getType());
+    }
 
-        $obj->setType("exception");
-        $this->assertNull($obj->getType());
+    /**
+     * Tests the setType() method.
+     *
+     * @return void
+     */
+    public function testSetTypeWithUnexpectedValueException() {
+
+        $obj = new DataTablesColumn();
+
+        try {
+
+            $obj->setType("exception");
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertEquals("The type \"exception\" is invalid", $ex->getMessage());
+        }
     }
 
     /**

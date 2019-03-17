@@ -11,6 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
+use UnexpectedValueException;
+
 /**
  * DataTables column.
  *
@@ -147,6 +149,8 @@ class DataTablesColumn implements DataTablesColumnInterface {
         $this->setOrderable(true);
         $this->setSearchable(true);
         $this->setVisible(true);
+
+        $this->getMapping()->setParent($this);
     }
 
     /**
@@ -269,10 +273,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     }
 
     /**
-     * Set the cell type.
-     *
-     * @param string $cellType The cell type.
-     * @return DataTablesColumnInterface Returns this column.
+     * {@inheritdoc}
      */
     public function setCellType($cellType) {
         if (false === in_array($cellType, DataTablesEnumerator::enumCellTypes())) {
@@ -283,10 +284,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     }
 
     /**
-     * Set the class name.
-     *
-     * @param string $classname The class name.
-     * @return DataTablesColumnInterface Returns this column.
+     * {@inheritdoc}
      */
     public function setClassname($classname) {
         $this->classname = $classname;
@@ -294,10 +292,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     }
 
     /**
-     * Set the content padding.
-     *
-     * @param string $contentPadding The content padding.
-     * @return DataTablesColumnInterface Returns this column.
+     * {@inheritdoc}
      */
     public function setContentPadding($contentPadding) {
         $this->contentPadding = $contentPadding;
@@ -316,10 +311,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     }
 
     /**
-     * Set the default content.
-     *
-     * @param string $defaultContent The default content.
-     * @return DataTablesColumnInterface Returns this column.
+     * {@inheritdoc}
      */
     public function setDefaultContent($defaultContent) {
         $this->defaultContent = $defaultContent;
@@ -385,10 +377,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     }
 
     /**
-     * Set the orderable.
-     *
-     * @param bool $orderable The orderable.
-     * @return DataTablesColumnInterface Returns this column.
+     * {@inheritdoc}
      */
     public function setOrderable($orderable) {
         $this->orderable = $orderable;
@@ -396,10 +385,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     }
 
     /**
-     * Set the search.
-     *
-     * @param DataTablesSearchInterface $search The search.
-     * @return DataTablesColumnInterface Returns this column.
+     * {@inheritdoc}
      */
     public function setSearch(DataTablesSearchInterface $search) {
         $this->search = $search;
@@ -407,10 +393,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     }
 
     /**
-     * Set the searchable.
-     *
-     * @param bool $searchable The searchable.
-     * @return DataTablesColumnInterface Returns this column.
+     * {@inheritdoc}
      */
     public function setSearchable($searchable) {
         $this->searchable = $searchable;
@@ -418,10 +401,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     }
 
     /**
-     * Set the title.
-     *
-     * @param string $title The title.
-     * @return DataTablesColumnInterface Returns this column.
+     * {@inheritdoc}
      */
     public function setTitle($title) {
         $this->title = $title;
@@ -429,24 +409,18 @@ class DataTablesColumn implements DataTablesColumnInterface {
     }
 
     /**
-     * Set the type.
-     *
-     * @param string $type The type.
-     * @return DataTablesColumnInterface Returns this column.
+     * {@inheritdoc}
      */
     public function setType($type) {
         if (false === in_array($type, DataTablesEnumerator::enumTypes())) {
-            $type = null;
+            throw new UnexpectedValueException(sprintf("The type \"%s\" is invalid", $type));
         }
         $this->type = $type;
         return $this;
     }
 
     /**
-     * Set the visible.
-     *
-     * @param bool $visible The visible.
-     * @return DataTablesColumnInterface Returns this column.
+     * {@inheritdoc}
      */
     public function setVisible($visible) {
         $this->visible = $visible;
@@ -454,10 +428,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     }
 
     /**
-     * Set the width.
-     *
-     * @param string $width The width.
-     * @return DataTablesColumnInterface Returns this column.
+     * {@inheritdoc}
      */
     public function setWidth($width) {
         $this->width = $width;
