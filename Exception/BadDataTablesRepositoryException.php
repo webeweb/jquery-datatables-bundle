@@ -26,7 +26,7 @@ class BadDataTablesRepositoryException extends AbstractDataTablesException {
      * Constructor.
      *
      * @param mixed $object The repository.
-     * @throws ReflectionException Throws a reflection exception if the $object class does not exists.
+     * @throws ReflectionException Throws a reflection exception.
      */
     public function __construct($object) {
         parent::__construct(sprintf("The DataTables repository \"%s\" must implement DataTablesRepositoryInterface", ObjectHelper::getName($object)));
