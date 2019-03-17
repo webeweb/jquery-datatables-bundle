@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
 
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesMapping;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesMappingHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
@@ -32,14 +33,11 @@ class DataTablesMappingHelperTest extends AbstractTestCase {
 
         $obj = new DataTablesMapping();
 
-        // ===
         $this->assertNull(DataTablesMappingHelper::getAlias($obj));
 
-        // ===
         $obj->setColumn("column");
         $this->assertEquals("column", DataTablesMappingHelper::getAlias($obj));
 
-        // ===
         $obj->setPrefix("prefix");
         $this->assertEquals("prefix.column", DataTablesMappingHelper::getAlias($obj));
     }
@@ -56,6 +54,44 @@ class DataTablesMappingHelperTest extends AbstractTestCase {
         $obj->setColumn("column");
 
         $this->assertEquals(":prefixcolumn", DataTablesMappingHelper::getParam($obj));
+    }
+
+    /**
+     * Tests the getComparator() method.
+     *
+     * @return void
+     */
+    public function testGetComparator() {
+
+        // Set a DataTables column mock.
+        $column = new DataTablesColumn();
+
+        $obj = new DataTablesMapping();
+        $obj->setPrefix("prefix");
+        $obj->setColumn("column");
+
+        $this->assertEquals("LIKE", DataTablesMappingHelper::getComparator($obj));
+
+        $obj->setParent($column);
+        $this->assertEquals("LIKE", DataTablesMappingHelper::getComparator($obj));
+
+        $column->setType("date");
+        $this->assertEquals("=", DataTablesMappingHelper::getComparator($obj));
+
+        $column->setType("html");
+        $this->assertEquals("LIKE", DataTablesMappingHelper::getComparator($obj));
+
+        $column->setType("html-num");
+        $this->assertEquals("=", DataTablesMappingHelper::getComparator($obj));
+
+        $column->setType("num");
+        $this->assertEquals("=", DataTablesMappingHelper::getComparator($obj));
+
+        $column->setType("num-fmt");
+        $this->assertEquals("=", DataTablesMappingHelper::getComparator($obj));
+
+        $column->setType("string");
+        $this->assertEquals("LIKE", DataTablesMappingHelper::getComparator($obj));
     }
 
     /**

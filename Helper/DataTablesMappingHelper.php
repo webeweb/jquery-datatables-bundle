@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
 
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesMappingInterface;
 
 /**
@@ -38,6 +39,33 @@ class DataTablesMappingHelper {
     }
 
     /**
+     * Get a comparator.
+     *
+     * @param DataTablesMappingInterface $mapping The mapping.
+     * @return string Returns the comparator.
+     */
+    public static function getComparator(DataTablesMappingInterface $mapping) {
+
+        if (null === $mapping->getParent()) {
+            return "LIKE";
+        }
+
+        switch ($mapping->getParent()->getType()) {
+
+            case DataTablesColumnInterface::DATATABLES_TYPE_DATE:
+            case DataTablesColumnInterface::DATATABLES_TYPE_HTML_NUM:
+            case DataTablesColumnInterface::DATATABLES_TYPE_NUM:
+            case DataTablesColumnInterface::DATATABLES_TYPE_NUM_FMT:
+                return "=";
+
+            case DataTablesColumnInterface::DATATABLES_TYPE_HTML:
+            case DataTablesColumnInterface::DATATABLES_TYPE_STRING:
+            default:
+                return "LIKE";
+        }
+    }
+
+    /**
      * Get a param.
      *
      * @param DataTablesMappingInterface $mapping The mapping.
@@ -45,25 +73,29 @@ class DataTablesMappingHelper {
      */
     public static function getParam(DataTablesMappingInterface $mapping) {
 
-        $param = ":";
-        $param .= $mapping->getPrefix();
-        $param .= $mapping->getColumn();
+        $param = [
+            ":",
+            $mapping->getPrefix(),
+            $mapping->getColumn(),
+        ];
 
-        return $param;
+        return implode("", $param);
     }
 
     /**
-     * Get a mapping where.
+     * Get a where.
      *
      * @param DataTablesMappingInterface $mapping The mapping.
      * @return string Returns the where.
      */
     public static function getWhere(DataTablesMappingInterface $mapping) {
 
-        $where = static::getAlias($mapping);
-        $where .= " LIKE ";
-        $where .= static::getParam($mapping);
+        $where = [
+            static::getAlias($mapping),
+            static::getComparator($mapping),
+            static::getParam($mapping),
+        ];
 
-        return $where;
+        return implode(" ", $where);
     }
 }
