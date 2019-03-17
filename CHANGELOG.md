@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-### [2.1.2](https://github.com/webeweb/jquery-datatables-bundle/tree/v2.1.2) (2019-03-17)
+### master
 
 - Fix DataTables column method visibility
 - Fix DataTables search with different data types (date, int, string, ...)
