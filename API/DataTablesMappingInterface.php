@@ -23,7 +23,7 @@ interface DataTablesMappingInterface {
      * Get the alias.
      *
      * @return string Returns the alias.
-     * @deprecated since 2.2.0, use {@see WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesMappingHelper} instead.
+     * @deprecated since 2.1.2, use {@see WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesMappingHelper} instead.
      */
     public function getAlias();
 
