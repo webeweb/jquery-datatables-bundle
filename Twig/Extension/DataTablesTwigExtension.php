@@ -12,8 +12,8 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension;
 
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
-use Twig_SimpleFilter;
-use Twig_SimpleFunction;
+use Twig\TwigFilter;
+use Twig\TwigFunction;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Library\Core\Argument\ArrayHelper;
@@ -36,33 +36,33 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
     /**
      * Get the Twig filters.
      *
-     * @return Twig_SimpleFilter[] Returns the Twig filters.
+     * @return TwigFilter[] Returns the Twig filters.
      */
     public function getFilters() {
         return [
-            new Twig_SimpleFilter("jQueryDataTablesName", [$this, "jQueryDataTablesNameFunction"], ["is_safe" => ["html"]]),
-            new Twig_SimpleFilter("jQueryDTName", [$this, "jQueryDataTablesNameFunction"], ["is_safe" => ["html"]]),
+            new TwigFilter("jQueryDataTablesName", [$this, "jQueryDataTablesNameFunction"], ["is_safe" => ["html"]]),
+            new TwigFilter("jQueryDTName", [$this, "jQueryDataTablesNameFunction"], ["is_safe" => ["html"]]),
         ];
     }
 
     /**
      * Get the Twig functions.
      *
-     * @return Twig_SimpleFunction[] Returns the Twig functions.
+     * @return TwigFunction[] Returns the Twig functions.
      */
     public function getFunctions() {
         return [
-            new Twig_SimpleFunction("jQueryDataTables", [$this, "jQueryDataTablesFunction"], ["is_safe" => ["html"]]),
-            new Twig_SimpleFunction("jQueryDT", [$this, "jQueryDataTablesFunction"], ["is_safe" => ["html"]]),
+            new TwigFunction("jQueryDataTables", [$this, "jQueryDataTablesFunction"], ["is_safe" => ["html"]]),
+            new TwigFunction("jQueryDT", [$this, "jQueryDataTablesFunction"], ["is_safe" => ["html"]]),
 
-            new Twig_SimpleFunction("renderDataTables", [$this, "renderDataTablesFunction"], ["is_safe" => ["html"]]),
-            new Twig_SimpleFunction("renderDT", [$this, "renderDataTablesFunction"], ["is_safe" => ["html"]]),
+            new TwigFunction("renderDataTables", [$this, "renderDataTablesFunction"], ["is_safe" => ["html"]]),
+            new TwigFunction("renderDT", [$this, "renderDataTablesFunction"], ["is_safe" => ["html"]]),
 
-            new Twig_SimpleFunction("jQueryDataTablesStandalone", [$this, "jQueryDataTablesStandaloneFunction"], ["is_safe" => ["html"]]),
-            new Twig_SimpleFunction("jQueryDTStandalone", [$this, "jQueryDataTablesStandaloneFunction"], ["is_safe" => ["html"]]),
+            new TwigFunction("jQueryDataTablesStandalone", [$this, "jQueryDataTablesStandaloneFunction"], ["is_safe" => ["html"]]),
+            new TwigFunction("jQueryDTStandalone", [$this, "jQueryDataTablesStandaloneFunction"], ["is_safe" => ["html"]]),
 
-            new Twig_SimpleFunction("jQueryDataTablesName", [$this, "jQueryDataTablesNameFunction"], ["is_safe" => ["html"]]),
-            new Twig_SimpleFunction("jQueryDTName", [$this, "jQueryDataTablesNameFunction"], ["is_safe" => ["html"]]),
+            new TwigFunction("jQueryDataTablesName", [$this, "jQueryDataTablesNameFunction"], ["is_safe" => ["html"]]),
+            new TwigFunction("jQueryDTName", [$this, "jQueryDataTablesNameFunction"], ["is_safe" => ["html"]]),
         ];
     }
 

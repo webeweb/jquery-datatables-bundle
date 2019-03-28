@@ -12,9 +12,9 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Twig\Extension;
 
 use Exception;
-use Twig_Node;
-use Twig_SimpleFilter;
-use Twig_SimpleFunction;
+use Twig\Node\Node;
+use Twig\TwigFilter;
+use Twig\TwigFunction;
 use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
@@ -69,15 +69,15 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         $res = $obj->getFilters();
         $this->assertCount(2, $res);
 
-        $this->assertInstanceOf(Twig_SimpleFilter::class, $res[0]);
+        $this->assertInstanceOf(TwigFilter::class, $res[0]);
         $this->assertEquals("jQueryDataTablesName", $res[0]->getName());
         $this->assertEquals([$obj, "jQueryDataTablesNameFunction"], $res[0]->getCallable());
-        $this->assertEquals(["html"], $res[0]->getSafe(new Twig_Node()));
+        $this->assertEquals(["html"], $res[0]->getSafe(new Node()));
 
-        $this->assertInstanceOf(Twig_SimpleFilter::class, $res[1]);
+        $this->assertInstanceOf(TwigFilter::class, $res[1]);
         $this->assertEquals("jQueryDTName", $res[1]->getName());
         $this->assertEquals([$obj, "jQueryDataTablesNameFunction"], $res[1]->getCallable());
-        $this->assertEquals(["html"], $res[1]->getSafe(new Twig_Node()));
+        $this->assertEquals(["html"], $res[1]->getSafe(new Node()));
     }
 
     /**
@@ -92,45 +92,45 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         $res = $obj->getFunctions();
         $this->assertCount(8, $res);
 
-        $this->assertInstanceOf(Twig_SimpleFunction::class, $res[0]);
+        $this->assertInstanceOf(TwigFunction::class, $res[0]);
         $this->assertEquals("jQueryDataTables", $res[0]->getName());
         $this->assertEquals([$obj, "jQueryDataTablesFunction"], $res[0]->getCallable());
-        $this->assertEquals(["html"], $res[0]->getSafe(new Twig_Node()));
+        $this->assertEquals(["html"], $res[0]->getSafe(new Node()));
 
-        $this->assertInstanceOf(Twig_SimpleFunction::class, $res[1]);
+        $this->assertInstanceOf(TwigFunction::class, $res[1]);
         $this->assertEquals("jQueryDT", $res[1]->getName());
         $this->assertEquals([$obj, "jQueryDataTablesFunction"], $res[1]->getCallable());
-        $this->assertEquals(["html"], $res[1]->getSafe(new Twig_Node()));
+        $this->assertEquals(["html"], $res[1]->getSafe(new Node()));
 
-        $this->assertInstanceOf(Twig_SimpleFunction::class, $res[2]);
+        $this->assertInstanceOf(TwigFunction::class, $res[2]);
         $this->assertEquals("renderDataTables", $res[2]->getName());
         $this->assertEquals([$obj, "renderDataTablesFunction"], $res[2]->getCallable());
-        $this->assertEquals(["html"], $res[2]->getSafe(new Twig_Node()));
+        $this->assertEquals(["html"], $res[2]->getSafe(new Node()));
 
-        $this->assertInstanceOf(Twig_SimpleFunction::class, $res[3]);
+        $this->assertInstanceOf(TwigFunction::class, $res[3]);
         $this->assertEquals("renderDT", $res[3]->getName());
         $this->assertEquals([$obj, "renderDataTablesFunction"], $res[3]->getCallable());
-        $this->assertEquals(["html"], $res[3]->getSafe(new Twig_Node()));
+        $this->assertEquals(["html"], $res[3]->getSafe(new Node()));
 
-        $this->assertInstanceOf(Twig_SimpleFunction::class, $res[4]);
+        $this->assertInstanceOf(TwigFunction::class, $res[4]);
         $this->assertEquals("jQueryDataTablesStandalone", $res[4]->getName());
         $this->assertEquals([$obj, "jQueryDataTablesStandaloneFunction"], $res[4]->getCallable());
-        $this->assertEquals(["html"], $res[4]->getSafe(new Twig_Node()));
+        $this->assertEquals(["html"], $res[4]->getSafe(new Node()));
 
-        $this->assertInstanceOf(Twig_SimpleFunction::class, $res[5]);
+        $this->assertInstanceOf(TwigFunction::class, $res[5]);
         $this->assertEquals("jQueryDTStandalone", $res[5]->getName());
         $this->assertEquals([$obj, "jQueryDataTablesStandaloneFunction"], $res[5]->getCallable());
-        $this->assertEquals(["html"], $res[5]->getSafe(new Twig_Node()));
+        $this->assertEquals(["html"], $res[5]->getSafe(new Node()));
 
-        $this->assertInstanceOf(Twig_SimpleFunction::class, $res[6]);
+        $this->assertInstanceOf(TwigFunction::class, $res[6]);
         $this->assertEquals("jQueryDataTablesName", $res[6]->getName());
         $this->assertEquals([$obj, "jQueryDataTablesNameFunction"], $res[6]->getCallable());
-        $this->assertEquals(["html"], $res[6]->getSafe(new Twig_Node()));
+        $this->assertEquals(["html"], $res[6]->getSafe(new Node()));
 
-        $this->assertInstanceOf(Twig_SimpleFunction::class, $res[7]);
+        $this->assertInstanceOf(TwigFunction::class, $res[7]);
         $this->assertEquals("jQueryDTName", $res[7]->getName());
         $this->assertEquals([$obj, "jQueryDataTablesNameFunction"], $res[7]->getCallable());
-        $this->assertEquals(["html"], $res[7]->getSafe(new Twig_Node()));
+        $this->assertEquals(["html"], $res[7]->getSafe(new Node()));
     }
 
     /**
