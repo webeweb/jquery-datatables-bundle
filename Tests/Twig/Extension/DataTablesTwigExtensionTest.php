@@ -374,28 +374,28 @@ EOT;
         $arg = ["class" => "class", "thead" => true, "tfoot" => true];
         $res = <<< EOT
 <table class="table class" id="dtemployee">
-    <thead>
-        <tr>
-            <th scope="row" class="name" width="1">Name</th>
-            <th class="position" width="2">Position</th>
-            <th class="office" width="3">Office</th>
-            <th class="age" width="4">Age</th>
-            <th class="startDate" width="5">Start date</th>
-            <th class="salary" width="6">Salary</th>
-            <th class="actions" width="7">Actions</th>
-        </tr>
-    </thead>
-    <tfoot>
-        <tr>
-            <th class="name" width="1">Name</th>
-            <th class="position" width="2">Position</th>
-            <th class="office" width="3">Office</th>
-            <th class="age" width="4">Age</th>
-            <th class="startDate" width="5">Start date</th>
-            <th class="salary" width="6">Salary</th>
-            <th class="actions" width="7">Actions</th>
-        </tr>
-    </tfoot>
+<thead>
+<tr>
+<th scope="row" class="name" width="1">Name</th>
+<th class="position" width="2">Position</th>
+<th class="office" width="3">Office</th>
+<th class="age" width="4">Age</th>
+<th class="startDate" width="5">Start date</th>
+<th class="salary" width="6">Salary</th>
+<th class="actions" width="7">Actions</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<th class="name" width="1">Name</th>
+<th class="position" width="2">Position</th>
+<th class="office" width="3">Office</th>
+<th class="age" width="4">Age</th>
+<th class="startDate" width="5">Start date</th>
+<th class="salary" width="6">Salary</th>
+<th class="actions" width="7">Actions</th>
+</tr>
+</tfoot>
 </table>
 EOT;
         $this->assertEquals($res, $obj->renderDataTablesFunction($this->dtWrapper, $arg));
@@ -413,28 +413,28 @@ EOT;
         $arg = ["class" => "class"];
         $res = <<< EOT
 <table class="table class" id="dtemployee">
-    <thead>
-        <tr>
-            <th scope="row">Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tfoot>
-        <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-            <th>Actions</th>
-        </tr>
-    </tfoot>
+<thead>
+<tr>
+<th scope="row">Name</th>
+<th>Position</th>
+<th>Office</th>
+<th>Age</th>
+<th>Start date</th>
+<th>Salary</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<th>Name</th>
+<th>Position</th>
+<th>Office</th>
+<th>Age</th>
+<th>Start date</th>
+<th>Salary</th>
+<th>Actions</th>
+</tr>
+</tfoot>
 </table>
 EOT;
         $this->assertEquals($res, $obj->renderDataTablesFunction($this->dtWrapper, $arg));
@@ -452,17 +452,17 @@ EOT;
         $arg = ["tfoot" => false];
         $res = <<< EOT
 <table class="table" id="dtemployee">
-    <thead>
-        <tr>
-            <th scope="row">Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
+<thead>
+<tr>
+<th scope="row">Name</th>
+<th>Position</th>
+<th>Office</th>
+<th>Age</th>
+<th>Start date</th>
+<th>Salary</th>
+<th>Actions</th>
+</tr>
+</thead>
 </table>
 EOT;
         $this->assertEquals($res, $obj->renderDataTablesFunction($this->dtWrapper, $arg));
@@ -480,17 +480,17 @@ EOT;
         $arg = ["thead" => false];
         $res = <<< EOT
 <table class="table" id="dtemployee">
-    <tfoot>
-        <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-            <th>Actions</th>
-        </tr>
-    </tfoot>
+<tfoot>
+<tr>
+<th>Name</th>
+<th>Position</th>
+<th>Office</th>
+<th>Age</th>
+<th>Start date</th>
+<th>Salary</th>
+<th>Actions</th>
+</tr>
+</tfoot>
 </table>
 EOT;
         $this->assertEquals($res, $obj->renderDataTablesFunction($this->dtWrapper, $arg));
@@ -508,28 +508,28 @@ EOT;
         $arg = [];
         $res = <<< EOT
 <table class="table" id="dtemployee">
-    <thead>
-        <tr>
-            <th scope="row">Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tfoot>
-        <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-            <th>Start date</th>
-            <th>Salary</th>
-            <th>Actions</th>
-        </tr>
-    </tfoot>
+<thead>
+<tr>
+<th scope="row">Name</th>
+<th>Position</th>
+<th>Office</th>
+<th>Age</th>
+<th>Start date</th>
+<th>Salary</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<th>Name</th>
+<th>Position</th>
+<th>Office</th>
+<th>Age</th>
+<th>Start date</th>
+<th>Salary</th>
+<th>Actions</th>
+</tr>
+</tfoot>
 </table>
 EOT;
         $this->assertEquals($res, $obj->renderDataTablesFunction($this->dtWrapper, $arg));

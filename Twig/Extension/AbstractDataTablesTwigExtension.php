@@ -39,7 +39,7 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
      *
      * @var string
      */
-    const JQUERY_DATATABLES = <<<'EOT'
+    const JQUERY_DATATABLES = <<< EOT
     $(document).ready(function () {
         var %var% = $("%selector%").DataTable(%options%);
     });
@@ -50,7 +50,7 @@ EOT;
      *
      * @var string
      */
-    const JQUERY_DATATABLES_STANDALONE = <<<'EOT'
+    const JQUERY_DATATABLES_STANDALONE = <<< EOT
     $(document).ready(function () {
         $("%selector%").DataTable(%options%);
     });
@@ -109,7 +109,7 @@ EOT;
     }
 
     /**
-     * Displays a jQuery DataTables "Standalone".
+     * Displays a jQuery DataTables "standalone".
      *
      * @param string $selector The selector.
      * @param string $language The language.
@@ -135,91 +135,69 @@ EOT;
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @param string $class The class.
-     * @param boolean $includeTHead Include thead ?.
+     * @param boolean $includeTHead Include thead ?
      * @param boolean $includeTFoot Include tfoot ?
      * @return string Returns the rendered DataTables.
      */
     protected function renderDataTables(DataTablesWrapperInterface $dtWrapper, $class, $includeTHead, $includeTFoot) {
-
-        $template = "<table %attributes%>\n%innerHTML%</table>";
 
         $attributes = [];
 
         $attributes["class"] = ["table", $class];
         $attributes["id"]    = DataTablesWrapperHelper::getName($dtWrapper);
 
-        $thead = true === $includeTHead ? $this->renderDataTablesTHead($dtWrapper) : "";
-        $tfoot = true === $includeTFoot ? $this->renderDataTablesTFoot($dtWrapper) : "";
+        $thead = true === $includeTHead ? $this->renderDataTablesRow($dtWrapper, "thead") . "\n" : "";
+        $tfoot = true === $includeTFoot ? $this->renderDataTablesRow($dtWrapper, "tfoot") . "\n" : "";
 
-        // Return the HTML.
-        return StringHelper::replace($template, ["%attributes%", "%innerHTML%"], [StringHelper::parseArray($attributes), $thead . $tfoot]);
+        $inner = "\n" . $thead . $tfoot;
+
+        return static::coreHTMLElement("table", $inner, $attributes);
     }
 
     /**
      * Render a column.
      *
      * @param DataTablesColumnInterface $dtColumn The column.
+     * @param bool $rowScope Row scope ?
      * @return string Returns the rendered column.
      */
-    private function renderDataTablesColumn(DataTablesColumnInterface $dtColumn, $scopeRow = false) {
-
-        $template = "            <th%attributes%>%innerHTML%</th>";
+    private function renderDataTablesColumn(DataTablesColumnInterface $dtColumn, $rowScope = false) {
 
         $attributes = [];
 
-        $attributes["scope"] = true === $scopeRow ? "row" : null;
+        $attributes["scope"] = true === $rowScope ? "row" : null;
         $attributes["class"] = $dtColumn->getClassname();
         $attributes["width"] = $dtColumn->getWidth();
 
-        $innerHTML = $dtColumn->getTitle();
-
-        return StringHelper::replace($template, ["%attributes%", "%innerHTML%"], [preg_replace("/^\ $/", "", " " . StringHelper::parseArray($attributes)), $innerHTML]);
+        return static::coreHTMLElement("th", $dtColumn->getTitle(), $attributes);
     }
 
     /**
-     * Render a footer.
+     * Render a row.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
-     * @return string Returns the rendered footer.
+     * @param string $wrapper The wrapper (thead or tfoot)
+     * @return string Returns the rendered row.
      */
-    private function renderDataTablesTFoot(DataTablesWrapperInterface $dtWrapper) {
-
-        $template = "    <tfoot>\n        <tr>\n%innerHTML%        </tr>\n    </tfoot>\n";
+    private function renderDataTablesRow(DataTablesWrapperInterface $dtWrapper, $wrapper) {
 
         $innerHTML = "";
-        foreach ($dtWrapper->getColumns() as $dtColumn) {
-            $column = $this->renderDataTablesColumn($dtColumn);
-            if ("" === $column) {
-                continue;
-            }
-            $innerHTML .= $column . "\n";
-        }
-
-        return "" === $innerHTML ? "" : StringHelper::replace($template, ["%innerHTML%"], [$innerHTML]);
-    }
-
-    /**
-     * Render a header.
-     *
-     * @param DataTablesWrapperInterface $dtWrapper The wrapper.
-     * @return string Returns the rendered header.
-     */
-    private function renderDataTablesTHead(DataTablesWrapperInterface $dtWrapper) {
-
-        $template = "    <thead>\n        <tr>\n%innerHTML%        </tr>\n    </thead>\n";
 
         $count = count($dtWrapper->getColumns());
-
-        $innerHTML = "";
         for ($i = 0; $i < $count; ++$i) {
+
             $dtColumn = array_values($dtWrapper->getColumns())[$i];
-            $column   = $this->renderDataTablesColumn($dtColumn, 0 === $i);
-            if ("" === $column) {
+
+            $th = $this->renderDataTablesColumn($dtColumn, ("thead" === $wrapper && 0 === $i));
+            if ("" === $th) {
                 continue;
             }
-            $innerHTML .= $column . "\n";
+
+            $innerHTML .= $th . "\n";
         }
 
-        return "" === $innerHTML ? "" : StringHelper::replace($template, ["%innerHTML%"], [$innerHTML]);
+        $tr = static::coreHTMLElement("tr", "\n" . $innerHTML);
+
+        return static::coreHTMLElement($wrapper, "\n" . $tr . "\n");
     }
 }
