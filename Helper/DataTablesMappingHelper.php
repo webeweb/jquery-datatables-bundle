@@ -29,12 +29,15 @@ class DataTablesMappingHelper {
      * @return string Returns the alias.
      */
     public static function getAlias(DataTablesMappingInterface $mapping) {
+
         if (null === $mapping->getColumn()) {
             return null;
         }
+
         if (null === $mapping->getPrefix()) {
             return $mapping->getColumn();
         }
+
         return implode(".", [$mapping->getPrefix(), $mapping->getColumn()]);
     }
 
@@ -57,12 +60,9 @@ class DataTablesMappingHelper {
             case DataTablesColumnInterface::DATATABLES_TYPE_NUM:
             case DataTablesColumnInterface::DATATABLES_TYPE_NUM_FMT:
                 return "=";
-
-            case DataTablesColumnInterface::DATATABLES_TYPE_HTML:
-            case DataTablesColumnInterface::DATATABLES_TYPE_STRING:
-            default:
-                return "LIKE";
         }
+
+        return "LIKE";
     }
 
     /**
