@@ -6,6 +6,7 @@ CHANGELOG
 - Fix DataTables column method visibility
 - Fix DataTables search with different data types (date, int, string, ...)
 - Improve PHPDoc
+- Optimize DataTables Twig extension 
 - Replace deprecated Twig classes
 
 ### [2.1.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v2.1.1) (2019-02-18)
