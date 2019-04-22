@@ -47,14 +47,14 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getMethod() {
         return null;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getOptions() {
 
