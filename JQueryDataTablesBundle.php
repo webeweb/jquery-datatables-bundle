@@ -34,14 +34,14 @@ class JQueryDataTablesBundle extends Bundle implements AssetsProviderInterface {
     const DATATABLES_VERSION = DataTablesVersionInterface::DATATABLES_VERSION;
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function build(ContainerBuilder $container) {
         $container->addCompilerPass(new JQueryDataTablesCompilerPass());
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getAssetsRelativeDirectory() {
         return "/Resources/assets";
