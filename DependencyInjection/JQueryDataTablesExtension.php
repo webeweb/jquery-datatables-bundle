@@ -32,7 +32,7 @@ class JQueryDataTablesExtension extends Extension {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function load(array $configs, ContainerBuilder $container) {
 
