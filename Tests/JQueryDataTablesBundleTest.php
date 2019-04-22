@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
 
 use WBW\Bundle\JQuery\DataTablesBundle\DataTablesVersionInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\JQueryDataTablesExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle;
 
 /**
@@ -21,16 +22,6 @@ use WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle;
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests
  */
 class JQueryDataTablesBundleTest extends AbstractTestCase {
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals(DataTablesVersionInterface::DATATABLES_VERSION, JQueryDataTablesBundle::DATATABLES_VERSION);
-    }
 
     /**
      * Tests the build() method.
@@ -45,6 +36,16 @@ class JQueryDataTablesBundleTest extends AbstractTestCase {
     }
 
     /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function testConstruct() {
+
+        $this->assertEquals(DataTablesVersionInterface::DATATABLES_VERSION, JQueryDataTablesBundle::DATATABLES_VERSION);
+    }
+
+    /**
      * Tests the getAssetsRelativeDirectory() method.
      *
      * @return void
@@ -55,5 +56,18 @@ class JQueryDataTablesBundleTest extends AbstractTestCase {
 
         $res = "/Resources/assets";
         $this->assertEquals($res, $obj->getAssetsRelativeDirectory());
+    }
+
+    /**
+     * Tests the getContainerExtension() method.
+     *
+     * @return void
+     */
+    public function testGetContainerExtension() {
+
+        $obj = new JQueryDataTablesBundle();
+
+        $res = $obj->getContainerExtension();
+        $this->assertInstanceOf(JQueryDataTablesExtension::class, $res);
     }
 }
