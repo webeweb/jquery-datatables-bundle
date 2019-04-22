@@ -47,7 +47,6 @@ class JQueryDataTablesBundle extends Bundle implements AssetsProviderInterface {
         return "/Resources/assets";
     }
 
-
     /**
      * {@inheritDoc}
      */
