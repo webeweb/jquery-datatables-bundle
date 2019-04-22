@@ -37,6 +37,18 @@ class DataTablesExtensionTest extends AbstractTestCase {
     }
 
     /**
+     * Tests the getAlias() method.
+     *
+     * @return void
+     */
+    public function testGetAlias() {
+
+        $obj = new JQueryDataTablesExtension();
+
+        $this->assertEquals("j_query_data_tables", $obj->getAlias());
+    }
+
+    /**
      * Tests the load() method.
      *
      * @return void
