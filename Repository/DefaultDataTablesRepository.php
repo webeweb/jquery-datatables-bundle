@@ -112,7 +112,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function dataTablesCountExported(DataTablesProviderInterface $dtProvider) {
 
@@ -122,7 +122,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function dataTablesCountFiltered(DataTablesWrapperInterface $dtWrapper) {
 
@@ -132,7 +132,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function dataTablesCountTotal(DataTablesWrapperInterface $dtWrapper) {
 
@@ -142,14 +142,14 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function dataTablesExportAll(DataTablesProviderInterface $dtProvider) {
         return $this->buildDataTablesExportAll($dtProvider);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function dataTablesFindAll(DataTablesWrapperInterface $dtWrapper) {
 
