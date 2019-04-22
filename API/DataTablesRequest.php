@@ -96,7 +96,7 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getColumn($data) {
         foreach ($this->columns as $current) {
@@ -108,56 +108,56 @@ class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getColumns() {
         return $this->columns;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getDraw() {
         return $this->draw;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getLength() {
         return $this->length;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getOrder() {
         return $this->order;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getQuery() {
         return $this->query;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getRequest() {
         return $this->request;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getSearch() {
         return $this->search;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getStart() {
         return $this->start;

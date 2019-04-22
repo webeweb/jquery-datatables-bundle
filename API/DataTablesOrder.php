@@ -41,14 +41,14 @@ class DataTablesOrder implements DataTablesOrderInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getColumn() {
         return $this->column;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getDir() {
         return $this->dir;

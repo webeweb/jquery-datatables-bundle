@@ -36,7 +36,7 @@ class DataTablesOptions implements DataTablesOptionsInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function addOption($name, $value) {
         ArgumentHelper::isTypeOf($name, ArgumentHelper::ARGUMENT_STRING);
@@ -47,7 +47,7 @@ class DataTablesOptions implements DataTablesOptionsInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getOption($name) {
         if (true === array_key_exists($name, $this->options)) {
@@ -57,21 +57,21 @@ class DataTablesOptions implements DataTablesOptionsInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getOptions() {
         return $this->options;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function hasOption($name) {
         return array_key_exists($name, $this->options);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function removeOption($name) {
         if (true === array_key_exists($name, $this->options)) {
@@ -81,7 +81,7 @@ class DataTablesOptions implements DataTablesOptionsInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setOption($name, $value) {
         ArgumentHelper::isTypeOf($name, ArgumentHelper::ARGUMENT_STRING);
