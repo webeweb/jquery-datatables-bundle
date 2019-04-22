@@ -24,49 +24,49 @@ use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 class TestDataTablesFactory extends DataTablesFactory {
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public static function newResponse(DataTablesWrapperInterface $wrapper) {
         return parent::newResponse($wrapper);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public static function parseColumn(array $rawColumn, DataTablesWrapperInterface $wrapper) {
         return parent::parseColumn($rawColumn, $wrapper);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public static function parseColumns(array $rawColumns, DataTablesWrapperInterface $wrapper) {
         return parent::parseColumns($rawColumns, $wrapper);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public static function parseOrder(array $rawOrder) {
         return parent::parseOrder($rawOrder);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public static function parseOrders(array $rawOrders) {
         return parent::parseOrders($rawOrders);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public static function parseRequest(DataTablesWrapperInterface $wrapper, Request $request) {
         return parent::parseRequest($wrapper, $request);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public static function parseSearch(array $rawSearch) {
         return parent::parseSearch($rawSearch);

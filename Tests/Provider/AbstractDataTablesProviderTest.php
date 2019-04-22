@@ -35,7 +35,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     private $buttonTwigExtension;
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     protected function setUp() {
         parent::setUp();

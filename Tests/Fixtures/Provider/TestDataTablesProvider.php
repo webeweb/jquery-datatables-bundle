@@ -24,98 +24,98 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\AbstractDataTablesProvider;
 class TestDataTablesProvider extends AbstractDataTablesProvider {
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function getCSVExporter() {
         return null;
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function getColumns() {
         return null;
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function getEditor() {
         return null;
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function getEntity() {
         return null;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getName() {
         return "abstract";
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function getPrefix() {
         return null;
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function getView() {
         return null;
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderButtons($entity, $editRoute, $deleteRoute = null, $enableDelete = true) {
         return parent::renderButtons($entity, $editRoute, $deleteRoute, $enableDelete);
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderColumn(DataTablesColumnInterface $dtColumn, $entity) {
         return null;
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderDate(DateTime $date = null, $format = "d/m/Y") {
         return parent::renderDate($date, $format);
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderDateTime(DateTime $date = null, $format = "d/m/Y H:i") {
         return parent::renderDateTime($date, $format);
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderFloat($number, $decimals = 2, $decPoint = ".", $thousandsSep = ",") {
         return parent::renderFloat($number, $decimals, $decPoint, $thousandsSep);
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderRow($dtRow, $entity, $rowNumber) {
         return null;
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function wrapContent($prefix, $content, $suffix) {
         return parent::wrapContent($prefix, $content, $suffix);

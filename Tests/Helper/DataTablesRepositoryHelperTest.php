@@ -41,7 +41,7 @@ class DataTablesRepositoryHelperTest extends AbstractTestCase {
     private $queryBuilder;
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     protected function setUp() {
         parent::setUp();

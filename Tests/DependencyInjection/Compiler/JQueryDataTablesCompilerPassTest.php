@@ -39,7 +39,7 @@ class JQueryDataTablesCompilerPassTest extends AbstractTestCase {
     private $dataTablesProvider;
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     protected function setUp() {
         parent::setUp();

@@ -104,7 +104,7 @@ abstract class AbstractTestCase extends TestCase {
     protected $request;
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     protected function setUp() {
         parent::setUp();

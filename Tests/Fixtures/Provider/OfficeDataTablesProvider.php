@@ -27,14 +27,14 @@ use WBW\Library\Core\Network\HTTP\HTTPInterface;
 class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTablesRouterInterface {
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getCSVExporter() {
         return null;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getColumns() {
 
@@ -47,63 +47,63 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTable
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getEditor() {
         return null;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getEntity() {
         return Office::class;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getMethod() {
         return HTTPInterface::HTTP_METHOD_POST;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getName() {
         return "office";
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getOptions() {
         return null;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getPrefix() {
         return "o";
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getUrl() {
         return "url";
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getView() {
         return null;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function renderColumn(DataTablesColumnInterface $dtColumn, $entity) {
 
@@ -124,7 +124,7 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTable
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function renderRow($dtRow, $entity, $rowNumber) {
 

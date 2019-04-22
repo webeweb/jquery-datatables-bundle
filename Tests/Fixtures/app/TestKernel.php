@@ -19,7 +19,7 @@ use WBW\Bundle\CoreBundle\Tests\AbstractKernel as BaseKernel;
 class TestKernel extends BaseKernel {
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function registerBundles() {
         $bundles = [

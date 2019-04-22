@@ -31,7 +31,7 @@ use WBW\Library\Core\Network\HTTP\HTTPInterface;
 class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTablesCSVExporterInterface, DataTablesEditorInterface {
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function editColumn(DataTablesColumnInterface $dtColumn, $entity, $value) {
 
@@ -67,7 +67,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function exportColumns() {
 
@@ -85,7 +85,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function exportRow($entity) {
 
@@ -107,7 +107,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getColumns() {
 
@@ -125,63 +125,63 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getCSVExporter() {
         return $this;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getEditor() {
         return $this;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getEntity() {
         return Employee::class;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getMethod() {
         return HTTPInterface::HTTP_METHOD_POST;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getName() {
         return "employee";
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getOptions() {
         return DataTablesFactory::newOptions();
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getPrefix() {
         return "e";
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getView() {
         return null;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function renderColumn(DataTablesColumnInterface $dtColumn, $entity) {
 
@@ -224,7 +224,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function renderRow($dtRow, $entity, $rowNumber) {
 
