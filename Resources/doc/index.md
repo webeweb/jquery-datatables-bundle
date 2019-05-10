@@ -332,7 +332,9 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
         $dtColumns[] = DataTablesFactory::newColumn("age", "Age");
         $dtColumns[] = DataTablesFactory::newColumn("startDate", "Start date");
         $dtColumns[] = DataTablesFactory::newColumn("salary", "Salary");
-        $dtColumns[] = DataTablesFactory::newColumn("actions", "Actions")->setOrderable(false)->setSearchable(false);
+        $dtColumns[] = DataTablesFactory::newColumn("actions", "Actions")
+            ->setOrderable(false)
+            ->setSearchable(false);
 
         // Returns the columns.
         return $dtColumns;
