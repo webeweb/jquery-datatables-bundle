@@ -70,40 +70,37 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
      * {@inheritDoc}
      */
     public function exportColumns() {
-
-        $output = [];
-
-        $output[] = "#";
-        $output[] = "Name";
-        $output[] = "Position";
-        $output[] = "Office";
-        $output[] = "Age";
-        $output[] = "Start date";
-        $output[] = "Salary";
-
-        return $output;
+        return [
+            "#",
+            "Name",
+            "Position",
+            "Office",
+            "Age",
+            "Start date",
+            "Salary",
+        ];
     }
 
     /**
      * {@inheritDoc}
      */
     public function exportRow($entity) {
+        return [
+            $entity->getId(),
+            $entity->getName(),
+            $entity->getPosition(),
+            $entity->getOffice(),
+            $entity->getAge(),
+            null !== $entity->getStartDate() ? $entity->getStartDate()->format("Y-m-d") : "",
+            $entity->getSalary(),
+        ];
+    }
 
-        $output = [];
-
-        $output[] = $entity->getId();
-        $output[] = $entity->getName();
-        $output[] = $entity->getPosition();
-        $output[] = $entity->getOffice();
-        $output[] = $entity->getAge();
-        if (null !== $entity->getStartDate()) {
-            $output[] = $entity->getStartDate()->format("Y-m-d");
-        } else {
-            $output[] = "";
-        }
-        $output[] = $entity->getSalary();
-
-        return $output;
+    /**
+     * {@inheritDoc}
+     */
+    public function getCSVExporter() {
+        return $this;
     }
 
     /**
@@ -119,16 +116,11 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
         $dtColumns[] = DataTablesFactory::newColumn("age", "Age");
         $dtColumns[] = DataTablesFactory::newColumn("startDate", "Start date");
         $dtColumns[] = DataTablesFactory::newColumn("salary", "Salary");
-        $dtColumns[] = DataTablesFactory::newColumn("actions", "Actions")->setOrderable(false)->setSearchable(false);
+        $dtColumns[] = DataTablesFactory::newColumn("actions", "Actions")
+            ->setOrderable(false)
+            ->setSearchable(false);
 
         return $dtColumns;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getCSVExporter() {
-        return $this;
     }
 
     /**
