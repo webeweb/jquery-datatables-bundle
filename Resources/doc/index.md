@@ -493,7 +493,7 @@ services:
     app.datatables.provider.employee:
         class: AppBundle\Provider\EmployeeDataTablesProvider
         tags:
-            - { name: "webeweb.jquery_datatables.provider" }
+            - { name: "wbw.jquery.datatables.provider" }
 ```
 
 You can add as many providers as you want as long as the name of the providers are different.

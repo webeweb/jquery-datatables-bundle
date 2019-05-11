@@ -28,7 +28,7 @@ interface DataTablesProviderInterface extends ProviderInterface {
      *
      * @var string
      */
-    const TAG_NAME = "webeweb.jquery_datatables.provider";
+    const TAG_NAME = "wbw.jquery.datatables.provider";
 
     /**
      * Get the columns.

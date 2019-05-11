@@ -20,66 +20,66 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Event;
 class DataTablesEvents {
 
     /**
-     * DataTables "Pre delete".
+     * DataTables "pre delete".
      *
      * @var string
      */
-    const DATATABLES_PRE_DELETE = "webeweb.jquery_datatables.event.pre_delete";
+    const DATATABLES_PRE_DELETE = "wbw.jquery.datatables.event.pre_delete";
 
     /**
-     * DataTables "Pre edit".
+     * DataTables "pre edit".
      *
      * @var string
      */
-    const DATATABLES_PRE_EDIT = "webeweb.jquery_datatables.event.pre_edit";
+    const DATATABLES_PRE_EDIT = "wbw.jquery.datatables.event.pre_edit";
 
     /**
-     * DataTables "Pre export".
+     * DataTables "pre export".
      *
      * @var string
      */
-    const DATATABLES_PRE_EXPORT = "webeweb.jquery_datatables.event.pre_export";
+    const DATATABLES_PRE_EXPORT = "wbw.jquery.datatables.event.pre_export";
 
     /**
-     * DataTables "Pre index".
+     * DataTables "pre index".
      *
      * @var string
      */
-    const DATATABLES_PRE_INDEX = "webeweb.jquery_datatables.event.pre_index";
+    const DATATABLES_PRE_INDEX = "wbw.jquery.datatables.event.pre_index";
 
     /**
-     * DataTables "Pre show".
+     * DataTables "pre show".
      *
      * @var string
      */
-    const DATATABLES_PRE_SHOW = "webeweb.jquery_datatables.event.pre_show";
+    const DATATABLES_PRE_SHOW = "wbw.jquery.datatables.event.pre_show";
 
     /**
-     * DataTables "Post delete".
+     * DataTables "post delete".
      *
      * @var string
      */
-    const DATATABLES_POST_DELETE = "webeweb.jquery_datatables.event.post_delete";
+    const DATATABLES_POST_DELETE = "wbw.jquery.datatables.event.post_delete";
 
     /**
-     * DataTables "Post edit".
+     * DataTables "post edit".
      *
      * @var string
      */
-    const DATATABLES_POST_EDIT = "webeweb.jquery_datatables.event.post_edit";
+    const DATATABLES_POST_EDIT = "wbw.jquery.datatables.event.post_edit";
 
     /**
-     * DataTables "Post export".
+     * DataTables "post export".
      *
      * @var string
      */
-    const DATATABLES_POST_EXPORT = "webeweb.jquery_datatables.event.post_export";
+    const DATATABLES_POST_EXPORT = "wbw.jquery.datatables.event.post_export";
 
     /**
-     * DataTables "Post show".
+     * DataTables "post show".
      *
      * @var string
      */
-    const DATATABLES_POST_INDEX = "webeweb.jquery_datatables.event.post_index";
+    const DATATABLES_POST_INDEX = "wbw.jquery.datatables.event.post_index";
 
 }

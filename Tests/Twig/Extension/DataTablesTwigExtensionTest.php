@@ -53,7 +53,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
 
-        $this->assertEquals("webeweb.jquery_datatables.twig.extension", DataTablesTwigExtension::SERVICE_NAME);
+        $this->assertEquals("wbw.jquery.datatables.twig.extension", DataTablesTwigExtension::SERVICE_NAME);
         $this->assertSame($this->twigEnvironment, $obj->getTwigEnvironment());
     }
 
