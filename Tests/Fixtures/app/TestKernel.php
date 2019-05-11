@@ -29,8 +29,8 @@ class TestKernel extends BaseKernel {
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
-            new WBW\Bundle\CoreBundle\CoreBundle(),
-            new WBW\Bundle\BootstrapBundle\BootstrapBundle(),
+            new WBW\Bundle\CoreBundle\WBWCoreBundle(),
+            new WBW\Bundle\BootstrapBundle\WBWBootstrapBundle(),
             new WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle(),
         ];
         return $bundles;
