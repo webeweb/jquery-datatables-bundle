@@ -30,18 +30,13 @@ class JQueryDataTablesCompilerPass implements CompilerPassInterface {
      */
     public function process(ContainerBuilder $container) {
 
-        // Check if the manager is defined.
         if (false === $container->has(DataTablesManager::SERVICE_NAME)) {
             return;
         }
 
-        // Get the manager.
         $manager = $container->findDefinition(DataTablesManager::SERVICE_NAME);
 
-        // Find all service IDs with provider tag.
         $providers = $container->findTaggedServiceIds(DataTablesProviderInterface::TAG_NAME);
-
-        // Register each provider.
         foreach ($providers as $id => $tag) {
             $manager->addMethodCall("registerProvider", [new Reference($id)]);
         }
