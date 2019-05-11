@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection\Compiler;
 
-use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Compiler\JQueryDataTablesCompilerPass;
+use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Compiler\DataTablesProviderCompilerPass;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
@@ -22,7 +22,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection\Compiler
  */
-class JQueryDataTablesCompilerPassTest extends AbstractTestCase {
+class DataTablesProviderCompilerPassTest extends AbstractTestCase {
 
     /**
      * DataTables manager.
@@ -59,7 +59,7 @@ class JQueryDataTablesCompilerPassTest extends AbstractTestCase {
      */
     public function testProcess() {
 
-        $obj = new JQueryDataTablesCompilerPass();
+        $obj = new DataTablesProviderCompilerPass();
 
         $obj->process($this->containerBuilder);
         $this->assertFalse($this->containerBuilder->hasDefinition(DataTablesManager::SERVICE_NAME));

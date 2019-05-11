@@ -18,12 +18,12 @@ use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 
 /**
- * jQuery DataTables compiler pass.
+ * jQuery DataTables provider compiler pass.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Compiler
  */
-class JQueryDataTablesCompilerPass implements CompilerPassInterface {
+class DataTablesProviderCompilerPass implements CompilerPassInterface {
 
     /**
      * {@inheritDoc}
