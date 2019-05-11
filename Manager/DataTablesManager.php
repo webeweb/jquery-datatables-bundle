@@ -11,8 +11,9 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Manager;
 
+use InvalidArgumentException;
 use WBW\Bundle\CoreBundle\Manager\AbstractManager;
-use WBW\Bundle\CoreBundle\Manager\ManagerInterface;
+use WBW\Bundle\CoreBundle\Provider\ProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
@@ -33,37 +34,28 @@ class DataTablesManager extends AbstractManager {
     const SERVICE_NAME = "wbw.jquery.datatables.manager";
 
     /**
-     * Index.
-     *
-     * @var array
+     * {@inheritDoc}
      */
-    private $index;
-
-    /**
-     * Constructor.
-     */
-    public function __construct() {
-        parent::__construct();
-        $this->setIndex([]);
+    public function addProvider(ProviderInterface $provider) {
+        if (true === $this->contains($provider)) {
+            throw new AlreadyRegisteredDataTablesProviderException($provider->getName());
+        }
+        return parent::addProvider($provider);
     }
 
     /**
-     * Determines if a provider exists.
-     *
-     * @param string $name The name.
-     * @return bool Returns true in case of success, false otherwise.
+     * {@inheritDoc}
      */
-    protected function exists($name) {
-        return array_key_exists($name, $this->index);
-    }
-
-    /**
-     * Get the index.
-     *
-     * @return array Returns the index.
-     */
-    public function getIndex() {
-        return $this->index;
+    public function contains(ProviderInterface $provider) {
+        if (false === ($provider instanceof DataTablesProviderInterface)) {
+            throw new InvalidArgumentException("The provider must implements DataTablesProviderInterface");
+        }
+        foreach ($this->getProviders() as $current) {
+            if ($provider->getName() === $current->getName()) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -74,35 +66,11 @@ class DataTablesManager extends AbstractManager {
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
     public function getProvider($name) {
-        if (false === $this->exists($name)) {
-            throw new UnregisteredDataTablesProviderException($name);
+        foreach ($this->getProviders() as $current) {
+            if ($name === $current->getName()) {
+                return $current;
+            }
         }
-        return $this->getProviders()[$this->index[$name]];
-    }
-
-    /**
-     * Register a provider.
-     *
-     * @param DataTablesProviderInterface $provider The provider.
-     * @return ManagerInterface Returns this manager.
-     * @throws AlreadyRegisteredDataTablesProviderException Throws an already registered provider exception.
-     */
-    public function registerProvider(DataTablesProviderInterface $provider) {
-        if (true === $this->exists($provider->getName())) {
-            throw new AlreadyRegisteredDataTablesProviderException($provider->getName());
-        }
-        $this->index[$provider->getName()] = $this->size();
-        return $this->addProvider($provider);
-    }
-
-    /**
-     * Set the index.
-     *
-     * @param array $index The index.
-     * @return ManagerInterface Returns this manager.
-     */
-    protected function setIndex(array $index) {
-        $this->index = $index;
-        return $this;
+        throw new UnregisteredDataTablesProviderException($name);
     }
 }
