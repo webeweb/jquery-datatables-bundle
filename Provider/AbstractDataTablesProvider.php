@@ -91,7 +91,7 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
         // Initialize the routes.
         $routes   = [];
         $routes[] = $this->getRouter()->generate($editRoute, ["id" => $entity->getId()]);
-        $routes[] = $this->getRouter()->generate("jquery_datatables_delete", ["name" => $this->getName(), "id" => $entity->getId()]);
+        $routes[] = $this->getRouter()->generate("wbw_jquery_datatables_delete", ["name" => $this->getName(), "id" => $entity->getId()]);
 
         // Check the delete route and use it if provided.
         if (null !== $deleteRoute) {

@@ -81,7 +81,7 @@ abstract class AbstractController extends BaseController {
                 break;
         }
 
-        return $this->redirectToRoute("jquery_datatables_index", ["name" => $name]);
+        return $this->redirectToRoute("wbw_jquery_datatables_index", ["name" => $name]);
     }
 
     /**
@@ -322,7 +322,7 @@ abstract class AbstractController extends BaseController {
         $this->getLogger()->debug(sprintf("DataTables controller search for an URL with name \"%s\"", $dtProvider->getName()));
 
         if (false === ($dtProvider instanceof DataTablesRouterInterface)) {
-            return $this->getRouter()->generate("jquery_datatables_index", ["name" => $dtProvider->getName()]);
+            return $this->getRouter()->generate("wbw_jquery_datatables_index", ["name" => $dtProvider->getName()]);
         }
 
         $this->getLogger()->debug(sprintf("DataTables controller found for an URL with name \"%s\"", $dtProvider->getName()));

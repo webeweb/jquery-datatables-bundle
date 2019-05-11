@@ -1,35 +1,35 @@
 # Resources/config/routing/datatables.yml
-jquery_datatables_delete:
+wbw_jquery_datatables_delete:
     path:     "/datatables/{name}/delete/{id}"
-    defaults: { _controller: "JQueryDataTablesBundle:DataTables:delete" }
+    defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:delete" }
     methods:  ["GET"]
 
-jquery_datatables_edit:
+wbw_jquery_datatables_edit:
     path:     "/datatables/{name}/edit/{id}/{data}/{value}"
-    defaults: { _controller: "JQueryDataTablesBundle:DataTables:edit", value: null }
+    defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:edit", value: null }
     methods:  ["GET", "POST"]
 
-jquery_datatables_export:
+wbw_jquery_datatables_export:
     path:     "/datatables/{name}/export"
-    defaults: { _controller: "JQueryDataTablesBundle:DataTables:export" }
+    defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:export" }
     methods:  ["GET"]
 
-jquery_datatables_index:
+wbw_jquery_datatables_index:
     path:     "/datatables/{name}/index"
-    defaults: { _controller: "JQueryDataTablesBundle:DataTables:index" }
+    defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:index" }
     methods:  ["GET", "POST"]
 
-jquery_datatables_options:
+wbw_jquery_datatables_options:
     path:     "/datatables/{name}/options"
-    defaults: { _controller: "JQueryDataTablesBundle:DataTables:options" }
+    defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:options" }
     methods:  ["GET"]
 
-jquery_datatables_render:
+wbw_jquery_datatables_render:
     path:     "/datatables/{name}/render"
-    defaults: { _controller: "JQueryDataTablesBundle:DataTables:render" }
+    defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:render" }
     methods:  ["GET"]
 
-jquery_datatables_show:
+wbw_jquery_datatables_show:
     path:     "/datatables/{name}/show/{id}"
-    defaults: { _controller: "JQueryDataTablesBundle:DataTables:show" }
+    defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:show" }
     methods:  ["GET"]
