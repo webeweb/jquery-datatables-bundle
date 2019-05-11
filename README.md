@@ -40,13 +40,13 @@ Includes :
 
 Provides :
 
-- a "jquery_datatables_delete" route to delete a managed entity by a DataTable
-- a "jquery_datatables_edit" route to edit all columns provided by a DataTable
-- a "jquery_datatables_export" route to export all managed entities by a DataTable
-- a "jquery_datatables_index" route to display a DataTable (main and columns searches is also provide with a generic implementation)
-- a "jquery_datatables_options" route to retrieve with an XML HTTP request the options of a DataTable
-- a "jquery_datatables_render" route to retrieve with an XML HTTP request the HTML rendering of a DataTable
-- a "jquery_datatables_show" route to retrieve with an XML HTTP request a managed entity by a DataTable into JSON format
+- a "wbw_jquery_datatables_delete" route to delete a managed entity by a DataTable
+- a "wbw_jquery_datatables_edit" route to edit all columns provided by a DataTable
+- a "wbw_jquery_datatables_export" route to export all managed entities by a DataTable
+- a "wbw_jquery_datatables_index" route to display a DataTable (main and columns searches is also provide with a generic implementation)
+- a "wbw_jquery_datatables_options" route to retrieve with an XML HTTP request the options of a DataTable
+- a "wbw_jquery_datatables_render" route to retrieve with an XML HTTP request the HTML rendering of a DataTable
+- a "wbw_jquery_datatables_show" route to retrieve with an XML HTTP request a managed entity by a DataTable into JSON format
 
 ---
 
@@ -63,7 +63,7 @@ Open a command console, enter your project directory and execute the following
 command to download the latest stable version of this package:
 
 ```bash
-$ composer require webeweb/jquery-datatables-bundle "^2.0"
+$ composer require webeweb/jquery-datatables-bundle "^3.0"
 ```
 
 This command requires you to have Composer installed globally, as explained in
@@ -77,9 +77,9 @@ in the `app/AppKernel.php` file of your project:
     public function registerBundles() {
         $bundles = [
             // ...
-            new WBW\Bundle\CoreBundle\CoreBundle(),
-            new WBW\Bundle\BootstrapBundle\BootstrapBundle(),
-            new WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle(),
+            new WBW\Bundle\CoreBundle\WBWCoreBundle(),
+            new WBW\Bundle\BootstrapBundle\WBWBootstrapBundle(),
+            new WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle(),
         ];
 
         // ...
@@ -99,9 +99,9 @@ Add the bundle routing in the `app/config/routing.yml` file of your project:
 
 ```yaml
 # ...
-jquery_datatables:
+wbw_jquery_datatables:
     prefix:   "/"
-    resource: "@JQueryDataTablesBundle/Resources/config/routing.yml"
+    resource: "@WBWJQueryDataTablesBundle/Resources/config/routing.yml"
 ```
 
 ---
