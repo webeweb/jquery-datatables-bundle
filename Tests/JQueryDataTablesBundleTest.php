@@ -11,7 +11,6 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
 
-use WBW\Bundle\JQuery\DataTablesBundle\DataTablesVersionInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\JQueryDataTablesExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle;
 
@@ -33,16 +32,6 @@ class JQueryDataTablesBundleTest extends AbstractTestCase {
         $obj = new JQueryDataTablesBundle();
 
         $this->assertNull($obj->build($this->containerBuilder));
-    }
-
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals(DataTablesVersionInterface::DATATABLES_VERSION, JQueryDataTablesBundle::DATATABLES_VERSION);
     }
 
     /**

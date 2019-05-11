@@ -15,7 +15,6 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use WBW\Bundle\CoreBundle\Provider\AssetsProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Compiler\JQueryDataTablesCompilerPass;
-use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\JQueryDataTablesExtension;
 
 /**
  * jQuery DataTables bundle.
@@ -24,14 +23,6 @@ use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\JQueryDataTablesExten
  * @package WBW\Bundle\jQuery\DatatablesBundle
  */
 class JQueryDataTablesBundle extends Bundle implements AssetsProviderInterface {
-
-    /**
-     * DataTables version.
-     *
-     * @var string
-     * @deprecated since 2.1.0
-     */
-    const DATATABLES_VERSION = DataTablesVersionInterface::DATATABLES_VERSION;
 
     /**
      * {@inheritDoc}
@@ -45,12 +36,5 @@ class JQueryDataTablesBundle extends Bundle implements AssetsProviderInterface {
      */
     public function getAssetsRelativeDirectory() {
         return "/Resources/assets";
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getContainerExtension() {
-        return new JQueryDataTablesExtension();
     }
 }
