@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection;
 
 use Exception;
 use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtension;
-use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\JQueryDataTablesExtension;
+use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\WBWJQueryDataTablesExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
@@ -44,7 +44,7 @@ class DataTablesExtensionTest extends AbstractTestCase {
      */
     public function testLoad() {
 
-        $obj = new JQueryDataTablesExtension();
+        $obj = new WBWJQueryDataTablesExtension();
 
         $obj->load([], $this->containerBuilder);
         $this->assertInstanceOf(DataTablesManager::class, $this->containerBuilder->get(DataTablesManager::SERVICE_NAME));

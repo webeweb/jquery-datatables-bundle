@@ -33,17 +33,17 @@ abstract class AbstractWebTestCase extends WebTestCase {
 
         $assets = [];
 
-        $assets[] = "href=\"/bundles/jquerydatatables/datatables-" . DataTablesVersionInterface::DATATABLES_VERSION . "/css/dataTables.bootstrap.min.css\"";
-        $assets[] = "href=\"/bundles/jquerydatatables/datatables-autofill-" . DataTablesVersionInterface::DATATABLES_AUTOFILL_VERSION . "/css/autoFill.bootstrap.min.css\"";
-        $assets[] = "href=\"/bundles/jquerydatatables/datatables-buttons-" . DataTablesVersionInterface::DATATABLES_BUTTONS_VERSION . "/css/buttons.bootstrap.min.css\"";
-        $assets[] = "href=\"/bundles/jquerydatatables/datatables-colreorder-" . DataTablesVersionInterface::DATATABLES_COLREORDER_VERSION . "/css/colReorder.bootstrap.min.css\"";
-        $assets[] = "href=\"/bundles/jquerydatatables/datatables-fixedcolumns-" . DataTablesVersionInterface::DATATABLES_FIXEDCOLUMNS_VERSION . "/css/fixedColumns.bootstrap.min.css\"";
-        $assets[] = "href=\"/bundles/jquerydatatables/datatables-fixedheader-" . DataTablesVersionInterface::DATATABLES_FIXEDHEADER_VERSION . "/css/fixedHeader.bootstrap.min.css\"";
-        $assets[] = "href=\"/bundles/jquerydatatables/datatables-keytable-" . DataTablesVersionInterface::DATATABLES_KEYTABLE_VERSION . "/css/keyTable.bootstrap.min.css\"";
-        $assets[] = "href=\"/bundles/jquerydatatables/datatables-responsive-" . DataTablesVersionInterface::DATATABLES_RESPONSIVE_VERSION . "/css/responsive.bootstrap.min.css\"";
-        $assets[] = "href=\"/bundles/jquerydatatables/datatables-rowgroup-" . DataTablesVersionInterface::DATATABLES_ROWGROUP_VERSION . "/css/rowGroup.bootstrap.min.css\"";
-        $assets[] = "href=\"/bundles/jquerydatatables/datatables-rowreorder-" . DataTablesVersionInterface::DATATABLES_ROWREORDER_VERSION . "/css/rowReorder.bootstrap.min.css\"";
-        $assets[] = "href=\"/bundles/jquerydatatables/datatables-select-" . DataTablesVersionInterface::DATATABLES_SELECT_VERSION . "/css/select.bootstrap.min.css\"";
+        $assets[] = "href=\"/bundles/wbwjquerydatatables/datatables-" . DataTablesVersionInterface::DATATABLES_VERSION . "/css/dataTables.bootstrap.min.css\"";
+        $assets[] = "href=\"/bundles/wbwjquerydatatables/datatables-autofill-" . DataTablesVersionInterface::DATATABLES_AUTOFILL_VERSION . "/css/autoFill.bootstrap.min.css\"";
+        $assets[] = "href=\"/bundles/wbwjquerydatatables/datatables-buttons-" . DataTablesVersionInterface::DATATABLES_BUTTONS_VERSION . "/css/buttons.bootstrap.min.css\"";
+        $assets[] = "href=\"/bundles/wbwjquerydatatables/datatables-colreorder-" . DataTablesVersionInterface::DATATABLES_COLREORDER_VERSION . "/css/colReorder.bootstrap.min.css\"";
+        $assets[] = "href=\"/bundles/wbwjquerydatatables/datatables-fixedcolumns-" . DataTablesVersionInterface::DATATABLES_FIXEDCOLUMNS_VERSION . "/css/fixedColumns.bootstrap.min.css\"";
+        $assets[] = "href=\"/bundles/wbwjquerydatatables/datatables-fixedheader-" . DataTablesVersionInterface::DATATABLES_FIXEDHEADER_VERSION . "/css/fixedHeader.bootstrap.min.css\"";
+        $assets[] = "href=\"/bundles/wbwjquerydatatables/datatables-keytable-" . DataTablesVersionInterface::DATATABLES_KEYTABLE_VERSION . "/css/keyTable.bootstrap.min.css\"";
+        $assets[] = "href=\"/bundles/wbwjquerydatatables/datatables-responsive-" . DataTablesVersionInterface::DATATABLES_RESPONSIVE_VERSION . "/css/responsive.bootstrap.min.css\"";
+        $assets[] = "href=\"/bundles/wbwjquerydatatables/datatables-rowgroup-" . DataTablesVersionInterface::DATATABLES_ROWGROUP_VERSION . "/css/rowGroup.bootstrap.min.css\"";
+        $assets[] = "href=\"/bundles/wbwjquerydatatables/datatables-rowreorder-" . DataTablesVersionInterface::DATATABLES_ROWREORDER_VERSION . "/css/rowReorder.bootstrap.min.css\"";
+        $assets[] = "href=\"/bundles/wbwjquerydatatables/datatables-select-" . DataTablesVersionInterface::DATATABLES_SELECT_VERSION . "/css/select.bootstrap.min.css\"";
 
         return $assets;
     }
@@ -57,30 +57,30 @@ abstract class AbstractWebTestCase extends WebTestCase {
 
         $assets = [];
 
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-" . DataTablesVersionInterface::DATATABLES_VERSION . "/js/jquery.dataTables.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-" . DataTablesVersionInterface::DATATABLES_VERSION . "/js/dataTables.bootstrap.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-autofill-" . DataTablesVersionInterface::DATATABLES_AUTOFILL_VERSION . "/js/dataTables.autoFill.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-autofill-" . DataTablesVersionInterface::DATATABLES_AUTOFILL_VERSION . "/js/autoFill.bootstrap.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-jszip-" . DataTablesVersionInterface::DATATABLES_JSZIP_VERSION . "/jszip.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-pdfmake-" . DataTablesVersionInterface::DATATABLES_PDFMAKE_VERSION . "/pdfmake.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-pdfmake-" . DataTablesVersionInterface::DATATABLES_PDFMAKE_VERSION . "/vfs_fonts.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-buttons-" . DataTablesVersionInterface::DATATABLES_BUTTONS_VERSION . "/js/dataTables.buttons.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-buttons-" . DataTablesVersionInterface::DATATABLES_BUTTONS_VERSION . "/js/buttons.colVis.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-buttons-" . DataTablesVersionInterface::DATATABLES_BUTTONS_VERSION . "/js/buttons.flash.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-buttons-" . DataTablesVersionInterface::DATATABLES_BUTTONS_VERSION . "/js/buttons.html5.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-buttons-" . DataTablesVersionInterface::DATATABLES_BUTTONS_VERSION . "/js/buttons.print.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-buttons-" . DataTablesVersionInterface::DATATABLES_BUTTONS_VERSION . "/js/buttons.bootstrap.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-colreorder-" . DataTablesVersionInterface::DATATABLES_COLREORDER_VERSION . "/js/dataTables.colReorder.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-fixedcolumns-" . DataTablesVersionInterface::DATATABLES_FIXEDCOLUMNS_VERSION . "/js/dataTables.fixedColumns.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-fixedheader-" . DataTablesVersionInterface::DATATABLES_FIXEDHEADER_VERSION . "/js/dataTables.fixedHeader.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-keytable-" . DataTablesVersionInterface::DATATABLES_KEYTABLE_VERSION . "/js/dataTables.keyTable.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-responsive-" . DataTablesVersionInterface::DATATABLES_RESPONSIVE_VERSION . "/js/dataTables.responsive.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-responsive-" . DataTablesVersionInterface::DATATABLES_RESPONSIVE_VERSION . "/js/responsive.bootstrap.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-rowgroup-" . DataTablesVersionInterface::DATATABLES_ROWGROUP_VERSION . "/js/dataTables.rowGroup.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-rowreorder-" . DataTablesVersionInterface::DATATABLES_ROWREORDER_VERSION . "/js/dataTables.rowReorder.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-scroller-" . DataTablesVersionInterface::DATATABLES_SCROLLER_VERSION . "/js/dataTables.scroller.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/datatables-select-" . DataTablesVersionInterface::DATATABLES_SELECT_VERSION . "/js/dataTables.select.min.js\"";
-        $assets[] = "src=\"/bundles/jquerydatatables/editable-table/mindmup-editabletable.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-" . DataTablesVersionInterface::DATATABLES_VERSION . "/js/jquery.dataTables.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-" . DataTablesVersionInterface::DATATABLES_VERSION . "/js/dataTables.bootstrap.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-autofill-" . DataTablesVersionInterface::DATATABLES_AUTOFILL_VERSION . "/js/dataTables.autoFill.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-autofill-" . DataTablesVersionInterface::DATATABLES_AUTOFILL_VERSION . "/js/autoFill.bootstrap.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-jszip-" . DataTablesVersionInterface::DATATABLES_JSZIP_VERSION . "/jszip.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-pdfmake-" . DataTablesVersionInterface::DATATABLES_PDFMAKE_VERSION . "/pdfmake.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-pdfmake-" . DataTablesVersionInterface::DATATABLES_PDFMAKE_VERSION . "/vfs_fonts.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-buttons-" . DataTablesVersionInterface::DATATABLES_BUTTONS_VERSION . "/js/dataTables.buttons.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-buttons-" . DataTablesVersionInterface::DATATABLES_BUTTONS_VERSION . "/js/buttons.colVis.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-buttons-" . DataTablesVersionInterface::DATATABLES_BUTTONS_VERSION . "/js/buttons.flash.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-buttons-" . DataTablesVersionInterface::DATATABLES_BUTTONS_VERSION . "/js/buttons.html5.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-buttons-" . DataTablesVersionInterface::DATATABLES_BUTTONS_VERSION . "/js/buttons.print.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-buttons-" . DataTablesVersionInterface::DATATABLES_BUTTONS_VERSION . "/js/buttons.bootstrap.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-colreorder-" . DataTablesVersionInterface::DATATABLES_COLREORDER_VERSION . "/js/dataTables.colReorder.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-fixedcolumns-" . DataTablesVersionInterface::DATATABLES_FIXEDCOLUMNS_VERSION . "/js/dataTables.fixedColumns.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-fixedheader-" . DataTablesVersionInterface::DATATABLES_FIXEDHEADER_VERSION . "/js/dataTables.fixedHeader.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-keytable-" . DataTablesVersionInterface::DATATABLES_KEYTABLE_VERSION . "/js/dataTables.keyTable.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-responsive-" . DataTablesVersionInterface::DATATABLES_RESPONSIVE_VERSION . "/js/dataTables.responsive.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-responsive-" . DataTablesVersionInterface::DATATABLES_RESPONSIVE_VERSION . "/js/responsive.bootstrap.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-rowgroup-" . DataTablesVersionInterface::DATATABLES_ROWGROUP_VERSION . "/js/dataTables.rowGroup.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-rowreorder-" . DataTablesVersionInterface::DATATABLES_ROWREORDER_VERSION . "/js/dataTables.rowReorder.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-scroller-" . DataTablesVersionInterface::DATATABLES_SCROLLER_VERSION . "/js/dataTables.scroller.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/datatables-select-" . DataTablesVersionInterface::DATATABLES_SELECT_VERSION . "/js/dataTables.select.min.js\"";
+        $assets[] = "src=\"/bundles/wbwjquerydatatables/editable-table/mindmup-editabletable.js\"";
 
         return $assets;
     }

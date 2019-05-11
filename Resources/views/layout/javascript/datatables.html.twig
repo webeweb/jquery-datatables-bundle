@@ -3,5 +3,5 @@
 {% set _themes  = ["bootstrap", "bootstrap4", "datatables", "foundation", "jqueryui", "semanticui"] %}
 {% set _theme   = dtTheme|default("") in _themes ? dtTheme : "bootstrap" %}
 <!-- DataTables -->
-<script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-" ~ _version ~ "/js/jquery.dataTables.min.js") }}"></script>
-<script type="text/javascript" src="{{ asset("bundles/jquerydatatables/datatables-" ~ _version ~ "/js/dataTables." ~ _theme ~ ".min.js") }}"></script>
+<script type="text/javascript" src="{{ asset("bundles/wbwjquerydatatables/datatables-" ~ _version ~ "/js/jquery.dataTables.min.js") }}"></script>
+<script type="text/javascript" src="{{ asset("bundles/wbwjquerydatatables/datatables-" ~ _version ~ "/js/dataTables." ~ _theme ~ ".min.js") }}"></script>

@@ -22,7 +22,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection
  */
-class JQueryDataTablesExtension extends Extension {
+class WBWJQueryDataTablesExtension extends Extension {
 
     /**
      * {@inheritDoc}

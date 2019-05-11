@@ -238,7 +238,7 @@ class DataTablesController extends AbstractController {
 
         $dtView = $dtProvider->getView();
         if (null === $dtProvider->getView()) {
-            $dtView = "@JQueryDataTables/DataTables/index.html.twig";
+            $dtView = "@WBWJQueryDataTables/DataTables/index.html.twig";
         }
 
         return $this->render($dtView, [

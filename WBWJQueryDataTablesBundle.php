@@ -22,7 +22,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Compiler\JQueryDataTa
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\jQuery\DatatablesBundle
  */
-class JQueryDataTablesBundle extends Bundle implements AssetsProviderInterface {
+class WBWJQueryDataTablesBundle extends Bundle implements AssetsProviderInterface {
 
     /**
      * {@inheritDoc}

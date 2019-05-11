@@ -225,7 +225,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
                 }
             ],
             "language": {
-                "url": "/bundles/jquerydatatables/datatables-i18n/French.json"
+                "url": "/bundles/wbwjquerydatatables/datatables-i18n/French.json"
             },
             "order": [],
             "processing": true,
@@ -327,7 +327,7 @@ EOT;
                 }
             ],
             "language": {
-                "url": "/bundles/jquerydatatables/datatables-i18n/French.json"
+                "url": "/bundles/wbwjquerydatatables/datatables-i18n/French.json"
             }
         });
     });

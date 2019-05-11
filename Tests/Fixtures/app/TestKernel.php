@@ -31,7 +31,7 @@ class TestKernel extends BaseKernel {
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new WBW\Bundle\CoreBundle\WBWCoreBundle(),
             new WBW\Bundle\BootstrapBundle\WBWBootstrapBundle(),
-            new WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle(),
+            new WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle(),
         ];
         return $bundles;
     }

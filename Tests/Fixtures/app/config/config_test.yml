@@ -30,7 +30,7 @@ doctrine:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping:                true
         mappings:
-            JQueryDataTablesBundle:
+            WBWJQueryDataTablesBundle:
                 dir:       "Tests/Fixtures/app/config/doctrine"
                 type:      "yml"
                 is_bundle: true

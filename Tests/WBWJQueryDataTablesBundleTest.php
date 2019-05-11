@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
 
-use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\JQueryDataTablesExtension;
-use WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle;
+use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\WBWJQueryDataTablesExtension;
+use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle;
 
 /**
  * jQuery DataTables bundle test.
@@ -20,7 +20,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests
  */
-class JQueryDataTablesBundleTest extends AbstractTestCase {
+class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
 
     /**
      * Tests the build() method.
@@ -29,7 +29,7 @@ class JQueryDataTablesBundleTest extends AbstractTestCase {
      */
     public function testBuild() {
 
-        $obj = new JQueryDataTablesBundle();
+        $obj = new WBWJQueryDataTablesBundle();
 
         $this->assertNull($obj->build($this->containerBuilder));
     }
@@ -41,7 +41,7 @@ class JQueryDataTablesBundleTest extends AbstractTestCase {
      */
     public function testGetAssetsRelativeDirectory() {
 
-        $obj = new JQueryDataTablesBundle();
+        $obj = new WBWJQueryDataTablesBundle();
 
         $res = "/Resources/assets";
         $this->assertEquals($res, $obj->getAssetsRelativeDirectory());
@@ -54,9 +54,9 @@ class JQueryDataTablesBundleTest extends AbstractTestCase {
      */
     public function testGetContainerExtension() {
 
-        $obj = new JQueryDataTablesBundle();
+        $obj = new WBWJQueryDataTablesBundle();
 
         $res = $obj->getContainerExtension();
-        $this->assertInstanceOf(JQueryDataTablesExtension::class, $res);
+        $this->assertInstanceOf(WBWJQueryDataTablesExtension::class, $res);
     }
 }

@@ -3,7 +3,7 @@
 
 {% block bootstrapStylesheets %}
     {{ parent() }}
-    {% include "@JQueryDataTables/layout/stylesheets.html.twig" %}
+    {% include "@WBWJQueryDataTables/layout/stylesheets.html.twig" %}
     <style type="text/css">
         .content {
             margin: 70px 0 0;
@@ -46,7 +46,7 @@
 
 {% block bootstrapJavascripts %}
     {{ parent() }}
-    {% include "@JQueryDataTables/layout/javascripts.html.twig" %}
+    {% include "@WBWJQueryDataTables/layout/javascripts.html.twig" %}
     {% block jQueryDataTablesJavascripts %}
     {% endblock %}
 {% endblock %}

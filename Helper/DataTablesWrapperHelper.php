@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
 
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\JQueryDataTablesBundle;
+use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle;
 use WBW\Bundle\JQuery\DataTablesBundle\Normalizer\DataTablesNormalizer;
 use WBW\Library\Core\Argument\ObjectHelper;
 use WBW\Library\Core\Argument\StringHelper;
@@ -36,11 +36,11 @@ class DataTablesWrapperHelper {
     public static function getLanguageURL($language) {
 
         // Initialize the directory.
-        $dir = ObjectHelper::getDirectory(JQueryDataTablesBundle::class);
+        $dir = ObjectHelper::getDirectory(WBWJQueryDataTablesBundle::class);
         $dir .= "/Resources/public/datatables-i18n/%language%.json";
 
         // Initialize the URI.
-        $uri = "/bundles/jquerydatatables/datatables-i18n/%language%.json";
+        $uri = "/bundles/wbwjquerydatatables/datatables-i18n/%language%.json";
 
         // Initialize the URL.
         $url = StringHelper::replace($uri, ["%language%"], [$language]);
