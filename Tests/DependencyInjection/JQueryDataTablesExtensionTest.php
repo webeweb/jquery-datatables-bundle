@@ -33,19 +33,7 @@ class DataTablesExtensionTest extends AbstractTestCase {
         parent::setUp();
 
         // Set a Bootstrap renderer Twig extension mock
-        $this->containerBuilder->set("webeweb.core.twig.extension.renderer", new RendererTwigExtension($this->twigEnvironment));
-    }
-
-    /**
-     * Tests the getAlias() method.
-     *
-     * @return void
-     */
-    public function testGetAlias() {
-
-        $obj = new JQueryDataTablesExtension();
-
-        $this->assertEquals("j_query_data_tables", $obj->getAlias());
+        $this->containerBuilder->set("wbw.core.twig.extension.renderer", new RendererTwigExtension($this->twigEnvironment));
     }
 
     /**

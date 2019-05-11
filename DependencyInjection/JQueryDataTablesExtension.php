@@ -27,19 +27,10 @@ class JQueryDataTablesExtension extends Extension {
     /**
      * {@inheritDoc}
      */
-    public function getAlias() {
-        return parent::getAlias();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function load(array $configs, ContainerBuilder $container) {
 
-        // Create the file locator.
         $fileLocator = new FileLocator(__DIR__ . "/../Resources/config");
 
-        // Load the services.
         $serviceLoader = new YamlFileLoader($container, $fileLocator);
         $serviceLoader->load("services.yml");
     }
