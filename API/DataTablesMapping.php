@@ -50,16 +50,6 @@ class DataTablesMapping implements DataTablesMappingInterface {
     /**
      * {@inheritDoc}
      */
-    public function getAlias() {
-        if (null === $this->column) {
-            return null;
-        }
-        return null !== $this->prefix ? implode(".", [$this->prefix, $this->column]) : $this->column;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function getColumn() {
         return $this->column;
     }

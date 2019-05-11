@@ -20,14 +20,6 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 interface DataTablesMappingInterface {
 
     /**
-     * Get the alias.
-     *
-     * @return string Returns the alias.
-     * @deprecated since 2.1.2, use {@see WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesMappingHelper} instead.
-     */
-    public function getAlias();
-
-    /**
      * Get the column.
      *
      * @return string Returns the column.

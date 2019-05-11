@@ -38,7 +38,7 @@ class DataTablesRepositoryHelper {
                 continue;
             }
 
-            $queryBuilder->addOrderBy($dtColumn->getMapping()->getAlias(), $dtOrder->getDir());
+            $queryBuilder->addOrderBy(DataTablesMappingHelper::getAlias($dtColumn->getMapping()), $dtOrder->getDir());
         }
     }
 

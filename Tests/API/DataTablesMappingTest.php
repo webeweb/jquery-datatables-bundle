@@ -32,30 +32,8 @@ class DataTablesMappingTest extends AbstractTestCase {
 
         $obj = new DataTablesMapping();
 
-        $this->assertEquals("", $obj->getAlias());
         $this->assertNull($obj->getColumn());
         $this->assertNull($obj->getPrefix());
-    }
-
-    /**
-     * Tests the getAlias() method.
-     *
-     * @return void
-     */
-    public function testGetAlias() {
-
-        $obj = new DataTablesMapping();
-
-        $obj->setPrefix("prefix");
-        $this->assertNull($obj->getAlias());
-
-        $obj->setPrefix(null);
-        $obj->setColumn("column");
-        $this->assertEquals("column", $obj->getAlias());
-
-        $obj->setPrefix("prefix");
-        $obj->setColumn("column");
-        $this->assertEquals("prefix.column", $obj->getAlias());
     }
 
     /**
@@ -68,7 +46,6 @@ class DataTablesMappingTest extends AbstractTestCase {
         $obj = new DataTablesMapping();
 
         $obj->setColumn("column");
-        $this->assertEquals("column", $obj->getAlias());
         $this->assertEquals("column", $obj->getColumn());
     }
 
@@ -98,7 +75,6 @@ class DataTablesMappingTest extends AbstractTestCase {
         $obj = new DataTablesMapping();
 
         $obj->setPrefix("prefix");
-        $this->assertNull($obj->getAlias());
         $this->assertEquals("prefix", $obj->getPrefix());
     }
 }
