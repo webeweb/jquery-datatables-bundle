@@ -1,13 +1,16 @@
 CHANGELOG
 =========
 
-### master
+### [3.0.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.0.0) (2019-05-11)
 
+- Better support of Symfony's bundle recommendations
 - Fix DataTables column method visibility
 - Fix DataTables search with different data types (date, int, string, ...)
 - Improve PHPDoc
 - Optimize DataTables Twig extension 
 - Replace deprecated Twig classes
+- Update dependencies
+- Update SERVICE_NAME constants
 
 ### [2.1.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v2.1.1) (2019-02-18)
 
