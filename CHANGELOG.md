@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Fix translation domain into abstract DataTables provider
+
 ### [3.0.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.0.0) (2019-05-11)
 
 - Better support of Symfony's bundle recommendations
