@@ -58,12 +58,10 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
      */
     public function getOptions() {
 
-        // Initialize the options.
         $dtOptions = DataTablesFactory::newOptions();
         $dtOptions->addOption("responsive", true);
         $dtOptions->addOption("searchDelay", 1000);
 
-        // Return the options.
         return $dtOptions;
     }
 
@@ -80,8 +78,8 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
 
         // Initialize the titles.
         $titles   = [];
-        $titles[] = $this->getTranslator()->trans("label.edit", [], "CoreBundle");
-        $titles[] = $this->getTranslator()->trans("label.delete", [], "CoreBundle");
+        $titles[] = $this->getTranslator()->trans("label.edit", [], "WBWCoreBundle");
+        $titles[] = $this->getTranslator()->trans("label.delete", [], "WBWCoreBundle");
 
         // Initialize the actions.
         $actions   = [];
@@ -92,8 +90,6 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
         $routes   = [];
         $routes[] = $this->getRouter()->generate($editRoute, ["id" => $entity->getId()]);
         $routes[] = $this->getRouter()->generate("wbw_jquery_datatables_delete", ["name" => $this->getName(), "id" => $entity->getId()]);
-
-        // Check the delete route and use it if provided.
         if (null !== $deleteRoute) {
             $routes[1] = $this->getRouter()->generate($deleteRoute, ["id" => $entity->getId()]);
         }
