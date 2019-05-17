@@ -260,7 +260,7 @@ abstract class AbstractController extends BaseController {
      * @return string Returns the notification.
      */
     protected function getDataTablesNotification($notificationId) {
-        return $this->getTranslator()->trans($notificationId, [], "JQueryDataTablesBundle");
+        return $this->getTranslator()->trans($notificationId, [], "WBWJQueryDataTablesBundle");
     }
 
     /**
