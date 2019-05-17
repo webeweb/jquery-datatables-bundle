@@ -76,17 +76,14 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
      */
     protected function renderButtons($entity, $editRoute, $deleteRoute = null, $enableDelete = true) {
 
-        // Initialize the titles.
         $titles   = [];
         $titles[] = $this->getTranslator()->trans("label.edit", [], "WBWCoreBundle");
         $titles[] = $this->getTranslator()->trans("label.delete", [], "WBWCoreBundle");
 
-        // Initialize the actions.
         $actions   = [];
         $actions[] = $this->getButtonTwigExtension()->bootstrapButtonDefaultFunction(["icon" => "pencil", "title" => $titles[0], "size" => "xs"]);
         $actions[] = $this->getButtonTwigExtension()->bootstrapButtonDangerFunction(["icon" => "trash", "title" => $titles[1], "size" => "xs"]);
 
-        // Initialize the routes.
         $routes   = [];
         $routes[] = $this->getRouter()->generate($editRoute, ["id" => $entity->getId()]);
         $routes[] = $this->getRouter()->generate("wbw_jquery_datatables_delete", ["name" => $this->getName(), "id" => $entity->getId()]);
@@ -94,7 +91,6 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
             $routes[1] = $this->getRouter()->generate($deleteRoute, ["id" => $entity->getId()]);
         }
 
-        // Initialize the links.
         $links   = [];
         $links[] = $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($actions[0], $routes[0]);
         if (true === $enableDelete) {
