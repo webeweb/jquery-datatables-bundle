@@ -1,4 +1,4 @@
-# Resources/translations/JQueryDataTablesBundle.en.yml
+# Resources/translations/WBWJQueryDataTablesBundle.en.yml
 DataTablesController:
     deleteAction:
         danger:  "Record not found"
