@@ -1,9 +1,9 @@
 CHANGELOG
 =========
 
-### master
+### [3.0.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.0.1) (2019-05-17)
 
-- Fix translation domain into abstract DataTables provider
+- Fix translation domain
 
 ### [3.0.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.0.0) (2019-05-11)
 
