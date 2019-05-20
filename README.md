@@ -18,7 +18,7 @@ objects to do the heavy lifting. The bundle include the excellent JS library
 
 Dry out your DataTables code by writing it all in PHP !
 
-<img src="https://raw.githubusercontent.com/webeweb/jquery-datatables-bundle/master/Resources/doc/images/jquery-datatables-bundle_380x550.png" alt="jQuery DataTables bundle" align="right" height="456"/>
+<img src="https://raw.githubusercontent.com/webeweb/jquery-datatables-bundle/master/Resources/doc/screenshot_readme.png" alt="jQuery DataTables bundle" align="right" height="456"/>
 
 Includes :
 
