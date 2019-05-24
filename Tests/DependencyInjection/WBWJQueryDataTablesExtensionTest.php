@@ -12,7 +12,9 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection;
 
 use Exception;
+use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtension;
+use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Configuration;
 use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\WBWJQueryDataTablesExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
@@ -27,6 +29,13 @@ use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 class DataTablesExtensionTest extends AbstractTestCase {
 
     /**
+     * Configs.
+     *
+     * @var array
+     */
+    private $configs;
+
+    /**
      * {@inheritDoc}
      */
     protected function setUp() {
@@ -34,6 +43,37 @@ class DataTablesExtensionTest extends AbstractTestCase {
 
         // Set a Bootstrap renderer Twig extension mock
         $this->containerBuilder->set("wbw.core.twig.extension.renderer", new RendererTwigExtension($this->twigEnvironment));
+
+        // Set a configs array mock.
+        $this->configs = [
+            "wbw_syntaxhighlighter" => [
+                "twig" => true,
+            ],
+        ];
+    }
+
+    /**
+     * Tests the getAlias() method.
+     *
+     * @return void
+     */
+    public function testGetAlias() {
+
+        $obj = new WBWJQueryDataTablesExtension();
+
+        $this->assertEquals("wbw_jquery_datatables", $obj->getAlias());
+    }
+
+    /**
+     * Tests the getConfiguration() method.
+     *
+     * @return void
+     */
+    public function testGetConfiguration() {
+
+        $obj = new WBWJQueryDataTablesExtension();
+
+        $this->assertInstanceOf(Configuration::class, $obj->getConfiguration([], $this->containerBuilder));
     }
 
     /**
@@ -46,8 +86,36 @@ class DataTablesExtensionTest extends AbstractTestCase {
 
         $obj = new WBWJQueryDataTablesExtension();
 
-        $obj->load([], $this->containerBuilder);
+        $this->assertNull($obj->load($this->configs, $this->containerBuilder));
+
+        // Managers
         $this->assertInstanceOf(DataTablesManager::class, $this->containerBuilder->get(DataTablesManager::SERVICE_NAME));
+
+        // Twig extensions.
         $this->assertInstanceOf(DataTablesTwigExtension::class, $this->containerBuilder->get(DataTablesTwigExtension::SERVICE_NAME));
+    }
+
+    /**
+     * Tests the load() method.
+     *
+     * @return void
+     */
+    public function testLoadWithoutTwig() {
+
+        // Set the configs mock.
+        $this->configs["wbw_jquery_datatables"]["twig"] = false;
+
+        $obj = new WBWJQueryDataTablesExtension();
+
+        $this->assertNull($obj->load($this->configs, $this->containerBuilder));
+
+        try {
+
+            $this->containerBuilder->get(DataTablesTwigExtension::SERVICE_NAME);
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(ServiceNotFoundException::class, $ex);
+            $this->assertContains(DataTablesTwigExtension::SERVICE_NAME, $ex->getMessage());
+        }
     }
 }

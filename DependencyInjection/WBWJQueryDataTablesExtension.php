@@ -27,11 +27,25 @@ class WBWJQueryDataTablesExtension extends Extension {
     /**
      * {@inheritDoc}
      */
+    public function getAlias() {
+        return "wbw_jquery_datatables";
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function load(array $configs, ContainerBuilder $container) {
 
         $fileLocator = new FileLocator(__DIR__ . "/../Resources/config");
 
         $serviceLoader = new YamlFileLoader($container, $fileLocator);
         $serviceLoader->load("services.yml");
+        $configuration = $this->getConfiguration($configs, $container);
+
+        $config = $this->processConfiguration($configuration, $configs);
+
+        if (true === $config["twig"]) {
+            $serviceLoader->load("twig.yml");
+        }
     }
 }

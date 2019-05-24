@@ -4,10 +4,3 @@ services:
     wbw.jquery.datatables.manager:
         class:  WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager
         public: true
-
-    wbw.jquery.datatables.twig.extension:
-        class:     WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension
-        arguments: ["@twig", "@wbw.core.twig.extension.renderer"]
-        public:    true
-        tags:
-            - { name: "twig.extension" }
