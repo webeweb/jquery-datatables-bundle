@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-### master
+### [3.1.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.1.0) (2019-05-24)
 
 - Add Configuration
 - Reorganize documentation
