@@ -134,5 +134,5 @@ $ vendor/bin/phpunit
 
 ## License
 
-`jquery-datatables-bundle` is released under the LGPL License. See the bundled
+`jquery-datatables-bundle` is released under the MIT License. See the bundled
 [LICENSE](LICENSE) file for details.
