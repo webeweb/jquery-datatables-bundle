@@ -26,10 +26,17 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 class WBWJQueryDataTablesExtension extends Extension {
 
     /**
+     * Extension alias.
+     *
+     * @var string
+     */
+    const EXTENSION_ALIAS = "wbw_jquery_datatables";
+
+    /**
      * {@inheritDoc}
      */
     public function getAlias() {
-        return "wbw_jquery_datatables";
+        return self::EXTENSION_ALIAS;
     }
 
     /**

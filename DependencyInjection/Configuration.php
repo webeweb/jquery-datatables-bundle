@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
+use WBW\Bundle\CoreBundle\DependencyInjection\ConfigurationHelper;
 
 /**
  * Configuration.
@@ -27,9 +28,9 @@ class Configuration implements ConfigurationInterface {
      */
     public function getConfigTreeBuilder() {
 
-        $treeBuilder = new TreeBuilder();
+        $treeBuilder = new TreeBuilder(WBWJQueryDataTablesExtension::EXTENSION_ALIAS);
 
-        $rootNode = $treeBuilder->root("wbw_jquery_datatables");
+        $rootNode = ConfigurationHelper::getRootNode($treeBuilder, WBWJQueryDataTablesExtension::EXTENSION_ALIAS);
         $rootNode->children()
             ->booleanNode("twig")->defaultTrue()->info("Load Twig extensions")->end()
             ->end();

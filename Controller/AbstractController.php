@@ -14,7 +14,6 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Controller;
 use Doctrine\ORM\EntityNotFoundException;
 use Doctrine\ORM\EntityRepository;
 use Exception;
-use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -89,18 +88,13 @@ abstract class AbstractController extends BaseController {
      *
      * @param string $eventName The event name.
      * @param array $entities The entities.
-     * @return Event Returns the event in case of succes, null otherwise.
+     * @return DataTablesEvent Returns the event in case of success, null otherwise.
      */
     protected function dispatchDataTablesEvent($eventName, array $entities) {
 
-        $eventDispatcher = $this->getEventDispatcher();
-        if (null !== $eventDispatcher && false === $eventDispatcher->hasListeners($eventName)) {
-            return null;
-        }
-
         $this->getLogger()->debug(sprintf("DataTables controller dispatch an event with name \"%s\"", $eventName));
 
-        return $eventDispatcher->dispatch($eventName, new DataTablesEvent($eventName, $entities));
+        return $this->dispatchEvent($eventName, new DataTablesEvent($eventName, $entities));
     }
 
     /**

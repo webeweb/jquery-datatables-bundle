@@ -1,9 +1,13 @@
 CHANGELOG
 =========
 
+### [3.2.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.2.1) (2019-06-08)
+
+- Fix deprecated root() call into Configuration
+
 ### [3.2.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.2.0) (2019-06-08)
 
-- CHange license
+- Change license
 - Update Composer (according to Composer schema)
 - Update Travis-CI configuration (Symfony 4.3)
 

@@ -46,10 +46,20 @@ class DataTablesExtensionTest extends AbstractTestCase {
 
         // Set a configs array mock.
         $this->configs = [
-            "wbw_syntaxhighlighter" => [
+            WBWJQueryDataTablesExtension::EXTENSION_ALIAS => [
                 "twig" => true,
             ],
         ];
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function testConstruct() {
+
+        $this->assertEquals("wbw_jquery_datatables", WBWJQueryDataTablesExtension::EXTENSION_ALIAS);
     }
 
     /**
@@ -61,7 +71,7 @@ class DataTablesExtensionTest extends AbstractTestCase {
 
         $obj = new WBWJQueryDataTablesExtension();
 
-        $this->assertEquals("wbw_jquery_datatables", $obj->getAlias());
+        $this->assertEquals(WBWJQueryDataTablesExtension::EXTENSION_ALIAS, $obj->getAlias());
     }
 
     /**
@@ -103,7 +113,7 @@ class DataTablesExtensionTest extends AbstractTestCase {
     public function testLoadWithoutTwig() {
 
         // Set the configs mock.
-        $this->configs["wbw_jquery_datatables"]["twig"] = false;
+        $this->configs[WBWJQueryDataTablesExtension::EXTENSION_ALIAS]["twig"] = false;
 
         $obj = new WBWJQueryDataTablesExtension();
 
