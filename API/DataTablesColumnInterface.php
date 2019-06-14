@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
-use UnexpectedValueException;
+use InvalidArgumentException;
 
 /**
  * DataTables column interface.
@@ -300,7 +300,7 @@ interface DataTablesColumnInterface {
      *
      * @param string $type The type.
      * @return DataTablesColumnInterface Returns this column.
-     * @throws UnexpectedValueException Throws an unexpected value exception if the type is invalid.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the type is invalid.
      */
     public function setType($type);
 
