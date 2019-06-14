@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.3.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.3.0) (2019-06-14)
+
+- Fix deprecated root() call into Configuration
+
 ### [3.2.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.2.1) (2019-06-08)
 
 - Fix deprecated root() call into Configuration
