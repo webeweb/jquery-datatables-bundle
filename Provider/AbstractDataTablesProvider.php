@@ -16,9 +16,9 @@ use Symfony\Component\Routing\Exception\InvalidParameterException;
 use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
 use Symfony\Component\Routing\RouterInterface;
+use Symfony\Component\Translation\TranslatorInterface;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtension;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtensionTrait;
-use WBW\Bundle\CoreBundle\Component\BaseTranslatorInterface;
 use WBW\Bundle\CoreBundle\Renderer\DateTimeRenderer;
 use WBW\Bundle\CoreBundle\Service\RouterTrait;
 use WBW\Bundle\CoreBundle\Service\TranslatorTrait;
@@ -40,10 +40,10 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
      * Constructor.
      *
      * @param RouterInterface $router The router.
-     * @param BaseTranslatorInterface $translator The translator.
+     * @param TranslatorInterface $translator The translator.
      * @param ButtonTwigExtension $buttonTwigExtension The button Twig extension.
      */
-    public function __construct(RouterInterface $router, BaseTranslatorInterface $translator, ButtonTwigExtension $buttonTwigExtension) {
+    public function __construct(RouterInterface $router, TranslatorInterface $translator, ButtonTwigExtension $buttonTwigExtension) {
         $this->setButtonTwigExtension($buttonTwigExtension);
         $this->setRouter($router);
         $this->setTranslator($translator);
