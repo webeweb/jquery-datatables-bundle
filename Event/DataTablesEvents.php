@@ -11,6 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Event;
 
+use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesEvents;
+
 /**
  * DataTables events.
  *
@@ -19,6 +21,34 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Event;
  * @deprecated since 3.4.0 use "WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesEvents" instead.
  */
 class DataTablesEvents {
+
+    /**
+     * DataTables "post delete".
+     *
+     * @var string
+     */
+    const DATATABLES_POST_DELETE = WBWJQueryDataTablesEvents::DATATABLES_POST_DELETE;
+
+    /**
+     * DataTables "post edit".
+     *
+     * @var string
+     */
+    const DATATABLES_POST_EDIT = WBWJQueryDataTablesEvents::DATATABLES_POST_EDIT;
+
+    /**
+     * DataTables "post export".
+     *
+     * @var string
+     */
+    const DATATABLES_POST_EXPORT = WBWJQueryDataTablesEvents::DATATABLES_POST_EXPORT;
+
+    /**
+     * DataTables "post show".
+     *
+     * @var string
+     */
+    const DATATABLES_POST_INDEX = WBWJQueryDataTablesEvents::DATATABLES_POST_INDEX;
 
     /**
      * DataTables "pre delete".
@@ -54,33 +84,5 @@ class DataTablesEvents {
      * @var string
      */
     const DATATABLES_PRE_SHOW = WBWJQueryDataTablesEvents::DATATABLES_PRE_SHOW;
-
-    /**
-     * DataTables "post delete".
-     *
-     * @var string
-     */
-    const DATATABLES_POST_DELETE = WBWJQueryDataTablesEvents::DATATABLES_POST_DELETE;
-
-    /**
-     * DataTables "post edit".
-     *
-     * @var string
-     */
-    const DATATABLES_POST_EDIT = WBWJQueryDataTablesEvents::DATATABLES_POST_EDIT;
-
-    /**
-     * DataTables "post export".
-     *
-     * @var string
-     */
-    const DATATABLES_POST_EXPORT = WBWJQueryDataTablesEvents::DATATABLES_POST_EXPORT;
-
-    /**
-     * DataTables "post show".
-     *
-     * @var string
-     */
-    const DATATABLES_POST_INDEX = WBWJQueryDataTablesEvents::DATATABLES_POST_INDEX;
 
 }
