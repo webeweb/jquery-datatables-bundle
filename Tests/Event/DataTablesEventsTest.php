@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Event;
 
 use WBW\Bundle\JQuery\DataTablesBundle\Event\DataTablesEvents;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesEvents;
 
 /**
  * DataTables events test.
@@ -29,14 +30,14 @@ class DataTablesEventsTest extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $this->assertEquals("wbw.jquery.datatables.event.pre_delete", DataTablesEvents::DATATABLES_PRE_DELETE);
-        $this->assertEquals("wbw.jquery.datatables.event.pre_edit", DataTablesEvents::DATATABLES_PRE_EDIT);
-        $this->assertEquals("wbw.jquery.datatables.event.pre_export", DataTablesEvents::DATATABLES_PRE_EXPORT);
-        $this->assertEquals("wbw.jquery.datatables.event.pre_index", DataTablesEvents::DATATABLES_PRE_INDEX);
-        $this->assertEquals("wbw.jquery.datatables.event.pre_show", DataTablesEvents::DATATABLES_PRE_SHOW);
-        $this->assertEquals("wbw.jquery.datatables.event.post_delete", DataTablesEvents::DATATABLES_POST_DELETE);
-        $this->assertEquals("wbw.jquery.datatables.event.post_edit", DataTablesEvents::DATATABLES_POST_EDIT);
-        $this->assertEquals("wbw.jquery.datatables.event.post_export", DataTablesEvents::DATATABLES_POST_EXPORT);
-        $this->assertEquals("wbw.jquery.datatables.event.post_index", DataTablesEvents::DATATABLES_POST_INDEX);
+        $this->assertEquals(WBWJQueryDataTablesEvents::DATATABLES_POST_DELETE, DataTablesEvents::DATATABLES_PRE_DELETE);
+        $this->assertEquals(WBWJQueryDataTablesEvents::DATATABLES_PRE_EDIT, DataTablesEvents::DATATABLES_PRE_EDIT);
+        $this->assertEquals(WBWJQueryDataTablesEvents::DATATABLES_PRE_EXPORT, DataTablesEvents::DATATABLES_PRE_EXPORT);
+        $this->assertEquals(WBWJQueryDataTablesEvents::DATATABLES_PRE_INDEX, DataTablesEvents::DATATABLES_PRE_INDEX);
+        $this->assertEquals(WBWJQueryDataTablesEvents::DATATABLES_PRE_SHOW, DataTablesEvents::DATATABLES_PRE_SHOW);
+        $this->assertEquals(WBWJQueryDataTablesEvents::DATATABLES_POST_DELETE, DataTablesEvents::DATATABLES_POST_DELETE);
+        $this->assertEquals(WBWJQueryDataTablesEvents::DATATABLES_POST_EDIT, DataTablesEvents::DATATABLES_POST_EDIT);
+        $this->assertEquals(WBWJQueryDataTablesEvents::DATATABLES_POST_EXPORT, DataTablesEvents::DATATABLES_POST_EXPORT);
+        $this->assertEquals(WBWJQueryDataTablesEvents::DATATABLES_POST_INDEX, DataTablesEvents::DATATABLES_POST_INDEX);
     }
 }

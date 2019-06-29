@@ -24,7 +24,6 @@ use WBW\Bundle\BootstrapBundle\Controller\AbstractController as BaseController;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Event\DataTablesEvent;
-use WBW\Bundle\JQuery\DataTablesBundle\Event\DataTablesEvents;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesColumnException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesEditorException;
@@ -38,6 +37,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesRouterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Repository\DataTablesRepositoryInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesEvents;
 use WBW\Library\Core\Database\PaginateHelper;
 use WBW\Library\Core\Model\Response\ActionResponse;
 
@@ -134,14 +134,14 @@ abstract class AbstractController extends BaseController {
 
             while (false !== ($row = $result->next())) {
 
-                $this->dispatchDataTablesEvent(DataTablesEvents::DATATABLES_PRE_EXPORT, [$row[0]]);
+                $this->dispatchDataTablesEvent(WBWJQueryDataTablesEvents::DATATABLES_PRE_EXPORT, [$row[0]]);
 
                 fputcsv($stream, DataTablesExportHelper::convert($dtExporter->exportRow($row[0]), $windows), ";");
 
                 // Detach the entity to avoid memory consumption.
                 $em->detach($row[0]);
 
-                $this->dispatchDataTablesEvent(DataTablesEvents::DATATABLES_POST_EXPORT, [$row[0]]);
+                $this->dispatchDataTablesEvent(WBWJQueryDataTablesEvents::DATATABLES_POST_EXPORT, [$row[0]]);
             }
         }
 

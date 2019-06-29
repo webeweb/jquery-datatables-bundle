@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Add jQuery DataTables events
+
 ### [3.3.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.3.0) (2019-06-14)
 
 - Fix deprecated root() call into Configuration

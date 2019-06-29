@@ -19,7 +19,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesEnumerator;
-use WBW\Bundle\JQuery\DataTablesBundle\Event\DataTablesEvents;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesColumnException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesEditorException;
@@ -28,6 +27,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderE
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesExportHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
+use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesEvents;
 use WBW\Library\Core\Network\HTTP\HTTPInterface;
 
 /**
@@ -55,13 +55,13 @@ class DataTablesController extends AbstractController {
 
             $entity = $this->getDataTablesEntityById($dtProvider, $id);
 
-            $this->dispatchDataTablesEvent(DataTablesEvents::DATATABLES_PRE_DELETE, [$entity]);
+            $this->dispatchDataTablesEvent(WBWJQueryDataTablesEvents::DATATABLES_PRE_DELETE, [$entity]);
 
             $em = $this->getDoctrine()->getManager();
             $em->remove($entity);
             $em->flush();
 
-            $this->dispatchDataTablesEvent(DataTablesEvents::DATATABLES_POST_DELETE, [$entity]);
+            $this->dispatchDataTablesEvent(WBWJQueryDataTablesEvents::DATATABLES_POST_DELETE, [$entity]);
 
             $output = $this->prepareActionResponse(200, "DataTablesController.deleteAction.success");
         } catch (Exception $ex) {
@@ -101,7 +101,7 @@ class DataTablesController extends AbstractController {
                 $value = $request->request->get("value");
             }
 
-            $this->dispatchDataTablesEvent(DataTablesEvents::DATATABLES_PRE_EDIT, [$entity]);
+            $this->dispatchDataTablesEvent(WBWJQueryDataTablesEvents::DATATABLES_PRE_EDIT, [$entity]);
 
             $dtEditor->editColumn($dtColumn, $entity, $value);
 
@@ -109,7 +109,7 @@ class DataTablesController extends AbstractController {
             $em->persist($entity);
             $em->flush();
 
-            $this->dispatchDataTablesEvent(DataTablesEvents::DATATABLES_POST_EDIT, [$entity]);
+            $this->dispatchDataTablesEvent(WBWJQueryDataTablesEvents::DATATABLES_POST_EDIT, [$entity]);
 
             $output = $this->prepareActionResponse(200, "DataTablesController.editAction.success");
         } catch (Exception $ex) {
@@ -181,7 +181,7 @@ class DataTablesController extends AbstractController {
 
         $entities = $repository->dataTablesFindAll($dtWrapper);
 
-        $this->dispatchDataTablesEvent(DataTablesEvents::DATATABLES_PRE_INDEX, $entities);
+        $this->dispatchDataTablesEvent(WBWJQueryDataTablesEvents::DATATABLES_PRE_INDEX, $entities);
 
         foreach ($entities as $entity) {
 
@@ -200,7 +200,7 @@ class DataTablesController extends AbstractController {
             }
         }
 
-        $this->dispatchDataTablesEvent(DataTablesEvents::DATATABLES_POST_INDEX, $entities);
+        $this->dispatchDataTablesEvent(WBWJQueryDataTablesEvents::DATATABLES_POST_INDEX, $entities);
 
         return new JsonResponse($dtWrapper->getResponse());
     }
@@ -263,7 +263,7 @@ class DataTablesController extends AbstractController {
 
             $entity = $this->getDataTablesEntityById($dtProvider, $id);
 
-            $this->dispatchDataTablesEvent(DataTablesEvents::DATATABLES_PRE_SHOW, [$entity]);
+            $this->dispatchDataTablesEvent(WBWJQueryDataTablesEvents::DATATABLES_PRE_SHOW, [$entity]);
         } catch (EntityNotFoundException $ex) {
 
             $this->getLogger()->debug($ex->getMessage());
