@@ -52,6 +52,20 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
     /**
      * {@inheritDoc}
      */
+    public function getCSVExporter() {
+        return $this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getEditor() {
+        return $this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getMethod() {
         return null;
     }
@@ -79,31 +93,13 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
      * @throws InvalidParameterException Throws an invalid parameter exception if a parameter is invalid.
      * @throws RouteNotFoundException Throws a route not found exception if the route doesn't exist.
      * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory exception is missing.
+     * @deprecated since 3.4.0 use "WBW\Bundle\JQuery\DataTablesBundle\Provider\AbstractDataTablesProvider::renderRowButtons()" instead
      */
     protected function renderButtons($entity, $editRoute, $deleteRoute = null, $enableDelete = true) {
-
-        $titles   = [];
-        $titles[] = $this->getTranslator()->trans("label.edit", [], "WBWCoreBundle");
-        $titles[] = $this->getTranslator()->trans("label.delete", [], "WBWCoreBundle");
-
-        $actions   = [];
-        $actions[] = $this->getButtonTwigExtension()->bootstrapButtonDefaultFunction(["icon" => "pencil", "title" => $titles[0], "size" => "xs"]);
-        $actions[] = $this->getButtonTwigExtension()->bootstrapButtonDangerFunction(["icon" => "trash", "title" => $titles[1], "size" => "xs"]);
-
-        $routes   = [];
-        $routes[] = $this->getRouter()->generate($editRoute, ["id" => $entity->getId()]);
-        $routes[] = $this->getRouter()->generate("wbw_jquery_datatables_delete", ["name" => $this->getName(), "id" => $entity->getId()]);
-        if (null !== $deleteRoute) {
-            $routes[1] = $this->getRouter()->generate($deleteRoute, ["id" => $entity->getId()]);
+        if (null === $deleteRoute && true === $enableDelete) {
+            $deleteRoute = "wbw_jquery_datatables_delete";
         }
-
-        $links   = [];
-        $links[] = $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($actions[0], $routes[0]);
-        if (true === $enableDelete) {
-            $links[] = $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($actions[1], $routes[1]);
-        }
-
-        return implode(" ", $links);
+        return $this->renderRowButtons($entity, $editRoute, $deleteRoute, null);
     }
 
     /**
@@ -142,6 +138,57 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
             return "";
         }
         return number_format($number, $decimals, $decPoint, $thousandsSep);
+    }
+
+    /**
+     * Render the DataTables row buttons.
+     *
+     * @param object $entity The entity.
+     * @param string|null $editRoute The edit route.
+     * @param string|null $deleteRoute The delete route.
+     * @param string|null $showRoute The show route.
+     * @return string Returns the DataTables row buttons.
+     * @throws InvalidParameterException Throws an invalid parameter exception if a parameter is invalid.
+     * @throws RouteNotFoundException Throws a route not found exception if the route doesn't exist.
+     * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory exception is missing.
+     */
+    protected function renderRowButtons($entity, $editRoute = null, $deleteRoute = null, $showRoute = null) {
+
+        $output = [];
+
+        $titles   = [];
+        $titles[] = $this->getTranslator()->trans("label.edit", [], "WBWJQueryDataTablesBundle");
+        $titles[] = $this->getTranslator()->trans("label.delete", [], "WBWJQueryDataTablesBundle");
+        $titles[] = $this->getTranslator()->trans("label.show", [], "WBWJQueryDataTablesBundle");
+
+        $buttons   = [];
+        $buttons[] = $this->getButtonTwigExtension()->bootstrapButtonDefaultFunction(["icon" => "fa:pen", "title" => $titles[0], "size" => "xs"]);
+        $buttons[] = $this->getButtonTwigExtension()->bootstrapButtonDangerFunction(["icon" => "fa:trash", "title" => $titles[1], "size" => "xs"]);
+        $buttons[] = $this->getButtonTwigExtension()->bootstrapButtonInfoFunction(["icon" => "fa:eye", "title" => $titles[2], "size" => "xs"]);
+
+        $urls = [];
+
+        if (null !== $editRoute) {
+
+            $urls[]   = $this->getRouter()->generate($editRoute, ["id" => $entity->getId()]);
+            $output[] = $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($buttons[0], $urls[0]);
+        }
+
+        if (null !== $deleteRoute) {
+
+            $args = "wbw_jquery_datatables_delete" === $deleteRoute ? ["name" => $this->getName()] : [];
+
+            $urls[]   = $this->getRouter()->generate($deleteRoute, array_merge($args, ["id" => $entity->getId()]));
+            $output[] = $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($buttons[1], $urls[1]);
+        }
+
+        if (null !== $showRoute) {
+
+            $urls[]   = $this->getRouter()->generate($showRoute, ["id" => $entity->getId()]);
+            $output[] = $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($buttons[2], $urls[2]);
+        }
+
+        return implode(" ", $output);
     }
 
     /**

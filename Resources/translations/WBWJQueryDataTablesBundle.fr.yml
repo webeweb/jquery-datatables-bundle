@@ -8,3 +8,8 @@ DataTablesController:
         danger:  "Enregistrement non trouvé"
         success: "Edition réussie"
         warning: "Edition échouée"
+
+label:
+    delete: "Supprimer"
+    edit:   "Editer"
+    show:   "Voir"

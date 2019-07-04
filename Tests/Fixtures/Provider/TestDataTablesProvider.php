@@ -26,21 +26,7 @@ class TestDataTablesProvider extends AbstractDataTablesProvider {
     /**
      *{@inheritDoc}
      */
-    public function getCSVExporter() {
-        return null;
-    }
-
-    /**
-     *{@inheritDoc}
-     */
     public function getColumns() {
-        return null;
-    }
-
-    /**
-     *{@inheritDoc}
-     */
-    public function getEditor() {
         return null;
     }
 
@@ -112,6 +98,13 @@ class TestDataTablesProvider extends AbstractDataTablesProvider {
      */
     public function renderRow($dtRow, $entity, $rowNumber) {
         return null;
+    }
+
+    /**
+     *{@inheritDoc}
+     */
+    public function renderRowButtons($entity, $editRoute = null, $deleteRoute = null, $showRoute = null) {
+        return parent::renderRowButtons($entity, $editRoute, $deleteRoute, $showRoute);
     }
 
     /**

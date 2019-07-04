@@ -59,6 +59,30 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
+     * Tests the getCSVExporter() method.
+     *
+     * @return void
+     */
+    public function testGetCSVExporter() {
+
+        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+
+        $this->assertSame($obj, $obj->getCSVExporter());
+    }
+
+    /**
+     * Tests the getEditor() method.
+     *
+     * @return void
+     */
+    public function testGetEditor() {
+
+        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+
+        $this->assertSame($obj, $obj->getEditor());
+    }
+
+    /**
      * Tests the getMethod() method.
      *
      * @return void
@@ -106,9 +130,9 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
         $res = <<< EOT
-<a class="btn btn-default btn-xs" title="label.edit" href="editRoute" data-toggle="tooltip" data-placement="top"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a> <a class="btn btn-danger btn-xs" title="label.delete" href="deleteRoute" data-toggle="tooltip" data-placement="top"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+<a class="btn btn-default btn-xs" title="label.edit" href="editRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-pen"></i></a> <a class="btn btn-danger btn-xs" title="label.delete" href="wbw_jquery_datatables_delete" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash"></i></a>
 EOT;
-        $this->assertEquals($res, $obj->renderButtons(new Employee(), "editRoute", "deleteRoute"));
+        $this->assertEquals($res, $obj->renderButtons(new Employee(), "editRoute"));
     }
 
     /**
@@ -154,6 +178,26 @@ EOT;
         $this->assertEquals("1,000.00", $obj->renderFloat(1000));
         $this->assertEquals("1,000.000", $obj->renderFloat(1000, 3));
         $this->assertEquals("1 000,000", $obj->renderFloat(1000, 3, ",", " "));
+    }
+
+    /**
+     * Tests the renderRowButtons() method.
+     *
+     * @return void
+     */
+    public function testRenderRowButtons() {
+
+        // Set the Router mock.
+        $this->router->expects($this->any())->method("generate")->willReturnCallback(function($name, $parameters = [], $referenceType = RouterInterface::ABSOLUTE_PATH) {
+            return $name;
+        });
+
+        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+
+        $res = <<< EOT
+<a class="btn btn-default btn-xs" title="label.edit" href="editRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-pen"></i></a> <a class="btn btn-danger btn-xs" title="label.delete" href="deleteRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash"></i></a> <a class="btn btn-info btn-xs" title="label.show" href="showRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-eye"></i></a>
+EOT;
+        $this->assertEquals($res, $obj->renderRowButtons(new Employee(), "editRoute", "deleteRoute", "showRoute"));
     }
 
     /**

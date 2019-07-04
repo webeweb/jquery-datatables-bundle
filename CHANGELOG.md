@@ -1,9 +1,10 @@
 CHANGELOG
 =========
 
-### master
+### [3.4.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.4.0) (2019-07-04)
 
 - Add jQuery DataTables events
+- Add renderRowButtons() into abstract DataTables provider
 
 ### [3.3.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.3.0) (2019-06-14)
 

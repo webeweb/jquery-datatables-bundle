@@ -8,3 +8,8 @@ DataTablesController:
         danger:  "Record not found"
         success: "Successful editing"
         warning: "Failed editing"
+
+label:
+    delete: "Delete"
+    edit:   "Edit"
+    show:   "Show"
