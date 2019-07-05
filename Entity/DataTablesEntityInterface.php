@@ -1,0 +1,28 @@
+<?php
+
+/*
+ * This file is part of the jquery-datatables-bundle package.
+ *
+ * (c) 2019 WEBEWEB
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace WBW\Bundle\JQuery\DataTablesBundle\Entity;
+
+/**
+ * DataTables entity interface.
+ *
+ * @author webeweb <https://github.com/webeweb/>
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Entity
+ */
+interface DataTablesEntityInterface {
+
+    /**
+     * Get the id.
+     *
+     * @return int Returns the id.
+     */
+    public function getId();
+}
