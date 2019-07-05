@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
 
+use WBW\Bundle\CoreBundle\Provider\AssetsProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\WBWJQueryDataTablesExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle;
 
@@ -43,8 +44,7 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
 
         $obj = new WBWJQueryDataTablesBundle();
 
-        $res = "/Resources/assets";
-        $this->assertEquals($res, $obj->getAssetsRelativeDirectory());
+        $this->assertEquals(AssetsProviderInterface::ASSETS_RELATIVE_DIRECTORY, $obj->getAssetsRelativeDirectory());
     }
 
     /**
@@ -56,7 +56,6 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
 
         $obj = new WBWJQueryDataTablesBundle();
 
-        $res = $obj->getContainerExtension();
-        $this->assertInstanceOf(WBWJQueryDataTablesExtension::class, $res);
+        $this->assertInstanceOf(WBWJQueryDataTablesExtension::class, $obj->getContainerExtension());
     }
 }
