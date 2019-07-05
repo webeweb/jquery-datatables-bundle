@@ -14,6 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
 use WBW\Bundle\CoreBundle\Provider\ProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Entity\DataTablesEntityInterface;
 
 /**
  * DataTables provider interface.
@@ -40,14 +41,14 @@ interface DataTablesProviderInterface extends ProviderInterface {
     /**
      * Get the CSV exporter.
      *
-     * @return DataTablesCSVExporterInterface Returns the CSV exporter.
+     * @return DataTablesCSVExporterInterface|null Returns the CSV exporter.
      */
     public function getCSVExporter();
 
     /**
      * Get the editor.
      *
-     * @return DataTablesEditorInterface Returns the editor.
+     * @return DataTablesEditorInterface|null Returns the editor.
      */
     public function getEditor();
 
@@ -61,7 +62,7 @@ interface DataTablesProviderInterface extends ProviderInterface {
     /**
      * Get the HTTP method.
      *
-     * @return string Returns the HTTP method.
+     * @return string|null Returns the HTTP method.
      */
     public function getMethod();
 
@@ -89,7 +90,7 @@ interface DataTablesProviderInterface extends ProviderInterface {
     /**
      * Get the controller view.
      *
-     * @return string Returns the controller view.
+     * @return string|null Returns the controller view.
      */
     public function getView();
 
@@ -97,7 +98,7 @@ interface DataTablesProviderInterface extends ProviderInterface {
      * Render a column.
      *
      * @param DataTablesColumnInterface $dtColumn The column.
-     * @param object $entity The entity.
+     * @param DataTablesEntityInterface $entity The entity.
      * @return string Returns the rendered column.
      */
     public function renderColumn(DataTablesColumnInterface $dtColumn, $entity);
@@ -106,7 +107,7 @@ interface DataTablesProviderInterface extends ProviderInterface {
      * Render a row.
      *
      * @param string $dtRow The row.
-     * @param object $entity The entity.
+     * @param DataTablesEntityInterface $entity The entity.
      * @param int $rowNumber The row number.
      * @return string Returns the rendered row.
      */
