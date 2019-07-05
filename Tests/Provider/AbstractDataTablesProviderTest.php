@@ -67,7 +67,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
-        $this->assertSame($obj, $obj->getCSVExporter());
+        $this->assertNull($obj->getCSVExporter());
     }
 
     /**
@@ -79,7 +79,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
-        $this->assertSame($obj, $obj->getEditor());
+        $this->assertNull($obj->getEditor());
     }
 
     /**

@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
 
 use DateTime;
+use InvalidArgumentException;
 use Symfony\Component\Routing\Exception\InvalidParameterException;
 use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
@@ -22,7 +23,9 @@ use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtensionTrait;
 use WBW\Bundle\CoreBundle\Renderer\DateTimeRenderer;
 use WBW\Bundle\CoreBundle\Service\RouterTrait;
 use WBW\Bundle\CoreBundle\Service\TranslatorTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Entity\DataTablesEntityInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
+use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesEntityHelper;
 
 /**
  * Abstract DataTables provider.
@@ -53,14 +56,14 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
      * {@inheritDoc}
      */
     public function getCSVExporter() {
-        return $this;
+        return null;
     }
 
     /**
      * {@inheritDoc}
      */
     public function getEditor() {
-        return $this;
+        return null;
     }
 
     /**
@@ -85,11 +88,12 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
     /**
      * Render the DataTables buttons.
      *
-     * @param object $entity The entity.
+     * @param DataTablesEntityInterface $entity The entity.
      * @param string $editRoute The edit route.
      * @param string $deleteRoute The delete route.
      * @param bool $enableDelete Enable delete ?
      * @return string Returns the DataTables buttons.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the entity is invalid.
      * @throws InvalidParameterException Throws an invalid parameter exception if a parameter is invalid.
      * @throws RouteNotFoundException Throws a route not found exception if the route doesn't exist.
      * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory exception is missing.
@@ -143,16 +147,21 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
     /**
      * Render the DataTables row buttons.
      *
-     * @param object $entity The entity.
+     * @param DataTablesEntityInterface $entity The entity.
      * @param string|null $editRoute The edit route.
      * @param string|null $deleteRoute The delete route.
      * @param string|null $showRoute The show route.
      * @return string Returns the DataTables row buttons.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the entity is invalid.
      * @throws InvalidParameterException Throws an invalid parameter exception if a parameter is invalid.
      * @throws RouteNotFoundException Throws a route not found exception if the route doesn't exist.
      * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory exception is missing.
      */
     protected function renderRowButtons($entity, $editRoute = null, $deleteRoute = null, $showRoute = null) {
+
+        if (false === DataTablesEntityHelper::isCompatible($entity)) {
+            throw new InvalidArgumentException(sprintf("The entity must implements DataTablesEntityInterface or declare a getId() method"));
+        }
 
         $output = [];
 
