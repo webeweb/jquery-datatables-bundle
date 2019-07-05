@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+### master
+
+- Add DataTables entity helper
+- Add DataTables entity interface
+- Replace string by constant into getAssetsRelativeDirectory()
+- Update exceptions inheritance
+
 ### [3.4.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.4.0) (2019-07-04)
 
 - Add jQuery DataTables events
