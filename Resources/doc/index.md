@@ -507,7 +507,7 @@ Create a template in the `src/AppBundle/Resources/views/Employee`directory of yo
 
 {% block stylesheets %}
     {{ parent() }}
-    {% include "@WBWJQueryDataTables/layout/stylesheets.html.twig" with {"theme": "bootstrap" } %}
+    {% include "@WBWJQueryDataTables/layout/stylesheets.html.twig" with {"dtTheme": "bootstrap" } %}
 {% endblock %}
 
 {% block content %}
@@ -516,7 +516,7 @@ Create a template in the `src/AppBundle/Resources/views/Employee`directory of yo
 
 {% block javascripts %}
     {{ parent() }}
-    {% include "@WBWJQueryDataTables/layout/javascripts.html.twig" with {"theme": "bootstrap" } %}
+    {% include "@WBWJQueryDataTables/layout/javascripts.html.twig" with {"dtTheme": "bootstrap" } %}
     {{ jQueryDataTables(dtWrapper) }}
 {% endblock %}
 ```
