@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-### master
+### [3.5.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.5.0) (2019-07-06)
 
 - Add DataTables entity helper
 - Add DataTables entity interface
