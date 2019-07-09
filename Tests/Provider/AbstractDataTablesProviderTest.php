@@ -42,6 +42,11 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
 
         // Set a Button Twig extension mock.
         $this->buttonTwigExtension = new ButtonTwigExtension($this->twigEnvironment);
+
+        // Set the Router mock.
+        $this->router->expects($this->any())->method("generate")->willReturnCallback(function($name, $parameters = [], $referenceType = RouterInterface::ABSOLUTE_PATH) {
+            return $name;
+        });
     }
 
     /**
@@ -122,11 +127,6 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      */
     public function testRenderButtons() {
 
-        // Set the Router mock.
-        $this->router->expects($this->any())->method("generate")->willReturnCallback(function($name, $parameters = [], $referenceType = RouterInterface::ABSOLUTE_PATH) {
-            return $name;
-        });
-
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
         $res = <<< EOT
@@ -187,17 +187,57 @@ EOT;
      */
     public function testRenderRowButtons() {
 
-        // Set the Router mock.
-        $this->router->expects($this->any())->method("generate")->willReturnCallback(function($name, $parameters = [], $referenceType = RouterInterface::ABSOLUTE_PATH) {
-            return $name;
-        });
-
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
         $res = <<< EOT
 <a class="btn btn-default btn-xs" title="label.edit" href="editRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-pen"></i></a> <a class="btn btn-danger btn-xs" title="label.delete" href="deleteRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash"></i></a> <a class="btn btn-info btn-xs" title="label.show" href="showRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-eye"></i></a>
 EOT;
         $this->assertEquals($res, $obj->renderRowButtons(new Employee(), "editRoute", "deleteRoute", "showRoute"));
+    }
+
+    /**
+     * Tests the renderRowButtons() method.
+     *
+     * @return void
+     */
+    public function testRenderRowButtonsWithDeleteRoute() {
+
+        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+
+        $res = <<< EOT
+<a class="btn btn-danger btn-xs" title="label.delete" href="deleteRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash"></i></a>
+EOT;
+        $this->assertEquals($res, $obj->renderRowButtons(new Employee(), null, "deleteRoute"));
+    }
+
+    /**
+     * Tests the renderRowButtons() method.
+     *
+     * @return void
+     */
+    public function testRenderRowButtonsWithEditRoute() {
+
+        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+
+        $res = <<< EOT
+<a class="btn btn-default btn-xs" title="label.edit" href="editRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-pen"></i></a>
+EOT;
+        $this->assertEquals($res, $obj->renderRowButtons(new Employee(), "editRoute"));
+    }
+
+    /**
+     * Tests the renderRowButtons() method.
+     *
+     * @return void
+     */
+    public function testRenderRowButtonsWithShowRoute() {
+
+        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+
+        $res = <<< EOT
+<a class="btn btn-info btn-xs" title="label.show" href="showRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-eye"></i></a>
+EOT;
+        $this->assertEquals($res, $obj->renderRowButtons(new Employee(), null, null, "showRoute"));
     }
 
     /**

@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.5.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.5.1) (2019-07-09)
+
+- Fix renderRowButtons() when some routes are null 
+
 ### [3.5.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.5.0) (2019-07-06)
 
 - Add DataTables entity helper

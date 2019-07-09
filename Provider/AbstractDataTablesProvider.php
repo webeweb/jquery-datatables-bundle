@@ -163,8 +163,6 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
             throw new InvalidArgumentException(sprintf("The entity must implements DataTablesEntityInterface or declare a getId() method"));
         }
 
-        $output = [];
-
         $titles   = [];
         $titles[] = $this->getTranslator()->trans("label.edit", [], "WBWJQueryDataTablesBundle");
         $titles[] = $this->getTranslator()->trans("label.delete", [], "WBWJQueryDataTablesBundle");
@@ -175,29 +173,29 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
         $buttons[] = $this->getButtonTwigExtension()->bootstrapButtonDangerFunction(["icon" => "fa:trash", "title" => $titles[1], "size" => "xs"]);
         $buttons[] = $this->getButtonTwigExtension()->bootstrapButtonInfoFunction(["icon" => "fa:eye", "title" => $titles[2], "size" => "xs"]);
 
-        $urls = [];
+        $anchors = [];
 
         if (null !== $editRoute) {
 
-            $urls[]   = $this->getRouter()->generate($editRoute, ["id" => $entity->getId()]);
-            $output[] = $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($buttons[0], $urls[0]);
+            $url       = $this->getRouter()->generate($editRoute, ["id" => $entity->getId()]);
+            $anchors[] = $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($buttons[0], $url);
         }
 
         if (null !== $deleteRoute) {
 
             $args = "wbw_jquery_datatables_delete" === $deleteRoute ? ["name" => $this->getName()] : [];
 
-            $urls[]   = $this->getRouter()->generate($deleteRoute, array_merge($args, ["id" => $entity->getId()]));
-            $output[] = $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($buttons[1], $urls[1]);
+            $url       = $this->getRouter()->generate($deleteRoute, array_merge($args, ["id" => $entity->getId()]));
+            $anchors[] = $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($buttons[1], $url);
         }
 
         if (null !== $showRoute) {
 
-            $urls[]   = $this->getRouter()->generate($showRoute, ["id" => $entity->getId()]);
-            $output[] = $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($buttons[2], $urls[2]);
+            $url       = $this->getRouter()->generate($showRoute, ["id" => $entity->getId()]);
+            $anchors[] = $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($buttons[2], $url);
         }
 
-        return implode(" ", $output);
+        return implode(" ", $anchors);
     }
 
     /**
