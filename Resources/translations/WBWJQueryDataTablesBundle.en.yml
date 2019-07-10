@@ -10,6 +10,7 @@ DataTablesController:
         warning: "Failed editing"
 
 label:
-    delete: "Delete"
-    edit:   "Edit"
-    show:   "Show"
+    delete:    "Delete"
+    duplicate: "Duplicate"
+    edit:      "Edit"
+    show:      "Show"

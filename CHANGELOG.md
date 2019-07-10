@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+### [3.6.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.6.0) (2019-07-10)
+
+- Add renderActionButtonDelete() into abstract DataTables provider 
+- Add renderActionButtonDuplicate() into abstract DataTables provider 
+- Add renderActionButtonEdit() into abstract DataTables provider 
+- Add renderActionButtonShow() into abstract DataTables provider
+
 ### [3.5.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.5.1) (2019-07-09)
 
 - Fix renderRowButtons() when some routes are null 

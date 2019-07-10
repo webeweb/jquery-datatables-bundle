@@ -86,6 +86,104 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
     }
 
     /**
+     * Render an action button "delete".
+     *
+     * @param DataTablesEntityInterface $entity The entity.
+     * @param string $route The route.
+     * @return string Returns the action button "delete".
+     * @throws InvalidArgumentException Throws an invalid argument exception if the entity is invalid.
+     * @throws InvalidParameterException Throws an invalid parameter exception if a parameter is invalid.
+     * @throws RouteNotFoundException Throws a route not found exception if the route doesn't exist.
+     * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory exception is missing.
+     */
+    protected function renderActionButtonDelete($entity, $route) {
+
+        if (false === DataTablesEntityHelper::isCompatible($entity)) {
+            throw new InvalidArgumentException(sprintf("The entity must implements DataTablesEntityInterface or declare a getId() method"));
+        }
+
+        $args = "wbw_jquery_datatables_delete" === $route ? ["name" => $this->getName()] : [];
+
+        $title  = $this->getTranslator()->trans("label.delete", [], "WBWJQueryDataTablesBundle");
+        $button = $this->getButtonTwigExtension()->bootstrapButtonDangerFunction(["icon" => "fa:trash", "title" => $title, "size" => "xs"]);
+        $url    = $this->getRouter()->generate($route, array_merge($args, ["id" => $entity->getId()]));
+
+        return $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($button, $url);
+    }
+
+    /**
+     * Render an action button "duplicate".
+     *
+     * @param DataTablesEntityInterface $entity The entity.
+     * @param string $route The route.
+     * @return string Returns the action button "duplicate".
+     * @throws InvalidArgumentException Throws an invalid argument exception if the entity is invalid.
+     * @throws InvalidParameterException Throws an invalid parameter exception if a parameter is invalid.
+     * @throws RouteNotFoundException Throws a route not found exception if the route doesn't exist.
+     * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory exception is missing.
+     */
+    protected function renderActionButtonDuplicate($entity, $route) {
+
+        if (false === DataTablesEntityHelper::isCompatible($entity)) {
+            throw new InvalidArgumentException(sprintf("The entity must implements DataTablesEntityInterface or declare a getId() method"));
+        }
+
+        $title  = $this->getTranslator()->trans("label.duplicate", [], "WBWJQueryDataTablesBundle");
+        $button = $this->getButtonTwigExtension()->bootstrapButtonDefaultFunction(["icon" => "fa:copy", "title" => $title, "size" => "xs"]);
+        $url    = $this->getRouter()->generate($route, ["id" => $entity->getId()]);
+
+        return $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($button, $url);
+    }
+
+    /**
+     * Render an action button "edit".
+     *
+     * @param DataTablesEntityInterface $entity The entity.
+     * @param string $route The route.
+     * @return string Returns the action button "edit".
+     * @throws InvalidArgumentException Throws an invalid argument exception if the entity is invalid.
+     * @throws InvalidParameterException Throws an invalid parameter exception if a parameter is invalid.
+     * @throws RouteNotFoundException Throws a route not found exception if the route doesn't exist.
+     * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory exception is missing.
+     */
+    protected function renderActionButtonEdit($entity, $route) {
+
+        if (false === DataTablesEntityHelper::isCompatible($entity)) {
+            throw new InvalidArgumentException(sprintf("The entity must implements DataTablesEntityInterface or declare a getId() method"));
+        }
+
+        $title  = $this->getTranslator()->trans("label.edit", [], "WBWJQueryDataTablesBundle");
+        $button = $this->getButtonTwigExtension()->bootstrapButtonDefaultFunction(["icon" => "fa:pen", "title" => $title, "size" => "xs"]);
+        $url    = $this->getRouter()->generate($route, ["id" => $entity->getId()]);
+
+        return $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($button, $url);
+    }
+
+    /**
+     * Render an action button "show".
+     *
+     * @param DataTablesEntityInterface $entity The entity.
+     * @param string $route The route.
+     * @return string Returns the action button "show".
+     * @throws InvalidArgumentException Throws an invalid argument exception if the entity is invalid.
+     * @throws InvalidParameterException Throws an invalid parameter exception if a parameter is invalid.
+     * @throws RouteNotFoundException Throws a route not found exception if the route doesn't exist.
+     * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory exception is missing.
+     */
+    protected function renderActionButtonShow($entity, $route) {
+
+        if (false === DataTablesEntityHelper::isCompatible($entity)) {
+            throw new InvalidArgumentException(sprintf("The entity must implements DataTablesEntityInterface or declare a getId() method"));
+        }
+
+        $title  = $this->getTranslator()->trans("label.show", [], "WBWJQueryDataTablesBundle");
+        $button = $this->getButtonTwigExtension()->bootstrapButtonInfoFunction(["icon" => "fa:eye", "title" => $title, "size" => "xs"]);
+        $url    = $this->getRouter()->generate($route, ["id" => $entity->getId()]);
+
+        return $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($button, $url);
+    }
+
+    /**
      * Render the DataTables buttons.
      *
      * @param DataTablesEntityInterface $entity The entity.
@@ -159,40 +257,18 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
      */
     protected function renderRowButtons($entity, $editRoute = null, $deleteRoute = null, $showRoute = null) {
 
-        if (false === DataTablesEntityHelper::isCompatible($entity)) {
-            throw new InvalidArgumentException(sprintf("The entity must implements DataTablesEntityInterface or declare a getId() method"));
-        }
-
-        $titles   = [];
-        $titles[] = $this->getTranslator()->trans("label.edit", [], "WBWJQueryDataTablesBundle");
-        $titles[] = $this->getTranslator()->trans("label.delete", [], "WBWJQueryDataTablesBundle");
-        $titles[] = $this->getTranslator()->trans("label.show", [], "WBWJQueryDataTablesBundle");
-
-        $buttons   = [];
-        $buttons[] = $this->getButtonTwigExtension()->bootstrapButtonDefaultFunction(["icon" => "fa:pen", "title" => $titles[0], "size" => "xs"]);
-        $buttons[] = $this->getButtonTwigExtension()->bootstrapButtonDangerFunction(["icon" => "fa:trash", "title" => $titles[1], "size" => "xs"]);
-        $buttons[] = $this->getButtonTwigExtension()->bootstrapButtonInfoFunction(["icon" => "fa:eye", "title" => $titles[2], "size" => "xs"]);
-
         $anchors = [];
 
         if (null !== $editRoute) {
-
-            $url       = $this->getRouter()->generate($editRoute, ["id" => $entity->getId()]);
-            $anchors[] = $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($buttons[0], $url);
+            $anchors[] = $this->renderActionButtonEdit($entity, $editRoute);
         }
 
         if (null !== $deleteRoute) {
-
-            $args = "wbw_jquery_datatables_delete" === $deleteRoute ? ["name" => $this->getName()] : [];
-
-            $url       = $this->getRouter()->generate($deleteRoute, array_merge($args, ["id" => $entity->getId()]));
-            $anchors[] = $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($buttons[1], $url);
+            $anchors[] = $this->renderActionButtonDelete($entity, $deleteRoute);
         }
 
         if (null !== $showRoute) {
-
-            $url       = $this->getRouter()->generate($showRoute, ["id" => $entity->getId()]);
-            $anchors[] = $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($buttons[2], $url);
+            $anchors[] = $this->renderActionButtonShow($entity, $showRoute);
         }
 
         return implode(" ", $anchors);

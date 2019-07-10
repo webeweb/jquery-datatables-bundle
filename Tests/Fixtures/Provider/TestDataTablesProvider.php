@@ -61,6 +61,34 @@ class TestDataTablesProvider extends AbstractDataTablesProvider {
     /**
      *{@inheritDoc}
      */
+    public function renderActionButtonDelete($entity, $route) {
+        return parent::renderActionButtonDelete($entity, $route);
+    }
+
+    /**
+     *{@inheritDoc}
+     */
+    public function renderActionButtonDuplicate($entity, $route) {
+        return parent::renderActionButtonDuplicate($entity, $route);
+    }
+
+    /**
+     *{@inheritDoc}
+     */
+    public function renderActionButtonEdit($entity, $route) {
+        return parent::renderActionButtonEdit($entity, $route);
+    }
+
+    /**
+     *{@inheritDoc}
+     */
+    public function renderActionButtonShow($entity, $route) {
+        return parent::renderActionButtonShow($entity, $route);
+    }
+
+    /**
+     *{@inheritDoc}
+     */
     public function renderButtons($entity, $editRoute, $deleteRoute = null, $enableDelete = true) {
         return parent::renderButtons($entity, $editRoute, $deleteRoute, $enableDelete);
     }

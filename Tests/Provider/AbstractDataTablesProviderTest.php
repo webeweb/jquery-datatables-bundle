@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Provider;
 
 use DateTime;
 use Exception;
+use InvalidArgumentException;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
@@ -118,6 +119,142 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
 
         $this->assertTrue($res->hasOption("searchDelay"));
         $this->assertEquals(1000, $res->getOption("searchDelay"));
+    }
+
+    /**
+     * Tests the renderActionButtonDelete() method.
+     *
+     * @return void
+     */
+    public function testRenderActionButtonDelete() {
+
+        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+
+        $res = <<< EOT
+<a class="btn btn-danger btn-xs" title="label.delete" href="route" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash"></i></a>
+EOT;
+        $this->assertEquals($res, $obj->renderActionButtonDelete(new Employee(), "route"));
+    }
+
+    /**
+     * Tests the renderActionButtonDelete() method.
+     *
+     * @return void
+     */
+    public function testRenderActionButtonDeleteWithInvalidArgumentException() {
+
+        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+
+        try {
+
+            $obj->renderActionButtonDelete($this, "route");
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
+            $this->assertEquals("The entity must implements DataTablesEntityInterface or declare a getId() method", $ex->getMessage());
+        }
+    }
+
+    /**
+     * Tests the renderActionButtonDuplicate() method.
+     *
+     * @return void
+     */
+    public function testRenderActionButtonDuplicate() {
+
+        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+
+        $res = <<< EOT
+<a class="btn btn-default btn-xs" title="label.duplicate" href="route" data-toggle="tooltip" data-placement="top"><i class="fa fa-copy"></i></a>
+EOT;
+        $this->assertEquals($res, $obj->renderActionButtonDuplicate(new Employee(), "route"));
+    }
+
+    /**
+     * Tests the renderActionButtonDuplicate() method.
+     *
+     * @return void
+     */
+    public function testRenderActionButtonDuplicateWithInvalidArgumentException() {
+
+        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+
+        try {
+
+            $obj->renderActionButtonDuplicate($this, "route");
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
+            $this->assertEquals("The entity must implements DataTablesEntityInterface or declare a getId() method", $ex->getMessage());
+        }
+    }
+
+    /**
+     * Tests the renderActionButtonEdit() method.
+     *
+     * @return void
+     */
+    public function testRenderActionButtonEdit() {
+
+        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+
+        $res = <<< EOT
+<a class="btn btn-default btn-xs" title="label.edit" href="route" data-toggle="tooltip" data-placement="top"><i class="fa fa-pen"></i></a>
+EOT;
+        $this->assertEquals($res, $obj->renderActionButtonEdit(new Employee(), "route"));
+    }
+
+    /**
+     * Tests the renderActionButtonEdit() method.
+     *
+     * @return void
+     */
+    public function testRenderActionButtonEditWithInvalidArgumentException() {
+
+        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+
+        try {
+
+            $obj->renderActionButtonEdit($this, "route");
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
+            $this->assertEquals("The entity must implements DataTablesEntityInterface or declare a getId() method", $ex->getMessage());
+        }
+    }
+
+    /**
+     * Tests the renderActionButtonShow() method.
+     *
+     * @return void
+     */
+    public function testRenderActionButtonShow() {
+
+        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+
+        $res = <<< EOT
+<a class="btn btn-info btn-xs" title="label.show" href="route" data-toggle="tooltip" data-placement="top"><i class="fa fa-eye"></i></a>
+EOT;
+        $this->assertEquals($res, $obj->renderActionButtonShow(new Employee(), "route"));
+    }
+
+    /**
+     * Tests the renderActionButtonShow() method.
+     *
+     * @return void
+     */
+    public function testRenderActionButtonShowWithInvalidArgumentException() {
+
+        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+
+        try {
+
+            $obj->renderActionButtonShow($this, "route");
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
+            $this->assertEquals("The entity must implements DataTablesEntityInterface or declare a getId() method", $ex->getMessage());
+        }
     }
 
     /**
