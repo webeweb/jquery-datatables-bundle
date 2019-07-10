@@ -93,13 +93,13 @@ EOT;
      */
     protected function jQueryDataTables(DataTablesWrapperInterface $dtWrapper, $selector, $language) {
 
-        $dtOptions = DataTablesWrapperHelper::getOptions($dtWrapper);
+        $options = DataTablesWrapperHelper::getOptions($dtWrapper);
 
-        $var     = DataTablesWrapperHelper::getName($dtWrapper);
-        $options = $dtOptions;
         if (null !== $language) {
             $options["language"] = ["url" => DataTablesWrapperHelper::getLanguageURL($language)];
         }
+
+        $var = DataTablesWrapperHelper::getName($dtWrapper);
 
         $searches = ["%var%", "%selector%", "%options%"];
         $replaces = [$var, null === $selector ? "#" . $var : $selector, $this->encodeOptions($options)];
@@ -189,9 +189,6 @@ EOT;
             $dtColumn = array_values($dtWrapper->getColumns())[$i];
 
             $th = $this->renderDataTablesColumn($dtColumn, ("thead" === $wrapper && 0 === $i));
-            if ("" === $th) {
-                continue;
-            }
 
             $innerHTML .= $th . "\n";
         }

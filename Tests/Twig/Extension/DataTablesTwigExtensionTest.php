@@ -307,6 +307,18 @@ EOT;
     }
 
     /**
+     * Tests the jQueryDataTablesNameFunction() method.
+     *
+     * @return void
+     */
+    public function testJQueryDataTablesNameFunction() {
+
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+
+        $this->assertSame("dtemployee", $obj->jQueryDataTablesNameFunction($this->dtWrapper));
+    }
+
+    /**
      * Tests the jQueryDataTablesStandaloneFunction() {
      *
      * @return void
