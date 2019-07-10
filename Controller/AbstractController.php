@@ -279,7 +279,7 @@ abstract class AbstractController extends BaseController {
      * Get a repository.
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
-     * @return EntityRepository Returns the repository.
+     * @return DataTablesRepositoryInterface Returns the repository.
      * @throws BadDataTablesRepositoryException Throws a bad repository exception.
      */
     protected function getDataTablesRepository(DataTablesProviderInterface $dtProvider) {
