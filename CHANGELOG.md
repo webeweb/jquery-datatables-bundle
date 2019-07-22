@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.6.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.6.1) (2019-07-22)
+
+- Add PHP extensions into Composer
+
 ### [3.6.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.6.0) (2019-07-10)
 
 - Add renderActionButtonDelete() into abstract DataTables provider 
