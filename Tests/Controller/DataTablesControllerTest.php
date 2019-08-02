@@ -41,67 +41,245 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the renderAction() methode.
+     * Tests the deleteAction() method.
      *
      * @return void
      */
-    public function testRenderAction() {
+    public function testDeleteAction() {
 
         // Create a client.
         $client = static::createClient();
 
         // Make a GET request.
-        $client->request("GET", "/datatables/employee/render");
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $client->request("GET", "/datatables/employee/delete/49");
+        $this->assertEquals(302, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
+        $this->assertEquals("/datatables/employee/index", $client->getResponse()->headers->get("location"));
 
-        // Get the response content.
-        $content = $client->getResponse()->getContent();
-
-        // Check the CSS.
-        foreach (static::listCSSAssets() as $current) {
-            $this->assertRegExp("/" . preg_quote($current, "/") . "/", $content);
-        }
-
-        // Check the Javascript.
-        foreach (static::listJavascriptAssets() as $current) {
-            $this->assertRegExp("/" . preg_quote($current, "/") . "/", $content);
-        }
+        $client->followRedirect();
+        $this->assertContains("Successful deletion", $client->getResponse()->getContent());
     }
 
     /**
-     * Tests the optionsAction() method.
+     * Tests the deleteAction() method.
      *
      * @return void
      */
-    public function testOptionsAction() {
+    public function testDeleteActionWithNotify404() {
 
         // Create a client.
         $client = static::createClient();
 
         // Make a GET request.
-        $client->request("GET", "/datatables/employee/options");
+        $client->request("GET", "/datatables/employee/delete/49");
+        $this->assertEquals(302, $client->getResponse()->getStatusCode());
+        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
+        $this->assertEquals("/datatables/employee/index", $client->getResponse()->headers->get("location"));
+
+        $client->followRedirect();
+        $this->assertContains("Record not found", $client->getResponse()->getContent());
+    }
+
+    /**
+     * Tests the deleteAction() method.
+     *
+     * @return void
+     */
+    public function testDeleteActionWithStatus200() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request with XML HTTP request.
+        $client->request("GET", "/datatables/employee/delete/48", [], [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
 
         // Check the JSON response.
         $res = json_decode($client->getResponse()->getContent(), true);
 
-        $this->assertCount(5, $res);
-        $this->assertCount(7, $res["columns"]);
+        $this->assertArrayHasKey("status", $res);
+        $this->assertArrayHasKey("notify", $res);
 
-        $this->assertEquals("POST", $res["ajax"]["type"]);
-        $this->assertEquals("/datatables/employee/index", $res["ajax"]["url"]);
-        $this->assertEquals([], $res["order"]);
-        $this->assertEquals(true, $res["processing"]);
-        $this->assertEquals(true, $res["serverSide"]);
+        $this->assertEquals(200, $res["status"]);
+        $this->assertEquals("Successful deletion", $res["notify"]);
+    }
+
+    /**
+     * Tests the deleteAction() method.
+     *
+     * @return void
+     */
+    public function testDeleteActionWithStatus404() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request with XML HTTP request.
+        $client->request("GET", "/datatables/employee/delete/49", [], [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
+
+        // Check the JSON response.
+        $res = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertArrayHasKey("status", $res);
+        $this->assertArrayHasKey("notify", $res);
+
+        $this->assertEquals(404, $res["status"]);
+        $this->assertEquals("Record not found", $res["notify"]);
+    }
+
+    /**
+     * Tests the editAction() method.
+     *
+     * @return void
+     */
+    public function testEditAction() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a POST request.
+        $client->request("POST", "/datatables/employee/edit/55/name", ["value" => "Shad decker"]);
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
+
+        // Check the JSON response.
+        $res = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertArrayHasKey("status", $res);
+        $this->assertArrayHasKey("notify", $res);
+
+        $this->assertEquals(200, $res["status"]);
+        $this->assertEquals("Successful editing", $res["notify"]);
+    }
+
+    /**
+     * Tests the editAction() method.
+     *
+     * @return void
+     */
+    public function testEditActionWithBadDatatablesColumnException() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request.
+        $client->request("GET", "/datatables/employee/edit/55/data/value");
+        $this->assertEquals(500, $client->getResponse()->getStatusCode());
+        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
+
+        $this->assertContains("BadDataTablesColumnException", $client->getResponse()->getContent());
+    }
+
+    /**
+     * Tests the editAction() method.
+     *
+     * @return void
+     */
+    public function testEditActionWithBadDatatablesEditorException() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request.
+        $client->request("GET", "/datatables/office/edit/1/name/value");
+        $this->assertEquals(500, $client->getResponse()->getStatusCode());
+        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
+
+        $this->assertContains("BadDataTablesEditorException", $client->getResponse()->getContent());
+    }
+
+    /**
+     * Tests the editAction() method.
+     *
+     * @return void
+     */
+    public function testEditActionWithStatus404() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request.
+        $client->request("GET", "/datatables/employee/edit/49/name/value");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
+
+        // Check the JSON response.
+        $res = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertArrayHasKey("status", $res);
+        $this->assertArrayHasKey("notify", $res);
+
+        $this->assertEquals(404, $res["status"]);
+        $this->assertEquals("Record not found", $res["notify"]);
+    }
+
+    /**
+     * Tests the editAction() method.
+     *
+     * @return void
+     */
+    public function testEditActionWithStatus500() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request.
+        $client->request("GET", "/datatables/employee/edit/55/age/value");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
+
+        // Check the JSON response.
+        $res = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertArrayHasKey("status", $res);
+        $this->assertArrayHasKey("notify", $res);
+
+        $this->assertEquals(500, $res["status"]);
+        $this->assertEquals("Failed editing", $res["notify"]);
+    }
+
+    /**
+     * Tests the exportAction() method.
+     *
+     * @return void
+     */
+    public function testExportAction() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request.
+        $client->request("GET", "/datatables/employee/export");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals("text/csv; charset=utf-8", $client->getResponse()->headers->get("Content-Type"));
+        $this->assertRegExp("/attachment; filename=\"[0-9]{4}\.[0-9]{2}\.[0-9]{2}-[0-9]{2}\.[0-9]{2}\.[0-9]{2}-employee\.csv\"/", $client->getResponse()->headers->get("Content-Disposition"));
+    }
+
+    /**
+     * Tests the exportAction() method.
+     *
+     * @return void
+     */
+    public function testExportActionWithBadDataTablesRepository() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request.
+        $client->request("GET", "/datatables/office/export");
+        $this->assertEquals(500, $client->getResponse()->getStatusCode());
+        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
+
+        $this->assertContains("BadDataTablesCSVExporterException", $client->getResponse()->getContent());
     }
 
     /**
      * Tests the indexAction() method.
      *
      * @return void
-     * @depends testRenderAction
      */
     public function testIndexAction() {
 
@@ -118,47 +296,24 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      * Tests the indexAction() method.
      *
      * @return void
-     * @depends testIndexAction
      */
-    public function testIndexActionWithParameters() {
-
-        // Get the POST data.
-        $parameters = TestFixtures::getPOSTData();
+    public function testIndexActionWithBadDataTablesRepository() {
 
         // Create a client.
         $client = static::createClient();
 
-        // Make a POST request with XML HTTP request.
-        $client->request("POST", "/datatables/employee/index", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
+        // Make a GET request.
+        $client->request("GET", "/datatables/office/index", [], [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
+        $this->assertEquals(500, $client->getResponse()->getStatusCode());
+        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
 
-        // Check the JSON response.
-        $res = json_decode($client->getResponse()->getContent(), true);
-
-        $this->assertCount(10, $res["data"]);
-
-        $this->assertArrayHasKey("DT_RowId", $res["data"][0]);
-        $this->assertArrayHasKey("DT_RowClass", $res["data"][0]);
-        $this->assertArrayHasKey("DT_RowData", $res["data"][0]);
-
-        $this->assertEquals("Airi Satou", $res["data"][0]["name"]);
-        $this->assertEquals("Angelica Ramos", $res["data"][1]["name"]);
-        $this->assertEquals("Ashton Cox", $res["data"][2]["name"]);
-        $this->assertEquals("Bradley Greer", $res["data"][3]["name"]);
-        $this->assertEquals("Brenden Wagner", $res["data"][4]["name"]);
-        $this->assertEquals("Brielle Williamson", $res["data"][5]["name"]);
-        $this->assertEquals("Bruno Nash", $res["data"][6]["name"]);
-        $this->assertEquals("Caesar Vance", $res["data"][7]["name"]);
-        $this->assertEquals("Cara Stevens", $res["data"][8]["name"]);
-        $this->assertEquals("Cedric Kelly", $res["data"][9]["name"]);
+        $this->assertContains("BadDataTablesRepositoryException", $client->getResponse()->getContent());
     }
 
     /**
      * Tests the indexAction() method.
      *
      * @return void
-     * @depends testIndexAction
      */
     public function testIndexActionWithLength() {
 
@@ -212,7 +367,6 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      * Tests the indexAction() method.
      *
      * @return void
-     * @depends testIndexAction
      */
     public function testIndexActionWithNegativeLength() {
 
@@ -233,7 +387,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         // Check the JSON response.
         $res = json_decode($client->getResponse()->getContent(), true);
 
-        $this->assertCount(57, $res["data"]);
+        $this->assertCount(55, $res["data"]);
 
         $this->assertArrayHasKey("DT_RowId", $res["data"][0]);
         $this->assertArrayHasKey("DT_RowClass", $res["data"][0]);
@@ -257,15 +411,12 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         $this->assertEquals("Unity Butler", $res["data"][52]["name"]);
         $this->assertEquals("Vivian Harrell", $res["data"][53]["name"]);
         $this->assertEquals("Yuri Berry", $res["data"][54]["name"]);
-        $this->assertEquals("Zenaida Frank", $res["data"][55]["name"]);
-        $this->assertEquals("Zorita Serrano", $res["data"][56]["name"]);
     }
 
     /**
      * Tests the indexAction() method.
      *
      * @return void
-     * @depends testIndexAction
      */
     public function testIndexActionWithOrder() {
 
@@ -292,23 +443,22 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         $this->assertArrayHasKey("DT_RowClass", $res["data"][0]);
         $this->assertArrayHasKey("DT_RowData", $res["data"][0]);
 
-        $this->assertEquals("Zorita Serrano", $res["data"][0]["name"]);
-        $this->assertEquals("Zenaida Frank", $res["data"][1]["name"]);
-        $this->assertEquals("Yuri Berry", $res["data"][2]["name"]);
-        $this->assertEquals("Vivian Harrell", $res["data"][3]["name"]);
-        $this->assertEquals("Unity Butler", $res["data"][4]["name"]);
-        $this->assertEquals("Timothy Mooney", $res["data"][5]["name"]);
-        $this->assertEquals("Tiger Nixon", $res["data"][6]["name"]);
-        $this->assertEquals("Thor Walton", $res["data"][7]["name"]);
-        $this->assertEquals("Tatyana Fitzpatrick", $res["data"][8]["name"]);
-        $this->assertEquals("Suki Burks", $res["data"][9]["name"]);
+        $this->assertEquals("Yuri Berry", $res["data"][0]["name"]);
+        $this->assertEquals("Vivian Harrell", $res["data"][1]["name"]);
+        $this->assertEquals("Unity Butler", $res["data"][2]["name"]);
+        $this->assertEquals("Timothy Mooney", $res["data"][3]["name"]);
+        $this->assertEquals("Tiger Nixon", $res["data"][4]["name"]);
+        $this->assertEquals("Thor Walton", $res["data"][5]["name"]);
+        $this->assertEquals("Tatyana Fitzpatrick", $res["data"][6]["name"]);
+        $this->assertEquals("Suki Burks", $res["data"][7]["name"]);
+        $this->assertEquals("Sonya Frost", $res["data"][8]["name"]);
+        $this->assertEquals("Shou Itou", $res["data"][9]["name"]);
     }
 
     /**
      * Tests the indexAction() method.
      *
      * @return void
-     * @depends testIndexAction
      */
     public function testIndexActionWithOrderOnNoOrderableColumn() {
 
@@ -352,7 +502,45 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      * Tests the indexAction() method.
      *
      * @return void
-     * @depends testIndexAction
+     */
+    public function testIndexActionWithParameters() {
+
+        // Get the POST data.
+        $parameters = TestFixtures::getPOSTData();
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a POST request with XML HTTP request.
+        $client->request("POST", "/datatables/employee/index", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
+
+        // Check the JSON response.
+        $res = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertCount(10, $res["data"]);
+
+        $this->assertArrayHasKey("DT_RowId", $res["data"][0]);
+        $this->assertArrayHasKey("DT_RowClass", $res["data"][0]);
+        $this->assertArrayHasKey("DT_RowData", $res["data"][0]);
+
+        $this->assertEquals("Airi Satou", $res["data"][0]["name"]);
+        $this->assertEquals("Angelica Ramos", $res["data"][1]["name"]);
+        $this->assertEquals("Ashton Cox", $res["data"][2]["name"]);
+        $this->assertEquals("Bradley Greer", $res["data"][3]["name"]);
+        $this->assertEquals("Brenden Wagner", $res["data"][4]["name"]);
+        $this->assertEquals("Brielle Williamson", $res["data"][5]["name"]);
+        $this->assertEquals("Bruno Nash", $res["data"][6]["name"]);
+        $this->assertEquals("Caesar Vance", $res["data"][7]["name"]);
+        $this->assertEquals("Cara Stevens", $res["data"][8]["name"]);
+        $this->assertEquals("Cedric Kelly", $res["data"][9]["name"]);
+    }
+
+    /**
+     * Tests the indexAction() method.
+     *
+     * @return void
      */
     public function testIndexActionWithSearch() {
 
@@ -395,7 +583,6 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      * Tests the indexAction() method.
      *
      * @return void
-     * @depends testIndexAction
      */
     public function testIndexActionWithSearchColumn() {
 
@@ -430,7 +617,6 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      * Tests the indexAction() method.
      *
      * @return void
-     * @depends testIndexAction
      */
     public function testIndexActionWithSearchColumnOnNoSearchableColumn() {
 
@@ -473,7 +659,6 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      * Tests the indexAction() method.
      *
      * @return void
-     * @depends testIndexAction
      */
     public function testIndexActionWithStart() {
 
@@ -494,281 +679,75 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         // Check the JSON response.
         $res = json_decode($client->getResponse()->getContent(), true);
 
-        $this->assertCount(7, $res["data"]);
+        $this->assertCount(5, $res["data"]);
 
         $this->assertEquals("Tiger Nixon", $res["data"][0]["name"]);
         $this->assertEquals("Timothy Mooney", $res["data"][1]["name"]);
         $this->assertEquals("Unity Butler", $res["data"][2]["name"]);
         $this->assertEquals("Vivian Harrell", $res["data"][3]["name"]);
         $this->assertEquals("Yuri Berry", $res["data"][4]["name"]);
-        $this->assertEquals("Zenaida Frank", $res["data"][5]["name"]);
-        $this->assertEquals("Zorita Serrano", $res["data"][6]["name"]);
     }
 
     /**
-     * Tests the indexAction() method.
+     * Tests the optionsAction() method.
      *
      * @return void
-     * @depends testIndexAction
      */
-    public function testIndexActionWithBadDataTablesRepository() {
+    public function testOptionsAction() {
 
         // Create a client.
         $client = static::createClient();
 
         // Make a GET request.
-        $client->request("GET", "/datatables/office/index", [], [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
-        $this->assertEquals(500, $client->getResponse()->getStatusCode());
-        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
-
-        $this->assertContains("BadDataTablesRepositoryException", $client->getResponse()->getContent());
-    }
-
-    /**
-     * Tests the deleteAction() method.
-     *
-     * @return void
-     */
-    public function testDeleteAction() {
-
-        // Create a client.
-        $client = static::createClient();
-
-        // Make a GET request.
-        $client->request("GET", "/datatables/employee/delete/57");
-        $this->assertEquals(302, $client->getResponse()->getStatusCode());
-        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
-        $this->assertEquals("/datatables/employee/index", $client->getResponse()->headers->get("location"));
-
-        $client->followRedirect();
-        $this->assertContains("Successful deletion", $client->getResponse()->getContent());
-    }
-
-    /**
-     * Tests the deleteAction() method.
-     *
-     * @return void
-     * @depends testDeleteAction
-     */
-    public function testDeleteActionWithNotify404() {
-
-        // Create a client.
-        $client = static::createClient();
-
-        // Make a GET request.
-        $client->request("GET", "/datatables/employee/delete/57");
-        $this->assertEquals(302, $client->getResponse()->getStatusCode());
-        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
-        $this->assertEquals("/datatables/employee/index", $client->getResponse()->headers->get("location"));
-
-        $client->followRedirect();
-        $this->assertContains("Record not found", $client->getResponse()->getContent());
-    }
-
-    /**
-     * Tests the deleteAction() method.
-     *
-     * @return void
-     * @depends testDeleteAction
-     */
-    public function testDeleteActionWithStatus200() {
-
-        // Create a client.
-        $client = static::createClient();
-
-        // Make a GET request with XML HTTP request.
-        $client->request("GET", "/datatables/employee/delete/56", [], [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
+        $client->request("GET", "/datatables/employee/options");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
 
         // Check the JSON response.
         $res = json_decode($client->getResponse()->getContent(), true);
 
-        $this->assertArrayHasKey("status", $res);
-        $this->assertArrayHasKey("notify", $res);
+        $this->assertCount(4, $res);
+        $this->assertCount(7, $res["columns"]);
 
-        $this->assertEquals(200, $res["status"]);
-        $this->assertEquals("Successful deletion", $res["notify"]);
+        $this->assertEquals("POST", $res["ajax"]["type"]);
+        $this->assertEquals("/datatables/employee/index", $res["ajax"]["url"]);
+        $this->assertEquals(true, $res["processing"]);
+        $this->assertEquals(true, $res["serverSide"]);
     }
 
     /**
-     * Tests the deleteAction() method.
-     *
-     * @return void
-     * @depends testDeleteAction
-     */
-    public function testDeleteActionWithStatus404() {
-
-        // Create a client.
-        $client = static::createClient();
-
-        // Make a GET request with XML HTTP request.
-        $client->request("GET", "/datatables/employee/delete/57", [], [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
-
-        // Check the JSON response.
-        $res = json_decode($client->getResponse()->getContent(), true);
-
-        $this->assertArrayHasKey("status", $res);
-        $this->assertArrayHasKey("notify", $res);
-
-        $this->assertEquals(404, $res["status"]);
-        $this->assertEquals("Record not found", $res["notify"]);
-    }
-
-    /**
-     * Tests the editAction() method.
+     * Tests the renderAction() method.
      *
      * @return void
      */
-    public function testEditAction() {
-
-        // Create a client.
-        $client = static::createClient();
-
-        // Make a POST request.
-        $client->request("POST", "/datatables/employee/edit/55/name", ["value" => "Shad decker"]);
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
-
-        // Check the JSON response.
-        $res = json_decode($client->getResponse()->getContent(), true);
-
-        $this->assertArrayHasKey("status", $res);
-        $this->assertArrayHasKey("notify", $res);
-
-        $this->assertEquals(200, $res["status"]);
-        $this->assertEquals("Successful editing", $res["notify"]);
-    }
-
-    /**
-     * Tests the deleteAction() method.
-     *
-     * @return void
-     */
-    public function testEditActionWithStatus404() {
+    public function testRenderAction() {
 
         // Create a client.
         $client = static::createClient();
 
         // Make a GET request.
-        $client->request("GET", "/datatables/employee/edit/57/name/value");
+        $client->request("GET", "/datatables/employee/render");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
-
-        // Check the JSON response.
-        $res = json_decode($client->getResponse()->getContent(), true);
-
-        $this->assertArrayHasKey("status", $res);
-        $this->assertArrayHasKey("notify", $res);
-
-        $this->assertEquals(404, $res["status"]);
-        $this->assertEquals("Record not found", $res["notify"]);
-    }
-
-    /**
-     * Tests the deleteAction() method.
-     *
-     * @return void
-     */
-    public function testEditActionWithStatus500() {
-
-        // Create a client.
-        $client = static::createClient();
-
-        // Make a GET request.
-        $client->request("GET", "/datatables/employee/edit/55/age/value");
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
-
-        // Check the JSON response.
-        $res = json_decode($client->getResponse()->getContent(), true);
-
-        $this->assertArrayHasKey("status", $res);
-        $this->assertArrayHasKey("notify", $res);
-
-        $this->assertEquals(500, $res["status"]);
-        $this->assertEquals("Failed editing", $res["notify"]);
-    }
-
-    /**
-     * Tests the editAction() method.
-     *
-     * @return void
-     */
-    public function testEditActionWithBadDatatablesEditorException() {
-
-        // Create a client.
-        $client = static::createClient();
-
-        // Make a GET request.
-        $client->request("GET", "/datatables/office/edit/1/name/value");
-        $this->assertEquals(500, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
 
-        $this->assertContains("BadDataTablesEditorException", $client->getResponse()->getContent());
-    }
+        // Get the response content.
+        $content = $client->getResponse()->getContent();
 
-    /**
-     * Tests the editAction() method.
-     *
-     * @return void
-     */
-    public function testEditActionWithBadDatatablesColumnException() {
+        // Check the CSS.
+        foreach (static::listCSSAssets() as $current) {
+            $this->assertRegExp("/" . preg_quote($current, "/") . "/", $content);
+        }
 
-        // Create a client.
-        $client = static::createClient();
-
-        // Make a GET request.
-        $client->request("GET", "/datatables/employee/edit/55/data/value");
-        $this->assertEquals(500, $client->getResponse()->getStatusCode());
-        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
-
-        $this->assertContains("BadDataTablesColumnException", $client->getResponse()->getContent());
-    }
-
-    /**
-     * Tests the exportAction() method.
-     *
-     * @return void
-     */
-    public function testExportAction() {
-
-        // Create a client.
-        $client = static::createClient();
-
-        // Make a GET request.
-        $client->request("GET", "/datatables/employee/export");
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals("text/csv; charset=utf-8", $client->getResponse()->headers->get("Content-Type"));
-        $this->assertRegExp("/attachment; filename=\"[0-9]{4}\.[0-9]{2}\.[0-9]{2}-[0-9]{2}\.[0-9]{2}\.[0-9]{2}-employee\.csv\"/", $client->getResponse()->headers->get("Content-Disposition"));
-    }
-
-    /**
-     * Tests the exportAction() method.
-     *
-     * @return void
-     * @depends testExportAction
-     */
-    public function testExportActionWithBadDataTablesRepository() {
-
-        // Create a client.
-        $client = static::createClient();
-
-        // Make a GET request.
-        $client->request("GET", "/datatables/office/export");
-        $this->assertEquals(500, $client->getResponse()->getStatusCode());
-        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
-
-        $this->assertContains("BadDataTablesCSVExporterException", $client->getResponse()->getContent());
+        // Check the Javascript.
+        foreach (static::listJavascriptAssets() as $current) {
+            $this->assertRegExp("/" . preg_quote($current, "/") . "/", $content);
+        }
     }
 
     /**
      * Tests the showAction() method.
      *
      * @return void
-     * @depends testEditAction
      */
     public function testShowAction() {
 
@@ -795,7 +774,6 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      * Tests the showAction() method.
      *
      * @return void
-     * @depends testShowAction
      */
     public function testShowActionWithStatus404() {
 
@@ -803,7 +781,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         $client = static::createClient();
 
         // Make a GET request.
-        $client->request("GET", "/datatables/employee/show/57");
+        $client->request("GET", "/datatables/employee/show/49");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
 
