@@ -1,0 +1,15 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#selector").DataTable({
+            "columnDefs": [
+                {
+                    "orderable": false,
+                    "targets": -1
+                }
+            ],
+            "language": {
+                "url": "/bundles/wbwjquerydatatables/datatables-i18n/French.json"
+            }
+        });
+    });
+</script>

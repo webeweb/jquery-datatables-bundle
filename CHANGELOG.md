@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [3.6.2](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.6.2) (2019-08-02)
+
+- Fix order attribute into encoded options.
+- Improve unit tests
+
 ### [3.6.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.6.1) (2019-07-22)
 
 - Add PHP extensions into Composer

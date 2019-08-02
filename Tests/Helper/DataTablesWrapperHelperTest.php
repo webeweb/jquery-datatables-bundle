@@ -87,7 +87,6 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
                 "type" => "POST",
                 "url"  => "/datatables/employee/index",
             ],
-            "order"      => [],
             "columns"    => [
                 ["cellType" => "td", "data" => "name", "name" => "Name"],
                 ["cellType" => "td", "data" => "position", "name" => "Position"],

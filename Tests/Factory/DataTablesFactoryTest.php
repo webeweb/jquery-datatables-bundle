@@ -86,7 +86,6 @@ class DataTablesFactoryTest extends AbstractTestCase {
         $this->assertNull($obj->getMapping()->getPrefix());
         $this->assertEquals("POST", $obj->getMethod());
         $this->assertNull($obj->getOptions());
-        $this->assertEquals([], $obj->getOrder());
         $this->assertTrue($obj->getProcessing());
         $this->assertSame($this->dtProvider, $obj->getProvider());
         $this->assertNull($obj->getRequest());

@@ -67,13 +67,6 @@ interface DataTablesWrapperInterface {
     public function getOptions();
 
     /**
-     * Get the order.
-     *
-     * @return array Returns the order.
-     */
-    public function getOrder();
-
-    /**
      * Get the processing.
      *
      * @return bool Returns the processing.

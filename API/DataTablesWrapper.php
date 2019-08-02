@@ -56,13 +56,6 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
     private $options;
 
     /**
-     * Order.
-     *
-     * @var array
-     */
-    private $order;
-
-    /**
      * Processing.
      *
      * @var bool
@@ -111,7 +104,6 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
         $this->setColumns([]);
         $this->setMapping(new DataTablesMapping());
         $this->setMethod(HTTPInterface::HTTP_METHOD_POST);
-        $this->setOrder([]);
         $this->setProcessing(true);
         $this->setServerSide(true);
     }
@@ -163,13 +155,6 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
      */
     public function getOptions() {
         return $this->options;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getOrder() {
-        return $this->order;
     }
 
     /**
@@ -269,17 +254,6 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
      */
     public function setOptions(DataTablesOptionsInterface $options) {
         $this->options = $options;
-        return $this;
-    }
-
-    /**
-     * Set the order.
-     *
-     * @param array $order The order.
-     * @return DataTablesWrapperInterface Returns this wrapper.
-     */
-    public function setOrder(array $order) {
-        $this->order = $order;
         return $this;
     }
 

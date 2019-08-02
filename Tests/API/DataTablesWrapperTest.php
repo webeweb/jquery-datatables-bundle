@@ -27,28 +27,6 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesWrapperTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new DataTablesWrapper();
-
-        $this->assertEquals([], $obj->getColumns());
-        $this->assertNull($obj->getMapping()->getPrefix());
-        $this->assertEquals("POST", $obj->getMethod());
-        $this->assertNull($obj->getOptions());
-        $this->assertEquals([], $obj->getOrder());
-        $this->assertTrue($obj->getProcessing());
-        $this->assertNull($obj->getProvider());
-        $this->assertNull($obj->getRequest());
-        $this->assertNull($obj->getResponse());
-        $this->assertTrue($obj->getServerSide());
-        $this->assertNull($obj->getUrl());
-    }
-
-    /**
      * Tests the addColumn() method.
      *
      * @return void
@@ -72,6 +50,27 @@ class DataTablesWrapperTest extends AbstractTestCase {
         $this->assertSame($obj, $obj->addColumn($col));
         $this->assertCount(2, $obj->getColumns());
         $this->assertSame($col, $obj->getColumns()["col"]);
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function testConstruct() {
+
+        $obj = new DataTablesWrapper();
+
+        $this->assertEquals([], $obj->getColumns());
+        $this->assertNull($obj->getMapping()->getPrefix());
+        $this->assertEquals("POST", $obj->getMethod());
+        $this->assertNull($obj->getOptions());
+        $this->assertTrue($obj->getProcessing());
+        $this->assertNull($obj->getProvider());
+        $this->assertNull($obj->getRequest());
+        $this->assertNull($obj->getResponse());
+        $this->assertTrue($obj->getServerSide());
+        $this->assertNull($obj->getUrl());
     }
 
     /**
@@ -144,19 +143,6 @@ class DataTablesWrapperTest extends AbstractTestCase {
 
         $obj->setOptions($arg);
         $this->assertSame($arg, $obj->getOptions());
-    }
-
-    /**
-     * Tests the setOrder() method.
-     *
-     * @return void
-     */
-    public function testSetOrder() {
-
-        $obj = new DataTablesWrapper("url", "name");
-
-        $obj->setOrder(["order"]);
-        $this->assertEquals(["order"], $obj->getOrder());
     }
 
     /**

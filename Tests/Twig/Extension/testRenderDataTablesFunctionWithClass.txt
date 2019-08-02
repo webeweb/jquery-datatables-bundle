@@ -1,0 +1,24 @@
+<table class="table class" id="dtemployee">
+<thead>
+<tr>
+<th scope="row">Name</th>
+<th>Position</th>
+<th>Office</th>
+<th>Age</th>
+<th>Start date</th>
+<th>Salary</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<th>Name</th>
+<th>Position</th>
+<th>Office</th>
+<th>Age</th>
+<th>Start date</th>
+<th>Salary</th>
+<th>Actions</th>
+</tr>
+</tfoot>
+</table>

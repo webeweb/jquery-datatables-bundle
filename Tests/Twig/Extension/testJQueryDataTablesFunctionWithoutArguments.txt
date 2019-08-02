@@ -1,0 +1,51 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        var dtemployee = $("#dtemployee").DataTable({
+            "ajax": {
+                "type": "POST",
+                "url": "/datatables/employee/index"
+            },
+            "columns": [
+                {
+                    "cellType": "td",
+                    "data": "name",
+                    "name": "Name"
+                },
+                {
+                    "cellType": "td",
+                    "data": "position",
+                    "name": "Position"
+                },
+                {
+                    "cellType": "td",
+                    "data": "office",
+                    "name": "Office"
+                },
+                {
+                    "cellType": "td",
+                    "data": "age",
+                    "name": "Age"
+                },
+                {
+                    "cellType": "td",
+                    "data": "startDate",
+                    "name": "Start date"
+                },
+                {
+                    "cellType": "td",
+                    "data": "salary",
+                    "name": "Salary"
+                },
+                {
+                    "cellType": "td",
+                    "data": "actions",
+                    "name": "Actions",
+                    "orderable": false,
+                    "searchable": false
+                }
+            ],
+            "processing": true,
+            "serverSide": true
+        });
+    });
+</script>

@@ -82,7 +82,6 @@ class DataTablesWrapperHelper {
         $output["ajax"]["type"] = $dtWrapper->getMethod();
         $output["ajax"]["url"]  = $dtWrapper->getUrl();
         $output["columns"]      = [];
-        $output["order"]        = $dtWrapper->getOrder();
         $output["processing"]   = $dtWrapper->getProcessing();
         $output["serverSide"]   = $dtWrapper->getServerSide();
 
