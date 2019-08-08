@@ -3,7 +3,7 @@ CHANGELOG
 
 ### [3.7.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.7.0) (2019-08-08)
 
-- Fix log level
+- Improve log level
 
 ### [3.6.2](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.6.2) (2019-08-02)
 
