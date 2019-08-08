@@ -105,7 +105,7 @@ EOT;
         $replaces = [$var, null === $selector ? "#" . $var : $selector, $this->encodeOptions($options)];
 
         $javascript = StringHelper::replace(self::JQUERY_DATATABLES, $searches, $replaces);
-        return $this->getRendererTwigExtension()->coreScriptFilter($javascript) . "\n";
+        return $this->getRendererTwigExtension()->coreScriptFilter($javascript);
     }
 
     /**
@@ -127,7 +127,7 @@ EOT;
         $replaces = [$selector, $this->encodeOptions($options)];
 
         $javascript = StringHelper::replace(self::JQUERY_DATATABLES_STANDALONE, $searches, $replaces);
-        return $this->getRendererTwigExtension()->coreScriptFilter($javascript) . "\n";
+        return $this->getRendererTwigExtension()->coreScriptFilter($javascript);
     }
 
     /**
@@ -151,7 +151,7 @@ EOT;
 
         $inner = "\n" . $thead . $tfoot;
 
-        return static::coreHTMLElement("table", $inner, $attributes) . "\n";
+        return static::coreHTMLElement("table", $inner, $attributes);
     }
 
     /**

@@ -25,7 +25,7 @@ use WBW\Bundle\SyntaxHighlighterBundle\Tests\AbstractTestCase;
 class DataTablesTwigExtensionTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() mmethod.
+     * Tests the __construct() method.
      *
      * @return void
      */
