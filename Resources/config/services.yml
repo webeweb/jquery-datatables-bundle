@@ -2,5 +2,6 @@
 services:
 
     wbw.jquery.datatables.manager:
-        class:  WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager
-        public: true
+        class:      WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager
+        arguments: ["@logger"]
+        public:    true

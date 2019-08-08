@@ -266,7 +266,7 @@ class DataTablesController extends AbstractController {
             $this->dispatchDataTablesEvent(WBWJQueryDataTablesEvents::DATATABLES_PRE_SHOW, [$entity]);
         } catch (EntityNotFoundException $ex) {
 
-            $this->getLogger()->debug($ex->getMessage());
+            $this->logInfo($ex->getMessage());
 
             $entity = [];
         }
