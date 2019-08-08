@@ -148,14 +148,21 @@ abstract class AbstractController extends BaseController {
      */
     protected function getDataTablesCSVExporter(DataTablesProviderInterface $dtProvider) {
 
-        $this->logInfo(sprintf("%s search for a CSV exporter with name \"%s\"", get_class($this), $dtProvider->getName()));
+        $context = [
+            "_controller" => get_class($this),
+            "_provider"   => get_class($dtProvider),
+        ];
+
+        $this->logInfo(sprintf("DataTables controller search for a CSV exporter with name \"%s\"", $dtProvider->getName()), $context);
 
         $dtExporter = $dtProvider->getCSVExporter();
         if (false === ($dtExporter instanceOf DataTablesCSVExporterInterface)) {
             throw new BadDataTablesCSVExporterException($dtExporter);
         }
 
-        $this->logInfo(sprintf("%s found a CSV exporter with name \"%s\"", get_class($this), $dtProvider->getName()));
+        $context["_exporter"] = get_class($dtExporter);
+
+        $this->logInfo(sprintf("DataTables controller found a CSV exporter with name \"%s\"", $dtProvider->getName()), $context);
 
         return $dtExporter;
     }
@@ -172,14 +179,22 @@ abstract class AbstractController extends BaseController {
 
         $dtWrapper = $this->getDataTablesWrapper($dtProvider);
 
-        $this->logInfo(sprintf("%s search for a column with name \"%s\"", get_class($dtWrapper), $data));
+        $context = [
+            "_controller" => get_class($this),
+            "_provider"   => get_class($dtProvider),
+            "_wrapper"    => get_class($dtWrapper),
+        ];
+
+        $this->logInfo(sprintf("DataTables controller search for a column with name \"%s\"", $data), $context);
 
         $dtColumn = $dtWrapper->getColumn($data);
         if (null === $dtColumn) {
             throw new BadDataTablesColumnException($data);
         }
 
-        $this->logInfo(sprintf("%s found a column with name \"%s\"", get_class($dtWrapper), $data));
+        $context["_column"] = get_class($dtColumn);
+
+        $this->logInfo(sprintf("DataTables controller found a column with name \"%s\"", $data), $context);
 
         return $dtColumn;
     }
@@ -193,14 +208,21 @@ abstract class AbstractController extends BaseController {
      */
     protected function getDataTablesEditor(DataTablesProviderInterface $dtProvider) {
 
-        $this->logInfo(sprintf("%s with name \"%s\" search for an editor", get_class($dtProvider), $dtProvider->getName()));
+        $context = [
+            "_controller" => get_class($this),
+            "_provider"   => get_class($dtProvider),
+        ];
+
+        $this->logInfo(sprintf("DataTables controller search for an editor with name \"%s\"", $dtProvider->getName()), $context);
 
         $dtEditor = $dtProvider->getEditor();
         if (false === ($dtEditor instanceOf DataTablesEditorInterface)) {
             throw new BadDataTablesEditorException($dtEditor);
         }
 
-        $this->logInfo(sprintf("%s with name \"%s\" found an editor", get_class($dtProvider), $dtProvider->getName()));
+        $context["_editor"] = get_class($dtEditor);
+
+        $this->logInfo(sprintf("DataTables controller found an editor with name \"%s\"", $dtProvider->getName()), $context);
 
         return $dtEditor;
     }
@@ -218,14 +240,22 @@ abstract class AbstractController extends BaseController {
 
         $repository = $this->getDataTablesRepository($dtProvider);
 
-        $this->logInfo(sprintf("%s search for an entity [%s]", get_class($repository), $id));
+        $context = [
+            "_controller" => get_class($this),
+            "_provider"   => get_class($dtProvider),
+            "_repository" => get_class($repository),
+        ];
+
+        $this->logInfo(sprintf("DataTables controller search for an entity with id [%s]", $id), $context);
 
         $entity = $repository->find($id);
         if (null === $entity) {
             throw EntityNotFoundException::fromClassNameAndIdentifier($dtProvider->getEntity(), [$id]);
         }
 
-        $this->logInfo(sprintf("%s found an entity [%s]", get_class($repository), $id));
+        $context["_entity"] = get_class($entity);
+
+        $this->logInfo(sprintf("DataTables controller found an entity with id [%s]", get_class($repository), $id));
 
         return $entity;
     }
@@ -258,13 +288,20 @@ abstract class AbstractController extends BaseController {
      */
     protected function getDataTablesProvider($name) {
 
-        $manager = $this->getDataTablesManager();
+        $dtManager = $this->getDataTablesManager();
 
-        $this->logInfo(sprintf("%s search for a provider with name \"%s\"", get_class($manager), $name));
+        $context = [
+            "_controller" => get_class($this),
+            "_manager"    => get_class($dtManager),
+        ];
 
-        $dtProvider = $manager->getProvider($name);
+        $this->logInfo(sprintf("DataTables controller search for a provider with name \"%s\"", $name), $context);
 
-        $this->logInfo(sprintf("%s found a provider with name \"%s\"", get_class($manager), $name));
+        $dtProvider = $dtManager->getProvider($name);
+
+        $context["_provider"] = get_class($dtProvider);
+
+        $this->logInfo(sprintf("DataTables controller found a provider with name \"%s\"", $name), $context);
 
         return $dtProvider;
     }
@@ -280,14 +317,22 @@ abstract class AbstractController extends BaseController {
 
         $em = $this->getDoctrine()->getManager();
 
-        $this->logInfo(sprintf("%s search for a repository with entity \"%s\"", get_class($em), $dtProvider->getEntity()));
+        $context = [
+            "_controller" => get_class($this),
+            "_provider"   => get_class($dtProvider),
+            "_entity"     => $dtProvider->getEntity(),
+        ];
+
+        $this->logInfo(sprintf("DataTables controller search for a repository with name \"%s\"", $dtProvider->getName()), $context);
 
         $repository = $em->getRepository($dtProvider->getEntity());
         if (false === ($repository instanceOf DataTablesRepositoryInterface)) {
             throw new BadDataTablesRepositoryException($repository);
         }
 
-        $this->logInfo(sprintf("%s found a repository with entity \"%s\"", get_class($em), $dtProvider->getEntity()));
+        $context["_repository"] = get_class($repository);
+
+        $this->logInfo(sprintf("DataTables controller found a repository with name \"%s\"", $dtProvider->getName()), $context);
 
         return $repository;
     }
@@ -309,15 +354,24 @@ abstract class AbstractController extends BaseController {
      */
     protected function getDataTablesURL(DataTablesProviderInterface $dtProvider) {
 
-        $this->logInfo(sprintf("%s search for an URL with name \"%s\"", get_class($this), $dtProvider->getName()));
+        $context = [
+            "_controller" => get_class($this),
+            "_provider"   => get_class($dtProvider),
+        ];
+
+        $this->logInfo(sprintf("DataTables controller search for an URL with name \"%s\"", $dtProvider->getName()), $context);
 
         if (false === ($dtProvider instanceof DataTablesRouterInterface)) {
             return $this->getRouter()->generate("wbw_jquery_datatables_index", ["name" => $dtProvider->getName()]);
         }
 
-        $this->logInfo(sprintf("%s found for an URL with name \"%s\"", get_class($this), $dtProvider->getName()));
+        $url = $dtProvider->getUrl();
 
-        return $dtProvider->getUrl();
+        $context["_url"] = $url;
+
+        $this->logInfo(sprintf("DataTables controller found for an URL with name \"%s\"", $dtProvider->getName()), $context);
+
+        return $url;
     }
 
     /**
@@ -328,13 +382,17 @@ abstract class AbstractController extends BaseController {
      */
     protected function getDataTablesWrapper(DataTablesProviderInterface $dtProvider) {
 
-        $url = $this->getDataTablesURL($dtProvider);
+        $dtWrapper = DataTablesFactory::newWrapper($this->getDataTablesURL($dtProvider), $dtProvider, $this->getKernelEventListener()->getUser());
 
-        $dtWrapper = DataTablesFactory::newWrapper($url, $dtProvider, $this->getKernelEventListener()->getUser());
+        $context = [
+            "_controller" => get_class($this),
+            "_provider"   => get_class($dtProvider),
+            "_wrapper"    => get_class($dtWrapper),
+        ];
 
         foreach ($dtProvider->getColumns() as $dtColumn) {
 
-            $this->logInfo(sprintf("%s add a column \"%s\" with the provider \"%s\"", get_class($dtWrapper), $dtColumn->getData(), get_class($dtProvider)));
+            $this->logInfo(sprintf("DataTables controller add a column \"%s\" with the provider \"%s\"", $dtColumn->getData(), $dtProvider->getName()), $context);
 
             $dtWrapper->addColumn($dtColumn);
         }
@@ -368,10 +426,11 @@ abstract class AbstractController extends BaseController {
      * Log an info.
      *
      * @param string $message The message.
+     * @param array $context The context.
      * @return AbstractController Returns this controller.
      */
-    protected function logInfo($message) {
-        $this->getLogger()->info($message);
+    protected function logInfo($message, array $context = []) {
+        $this->getLogger()->info($message, $context);
         return $this;
     }
 
