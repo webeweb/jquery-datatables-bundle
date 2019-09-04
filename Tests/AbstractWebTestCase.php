@@ -110,7 +110,7 @@ abstract class AbstractWebTestCase extends WebTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    protected function setUpEmployeeFixtures() {
+    protected static function setUpEmployeeFixtures() {
 
         /** @var EntityManagerInterface $em */
         $em = static::$kernel->getContainer()->get("doctrine.orm.entity_manager");
