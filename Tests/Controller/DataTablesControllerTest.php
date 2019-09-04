@@ -28,16 +28,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     public static function setUpBeforeClass() {
         parent::setUpBeforeClass();
 
-        // Get the entity manager.
-        $em = static::$kernel->getContainer()->get("doctrine.orm.entity_manager");
-
-        // Persist each entity.
-        foreach (TestFixtures::getEmployees() as $entity) {
-            $em->persist($entity);
-        }
-
-        // Flush entities.
-        $em->flush();
+        parent::setUpEmployeeFixtures();
     }
 
     /**

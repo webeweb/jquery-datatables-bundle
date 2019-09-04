@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [3.7.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.7.1) (2019-09-04)
+
+- Improve unit tests
+- Rename TAG_NAME constant
+
 ### [3.7.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.7.0) (2019-08-08)
 
 - Improve log level

@@ -11,9 +11,12 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Tools\SchemaTool;
+use Exception;
 use WBW\Bundle\CoreBundle\Tests\AbstractWebTestCase as WebTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\DataTablesVersionInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
 /**
  * Abstract web test case.
@@ -91,15 +94,31 @@ abstract class AbstractWebTestCase extends WebTestCase {
     public static function setUpBeforeClass() {
         parent::setUpBeforeClass();
 
-        // Get the entity manager.
+        /** @var EntityManagerInterface $em */
         $em = static::$kernel->getContainer()->get("doctrine.orm.entity_manager");
 
-        // Get all entities.
         $entities = $em->getMetadataFactory()->getAllMetadata();
 
-        // Initialize the database.
         $schemaTool = new SchemaTool($em);
         $schemaTool->dropDatabase();
         $schemaTool->createSchema($entities);
+    }
+
+    /**
+     * Set up the employee fixtures.
+     *
+     * @return void
+     * @throws Exception Throws an exception if an error occurs.
+     */
+    protected function setUpEmployeeFixtures() {
+
+        /** @var EntityManagerInterface $em */
+        $em = static::$kernel->getContainer()->get("doctrine.orm.entity_manager");
+
+        foreach (TestFixtures::getEmployees() as $entity) {
+            $em->persist($entity);
+        }
+
+        $em->flush();
     }
 }
