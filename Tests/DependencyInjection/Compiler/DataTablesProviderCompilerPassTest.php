@@ -69,16 +69,16 @@ class DataTablesProviderCompilerPassTest extends AbstractTestCase {
         $this->assertTrue($this->containerBuilder->hasDefinition(DataTablesManager::SERVICE_NAME));
         $this->assertFalse($this->containerBuilder->getDefinition(DataTablesManager::SERVICE_NAME)->hasMethodCall("addProvider"));
 
-        $this->containerBuilder->register("datatables.provider.test", $this->dataTablesProvider)->addTag(DataTablesProviderInterface::TAG_NAME);
+        $this->containerBuilder->register("datatables.provider.test", $this->dataTablesProvider)->addTag(DataTablesProviderInterface::DATATABLES_TAG_NAME);
         $this->assertTrue($this->containerBuilder->hasDefinition(DataTablesManager::SERVICE_NAME));
         $this->assertFalse($this->containerBuilder->getDefinition(DataTablesManager::SERVICE_NAME)->hasMethodCall("addProvider"));
         $this->assertTrue($this->containerBuilder->hasDefinition("datatables.provider.test"));
-        $this->assertTrue($this->containerBuilder->getDefinition("datatables.provider.test")->hasTag(DataTablesProviderInterface::TAG_NAME));
+        $this->assertTrue($this->containerBuilder->getDefinition("datatables.provider.test")->hasTag(DataTablesProviderInterface::DATATABLES_TAG_NAME));
 
         $obj->process($this->containerBuilder);
         $this->assertTrue($this->containerBuilder->hasDefinition(DataTablesManager::SERVICE_NAME));
         $this->assertTrue($this->containerBuilder->getDefinition(DataTablesManager::SERVICE_NAME)->hasMethodCall("addProvider"));
         $this->assertTrue($this->containerBuilder->hasDefinition("datatables.provider.test"));
-        $this->assertTrue($this->containerBuilder->getDefinition("datatables.provider.test")->hasTag(DataTablesProviderInterface::TAG_NAME));
+        $this->assertTrue($this->containerBuilder->getDefinition("datatables.provider.test")->hasTag(DataTablesProviderInterface::DATATABLES_TAG_NAME));
     }
 }

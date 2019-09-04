@@ -29,7 +29,7 @@ interface DataTablesProviderInterface extends ProviderInterface {
      *
      * @var string
      */
-    const TAG_NAME = "wbw.jquery.datatables.provider";
+    const DATATABLES_TAG_NAME = "wbw.jquery.datatables.provider";
 
     /**
      * Get the columns.

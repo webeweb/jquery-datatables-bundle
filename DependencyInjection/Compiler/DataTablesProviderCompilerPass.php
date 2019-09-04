@@ -36,7 +36,7 @@ class DataTablesProviderCompilerPass implements CompilerPassInterface {
 
         $manager = $container->findDefinition(DataTablesManager::SERVICE_NAME);
 
-        $providers = $container->findTaggedServiceIds(DataTablesProviderInterface::TAG_NAME);
+        $providers = $container->findTaggedServiceIds(DataTablesProviderInterface::DATATABLES_TAG_NAME);
         foreach ($providers as $id => $tag) {
             $manager->addMethodCall("addProvider", [new Reference($id)]);
         }
