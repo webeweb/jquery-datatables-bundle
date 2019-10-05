@@ -1,7 +1,7 @@
 jquery-datatables-bundle
 ========================
 
-[![Build Status](https://img.shields.io/travis/webeweb/jquery-datatables-bundle/master.svg?style=flat-square)](https://travis-ci.org/webeweb/jquery-datatables-bundle)
+[![Build Status](https://img.shields.io/travis/webeweb/jquery-datatables-bundle/master.svg?style=flat-square)](https://travis-ci.com/webeweb/jquery-datatables-bundle)
 [![Coverage Status](https://img.shields.io/coveralls/webeweb/jquery-datatables-bundle/master.svg?style=flat-square)](https://coveralls.io/github/webeweb/jquery-datatables-bundle?branch=master)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/quality/g/webeweb/jquery-datatables-bundle/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/webeweb/jquery-datatables-bundle/?branch=master)
 [![Latest Stable Version](https://img.shields.io/packagist/v/webeweb/jquery-datatables-bundle.svg?style=flat-square)](https://packagist.org/packages/webeweb/jquery-datatables-bundle)
