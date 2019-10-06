@@ -23,6 +23,21 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesResponseTest extends AbstractTestCase {
 
     /**
+     * Tests the addRow() method.
+     *
+     * @return void
+     */
+    public function testAddRow() {
+
+        $obj = new DataTablesResponse();
+        $obj->setWrapper($this->dtWrapper);
+
+        $this->assertCount(0, $obj->getData());
+        $this->assertSame($obj, $obj->addRow());
+        $this->assertCount(1, $obj->getData());
+    }
+
+    /**
      * Tests the __construct() method.
      *
      * @return void
@@ -41,18 +56,16 @@ class DataTablesResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the addRow() method.
+     * Tests the jsonSerialize() method.
      *
      * @return void
      */
-    public function testAddRow() {
+    public function testJsonSerialize() {
 
         $obj = new DataTablesResponse();
-        $obj->setWrapper($this->dtWrapper);
 
-        $this->assertCount(0, $obj->getData());
-        $this->assertSame($obj, $obj->addRow());
-        $this->assertCount(1, $obj->getData());
+        $res = ["data" => [], "draw" => null, "recordsFiltered" => null, "recordsTotal" => null];
+        $this->assertEquals($res, $obj->jsonSerialize());
     }
 
     /**
@@ -108,18 +121,5 @@ class DataTablesResponseTest extends AbstractTestCase {
         $res = ["name" => "GitHub", "position" => null, "office" => null, "age" => null, "startDate" => null, "salary" => null, "actions" => null];
         $this->assertCount(1, $obj->getData());
         $this->assertEquals($res, $obj->getData()[0]);
-    }
-
-    /**
-     * Tests the jsonSerialize() method.
-     *
-     * @return void
-     */
-    public function testJsonSerialize() {
-
-        $obj = new DataTablesResponse();
-
-        $res = ["data" => [], "draw" => null, "recordsFiltered" => null, "recordsTotal" => null];
-        $this->assertEquals($res, $obj->jsonSerialize());
     }
 }

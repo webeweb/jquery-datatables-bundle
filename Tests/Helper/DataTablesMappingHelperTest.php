@@ -43,20 +43,6 @@ class DataTablesMappingHelperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the getParam() method.
-     *
-     * @return void
-     */
-    public function testGetParam() {
-
-        $obj = new DataTablesMapping();
-        $obj->setPrefix("prefix");
-        $obj->setColumn("column");
-
-        $this->assertEquals(":prefixcolumn", DataTablesMappingHelper::getParam($obj));
-    }
-
-    /**
      * Tests the getComparator() method.
      *
      * @return void
@@ -92,6 +78,20 @@ class DataTablesMappingHelperTest extends AbstractTestCase {
 
         $column->setType("string");
         $this->assertEquals("LIKE", DataTablesMappingHelper::getComparator($obj));
+    }
+
+    /**
+     * Tests the getParam() method.
+     *
+     * @return void
+     */
+    public function testGetParam() {
+
+        $obj = new DataTablesMapping();
+        $obj->setPrefix("prefix");
+        $obj->setColumn("column");
+
+        $this->assertEquals(":prefixcolumn", DataTablesMappingHelper::getParam($obj));
     }
 
     /**

@@ -25,18 +25,6 @@ use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 class DataTablesOptionsTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new DataTablesOptions();
-
-        $this->assertEquals([], $obj->getOptions());
-    }
-
-    /**
      * Tests the addOption() method.
      *
      * @return void
@@ -67,6 +55,18 @@ class DataTablesOptionsTest extends AbstractTestCase {
             $this->assertInstanceOf(IllegalArgumentException::class, $ex);
             $this->assertEquals("The argument \"1\" is not a string", $ex->getMessage());
         }
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function testConstruct() {
+
+        $obj = new DataTablesOptions();
+
+        $this->assertEquals([], $obj->getOptions());
     }
 
     /**

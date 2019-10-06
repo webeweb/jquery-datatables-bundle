@@ -32,18 +32,18 @@ interface DataTablesProviderInterface extends ProviderInterface {
     const DATATABLES_TAG_NAME = "wbw.jquery.datatables.provider";
 
     /**
-     * Get the columns.
-     *
-     * @return DataTablesColumnInterface[] Returns the columns.
-     */
-    public function getColumns();
-
-    /**
      * Get the CSV exporter.
      *
      * @return DataTablesCSVExporterInterface|null Returns the CSV exporter.
      */
     public function getCSVExporter();
+
+    /**
+     * Get the columns.
+     *
+     * @return DataTablesColumnInterface[] Returns the columns.
+     */
+    public function getColumns();
 
     /**
      * Get the editor.

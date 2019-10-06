@@ -89,7 +89,7 @@ class DataTablesEnumeratorTest extends AbstractTestCase {
     /**
      * Tests the enumRows() method.
      *
-     * @@return void
+     * @return void
      */
     public function testEnumRows() {
 

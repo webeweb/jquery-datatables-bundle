@@ -34,7 +34,6 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
      */
     public function testGetLanguageURL() {
 
-
         $res = "/bundles/wbwjquerydatatables/datatables-i18n/French.json";
         $this->assertEquals($res, DataTablesWrapperHelper::getLanguageURL("French"));
     }

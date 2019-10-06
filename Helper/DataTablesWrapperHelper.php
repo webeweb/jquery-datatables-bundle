@@ -13,8 +13,8 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
 
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle;
 use WBW\Bundle\JQuery\DataTablesBundle\Normalizer\DataTablesNormalizer;
+use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle;
 use WBW\Library\Core\Argument\ObjectHelper;
 use WBW\Library\Core\Argument\StringHelper;
 
