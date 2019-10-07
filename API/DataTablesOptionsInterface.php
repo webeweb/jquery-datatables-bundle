@@ -35,7 +35,7 @@ interface DataTablesOptionsInterface {
      * Get an option.
      *
      * @param string $name The name.
-     * @return mixed Returns the option in case of success, null otherwise.
+     * @return mixed|null Returns the option in case of success, null otherwise.
      */
     public function getOption($name);
 

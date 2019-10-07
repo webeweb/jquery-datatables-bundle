@@ -67,7 +67,7 @@ interface DataTablesRequestInterface {
      * Get a column.
      *
      * @param string $data The column data.
-     * @return DataTablesColumnInterface Returns the column in case of success, null otherwise.
+     * @return DataTablesColumnInterface|null Returns the column in case of success, null otherwise.
      */
     public function getColumn($data);
 

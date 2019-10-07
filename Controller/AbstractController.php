@@ -86,7 +86,7 @@ abstract class AbstractController extends BaseController {
      *
      * @param string $eventName The event name.
      * @param array $entities The entities.
-     * @return DataTablesEvent Returns the event in case of success, null otherwise.
+     * @return DataTablesEvent|null Returns the event in case of success, null otherwise.
      */
     protected function dispatchDataTablesEvent($eventName, array $entities) {
         return $this->dispatchEvent($eventName, new DataTablesEvent($eventName, $entities));
