@@ -27,13 +27,6 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 class DataTablesRepositoryHelperTest extends AbstractTestCase {
 
     /**
-     * Entity manager.
-     *
-     * @var EntityManagerInterface
-     */
-    private $entityManager;
-
-    /**
      * Query builder.
      *
      * @var QueryBuilder
