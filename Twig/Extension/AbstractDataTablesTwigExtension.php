@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension;
 
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 use Twig\Environment;
+use WBW\Bundle\CoreBundle\Model\EnvironmentTrait;
 use WBW\Bundle\CoreBundle\Service\TwigEnvironmentTrait;
 use WBW\Bundle\CoreBundle\Twig\Extension\AbstractTwigExtension;
 use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtension;
@@ -31,6 +32,7 @@ use WBW\Library\Core\Argument\StringHelper;
  */
 abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
 
+    use EnvironmentTrait;
     use RendererTwigExtensionTrait;
     use TwigEnvironmentTrait;
 
@@ -61,9 +63,11 @@ EOT;
      *
      * @param Environment $twigEnvironment The Twig environment.
      * @param RendererTwigExtension $rendererTwigExtension The renderer Twig extension.
+     * @param string $environment The environment
      */
-    public function __construct(Environment $twigEnvironment, RendererTwigExtension $rendererTwigExtension) {
+    public function __construct(Environment $twigEnvironment, RendererTwigExtension $rendererTwigExtension, $environment) {
         parent::__construct($twigEnvironment);
+        $this->setEnvironment($environment);
         $this->setRendererTwigExtension($rendererTwigExtension);
     }
 
@@ -74,10 +78,17 @@ EOT;
      * @return string Returns the encoded options.
      */
     protected function encodeOptions(array $options) {
+
         if (0 === count($options)) {
             return "{}";
         }
+
         ksort($options);
+
+        if ("prod" === $this->getEnvironment()) {
+            return json_encode($options);
+        }
+
         $output = json_encode($options, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
         return str_replace("\n", "\n        ", $output);
     }
@@ -104,7 +115,7 @@ EOT;
         $searches = ["%var%", "%selector%", "%options%"];
         $replaces = [$var, null === $selector ? "#" . $var : $selector, $this->encodeOptions($options)];
 
-        $javascript = StringHelper::replace(self::JQUERY_DATATABLES, $searches, $replaces);
+        $javascript = str_replace($searches, $replaces, self::JQUERY_DATATABLES);
         return $this->getRendererTwigExtension()->coreScriptFilter($javascript);
     }
 
@@ -126,7 +137,7 @@ EOT;
         $searches = ["%selector%", "%options%"];
         $replaces = [$selector, $this->encodeOptions($options)];
 
-        $javascript = StringHelper::replace(self::JQUERY_DATATABLES_STANDALONE, $searches, $replaces);
+        $javascript = str_replace($searches, $replaces, self::JQUERY_DATATABLES_STANDALONE);
         return $this->getRendererTwigExtension()->coreScriptFilter($javascript);
     }
 

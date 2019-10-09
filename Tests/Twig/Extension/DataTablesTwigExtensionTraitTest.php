@@ -44,7 +44,7 @@ class DataTablesTwigExtensionTraitTest extends AbstractTestCase {
     public function testSetDataTablesTwigExtension() {
 
         // Set a DataTables Twig extension mock.
-        $dataTablesTwigExtension = new DataTablesTwigExtension($this->twigEnvironment, new RendererTwigExtension($this->twigEnvironment));
+        $dataTablesTwigExtension = new DataTablesTwigExtension($this->twigEnvironment, new RendererTwigExtension($this->twigEnvironment), "test");
 
         $obj = new TestDataTablesTwigExtensionTrait();
 

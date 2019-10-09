@@ -53,7 +53,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
 
         $this->assertEquals("wbw.jquery.datatables.twig.extension", DataTablesTwigExtension::SERVICE_NAME);
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $this->assertSame($this->twigEnvironment, $obj->getTwigEnvironment());
     }
@@ -65,7 +65,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testGetFilters() {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $res = $obj->getFilters();
         $this->assertCount(2, $res);
@@ -88,7 +88,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testGetFunctions() {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $res = $obj->getFunctions();
         $this->assertCount(8, $res);
@@ -175,7 +175,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testJQueryDataTablesFunction() {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $arg = ["selector" => "#selector", "language" => "French"];
         $res = file_get_contents(__DIR__ . "/testJQueryDataTablesFunction.html.txt");
@@ -190,7 +190,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testJQueryDataTablesFunctionWithoutArguments() {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $arg = [];
         $res = file_get_contents(__DIR__ . "/testJQueryDataTablesFunctionWithoutArguments.html.txt");
@@ -204,7 +204,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testJQueryDataTablesNameFunction() {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $this->assertSame("dtemployee", $obj->jQueryDataTablesNameFunction($this->dtWrapper));
     }
@@ -217,7 +217,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testJQueryDataTablesStandaloneFunction() {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $arg = ["selector" => "#selector", "language" => "French", "options" => ["columnDefs" => [["orderable" => false, "targets" => -1]]]];
         $res = file_get_contents(__DIR__ . "/testJQueryDataTablesStandaloneFunction.html.txt");
@@ -232,7 +232,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testJQueryDataTablesStandaloneFunctionWithoutArguments() {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $res = file_get_contents(__DIR__ . "/testJQueryDataTablesStandaloneFunctionWithoutArguments.html.txt");
         $this->assertEquals($res, $obj->jQueryDataTablesStandaloneFunction() . "\n");
@@ -245,7 +245,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testRenderDataTablesFunction() {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $i = 0;
         foreach ($this->dtWrapper->getColumns() as $dtColumn) {
@@ -265,7 +265,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testRenderDataTablesFunctionWithClass() {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $arg = ["class" => "class"];
         $res = file_get_contents(__DIR__ . "/testRenderDataTablesFunctionWithClass.html.txt");
@@ -279,7 +279,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testRenderDataTablesFunctionWithTFoot() {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $arg = ["tfoot" => false];
         $res = file_get_contents(__DIR__ . "/testRenderDataTablesFunctionWithTFoot.html.txt");
@@ -293,7 +293,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testRenderDataTablesFunctionWithTHead() {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $arg = ["thead" => false];
         $res = file_get_contents(__DIR__ . "/testRenderDataTablesFunctionWithTHead.html.txt");
@@ -307,7 +307,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testRenderDataTablesFunctionWithoutArguments() {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension);
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $arg = [];
         $res = file_get_contents(__DIR__ . "/testRenderDataTablesFunctionWithoutArguments.html.txt");
