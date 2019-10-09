@@ -43,10 +43,10 @@ class DataTablesWrapperHelper {
         $uri = "/bundles/wbwjquerydatatables/datatables-i18n/%language%.json";
 
         // Initialize the URL.
-        $url = StringHelper::replace($uri, ["%language%"], [$language]);
+        $url = str_replace(["%language%"], [$language], $uri);
 
         // Initialize and check the filename.
-        $file = StringHelper::replace($dir, ["%language%"], [$language]);
+        $file = str_replace(["%language%"], [$language], $dir);
         if (false === file_exists($file)) {
             throw new FileNotFoundException(null, 500, null, $url);
         }
