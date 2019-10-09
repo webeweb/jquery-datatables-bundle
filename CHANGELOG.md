@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Update Configuration
+
 ### [3.7.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.7.1) (2019-09-04)
 
 - Improve unit tests
