@@ -1,12 +1,13 @@
 {# Resources/views/layout/stylesheets.html.twig #}
-{% include "@WBWJQueryDataTables/layout/stylesheet/datatables.html.twig" with {"dtTheme": dtTheme|default("") } %}
-{% include "@WBWJQueryDataTables/layout/stylesheet/datatables-autofill.html.twig" with {"dtTheme": dtTheme|default("") } %}
-{% include "@WBWJQueryDataTables/layout/stylesheet/datatables-buttons.html.twig" with {"dtTheme": dtTheme|default("") } %}
-{% include "@WBWJQueryDataTables/layout/stylesheet/datatables-colreorder.html.twig" with {"dtTheme": dtTheme|default("") } %}
-{% include "@WBWJQueryDataTables/layout/stylesheet/datatables-fixedcolumns.html.twig" with {"dtTheme": dtTheme|default("") } %}
-{% include "@WBWJQueryDataTables/layout/stylesheet/datatables-fixedheader.html.twig" with {"dtTheme": dtTheme|default("") } %}
-{% include "@WBWJQueryDataTables/layout/stylesheet/datatables-keytable.html.twig" with {"dtTheme": dtTheme|default("") } %}
-{% include "@WBWJQueryDataTables/layout/stylesheet/datatables-responsive.html.twig" with {"dtTheme": dtTheme|default("") } %}
-{% include "@WBWJQueryDataTables/layout/stylesheet/datatables-rowgroup.html.twig" with {"dtTheme": dtTheme|default("") } %}
-{% include "@WBWJQueryDataTables/layout/stylesheet/datatables-rowreorder.html.twig" with {"dtTheme": dtTheme|default("") } %}
-{% include "@WBWJQueryDataTables/layout/stylesheet/datatables-select.html.twig" with {"dtTheme": dtTheme|default("") } %}
+{% set _version = getContainerParameter("wbw.jquery_datatables.asset.jquery_datatables").version %} }}
+{% set _plugins = getContainerParameter("wbw.jquery_datatables.asset.jquery_datatables").plugins %}
+{% set _theme   = getContainerParameter("wbw_jquery_datatables.theme") %} }}
+{% set _enabled = getContainerParameter("wbw_jquery_datatables.plugins") %} }}
+<!-- jQuery DataTables -->
+<link type="text/css" rel="stylesheet" href="{{ asset("bundles/wbwjquerydatatables/datatables-" ~ _version ~ "/css/dataTables." ~ _theme ~ ".min.css") }}">
+{% for _enable in _enabled %}
+    {% for _resources in _plugins[_enable].stylesheets %}
+        {% set _asset = ("bundles/wbwjquerydatatables" ~ _resources) | replace({"{{ version }}": _plugins[_enable].version, "{{ theme }}": _theme}) %}
+        <link type="text/css" rel="stylesheet" href="{{ asset(_asset) }}">
+    {% endfor %}
+{% endfor %}

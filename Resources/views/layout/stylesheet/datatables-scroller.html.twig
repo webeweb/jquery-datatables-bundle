@@ -1,6 +1,0 @@
-{# Resources/views/layout/stylesheet/datatables-scroller.html.twig #}
-{% set _version = constant("WBW\\Bundle\\JQuery\\DataTablesBundle\\DataTablesVersionInterface::DATATABLES_SCROLLER_VERSION") %}
-{% set _themes  = ["bootstrap", "bootstrap4", "datatables", "foundation", "jqueryui", "semanticui"] %}
-{% set _theme   = dtTheme|default("") in _themes ? dtTheme : "bootstrap" %}
-<!-- jQuery DataTables Scroller -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/wbwjquerydatatables/datatables-scroller-" ~ _version ~ "/css/scroller." ~ _theme ~ ".min.css") }}">

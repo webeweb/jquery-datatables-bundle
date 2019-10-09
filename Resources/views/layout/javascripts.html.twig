@@ -1,14 +1,21 @@
 {# Resources/views/layout/javascripts.html.twig #}
-{% include "@WBWJQueryDataTables/layout/javascript/datatables.html.twig" with {"dtTheme": dtTheme|default("") } %}
-{% include "@WBWJQueryDataTables/layout/javascript/datatables-autofill.html.twig" with {"dtTheme": dtTheme|default("") } %}
-{% include "@WBWJQueryDataTables/layout/javascript/datatables-buttons.html.twig" with {"dtTheme": dtTheme|default("") } %}
-{% include "@WBWJQueryDataTables/layout/javascript/datatables-colreorder.html.twig" %}
-{% include "@WBWJQueryDataTables/layout/javascript/datatables-fixedcolumns.html.twig" %}
-{% include "@WBWJQueryDataTables/layout/javascript/datatables-fixedheader.html.twig" %}
-{% include "@WBWJQueryDataTables/layout/javascript/datatables-keytable.html.twig" %}
-{% include "@WBWJQueryDataTables/layout/javascript/datatables-responsive.html.twig" with {"dtTheme": dtTheme|default("") } %}
-{% include "@WBWJQueryDataTables/layout/javascript/datatables-rowgroup.html.twig" %}
-{% include "@WBWJQueryDataTables/layout/javascript/datatables-rowreorder.html.twig" %}
-{% include "@WBWJQueryDataTables/layout/javascript/datatables-scroller.html.twig" %}
-{% include "@WBWJQueryDataTables/layout/javascript/datatables-select.html.twig" %}
-{% include "@WBWJQueryDataTables/layout/javascript/editable-table.html.twig" %}
+{% set _version = getContainerParameter("wbw.jquery_datatables.asset.jquery_datatables").version %} }}
+{% set _plugins = getContainerParameter("wbw.jquery_datatables.asset.jquery_datatables").plugins %}
+{% set _theme   = getContainerParameter("wbw_jquery_datatables.theme") %} }}
+{% set _enabled = getContainerParameter("wbw_jquery_datatables.plugins") %} }}
+<!-- jQuery DataTables -->
+<script type="text/javascript" src="{{ asset("bundles/wbwjquerydatatables/datatables-" ~ _version ~ "/js/jquery.dataTables.min.js") }}"></script>
+<script type="text/javascript" src="{{ asset("bundles/wbwjquerydatatables/datatables-" ~ _version ~ "/js/dataTables." ~ _theme ~ ".min.js") }}"></script>
+{% for _enable in _enabled %}
+    {% if ("buttons" == _enable) %}
+        <script type="text/javascript" src="{{ asset(("bundles/wbwjquerydatatables" ~ _plugins["jszip"].javascripts[0]) | replace({"{{ version }}": _plugins["jszip"].version})) }}"></script>
+        <script type="text/javascript" src="{{ asset(("bundles/wbwjquerydatatables" ~ _plugins["pdfmake"].javascripts[0]) | replace({"{{ version }}": _plugins["pdfmake"].version})) }}"></script>
+        <script type="text/javascript" src="{{ asset(("bundles/wbwjquerydatatables" ~ _plugins["pdfmake"].javascripts[1]) | replace({"{{ version }}": _plugins["pdfmake"].version})) }}"></script>
+    {% endif %}
+    {% for _resources in _plugins[_enable].javascripts %}
+        {% set _asset = ("bundles/wbwjquerydatatables" ~ _resources) | replace({"{{ version }}": _plugins[_enable].version, "{{ theme }}": _theme}) %}
+        <script type="text/javascript" src="{{ asset(_asset) }}"></script>
+    {% endfor %}
+{% endfor %}
+<!-- editable Table -->
+<script type="text/javascript" src="{{ asset("bundles/wbwjquerydatatables/editable-table/mindmup-editabletable.js") }}"></script>

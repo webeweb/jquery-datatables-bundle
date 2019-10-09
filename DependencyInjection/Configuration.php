@@ -25,14 +25,40 @@ class Configuration implements ConfigurationInterface {
 
     /**
      * {@inheritDoc}
+     *
+     * wbw_jquery_datatables:
+     *      twig:  false
+     *      theme: "bootstrap"
+     *      plugins:
+     *          - "buttons"
+     *          - "responsive"
      */
     public function getConfigTreeBuilder() {
+
+        $assets  = ConfigurationHelper::loadYamlConfig(__DIR__, "assets");
+        $plugins = $assets["assets"]["wbw.jquery_datatables.asset.jquery_datatables"]["plugins"];
+        $themes  = $assets["assets"]["wbw.jquery_datatables.asset.jquery_datatables"]["themes"];
 
         $treeBuilder = new TreeBuilder(WBWJQueryDataTablesExtension::EXTENSION_ALIAS);
 
         $rootNode = ConfigurationHelper::getRootNode($treeBuilder, WBWJQueryDataTablesExtension::EXTENSION_ALIAS);
-        $rootNode->children()
-            ->booleanNode("twig")->defaultTrue()->info("Load Twig extensions")->end()
+        $rootNode
+            ->children()
+                ->booleanNode("twig")->defaultTrue()->info("Load Twig extensions")->end()
+                ->variableNode("theme")->defaultValue("bootstrap")->info("jQuery DataTables theme")
+                    ->validate()
+                        ->ifNotInArray($themes)
+                        ->thenInvalid("The jQuery DataTables theme %s is not supported. Please choose one of " . json_encode($themes))
+                    ->end()
+                ->end()
+                ->arrayNode("plugins")->info("Use jQuery DataTables plug-ins")
+                    ->scalarPrototype()
+                        ->validate()
+                            ->ifNotInArray(array_keys($plugins))
+                            ->thenInvalid("The jQuery DataTables plug-in %s is not supported. Please choose one of " . json_encode($plugins))
+                        ->end()
+                    ->end()
+                ->end()
             ->end();
 
         return $treeBuilder;

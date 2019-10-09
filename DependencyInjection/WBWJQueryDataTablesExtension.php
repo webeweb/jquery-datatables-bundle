@@ -16,6 +16,7 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use WBW\Bundle\CoreBundle\DependencyInjection\ConfigurationHelper;
 
 /**
  * jQuery DataTables extension.
@@ -57,5 +58,12 @@ class WBWJQueryDataTablesExtension extends Extension {
         if (true === $config["twig"]) {
             $serviceLoader->load("twig.yml");
         }
+
+        ConfigurationHelper::registerContainerParameter($container, $config, $this->getAlias(), "twig");
+        ConfigurationHelper::registerContainerParameter($container, $config, $this->getAlias(), "theme");
+        ConfigurationHelper::registerContainerParameter($container, $config, $this->getAlias(), "plugins");
+
+        $assets = ConfigurationHelper::loadYamlConfig(__DIR__, "assets");
+        ConfigurationHelper::registerContainerParameters($container, $assets["assets"]);
     }
 }

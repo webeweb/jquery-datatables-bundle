@@ -47,3 +47,18 @@ monolog:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+
+wbw_jquery_datatables:
+    theme:  "bootstrap"
+    plugins:
+        - "autofill"
+        - "buttons"
+        - "colreorder"
+        - "fixedcolumns"
+        - "fixedheader"
+        - "keytable"
+        - "responsive"
+        - "rowgroup"
+        - "rowreorder"
+        - "scroller"
+        - "select"
