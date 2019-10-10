@@ -16,6 +16,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle
+ * @deprecated since 3.8.0
  */
 interface DataTablesVersionInterface {
 
