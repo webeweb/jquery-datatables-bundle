@@ -1,21 +1,22 @@
 {# Resources/views/layout/javascripts.html.twig #}
-{% set _version = getContainerParameter("wbw.jquery_datatables.asset.jquery_datatables").version %} }}
-{% set _plugins = getContainerParameter("wbw.jquery_datatables.asset.jquery_datatables").plugins %}
-{% set _theme   = getContainerParameter("wbw_jquery_datatables.theme") %} }}
-{% set _enabled = getContainerParameter("wbw_jquery_datatables.plugins") %} }}
+{% set _version    = getContainerParameter("wbw.jquery_datatables.asset.jquery_datatables").version %}
+{% set _plugins    = getContainerParameter("wbw.jquery_datatables.asset.jquery_datatables").plugins %}
+{% set _webPath    = "bundles/wbwjquerydatatables" %}
+{% set _appTheme   = getContainerParameter("wbw_jquery_datatables.theme") %}
+{% set _appPlugins = getContainerParameter("wbw_jquery_datatables.plugins") %}
 <!-- jQuery DataTables -->
-<script type="text/javascript" src="{{ asset("bundles/wbwjquerydatatables/datatables-" ~ _version ~ "/js/jquery.dataTables.min.js") }}"></script>
-<script type="text/javascript" src="{{ asset("bundles/wbwjquerydatatables/datatables-" ~ _version ~ "/js/dataTables." ~ _theme ~ ".min.js") }}"></script>
-{% for _enable in _enabled %}
-    {% if ("buttons" == _enable) %}
-        <script type="text/javascript" src="{{ asset(("bundles/wbwjquerydatatables" ~ _plugins["jszip"].javascripts[0]) | replace({"{{ version }}": _plugins["jszip"].version})) }}"></script>
-        <script type="text/javascript" src="{{ asset(("bundles/wbwjquerydatatables" ~ _plugins["pdfmake"].javascripts[0]) | replace({"{{ version }}": _plugins["pdfmake"].version})) }}"></script>
-        <script type="text/javascript" src="{{ asset(("bundles/wbwjquerydatatables" ~ _plugins["pdfmake"].javascripts[1]) | replace({"{{ version }}": _plugins["pdfmake"].version})) }}"></script>
+<script type="text/javascript" src="{{ asset(_webPath ~ "/datatables-" ~ _version ~ "/js/jquery.dataTables.min.js") }}"></script>
+<script type="text/javascript" src="{{ asset(_webPath ~ "/datatables-" ~ _version ~ "/js/dataTables." ~ _appTheme ~ ".min.js") }}"></script>
+{% for _appPlugin in _appPlugins %}
+    {% if ("buttons" == _appPlugin) %}
+        {% set _requires = getContainerParameter("wbw.jquery_datatables.asset.jquery_datatables").requires %}
+        <script type="text/javascript" src="{{ asset((_webPath ~ _requires["jszip"].javascripts[0]) | replace({"{{ version }}": _requires["jszip"].version})) }}"></script>
+        <script type="text/javascript" src="{{ asset((_webPath ~ _requires["pdfmake"].javascripts[0]) | replace({"{{ version }}": _requires["pdfmake"].version})) }}"></script>
+        <script type="text/javascript" src="{{ asset((_webPath ~ _requires["pdfmake"].javascripts[1]) | replace({"{{ version }}": _requires["pdfmake"].version})) }}"></script>
     {% endif %}
-    {% for _resources in _plugins[_enable].javascripts %}
-        {% set _asset = ("bundles/wbwjquerydatatables" ~ _resources) | replace({"{{ version }}": _plugins[_enable].version, "{{ theme }}": _theme}) %}
-        <script type="text/javascript" src="{{ asset(_asset) }}"></script>
+    {% set _replaces = {"{{ version }}": _plugins[_appPlugin].version, "{{ theme }}": _appTheme} %}
+    {% for _javascript in _plugins[_appPlugin].javascripts %}
+        {% set _path = (_webPath ~ _javascript) | replace(_replaces) %}
+        <script type="text/javascript" src="{{ asset(_path) }}"></script>
     {% endfor %}
 {% endfor %}
-<!-- editable Table -->
-<script type="text/javascript" src="{{ asset("bundles/wbwjquerydatatables/editable-table/mindmup-editabletable.js") }}"></script>

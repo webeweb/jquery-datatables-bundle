@@ -10,6 +10,18 @@ assets:
             - "foundation"
             - "jqueryui"
             - "semanticui"
+        requires:
+            jszip:
+                version: "2.5.0"
+                javascripts:
+                    - "/datatables-jszip-{{ version }}/jszip.min.js"
+                stylesheets: []
+            pdfmake:
+                version: "0.1.36"
+                javascripts:
+                    - "/datatables-pdfmake-{{ version }}/pdfmake.min.js"
+                    - "/datatables-pdfmake-{{ version }}/vfs_fonts.js"
+                stylesheets: []
         plugins:
             autofill:
                 version:     "2.3.2"
@@ -29,17 +41,6 @@ assets:
                     - "/datatables-buttons-{{ version }}/js/buttons.{{ theme }}.min.js"
                 stylesheets:
                     - "/datatables-buttons-{{ version }}/css/buttons.{{ theme }}.min.css"
-            pdfmake:
-                version: "0.1.36"
-                javascripts:
-                    - "/datatables-pdfmake-{{ version }}/pdfmake.min.js"
-                    - "/datatables-pdfmake-{{ version }}/vfs_fonts.js"
-                stylesheets:
-            jszip:
-                version: "2.5.0"
-                javascripts:
-                    - "/datatables-jszip-{{ version }}/jszip.min.js"
-                stylesheets:
             colreorder:
                 version: "1.5.0"
                 javascripts:
@@ -95,3 +96,9 @@ assets:
                     - "/datatables-select-{{ version }}/js/dataTables.select.min.js"
                 stylesheets:
                     - "/datatables-select-{{ version }}/css/select.{{ theme }}.min.css"
+
+            editabletable:
+                version: ""
+                javascripts:
+                    - "/editable-table/mindmup-editabletable.js"
+                stylesheets: []
