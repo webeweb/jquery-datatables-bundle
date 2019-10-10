@@ -3,7 +3,13 @@ CHANGELOG
 
 ### master
 
+> IMPORTANT NOTICE: The following classes has been removed
+> - WBW\Bundle\JQuery\DataTablesBundle\DataTablesInterface
+
+- Improve unit tests
 - Update Configuration
+- Update DataTables to 1.10.20
+- Update DataTables Twig extension (change json_encode options)
 
 ### [3.7.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.7.1) (2019-09-04)
 
