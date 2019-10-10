@@ -12,8 +12,8 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
 
 use Exception;
+use WBW\Bundle\CoreBundle\DependencyInjection\ConfigurationHelper;
 use WBW\Bundle\CoreBundle\Tests\Fixtures\Helper\TestAssetsHelper;
-use WBW\Bundle\JQuery\DataTablesBundle\DataTablesVersionInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
@@ -49,23 +49,29 @@ class AssetsHelperTest extends AbstractTestCase {
      */
     public function testListAssets() {
 
+        // Load the YAML configuration.
+        $config   = ConfigurationHelper::loadYamlConfig(getcwd() . "/DependencyInjection", "assets");
+        $version  = $config["assets"]["wbw.jquery_datatables.asset.jquery_datatables"]["version"];
+        $requires = $config["assets"]["wbw.jquery_datatables.asset.jquery_datatables"]["requires"];
+        $plugins  = $config["assets"]["wbw.jquery_datatables.asset.jquery_datatables"]["plugins"];
+
         $res = TestAssetsHelper::listAssets($this->directoryAssets);
         $this->assertCount(15, $res);
 
-        $this->assertRegexp("/" . preg_quote("datatables-" . DataTablesVersionInterface::DATATABLES_VERSION . ".zip") . "$/", $res[0]);
-        $this->assertRegexp("/" . preg_quote("datatables-autofill-" . DataTablesVersionInterface::DATATABLES_AUTOFILL_VERSION . ".zip") . "$/", $res[1]);
-        $this->assertRegexp("/" . preg_quote("datatables-buttons-" . DataTablesVersionInterface::DATATABLES_BUTTONS_VERSION . ".zip") . "$/", $res[2]);
-        $this->assertRegexp("/" . preg_quote("datatables-colreorder-" . DataTablesVersionInterface::DATATABLES_COLREORDER_VERSION . ".zip") . "$/", $res[3]);
-        $this->assertRegexp("/" . preg_quote("datatables-fixedcolumns-" . DataTablesVersionInterface::DATATABLES_FIXEDCOLUMNS_VERSION . ".zip") . "$/", $res[4]);
-        $this->assertRegexp("/" . preg_quote("datatables-fixedheader-" . DataTablesVersionInterface::DATATABLES_FIXEDHEADER_VERSION . ".zip") . "$/", $res[5]);
-        $this->assertRegexp("/" . preg_quote("datatables-jszip-" . DataTablesVersionInterface::DATATABLES_JSZIP_VERSION . ".zip") . "$/", $res[6]);
-        $this->assertRegexp("/" . preg_quote("datatables-keytable-" . DataTablesVersionInterface::DATATABLES_KEYTABLE_VERSION . ".zip") . "$/", $res[7]);
-        $this->assertRegexp("/" . preg_quote("datatables-pdfmake-" . DataTablesVersionInterface::DATATABLES_PDFMAKE_VERSION . ".zip") . "$/", $res[8]);
-        $this->assertRegexp("/" . preg_quote("datatables-responsive-" . DataTablesVersionInterface::DATATABLES_RESPONSIVE_VERSION . ".zip") . "$/", $res[9]);
-        $this->assertRegexp("/" . preg_quote("datatables-rowgroup-" . DataTablesVersionInterface::DATATABLES_ROWGROUP_VERSION . ".zip") . "$/", $res[10]);
-        $this->assertRegexp("/" . preg_quote("datatables-rowreorder-" . DataTablesVersionInterface::DATATABLES_ROWREORDER_VERSION . ".zip") . "$/", $res[11]);
-        $this->assertRegexp("/" . preg_quote("datatables-scroller-" . DataTablesVersionInterface::DATATABLES_SCROLLER_VERSION . ".zip") . "$/", $res[12]);
-        $this->assertRegexp("/" . preg_quote("datatables-select-" . DataTablesVersionInterface::DATATABLES_SELECT_VERSION . ".zip") . "$/", $res[13]);
+        $this->assertRegexp("/datatables\-" . preg_quote($version) . "\.zip$/", $res[0]);
+        $this->assertRegexp("/datatables\-autofill\-" . preg_quote($plugins["autofill"]["version"]) . "\.zip$/", $res[1]);
+        $this->assertRegexp("/datatables\-buttons\-" . preg_quote($plugins["buttons"]["version"]) . "\.zip$/", $res[2]);
+        $this->assertRegexp("/datatables\-colreorder\-" . preg_quote($plugins["colreorder"]["version"]) . "\.zip$/", $res[3]);
+        $this->assertRegexp("/datatables\-fixedcolumns\-" . preg_quote($plugins["fixedcolumns"]["version"]) . "\.zip$/", $res[4]);
+        $this->assertRegexp("/datatables\-fixedheader\-" . preg_quote($plugins["fixedheader"]["version"]) . "\.zip$/", $res[5]);
+        $this->assertRegexp("/datatables\-jszip\-" . preg_quote($requires["jszip"]["version"]) . "\.zip$/", $res[6]);
+        $this->assertRegexp("/datatables\-keytable\-" . preg_quote($plugins["keytable"]["version"]) . "\.zip$/", $res[7]);
+        $this->assertRegexp("/datatables\-pdfmake\-" . preg_quote($requires["pdfmake"]["version"]) . "\.zip$/", $res[8]);
+        $this->assertRegexp("/datatables\-responsive\-" . preg_quote($plugins["responsive"]["version"]) . "\.zip$/", $res[9]);
+        $this->assertRegexp("/datatables\-rowgroup\-" . preg_quote($plugins["rowgroup"]["version"]) . "\.zip$/", $res[10]);
+        $this->assertRegexp("/datatables\-rowreorder\-" . preg_quote($plugins["rowreorder"]["version"]) . "\.zip$/", $res[11]);
+        $this->assertRegexp("/datatables\-scroller\-" . preg_quote($plugins["scroller"]["version"]) . "\.zip$/", $res[12]);
+        $this->assertRegexp("/datatables\-select\-" . preg_quote($plugins["select"]["version"]) . "\.zip$/", $res[13]);
         $this->assertRegexp("/editable\-table\.zip$/", $res[14]);
     }
 }
