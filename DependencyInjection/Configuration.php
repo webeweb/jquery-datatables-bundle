@@ -55,7 +55,7 @@ class Configuration implements ConfigurationInterface {
                     ->prototype("scalar")
                         ->validate()
                             ->ifNotInArray(array_keys($plugins))
-                            ->thenInvalid("The jQuery DataTables plug-in %s is not supported. Please choose one of " . json_encode($plugins))
+                            ->thenInvalid("The jQuery DataTables plug-in %s is not supported. Please choose one of " . json_encode(array_keys($plugins)))
                         ->end()
                     ->end()
                 ->end()
