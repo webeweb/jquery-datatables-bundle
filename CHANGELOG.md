@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-### master
+### [3.8.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.8.0) (2019-10-14)
 
 > IMPORTANT NOTICE: The following classes has been removed
 > - WBW\Bundle\JQuery\DataTablesBundle\DataTablesInterface
