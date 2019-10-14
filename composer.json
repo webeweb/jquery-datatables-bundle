@@ -25,8 +25,8 @@
         "symfony/framework-bundle": "^2.7|^3.0|^4.0",
         "symfony/translation": "^2.7|^3.0|^4.0",
         "twig/twig": "^1.0||^2.0",
-        "webeweb/core-bundle": "^2.13",
-        "webeweb/bootstrap-bundle": "^3.0",
+        "webeweb/core-bundle": "^2.14",
+        "webeweb/bootstrap-bundle": "^3.4",
         "webeweb/core-library": "^5.0",
         "ext-json": "*"
     },
