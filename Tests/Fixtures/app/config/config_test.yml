@@ -48,6 +48,9 @@ twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
 
+wbw_bootstrap:
+    version: 3
+
 wbw_jquery_datatables:
     theme:  "bootstrap"
     plugins:
