@@ -14,7 +14,10 @@
         <script type="text/javascript" src="{{ asset((_webPath ~ _requires["pdfmake"].javascripts[0]) | replace({"{{ version }}": _requires["pdfmake"].version})) }}"></script>
         <script type="text/javascript" src="{{ asset((_webPath ~ _requires["pdfmake"].javascripts[1]) | replace({"{{ version }}": _requires["pdfmake"].version})) }}"></script>
     {% endif %}
-    {% set _replaces = {"{{ version }}": _plugins[_appPlugin].version, "{{ theme }}": _appTheme} %}
+    {% set _replaces = {
+        "{{ version }}": _plugins[_appPlugin].version,
+        "{{ theme }}"  : _appTheme,
+    } %}
     {% for _javascript in _plugins[_appPlugin].javascripts %}
         {% set _path = (_webPath ~ _javascript) | replace(_replaces) %}
         <script type="text/javascript" src="{{ asset(_path) }}"></script>
