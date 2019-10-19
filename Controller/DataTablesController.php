@@ -247,7 +247,7 @@ class DataTablesController extends AbstractController {
     }
 
     /**
-     * Show an existing entity.
+     * Serialize an existing entity.
      *
      * @param string $name The provider name.
      * @param string $id The entity id.
@@ -255,7 +255,7 @@ class DataTablesController extends AbstractController {
      * @throws BadDataTablesRepositoryException Throws a bad repository exception.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
-    public function showAction($name, $id) {
+    public function serializeAction($name, $id) {
 
         $dtProvider = $this->getDataTablesProvider($name);
 
@@ -274,5 +274,18 @@ class DataTablesController extends AbstractController {
         $serializer = $this->getDataTablesSerializer();
 
         return new Response($serializer->serialize($entity, "json"), 200, ["Content-type" => "application/json"]);
+    }
+
+    /**
+     * Show an existing entity.
+     *
+     * @param string $name The provider name.
+     * @param string $id The entity id.
+     * @return Response Returns the response.
+     * @throws BadDataTablesRepositoryException Throws a bad repository exception.
+     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
+     */
+    public function showAction($name, $id) {
+        return $this->serializeAction($name, $id);
     }
 }

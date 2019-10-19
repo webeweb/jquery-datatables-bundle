@@ -46,7 +46,7 @@ Provides :
 - a "wbw_jquery_datatables_index" route to display a DataTable (main and columns searches is also provide with a generic implementation)
 - a "wbw_jquery_datatables_options" route to retrieve with an XML HTTP request the options of a DataTable
 - a "wbw_jquery_datatables_render" route to retrieve with an XML HTTP request the HTML rendering of a DataTable
-- a "wbw_jquery_datatables_show" route to retrieve with an XML HTTP request a managed entity by a DataTable into JSON format
+- a "wbw_jquery_datatables_serialize" route to retrieve with an XML HTTP request a managed entity by a DataTable into JSON format
 
 ---
 

@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Replace the route wbw_jquery_datatables_show by wbw_jquery_datatables_serialize
+
 ### [3.8.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.8.0) (2019-10-14)
 
 > IMPORTANT NOTICE: The following classes has been removed

@@ -736,6 +736,53 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
+     * Tests the serializeAction() method.
+     *
+     * @return void
+     */
+    public function testSerializeAction() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request.
+        $client->request("GET", "/datatables/employee/serialize/55");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
+
+        // Check the JSON response.
+        $res = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertEquals("Shad decker", $res["name"]);
+        $this->assertEquals("Regional Director", $res["position"]);
+        $this->assertEquals("Edinburgh", $res["office"]);
+        $this->assertEquals(51, $res["age"]);
+        $this->assertEquals(1226534400, $res["startDate"]["timestamp"]);
+        $this->assertEquals(183000, $res["salary"]);
+    }
+
+    /**
+     * Tests the serializeAction() method.
+     *
+     * @return void
+     */
+    public function testSerializeActionWithStatus404() {
+
+        // Create a client.
+        $client = static::createClient();
+
+        // Make a GET request.
+        $client->request("GET", "/datatables/employee/serialize/49");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
+
+        // Check the JSON response.
+        $res = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertCount(0, $res);
+    }
+
+    /**
      * Tests the showAction() method.
      *
      * @return void
