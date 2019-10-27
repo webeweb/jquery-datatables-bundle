@@ -17,7 +17,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Normalizer\JsonSerializableNormalizer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use WBW\Bundle\BootstrapBundle\Controller\AbstractController as BaseController;
@@ -271,16 +270,6 @@ abstract class AbstractController extends BaseController {
     }
 
     /**
-     * Get a notification.
-     *
-     * @param string $notificationId The notification id.
-     * @return string Returns the notification.
-     */
-    protected function getDataTablesNotification($notificationId) {
-        return $this->getTranslator()->trans($notificationId, [], "WBWJQueryDataTablesBundle");
-    }
-
-    /**
      * Get the provider.
      *
      * @param string $name The provider name.
@@ -344,7 +333,7 @@ abstract class AbstractController extends BaseController {
      * @return Serializer Returns the serializer.
      */
     protected function getDataTablesSerializer() {
-        return new Serializer([new JsonSerializableNormalizer(), new ObjectNormalizer()], [new JsonEncoder()]);
+        return new Serializer([new ObjectNormalizer()], [new JsonEncoder()]);
     }
 
     /**
@@ -444,9 +433,11 @@ abstract class AbstractController extends BaseController {
      */
     protected function prepareActionResponse($status, $notificationId) {
 
+        $notify = $this->getTranslator()->trans($notificationId, [], "WBWJQueryDataTablesBundle");
+
         $response = new ActionResponse();
         $response->setStatus($status);
-        $response->setNotify($this->getDataTablesNotification($notificationId));
+        $response->setNotify($notify);
 
         return $response;
     }

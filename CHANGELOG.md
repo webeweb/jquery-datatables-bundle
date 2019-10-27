@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-### master
+### [3.9.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.9.0) (2019-10-27)
 
 - Add Json serialize support into wbw_jquery_datatables_serialize route
 - Replace the route wbw_jquery_datatables_show by wbw_jquery_datatables_serialize
