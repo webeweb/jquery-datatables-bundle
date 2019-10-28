@@ -146,7 +146,6 @@ class TestFixtures {
      */
     public static function getPOSTData() {
 
-        // Initialize.
         $fixtures = [];
 
         // Name
@@ -220,7 +219,6 @@ class TestFixtures {
         // Start
         $fixtures["start"] = "0";
 
-        // Return
         return $fixtures;
     }
 
