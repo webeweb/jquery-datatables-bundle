@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception;
 
+use Exception;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesEditorException;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 
@@ -20,7 +21,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception
  */
-class BaDataTablesEditorException extends AbstractTestCase {
+class BadDataTablesEditorExceptionTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.
@@ -29,7 +30,7 @@ class BaDataTablesEditorException extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $obj = new BadDataTablesEditorException("exception");
+        $obj = new BadDataTablesEditorException(new Exception());
 
         $this->assertEquals("The DataTables editor \"Exception\" must implement DataTablesEditorInterface", $obj->getMessage());
     }
