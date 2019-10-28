@@ -292,8 +292,9 @@ class DataTablesController extends AbstractController {
     public function showAction($name, $id) {
 
         $format = "The %s::showAction() is deprecated: use %s::serializeAction() instead";
+        $myself = get_class($this);
 
-        $this->getLogger()->warning(sprintf($format, get_class($this), get_class($this)));
+        $this->getLogger()->warning(sprintf($format, $myself, $myself));
 
         return $this->serializeAction($name, $id);
     }
