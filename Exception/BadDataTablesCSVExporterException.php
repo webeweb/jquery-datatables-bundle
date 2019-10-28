@@ -11,8 +11,6 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Exception;
 
-use WBW\Library\Core\Argument\ObjectHelper;
-
 /**
  * Bad DataTables CSV exporter exception.
  *
@@ -24,13 +22,13 @@ class BadDataTablesCSVExporterException extends AbstractDataTablesException {
     /**
      * Constructor.
      *
-     * @param mixed $object The exporter.
+     * @param object $object The exporter.
      */
     public function __construct($object) {
         $message = "The DataTables CSV exporter is null";
         if (null !== $object) {
             $format  = "The DataTables CSV exporter \"%s\" must implement DataTablesCSVExporterInterface";
-            $message = sprintf($format, ObjectHelper::getName($object));
+            $message = sprintf($format, get_class($object));
         }
         parent::__construct($message);
     }

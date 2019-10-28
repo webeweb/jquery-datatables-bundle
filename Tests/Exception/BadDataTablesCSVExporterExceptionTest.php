@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception;
 
+use Exception;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 
@@ -20,7 +21,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception
  */
-class BaDataTablesCSVExporterException extends AbstractTestCase {
+class BadDataTablesCSVExporterExceptionTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.
@@ -29,7 +30,7 @@ class BaDataTablesCSVExporterException extends AbstractTestCase {
      */
     public function testConstruct() {
 
-        $obj = new BadDataTablesCSVExporterException("Exception");
+        $obj = new BadDataTablesCSVExporterException(new Exception());
 
         $this->assertEquals("The DataTables CSV exporter \"Exception\" must implement DataTablesCSVExporterInterface", $obj->getMessage());
     }
