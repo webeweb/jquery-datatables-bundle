@@ -324,6 +324,7 @@ abstract class AbstractController extends BaseController {
 
         $this->logInfo(sprintf("DataTables controller found a repository with name \"%s\"", $dtProvider->getName()), $context);
 
+        /** @var DataTablesRepositoryInterface $repository */
         return $repository;
     }
 
