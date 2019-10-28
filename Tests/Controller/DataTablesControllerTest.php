@@ -38,10 +38,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testDeleteAction() {
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a GET request.
         $client->request("GET", "/datatables/employee/delete/49");
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
@@ -58,10 +56,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testDeleteActionWithNotify404() {
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a GET request.
         $client->request("GET", "/datatables/employee/delete/49");
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
@@ -78,10 +74,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testDeleteActionWithStatus200() {
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a GET request with XML HTTP request.
         $client->request("GET", "/datatables/employee/delete/48", [], [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
@@ -103,10 +97,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testDeleteActionWithStatus404() {
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a GET request with XML HTTP request.
         $client->request("GET", "/datatables/employee/delete/49", [], [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
@@ -128,10 +120,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testEditAction() {
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a POST request.
         $client->request("POST", "/datatables/employee/edit/55/name", ["value" => "Shad decker"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
@@ -153,10 +143,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testEditActionWithBadDatatablesColumnException() {
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a GET request.
         $client->request("GET", "/datatables/employee/edit/55/data/value");
         $this->assertEquals(500, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
@@ -171,10 +159,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testEditActionWithBadDatatablesEditorException() {
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a GET request.
         $client->request("GET", "/datatables/office/edit/1/name/value");
         $this->assertEquals(500, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
@@ -189,10 +175,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testEditActionWithStatus404() {
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a GET request.
         $client->request("GET", "/datatables/employee/edit/49/name/value");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
@@ -214,10 +198,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testEditActionWithStatus500() {
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a GET request.
         $client->request("GET", "/datatables/employee/edit/55/age/value");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
@@ -239,10 +221,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testExportAction() {
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a GET request.
         $client->request("GET", "/datatables/employee/export");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/csv; charset=utf-8", $client->getResponse()->headers->get("Content-Type"));
@@ -256,10 +236,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testExportActionWithBadDataTablesRepository() {
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a GET request.
         $client->request("GET", "/datatables/office/export");
         $this->assertEquals(500, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
@@ -274,10 +252,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testIndexAction() {
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a GET request.
         $client->request("GET", "/datatables/employee/index");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
@@ -290,10 +266,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testIndexActionWithBadDataTablesRepository() {
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a GET request.
         $client->request("GET", "/datatables/office/index", [], [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(500, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
@@ -308,16 +282,12 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testIndexActionWithLength() {
 
-        // Get the POST data.
         $parameters = TestFixtures::getPOSTData();
 
-        // Change the length.
         $parameters["length"] = "20";
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a POST request with XML HTTP request.
         $client->request("POST", "/datatables/employee/index", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
@@ -361,16 +331,13 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testIndexActionWithNegativeLength() {
 
-        // Get the POST data.
         $parameters = TestFixtures::getPOSTData();
 
-        // Change the length.
         $parameters["length"] = "-1";
 
         // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a POST request with XML HTTP request.
         $client->request("POST", "/datatables/employee/index", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
@@ -411,16 +378,12 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testIndexActionWithOrder() {
 
-        // Get the POST data.
         $parameters = TestFixtures::getPOSTData();
 
-        // Change the column order.
         $parameters["order"][0]["dir"] = "desc";
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a POST request with XML HTTP request.
         $client->request("POST", "/datatables/employee/index", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
@@ -453,17 +416,13 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testIndexActionWithOrderOnNoOrderableColumn() {
 
-        // Get the POST data.
         $parameters = TestFixtures::getPOSTData();
 
-        // Change the column order.
         $parameters["order"][6]["column"] = "6";
         $parameters["order"][6]["dir"]    = "desc";
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a POST request with XML HTTP request.
         $client->request("POST", "/datatables/employee/index", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
@@ -496,13 +455,10 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testIndexActionWithParameters() {
 
-        // Get the POST data.
         $parameters = TestFixtures::getPOSTData();
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a POST request with XML HTTP request.
         $client->request("POST", "/datatables/employee/index", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
@@ -535,16 +491,12 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testIndexActionWithSearch() {
 
-        // Get the POST data.
         $parameters = TestFixtures::getPOSTData();
 
-        // Change the search.
         $parameters["search"]["value"] = "New York";
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a POST request with XML HTTP request.
         $client->request("POST", "/datatables/employee/index", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
@@ -577,17 +529,13 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testIndexActionWithSearchColumn() {
 
-        // Get the POST data.
         $parameters = TestFixtures::getPOSTData();
 
-        // Change the search.
         $parameters["columns"][0]["search"]["value"] = "Brielle";
         $parameters["columns"][2]["search"]["value"] = "New York";
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a POST request with XML HTTP request.
         $client->request("POST", "/datatables/employee/index", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
@@ -611,16 +559,12 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testIndexActionWithSearchColumnOnNoSearchableColumn() {
 
-        // Get the POST data.
         $parameters = TestFixtures::getPOSTData();
 
-        // Change the column order.
         $parameters["column"][6]["search"]["value"] = "search";
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a POST request with XML HTTP request.
         $client->request("POST", "/datatables/employee/index", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
@@ -653,16 +597,12 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testIndexActionWithStart() {
 
-        // Get the POST data.
         $parameters = TestFixtures::getPOSTData();
 
-        // Change the start.
         $parameters["start"] = "50";
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a POST request with XML HTTP request.
         $client->request("POST", "/datatables/employee/index", $parameters, [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
@@ -686,10 +626,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testOptionsAction() {
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a GET request.
         $client->request("GET", "/datatables/employee/options");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
@@ -713,10 +651,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testRenderAction() {
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a GET request.
         $client->request("GET", "/datatables/employee/render");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
@@ -742,10 +678,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testSerializeAction() {
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a GET request.
         $client->request("GET", "/datatables/employee/serialize/55");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
@@ -768,10 +702,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testSerializeActionWithStatus404() {
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a GET request.
         $client->request("GET", "/datatables/employee/serialize/49");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
@@ -789,10 +721,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testShowAction() {
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a GET request.
         $client->request("GET", "/datatables/employee/show/55");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
@@ -815,10 +745,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testShowActionWithStatus404() {
 
-        // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
-        // Make a GET request.
         $client->request("GET", "/datatables/employee/show/49");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
