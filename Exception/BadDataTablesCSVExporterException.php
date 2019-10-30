@@ -22,7 +22,7 @@ class BadDataTablesCSVExporterException extends AbstractDataTablesException {
     /**
      * Constructor.
      *
-     * @param object $object The exporter.
+     * @param object|null $object The exporter.
      */
     public function __construct($object) {
         $message = "The DataTables CSV exporter is null";
