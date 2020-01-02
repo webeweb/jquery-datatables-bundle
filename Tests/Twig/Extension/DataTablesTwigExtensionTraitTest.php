@@ -11,10 +11,10 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Twig\Extension;
 
+use WBW\Bundle\CoreBundle\Tests\AbstractTestCase;
 use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Twig\Extension\TestDataTablesTwigExtensionTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
-use WBW\Bundle\SyntaxHighlighterBundle\Tests\AbstractTestCase;
 
 /**
  * DataTables Twig extension trait test.
