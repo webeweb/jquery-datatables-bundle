@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.10.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.10.0) (2020-01-06)
+
+- Update dependencies
+
 ### [3.9.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.9.0) (2019-10-27)
 
 - Add Json serialize support into wbw_jquery_datatables_serialize route
