@@ -20,6 +20,7 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use WBW\Bundle\BootstrapBundle\Controller\AbstractController as BaseController;
+use WBW\Bundle\CoreBundle\Model\ActionResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Event\DataTablesEvent;
@@ -37,8 +38,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesRouterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Repository\DataTablesRepositoryInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesEvents;
-use WBW\Library\Core\Database\PaginateHelper;
-use WBW\Library\Core\Model\Response\ActionResponse;
+use WBW\Library\Core\Database\Helper\PaginateHelper;
 
 /**
  * Abstract controller.
@@ -343,7 +343,7 @@ abstract class AbstractController extends BaseController {
      * @param DataTablesProviderInterface $dtProvider The provider.
      * @return string Returns the URL.
      */
-    protected function getDataTablesURL(DataTablesProviderInterface $dtProvider) {
+    protected function getDataTablesUrl(DataTablesProviderInterface $dtProvider) {
 
         $context = [
             "_controller" => get_class($this),
@@ -373,7 +373,7 @@ abstract class AbstractController extends BaseController {
      */
     protected function getDataTablesWrapper(DataTablesProviderInterface $dtProvider) {
 
-        $dtWrapper = DataTablesFactory::newWrapper($this->getDataTablesURL($dtProvider), $dtProvider, $this->getKernelEventListener()->getUser());
+        $dtWrapper = DataTablesFactory::newWrapper($this->getDataTablesUrl($dtProvider), $dtProvider, $this->getKernelEventListener()->getUser());
 
         $context = [
             "_controller" => get_class($this),

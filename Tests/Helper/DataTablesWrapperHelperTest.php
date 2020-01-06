@@ -27,19 +27,19 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 class DataTablesWrapperHelperTest extends AbstractTestCase {
 
     /**
-     * Tests the getLanguageURL() method.
+     * Tests the getLanguageUrl() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testGetLanguageURL() {
+    public function testGetLanguageUrl() {
 
         $res = "/bundles/wbwjquerydatatables/datatables-i18n/French.json";
-        $this->assertEquals($res, DataTablesWrapperHelper::getLanguageURL("French"));
+        $this->assertEquals($res, DataTablesWrapperHelper::getLanguageUrl("French"));
     }
 
     /**
-     * Tests the getLanguageURL() method.
+     * Tests the getLanguageUrl() method.
      *
      * @return void
      */
@@ -47,7 +47,7 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
 
         try {
 
-            DataTablesWrapperHelper::getLanguageURL("exception");
+            DataTablesWrapperHelper::getLanguageUrl("exception");
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(FileNotFoundException::class, $ex);

@@ -30,8 +30,8 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearchInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Library\Core\Argument\BooleanHelper;
-use WBW\Library\Core\Network\HTTP\HTTPInterface;
+use WBW\Library\Core\Argument\Helper\BooleanHelper;
+use WBW\Library\Core\Network\HTTP\HttpInterface;
 
 /**
  * DataTables factory.
@@ -274,7 +274,7 @@ class DataTablesFactory {
         static::copyParameterBag($request->query, $dtRequest->getQuery());
         static::copyParameterBag($request->request, $dtRequest->getRequest());
 
-        if (HTTPInterface::HTTP_METHOD_GET === $request->getMethod()) {
+        if (HttpInterface::HTTP_METHOD_GET === $request->getMethod()) {
             $parameterBag = $request->query;
         } else {
             $parameterBag = $request->request;

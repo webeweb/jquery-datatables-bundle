@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
-use WBW\Library\Core\Network\HTTP\HTTPInterface;
+use WBW\Library\Core\Network\HTTP\HttpInterface;
 
 /**
  * DataTables request.
@@ -20,7 +20,7 @@ use WBW\Library\Core\Network\HTTP\HTTPInterface;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\API
  */
-class DataTablesRequest implements DataTablesRequestInterface, HTTPInterface {
+class DataTablesRequest implements DataTablesRequestInterface, HttpInterface {
 
     use DataTablesWrapperTrait {
         setWrapper as public;

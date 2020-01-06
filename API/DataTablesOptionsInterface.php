@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
-use WBW\Library\Core\Exception\Argument\StringArgumentException;
+use WBW\Library\Core\Argument\Exception\StringArgumentException;
 
 /**
  * DataTables options interface.

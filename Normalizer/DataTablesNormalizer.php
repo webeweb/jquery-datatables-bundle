@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Normalizer;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
-use WBW\Library\Core\Argument\ArrayHelper;
+use WBW\Library\Core\Argument\Helper\ArrayHelper;
 
 /**
  * DataTables normalizer.

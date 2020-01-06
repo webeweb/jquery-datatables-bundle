@@ -19,8 +19,8 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee;
-use WBW\Library\Core\Exception\Argument\IntegerArgumentException;
-use WBW\Library\Core\Network\HTTP\HTTPInterface;
+use WBW\Library\Core\Argument\Exception\IntegerArgumentException;
+use WBW\Library\Core\Network\HTTP\HttpInterface;
 
 /**
  * Employee DataTables provider.
@@ -141,7 +141,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
      * {@inheritDoc}
      */
     public function getMethod() {
-        return HTTPInterface::HTTP_METHOD_POST;
+        return HttpInterface::HTTP_METHOD_POST;
     }
 
     /**

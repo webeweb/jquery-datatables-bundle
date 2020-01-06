@@ -15,8 +15,6 @@ use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Normalizer\DataTablesNormalizer;
 use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle;
-use WBW\Library\Core\Argument\ObjectHelper;
-use WBW\Library\Core\Argument\StringHelper;
 
 /**
  * DataTables wrapper helper.
@@ -33,10 +31,10 @@ class DataTablesWrapperHelper {
      * @return string Returns the language URL.
      * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
      */
-    public static function getLanguageURL($language) {
+    public static function getLanguageUrl($language) {
 
         // Initialize the directory.
-        $dir = ObjectHelper::getDirectory(WBWJQueryDataTablesBundle::class);
+        $dir = (new WBWJQueryDataTablesBundle())->getPath();
         $dir .= "/Resources/public/datatables-i18n/%language%.json";
 
         // Initialize the URI.

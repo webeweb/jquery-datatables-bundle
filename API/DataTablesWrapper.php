@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
 use WBW\Bundle\CoreBundle\Model\UserTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Library\Core\Network\HTTP\HTTPInterface;
+use WBW\Library\Core\Network\HTTP\HttpInterface;
 
 /**
  * DataTables wrapper.
@@ -21,7 +21,7 @@ use WBW\Library\Core\Network\HTTP\HTTPInterface;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\API
  */
-class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
+class DataTablesWrapper implements DataTablesWrapperInterface, HttpInterface {
 
     use UserTrait {
         setUser as public;
@@ -103,7 +103,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HTTPInterface {
     public function __construct() {
         $this->setColumns([]);
         $this->setMapping(new DataTablesMapping());
-        $this->setMethod(HTTPInterface::HTTP_METHOD_POST);
+        $this->setMethod(HttpInterface::HTTP_METHOD_POST);
         $this->setProcessing(true);
         $this->setServerSide(true);
     }

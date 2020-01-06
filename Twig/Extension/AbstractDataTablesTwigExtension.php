@@ -21,7 +21,6 @@ use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtensionTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
-use WBW\Library\Core\Argument\StringHelper;
 
 /**
  * Abstract DataTables Twig extension.
@@ -107,7 +106,7 @@ EOT;
         $options = DataTablesWrapperHelper::getOptions($dtWrapper);
 
         if (null !== $language) {
-            $options["language"] = ["url" => DataTablesWrapperHelper::getLanguageURL($language)];
+            $options["language"] = ["url" => DataTablesWrapperHelper::getLanguageUrl($language)];
         }
 
         $var = DataTablesWrapperHelper::getName($dtWrapper);
@@ -131,7 +130,7 @@ EOT;
     protected function jQueryDataTablesStandalone($selector, $language, array $options) {
 
         if (null !== $language) {
-            $options["language"] = ["url" => DataTablesWrapperHelper::getLanguageURL($language)];
+            $options["language"] = ["url" => DataTablesWrapperHelper::getLanguageUrl($language)];
         }
 
         $searches = ["%selector%", "%options%"];

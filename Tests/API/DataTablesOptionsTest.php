@@ -12,9 +12,9 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use Exception;
+use InvalidArgumentException;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 
 /**
  * DataTables options test.
@@ -52,7 +52,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
             $obj->addOption(1, "value");
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(IllegalArgumentException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The argument \"1\" is not a string", $ex->getMessage());
         }
     }
@@ -144,7 +144,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
             $obj->setOption(1, "value");
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(IllegalArgumentException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The argument \"1\" is not a string", $ex->getMessage());
         }
     }

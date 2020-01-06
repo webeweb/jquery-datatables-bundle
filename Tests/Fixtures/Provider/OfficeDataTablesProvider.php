@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesRouterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Office;
-use WBW\Library\Core\Network\HTTP\HTTPInterface;
+use WBW\Library\Core\Network\HTTP\HttpInterface;
 
 /**
  * Office DataTables provider.
@@ -64,7 +64,7 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTable
      * {@inheritDoc}
      */
     public function getMethod() {
-        return HTTPInterface::HTTP_METHOD_POST;
+        return HttpInterface::HTTP_METHOD_POST;
     }
 
     /**
