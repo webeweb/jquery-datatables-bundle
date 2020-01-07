@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension;
 
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 use Twig\Environment;
-use WBW\Bundle\CoreBundle\Model\EnvironmentTrait;
+use WBW\Bundle\CoreBundle\Model\Attribute\StringEnvironmentTrait;
 use WBW\Bundle\CoreBundle\Service\TwigEnvironmentTrait;
 use WBW\Bundle\CoreBundle\Twig\Extension\AbstractTwigExtension;
 use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtension;
@@ -31,7 +31,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
  */
 abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
 
-    use EnvironmentTrait;
+    use StringEnvironmentTrait;
     use RendererTwigExtensionTrait;
     use TwigEnvironmentTrait;
 
