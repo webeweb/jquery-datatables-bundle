@@ -37,9 +37,11 @@ class DataTablesManager extends AbstractManager {
      * {@inheritDoc}
      */
     public function addProvider(ProviderInterface $provider) {
+
         if (true === $this->contains($provider)) {
             throw new AlreadyRegisteredDataTablesProviderException($provider->getName());
         }
+
         return parent::addProvider($provider);
     }
 
@@ -47,14 +49,17 @@ class DataTablesManager extends AbstractManager {
      * {@inheritDoc}
      */
     public function contains(ProviderInterface $provider) {
+
         if (false === ($provider instanceof DataTablesProviderInterface)) {
             throw new InvalidArgumentException("The provider must implements DataTablesProviderInterface");
         }
+
         foreach ($this->getProviders() as $current) {
             if ($provider->getName() === $current->getName()) {
                 return true;
             }
         }
+
         return false;
     }
 
@@ -66,11 +71,14 @@ class DataTablesManager extends AbstractManager {
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
     public function getProvider($name) {
+
+        /** @var DataTablesProviderInterface $current */
         foreach ($this->getProviders() as $current) {
             if ($name === $current->getName()) {
                 return $current;
             }
         }
+
         throw new UnregisteredDataTablesProviderException($name);
     }
 }
