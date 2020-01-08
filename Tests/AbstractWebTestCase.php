@@ -105,14 +105,7 @@ abstract class AbstractWebTestCase extends WebTestCase {
     public static function setUpBeforeClass() {
         parent::setUpBeforeClass();
 
-        /** @var EntityManagerInterface $em */
-        $em = static::$kernel->getContainer()->get("doctrine.orm.entity_manager");
-
-        $entities = $em->getMetadataFactory()->getAllMetadata();
-
-        $schemaTool = new SchemaTool($em);
-        $schemaTool->dropDatabase();
-        $schemaTool->createSchema($entities);
+        parent::setUpSchemaTool();
     }
 
     /**
