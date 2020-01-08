@@ -287,7 +287,7 @@ class DataTablesController extends AbstractController {
      * @return Response Returns the response.
      * @throws BadDataTablesRepositoryException Throws a bad repository exception.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
-     * @deprecated since 3.9.0 use {WBW\Bundle\JQuery\DataTablesBundle\Controller::serializeAction()} instead.
+     * @deprecated since 3.9.0 use {@see WBW\Bundle\JQuery\DataTablesBundle\Controller\DataTablesController::serializeAction()} instead.
      */
     public function showAction($name, $id) {
 

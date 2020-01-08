@@ -195,7 +195,7 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
      * @throws InvalidParameterException Throws an invalid parameter exception if a parameter is invalid.
      * @throws RouteNotFoundException Throws a route not found exception if the route doesn't exist.
      * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory exception is missing.
-     * @deprecated since 3.4.0 use "WBW\Bundle\JQuery\DataTablesBundle\Provider\AbstractDataTablesProvider::renderRowButtons()" instead
+     * @deprecated since 3.4.0 use {@see WBW\Bundle\JQuery\DataTablesBundle\Provider\AbstractDataTablesProvider::renderRowButtons()} instead
      */
     protected function renderButtons($entity, $editRoute, $deleteRoute = null, $enableDelete = true) {
         if (null === $deleteRoute && true === $enableDelete) {

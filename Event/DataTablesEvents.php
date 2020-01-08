@@ -18,7 +18,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesEvents;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Event
- * @deprecated since 3.4.0 use "WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesEvents" instead.
+ * @deprecated since 3.4.0 use {@see WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesEvents} instead.
  */
 class DataTablesEvents extends WBWJQueryDataTablesEvents {
 
