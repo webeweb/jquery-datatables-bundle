@@ -36,5 +36,5 @@ wbw_jquery_datatables_serialize:
 
 wbw_jquery_datatables_show:
     path:     "/datatables/{name}/show/{id}"
-    defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:show" }
+    defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:serialize" }
     methods:  ["GET"]
