@@ -124,6 +124,7 @@ class DataTablesController extends AbstractController {
     /**
      * Export all entities.
      *
+     * @param Request $request The request.
      * @param string $name The provider name.
      * @return Response Returns the response.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.

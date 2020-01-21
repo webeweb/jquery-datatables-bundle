@@ -32,6 +32,7 @@ class DataTablesEvent extends AbstractEvent {
      * Constructor.
      *
      * @param string $eventName The name.
+     * @param object[] $entities The entities.
      */
     public function __construct($eventName, array $entities) {
         parent::__construct($eventName);
