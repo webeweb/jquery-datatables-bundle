@@ -130,7 +130,7 @@ abstract class AbstractController extends BaseController {
 
                 fputcsv($stream, DataTablesExportHelper::convert($dtExporter->exportRow($row[0]), $windows), ";");
 
-                $em->detach($row[0]); // Detach the entity to avoid memory consumption.
+                $em->clear($row[0]); // Detach the entity to avoid memory consumption.
 
                 $this->dispatchDataTablesEvent(WBWJQueryDataTablesEvents::DATATABLES_POST_EXPORT, [$row[0]]);
             }
@@ -255,7 +255,7 @@ abstract class AbstractController extends BaseController {
 
         $context["_entity"] = get_class($entity);
 
-        $this->logInfo(sprintf("DataTables controller found an entity with id [%s]", get_class($repository), $id));
+        $this->logInfo(sprintf("DataTables controller found an entity with id [%s]", $id));
 
         return $entity;
     }
