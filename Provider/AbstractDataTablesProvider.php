@@ -20,12 +20,12 @@ use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Translation\TranslatorInterface;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtension;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtensionTrait;
-use WBW\Bundle\CoreBundle\Renderer\DateTimeRenderer;
 use WBW\Bundle\CoreBundle\Service\RouterTrait;
 use WBW\Bundle\CoreBundle\Service\TranslatorTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Entity\DataTablesEntityInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesEntityHelper;
+use WBW\Library\Core\Renderer\DateTimeRenderer;
 
 /**
  * Abstract DataTables provider.
