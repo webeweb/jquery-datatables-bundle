@@ -130,10 +130,10 @@ abstract class AbstractController extends BaseController {
 
                 fputcsv($stream, DataTablesExportHelper::convert($dtExporter->exportRow($row[0]), $windows), ";");
 
-                $em->clear($row[0]); // Detach the entity to avoid memory consumption.
-
                 $this->dispatchDataTablesEvent(WBWJQueryDataTablesEvents::DATATABLES_POST_EXPORT, [$row[0]]);
             }
+
+            $em->clear(); // Detach the entity to avoid memory consumption.
         }
 
         fclose($stream);
