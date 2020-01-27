@@ -39,6 +39,8 @@ class DataTablesManager extends AbstractManager {
     public function addProvider(ProviderInterface $provider) {
 
         if (true === $this->contains($provider)) {
+
+            /** @var DataTablesProviderInterface $provider */
             throw new AlreadyRegisteredDataTablesProviderException($provider->getName());
         }
 
@@ -54,6 +56,7 @@ class DataTablesManager extends AbstractManager {
             throw new InvalidArgumentException("The provider must implements DataTablesProviderInterface");
         }
 
+        /** @var DataTablesProviderInterface $current */
         foreach ($this->getProviders() as $current) {
             if ($provider->getName() === $current->getName()) {
                 return true;
