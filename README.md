@@ -48,14 +48,13 @@ Provides :
 - a "wbw_jquery_datatables_render" route to retrieve with an XML HTTP request the HTML rendering of a DataTable
 - a "wbw_jquery_datatables_serialize" route to retrieve with an XML HTTP request a managed entity by a DataTable into JSON format
 
----
+If you like this package, pay me a beer (or a coffee)
+[![paypal.me](https://img.shields.io/badge/paypal.me-webeweb-0070ba.svg?style=flat-square&logo=paypal)](https://www.paypal.me/webeweb)
 
 ## Compatibility
 
 [![PHP](https://img.shields.io/packagist/php-v/webeweb/jquery-datatables-bundle.svg?style=flat-square)](http://php.net)
 [![Symfony](https://img.shields.io/badge/symfony-%5E2.7%7C%5E3.0%7C%5E4.0-brightness.svg?style=flat-square)](https://symfony.com)
-
----
 
 ## Installation
 
@@ -104,13 +103,9 @@ wbw_jquery_datatables:
     resource: "@WBWJQueryDataTablesBundle/Resources/config/routing.yml"
 ```
 
----
-
 ## Usage
 
 Read the [documentation](Resources/doc/index.md).
-
----
 
 ## Testing
 
@@ -130,9 +125,12 @@ Once all required libraries are installed then do:
 $ vendor/bin/phpunit
 ```
 
----
-
 ## License
 
 `jquery-datatables-bundle` is released under the MIT License. See the bundled
 [LICENSE](LICENSE) file for details.
+
+## Donate
+
+If you like this work, please consider donating at
+[![paypal.me](https://img.shields.io/badge/paypal.me-webeweb-0070ba.svg?style=flat-square&logo=paypal)](https://www.paypal.me/webeweb)
