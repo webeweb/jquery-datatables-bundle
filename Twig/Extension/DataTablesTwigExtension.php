@@ -55,14 +55,17 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
             new TwigFunction("jQueryDataTables", [$this, "jQueryDataTablesFunction"], ["is_safe" => ["html"]]),
             new TwigFunction("jQueryDT", [$this, "jQueryDataTablesFunction"], ["is_safe" => ["html"]]),
 
-            new TwigFunction("renderDataTables", [$this, "renderDataTablesFunction"], ["is_safe" => ["html"]]),
-            new TwigFunction("renderDT", [$this, "renderDataTablesFunction"], ["is_safe" => ["html"]]),
+            new TwigFunction("jQueryDataTablesName", [$this, "jQueryDataTablesNameFunction"], ["is_safe" => ["html"]]),
+            new TwigFunction("jQueryDTName", [$this, "jQueryDataTablesNameFunction"], ["is_safe" => ["html"]]),
+
+            new TwigFunction("jQueryDataTablesOptions", [$this, "jQueryDataTablesOptionsFunction"], ["is_safe" => ["html"]]),
+            new TwigFunction("jQueryDTOptions", [$this, "jQueryDataTablesOptionsFunction"], ["is_safe" => ["html"]]),
 
             new TwigFunction("jQueryDataTablesStandalone", [$this, "jQueryDataTablesStandaloneFunction"], ["is_safe" => ["html"]]),
             new TwigFunction("jQueryDTStandalone", [$this, "jQueryDataTablesStandaloneFunction"], ["is_safe" => ["html"]]),
 
-            new TwigFunction("jQueryDataTablesName", [$this, "jQueryDataTablesNameFunction"], ["is_safe" => ["html"]]),
-            new TwigFunction("jQueryDTName", [$this, "jQueryDataTablesNameFunction"], ["is_safe" => ["html"]]),
+            new TwigFunction("renderDataTables", [$this, "renderDataTablesFunction"], ["is_safe" => ["html"]]),
+            new TwigFunction("renderDT", [$this, "renderDataTablesFunction"], ["is_safe" => ["html"]]),
         ];
     }
 
@@ -86,6 +89,16 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      */
     public function jQueryDataTablesNameFunction(DataTablesWrapperInterface $dtWrapper) {
         return DataTablesWrapperHelper::getName($dtWrapper);
+    }
+
+    /**
+     * Displays a jQuery DataTables options.
+     *
+     * @param DataTablesWrapperInterface $dtWrapper The wrapper.
+     * @return array Returns the jQuery DataTables options.
+     */
+    public function jQueryDataTablesOptionsFunction(DataTablesWrapperInterface $dtWrapper) {
+        return DataTablesWrapperHelper::getOptions($dtWrapper);
     }
 
     /**

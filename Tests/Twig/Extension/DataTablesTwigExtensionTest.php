@@ -91,7 +91,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $res = $obj->getFunctions();
-        $this->assertCount(8, $res);
+        $this->assertCount(10, $res);
 
         $this->assertInstanceOf(TwigFunction::class, $res[0]);
         $this->assertEquals("jQueryDataTables", $res[0]->getName());
@@ -104,34 +104,44 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         $this->assertEquals(["html"], $res[1]->getSafe(new Node()));
 
         $this->assertInstanceOf(TwigFunction::class, $res[2]);
-        $this->assertEquals("renderDataTables", $res[2]->getName());
-        $this->assertEquals([$obj, "renderDataTablesFunction"], $res[2]->getCallable());
+        $this->assertEquals("jQueryDataTablesName", $res[2]->getName());
+        $this->assertEquals([$obj, "jQueryDataTablesNameFunction"], $res[2]->getCallable());
         $this->assertEquals(["html"], $res[2]->getSafe(new Node()));
 
         $this->assertInstanceOf(TwigFunction::class, $res[3]);
-        $this->assertEquals("renderDT", $res[3]->getName());
-        $this->assertEquals([$obj, "renderDataTablesFunction"], $res[3]->getCallable());
+        $this->assertEquals("jQueryDTName", $res[3]->getName());
+        $this->assertEquals([$obj, "jQueryDataTablesNameFunction"], $res[3]->getCallable());
         $this->assertEquals(["html"], $res[3]->getSafe(new Node()));
 
         $this->assertInstanceOf(TwigFunction::class, $res[4]);
-        $this->assertEquals("jQueryDataTablesStandalone", $res[4]->getName());
-        $this->assertEquals([$obj, "jQueryDataTablesStandaloneFunction"], $res[4]->getCallable());
+        $this->assertEquals("jQueryDataTablesOptions", $res[4]->getName());
+        $this->assertEquals([$obj, "jQueryDataTablesOptionsFunction"], $res[4]->getCallable());
         $this->assertEquals(["html"], $res[4]->getSafe(new Node()));
 
         $this->assertInstanceOf(TwigFunction::class, $res[5]);
-        $this->assertEquals("jQueryDTStandalone", $res[5]->getName());
-        $this->assertEquals([$obj, "jQueryDataTablesStandaloneFunction"], $res[5]->getCallable());
+        $this->assertEquals("jQueryDTOptions", $res[5]->getName());
+        $this->assertEquals([$obj, "jQueryDataTablesOptionsFunction"], $res[5]->getCallable());
         $this->assertEquals(["html"], $res[5]->getSafe(new Node()));
 
         $this->assertInstanceOf(TwigFunction::class, $res[6]);
-        $this->assertEquals("jQueryDataTablesName", $res[6]->getName());
-        $this->assertEquals([$obj, "jQueryDataTablesNameFunction"], $res[6]->getCallable());
+        $this->assertEquals("jQueryDataTablesStandalone", $res[6]->getName());
+        $this->assertEquals([$obj, "jQueryDataTablesStandaloneFunction"], $res[6]->getCallable());
         $this->assertEquals(["html"], $res[6]->getSafe(new Node()));
 
         $this->assertInstanceOf(TwigFunction::class, $res[7]);
-        $this->assertEquals("jQueryDTName", $res[7]->getName());
-        $this->assertEquals([$obj, "jQueryDataTablesNameFunction"], $res[7]->getCallable());
+        $this->assertEquals("jQueryDTStandalone", $res[7]->getName());
+        $this->assertEquals([$obj, "jQueryDataTablesStandaloneFunction"], $res[7]->getCallable());
         $this->assertEquals(["html"], $res[7]->getSafe(new Node()));
+
+        $this->assertInstanceOf(TwigFunction::class, $res[8]);
+        $this->assertEquals("renderDataTables", $res[8]->getName());
+        $this->assertEquals([$obj, "renderDataTablesFunction"], $res[8]->getCallable());
+        $this->assertEquals(["html"], $res[8]->getSafe(new Node()));
+
+        $this->assertInstanceOf(TwigFunction::class, $res[9]);
+        $this->assertEquals("renderDT", $res[9]->getName());
+        $this->assertEquals([$obj, "renderDataTablesFunction"], $res[9]->getCallable());
+        $this->assertEquals(["html"], $res[9]->getSafe(new Node()));
     }
 
     /**
@@ -207,6 +217,65 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $this->assertSame("dtemployee", $obj->jQueryDataTablesNameFunction($this->dtWrapper));
+    }
+
+    /**
+     * Tests the jQueryDataTablesOptionsFunction() method.
+     *
+     * @return void
+     */
+    public function testJQueryDataTablesOptionsFunction() {
+
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
+
+        $res = [
+            "ajax"       => [
+                "type" => "POST",
+                "url"  => "/datatables/employee/index",
+            ],
+            "columns"    => [
+                [
+                    "cellType" => "td",
+                    "data"     => "name",
+                    "name"     => "Name",
+                ],
+                [
+                    "cellType" => "td",
+                    "data"     => "position",
+                    "name"     => "Position",
+                ],
+                [
+                    "cellType" => "td",
+                    "data"     => "office",
+                    "name"     => "Office",
+                ],
+                [
+                    "cellType" => "td",
+                    "data"     => "age",
+                    "name"     => "Age",
+                ],
+                [
+                    "cellType" => "td",
+                    "data"     => "startDate",
+                    "name"     => "Start date",
+                ],
+                [
+                    "cellType" => "td",
+                    "data"     => "salary",
+                    "name"     => "Salary",
+                ],
+                [
+                    "cellType"   => "td",
+                    "data"       => "actions",
+                    "name"       => "Actions",
+                    "orderable"  => false,
+                    "searchable" => false,
+                ],
+            ],
+            "processing" => true,
+            "serverSide" => true,
+        ];
+        $this->assertSame($res, $obj->jQueryDataTablesOptionsFunction($this->dtWrapper));
     }
 
     /**
