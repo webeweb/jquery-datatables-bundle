@@ -188,7 +188,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $arg = ["selector" => "#selector", "language" => "French"];
-        $res = file_get_contents(__DIR__ . "/testJQueryDataTablesFunction.html.txt");
+        $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testJQueryDataTablesFunction.html.txt");
         $this->assertEquals($res, $obj->jQueryDataTablesFunction($this->dtWrapper, $arg) . "\n");
     }
 
@@ -203,7 +203,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $arg = [];
-        $res = file_get_contents(__DIR__ . "/testJQueryDataTablesFunctionWithoutArguments.html.txt");
+        $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testJQueryDataTablesFunctionWithoutArguments.html.txt");
         $this->assertEquals($res, $obj->jQueryDataTablesFunction($this->dtWrapper, $arg) . "\n");
     }
 
@@ -289,7 +289,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $arg = ["selector" => "#selector", "language" => "French", "options" => ["columnDefs" => [["orderable" => false, "targets" => -1]]]];
-        $res = file_get_contents(__DIR__ . "/testJQueryDataTablesStandaloneFunction.html.txt");
+        $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testJQueryDataTablesStandaloneFunction.html.txt");
         $this->assertEquals($res, $obj->jQueryDataTablesStandaloneFunction($arg) . "\n");
     }
 
@@ -303,7 +303,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
-        $res = file_get_contents(__DIR__ . "/testJQueryDataTablesStandaloneFunctionWithoutArguments.html.txt");
+        $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testJQueryDataTablesStandaloneFunctionWithoutArguments.html.txt");
         $this->assertEquals($res, $obj->jQueryDataTablesStandaloneFunction() . "\n");
     }
 
@@ -323,7 +323,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         }
 
         $arg = ["class" => "class", "thead" => true, "tfoot" => true];
-        $res = file_get_contents(__DIR__ . "/testRenderDataTablesFunction.html.txt");
+        $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testRenderDataTablesFunction.html.txt");
         $this->assertEquals($res, $obj->renderDataTablesFunction($this->dtWrapper, $arg) . "\n");
     }
 
@@ -337,7 +337,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $arg = ["class" => "class"];
-        $res = file_get_contents(__DIR__ . "/testRenderDataTablesFunctionWithClass.html.txt");
+        $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testRenderDataTablesFunctionWithClass.html.txt");
         $this->assertEquals($res, $obj->renderDataTablesFunction($this->dtWrapper, $arg) . "\n");
     }
 
@@ -351,7 +351,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $arg = ["tfoot" => false];
-        $res = file_get_contents(__DIR__ . "/testRenderDataTablesFunctionWithTFoot.html.txt");
+        $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testRenderDataTablesFunctionWithTFoot.html.txt");
         $this->assertEquals($res, $obj->renderDataTablesFunction($this->dtWrapper, $arg) . "\n");
     }
 
@@ -365,7 +365,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $arg = ["thead" => false];
-        $res = file_get_contents(__DIR__ . "/testRenderDataTablesFunctionWithTHead.html.txt");
+        $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testRenderDataTablesFunctionWithTHead.html.txt");
         $this->assertEquals($res, $obj->renderDataTablesFunction($this->dtWrapper, $arg) . "\n");
     }
 
@@ -379,7 +379,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
         $arg = [];
-        $res = file_get_contents(__DIR__ . "/testRenderDataTablesFunctionWithoutArguments.html.txt");
+        $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testRenderDataTablesFunctionWithoutArguments.html.txt");
         $this->assertEquals($res, $obj->renderDataTablesFunction($this->dtWrapper, $arg) . "\n");
     }
 }
