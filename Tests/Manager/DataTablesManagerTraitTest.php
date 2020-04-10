@@ -24,18 +24,6 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Manager\TestDataTablesMana
 class DataTablesManagerTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() mmethod.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestDataTablesManagerTrait();
-
-        $this->assertNull($obj->getDataTablesManager());
-    }
-
-    /**
      * Tests the setDataTablesManager() method.
      *
      * @return void
@@ -49,5 +37,17 @@ class DataTablesManagerTraitTest extends AbstractTestCase {
 
         $obj->setDataTablesManager($dataTablesManager);
         $this->assertSame($dataTablesManager, $obj->getDataTablesManager());
+    }
+
+    /**
+     * Tests the __construct() mmethod.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestDataTablesManagerTrait();
+
+        $this->assertNull($obj->getDataTablesManager());
     }
 }

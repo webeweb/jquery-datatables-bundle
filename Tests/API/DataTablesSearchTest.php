@@ -23,17 +23,6 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesSearchTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     */
-    public function testConstruct() {
-
-        $obj = new DataTablesSearch();
-
-        $this->assertFalse($obj->getRegex());
-        $this->assertEquals("", $obj->getValue());
-    }
-
-    /**
      * Tests the setRegex() method.
      *
      * @return void
@@ -57,5 +46,16 @@ class DataTablesSearchTest extends AbstractTestCase {
 
         $obj->setValue("value");
         $this->assertEquals("value", $obj->getValue());
+    }
+
+    /**
+     * Tests the __construct() method.
+     */
+    public function test__construct() {
+
+        $obj = new DataTablesSearch();
+
+        $this->assertFalse($obj->getRegex());
+        $this->assertEquals("", $obj->getValue());
     }
 }

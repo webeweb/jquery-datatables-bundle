@@ -26,33 +26,6 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesColumnTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new DataTablesColumn();
-
-        $this->assertEquals(DataTablesColumn::DATATABLES_CELL_TYPE_TD, $obj->getCellType());
-        $this->assertNull($obj->getClassname());
-        $this->assertNull($obj->getContentPadding());
-        $this->assertNull($obj->getData());
-        $this->assertNull($obj->getDefaultContent());
-        $this->assertNotNull($obj->getMapping());
-        $this->assertNull($obj->getOrderData());
-        $this->assertNull($obj->getOrderDataType());
-        $this->assertNull($obj->getOrderSequence());
-        $this->assertTrue($obj->getOrderable());
-        $this->assertNull($obj->getSearch());
-        $this->assertTrue($obj->getSearchable());
-        $this->assertNull($obj->getTitle());
-        $this->assertNull($obj->getType());
-        $this->assertTrue($obj->getVisible());
-        $this->assertNull($obj->getWidth());
-    }
-
-    /**
      * Tests the setCellType() method.
      *
      * @return void
@@ -306,5 +279,32 @@ class DataTablesColumnTest extends AbstractTestCase {
 
         $obj->setWidth("width");
         $this->assertEquals("width", $obj->getWidth());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new DataTablesColumn();
+
+        $this->assertEquals(DataTablesColumn::DATATABLES_CELL_TYPE_TD, $obj->getCellType());
+        $this->assertNull($obj->getClassname());
+        $this->assertNull($obj->getContentPadding());
+        $this->assertNull($obj->getData());
+        $this->assertNull($obj->getDefaultContent());
+        $this->assertNotNull($obj->getMapping());
+        $this->assertNull($obj->getOrderData());
+        $this->assertNull($obj->getOrderDataType());
+        $this->assertNull($obj->getOrderSequence());
+        $this->assertTrue($obj->getOrderable());
+        $this->assertNull($obj->getSearch());
+        $this->assertTrue($obj->getSearchable());
+        $this->assertNull($obj->getTitle());
+        $this->assertNull($obj->getType());
+        $this->assertTrue($obj->getVisible());
+        $this->assertNull($obj->getWidth());
     }
 }

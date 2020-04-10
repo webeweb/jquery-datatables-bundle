@@ -83,20 +83,6 @@ class DataTablesManagerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals("wbw.jquery.datatables.manager", DataTablesManager::SERVICE_NAME);
-
-        $obj = new DataTablesManager();
-
-        $this->assertEquals([], $obj->getProviders());
-    }
-
-    /**
      * Tests the contains() method.
      *
      * @return void
@@ -162,5 +148,19 @@ class DataTablesManagerTest extends AbstractTestCase {
             $this->assertInstanceOf(UnregisteredDataTablesProviderException::class, $ex);
             $this->assertEquals("None DataTables provider registered with name \"exception\"", $ex->getMessage());
         }
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $this->assertEquals("wbw.jquery.datatables.manager", DataTablesManager::SERVICE_NAME);
+
+        $obj = new DataTablesManager();
+
+        $this->assertEquals([], $obj->getProviders());
     }
 }

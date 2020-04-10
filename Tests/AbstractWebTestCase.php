@@ -12,7 +12,6 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\Tools\SchemaTool;
 use Exception;
 use WBW\Bundle\CoreBundle\DependencyInjection\ConfigurationHelper;
 use WBW\Bundle\CoreBundle\Tests\AbstractWebTestCase as WebTestCase;

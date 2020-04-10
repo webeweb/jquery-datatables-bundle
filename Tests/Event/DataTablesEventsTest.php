@@ -28,7 +28,7 @@ class DataTablesEventsTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals(WBWJQueryDataTablesEvents::DATATABLES_PRE_DELETE, DataTablesEvents::DATATABLES_PRE_DELETE);
         $this->assertEquals(WBWJQueryDataTablesEvents::DATATABLES_PRE_EDIT, DataTablesEvents::DATATABLES_PRE_EDIT);

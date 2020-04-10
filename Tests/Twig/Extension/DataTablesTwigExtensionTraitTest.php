@@ -25,18 +25,6 @@ use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 class DataTablesTwigExtensionTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TestDataTablesTwigExtensionTrait();
-
-        $this->assertNull($obj->getDataTablesTwigExtension());
-    }
-
-    /**
      * Tests the setDataTablesTwigExtension() method.
      *
      * @return void
@@ -50,5 +38,17 @@ class DataTablesTwigExtensionTraitTest extends AbstractTestCase {
 
         $obj->setDataTablesTwigExtension($dataTablesTwigExtension);
         $this->assertSame($dataTablesTwigExtension, $obj->getDataTablesTwigExtension());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestDataTablesTwigExtensionTrait();
+
+        $this->assertNull($obj->getDataTablesTwigExtension());
     }
 }

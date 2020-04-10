@@ -58,18 +58,6 @@ class DataTablesOptionsTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new DataTablesOptions();
-
-        $this->assertEquals([], $obj->getOptions());
-    }
-
-    /**
      * Tests the getOption() method.
      *
      * @return void
@@ -147,5 +135,17 @@ class DataTablesOptionsTest extends AbstractTestCase {
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The argument \"1\" is not a string", $ex->getMessage());
         }
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new DataTablesOptions();
+
+        $this->assertEquals([], $obj->getOptions());
     }
 }

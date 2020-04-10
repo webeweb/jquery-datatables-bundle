@@ -53,16 +53,6 @@ class DataTablesExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals("wbw_jquery_datatables", WBWJQueryDataTablesExtension::EXTENSION_ALIAS);
-    }
-
-    /**
      * Tests the getAlias() method.
      *
      * @return void
@@ -127,5 +117,15 @@ class DataTablesExtensionTest extends AbstractTestCase {
             $this->assertInstanceOf(ServiceNotFoundException::class, $ex);
             $this->assertContains(DataTablesTwigExtension::SERVICE_NAME, $ex->getMessage());
         }
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $this->assertEquals("wbw_jquery_datatables", WBWJQueryDataTablesExtension::EXTENSION_ALIAS);
     }
 }

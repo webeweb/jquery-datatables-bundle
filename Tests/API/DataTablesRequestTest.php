@@ -24,26 +24,6 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesRequestTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new DataTablesRequest();
-
-        $this->assertEquals([], $obj->getColumns());
-        $this->assertEquals(0, $obj->getDraw());
-        $this->assertEquals(10, $obj->getLength());
-        $this->assertEquals([], $obj->getOrder());
-        $this->assertInstanceOf(ParameterBag::class, $obj->getQuery());
-        $this->assertInstanceOf(ParameterBag::class, $obj->getRequest());
-        $this->assertNull($obj->getSearch());
-        $this->assertEquals(0, $obj->getStart());
-        $this->assertNull($obj->getWrapper());
-    }
-
-    /**
      * Tests the getColumn() method.
      *
      * @return void
@@ -134,5 +114,25 @@ class DataTablesRequestTest extends AbstractTestCase {
 
         $obj->setStart(0);
         $this->assertEquals(0, $obj->getStart());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new DataTablesRequest();
+
+        $this->assertEquals([], $obj->getColumns());
+        $this->assertEquals(0, $obj->getDraw());
+        $this->assertEquals(10, $obj->getLength());
+        $this->assertEquals([], $obj->getOrder());
+        $this->assertInstanceOf(ParameterBag::class, $obj->getQuery());
+        $this->assertInstanceOf(ParameterBag::class, $obj->getRequest());
+        $this->assertNull($obj->getSearch());
+        $this->assertEquals(0, $obj->getStart());
+        $this->assertNull($obj->getWrapper());
     }
 }

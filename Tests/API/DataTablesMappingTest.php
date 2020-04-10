@@ -24,19 +24,6 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesMappingTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new DataTablesMapping();
-
-        $this->assertNull($obj->getColumn());
-        $this->assertNull($obj->getPrefix());
-    }
-
-    /**
      * Tests the setColumn() method.
      *
      * @return void
@@ -76,5 +63,18 @@ class DataTablesMappingTest extends AbstractTestCase {
 
         $obj->setPrefix("prefix");
         $this->assertEquals("prefix", $obj->getPrefix());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new DataTablesMapping();
+
+        $this->assertNull($obj->getColumn());
+        $this->assertNull($obj->getPrefix());
     }
 }

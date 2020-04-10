@@ -45,20 +45,6 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals("wbw.jquery.datatables.twig.extension", DataTablesTwigExtension::SERVICE_NAME);
-
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
-
-        $this->assertSame($this->twigEnvironment, $obj->getTwigEnvironment());
-    }
-
-    /**
      * Tests the getFilters() method.
      *
      * @return void
@@ -381,5 +367,19 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         $arg = [];
         $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testRenderDataTablesFunctionWithoutArguments.html.txt");
         $this->assertEquals($res, $obj->renderDataTablesFunction($this->dtWrapper, $arg) . "\n");
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $this->assertEquals("wbw.jquery.datatables.twig.extension", DataTablesTwigExtension::SERVICE_NAME);
+
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
+
+        $this->assertSame($this->twigEnvironment, $obj->getTwigEnvironment());
     }
 }

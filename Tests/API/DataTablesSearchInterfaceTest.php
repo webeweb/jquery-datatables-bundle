@@ -27,7 +27,7 @@ class DataTablesSearchInterfaceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("regex", DataTablesSearchInterface::DATATABLES_PARAMETER_REGEX);
         $this->assertEquals("value", DataTablesSearchInterface::DATATABLES_PARAMETER_VALUE);

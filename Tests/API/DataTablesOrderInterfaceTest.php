@@ -27,7 +27,7 @@ class DataTablesOrderInterfaceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("asc", DataTablesOrderInterface::DATATABLES_DIR_ASC);
         $this->assertEquals("desc", DataTablesOrderInterface::DATATABLES_DIR_DESC);

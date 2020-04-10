@@ -51,20 +51,6 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstructor() {
-
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
-
-        $this->assertSame($this->buttonTwigExtension, $obj->getButtonTwigExtension());
-        $this->assertSame($this->router, $obj->getRouter());
-        $this->assertSame($this->translator, $obj->getTranslator());
-    }
-
-    /**
      * Tests the getCSVExporter() method.
      *
      * @return void
@@ -390,5 +376,19 @@ EOT;
         $this->assertEquals("prefix-content", $obj->wrapContent("prefix-", "content", null));
         $this->assertEquals("prefix-content-suffix", $obj->wrapContent("prefix-", "content", "-suffix"));
         $this->assertEquals("content-suffix", $obj->wrapContent(null, "content", "-suffix"));
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+
+        $this->assertSame($this->buttonTwigExtension, $obj->getButtonTwigExtension());
+        $this->assertSame($this->router, $obj->getRouter());
+        $this->assertSame($this->translator, $obj->getTranslator());
     }
 }

@@ -53,27 +53,6 @@ class DataTablesWrapperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new DataTablesWrapper();
-
-        $this->assertEquals([], $obj->getColumns());
-        $this->assertNull($obj->getMapping()->getPrefix());
-        $this->assertEquals("POST", $obj->getMethod());
-        $this->assertNull($obj->getOptions());
-        $this->assertTrue($obj->getProcessing());
-        $this->assertNull($obj->getProvider());
-        $this->assertNull($obj->getRequest());
-        $this->assertNull($obj->getResponse());
-        $this->assertTrue($obj->getServerSide());
-        $this->assertNull($obj->getUrl());
-    }
-
-    /**
      * Tests the getColumn() method.
      *
      * @return void
@@ -231,5 +210,26 @@ class DataTablesWrapperTest extends AbstractTestCase {
 
         $obj->setUrl("anotherUrl");
         $this->assertEquals("anotherUrl", $obj->getUrl());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new DataTablesWrapper();
+
+        $this->assertEquals([], $obj->getColumns());
+        $this->assertNull($obj->getMapping()->getPrefix());
+        $this->assertEquals("POST", $obj->getMethod());
+        $this->assertNull($obj->getOptions());
+        $this->assertTrue($obj->getProcessing());
+        $this->assertNull($obj->getProvider());
+        $this->assertNull($obj->getRequest());
+        $this->assertNull($obj->getResponse());
+        $this->assertTrue($obj->getServerSide());
+        $this->assertNull($obj->getUrl());
     }
 }

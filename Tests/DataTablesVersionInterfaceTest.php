@@ -26,7 +26,7 @@ class DataTablesVersionInterfaceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("1.10.18", DataTablesVersionInterface::DATATABLES_VERSION);
         $this->assertEquals("2.3.2", DataTablesVersionInterface::DATATABLES_AUTOFILL_VERSION);

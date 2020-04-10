@@ -38,24 +38,6 @@ class DataTablesResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new DataTablesResponse();
-
-        $this->assertEquals(0, $obj->countRows());
-        $this->assertEquals([], $obj->getData());
-        $this->assertEquals(0, $obj->getDraw());
-        $this->assertNull($obj->getError());
-        $this->assertEquals(0, $obj->getRecordsFiltered());
-        $this->assertEquals(0, $obj->getRecordsTotal());
-        $this->assertNull($obj->getWrapper());
-    }
-
-    /**
      * Tests the jsonSerialize() method.
      *
      * @return void
@@ -121,5 +103,23 @@ class DataTablesResponseTest extends AbstractTestCase {
         $res = ["name" => "GitHub", "position" => null, "office" => null, "age" => null, "startDate" => null, "salary" => null, "actions" => null];
         $this->assertCount(1, $obj->getData());
         $this->assertEquals($res, $obj->getData()[0]);
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new DataTablesResponse();
+
+        $this->assertEquals(0, $obj->countRows());
+        $this->assertEquals([], $obj->getData());
+        $this->assertEquals(0, $obj->getDraw());
+        $this->assertNull($obj->getError());
+        $this->assertEquals(0, $obj->getRecordsFiltered());
+        $this->assertEquals(0, $obj->getRecordsTotal());
+        $this->assertNull($obj->getWrapper());
     }
 }

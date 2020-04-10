@@ -27,7 +27,7 @@ class DataTablesResponseInterfaceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("DT_RowAttr", DataTablesResponseInterface::DATATABLES_ROW_ATTR);
         $this->assertEquals("DT_RowClass", DataTablesResponseInterface::DATATABLES_ROW_CLASS);
