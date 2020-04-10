@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Improve unit tests
+
 ### [3.11.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.11.0) (2020-02-24)
 
 - Add jQueryDataTablesOptions Twig function
