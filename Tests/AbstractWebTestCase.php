@@ -105,6 +105,9 @@ abstract class AbstractWebTestCase extends WebTestCase {
         parent::setUpBeforeClass();
 
         parent::setUpSchemaTool();
+
+        // Set a default timezone.
+        date_default_timezone_set("UTC");
     }
 
     /**
