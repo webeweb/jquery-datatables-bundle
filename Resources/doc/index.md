@@ -1,7 +1,7 @@
 DOCUMENTATION
 =============
 
-### 1) Entity
+1) Entity
 
 Create an entity in the `src/AppBundle/Entity` directory of your project:
 
@@ -202,7 +202,7 @@ class Employee {
 }
 ```
 
-### 2) Repository
+2) Repository
 
 Create a repository in the `src/AppBundle/Repository` directory of your project:
 
@@ -219,7 +219,7 @@ class EmployeeRepository extends DefaultDataTablesRepository {
 }
 ```
 
-### 3) Provider
+3) Provider
 
 Create a provider in the `src/AppBundle/Provider` directory of your project:
 
@@ -498,7 +498,7 @@ services:
 
 You can add as many providers as you want as long as the name of the providers are different.
 
-### 4) Template (for custom rendering)
+4) Template (for custom rendering)
 
 Create a template in the `src/AppBundle/Resources/views/Employee`directory of your project:
 
@@ -521,11 +521,11 @@ Create a template in the `src/AppBundle/Resources/views/Employee`directory of yo
 {% endblock %}
 ```
 
-### 5) Enjoy
+5) Enjoy
 
 Open you browser at http://localhost:8000/app_dev.php/datatables/employee/index.
 
-### 6) Join column
+6) Join column
 
 Create a new entity in the `src/AppBundle/Entity`directory of your project:
 
