@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Improve code quality
+
 ### [3.11.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.11.1) (2020-06-03)
 
 - Improve unit tests
