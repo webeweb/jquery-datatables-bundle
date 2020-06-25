@@ -32,7 +32,7 @@ class BadDataTablesCSVExporterExceptionTest extends AbstractTestCase {
 
         $obj = new BadDataTablesCSVExporterException(new Exception());
 
-        $this->assertEquals("The DataTables CSV exporter \"Exception\" must implement DataTablesCSVExporterInterface", $obj->getMessage());
+        $this->assertEquals('The DataTables CSV exporter "Exception" must implement DataTablesCSVExporterInterface', $obj->getMessage());
     }
 
     /**

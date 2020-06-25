@@ -53,7 +53,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The argument \"1\" is not a string", $ex->getMessage());
+            $this->assertEquals('The argument "1" is not a string', $ex->getMessage());
         }
     }
 
@@ -133,7 +133,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The argument \"1\" is not a string", $ex->getMessage());
+            $this->assertEquals('The argument "1" is not a string', $ex->getMessage());
         }
     }
 

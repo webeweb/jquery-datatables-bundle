@@ -413,7 +413,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
      */
     public function setType($type) {
         if (false === in_array($type, DataTablesEnumerator::enumTypes())) {
-            throw new InvalidArgumentException(sprintf("The type \"%s\" is invalid", $type));
+            throw new InvalidArgumentException(sprintf('The type "%s" is invalid', $type));
         }
         $this->type = $type;
         return $this;

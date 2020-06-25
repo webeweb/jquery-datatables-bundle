@@ -226,7 +226,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         $client->request("GET", "/datatables/employee/export");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/csv; charset=utf-8", $client->getResponse()->headers->get("Content-Type"));
-        $this->assertRegExp("/attachment; filename=\"[0-9]{4}\.[0-9]{2}\.[0-9]{2}-[0-9]{2}\.[0-9]{2}\.[0-9]{2}-employee\.csv\"/", $client->getResponse()->headers->get("Content-Disposition"));
+        $this->assertRegExp('/attachment; filename="[0-9]{4}\\.[0-9]{2}\\.[0-9]{2}-[0-9]{2}\\.[0-9]{2}\\.[0-9]{2}-employee\\.csv"/', $client->getResponse()->headers->get("Content-Disposition"));
     }
 
     /**

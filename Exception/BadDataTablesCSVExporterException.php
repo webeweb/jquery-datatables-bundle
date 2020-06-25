@@ -27,7 +27,7 @@ class BadDataTablesCSVExporterException extends AbstractDataTablesException {
     public function __construct($object) {
         $message = "The DataTables CSV exporter is null";
         if (null !== $object) {
-            $format  = "The DataTables CSV exporter \"%s\" must implement DataTablesCSVExporterInterface";
+            $format  = 'The DataTables CSV exporter "%s" must implement DataTablesCSVExporterInterface';
             $message = sprintf($format, get_class($object));
         }
         parent::__construct($message);

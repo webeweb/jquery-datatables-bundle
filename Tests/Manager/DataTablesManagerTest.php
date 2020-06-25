@@ -78,7 +78,7 @@ class DataTablesManagerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(AlreadyRegisteredDataTablesProviderException::class, $ex);
-            $this->assertEquals("A DataTables provider with name \"name\" is already registered", $ex->getMessage());
+            $this->assertEquals('A DataTables provider with name "name" is already registered', $ex->getMessage());
         }
     }
 
@@ -146,7 +146,7 @@ class DataTablesManagerTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(UnregisteredDataTablesProviderException::class, $ex);
-            $this->assertEquals("None DataTables provider registered with name \"exception\"", $ex->getMessage());
+            $this->assertEquals('None DataTables provider registered with name "exception"', $ex->getMessage());
         }
     }
 

@@ -39,7 +39,7 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(FileNotFoundException::class, $ex);
-            $this->assertEquals("File \"/bundles/wbwjquerydatatables/datatables-i18n/exception.json\" could not be found.", $ex->getMessage());
+            $this->assertEquals('File "/bundles/wbwjquerydatatables/datatables-i18n/exception.json" could not be found.', $ex->getMessage());
         }
     }
 

@@ -32,6 +32,6 @@ class BadDataTablesRepositoryExceptionTest extends AbstractTestCase {
 
         $obj = new BadDataTablesRepositoryException(new Exception());
 
-        $this->assertEquals("The DataTables repository \"Exception\" must implement DataTablesRepositoryInterface", $obj->getMessage());
+        $this->assertEquals('The DataTables repository "Exception" must implement DataTablesRepositoryInterface', $obj->getMessage());
     }
 }

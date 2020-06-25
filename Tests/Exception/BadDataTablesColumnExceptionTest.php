@@ -31,6 +31,6 @@ class BadDataTablesColumnExceptionTest extends AbstractTestCase {
 
         $obj = new BadDataTablesColumnException("exception");
 
-        $this->assertEquals("The DataTables column with name \"exception\" does not exist", $obj->getMessage());
+        $this->assertEquals('The DataTables column with name "exception" does not exist', $obj->getMessage());
     }
 }

@@ -32,7 +32,7 @@ class BadDataTablesEditorExceptionTest extends AbstractTestCase {
 
         $obj = new BadDataTablesEditorException(new Exception());
 
-        $this->assertEquals("The DataTables editor \"Exception\" must implement DataTablesEditorInterface", $obj->getMessage());
+        $this->assertEquals('The DataTables editor "Exception" must implement DataTablesEditorInterface', $obj->getMessage());
     }
 
     /**

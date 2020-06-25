@@ -27,7 +27,7 @@ class BadDataTablesEditorException extends AbstractDataTablesException {
     public function __construct($object) {
         $message = "The DataTables editor is null";
         if (null !== $object) {
-            $format  = "The DataTables editor \"%s\" must implement DataTablesEditorInterface";
+            $format  = 'The DataTables editor "%s" must implement DataTablesEditorInterface';
             $message = sprintf($format, get_class($object));
         }
         parent::__construct($message);

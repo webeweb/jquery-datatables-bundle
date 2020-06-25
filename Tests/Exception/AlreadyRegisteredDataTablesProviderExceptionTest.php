@@ -31,6 +31,6 @@ class AlreadyRegisteredDataTablesProviderExceptionTest extends AbstractTestCase 
 
         $obj = new AlreadyRegisteredDataTablesProviderException("exception");
 
-        $this->assertEquals("A DataTables provider with name \"exception\" is already registered", $obj->getMessage());
+        $this->assertEquals('A DataTables provider with name "exception" is already registered', $obj->getMessage());
     }
 }

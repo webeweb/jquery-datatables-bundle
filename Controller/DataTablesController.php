@@ -146,7 +146,7 @@ class DataTablesController extends AbstractController {
         $charset = true === $windows ? "iso-8859-1" : "utf-8";
 
         $response = new StreamedResponse();
-        $response->headers->set("Content-Disposition", "attachment; filename=\"" . $filename . "\"");
+        $response->headers->set("Content-Disposition", 'attachment; filename="' . $filename . '"');
         $response->headers->set("Content-Type", "text/csv; charset=" . $charset);
         $response->setCallback(function() use ($dtProvider, $repository, $dtExporter, $windows) {
             $this->exportDataTablesCallback($dtProvider, $repository, $dtExporter, $windows);
