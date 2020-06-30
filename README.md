@@ -76,8 +76,8 @@ in the `app/AppKernel.php` file of your project:
     public function registerBundles() {
         $bundles = [
             // ...
-            new WBW\Bundle\BootstrapBundle\WBWBootstrapBundle(),
             new WBW\Bundle\CoreBundle\WBWCoreBundle(),
+            new WBW\Bundle\BootstrapBundle\WBWBootstrapBundle(),
             new WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle(),
         ];
 
@@ -93,6 +93,29 @@ Once the bundle is added then do:
 $ php bin/console wbw:core:unzip-assets
 $ php bin/console assets:install
 ```
+
+Add the bundle assets in the `app/config/config.yml` file of your project:
+
+```yaml
+# ...
+# Core configuration
+wbw_core:
+    plugins:
+        - "jquery"
+
+# Bootstrap configuration
+wbw_bootstrap:
+    version: 3
+
+# jQuery DataTables configuration
+wbw_jquery_datatables:
+    theme: "bootstrap"
+    plugins:
+        - "responsive"
+```
+
+> IMPORTANT NOTICE: For use with Bootstrap 4, replace '3' by '4' into wbw_bootstrap.version and 
+> 'bootstrap' by 'bootstrap4' into wbw_jquery_datatables.theme.
 
 Add the bundle routing in the `app/config/routing.yml` file of your project:
 
