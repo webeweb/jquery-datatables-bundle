@@ -4,7 +4,9 @@
 {% set _plugins    = getContainerParameter("wbw.jquery_datatables.asset.jquery_datatables").plugins %}
 {% set _appTheme   = getContainerParameter("wbw_jquery_datatables.theme") %}
 {% set _appPlugins = getContainerParameter("wbw_jquery_datatables.plugins") %}
-<!-- jQuery DataTables -->
+{% if ("prod" != app.environment) %}
+    <!-- jQuery DataTables -->
+{% endif %}
 <link type="text/css" rel="stylesheet" href="{{ asset(_webPath ~ "/datatables-" ~ _version ~ "/css/dataTables." ~ _appTheme ~ ".min.css") }}">
 {% for _appPlugin in _appPlugins %}
     {% set _replaces = {
