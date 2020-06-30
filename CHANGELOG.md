@@ -1,9 +1,10 @@
 CHANGELOG
 =========
 
-### master
+### [3.11.2](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.11.2) (2020-06-30)
 
 - Improve code quality
+- Update documentation
 
 ### [3.11.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.11.1) (2020-06-03)
 
