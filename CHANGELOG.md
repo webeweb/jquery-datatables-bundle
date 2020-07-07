@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.11.3](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.11.3) (2020-07-07)
+
+- Reorder buttons
+
 ### [3.11.2](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.11.2) (2020-06-30)
 
 - Improve code quality
