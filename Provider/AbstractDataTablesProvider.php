@@ -259,16 +259,16 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
 
         $anchors = [];
 
+        if (null !== $showRoute) {
+            $anchors[] = $this->renderActionButtonShow($entity, $showRoute);
+        }
+
         if (null !== $editRoute) {
             $anchors[] = $this->renderActionButtonEdit($entity, $editRoute);
         }
 
         if (null !== $deleteRoute) {
             $anchors[] = $this->renderActionButtonDelete($entity, $deleteRoute);
-        }
-
-        if (null !== $showRoute) {
-            $anchors[] = $this->renderActionButtonShow($entity, $showRoute);
         }
 
         return implode(" ", $anchors);

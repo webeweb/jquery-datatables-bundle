@@ -313,7 +313,7 @@ EOT;
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
         $res = <<< EOT
-<a class="btn btn-default btn-xs" title="label.edit" href="editRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-pen"></i></a> <a class="btn btn-danger btn-xs" title="label.delete" href="deleteRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash"></i></a> <a class="btn btn-info btn-xs" title="label.show" href="showRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-eye"></i></a>
+<a class="btn btn-info btn-xs" title="label.show" href="showRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-eye"></i></a> <a class="btn btn-default btn-xs" title="label.edit" href="editRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-pen"></i></a> <a class="btn btn-danger btn-xs" title="label.delete" href="deleteRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash"></i></a>
 EOT;
         $this->assertEquals($res, $obj->renderRowButtons(new Employee(), "editRoute", "deleteRoute", "showRoute"));
     }
