@@ -41,7 +41,7 @@ class TestDataTablesProvider extends AbstractDataTablesProvider {
      * {@inheritDoc}
      */
     public function getName() {
-        return "abstract";
+        return "test";
     }
 
     /**
@@ -125,7 +125,7 @@ class TestDataTablesProvider extends AbstractDataTablesProvider {
      *{@inheritDoc}
      */
     public function renderRow($dtRow, $entity, $rowNumber) {
-        return null;
+        return parent::renderRow($dtRow, $entity, $rowNumber);
     }
 
     /**

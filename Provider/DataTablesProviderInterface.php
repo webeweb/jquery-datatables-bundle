@@ -109,7 +109,7 @@ interface DataTablesProviderInterface extends ProviderInterface {
      * @param string $dtRow The row.
      * @param DataTablesEntityInterface $entity The entity.
      * @param int $rowNumber The row number.
-     * @return string Returns the rendered row.
+     * @return mixed Returns the rendered row.
      */
     public function renderRow($dtRow, $entity, $rowNumber);
 }

@@ -22,6 +22,7 @@ use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtension;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtensionTrait;
 use WBW\Bundle\CoreBundle\Service\RouterTrait;
 use WBW\Bundle\CoreBundle\Service\TranslatorTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Entity\DataTablesEntityInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesEntityHelper;
@@ -240,6 +241,30 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
             return "";
         }
         return number_format($number, $decimals, $decPoint, $thousandsSep);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function renderRow($dtRow, $entity, $rowNumber) {
+
+        if (false === DataTablesEntityHelper::isCompatible($entity)) {
+            throw new InvalidArgumentException(sprintf("The entity must implements DataTablesEntityInterface or declare a getId() method"));
+        }
+
+        switch ($dtRow) {
+
+            case DataTablesResponseInterface::DATATABLES_ROW_ATTR:
+                return ["data-id" => $entity->getId()];
+
+            case DataTablesResponseInterface::DATATABLES_ROW_DATA:
+                return ["pkey" => $entity->getId()];
+
+            case DataTablesResponseInterface::DATATABLES_ROW_ID:
+                return implode("-", [$this->getName(), $entity->getId()]);
+        }
+
+        return null;
     }
 
     /**
