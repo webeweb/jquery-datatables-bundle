@@ -56,7 +56,7 @@ class DataTablesEntityHelper {
     /**
      * Serialize an entity.
      *
-     * @param object $entity The entity.
+     * @param mixed $entity The entity.
      * @return string Returns the serialized entity.
      */
     public static function jsonSerialize($entity) {
