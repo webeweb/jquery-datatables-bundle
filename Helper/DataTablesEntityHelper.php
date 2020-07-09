@@ -11,6 +11,10 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
 
+use JsonSerializable;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 use WBW\Bundle\JQuery\DataTablesBundle\Entity\DataTablesEntityInterface;
 
 /**
@@ -38,5 +42,27 @@ class DataTablesEntityHelper {
         }
 
         return false;
+    }
+
+    /**
+     * Creates a serializer.
+     *
+     * @return Serializer Returns the serializer.
+     */
+    public static function newSerializer() {
+        return new Serializer([new ObjectNormalizer()], [new JsonEncoder()]);
+    }
+
+    /**
+     * Serialize an entity.
+     *
+     * @param object $entity The entity.
+     * @return string Returns the serialized entity.
+     */
+    public static function jsonSerialize($entity) {
+
+        $data = true === ($entity instanceof JsonSerializable) ? $entity->jsonSerialize() : $entity;
+
+        return static::newSerializer()->serialize($data, "json");
     }
 }

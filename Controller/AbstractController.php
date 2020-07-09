@@ -16,9 +16,6 @@ use Exception;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
-use Symfony\Component\Serializer\Serializer;
 use WBW\Bundle\BootstrapBundle\Controller\AbstractController as BaseController;
 use WBW\Bundle\CoreBundle\Model\ActionResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
@@ -156,7 +153,7 @@ abstract class AbstractController extends BaseController {
         $this->logInfo(sprintf('DataTables controller search for a CSV exporter with name "%s"', $dtProvider->getName()), $context);
 
         $dtExporter = $dtProvider->getCSVExporter();
-        if (false === ($dtExporter instanceOf DataTablesCSVExporterInterface)) {
+        if (false === ($dtExporter instanceof DataTablesCSVExporterInterface)) {
             throw new BadDataTablesCSVExporterException($dtExporter);
         }
 
@@ -216,7 +213,7 @@ abstract class AbstractController extends BaseController {
         $this->logInfo(sprintf('DataTables controller search for an editor with name "%s"', $dtProvider->getName()), $context);
 
         $dtEditor = $dtProvider->getEditor();
-        if (false === ($dtEditor instanceOf DataTablesEditorInterface)) {
+        if (false === ($dtEditor instanceof DataTablesEditorInterface)) {
             throw new BadDataTablesEditorException($dtEditor);
         }
 
@@ -316,7 +313,7 @@ abstract class AbstractController extends BaseController {
         $this->logInfo(sprintf('DataTables controller search for a repository with name "%s"', $dtProvider->getName()), $context);
 
         $repository = $em->getRepository($dtProvider->getEntity());
-        if (false === ($repository instanceOf DataTablesRepositoryInterface)) {
+        if (false === ($repository instanceof DataTablesRepositoryInterface)) {
             throw new BadDataTablesRepositoryException($repository);
         }
 
@@ -326,15 +323,6 @@ abstract class AbstractController extends BaseController {
 
         /** @var DataTablesRepositoryInterface $repository */
         return $repository;
-    }
-
-    /**
-     * Get a serializer.
-     *
-     * @return Serializer Returns the serializer.
-     */
-    protected function getDataTablesSerializer() {
-        return new Serializer([new ObjectNormalizer()], [new JsonEncoder()]);
     }
 
     /**

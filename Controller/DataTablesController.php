@@ -14,7 +14,6 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Controller;
 use DateTime;
 use Doctrine\ORM\EntityNotFoundException;
 use Exception;
-use JsonSerializable;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,6 +25,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesEditorException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
+use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesEntityHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesExportHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesEvents;
@@ -273,11 +273,9 @@ class DataTablesController extends AbstractController {
             $entity = [];
         }
 
-        $serializer = $this->getDataTablesSerializer();
+        $data = DataTablesEntityHelper::jsonSerialize($entity);
 
-        $data = true === ($entity instanceof JsonSerializable) ? $entity->jsonSerialize() : $entity;
-
-        return new Response($serializer->serialize($data, "json"), 200, ["Content-type" => "application/json"]);
+        return new Response($data, 200, ["Content-type" => "application/json"]);
     }
 
     /**

@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
 
+use Symfony\Component\Serializer\Serializer;
 use WBW\Bundle\JQuery\DataTablesBundle\Entity\DataTablesEntityInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesEntityHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
@@ -37,5 +38,17 @@ class DataTablesEntityHelperTest extends AbstractTestCase {
         $this->assertTrue(DataTablesEntityHelper::isCompatible($dtEntity));
         $this->assertTrue(DataTablesEntityHelper::isCompatible(new Employee()));
         $this->assertFalse(DataTablesEntityHelper::isCompatible($this));
+    }
+
+    /**
+     * Tests the newSerializer() method.
+     *
+     * @return void
+     */
+    public function testNewSerializer() {
+
+        $res = DataTablesEntityHelper::newSerializer();
+
+        $this->assertInstanceOf(Serializer::class, $res);
     }
 }
