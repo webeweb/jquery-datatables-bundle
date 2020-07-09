@@ -99,12 +99,10 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
         $res = $obj->getOptions();
         $this->assertInstanceOf(DataTablesOptionsInterface::class, $res);
 
-        $this->assertCount(2, $res->getOptions());
+        $this->assertCount(3, $res->getOptions());
 
-        $this->assertTrue($res->hasOption("responsive"));
+        $this->assertEquals([[0, "asc"]], $res->getOption("order"));
         $this->assertTrue($res->getOption("responsive"));
-
-        $this->assertTrue($res->hasOption("searchDelay"));
         $this->assertEquals(1000, $res->getOption("searchDelay"));
     }
 

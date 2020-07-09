@@ -80,6 +80,7 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
     public function getOptions() {
 
         $dtOptions = DataTablesFactory::newOptions();
+        $dtOptions->addOption("order", [[0, "asc"]]);
         $dtOptions->addOption("responsive", true);
         $dtOptions->addOption("searchDelay", 1000);
 
