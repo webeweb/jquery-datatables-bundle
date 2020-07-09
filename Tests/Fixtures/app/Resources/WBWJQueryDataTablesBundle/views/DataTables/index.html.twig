@@ -1,5 +1,5 @@
-{# Resources/views/layout.html.twig #}
-{% extends "@WBWBootstrap/layout3.html.twig" %}
+{# Tests/Fixtures/app/Resources/WBWJQueryDataTables/views/index.html.twig #}
+{% extends "@WBWBootstrap/layout.html.twig" %}
 
 {% block bootstrapStylesheets %}
     {{ parent() }}
@@ -33,13 +33,18 @@
         <div class="container-fluid">
             {% if (0 < app.session.flashbag.peekAll()|length) %}
                 <div class="row clearfix">
-                    <div class="{{ bootstrapGrid({"lg": 12, "recopy": true}) }}">
+                    <div class="{{ bootstrapGrid({"lg": 12, "md": 12, "sm": 12, "xs": 12}) }}">
                         {% include "@WBWBootstrap/layout/flashbag.html.twig" %}
                     </div>
                 </div>
             {% endif %}
-            {% block jQueryDataTablesContent %}
-            {% endblock %}
+            <div class="row clearfix">
+                <div class="{{ bootstrapGrid({"lg": 12, "md": 12, "sm": 12, "xs": 12}) }}">
+                    <div class="row clearfix">
+                        {{ renderDataTables(dtWrapper) }}
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 {% endblock %}

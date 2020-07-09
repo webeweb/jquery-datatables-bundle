@@ -1,17 +1,2 @@
 {# Resources/views/DataTables/index.html.twig #}
-{% extends "@WBWJQueryDataTables/layout.html.twig" %}
-
-{% block jQueryDataTablesContent %}
-    <div class="row clearfix">
-        <div class="{{ bootstrapGrid({"lg": 12, "recopy": true}) }}">
-            <div class="row clearfix">
-                {% include "@WBWJQueryDataTables/DataTables/index-content.html.twig" %}
-            </div>
-        </div>
-    </div>
-{% endblock %}
-
-{% block jQueryDataTablesJavascripts %}
-    {{ parent() }}
-    {{ jQueryDataTables(dtWrapper) }}
-{% endblock %}
+{{ renderDataTables(dtWrapper) }}
