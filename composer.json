@@ -21,7 +21,7 @@
         "php": "^5.6|^7.0",
         "ext-json": "*",
         "doctrine/orm": "^2.5",
-        "piwik/device-detector": "^3.0",
+        "matomo/device-detector": "^3.0|^4.0",
         "symfony/asset": "^2.7|^3.0|^4.0",
         "symfony/framework-bundle": "^2.7|^3.0|^4.0",
         "symfony/translation": "^2.7|^3.0|^4.0",
