@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.11.5](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.11.5) (2020-11-20)
+
+- Improve dependencies
+
 ### [3.11.4](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.11.4) (2020-07-09)
 
 - Fix default views
