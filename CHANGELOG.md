@@ -16,7 +16,8 @@ CHANGELOG
 > - PHP 7.0
 
 > IMPORTANT NOTICE: The following deprecated classes has been removed
-> - WBW\Bundle\HaveIBeenPwnedBundle\Event\HaveIBeenPwnedEvents
+> - WBW\Bundle\JQuery\DataTablesBundle\Event\DataTablesEvents
+> - WBW\Bundle\JQuery\DataTablesBundle\DataTablesVersionInterface
 
 - Improve PHP doc
 - Improve unit tests
