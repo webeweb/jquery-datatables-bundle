@@ -29,9 +29,9 @@ abstract class AbstractWebTestCase extends WebTestCase {
     /**
      * Lists CSS assets.
      *
-     * @return array Returns the CSS assets list.
+     * @return string[] Returns the CSS assets list.
      */
-    public static function listCSSAssets() {
+    public static function listCSSAssets(): array {
 
         // Load the YAML configuration.
         $config  = ConfigurationHelper::loadYamlConfig(getcwd() . "/DependencyInjection", "assets");
@@ -58,9 +58,9 @@ abstract class AbstractWebTestCase extends WebTestCase {
     /**
      * Lists Javascript assets.
      *
-     * @return array Returns the Javascript assets list.
+     * @return string[] Returns the Javascript assets list.
      */
-    public static function listJavascriptAssets() {
+    public static function listJavascriptAssets(): array {
 
         // Load the YAML configuration.
         $config   = ConfigurationHelper::loadYamlConfig(getcwd() . "/DependencyInjection", "assets");
@@ -101,7 +101,7 @@ abstract class AbstractWebTestCase extends WebTestCase {
     /**
      * {@inheritDoc}
      */
-    public static function setUpBeforeClass() {
+    public static function setUpBeforeClass(): void {
         parent::setUpBeforeClass();
 
         parent::setUpSchemaTool();
@@ -116,7 +116,7 @@ abstract class AbstractWebTestCase extends WebTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    protected static function setUpEmployeeFixtures() {
+    protected static function setUpEmployeeFixtures(): void {
 
         /** @var EntityManagerInterface $em */
         $em = static::$kernel->getContainer()->get("doctrine.orm.entity_manager");

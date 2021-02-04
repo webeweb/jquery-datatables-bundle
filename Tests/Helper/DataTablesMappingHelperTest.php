@@ -29,7 +29,7 @@ class DataTablesMappingHelperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetAlias() {
+    public function testGetAlias(): void {
 
         $obj = new DataTablesMapping();
 
@@ -47,7 +47,7 @@ class DataTablesMappingHelperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetComparator() {
+    public function testGetComparator(): void {
 
         // Set a DataTables column mock.
         $column = new DataTablesColumn();
@@ -85,7 +85,7 @@ class DataTablesMappingHelperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetParam() {
+    public function testGetParam(): void {
 
         $obj = new DataTablesMapping();
         $obj->setPrefix("prefix");
@@ -99,7 +99,7 @@ class DataTablesMappingHelperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetWhere() {
+    public function testGetWhere(): void {
 
         $obj = new DataTablesMapping();
         $obj->setPrefix("prefix");

@@ -15,13 +15,13 @@ assets:
                 version: "2.5.0"
                 javascripts:
                     - "/datatables-jszip-{{ version }}/jszip.min.js"
-                stylesheets: []
+                stylesheets: [ ]
             pdfmake:
                 version: "0.1.36"
                 javascripts:
                     - "/datatables-pdfmake-{{ version }}/pdfmake.min.js"
                     - "/datatables-pdfmake-{{ version }}/vfs_fonts.js"
-                stylesheets: []
+                stylesheets: [ ]
         plugins:
             autofill:
                 version: "2.3.4"
@@ -101,4 +101,4 @@ assets:
                 version: ""
                 javascripts:
                     - "/editable-table/mindmup-editabletable.js"
-                stylesheets: []
+                stylesheets: [ ]

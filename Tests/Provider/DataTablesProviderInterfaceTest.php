@@ -27,7 +27,7 @@ class DataTablesProviderInterfaceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("wbw.jquery.datatables.provider", DataTablesProviderInterface::DATATABLES_TAG_NAME);
     }

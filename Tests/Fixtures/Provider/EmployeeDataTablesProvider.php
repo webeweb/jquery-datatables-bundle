@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider;
 
 use DateTime;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
@@ -33,7 +34,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     /**
      * {@inheritDoc}
      */
-    public function editColumn(DataTablesColumnInterface $dtColumn, $entity, $value) {
+    public function editColumn(DataTablesColumnInterface $dtColumn, $entity, $value): void {
 
         switch ($dtColumn->getData()) {
 
@@ -69,7 +70,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     /**
      * {@inheritDoc}
      */
-    public function exportColumns() {
+    public function exportColumns(): array {
         return [
             "#",
             "Name",
@@ -84,7 +85,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     /**
      * {@inheritDoc}
      */
-    public function exportRow($entity) {
+    public function exportRow($entity): array {
         return [
             $entity->getId(),
             $entity->getName(),
@@ -99,14 +100,14 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     /**
      * {@inheritDoc}
      */
-    public function getCSVExporter() {
+    public function getCSVExporter(): ?DataTablesCSVExporterInterface {
         return $this;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getColumns() {
+    public function getColumns(): array {
 
         $dtColumns = [];
 
@@ -126,56 +127,56 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     /**
      * {@inheritDoc}
      */
-    public function getEditor() {
+    public function getEditor(): ?DataTablesEditorInterface {
         return $this;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getEntity() {
+    public function getEntity(): string {
         return Employee::class;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getMethod() {
+    public function getMethod(): string {
         return HttpInterface::HTTP_METHOD_POST;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getName() {
+    public function getName(): string {
         return "employee";
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getOptions() {
+    public function getOptions(): DataTablesOptionsInterface {
         return DataTablesFactory::newOptions();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getPrefix() {
+    public function getPrefix(): string {
         return "e";
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getView() {
+    public function getView(): ?string {
         return null;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity) {
+    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity): ?string {
 
         $output = null;
 
@@ -218,7 +219,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     /**
      * {@inheritDoc}
      */
-    public function renderRow($dtRow, $entity, $rowNumber) {
+    public function renderRow(string $dtRow, $entity, int $rowNumber) {
 
         $output = null;
 

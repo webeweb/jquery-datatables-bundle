@@ -29,18 +29,19 @@ trait DataTablesWrapperTrait {
     /**
      * Get the the wrapper.
      *
-     * @return DataTablesWrapperInterface Returns the wrapper.
+     * @return DataTablesWrapperInterface|null Returns the wrapper.
      */
-    public function getWrapper() {
+    public function getWrapper(): ?DataTablesWrapperInterface {
         return $this->wrapper;
     }
 
     /**
      * Set the wrapper.
      *
-     * @param DataTablesWrapperInterface $wrapper The wrapper.
+     * @param DataTablesWrapperInterface|null $wrapper The wrapper.
+     * @return self Returns this instance.
      */
-    protected function setWrapper(DataTablesWrapperInterface $wrapper) {
+    protected function setWrapper(?DataTablesWrapperInterface $wrapper): self {
         $this->wrapper = $wrapper;
         return $this;
     }

@@ -34,7 +34,7 @@ class DataTablesEvent extends AbstractEvent {
      * @param string $eventName The name.
      * @param object[] $entities The entities.
      */
-    public function __construct($eventName, array $entities) {
+    public function __construct(string $eventName, array $entities) {
         parent::__construct($eventName);
         $this->setEntities($entities);
     }
@@ -42,19 +42,19 @@ class DataTablesEvent extends AbstractEvent {
     /**
      * Get the entities.
      *
-     * @return array Returns the entities.
+     * @return object[] Returns the entities.
      */
-    public function getEntities() {
+    public function getEntities(): array {
         return $this->entities;
     }
 
     /**
      * Set the entities.
      *
-     * @param array $entities The entities.
+     * @param object[] $entities The entities.
      * @return DataTablesEvent Returns this event.
      */
-    protected function setEntities(array $entities) {
+    protected function setEntities(array $entities): DataTablesEvent {
         $this->entities = $entities;
         return $this;
     }

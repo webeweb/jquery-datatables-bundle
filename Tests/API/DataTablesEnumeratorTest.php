@@ -31,7 +31,7 @@ class DataTablesEnumeratorTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumCellTypes() {
+    public function testEnumCellTypes(): void {
 
         $res = [
             DataTablesColumnInterface::DATATABLES_CELL_TYPE_TD,
@@ -45,7 +45,7 @@ class DataTablesEnumeratorTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumDirs() {
+    public function testEnumDirs(): void {
 
         $res = [
             DataTablesOrderInterface::DATATABLES_DIR_ASC,
@@ -59,7 +59,7 @@ class DataTablesEnumeratorTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumOrderSequences() {
+    public function testEnumOrderSequences(): void {
 
         $res = [
             DataTablesColumnInterface::DATATABLES_ORDER_SEQUENCE_ASC,
@@ -73,7 +73,7 @@ class DataTablesEnumeratorTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumParameters() {
+    public function testEnumParameters(): void {
 
         $res = [
             DataTablesRequestInterface::DATATABLES_PARAMETER_COLUMNS,
@@ -91,7 +91,7 @@ class DataTablesEnumeratorTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumRows() {
+    public function testEnumRows(): void {
 
         $res = [
             DataTablesResponseInterface::DATATABLES_ROW_ATTR,
@@ -107,7 +107,7 @@ class DataTablesEnumeratorTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumTypes() {
+    public function testEnumTypes(): void {
 
         $res = [
             DataTablesColumnInterface::DATATABLES_TYPE_DATE,

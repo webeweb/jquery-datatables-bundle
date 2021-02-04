@@ -34,7 +34,7 @@ class TestFixtures {
      * @param DataTablesProviderInterface $dtProvider The provider.
      * @return array Returns the POST data.
      */
-    public static function buildPOSTData(DataTablesProviderInterface $dtProvider) {
+    public static function buildPOSTData(DataTablesProviderInterface $dtProvider): array {
 
         $postData = [];
 
@@ -74,7 +74,7 @@ class TestFixtures {
      * @return Employee[] Returns the employee entities.
      * @throws Exception Throws an exception if an error occurs.
      */
-    public static function getEmployees() {
+    public static function getEmployees(): array {
 
         $fixtures = [];
 
@@ -144,7 +144,7 @@ class TestFixtures {
      *
      * @return array Returns the POST data.
      */
-    public static function getPOSTData() {
+    public static function getPOSTData(): array {
 
         $fixtures = [];
 
@@ -227,7 +227,7 @@ class TestFixtures {
      *
      * @return DataTablesWrapperInterface Returns the wrapper.
      */
-    public static function getWrapper() {
+    public static function getWrapper(): DataTablesWrapperInterface {
 
         $fixture = DataTablesFactory::newWrapper("/datatables/employee/index", new EmployeeDataTablesProvider());
 

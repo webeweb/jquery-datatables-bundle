@@ -26,9 +26,9 @@ class DataTablesMappingHelper {
      * Get an alias.
      *
      * @param DataTablesMappingInterface $mapping The mapping.
-     * @return string Returns the alias.
+     * @return string|null Returns the alias.
      */
-    public static function getAlias(DataTablesMappingInterface $mapping) {
+    public static function getAlias(DataTablesMappingInterface $mapping): ?string {
 
         if (null === $mapping->getColumn()) {
             return null;
@@ -47,7 +47,7 @@ class DataTablesMappingHelper {
      * @param DataTablesMappingInterface $mapping The mapping.
      * @return string Returns the comparator.
      */
-    public static function getComparator(DataTablesMappingInterface $mapping) {
+    public static function getComparator(DataTablesMappingInterface $mapping): string {
 
         if (null === $mapping->getParent()) {
             return "LIKE";
@@ -71,7 +71,7 @@ class DataTablesMappingHelper {
      * @param DataTablesMappingInterface $mapping The mapping.
      * @return string Returns the param.
      */
-    public static function getParam(DataTablesMappingInterface $mapping) {
+    public static function getParam(DataTablesMappingInterface $mapping): string {
 
         $param = [
             ":",
@@ -88,7 +88,7 @@ class DataTablesMappingHelper {
      * @param DataTablesMappingInterface $mapping The mapping.
      * @return string Returns the where.
      */
-    public static function getWhere(DataTablesMappingInterface $mapping) {
+    public static function getWhere(DataTablesMappingInterface $mapping): string {
 
         $where = [
             static::getAlias($mapping),

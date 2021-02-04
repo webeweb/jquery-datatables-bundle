@@ -28,7 +28,7 @@ class DataTablesExportHelperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConvert() {
+    public function testConvert(): void {
 
         $arg = ["é"];
         $res = ["é"];
@@ -40,7 +40,7 @@ class DataTablesExportHelperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConvertWithWindows() {
+    public function testConvertWithWindows(): void {
 
         $arg = ["é"];
         $res = ["\xe9"];
@@ -52,7 +52,7 @@ class DataTablesExportHelperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testIsWindows() {
+    public function testIsWindows(): void {
 
         // Set a Request mock.
         $request = new Request([], [], [], [], [], ["HTTP_USER_AGENT" => "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0"]);
@@ -65,7 +65,7 @@ class DataTablesExportHelperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testIsWindowsWithLinuxUserAgent() {
+    public function testIsWindowsWithLinuxUserAgent(): void {
 
         // Set a Request mock.
         $request = new Request([], [], [], [], [], ["HTTP_USER_AGENT" => "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:64.0) Gecko/20100101 Firefox/64.0"]);
@@ -78,7 +78,7 @@ class DataTablesExportHelperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testIsWindowsWithoutUserAgent() {
+    public function testIsWindowsWithoutUserAgent(): void {
 
         // Set a Request mock.
         $request = new Request();

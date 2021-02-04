@@ -12,6 +12,11 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Factory;
 
 use Symfony\Component\HttpFoundation\Request;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrderInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequestInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearchInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 
@@ -26,49 +31,49 @@ class TestDataTablesFactory extends DataTablesFactory {
     /**
      * {@inheritDoc}
      */
-    public static function newResponse(DataTablesWrapperInterface $wrapper) {
+    public static function newResponse(DataTablesWrapperInterface $wrapper): DataTablesResponseInterface {
         return parent::newResponse($wrapper);
     }
 
     /**
      * {@inheritDoc}
      */
-    public static function parseColumn(array $rawColumn, DataTablesWrapperInterface $wrapper) {
+    public static function parseColumn(array $rawColumn, DataTablesWrapperInterface $wrapper): ?DataTablesColumnInterface {
         return parent::parseColumn($rawColumn, $wrapper);
     }
 
     /**
      * {@inheritDoc}
      */
-    public static function parseColumns(array $rawColumns, DataTablesWrapperInterface $wrapper) {
+    public static function parseColumns(array $rawColumns, DataTablesWrapperInterface $wrapper): array {
         return parent::parseColumns($rawColumns, $wrapper);
     }
 
     /**
      * {@inheritDoc}
      */
-    public static function parseOrder(array $rawOrder) {
+    public static function parseOrder(array $rawOrder): DataTablesOrderInterface {
         return parent::parseOrder($rawOrder);
     }
 
     /**
      * {@inheritDoc}
      */
-    public static function parseOrders(array $rawOrders) {
+    public static function parseOrders(array $rawOrders): array {
         return parent::parseOrders($rawOrders);
     }
 
     /**
      * {@inheritDoc}
      */
-    public static function parseRequest(DataTablesWrapperInterface $wrapper, Request $request) {
+    public static function parseRequest(DataTablesWrapperInterface $wrapper, Request $request): DataTablesRequestInterface {
         return parent::parseRequest($wrapper, $request);
     }
 
     /**
      * {@inheritDoc}
      */
-    public static function parseSearch(array $rawSearch) {
+    public static function parseSearch(array $rawSearch): DataTablesSearchInterface {
         return parent::parseSearch($rawSearch);
     }
 }

@@ -14,7 +14,6 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
 use WBW\Bundle\CoreBundle\Provider\ProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Entity\DataTablesEntityInterface;
 
 /**
  * DataTables provider interface.
@@ -36,21 +35,21 @@ interface DataTablesProviderInterface extends ProviderInterface {
      *
      * @return DataTablesCSVExporterInterface|null Returns the CSV exporter.
      */
-    public function getCSVExporter();
+    public function getCSVExporter(): ?DataTablesCSVExporterInterface;
 
     /**
      * Get the columns.
      *
      * @return DataTablesColumnInterface[] Returns the columns.
      */
-    public function getColumns();
+    public function getColumns(): array;
 
     /**
      * Get the editor.
      *
      * @return DataTablesEditorInterface|null Returns the editor.
      */
-    public function getEditor();
+    public function getEditor(): ?DataTablesEditorInterface;
 
     /**
      * Get the entity.
@@ -64,52 +63,52 @@ interface DataTablesProviderInterface extends ProviderInterface {
      *
      * @return string|null Returns the HTTP method.
      */
-    public function getMethod();
+    public function getMethod(): ?string;
 
     /**
      * Get the provider name.
      *
      * @return string Returns the provider name.
      */
-    public function getName();
+    public function getName(): string;
 
     /**
      * Get the options.
      *
-     * @return DataTablesOptionsInterface Returns the options.
+     * @return DataTablesOptionsInterface|null Returns the options.
      */
-    public function getOptions();
+    public function getOptions(): ?DataTablesOptionsInterface;
 
     /**
      * Get the Doctrine prefix.
      *
      * @return string Returns the Doctrine prefix.
      */
-    public function getPrefix();
+    public function getPrefix(): string;
 
     /**
      * Get the controller view.
      *
      * @return string|null Returns the controller view.
      */
-    public function getView();
+    public function getView(): ?string;
 
     /**
      * Render a column.
      *
      * @param DataTablesColumnInterface $dtColumn The column.
-     * @param DataTablesEntityInterface $entity The entity.
-     * @return string Returns the rendered column.
+     * @param object $entity The entity.
+     * @return string|null Returns the rendered column.
      */
-    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity);
+    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity): ?string;
 
     /**
      * Render a row.
      *
      * @param string $dtRow The row.
-     * @param DataTablesEntityInterface $entity The entity.
+     * @param object $entity The entity.
      * @param int $rowNumber The row number.
      * @return mixed Returns the rendered row.
      */
-    public function renderRow($dtRow, $entity, $rowNumber);
+    public function renderRow(string $dtRow, $entity, int $rowNumber);
 }

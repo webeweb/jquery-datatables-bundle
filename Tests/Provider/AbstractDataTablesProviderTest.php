@@ -39,7 +39,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     /**
      * {@inheritDoc}
      */
-    protected function setUp() {
+    protected function setUp(): void {
         parent::setUp();
 
         // Set a Button Twig extension mock.
@@ -56,7 +56,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetCSVExporter() {
+    public function testGetCSVExporter(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
@@ -68,7 +68,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetEditor() {
+    public function testGetEditor(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
@@ -80,7 +80,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetMethod() {
+    public function testGetMethod(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
@@ -92,7 +92,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetOptions() {
+    public function testGetOptions(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
@@ -111,7 +111,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testRenderActionButtonDelete() {
+    public function testRenderActionButtonDelete(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
@@ -126,7 +126,7 @@ EOT;
      *
      * @return void
      */
-    public function testRenderActionButtonDeleteWithInvalidArgumentException() {
+    public function testRenderActionButtonDeleteWithInvalidArgumentException(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
@@ -145,7 +145,7 @@ EOT;
      *
      * @return void
      */
-    public function testRenderActionButtonDuplicate() {
+    public function testRenderActionButtonDuplicate(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
@@ -160,7 +160,7 @@ EOT;
      *
      * @return void
      */
-    public function testRenderActionButtonDuplicateWithInvalidArgumentException() {
+    public function testRenderActionButtonDuplicateWithInvalidArgumentException(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
@@ -179,7 +179,7 @@ EOT;
      *
      * @return void
      */
-    public function testRenderActionButtonEdit() {
+    public function testRenderActionButtonEdit(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
@@ -194,7 +194,7 @@ EOT;
      *
      * @return void
      */
-    public function testRenderActionButtonEditWithInvalidArgumentException() {
+    public function testRenderActionButtonEditWithInvalidArgumentException(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
@@ -213,7 +213,7 @@ EOT;
      *
      * @return void
      */
-    public function testRenderActionButtonShow() {
+    public function testRenderActionButtonShow(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
@@ -228,7 +228,7 @@ EOT;
      *
      * @return void
      */
-    public function testRenderActionButtonShowWithInvalidArgumentException() {
+    public function testRenderActionButtonShowWithInvalidArgumentException(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
@@ -247,7 +247,7 @@ EOT;
      *
      * @return void
      */
-    public function testRenderButtons() {
+    public function testRenderButtons(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
@@ -263,7 +263,7 @@ EOT;
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testRenderDate() {
+    public function testRenderDate(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
@@ -278,7 +278,7 @@ EOT;
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testRenderDateTime() {
+    public function testRenderDateTime(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
@@ -292,7 +292,7 @@ EOT;
      *
      * @return void
      */
-    public function testRenderFloat() {
+    public function testRenderFloat(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
@@ -307,7 +307,7 @@ EOT;
      *
      * @return void
      */
-    public function testRenderRow() {
+    public function testRenderRow(): void {
 
         // Set an Entity mock.
         $entity = $this->getMockBuilder(Employee::class)->getMock();
@@ -326,7 +326,7 @@ EOT;
      *
      * @return void
      */
-    public function testRenderRowButtons() {
+    public function testRenderRowButtons(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
@@ -341,7 +341,7 @@ EOT;
      *
      * @return void
      */
-    public function testRenderRowButtonsWithDeleteRoute() {
+    public function testRenderRowButtonsWithDeleteRoute(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
@@ -356,7 +356,7 @@ EOT;
      *
      * @return void
      */
-    public function testRenderRowButtonsWithEditRoute() {
+    public function testRenderRowButtonsWithEditRoute(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
@@ -371,7 +371,7 @@ EOT;
      *
      * @return void
      */
-    public function testRenderRowButtonsWithShowRoute() {
+    public function testRenderRowButtonsWithShowRoute(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
@@ -386,7 +386,7 @@ EOT;
      *
      * @return void
      */
-    public function testWrapContent() {
+    public function testWrapContent(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
@@ -401,7 +401,7 @@ EOT;
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 

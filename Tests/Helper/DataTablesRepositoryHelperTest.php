@@ -36,7 +36,7 @@ class DataTablesRepositoryHelperTest extends AbstractTestCase {
     /**
      * {@inheritDoc}
      */
-    protected function setUp() {
+    protected function setUp(): void {
         parent::setUp();
 
         // Set an Entity manager mock.
@@ -51,7 +51,7 @@ class DataTablesRepositoryHelperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAppendOrder() {
+    public function testAppendOrder(): void {
 
         // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
@@ -65,7 +65,7 @@ class DataTablesRepositoryHelperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAppendWhere() {
+    public function testAppendWhere(): void {
 
         // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();

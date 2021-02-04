@@ -28,7 +28,7 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testBuild() {
+    public function testBuild(): void {
 
         $obj = new WBWJQueryDataTablesBundle();
 
@@ -40,7 +40,7 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetAssetsRelativeDirectory() {
+    public function testGetAssetsRelativeDirectory(): void {
 
         $obj = new WBWJQueryDataTablesBundle();
 
@@ -52,7 +52,7 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetContainerExtension() {
+    public function testGetContainerExtension(): void {
 
         $obj = new WBWJQueryDataTablesBundle();
 

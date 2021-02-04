@@ -24,5 +24,5 @@ interface DataTablesRouterInterface {
      *
      * @return string Returns the URL.
      */
-    public function getUrl();
+    public function getUrl(): string;
 }

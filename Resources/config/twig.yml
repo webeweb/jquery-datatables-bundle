@@ -2,8 +2,8 @@
 services:
 
     wbw.jquery.datatables.twig.extension:
-        class:     WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension
-        arguments: ["@twig", "@wbw.core.twig.extension.renderer", "%kernel.environment%"]
-        public:    true
+        class:  WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension
+        arguments: [ "@twig", "@wbw.core.twig.extension.renderer", "%kernel.environment%" ]
+        public: true
         tags:
             - { name: "twig.extension" }

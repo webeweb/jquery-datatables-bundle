@@ -22,7 +22,7 @@ interface DataTablesEntityInterface {
     /**
      * Get the id.
      *
-     * @return int Returns the id.
+     * @return int|null Returns the id.
      */
-    public function getId();
+    public function getId(): ?int;
 }

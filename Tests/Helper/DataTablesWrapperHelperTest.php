@@ -31,7 +31,7 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetLanguageURLWithFileNotFoundException() {
+    public function testGetLanguageURLWithFileNotFoundException(): void {
 
         try {
 
@@ -49,7 +49,7 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testGetLanguageUrl() {
+    public function testGetLanguageUrl(): void {
 
         $res = "/bundles/wbwjquerydatatables/datatables-i18n/French.json";
         $this->assertEquals($res, DataTablesWrapperHelper::getLanguageUrl("French"));
@@ -60,7 +60,7 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetName() {
+    public function testGetName(): void {
 
         $this->dtProvider->expects($this->any())->method("getName")->willReturn("employee");
         $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(DataTablesFactory::newWrapper("url", $this->dtProvider)));
@@ -77,7 +77,7 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetOptions() {
+    public function testGetOptions(): void {
 
         $obj = TestFixtures::getWrapper();
 

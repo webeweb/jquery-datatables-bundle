@@ -28,7 +28,7 @@ class DataTablesMappingTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetColumn() {
+    public function testSetColumn(): void {
 
         $obj = new DataTablesMapping();
 
@@ -41,7 +41,7 @@ class DataTablesMappingTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetParent() {
+    public function testSetParent(): void {
 
         // Set a DataTables column mock.
         $column = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
@@ -57,7 +57,7 @@ class DataTablesMappingTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetPrefix() {
+    public function testSetPrefix(): void {
 
         $obj = new DataTablesMapping();
 
@@ -70,7 +70,7 @@ class DataTablesMappingTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new DataTablesMapping();
 

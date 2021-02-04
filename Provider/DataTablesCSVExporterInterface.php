@@ -26,7 +26,7 @@ interface DataTablesCSVExporterInterface extends ProviderInterface {
      *
      * @return array Returns an array representing the columns.
      */
-    public function exportColumns();
+    public function exportColumns(): array;
 
     /**
      * Export a row.
@@ -34,5 +34,5 @@ interface DataTablesCSVExporterInterface extends ProviderInterface {
      * @param object $entity The entity.
      * @return array Returns an array representing this row.
      */
-    public function exportRow($entity);
+    public function exportRow($entity): array;
 }

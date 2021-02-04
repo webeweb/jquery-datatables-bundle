@@ -12,7 +12,10 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesRouterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Office;
@@ -29,14 +32,14 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTable
     /**
      * {@inheritDoc}
      */
-    public function getCSVExporter() {
+    public function getCSVExporter(): ?DataTablesCSVExporterInterface {
         return null;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getColumns() {
+    public function getColumns(): array {
 
         $dtColumns = [];
 
@@ -49,63 +52,63 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTable
     /**
      * {@inheritDoc}
      */
-    public function getEditor() {
+    public function getEditor(): ?DataTablesEditorInterface {
         return null;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getEntity() {
+    public function getEntity(): string {
         return Office::class;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getMethod() {
+    public function getMethod(): string {
         return HttpInterface::HTTP_METHOD_POST;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getName() {
+    public function getName(): string {
         return "office";
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getOptions() {
+    public function getOptions(): ?DataTablesOptionsInterface {
         return null;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getPrefix() {
+    public function getPrefix(): string {
         return "o";
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getUrl() {
+    public function getUrl(): string {
         return "url";
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getView() {
+    public function getView(): ?string {
         return null;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity) {
+    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity): ?string {
 
         $output = null;
 
@@ -126,7 +129,7 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTable
     /**
      * {@inheritDoc}
      */
-    public function renderRow($dtRow, $entity, $rowNumber) {
+    public function renderRow(string $dtRow, $entity, int $rowNumber) {
 
         $output = null;
 

@@ -37,7 +37,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewOptions() {
+    public function testNewOptions(): void {
 
         $obj = TestDataTablesFactory::newOptions();
 
@@ -49,7 +49,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewResponse() {
+    public function testNewResponse(): void {
 
         // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
@@ -73,7 +73,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewWrapper() {
+    public function testNewWrapper(): void {
 
         // Set an User mock.
         $user = $this->getMockBuilder(UserInterface::class)->getMock();
@@ -83,7 +83,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
         $this->assertInstanceOf(DataTablesWrapperInterface::class, $obj);
 
         $this->assertEquals([], $obj->getColumns());
-        $this->assertNull($obj->getMapping()->getPrefix());
+        $this->assertEquals("", $obj->getMapping()->getPrefix());
         $this->assertEquals("POST", $obj->getMethod());
         $this->assertNull($obj->getOptions());
         $this->assertTrue($obj->getProcessing());
@@ -100,7 +100,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testParseColumn() {
+    public function testParseColumn(): void {
 
         // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
@@ -125,7 +125,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testParseColumnWithBadData() {
+    public function testParseColumnWithBadData(): void {
 
         // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
@@ -146,7 +146,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testParseColumnWithBadName() {
+    public function testParseColumnWithBadName(): void {
 
         // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
@@ -167,7 +167,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testParseColumnWithNoData() {
+    public function testParseColumnWithNoData(): void {
 
         // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
@@ -188,7 +188,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testParseColumnWithNoName() {
+    public function testParseColumnWithNoName(): void {
 
         // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
@@ -209,7 +209,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testParseColumnWithNoSearchable() {
+    public function testParseColumnWithNoSearchable(): void {
 
         // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
@@ -235,7 +235,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testParseColumns() {
+    public function testParseColumns(): void {
 
         // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
@@ -253,7 +253,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testParseColumnsWithNoData() {
+    public function testParseColumnsWithNoData(): void {
 
         // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
@@ -274,7 +274,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testParseOrder() {
+    public function testParseOrder(): void {
 
         // Get the POST data.
         $postData = TestFixtures::getPOSTData();
@@ -296,7 +296,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testParseOrderWithInvalidDir() {
+    public function testParseOrderWithInvalidDir(): void {
 
         // Get the POST data.
         $postData = TestFixtures::getPOSTData();
@@ -315,7 +315,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testParseOrderWithNoColumn() {
+    public function testParseOrderWithNoColumn(): void {
 
         // Get the POST data.
         $postData = TestFixtures::getPOSTData();
@@ -334,7 +334,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testParseOrderWithNoDir() {
+    public function testParseOrderWithNoDir(): void {
 
         // Get the POST data.
         $postData = TestFixtures::getPOSTData();
@@ -353,7 +353,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testParseOrders() {
+    public function testParseOrders(): void {
 
         // Get the POST data.
         $postData = TestFixtures::getPOSTData();
@@ -373,7 +373,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testParseRequestWithGET() {
+    public function testParseRequestWithGET(): void {
 
         // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
@@ -401,7 +401,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testParseRequestWithPOST() {
+    public function testParseRequestWithPOST(): void {
 
         // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();
@@ -429,7 +429,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testParseSearch() {
+    public function testParseSearch(): void {
 
         // Get the POST data.
         $postData = TestFixtures::getPOSTData();
@@ -451,7 +451,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testParseSearchWithNoRegex() {
+    public function testParseSearchWithNoRegex(): void {
 
         // Get the POST data.
         $postData = TestFixtures::getPOSTData();
@@ -474,7 +474,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testParseSearchWithNoValue() {
+    public function testParseSearchWithNoValue(): void {
 
         // Get the POST data.
         $postData = TestFixtures::getPOSTData();
@@ -497,7 +497,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testParseWrapper() {
+    public function testParseWrapper(): void {
 
         // Get a wrapper.
         $wrapper = TestFixtures::getWrapper();

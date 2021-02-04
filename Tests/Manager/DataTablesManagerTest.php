@@ -38,7 +38,7 @@ class DataTablesManagerTest extends AbstractTestCase {
     /**
      * {@inheritDoc}
      */
-    protected function setUp() {
+    protected function setUp(): void {
         parent::setUp();
 
         // Set a DataTables provider mock.
@@ -52,7 +52,7 @@ class DataTablesManagerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testAddProvider() {
+    public function testAddProvider(): void {
 
         $obj = new DataTablesManager();
 
@@ -67,7 +67,7 @@ class DataTablesManagerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testAddProviderWithAlreadyRegisteredDataTablesProviderException() {
+    public function testAddProviderWithAlreadyRegisteredDataTablesProviderException(): void {
 
         $obj = new DataTablesManager();
         $obj->addProvider($this->dataTablesProvider);
@@ -88,7 +88,7 @@ class DataTablesManagerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testContains() {
+    public function testContains(): void {
 
         $obj = new DataTablesManager();
 
@@ -103,7 +103,7 @@ class DataTablesManagerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testContainsWithInvalidArgumentException() {
+    public function testContainsWithInvalidArgumentException(): void {
 
         $obj = new DataTablesManager();
 
@@ -123,7 +123,7 @@ class DataTablesManagerTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testGetProvider() {
+    public function testGetProvider(): void {
 
         $obj = new DataTablesManager();
 
@@ -136,7 +136,7 @@ class DataTablesManagerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetProviderWithUnregisteredDataTablesProviderException() {
+    public function testGetProviderWithUnregisteredDataTablesProviderException(): void {
 
         $obj = new DataTablesManager();
 
@@ -155,7 +155,7 @@ class DataTablesManagerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("wbw.jquery.datatables.manager", DataTablesManager::SERVICE_NAME);
 

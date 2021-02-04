@@ -2,7 +2,7 @@
 services:
 
     wbw.jquery.datatables.event_listener:
-        class:     WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\EventListener\DataTablesEventListener
+        class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\EventListener\DataTablesEventListener
         tags:
             - { name: "kernel.event_listener", event: "wbw.jquery.datatables.event.pre_delete",  method: "onPreDelete" }
             - { name: "kernel.event_listener", event: "wbw.jquery.datatables.event.pre_edit",    method: "onPreEdit" }

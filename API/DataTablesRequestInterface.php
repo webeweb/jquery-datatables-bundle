@@ -69,68 +69,68 @@ interface DataTablesRequestInterface {
      * @param string $data The column data.
      * @return DataTablesColumnInterface|null Returns the column in case of success, null otherwise.
      */
-    public function getColumn($data);
+    public function getColumn(string $data): ?DataTablesColumnInterface;
 
     /**
      * Get the columns.
      *
      * @return DataTablesColumnInterface[] Returns the columns.
      */
-    public function getColumns();
+    public function getColumns(): array;
 
     /**
      * Get the draw.
      *
      * @return int Returns the draw.
      */
-    public function getDraw();
+    public function getDraw(): int;
 
     /**
      * Get the length.
      *
      * @return int Returns the length.
      */
-    public function getLength();
+    public function getLength(): int;
 
     /**
      * Get the order.
      *
      * @return DataTablesOrderInterface[] Returns the order.
      */
-    public function getOrder();
+    public function getOrder(): array;
 
     /**
      * Get the query.
      *
      * @return ParameterBag Returns the query.
      */
-    public function getQuery();
+    public function getQuery(): ParameterBag;
 
     /**
      * Get the request.
      *
      * @return ParameterBag Returns the request.
      */
-    public function getRequest();
+    public function getRequest(): ParameterBag;
 
     /**
      * Get the search.
      *
-     * @return DataTablesSearchInterface Returns the search.
+     * @return DataTablesSearchInterface|null Returns the search.
      */
-    public function getSearch();
+    public function getSearch(): ?DataTablesSearchInterface;
 
     /**
      * Get the start.
      *
      * @return int Returns the start.
      */
-    public function getStart();
+    public function getStart(): int;
 
     /**
      * Get the wrapper.
      *
-     * @return DataTablesWrapperInterface Returns the wrapper.
+     * @return DataTablesWrapperInterface|null Returns the wrapper.
      */
-    public function getWrapper();
+    public function getWrapper(): ?DataTablesWrapperInterface;
 }

@@ -23,29 +23,16 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesOrderTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstrutor() {
-
-        $obj = new DataTablesOrder();
-
-        $this->assertNull($obj->getColumn());
-        $this->assertNull($obj->getDir());
-    }
-
-    /**
      * Tests the setColumn() method.
      *
      * @retrun void
      */
-    public function testSetColumn() {
+    public function testSetColumn(): void {
 
         $obj = new DataTablesOrder();
 
-        $obj->setColumn("column");
-        $this->assertEquals("column", $obj->getColumn());
+        $obj->setColumn(1);
+        $this->assertEquals(1, $obj->getColumn());
     }
 
     /**
@@ -53,7 +40,7 @@ class DataTablesOrderTest extends AbstractTestCase {
      *
      * @retrun void
      */
-    public function testSetDir() {
+    public function testSetDir(): void {
 
         $obj = new DataTablesOrder();
 
@@ -65,5 +52,18 @@ class DataTablesOrderTest extends AbstractTestCase {
 
         $obj->setDir("exception");
         $this->assertEquals("ASC", $obj->getDir());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construt(): void {
+
+        $obj = new DataTablesOrder();
+
+        $this->assertNull($obj->getColumn());
+        $this->assertNull($obj->getDir());
     }
 }

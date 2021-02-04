@@ -27,7 +27,7 @@ class DataTablesSearchTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetRegex() {
+    public function testSetRegex(): void {
 
         $obj = new DataTablesSearch();
 
@@ -40,7 +40,7 @@ class DataTablesSearchTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetValue() {
+    public function testSetValue(): void {
 
         $obj = new DataTablesSearch();
 
@@ -51,7 +51,7 @@ class DataTablesSearchTest extends AbstractTestCase {
     /**
      * Tests the __construct() method.
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new DataTablesSearch();
 

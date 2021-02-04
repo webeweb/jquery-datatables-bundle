@@ -54,7 +54,7 @@ abstract class AbstractController extends BaseController {
      * @param ActionResponse $output The output.
      * @return Response Returns the response.
      */
-    protected function buildDataTablesResponse(Request $request, $name, ActionResponse $output) {
+    protected function buildDataTablesResponse(Request $request, string $name, ActionResponse $output): Response {
 
         if (true === $request->isXmlHttpRequest()) {
             return new JsonResponse($output);
@@ -85,7 +85,7 @@ abstract class AbstractController extends BaseController {
      * @param array $entities The entities.
      * @return DataTablesEvent|null Returns the event in case of success, null otherwise.
      */
-    protected function dispatchDataTablesEvent($eventName, array $entities) {
+    protected function dispatchDataTablesEvent(string $eventName, array $entities): ?DataTablesEvent {
         return $this->dispatchEvent($eventName, new DataTablesEvent($eventName, $entities));
     }
 
@@ -98,7 +98,7 @@ abstract class AbstractController extends BaseController {
      * @param bool $windows Windows ?
      * @return void
      */
-    protected function exportDataTablesCallback(DataTablesProviderInterface $dtProvider, DataTablesRepositoryInterface $repository, DataTablesCSVExporterInterface $dtExporter, $windows) {
+    protected function exportDataTablesCallback(DataTablesProviderInterface $dtProvider, DataTablesRepositoryInterface $repository, DataTablesCSVExporterInterface $dtExporter, bool $windows): void {
 
         $stream = fopen("php://output", "w+");
         fputcsv($stream, DataTablesExportHelper::convert($dtExporter->exportColumns(), $windows), ";");
@@ -112,7 +112,7 @@ abstract class AbstractController extends BaseController {
         for ($i = 0; $i < $pages; ++$i) {
 
             // Get the offset and limit.
-            list($offset, $limit) = PaginateHelper::getPageOffsetAndLimit($i, DataTablesRepositoryInterface::REPOSITORY_LIMIT, $total);
+            [$offset, $limit] = PaginateHelper::getPageOffsetAndLimit($i, DataTablesRepositoryInterface::REPOSITORY_LIMIT, $total);
 
             // Get the export query with offset and limit.
             $result = $repository->dataTablesExportAll($dtProvider)
@@ -143,7 +143,7 @@ abstract class AbstractController extends BaseController {
      * @return DataTablesCSVExporterInterface Returns the CSV exporter.
      * @throws BadDataTablesCSVExporterException Throws a bad CSV exporter exception.
      */
-    protected function getDataTablesCSVExporter(DataTablesProviderInterface $dtProvider) {
+    protected function getDataTablesCSVExporter(DataTablesProviderInterface $dtProvider): DataTablesCSVExporterInterface {
 
         $context = [
             "_controller" => get_class($this),
@@ -172,7 +172,7 @@ abstract class AbstractController extends BaseController {
      * @return DataTablesColumnInterface Returns the column.
      * @throws BadDataTablesColumnException Throws a bad column exception.
      */
-    protected function getDataTablesColumn(DataTablesProviderInterface $dtProvider, $data) {
+    protected function getDataTablesColumn(DataTablesProviderInterface $dtProvider, string $data): DataTablesColumnInterface {
 
         $dtWrapper = $this->getDataTablesWrapper($dtProvider);
 
@@ -203,7 +203,7 @@ abstract class AbstractController extends BaseController {
      * @return DataTablesEditorInterface Returns the editor.
      * @throws BadDataTablesEditorException Throws a bad editor exception.
      */
-    protected function getDataTablesEditor(DataTablesProviderInterface $dtProvider) {
+    protected function getDataTablesEditor(DataTablesProviderInterface $dtProvider): DataTablesEditorInterface {
 
         $context = [
             "_controller" => get_class($this),
@@ -228,12 +228,12 @@ abstract class AbstractController extends BaseController {
      * Get an entity by id.
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
-     * @param int $id The entity id.
+     * @param string $id The entity id.
      * @return object Returns the entity.
      * @throws BadDataTablesRepositoryException Throws a bad repository exception.
      * @throws EntityNotFoundException Throws an Entity not found exception.
      */
-    protected function getDataTablesEntityById(DataTablesProviderInterface $dtProvider, $id) {
+    protected function getDataTablesEntityById(DataTablesProviderInterface $dtProvider, string $id) {
 
         $repository = $this->getDataTablesRepository($dtProvider);
 
@@ -262,7 +262,7 @@ abstract class AbstractController extends BaseController {
      *
      * @return DataTablesManager Returns the manager.
      */
-    protected function getDataTablesManager() {
+    protected function getDataTablesManager(): DataTablesManager {
         return $this->get(DataTablesManager::SERVICE_NAME);
     }
 
@@ -273,7 +273,7 @@ abstract class AbstractController extends BaseController {
      * @return DataTablesProviderInterface Returns the provider.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
-    protected function getDataTablesProvider($name) {
+    protected function getDataTablesProvider(string $name): DataTablesProviderInterface {
 
         $dtManager = $this->getDataTablesManager();
 
@@ -300,7 +300,7 @@ abstract class AbstractController extends BaseController {
      * @return DataTablesRepositoryInterface Returns the repository.
      * @throws BadDataTablesRepositoryException Throws a bad repository exception.
      */
-    protected function getDataTablesRepository(DataTablesProviderInterface $dtProvider) {
+    protected function getDataTablesRepository(DataTablesProviderInterface $dtProvider): DataTablesRepositoryInterface {
 
         $em = $this->getDoctrine()->getManager();
 
@@ -331,7 +331,7 @@ abstract class AbstractController extends BaseController {
      * @param DataTablesProviderInterface $dtProvider The provider.
      * @return string Returns the URL.
      */
-    protected function getDataTablesUrl(DataTablesProviderInterface $dtProvider) {
+    protected function getDataTablesUrl(DataTablesProviderInterface $dtProvider): string {
 
         $context = [
             "_controller" => get_class($this),
@@ -359,7 +359,7 @@ abstract class AbstractController extends BaseController {
      * @param DataTablesProviderInterface $dtProvider The provider.
      * @return DataTablesWrapperInterface Returns the wrapper.
      */
-    protected function getDataTablesWrapper(DataTablesProviderInterface $dtProvider) {
+    protected function getDataTablesWrapper(DataTablesProviderInterface $dtProvider): DataTablesWrapperInterface {
 
         $dtWrapper = DataTablesFactory::newWrapper($this->getDataTablesUrl($dtProvider), $dtProvider, $this->getKernelEventListener()->getUser());
 
@@ -390,7 +390,7 @@ abstract class AbstractController extends BaseController {
      * @param string $notificationBaseId The notification base id.
      * @return ActionResponse Returns the action response.
      */
-    protected function handleDataTablesException(Exception $ex, $notificationBaseId) {
+    protected function handleDataTablesException(Exception $ex, string $notificationBaseId): ActionResponse {
 
         $this->logInfo($ex->getMessage());
 
@@ -408,7 +408,7 @@ abstract class AbstractController extends BaseController {
      * @param array $context The context.
      * @return AbstractController Returns this controller.
      */
-    protected function logInfo($message, array $context = []) {
+    protected function logInfo(string $message, array $context = []): AbstractController {
         $this->getLogger()->info($message, $context);
         return $this;
     }
@@ -420,7 +420,7 @@ abstract class AbstractController extends BaseController {
      * @param string $notificationId The notification id.
      * @return ActionResponse Returns the action response.
      */
-    protected function prepareActionResponse($status, $notificationId) {
+    protected function prepareActionResponse(int $status, string $notificationId): ActionResponse {
 
         $notify = $this->getTranslator()->trans($notificationId, [], "WBWJQueryDataTablesBundle");
 

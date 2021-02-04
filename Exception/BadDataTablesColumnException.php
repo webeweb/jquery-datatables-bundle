@@ -24,7 +24,7 @@ class BadDataTablesColumnException extends AbstractDataTablesException {
      *
      * @param string $name The column name.
      */
-    public function __construct($name) {
+    public function __construct(string $name) {
         $format = 'The DataTables column with name "%s" does not exist';
         parent::__construct(sprintf($format, $name));
     }

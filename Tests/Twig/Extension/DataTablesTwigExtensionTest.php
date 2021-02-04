@@ -37,7 +37,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     /**
      * {@inheritDoc}
      */
-    protected function setUp() {
+    protected function setUp(): void {
         parent::setUp();
 
         // Set a Renderer Twig extension mock.
@@ -49,7 +49,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetFilters() {
+    public function testGetFilters(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
@@ -72,7 +72,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetFunctions() {
+    public function testGetFunctions(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
@@ -135,56 +135,54 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testI18n() {
+    public function testI18n(): void {
 
-        // Initialize the language directory.
-        $langDirectory = getcwd() . "/Resources/public/datatables-i18n";
+        $directory = getcwd() . "/Resources/public/datatables-i18n";
 
         $found = 0;
 
-        // Read the directory.
-        $stream = opendir($langDirectory);
+        $stream = opendir($directory);
         while (false !== ($file = readdir($stream))) {
 
-            // Check the filename.
             if (true === in_array($file, [".", ".."])) {
                 continue;
             }
 
-            // Count the filename.
             ++$found;
 
-            // Check the JSON content.
-            $this->assertJson(file_get_contents($langDirectory . "/" . $file), $file);
+            $this->assertJson(file_get_contents($directory . "/" . $file), $file);
         }
+
         closedir($stream);
 
-        // Check the translations count.
         $this->assertEquals(70, $found);
     }
 
     /**
-     * Tests the jQueryDataTablesFunction() {
+     * Tests the jQueryDataTablesFunction() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testJQueryDataTablesFunction() {
+    public function testJQueryDataTablesFunction(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
-        $arg = ["selector" => "#selector", "language" => "French"];
+        $arg = [
+            "selector" => "#selector",
+            "language" => "French",
+        ];
         $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testJQueryDataTablesFunction.html.txt");
         $this->assertEquals($res, $obj->jQueryDataTablesFunction($this->dtWrapper, $arg) . "\n");
     }
 
     /**
-     * Tests the jQueryDataTablesFunction() {
+     * Tests the jQueryDataTablesFunction() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testJQueryDataTablesFunctionWithoutArguments() {
+    public function testJQueryDataTablesFunctionWithoutArguments(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
@@ -198,7 +196,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testJQueryDataTablesNameFunction() {
+    public function testJQueryDataTablesNameFunction(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
@@ -210,7 +208,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testJQueryDataTablesOptionsFunction() {
+    public function testJQueryDataTablesOptionsFunction(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
@@ -265,12 +263,12 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the jQueryDataTablesStandaloneFunction() {
+     * Tests the jQueryDataTablesStandaloneFunction() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testJQueryDataTablesStandaloneFunction() {
+    public function testJQueryDataTablesStandaloneFunction(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
@@ -280,12 +278,12 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the jQueryDataTablesStandaloneFunction() {
+     * Tests the jQueryDataTablesStandaloneFunction() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testJQueryDataTablesStandaloneFunctionWithoutArguments() {
+    public function testJQueryDataTablesStandaloneFunctionWithoutArguments(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
@@ -298,7 +296,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testRenderDataTablesFunction() {
+    public function testRenderDataTablesFunction(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
@@ -318,7 +316,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testRenderDataTablesFunctionWithClass() {
+    public function testRenderDataTablesFunctionWithClass(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
@@ -332,7 +330,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testRenderDataTablesFunctionWithTFoot() {
+    public function testRenderDataTablesFunctionWithTFoot(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
@@ -346,7 +344,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testRenderDataTablesFunctionWithTHead() {
+    public function testRenderDataTablesFunctionWithTHead(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
@@ -360,7 +358,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testRenderDataTablesFunctionWithoutArguments() {
+    public function testRenderDataTablesFunctionWithoutArguments(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
 
@@ -374,7 +372,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("wbw.jquery.datatables.twig.extension", DataTablesTwigExtension::SERVICE_NAME);
 

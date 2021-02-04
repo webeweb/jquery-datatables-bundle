@@ -24,7 +24,7 @@ class AlreadyRegisteredDataTablesProviderException extends AbstractDataTablesExc
      *
      * @param string $name The name.
      */
-    public function __construct($name) {
+    public function __construct(string $name) {
         $format = 'A DataTables provider with name "%s" is already registered';
         parent::__construct(sprintf($format, $name));
     }

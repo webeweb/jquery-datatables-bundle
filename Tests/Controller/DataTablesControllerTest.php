@@ -25,7 +25,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     /**
      * {@inheritDoc}
      */
-    public static function setUpBeforeClass() {
+    public static function setUpBeforeClass(): void {
         parent::setUpBeforeClass();
 
         parent::setUpEmployeeFixtures();
@@ -36,7 +36,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testDeleteAction() {
+    public function testDeleteAction(): void {
 
         $client = $this->client;
 
@@ -54,7 +54,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testDeleteActionWithNotify404() {
+    public function testDeleteActionWithNotify404(): void {
 
         $client = $this->client;
 
@@ -72,7 +72,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testDeleteActionWithStatus200() {
+    public function testDeleteActionWithStatus200(): void {
 
         $client = $this->client;
 
@@ -95,7 +95,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testDeleteActionWithStatus404() {
+    public function testDeleteActionWithStatus404(): void {
 
         $client = $this->client;
 
@@ -118,7 +118,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testEditAction() {
+    public function testEditAction(): void {
 
         $client = $this->client;
 
@@ -141,7 +141,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testEditActionWithBadDatatablesColumnException() {
+    public function testEditActionWithBadDatatablesColumnException(): void {
 
         $client = $this->client;
 
@@ -157,7 +157,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testEditActionWithBadDatatablesEditorException() {
+    public function testEditActionWithBadDatatablesEditorException(): void {
 
         $client = $this->client;
 
@@ -173,7 +173,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testEditActionWithStatus404() {
+    public function testEditActionWithStatus404(): void {
 
         $client = $this->client;
 
@@ -196,7 +196,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testEditActionWithStatus500() {
+    public function testEditActionWithStatus500(): void {
 
         $client = $this->client;
 
@@ -219,7 +219,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testExportAction() {
+    public function testExportAction(): void {
 
         $client = $this->client;
 
@@ -234,7 +234,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testExportActionWithBadDataTablesRepository() {
+    public function testExportActionWithBadDataTablesRepository(): void {
 
         $client = $this->client;
 
@@ -250,7 +250,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testIndexAction() {
+    public function testIndexAction(): void {
 
         $client = $this->client;
 
@@ -264,7 +264,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testIndexActionWithBadDataTablesRepository() {
+    public function testIndexActionWithBadDataTablesRepository(): void {
 
         $client = $this->client;
 
@@ -280,7 +280,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testIndexActionWithLength() {
+    public function testIndexActionWithLength(): void {
 
         $parameters = TestFixtures::getPOSTData();
 
@@ -329,7 +329,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testIndexActionWithNegativeLength() {
+    public function testIndexActionWithNegativeLength(): void {
 
         $parameters = TestFixtures::getPOSTData();
 
@@ -376,7 +376,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testIndexActionWithOrder() {
+    public function testIndexActionWithOrder(): void {
 
         $parameters = TestFixtures::getPOSTData();
 
@@ -414,7 +414,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testIndexActionWithOrderOnNoOrderableColumn() {
+    public function testIndexActionWithOrderOnNoOrderableColumn(): void {
 
         $parameters = TestFixtures::getPOSTData();
 
@@ -453,7 +453,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testIndexActionWithParameters() {
+    public function testIndexActionWithParameters(): void {
 
         $parameters = TestFixtures::getPOSTData();
 
@@ -489,7 +489,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testIndexActionWithSearch() {
+    public function testIndexActionWithSearch(): void {
 
         $parameters = TestFixtures::getPOSTData();
 
@@ -527,7 +527,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testIndexActionWithSearchColumn() {
+    public function testIndexActionWithSearchColumn(): void {
 
         $parameters = TestFixtures::getPOSTData();
 
@@ -557,7 +557,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testIndexActionWithSearchColumnOnNoSearchableColumn() {
+    public function testIndexActionWithSearchColumnOnNoSearchableColumn(): void {
 
         $parameters = TestFixtures::getPOSTData();
 
@@ -595,7 +595,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testIndexActionWithStart() {
+    public function testIndexActionWithStart(): void {
 
         $parameters = TestFixtures::getPOSTData();
 
@@ -624,7 +624,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testOptionsAction() {
+    public function testOptionsAction(): void {
 
         $client = $this->client;
 
@@ -649,7 +649,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testRenderAction() {
+    public function testRenderAction(): void {
 
         $client = $this->client;
 
@@ -676,7 +676,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testSerializeAction() {
+    public function testSerializeAction(): void {
 
         $client = $this->client;
 
@@ -700,7 +700,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testSerializeActionWithStatus404() {
+    public function testSerializeActionWithStatus404(): void {
 
         $client = $this->client;
 
@@ -719,7 +719,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testShowAction() {
+    public function testShowAction(): void {
 
         $client = $this->client;
 
@@ -743,7 +743,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testShowActionWithStatus404() {
+    public function testShowActionWithStatus404(): void {
 
         $client = $this->client;
 

@@ -30,7 +30,7 @@ class DataTablesEntityHelperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testIsCompatible() {
+    public function testIsCompatible(): void {
 
         // Set a DataTables entity mock.
         $dtEntity = $this->getMockBuilder(DataTablesEntityInterface::class)->getMock();
@@ -45,7 +45,7 @@ class DataTablesEntityHelperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewSerializer() {
+    public function testNewSerializer(): void {
 
         $res = DataTablesEntityHelper::newSerializer();
 

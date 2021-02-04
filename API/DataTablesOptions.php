@@ -11,8 +11,6 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\API;
 
-use WBW\Library\Core\Argument\ArgumentHelper;
-
 /**
  * DataTables options.
  *
@@ -38,8 +36,7 @@ class DataTablesOptions implements DataTablesOptionsInterface {
     /**
      * {@inheritDoc}
      */
-    public function addOption($name, $value) {
-        ArgumentHelper::isTypeOf($name, ArgumentHelper::ARGUMENT_STRING);
+    public function addOption(string $name, $value): DataTablesOptionsInterface {
         if (false === array_key_exists($name, $this->options)) {
             $this->options[$name] = $value;
         }
@@ -49,7 +46,7 @@ class DataTablesOptions implements DataTablesOptionsInterface {
     /**
      * {@inheritDoc}
      */
-    public function getOption($name) {
+    public function getOption(string $name) {
         if (true === array_key_exists($name, $this->options)) {
             return $this->options[$name];
         }
@@ -59,21 +56,21 @@ class DataTablesOptions implements DataTablesOptionsInterface {
     /**
      * {@inheritDoc}
      */
-    public function getOptions() {
+    public function getOptions(): array {
         return $this->options;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function hasOption($name) {
+    public function hasOption(string $name): bool {
         return array_key_exists($name, $this->options);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function removeOption($name) {
+    public function removeOption(string $name): DataTablesOptionsInterface {
         if (true === array_key_exists($name, $this->options)) {
             unset($this->options[$name]);
         }
@@ -83,8 +80,7 @@ class DataTablesOptions implements DataTablesOptionsInterface {
     /**
      * {@inheritDoc}
      */
-    public function setOption($name, $value) {
-        ArgumentHelper::isTypeOf($name, ArgumentHelper::ARGUMENT_STRING);
+    public function setOption(string $name, $value): DataTablesOptionsInterface {
         $this->options[$name] = $value;
         return $this;
     }
@@ -95,7 +91,7 @@ class DataTablesOptions implements DataTablesOptionsInterface {
      * @param array $options The options.
      * @return DataTablesOptionsInterface Returns this options.
      */
-    protected function setOptions(array $options) {
+    protected function setOptions(array $options): DataTablesOptionsInterface {
         $this->options = $options;
         return $this;
     }

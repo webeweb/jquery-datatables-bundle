@@ -22,21 +22,21 @@ class DataTablesMapping implements DataTablesMappingInterface {
     /**
      * Column.
      *
-     * @var string
+     * @var string|null
      */
     private $column;
 
     /**
      * Parent.
      *
-     * @var DataTablesColumnInterface
+     * @var DataTablesColumnInterface|null
      */
     private $parent;
 
     /**
      * Prefix.
      *
-     * @var string
+     * @var string|null
      */
     private $prefix;
 
@@ -44,34 +44,34 @@ class DataTablesMapping implements DataTablesMappingInterface {
      * Constructor.
      */
     public function __construct() {
-        // NOTHING TO DO.
+        // NOTHING TO DO
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getColumn() {
+    public function getColumn(): ?string {
         return $this->column;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getParent() {
+    public function getParent(): ?DataTablesColumnInterface {
         return $this->parent;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getPrefix() {
+    public function getPrefix(): ?string {
         return $this->prefix;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setColumn($column) {
+    public function setColumn(?string $column): DataTablesMappingInterface {
         $this->column = $column;
         return $this;
     }
@@ -79,10 +79,10 @@ class DataTablesMapping implements DataTablesMappingInterface {
     /**
      * Set the parent.
      *
-     * @param DataTablesColumnInterface $parent The parent.
+     * @param DataTablesColumnInterface|null $parent The parent.
      * @return DataTablesMappingInterface Returns this mapping.
      */
-    public function setParent(DataTablesColumnInterface $parent) {
+    public function setParent(?DataTablesColumnInterface $parent): DataTablesMappingInterface {
         $this->parent = $parent;
         return $this;
     }
@@ -90,7 +90,7 @@ class DataTablesMapping implements DataTablesMappingInterface {
     /**
      * {@inheritDoc}
      */
-    public function setPrefix($prefix) {
+    public function setPrefix(?string $prefix): DataTablesMappingInterface {
         $this->prefix = $prefix;
         return $this;
     }

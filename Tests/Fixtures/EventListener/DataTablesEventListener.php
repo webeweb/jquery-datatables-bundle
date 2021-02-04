@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\EventListener;
 
-use Symfony\Component\EventDispatcher\Event;
+use WBW\Bundle\CoreBundle\Component\EventDispatcher\BaseEvent;
 use WBW\Bundle\JQuery\DataTablesBundle\Event\DataTablesEvent;
 
 /**
@@ -26,9 +26,9 @@ class DataTablesEventListener {
      * On post delete.
      *
      * @param DataTablesEvent $event The event.
-     * @return Event Returns the event.
+     * @return BaseEvent Returns the event.
      */
-    public function onPostDelete(DataTablesEvent $event) {
+    public function onPostDelete(DataTablesEvent $event): BaseEvent {
         return $event;
     }
 
@@ -36,9 +36,9 @@ class DataTablesEventListener {
      * On post edit.
      *
      * @param DataTablesEvent $event The event.
-     * @return Event Returns the event.
+     * @return BaseEvent Returns the event.
      */
-    public function onPostEdit(DataTablesEvent $event) {
+    public function onPostEdit(DataTablesEvent $event): BaseEvent {
         return $event;
     }
 
@@ -46,9 +46,9 @@ class DataTablesEventListener {
      * On post export.
      *
      * @param DataTablesEvent $event The event.
-     * @return Event Returns the event.
+     * @return BaseEvent Returns the event.
      */
-    public function onPostExport(DataTablesEvent $event) {
+    public function onPostExport(DataTablesEvent $event): BaseEvent {
         return $event;
     }
 
@@ -56,9 +56,9 @@ class DataTablesEventListener {
      * On post index.
      *
      * @param DataTablesEvent $event The event.
-     * @return Event Returns the event.
+     * @return BaseEvent Returns the event.
      */
-    public function onPostIndex(DataTablesEvent $event) {
+    public function onPostIndex(DataTablesEvent $event): BaseEvent {
         return $event;
     }
 
@@ -66,9 +66,9 @@ class DataTablesEventListener {
      * On pre delete.
      *
      * @param DataTablesEvent $event The event.
-     * @return Event Returns the event.
+     * @return BaseEvent Returns the event.
      */
-    public function onPreDelete(DataTablesEvent $event) {
+    public function onPreDelete(DataTablesEvent $event): BaseEvent {
         return $event;
     }
 
@@ -76,9 +76,9 @@ class DataTablesEventListener {
      * On pre edit.
      *
      * @param DataTablesEvent $event The event.
-     * @return Event Returns the event.
+     * @return BaseEvent Returns the event.
      */
-    public function onPreEdit(DataTablesEvent $event) {
+    public function onPreEdit(DataTablesEvent $event): BaseEvent {
         return $event;
     }
 
@@ -86,9 +86,9 @@ class DataTablesEventListener {
      * On pre export.
      *
      * @param DataTablesEvent $event The event.
-     * @return Event Returns the event.
+     * @return BaseEvent Returns the event.
      */
-    public function onPreExport(DataTablesEvent $event) {
+    public function onPreExport(DataTablesEvent $event): BaseEvent {
         return $event;
     }
 
@@ -96,9 +96,9 @@ class DataTablesEventListener {
      * On pre index.
      *
      * @param DataTablesEvent $event The event.
-     * @return Event Returns the event.
+     * @return BaseEvent Returns the event.
      */
-    public function onPreIndex(DataTablesEvent $event) {
+    public function onPreIndex(DataTablesEvent $event): BaseEvent {
         return $event;
     }
 
@@ -106,9 +106,9 @@ class DataTablesEventListener {
      * On pre show.
      *
      * @param DataTablesEvent $event The event.
-     * @return Event Returns the event.
+     * @return BaseEvent Returns the event.
      */
-    public function onPreShow(DataTablesEvent $event) {
+    public function onPreShow(DataTablesEvent $event): BaseEvent {
         return $event;
     }
 }

@@ -22,37 +22,37 @@ interface DataTablesMappingInterface {
     /**
      * Get the column.
      *
-     * @return string Returns the column.
+     * @return string|null Returns the column.
      */
-    public function getColumn();
+    public function getColumn(): ?string;
 
     /**
      * Get the parent.
      *
-     * @return DataTablesColumnInterface Returns the parent.
+     * @return DataTablesColumnInterface|null Returns the parent.
      */
-    public function getParent();
+    public function getParent(): ?DataTablesColumnInterface;
 
     /**
      * Get the prefix.
      *
-     * @return string Returns the prefix.
+     * @return string|null Returns the prefix.
      */
-    public function getPrefix();
+    public function getPrefix(): ?string;
 
     /**
      * Set the column.
      *
-     * @param string $column The column.
+     * @param string|null $column The column.
      * @return DataTablesMappingInterface Returns this mapping.
      */
-    public function setColumn($column);
+    public function setColumn(?string $column): DataTablesMappingInterface;
 
     /**
      * Set the prefix.
      *
-     * @param string $prefix The prefix.
+     * @param string|null $prefix The prefix.
      * @return DataTablesMappingInterface Returns this mapping.
      */
-    public function setPrefix($prefix);
+    public function setPrefix(?string $prefix): DataTablesMappingInterface;
 }

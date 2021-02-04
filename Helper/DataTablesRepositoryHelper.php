@@ -29,7 +29,7 @@ class DataTablesRepositoryHelper {
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return void
      */
-    public static function appendOrder(QueryBuilder $queryBuilder, DataTablesWrapperInterface $dtWrapper) {
+    public static function appendOrder(QueryBuilder $queryBuilder, DataTablesWrapperInterface $dtWrapper): void {
 
         foreach ($dtWrapper->getRequest()->getOrder() as $dtOrder) {
 
@@ -49,7 +49,7 @@ class DataTablesRepositoryHelper {
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return void
      */
-    public static function appendWhere(QueryBuilder $queryBuilder, DataTablesWrapperInterface $dtWrapper) {
+    public static function appendWhere(QueryBuilder $queryBuilder, DataTablesWrapperInterface $dtWrapper): void {
 
         $operator = static::determineOperator($dtWrapper);
         if (null === $operator) {
@@ -80,9 +80,9 @@ class DataTablesRepositoryHelper {
      * Determines an operator.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
-     * @return string Returns the operator.
+     * @return string|null Returns the operator.
      */
-    public static function determineOperator(DataTablesWrapperInterface $dtWrapper) {
+    public static function determineOperator(DataTablesWrapperInterface $dtWrapper): ?string {
 
         foreach ($dtWrapper->getRequest()->getColumns() as $dtColumn) {
             if (false === $dtColumn->getSearchable()) {

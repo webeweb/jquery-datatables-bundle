@@ -28,7 +28,7 @@ class DataTablesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetColumn() {
+    public function testGetColumn(): void {
 
         $obj = new DataTablesRequest();
 
@@ -43,7 +43,7 @@ class DataTablesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetColumns() {
+    public function testSetColumns(): void {
 
         $obj = new DataTablesRequest();
 
@@ -56,7 +56,7 @@ class DataTablesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetDraw() {
+    public function testSetDraw(): void {
 
         $obj = new DataTablesRequest();
 
@@ -69,7 +69,7 @@ class DataTablesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetLength() {
+    public function testSetLength(): void {
 
         $obj = new DataTablesRequest();
 
@@ -82,7 +82,7 @@ class DataTablesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOrder() {
+    public function testSetOrder(): void {
 
         $obj = new DataTablesRequest();
 
@@ -95,7 +95,7 @@ class DataTablesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetSearch() {
+    public function testSetSearch(): void {
 
         $obj = new DataTablesRequest();
 
@@ -108,7 +108,7 @@ class DataTablesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetStart() {
+    public function testSetStart(): void {
 
         $obj = new DataTablesRequest();
 
@@ -121,7 +121,7 @@ class DataTablesRequestTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new DataTablesRequest();
 

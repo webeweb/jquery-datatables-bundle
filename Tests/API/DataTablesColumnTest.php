@@ -30,7 +30,7 @@ class DataTablesColumnTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetCellType() {
+    public function testSetCellType(): void {
 
         $obj = new DataTablesColumn();
 
@@ -49,7 +49,7 @@ class DataTablesColumnTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetClassname() {
+    public function testSetClassname(): void {
 
         $obj = new DataTablesColumn();
 
@@ -62,7 +62,7 @@ class DataTablesColumnTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetContentPadding() {
+    public function testSetContentPadding(): void {
 
         $obj = new DataTablesColumn();
 
@@ -75,7 +75,7 @@ class DataTablesColumnTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetData() {
+    public function testSetData(): void {
 
         $obj = new DataTablesColumn();
 
@@ -88,7 +88,7 @@ class DataTablesColumnTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetDefaultContent() {
+    public function testSetDefaultContent(): void {
 
         $obj = new DataTablesColumn();
 
@@ -101,7 +101,7 @@ class DataTablesColumnTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetName() {
+    public function testSetName(): void {
 
         $obj = new DataTablesColumn();
 
@@ -114,7 +114,7 @@ class DataTablesColumnTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOrderData() {
+    public function testSetOrderData(): void {
 
         $obj = new DataTablesColumn();
 
@@ -127,7 +127,7 @@ class DataTablesColumnTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOrderDataType() {
+    public function testSetOrderDataType(): void {
 
         $obj = new DataTablesColumn();
 
@@ -140,7 +140,7 @@ class DataTablesColumnTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOrderSequence() {
+    public function testSetOrderSequence(): void {
 
         $obj = new DataTablesColumn();
 
@@ -159,7 +159,7 @@ class DataTablesColumnTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOrderable() {
+    public function testSetOrderable(): void {
 
         $obj = new DataTablesColumn();
 
@@ -172,7 +172,7 @@ class DataTablesColumnTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetSearch() {
+    public function testSetSearch(): void {
 
         $obj = new DataTablesColumn();
 
@@ -187,7 +187,7 @@ class DataTablesColumnTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetSearchable() {
+    public function testSetSearchable(): void {
 
         $obj = new DataTablesColumn();
 
@@ -200,7 +200,7 @@ class DataTablesColumnTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetTitle() {
+    public function testSetTitle(): void {
 
         $obj = new DataTablesColumn();
 
@@ -213,7 +213,7 @@ class DataTablesColumnTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetType() {
+    public function testSetType(): void {
 
         $obj = new DataTablesColumn();
 
@@ -241,7 +241,7 @@ class DataTablesColumnTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetTypeWithInvalidArgumentException() {
+    public function testSetTypeWithInvalidArgumentException(): void {
 
         $obj = new DataTablesColumn();
 
@@ -260,7 +260,7 @@ class DataTablesColumnTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetVisible() {
+    public function testSetVisible(): void {
 
         $obj = new DataTablesColumn();
 
@@ -273,7 +273,7 @@ class DataTablesColumnTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetWidth() {
+    public function testSetWidth(): void {
 
         $obj = new DataTablesColumn();
 
@@ -286,7 +286,7 @@ class DataTablesColumnTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new DataTablesColumn();
 

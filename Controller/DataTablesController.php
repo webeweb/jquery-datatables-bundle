@@ -48,7 +48,7 @@ class DataTablesController extends AbstractController {
      * @return Response Returns the response.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
-    public function deleteAction(Request $request, $name, $id) {
+    public function deleteAction(Request $request, string $name, string $id): Response {
 
         $dtProvider = $this->getDataTablesProvider($name);
 
@@ -86,7 +86,7 @@ class DataTablesController extends AbstractController {
      * @throws BadDataTablesEditorException Throws a bad editor exception.
      * @throws BadDataTablesColumnException Throws a bad column exception.
      */
-    public function editAction(Request $request, $name, $id, $data, $value) {
+    public function editAction(Request $request, string $name, string $id, string $data, $value): Response {
 
         $dtProvider = $this->getDataTablesProvider($name);
 
@@ -131,7 +131,7 @@ class DataTablesController extends AbstractController {
      * @throws BadDataTablesCSVExporterException Throws a bad CSV exporter exception.
      * @throws BadDataTablesRepositoryException Throws a bad repository exception.
      */
-    public function exportAction(Request $request, $name) {
+    public function exportAction(Request $request, string $name): Response {
 
         $windows = DataTablesExportHelper::isWindows($request);
 
@@ -165,7 +165,7 @@ class DataTablesController extends AbstractController {
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      * @throws BadDataTablesRepositoryException Throws a bad repository exception.
      */
-    public function indexAction(Request $request, $name) {
+    public function indexAction(Request $request, string $name): Response {
 
         if (false === $request->isXmlHttpRequest()) {
             return $this->renderAction($name);
@@ -214,7 +214,7 @@ class DataTablesController extends AbstractController {
      * @return Response Returns a response.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
-    public function optionsAction($name) {
+    public function optionsAction(string $name): Response {
 
         $dtProvider = $this->getDataTablesProvider($name);
 
@@ -232,7 +232,7 @@ class DataTablesController extends AbstractController {
      * @return Response Returns the response.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
-    public function renderAction($name) {
+    public function renderAction(string $name): Response {
 
         $dtProvider = $this->getDataTablesProvider($name);
 
@@ -257,7 +257,7 @@ class DataTablesController extends AbstractController {
      * @throws BadDataTablesRepositoryException Throws a bad repository exception.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
-    public function serializeAction($name, $id) {
+    public function serializeAction(string $name, string $id): Response {
 
         $dtProvider = $this->getDataTablesProvider($name);
 
@@ -288,7 +288,7 @@ class DataTablesController extends AbstractController {
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      * @deprecated since 3.9.0 use {@see WBW\Bundle\JQuery\DataTablesBundle\Controller\DataTablesController::serializeAction()} instead.
      */
-    public function showAction($name, $id) {
+    public function showAction(string $name, string $id): Response {
 
         $format = "The %s::showAction() is deprecated: use %s::serializeAction() instead";
         $myself = get_class($this);

@@ -28,10 +28,10 @@ class DataTablesEntityHelper {
     /**
      * Determines if an entity is compatible.
      *
-     * @param DataTablesEntityInterface|object $entity The entity.
+     * @param object $entity The entity.
      * @return bool Returns true in case of success, false otherwise.
      */
-    public static function isCompatible($entity) {
+    public static function isCompatible($entity): bool {
 
         if (true === ($entity instanceof DataTablesEntityInterface)) {
             return true;
@@ -45,24 +45,24 @@ class DataTablesEntityHelper {
     }
 
     /**
-     * Creates a serializer.
-     *
-     * @return Serializer Returns the serializer.
-     */
-    public static function newSerializer() {
-        return new Serializer([new ObjectNormalizer()], [new JsonEncoder()]);
-    }
-
-    /**
      * Serialize an entity.
      *
-     * @param mixed $entity The entity.
+     * @param object $entity The entity.
      * @return string Returns the serialized entity.
      */
-    public static function jsonSerialize($entity) {
+    public static function jsonSerialize($entity): string {
 
         $data = true === ($entity instanceof JsonSerializable) ? $entity->jsonSerialize() : $entity;
 
         return static::newSerializer()->serialize($data, "json");
+    }
+
+    /**
+     * Creates a serializer.
+     *
+     * @return Serializer Returns the serializer.
+     */
+    public static function newSerializer(): Serializer {
+        return new Serializer([new ObjectNormalizer()], [new JsonEncoder()]);
     }
 }

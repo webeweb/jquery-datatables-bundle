@@ -27,9 +27,8 @@ interface DataTablesOptionsInterface {
      * @param string $name The name.
      * @param mixed $value The value.
      * @return DataTablesOptionsInterface Returns this options.
-     * @throws StringArgumentException Throws a string argument exception if the argument is not a string.
      */
-    public function addOption($name, $value);
+    public function addOption(string $name, $value): DataTablesOptionsInterface;
 
     /**
      * Get an option.
@@ -37,14 +36,14 @@ interface DataTablesOptionsInterface {
      * @param string $name The name.
      * @return mixed|null Returns the option in case of success, null otherwise.
      */
-    public function getOption($name);
+    public function getOption(string $name);
 
     /**
      * Get the options.
      *
      * @return array Returns the options.
      */
-    public function getOptions();
+    public function getOptions(): array;
 
     /**
      * Determines if an option exists.
@@ -52,7 +51,7 @@ interface DataTablesOptionsInterface {
      * @param string $name The name.
      * @return bool Returns true in case of success, false otherwise.
      */
-    public function hasOption($name);
+    public function hasOption(string $name): bool;
 
     /**
      * Remove an option.
@@ -60,7 +59,7 @@ interface DataTablesOptionsInterface {
      * @param string $name The name.
      * @return DataTablesOptionsInterface Returns this option.
      */
-    public function removeOption($name);
+    public function removeOption(string $name): DataTablesOptionsInterface;
 
     /**
      * Set an option.
@@ -70,5 +69,5 @@ interface DataTablesOptionsInterface {
      * @return DataTablesOptionsInterface Returns this options.
      * @throws StringArgumentException Throws a string argument exception if the argument is not a string.
      */
-    public function setOption($name, $value);
+    public function setOption(string $name, $value): DataTablesOptionsInterface;
 }

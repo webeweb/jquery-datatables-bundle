@@ -29,7 +29,7 @@ class DataTablesNormalizerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNormalizeColumn() {
+    public function testNormalizeColumn(): void {
 
         // Set a DataTables column mock.
         $arg = new DataTablesColumn();
@@ -72,7 +72,7 @@ class DataTablesNormalizerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNormalizeColumnWithoutArguments() {
+    public function testNormalizeColumnWithoutArguments(): void {
 
         // Set a DataTables column mock.
         $arg = new DataTablesColumn();
@@ -86,7 +86,7 @@ class DataTablesNormalizerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNormalizeResponse() {
+    public function testNormalizeResponse(): void {
 
         // Set a DataTables response mock.
         $arg = new DataTablesResponse();

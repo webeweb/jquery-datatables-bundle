@@ -29,7 +29,7 @@ class DataTablesTwigExtensionTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetDataTablesTwigExtension() {
+    public function testSetDataTablesTwigExtension(): void {
 
         // Set a DataTables Twig extension mock.
         $dataTablesTwigExtension = new DataTablesTwigExtension($this->twigEnvironment, new RendererTwigExtension($this->twigEnvironment), "test");
@@ -45,7 +45,7 @@ class DataTablesTwigExtensionTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestDataTablesTwigExtensionTrait();
 

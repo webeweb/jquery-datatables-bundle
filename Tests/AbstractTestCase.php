@@ -106,7 +106,7 @@ abstract class AbstractTestCase extends TestCase {
     /**
      * {@inheritDoc}
      */
-    protected function setUp() {
+    protected function setUp(): void {
         parent::setUp();
 
         // Set a DataTables mapping mock.

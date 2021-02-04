@@ -54,56 +54,56 @@ interface DataTablesResponseInterface extends JsonSerializable {
      *
      * @return DataTablesResponseInterface Returns this response.
      */
-    public function addRow();
+    public function addRow(): DataTablesResponseInterface;
 
     /**
      * Count rows.
      *
      * @return int Returns the rows count.
      */
-    public function countRows();
+    public function countRows(): int;
 
     /**
      * Get the data.
      *
      * @return array Returns the data.
      */
-    public function getData();
+    public function getData(): array;
 
     /**
      * Get the draw
      *
      * @return int Returns the draw.
      */
-    public function getDraw();
+    public function getDraw(): int;
 
     /**
      * Get the error.
      *
-     * @return string Returns the error.
+     * @return string|null Returns the error.
      */
-    public function getError();
+    public function getError(): ?string;
 
     /**
      * Get the records filtered.
      *
      * @return int The records filtered.
      */
-    public function getRecordsFiltered();
+    public function getRecordsFiltered(): int;
 
     /**
      * Get the records total.
      *
      * @return int Returns the records total.
      */
-    public function getRecordsTotal();
+    public function getRecordsTotal(): int;
 
     /**
      * Get the wrapper.
      *
-     * @return DataTablesWrapperInterface Returns the wrapper.
+     * @return DataTablesWrapperInterface|null Returns the wrapper.
      */
-    public function getWrapper();
+    public function getWrapper(): ?DataTablesWrapperInterface;
 
     /**
      * Set the error.
@@ -111,7 +111,7 @@ interface DataTablesResponseInterface extends JsonSerializable {
      * @param string $error The error.
      * @return DataTablesResponseInterface Returns this response.
      */
-    public function setError($error);
+    public function setError(string $error): DataTablesResponseInterface;
 
     /**
      * Set the records filtered.
@@ -119,7 +119,7 @@ interface DataTablesResponseInterface extends JsonSerializable {
      * @param int $recordsFiltered The records filtered.
      * @return DataTablesResponseInterface Returns this response.
      */
-    public function setRecordsFiltered($recordsFiltered);
+    public function setRecordsFiltered(int $recordsFiltered): DataTablesResponseInterface;
 
     /**
      * Set the records total.
@@ -127,14 +127,14 @@ interface DataTablesResponseInterface extends JsonSerializable {
      * @param int $recordsTotal The records total.
      * @return DataTablesResponseInterface Returns this response.
      */
-    public function setRecordsTotal($recordsTotal);
+    public function setRecordsTotal(int $recordsTotal): DataTablesResponseInterface;
 
     /**
      * Set a row value.
      *
      * @param string $data The column data.
-     * @param string $value The column value.
+     * @param mixed|null $value The column value.
      * @return DataTablesResponseInterface Returns this response.
      */
-    public function setRow($data, $value);
+    public function setRow(string $data, $value): DataTablesResponseInterface;
 }

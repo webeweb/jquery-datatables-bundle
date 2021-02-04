@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Manager;
 
 use InvalidArgumentException;
 use WBW\Bundle\CoreBundle\Manager\AbstractManager;
+use WBW\Bundle\CoreBundle\Manager\ManagerInterface;
 use WBW\Bundle\CoreBundle\Provider\ProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
@@ -36,7 +37,7 @@ class DataTablesManager extends AbstractManager {
     /**
      * {@inheritDoc}
      */
-    public function addProvider(ProviderInterface $provider) {
+    public function addProvider(ProviderInterface $provider): ManagerInterface {
 
         /** @var DataTablesProviderInterface $provider */
         if (true === $this->contains($provider)) {
@@ -49,7 +50,7 @@ class DataTablesManager extends AbstractManager {
     /**
      * {@inheritDoc}
      */
-    public function contains(ProviderInterface $provider) {
+    public function contains(ProviderInterface $provider): bool {
 
         /** @var DataTablesProviderInterface $provider */
         if (false === ($provider instanceof DataTablesProviderInterface)) {
@@ -73,7 +74,7 @@ class DataTablesManager extends AbstractManager {
      * @return DataTablesProviderInterface Returns the provider.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
-    public function getProvider($name) {
+    public function getProvider(string $name): DataTablesProviderInterface {
 
         /** @var DataTablesProviderInterface $current */
         foreach ($this->getProviders() as $current) {

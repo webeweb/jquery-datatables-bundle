@@ -29,7 +29,7 @@ class DataTablesExportHelper {
      * @param bool $windows Windows ?
      * @return array Returns the converted values.
      */
-    public static function convert(array $values, $windows = false) {
+    public static function convert(array $values, bool $windows = false): array {
         if (true === $windows) {
             for ($i = count($values) - 1; 0 <= $i; --$i) {
                 $values[$i] = utf8_decode($values[$i]);
@@ -44,7 +44,7 @@ class DataTablesExportHelper {
      * @param Request $request The request.
      * @return bool Returns true in case of success, false otherwise.
      */
-    public static function isWindows(Request $request) {
+    public static function isWindows(Request $request): bool {
 
         if (false === $request->headers->has("user-agent")) {
             return false;

@@ -42,7 +42,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
     /**
      * Error.
      *
-     * @var string
+     * @var string|null
      */
     private $error;
 
@@ -73,12 +73,10 @@ class DataTablesResponse implements DataTablesResponseInterface {
     /**
      * {@inheritDoc}
      */
-    public function addRow() {
+    public function addRow(): DataTablesResponseInterface {
 
-        // Count the rows.
         $index = $this->countRows();
 
-        // Add a new row.
         $this->data[] = [];
 
         // Set each column data in the new row.
@@ -92,49 +90,49 @@ class DataTablesResponse implements DataTablesResponseInterface {
     /**
      * {@inheritDoc}
      */
-    public function countRows() {
+    public function countRows(): int {
         return count($this->data);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getData() {
+    public function getData(): array {
         return $this->data;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getDraw() {
+    public function getDraw(): int {
         return $this->draw;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getError() {
+    public function getError(): ?string {
         return $this->error;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getRecordsFiltered() {
+    public function getRecordsFiltered(): int {
         return $this->recordsFiltered;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getRecordsTotal() {
+    public function getRecordsTotal(): int {
         return $this->recordsTotal;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function jsonSerialize() {
+    public function jsonSerialize(): array {
         return DataTablesNormalizer::normalizeResponse($this);
     }
 
@@ -144,7 +142,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
      * @param array $data The data.
      * @return DataTablesResponseInterface Returns this response.
      */
-    protected function setData(array $data) {
+    protected function setData(array $data): DataTablesResponseInterface {
         $this->data = $data;
         return $this;
     }
@@ -155,7 +153,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
      * @param int $draw The draw.
      * @return DataTablesResponseInterface Returns the response.
      */
-    public function setDraw($draw) {
+    public function setDraw(int $draw): DataTablesResponseInterface {
         $this->draw = $draw;
         return $this;
     }
@@ -163,7 +161,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
     /**
      * {@inheritDoc}
      */
-    public function setError($error) {
+    public function setError(?string $error): DataTablesResponseInterface {
         $this->error = $error;
         return $this;
     }
@@ -171,7 +169,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
     /**
      * {@inheritDoc}
      */
-    public function setRecordsFiltered($recordsFiltered) {
+    public function setRecordsFiltered(int $recordsFiltered): DataTablesResponseInterface {
         $this->recordsFiltered = $recordsFiltered;
         return $this;
     }
@@ -179,7 +177,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
     /**
      * {@inheritDoc}
      */
-    public function setRecordsTotal($recordsTotal) {
+    public function setRecordsTotal(int $recordsTotal): DataTablesResponseInterface {
         $this->recordsTotal = $recordsTotal;
         return $this;
     }
@@ -187,7 +185,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
     /**
      * {@inheritDoc}
      */
-    public function setRow($data, $value) {
+    public function setRow(string $data, $value): DataTablesResponseInterface {
 
         $index = $this->countRows() - 1;
 

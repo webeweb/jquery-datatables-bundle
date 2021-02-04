@@ -31,7 +31,7 @@ class DataTablesWrapperHelper {
      * @return string Returns the language URL.
      * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
      */
-    public static function getLanguageUrl($language) {
+    public static function getLanguageUrl(string $language): string {
 
         // Initialize the directory.
         $dir = (new WBWJQueryDataTablesBundle())->getPath();
@@ -58,7 +58,7 @@ class DataTablesWrapperHelper {
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return string Returns the name.
      */
-    public static function getName(DataTablesWrapperInterface $dtWrapper) {
+    public static function getName(DataTablesWrapperInterface $dtWrapper): string {
         return "dt" . preg_replace("/[^A-Za-z0-9]/", "", $dtWrapper->getProvider()->getName());
     }
 
@@ -68,7 +68,7 @@ class DataTablesWrapperHelper {
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return array Returns the options.
      */
-    public static function getOptions(DataTablesWrapperInterface $dtWrapper) {
+    public static function getOptions(DataTablesWrapperInterface $dtWrapper): array {
 
         $output = [];
 

@@ -28,7 +28,7 @@ class DataTablesManagerTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetDataTablesManager() {
+    public function testSetDataTablesManager(): void {
 
         // Set a DataTables manager mock.
         $dataTablesManager = new DataTablesManager();
@@ -44,7 +44,7 @@ class DataTablesManagerTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestDataTablesManagerTrait();
 

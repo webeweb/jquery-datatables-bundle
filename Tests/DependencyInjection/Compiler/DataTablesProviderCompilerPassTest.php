@@ -41,7 +41,7 @@ class DataTablesProviderCompilerPassTest extends AbstractTestCase {
     /**
      * {@inheritDoc}
      */
-    protected function setUp() {
+    protected function setUp(): void {
         parent::setUp();
 
         // Set a DataTables manager mock.
@@ -57,7 +57,7 @@ class DataTablesProviderCompilerPassTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testProcess() {
+    public function testProcess(): void {
 
         $obj = new DataTablesProviderCompilerPass();
 

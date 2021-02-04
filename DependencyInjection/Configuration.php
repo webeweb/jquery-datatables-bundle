@@ -33,7 +33,7 @@ class Configuration implements ConfigurationInterface {
      *          - "buttons"
      *          - "responsive"
      */
-    public function getConfigTreeBuilder() {
+    public function getConfigTreeBuilder(): TreeBuilder {
 
         $assets  = ConfigurationHelper::loadYamlConfig(__DIR__, "assets");
         $plugins = $assets["assets"]["wbw.jquery_datatables.asset.jquery_datatables"]["plugins"];

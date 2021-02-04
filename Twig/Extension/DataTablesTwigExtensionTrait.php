@@ -22,25 +22,26 @@ trait DataTablesTwigExtensionTrait {
     /**
      * DataTables Twig extension.
      *
-     * @var DataTablesTwigExtension
+     * @var DataTablesTwigExtension|null
      */
     private $dataTablesTwigExtension;
 
     /**
      * Get the DataTables Twig extension.
      *
-     * @return DataTablesTwigExtension Returns the DataTables Twig extension.
+     * @return DataTablesTwigExtension|null Returns the DataTables Twig extension.
      */
-    public function getDataTablesTwigExtension() {
+    public function getDataTablesTwigExtension(): ?DataTablesTwigExtension {
         return $this->dataTablesTwigExtension;
     }
 
     /**
      * Set the DataTables Twig extension.
      *
-     * @param DataTablesTwigExtension $dataTablesTwigExtension The DataTables Twig extension.
+     * @param DataTablesTwigExtension|null $dataTablesTwigExtension The DataTables Twig extension.
+     * @return self Returns this instance.
      */
-    protected function setDataTablesTwigExtension(DataTablesTwigExtension $dataTablesTwigExtension = null) {
+    protected function setDataTablesTwigExtension(?DataTablesTwigExtension $dataTablesTwigExtension): self {
         $this->dataTablesTwigExtension = $dataTablesTwigExtension;
         return $this;
     }

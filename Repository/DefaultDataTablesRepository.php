@@ -32,14 +32,12 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
      * @param DataTablesProviderInterface $dtProvider The provider.
      * @return QueryBuilder Returns the query builder "Count exported".
      */
-    protected function buildDataTablesCountExported(DataTablesProviderInterface $dtProvider) {
+    protected function buildDataTablesCountExported(DataTablesProviderInterface $dtProvider): QueryBuilder {
 
         $prefix = $dtProvider->getPrefix();
 
-        $qb = $this->createQueryBuilder($prefix)
+        return $this->createQueryBuilder($prefix)
             ->select("COUNT(" . $prefix . ")");
-
-        return $qb;
     }
 
     /**
@@ -48,7 +46,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return QueryBuilder Returns the query builder "Count filtered".
      */
-    protected function buildDataTablesCountFiltered(DataTablesWrapperInterface $dtWrapper) {
+    protected function buildDataTablesCountFiltered(DataTablesWrapperInterface $dtWrapper): QueryBuilder {
 
         $prefix = $dtWrapper->getMapping()->getPrefix();
 
@@ -66,14 +64,12 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return QueryBuilder Returns the query builder "Count total".
      */
-    protected function buildDataTablesCountTotal(DataTablesWrapperInterface $dtWrapper) {
+    protected function buildDataTablesCountTotal(DataTablesWrapperInterface $dtWrapper): QUeryBuilder {
 
         $prefix = $dtWrapper->getMapping()->getPrefix();
 
-        $qb = $this->createQueryBuilder($prefix)
+        return $this->createQueryBuilder($prefix)
             ->select("COUNT(" . $prefix . ")");
-
-        return $qb;
     }
 
     /**
@@ -82,11 +78,8 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
      * @param DataTablesProviderInterface $dtProvider The provider.
      * @return QueryBuilder Returns the query builder "Export all".
      */
-    protected function buildDataTablesExportAll(DataTablesProviderInterface $dtProvider) {
-
-        $qb = $this->createQueryBuilder($dtProvider->getPrefix());
-
-        return $qb;
+    protected function buildDataTablesExportAll(DataTablesProviderInterface $dtProvider): QueryBuilder {
+        return $this->createQueryBuilder($dtProvider->getPrefix());
     }
 
     /**
@@ -95,7 +88,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return QueryBuilder Returns the query builder "Find all".
      */
-    protected function buildDataTablesFindAll(DataTablesWrapperInterface $dtWrapper) {
+    protected function buildDataTablesFindAll(DataTablesWrapperInterface $dtWrapper): QUeryBuilder {
 
         $prefix = $dtWrapper->getMapping()->getPrefix();
 
@@ -114,7 +107,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     /**
      * {@inheritDoc}
      */
-    public function dataTablesCountExported(DataTablesProviderInterface $dtProvider) {
+    public function dataTablesCountExported(DataTablesProviderInterface $dtProvider): int {
 
         $qb = $this->buildDataTablesCountExported($dtProvider);
 
@@ -124,7 +117,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     /**
      * {@inheritDoc}
      */
-    public function dataTablesCountFiltered(DataTablesWrapperInterface $dtWrapper) {
+    public function dataTablesCountFiltered(DataTablesWrapperInterface $dtWrapper): int {
 
         $qb = $this->buildDataTablesCountFiltered($dtWrapper);
 
@@ -134,7 +127,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     /**
      * {@inheritDoc}
      */
-    public function dataTablesCountTotal(DataTablesWrapperInterface $dtWrapper) {
+    public function dataTablesCountTotal(DataTablesWrapperInterface $dtWrapper): int {
 
         $qb = $this->buildDataTablesCountTotal($dtWrapper);
 
@@ -144,14 +137,14 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     /**
      * {@inheritDoc}
      */
-    public function dataTablesExportAll(DataTablesProviderInterface $dtProvider) {
+    public function dataTablesExportAll(DataTablesProviderInterface $dtProvider): QueryBuilder {
         return $this->buildDataTablesExportAll($dtProvider);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function dataTablesFindAll(DataTablesWrapperInterface $dtWrapper) {
+    public function dataTablesFindAll(DataTablesWrapperInterface $dtWrapper): array {
 
         $qb = $this->buildDataTablesFindAll($dtWrapper);
 

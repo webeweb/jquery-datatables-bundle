@@ -12,7 +12,6 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
 
 use Exception;
-use InvalidArgumentException;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 
@@ -30,7 +29,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testAddOption() {
+    public function testAddOption(): void {
 
         $obj = new DataTablesOptions();
 
@@ -39,31 +38,12 @@ class DataTablesOptionsTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the addOption() method.
-     *
-     * @return void
-     */
-    public function testAddOptionWithIllegalArgumentException() {
-
-        $obj = new DataTablesOptions();
-
-        try {
-
-            $obj->addOption(1, "value");
-        } catch (Exception $ex) {
-
-            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals('The argument "1" is not a string', $ex->getMessage());
-        }
-    }
-
-    /**
      * Tests the getOption() method.
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testGetOption() {
+    public function testGetOption(): void {
 
         $obj = new DataTablesOptions();
 
@@ -78,7 +58,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testHasOption() {
+    public function testHasOption(): void {
 
         $obj = new DataTablesOptions();
 
@@ -93,7 +73,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testRemoveOption() {
+    public function testRemoveOption(): void {
 
         $obj = new DataTablesOptions();
 
@@ -110,7 +90,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testSetOption() {
+    public function testSetOption(): void {
 
         $obj = new DataTablesOptions();
 
@@ -119,30 +99,11 @@ class DataTablesOptionsTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setOption() method.
-     *
-     * @return void
-     */
-    public function testSetOptionWithIllegalArgumentException() {
-
-        $obj = new DataTablesOptions();
-
-        try {
-
-            $obj->setOption(1, "value");
-        } catch (Exception $ex) {
-
-            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals('The argument "1" is not a string', $ex->getMessage());
-        }
-    }
-
-    /**
      * Tests the __construct() method.
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new DataTablesOptions();
 

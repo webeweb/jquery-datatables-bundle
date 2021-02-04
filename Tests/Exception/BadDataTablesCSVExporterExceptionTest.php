@@ -28,7 +28,7 @@ class BadDataTablesCSVExporterExceptionTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new BadDataTablesCSVExporterException(new Exception());
 
@@ -40,7 +40,7 @@ class BadDataTablesCSVExporterExceptionTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__constructWithNull() {
+    public function test__constructWithNull(): void {
 
         $obj = new BadDataTablesCSVExporterException(null);
 

@@ -29,7 +29,7 @@ class DataTablesNormalizer {
      * @param DataTablesColumnInterface $column The column.
      * @return array Returns teh normalized column.
      */
-    public static function normalizeColumn(DataTablesColumnInterface $column) {
+    public static function normalizeColumn(DataTablesColumnInterface $column): array {
 
         $output = [];
 
@@ -57,7 +57,7 @@ class DataTablesNormalizer {
      * @param DataTablesResponseInterface $response The response.
      * @return array Returns the normalized response.
      */
-    public static function normalizeResponse(DataTablesResponseInterface $response) {
+    public static function normalizeResponse(DataTablesResponseInterface $response): array {
 
         $output = [];
 

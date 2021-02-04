@@ -1,40 +1,40 @@
 # Resources/config/routing/datatables.yml
 wbw_jquery_datatables_delete:
-    path:     "/datatables/{name}/delete/{id}"
+    path: "/datatables/{name}/delete/{id}"
     defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:delete" }
-    methods:  ["GET"]
+    methods: [ "GET" ]
 
 wbw_jquery_datatables_edit:
-    path:     "/datatables/{name}/edit/{id}/{data}/{value}"
+    path: "/datatables/{name}/edit/{id}/{data}/{value}"
     defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:edit", value: null }
-    methods:  ["GET", "POST"]
+    methods: [ "GET", "POST" ]
 
 wbw_jquery_datatables_export:
-    path:     "/datatables/{name}/export"
+    path: "/datatables/{name}/export"
     defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:export" }
-    methods:  ["GET"]
+    methods: [ "GET" ]
 
 wbw_jquery_datatables_index:
-    path:     "/datatables/{name}/index"
+    path: "/datatables/{name}/index"
     defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:index" }
-    methods:  ["GET", "POST"]
+    methods: [ "GET", "POST" ]
 
 wbw_jquery_datatables_options:
-    path:     "/datatables/{name}/options"
+    path: "/datatables/{name}/options"
     defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:options" }
-    methods:  ["GET"]
+    methods: [ "GET" ]
 
 wbw_jquery_datatables_render:
-    path:     "/datatables/{name}/render"
+    path: "/datatables/{name}/render"
     defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:render" }
-    methods:  ["GET"]
+    methods: [ "GET" ]
 
 wbw_jquery_datatables_serialize:
-    path:     "/datatables/{name}/serialize/{id}"
+    path: "/datatables/{name}/serialize/{id}"
     defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:serialize" }
-    methods:  ["GET"]
+    methods: [ "GET" ]
 
 wbw_jquery_datatables_show:
-    path:     "/datatables/{name}/show/{id}"
+    path: "/datatables/{name}/show/{id}"
     defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:serialize" }
-    methods:  ["GET"]
+    methods: [ "GET" ]

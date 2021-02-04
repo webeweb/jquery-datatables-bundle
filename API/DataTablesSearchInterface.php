@@ -38,12 +38,12 @@ interface DataTablesSearchInterface {
      *
      * @return bool Returns the regex.
      */
-    public function getRegex();
+    public function getRegex(): bool;
 
     /**
      * Get the value.
      *
      * @return string Returns the value.
      */
-    public function getValue();
+    public function getValue(): string;
 }

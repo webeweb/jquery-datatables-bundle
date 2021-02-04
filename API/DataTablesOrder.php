@@ -22,14 +22,14 @@ class DataTablesOrder implements DataTablesOrderInterface {
     /**
      * Column.
      *
-     * @var int
+     * @var int|null
      */
     private $column;
 
     /**
      * Dir.
      *
-     * @var string
+     * @var string|null
      */
     private $dir;
 
@@ -43,24 +43,24 @@ class DataTablesOrder implements DataTablesOrderInterface {
     /**
      * {@inheritDoc}
      */
-    public function getColumn() {
+    public function getColumn(): ?int {
         return $this->column;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getDir() {
+    public function getDir(): ?string {
         return $this->dir;
     }
 
     /**
      * Set the column.
      *
-     * @param int $column The column.
+     * @param int|null $column The column.
      * @return DataTablesOrderInterface Returns this order.
      */
-    public function setColumn($column) {
+    public function setColumn(?int $column): DataTablesOrderInterface {
         $this->column = (0 <= $column ? $column : null);
         return $this;
     }
@@ -68,10 +68,10 @@ class DataTablesOrder implements DataTablesOrderInterface {
     /**
      * Set the dir.
      *
-     * @param string $dir The dir.
+     * @param string|null $dir The dir.
      * @return DataTablesOrderInterface Returns this order.
      */
-    public function setDir($dir) {
+    public function setDir(?string $dir): DataTablesOrderInterface {
         if (false === in_array($dir, DataTablesEnumerator::enumDirs())) {
             $dir = self::DATATABLES_DIR_ASC;
         }

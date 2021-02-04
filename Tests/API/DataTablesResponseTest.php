@@ -27,7 +27,7 @@ class DataTablesResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAddRow() {
+    public function testAddRow(): void {
 
         $obj = new DataTablesResponse();
         $obj->setWrapper($this->dtWrapper);
@@ -42,7 +42,7 @@ class DataTablesResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testJsonSerialize() {
+    public function testJsonSerialize(): void {
 
         $obj = new DataTablesResponse();
 
@@ -55,7 +55,7 @@ class DataTablesResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetError() {
+    public function testSetError(): void {
 
         $obj = new DataTablesResponse();
 
@@ -68,7 +68,7 @@ class DataTablesResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetRecordFiltered() {
+    public function testSetRecordFiltered(): void {
 
         $obj = new DataTablesResponse();
 
@@ -81,7 +81,7 @@ class DataTablesResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetRecordTotal() {
+    public function testSetRecordTotal(): void {
 
         $obj = new DataTablesResponse();
 
@@ -94,7 +94,7 @@ class DataTablesResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetRow() {
+    public function testSetRow(): void {
 
         $obj = new DataTablesResponse();
         $obj->setWrapper($this->dtWrapper)->addRow();
@@ -110,7 +110,7 @@ class DataTablesResponseTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new DataTablesResponse();
 

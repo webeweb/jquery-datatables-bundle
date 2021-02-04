@@ -38,7 +38,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      *
      * @return TwigFilter[] Returns the Twig filters.
      */
-    public function getFilters() {
+    public function getFilters(): array {
         return [
             new TwigFilter("jQueryDataTablesName", [$this, "jQueryDataTablesNameFunction"], ["is_safe" => ["html"]]),
             new TwigFilter("jQueryDTName", [$this, "jQueryDataTablesNameFunction"], ["is_safe" => ["html"]]),
@@ -50,7 +50,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      *
      * @return TwigFunction[] Returns the Twig functions.
      */
-    public function getFunctions() {
+    public function getFunctions(): array {
         return [
             new TwigFunction("jQueryDataTables", [$this, "jQueryDataTablesFunction"], ["is_safe" => ["html"]]),
             new TwigFunction("jQueryDT", [$this, "jQueryDataTablesFunction"], ["is_safe" => ["html"]]),
@@ -77,7 +77,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      * @return string Returns the jQuery DataTables.
      * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
      */
-    public function jQueryDataTablesFunction(DataTablesWrapperInterface $dtWrapper, array $args = []) {
+    public function jQueryDataTablesFunction(DataTablesWrapperInterface $dtWrapper, array $args = []): string {
         return $this->jQueryDataTables($dtWrapper, ArrayHelper::get($args, "selector"), ArrayHelper::get($args, "language"));
     }
 
@@ -87,7 +87,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return string Returns the jQuery DataTables name.
      */
-    public function jQueryDataTablesNameFunction(DataTablesWrapperInterface $dtWrapper) {
+    public function jQueryDataTablesNameFunction(DataTablesWrapperInterface $dtWrapper): string {
         return DataTablesWrapperHelper::getName($dtWrapper);
     }
 
@@ -97,7 +97,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return array Returns the jQuery DataTables options.
      */
-    public function jQueryDataTablesOptionsFunction(DataTablesWrapperInterface $dtWrapper) {
+    public function jQueryDataTablesOptionsFunction(DataTablesWrapperInterface $dtWrapper): array {
         return DataTablesWrapperHelper::getOptions($dtWrapper);
     }
 
@@ -108,7 +108,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      * @return string Returns the jQuery DataTables "Standalone".
      * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
      */
-    public function jQueryDataTablesStandaloneFunction(array $args = []) {
+    public function jQueryDataTablesStandaloneFunction(array $args = []): string {
         return $this->jQueryDataTablesStandalone(ArrayHelper::get($args, "selector", ".table"), ArrayHelper::get($args, "language"), ArrayHelper::get($args, "options", []));
     }
 
@@ -119,7 +119,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      * @param array $args The arguments.
      * @return string Returns the rendered DataTables.
      */
-    public function renderDataTablesFunction(DataTablesWrapperInterface $dtWrapper, array $args = []) {
+    public function renderDataTablesFunction(DataTablesWrapperInterface $dtWrapper, array $args = []): string {
         return $this->renderDataTables($dtWrapper, ArrayHelper::get($args, "class"), ArrayHelper::get($args, "thead", true), ArrayHelper::get($args, "tfoot", true));
     }
 }

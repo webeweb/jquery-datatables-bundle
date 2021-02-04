@@ -14,7 +14,6 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension;
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 use Twig\Environment;
 use WBW\Bundle\CoreBundle\Model\Attribute\StringEnvironmentTrait;
-use WBW\Bundle\CoreBundle\Service\TwigEnvironmentTrait;
 use WBW\Bundle\CoreBundle\Twig\Extension\AbstractTwigExtension;
 use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtension;
 use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtensionTrait;
@@ -31,9 +30,8 @@ use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
  */
 abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
 
-    use StringEnvironmentTrait;
     use RendererTwigExtensionTrait;
-    use TwigEnvironmentTrait;
+    use StringEnvironmentTrait;
 
     /**
      * jQuery DataTables.
@@ -64,7 +62,7 @@ EOT;
      * @param RendererTwigExtension $rendererTwigExtension The renderer Twig extension.
      * @param string $environment The environment
      */
-    public function __construct(Environment $twigEnvironment, RendererTwigExtension $rendererTwigExtension, $environment) {
+    public function __construct(Environment $twigEnvironment, RendererTwigExtension $rendererTwigExtension, string $environment) {
         parent::__construct($twigEnvironment);
         $this->setEnvironment($environment);
         $this->setRendererTwigExtension($rendererTwigExtension);
@@ -76,7 +74,7 @@ EOT;
      * @param array $options The options.
      * @return string Returns the encoded options.
      */
-    protected function encodeOptions(array $options) {
+    protected function encodeOptions(array $options): string {
 
         if (0 === count($options)) {
             return "{}";
@@ -96,12 +94,12 @@ EOT;
      * Displays a jQuery DataTables.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
-     * @param string $selector The selector.
-     * @param string $language The language.
+     * @param string|null $selector The selector.
+     * @param string|null $language The language.
      * @return string Returns the jQuery DataTables.
      * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
      */
-    protected function jQueryDataTables(DataTablesWrapperInterface $dtWrapper, $selector, $language) {
+    protected function jQueryDataTables(DataTablesWrapperInterface $dtWrapper, ?string $selector, ?string $language): string {
 
         $options = DataTablesWrapperHelper::getOptions($dtWrapper);
 
@@ -122,12 +120,12 @@ EOT;
      * Displays a jQuery DataTables "standalone".
      *
      * @param string $selector The selector.
-     * @param string $language The language.
+     * @param string|null $language The language.
      * @param array $options The options.
      * @return string Returns the jQuery DataTables "Standalone".
      * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
      */
-    protected function jQueryDataTablesStandalone($selector, $language, array $options) {
+    protected function jQueryDataTablesStandalone(string $selector, ?string $language, array $options): string {
 
         if (null !== $language) {
             $options["language"] = ["url" => DataTablesWrapperHelper::getLanguageUrl($language)];
@@ -144,12 +142,12 @@ EOT;
      * Render a DataTables.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
-     * @param string $class The class.
-     * @param boolean $includeTHead Include thead ?
-     * @param boolean $includeTFoot Include tfoot ?
+     * @param string|null $class The class.
+     * @param bool $includeTHead Include thead ?
+     * @param bool $includeTFoot Include tfoot ?
      * @return string Returns the rendered DataTables.
      */
-    protected function renderDataTables(DataTablesWrapperInterface $dtWrapper, $class, $includeTHead, $includeTFoot) {
+    protected function renderDataTables(DataTablesWrapperInterface $dtWrapper, ?string $class, bool $includeTHead, bool $includeTFoot): string {
 
         $attributes = [];
 
@@ -171,7 +169,7 @@ EOT;
      * @param bool $rowScope Row scope ?
      * @return string Returns the rendered column.
      */
-    private function renderDataTablesColumn(DataTablesColumnInterface $dtColumn, $rowScope = false) {
+    private function renderDataTablesColumn(DataTablesColumnInterface $dtColumn, $rowScope = false): string {
 
         $attributes = [];
 
@@ -189,7 +187,7 @@ EOT;
      * @param string $wrapper The wrapper (thead or tfoot)
      * @return string Returns the rendered row.
      */
-    private function renderDataTablesRow(DataTablesWrapperInterface $dtWrapper, $wrapper) {
+    private function renderDataTablesRow(DataTablesWrapperInterface $dtWrapper, string $wrapper): string {
 
         $innerHTML = "";
 

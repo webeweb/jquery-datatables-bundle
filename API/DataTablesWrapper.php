@@ -51,49 +51,49 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HttpInterface {
     /**
      * Options.
      *
-     * @var DataTablesOptionsInterface
+     * @var DataTablesOptionsInterface|null
      */
     private $options;
 
     /**
      * Processing.
      *
-     * @var bool
+     * @var bool|null
      */
     private $processing;
 
     /**
      * Provider.
      *
-     * @var DataTablesProviderInterface
+     * @var DataTablesProviderInterface|null
      */
     private $provider;
 
     /**
      * Request.
      *
-     * @var DataTablesRequestInterface
+     * @var DataTablesRequestInterface|null
      */
     private $request;
 
     /**
      * Response.
      *
-     * @var DataTablesResponseInterface
+     * @var DataTablesResponseInterface|null
      */
     private $response;
 
     /**
      * Server side.
      *
-     * @var bool
+     * @var bool|null
      */
     private $serverSide;
 
     /**
      * URL.
      *
-     * @var string
+     * @var string|null
      */
     private $url;
 
@@ -111,7 +111,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HttpInterface {
     /**
      * {@inheritDoc}
      */
-    public function addColumn(DataTablesColumnInterface $column) {
+    public function addColumn(DataTablesColumnInterface $column): DataTablesWrapperInterface {
         if (null === $column->getMapping()->getPrefix()) {
             $column->getMapping()->setPrefix($this->mapping->getPrefix());
         }
@@ -122,7 +122,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HttpInterface {
     /**
      * {@inheritDoc}
      */
-    public function getColumn($data) {
+    public function getColumn(string $data): ?DataTablesColumnInterface {
         if (true === array_key_exists($data, $this->columns)) {
             return $this->columns[$data];
         }
@@ -132,70 +132,70 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HttpInterface {
     /**
      * {@inheritDoc}
      */
-    public function getColumns() {
+    public function getColumns(): array {
         return $this->columns;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getMapping() {
+    public function getMapping(): DataTablesMappingInterface {
         return $this->mapping;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getMethod() {
+    public function getMethod(): string {
         return $this->method;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getOptions() {
+    public function getOptions(): ?DataTablesOptionsInterface {
         return $this->options;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getProcessing() {
+    public function getProcessing(): ?bool {
         return $this->processing;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getProvider() {
+    public function getProvider(): ?DataTablesProviderInterface {
         return $this->provider;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getRequest() {
+    public function getRequest(): ?DataTablesRequestInterface {
         return $this->request;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getResponse() {
+    public function getResponse(): ?DataTablesResponseInterface {
         return $this->response;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getServerSide() {
+    public function getServerSide(): ?bool {
         return $this->serverSide;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getUrl() {
+    public function getUrl(): ?string {
         return $this->url;
     }
 
@@ -205,7 +205,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HttpInterface {
      * @param DataTablesColumnInterface $column The column.
      * @return DataTablesWrapperInterface Returns this wrapper.
      */
-    public function removeColumn(DataTablesColumnInterface $column) {
+    public function removeColumn(DataTablesColumnInterface $column): DataTablesWrapperInterface {
         if (true === array_key_exists($column->getData(), $this->columns)) {
             $this->columns[$column->getData()]->getMapping()->setPrefix(null);
             unset($this->columns[$column->getData()]);
@@ -219,7 +219,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HttpInterface {
      * @param DataTablesColumnInterface[] $columns The columns.
      * @return DataTablesWrapperInterface Returns this wrapper.
      */
-    private function setColumns(array $columns) {
+    private function setColumns(array $columns): DataTablesWrapperInterface {
         $this->columns = $columns;
         return $this;
     }
@@ -230,7 +230,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HttpInterface {
      * @param DataTablesMappingInterface $mapping The mapping
      * @return DataTablesWrapperInterface Returns this wrapper.
      */
-    public function setMapping(DataTablesMappingInterface $mapping) {
+    public function setMapping(DataTablesMappingInterface $mapping): DataTablesWrapperInterface {
         $this->mapping = $mapping;
         return $this;
     }
@@ -238,10 +238,10 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HttpInterface {
     /**
      * Set the method.
      *
-     * @param string $method The method.
+     * @param string|null $method The method.
      * @return DataTablesWrapperInterface Returns this wrapper.
      */
-    public function setMethod($method) {
+    public function setMethod(?string $method): DataTablesWrapperInterface {
         $this->method = (true === in_array($method, [self::HTTP_METHOD_GET, self::HTTP_METHOD_POST]) ? $method : self::HTTP_METHOD_POST);
         return $this;
     }
@@ -249,10 +249,10 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HttpInterface {
     /**
      * Set the options.
      *
-     * @param DataTablesOptionsInterface $options The options.
+     * @param DataTablesOptionsInterface|null $options The options.
      * @return DataTablesWrapperInterface Returns this wrapper.
      */
-    public function setOptions(DataTablesOptionsInterface $options) {
+    public function setOptions(?DataTablesOptionsInterface $options): DataTablesWrapperInterface {
         $this->options = $options;
         return $this;
     }
@@ -260,10 +260,10 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HttpInterface {
     /**
      * Set the processing.
      *
-     * @param bool $processing The processing.
+     * @param bool|null $processing The processing.
      * @return DataTablesWrapperInterface Returns this wrapper.
      */
-    public function setProcessing($processing) {
+    public function setProcessing(?bool $processing): DataTablesWrapperInterface {
         $this->processing = (false === $processing ? false : true);
         return $this;
     }
@@ -271,10 +271,10 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HttpInterface {
     /**
      * Set the provider.
      *
-     * @param DataTablesProviderInterface $provider The provider.
+     * @param DataTablesProviderInterface|null $provider The provider.
      * @return DataTablesWrapperInterface Returns this wrapper.
      */
-    public function setProvider(DataTablesProviderInterface $provider) {
+    public function setProvider(?DataTablesProviderInterface $provider): DataTablesWrapperInterface {
         $this->provider = $provider;
         return $this;
     }
@@ -282,7 +282,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HttpInterface {
     /**
      * {@inheritDoc}
      */
-    public function setRequest(DataTablesRequestInterface $request) {
+    public function setRequest(?DataTablesRequestInterface $request): DataTablesWrapperInterface {
         $this->request = $request;
         return $this;
     }
@@ -290,7 +290,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HttpInterface {
     /**
      * {@inheritDoc}
      */
-    public function setResponse(DataTablesResponseInterface $response) {
+    public function setResponse(?DataTablesResponseInterface $response): DataTablesWrapperInterface {
         $this->response = $response;
         return $this;
     }
@@ -298,10 +298,10 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HttpInterface {
     /**
      * Set the server side.
      *
-     * @param bool $serverSide The server side.
+     * @param bool|null $serverSide The server side.
      * @return DataTablesWrapperInterface Returns this wrapper.
      */
-    public function setServerSide($serverSide) {
+    public function setServerSide(?bool $serverSide): DataTablesWrapperInterface {
         $this->serverSide = (false === $serverSide ? false : true);
         return $this;
     }
@@ -309,10 +309,10 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HttpInterface {
     /**
      * Set the URL.
      *
-     * @param string $url The UTL.
+     * @param string|null $url The UTL.
      * @return DataTablesWrapperInterface Returns this wrapper.
      */
-    public function setUrl($url) {
+    public function setUrl(?string $url): DataTablesWrapperInterface {
         $this->url = $url;
         return $this;
     }

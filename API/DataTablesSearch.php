@@ -44,14 +44,14 @@ class DataTablesSearch implements DataTablesSearchInterface {
     /**
      * {@inheritDoc}
      */
-    public function getRegex() {
+    public function getRegex(): bool {
         return $this->regex;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getValue() {
+    public function getValue(): string {
         return $this->value;
     }
 
@@ -61,7 +61,7 @@ class DataTablesSearch implements DataTablesSearchInterface {
      * @param bool $regex The regex.
      * @return DataTablesSearchInterface Returns this search.
      */
-    public function setRegex($regex) {
+    public function setRegex(bool $regex): DataTablesSearchInterface {
         $this->regex = $regex;
         return $this;
     }
@@ -72,7 +72,7 @@ class DataTablesSearch implements DataTablesSearchInterface {
      * @param string $value The value.
      * @return DataTablesSearchInterface Returns this search.
      */
-    public function setValue($value) {
+    public function setValue(string $value): DataTablesSearchInterface {
         $this->value = $value;
         return $this;
     }

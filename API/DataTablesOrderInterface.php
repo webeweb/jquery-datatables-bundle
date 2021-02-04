@@ -50,14 +50,14 @@ interface DataTablesOrderInterface {
     /**
      * Get the column.
      *
-     * @return int Returns the column.
+     * @return int|null Returns the column.
      */
-    public function getColumn();
+    public function getColumn(): ?int;
 
     /**
      * Get the dir.
      *
-     * @return string Returns the dir.
+     * @return string|null Returns the dir.
      */
-    public function getDir();
+    public function getDir(): ?string;
 }

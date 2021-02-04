@@ -31,7 +31,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAddColumn() {
+    public function testAddColumn(): void {
 
         // Set a DataTables mapping mock.
         $map = $this->getMockBuilder(DataTablesMappingInterface::class)->getMock();
@@ -57,7 +57,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetColumn() {
+    public function testGetColumn(): void {
 
         $obj = new DataTablesWrapper("url", "name");
 
@@ -72,7 +72,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testRemoveColumn() {
+    public function testRemoveColumn(): void {
 
         // Set a DataTables column mock.
         $col = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
@@ -97,7 +97,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetMethod() {
+    public function testSetMethod(): void {
 
         $obj = new DataTablesWrapper("url", "name");
 
@@ -113,7 +113,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOptions() {
+    public function testSetOptions(): void {
 
         // Set a DataTables options mock.
         $arg = $this->getMockBuilder(DataTablesOptionsInterface::class)->getMock();
@@ -129,7 +129,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetProcessing() {
+    public function testSetProcessing(): void {
 
         $obj = new DataTablesWrapper("url", "name");
 
@@ -145,7 +145,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetProvider() {
+    public function testSetProvider(): void {
 
         // Set a DataTables provider mock.
         $arg = $this->getMockBuilder(DataTablesProviderInterface::class)->getMock();
@@ -162,7 +162,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetRequest() {
+    public function testSetRequest(): void {
 
         $obj = new DataTablesWrapper("url", "name");
 
@@ -175,7 +175,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetResponse() {
+    public function testSetResponse(): void {
 
         $obj = new DataTablesWrapper("url", "name");
 
@@ -188,7 +188,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetServerSide() {
+    public function testSetServerSide(): void {
 
         $obj = new DataTablesWrapper("url", "name");
 
@@ -204,7 +204,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetUrl() {
+    public function testSetUrl(): void {
 
         $obj = new DataTablesWrapper("url", "name");
 
@@ -217,7 +217,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new DataTablesWrapper();
 

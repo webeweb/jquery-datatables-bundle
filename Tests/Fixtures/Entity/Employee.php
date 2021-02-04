@@ -24,49 +24,49 @@ class Employee {
     /**
      * Age.
      *
-     * @var int
+     * @var int|null
      */
     private $age;
 
     /**
      * Id.
      *
-     * @var int
+     * @var int|null
      */
     private $id;
 
     /**
      * Name.
      *
-     * @var string
+     * @var string|null
      */
     private $name;
 
     /**
      * Office.
      *
-     * @var string
+     * @var string|null
      */
     private $office;
 
     /**
      * Position.
      *
-     * @var string
+     * @var string|null
      */
     private $position;
 
     /**
      * Salary.
      *
-     * @var int
+     * @var int|null
      */
     private $salary;
 
     /**
      * Start date.
      *
-     * @var DateTime
+     * @var DateTime|null
      */
     private $startDate;
 
@@ -74,79 +74,79 @@ class Employee {
      * Constructor.
      */
     public function __construct() {
-        // NOTHING TO DO.
+        // NOTHING TO DO
     }
 
     /**
      * Get the age.
      *
-     * @return int Returns the age.
+     * @return int|null Returns the age.
      */
-    public function getAge() {
+    public function getAge(): ?int {
         return $this->age;
     }
 
     /**
      * Get the id.
      *
-     * @return int Returns the id.
+     * @return int|null Returns the id.
      */
-    public function getId() {
+    public function getId(): ?int {
         return $this->id;
     }
 
     /**
      * Get the name.
      *
-     * @return string Returns the name.
+     * @return string|null Returns the name.
      */
-    public function getName() {
+    public function getName(): ?string {
         return $this->name;
     }
 
     /**
      * Get the office.
      *
-     * @return string Returns the office.
+     * @return string|null Returns the office.
      */
-    public function getOffice() {
+    public function getOffice(): ?string {
         return $this->office;
     }
 
     /**
      * Get the position.
      *
-     * @return string Returns the position.
+     * @return string|null Returns the position.
      */
-    public function getPosition() {
+    public function getPosition(): ?string {
         return $this->position;
     }
 
     /**
      * Get the salary.
      *
-     * @return int Returns the salary.
+     * @return int|null Returns the salary.
      */
-    public function getSalary() {
+    public function getSalary(): ?int {
         return $this->salary;
     }
 
     /**
      * Get the start date.
      *
-     * @return DateTime Returns the start date.
+     * @return DateTime|null Returns the start date.
      */
-    public function getStartDate() {
+    public function getStartDate(): ?DateTime {
         return $this->startDate;
     }
 
     /**
      * Set the age.
      *
-     * @param int $age The age.
+     * @param int|null $age The age.
      * @return Employee Returns this employee.
      */
-    public function setAge($age) {
+    public function setAge(?int $age): Employee {
         $this->age = $age;
         return $this;
     }
@@ -154,10 +154,10 @@ class Employee {
     /**
      * Set the name.
      *
-     * @param string $name The name.
+     * @param string|null $name The name.
      * @return Employee Returns this employee.
      */
-    public function setName($name) {
+    public function setName(?string $name): Employee {
         $this->name = $name;
         return $this;
     }
@@ -165,10 +165,10 @@ class Employee {
     /**
      * Set the office.
      *
-     * @param string $office The office.
+     * @param string|null $office The office.
      * @return Employee Returns this employee.
      */
-    public function setOffice($office) {
+    public function setOffice(?string $office): Employee {
         $this->office = $office;
         return $this;
     }
@@ -176,10 +176,10 @@ class Employee {
     /**
      * Set the position.
      *
-     * @param string $position The position.
+     * @param string|null $position The position.
      * @return Employee Returns this employee.
      */
-    public function setPosition($position) {
+    public function setPosition(?string $position): Employee {
         $this->position = $position;
         return $this;
     }
@@ -187,10 +187,10 @@ class Employee {
     /**
      * Set the salary.
      *
-     * @param int $salary The salary.
+     * @param int|null $salary The salary.
      * @return Employee Returns this employee.
      */
-    public function setSalary($salary) {
+    public function setSalary(?int $salary): Employee {
         $this->salary = $salary;
         return $this;
     }
@@ -198,10 +198,10 @@ class Employee {
     /**
      * Set the start date.
      *
-     * @param DateTime $startDate The start date.
+     * @param DateTime|null $startDate The start date.
      * @return Employee Returns this employee.
      */
-    public function setStartDate(DateTime $startDate = null) {
+    public function setStartDate(?DateTime $startDate): Employee {
         $this->startDate = $startDate;
         return $this;
     }
