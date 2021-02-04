@@ -39,7 +39,7 @@ jobs:
     allow_failures:
         -   php: "nightly"
 
-os: linux
+os:       linux
 
 before_install:
     - sudo /bin/dd if=/dev/zero of=/var/swap bs=1M count=2048
