@@ -261,19 +261,18 @@ class DataTablesController extends AbstractController {
 
         $dtProvider = $this->getDataTablesProvider($name);
 
+        $entity = null;
+
         try {
 
             $entity = $this->getDataTablesEntityById($dtProvider, $id);
 
             $this->dispatchDataTablesEvent(WBWJQueryDataTablesEvents::DATATABLES_PRE_SHOW, [$entity]);
         } catch (EntityNotFoundException $ex) {
-
             $this->logInfo($ex->getMessage());
-
-            $entity = [];
         }
 
-        $data = DataTablesEntityHelper::jsonSerialize($entity);
+        $data = DataTablesEntityHelper::jsonSerialize(null !== $entity ? $entity : []);
 
         return new Response($data, 200, ["Content-type" => "application/json"]);
     }
