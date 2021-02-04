@@ -108,10 +108,10 @@ interface DataTablesResponseInterface extends JsonSerializable {
     /**
      * Set the error.
      *
-     * @param string $error The error.
+     * @param string|null $error The error.
      * @return DataTablesResponseInterface Returns this response.
      */
-    public function setError(string $error): DataTablesResponseInterface;
+    public function setError(?string $error): DataTablesResponseInterface;
 
     /**
      * Set the records filtered.
