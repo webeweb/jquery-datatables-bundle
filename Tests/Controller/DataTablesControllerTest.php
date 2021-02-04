@@ -46,7 +46,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         $this->assertEquals("/datatables/employee/index", $client->getResponse()->headers->get("location"));
 
         $client->followRedirect();
-        $this->assertContains("Successful deletion", $client->getResponse()->getContent());
+        $this->assertStringContainsStirng("Successful deletion", $client->getResponse()->getContent());
     }
 
     /**
@@ -64,7 +64,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         $this->assertEquals("/datatables/employee/index", $client->getResponse()->headers->get("location"));
 
         $client->followRedirect();
-        $this->assertContains("Record not found", $client->getResponse()->getContent());
+        $this->assertStringContainsStirng("Record not found", $client->getResponse()->getContent());
     }
 
     /**
@@ -149,7 +149,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         $this->assertEquals(500, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
 
-        $this->assertContains("BadDataTablesColumnException", $client->getResponse()->getContent());
+        $this->assertStringContainsStirng("BadDataTablesColumnException", $client->getResponse()->getContent());
     }
 
     /**
@@ -165,7 +165,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         $this->assertEquals(500, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
 
-        $this->assertContains("BadDataTablesEditorException", $client->getResponse()->getContent());
+        $this->assertStringContainsStirng("BadDataTablesEditorException", $client->getResponse()->getContent());
     }
 
     /**
@@ -242,7 +242,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         $this->assertEquals(500, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
 
-        $this->assertContains("BadDataTablesCSVExporterException", $client->getResponse()->getContent());
+        $this->assertStringContainsStirng("BadDataTablesCSVExporterException", $client->getResponse()->getContent());
     }
 
     /**
@@ -272,7 +272,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         $this->assertEquals(500, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
 
-        $this->assertContains("BadDataTablesRepositoryException", $client->getResponse()->getContent());
+        $this->assertStringContainsStirng("BadDataTablesRepositoryException", $client->getResponse()->getContent());
     }
 
     /**

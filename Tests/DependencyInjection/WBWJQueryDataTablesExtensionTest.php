@@ -115,7 +115,7 @@ class DataTablesExtensionTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(ServiceNotFoundException::class, $ex);
-            $this->assertContains(DataTablesTwigExtension::SERVICE_NAME, $ex->getMessage());
+            $this->assertStringContainsStirng(DataTablesTwigExtension::SERVICE_NAME, $ex->getMessage());
         }
     }
 
