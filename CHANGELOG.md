@@ -3,12 +3,33 @@ CHANGELOG
 
 ### [3.11.5](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.11.5) (2020-11-20)
 
+> IMPORTANT NOTICE: The following Symfony versions are now not supported
+> - Symfony 2.7
+> - Symfony 2.8
+> - Symfony 3.0
+> - Symfony 3.1
+> - Symfony 3.2
+> - Symfony 3.3
+
+> IMPORTANT NOTICE: The following PHP versions are now not supported
+> - PHP 5.6
+> - PHP 7.0
+
+> IMPORTANT NOTICE: The following deprecated classes has been removed
+> - WBW\Bundle\HaveIBeenPwnedBundle\Event\HaveIBeenPwnedEvents
+
+- Improve PHP doc
+- Improve unit tests
+- Migrating from PHP 5.6 to PHP 7.1
+
+### [3.11.5](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.11.5) (2020-11-20)
+
 - Improve dependencies
 
 ### [3.11.4](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.11.4) (2020-07-09)
 
 - Fix default views
-- Improve abstract DataTables provider 
+- Improve abstract DataTables provider
 - Refactor JSON serialization
 
 ### [3.11.3](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.11.3) (2020-07-07)
@@ -69,14 +90,14 @@ CHANGELOG
 
 ### [3.6.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.6.0) (2019-07-10)
 
-- Add renderActionButtonDelete() into abstract DataTables provider 
-- Add renderActionButtonDuplicate() into abstract DataTables provider 
-- Add renderActionButtonEdit() into abstract DataTables provider 
+- Add renderActionButtonDelete() into abstract DataTables provider
+- Add renderActionButtonDuplicate() into abstract DataTables provider
+- Add renderActionButtonEdit() into abstract DataTables provider
 - Add renderActionButtonShow() into abstract DataTables provider
 
 ### [3.5.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.5.1) (2019-07-09)
 
-- Fix renderRowButtons() when some routes are null 
+- Fix renderRowButtons() when some routes are null
 
 ### [3.5.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.5.0) (2019-07-06)
 
@@ -119,7 +140,7 @@ CHANGELOG
 - Fix DataTables column method visibility
 - Fix DataTables search with different data types (date, int, string, ...)
 - Improve PHPDoc
-- Optimize DataTables Twig extension 
+- Optimize DataTables Twig extension
 - Replace deprecated Twig classes
 - Update dependencies
 - Update SERVICE_NAME constants
