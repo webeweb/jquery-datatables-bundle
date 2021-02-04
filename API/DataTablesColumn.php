@@ -31,28 +31,28 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * Class name.
      *
-     * @var string
+     * @var string|null
      */
     private $classname;
 
     /**
      * Content padding.
      *
-     * @var string
+     * @var string|null
      */
     private $contentPadding;
 
     /**
      * Data.
      *
-     * @var integer|string
+     * @var string|null
      */
     private $data;
 
     /**
      * Default content.
      *
-     * @var string
+     * @var string|null
      */
     private $defaultContent;
 
@@ -66,28 +66,28 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * Name.
      *
-     * @var string
+     * @var string|null
      */
     private $name;
 
     /**
      * Order data.
      *
-     * @var integer|array
+     * @var array|null
      */
     private $orderData;
 
     /**
      * Order data type.
      *
-     * @var string
+     * @var string|null
      */
     private $orderDataType;
 
     /**
      * Order sequence.
      *
-     * @var string
+     * @var string|null
      */
     private $orderSequence;
 
@@ -101,7 +101,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * Search.
      *
-     * @var DataTablesSearchInterface
+     * @var DataTablesSearchInterface|null
      */
     private $search;
 
@@ -115,14 +115,14 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * Title.
      *
-     * @var string
+     * @var string|null
      */
     private $title;
 
     /**
      * Type.
      *
-     * @var string
+     * @var string|null
      */
     private $type;
 
@@ -136,7 +136,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * Width.
      *
-     * @var string
+     * @var string|null
      */
     private $width;
 
@@ -156,126 +156,126 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * {@inheritDoc}
      */
-    public function getCellType() {
+    public function getCellType(): string {
         return $this->cellType;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getClassname() {
+    public function getClassname(): ?string {
         return $this->classname;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getContentPadding() {
+    public function getContentPadding(): ?string {
         return $this->contentPadding;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getData() {
+    public function getData(): ?string {
         return $this->data;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getDefaultContent() {
+    public function getDefaultContent(): ?string {
         return $this->defaultContent;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getMapping() {
+    public function getMapping(): DataTablesMappingInterface {
         return $this->mapping;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getName() {
+    public function getName(): ?string {
         return $this->name;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getOrderData() {
+    public function getOrderData(): ?array {
         return $this->orderData;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getOrderDataType() {
+    public function getOrderDataType(): ?string {
         return $this->orderDataType;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getOrderSequence() {
+    public function getOrderSequence(): ?string {
         return $this->orderSequence;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getOrderable() {
+    public function getOrderable(): bool {
         return $this->orderable;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getSearch() {
+    public function getSearch(): ?DataTablesSearchInterface {
         return $this->search;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getSearchable() {
+    public function getSearchable(): bool {
         return $this->searchable;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getTitle() {
+    public function getTitle(): ?string {
         return $this->title;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getType() {
+    public function getType(): ?string {
         return $this->type;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getVisible() {
+    public function getVisible(): bool {
         return $this->visible;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getWidth() {
+    public function getWidth(): ?string {
         return $this->width;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setCellType($cellType) {
+    public function setCellType(string $cellType): DataTablesColumnInterface {
         if (false === in_array($cellType, DataTablesEnumerator::enumCellTypes())) {
             $cellType = self::DATATABLES_CELL_TYPE_TD;
         }
@@ -286,7 +286,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * {@inheritDoc}
      */
-    public function setClassname($classname) {
+    public function setClassname(?string $classname): DataTablesColumnInterface {
         $this->classname = $classname;
         return $this;
     }
@@ -294,7 +294,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * {@inheritDoc}
      */
-    public function setContentPadding($contentPadding) {
+    public function setContentPadding(?string $contentPadding): DataTablesColumnInterface {
         $this->contentPadding = $contentPadding;
         return $this;
     }
@@ -302,10 +302,10 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * Set the data.
      *
-     * @param integer|string $data The data.
+     * @param string|null $data The data.
      * @return DataTablesColumnInterface Returns this column.
      */
-    public function setData($data) {
+    public function setData(?string $data): DataTablesColumnInterface {
         $this->data = $data;
         return $this;
     }
@@ -313,7 +313,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * {@inheritDoc}
      */
-    public function setDefaultContent($defaultContent) {
+    public function setDefaultContent(?string $defaultContent): DataTablesColumnInterface {
         $this->defaultContent = $defaultContent;
         return $this;
     }
@@ -324,7 +324,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
      * @param DataTablesMappingInterface $mapping The mapping.
      * @return DataTablesColumnInterface Returns this column.
      */
-    protected function setMapping(DataTablesMappingInterface $mapping) {
+    protected function setMapping(DataTablesMappingInterface $mapping): DataTablesColumnInterface {
         $this->mapping = $mapping;
         return $this;
     }
@@ -332,10 +332,10 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * Set the name.
      *
-     * @param string $name The name.
+     * @param string|null $name The name.
      * @return DataTablesColumnInterface Returns this column.
      */
-    public function setName($name) {
+    public function setName(?string $name): DataTablesColumnInterface {
         $this->name = $name;
         return $this;
     }
@@ -343,10 +343,10 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * Set the order data.
      *
-     * @param integer|array $orderData The order data.
+     * @param array|null $orderData The order data.
      * @return DataTablesColumnInterface Returns this column.
      */
-    public function setOrderData($orderData) {
+    public function setOrderData(?array $orderData): DataTablesColumnInterface {
         $this->orderData = $orderData;
         return $this;
     }
@@ -354,10 +354,10 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * Set the order data type.
      *
-     * @param string $orderDataType The order data type.
+     * @param string|null $orderDataType The order data type.
      * @return DataTablesColumnInterface Returns this column.
      */
-    public function setOrderDataType($orderDataType) {
+    public function setOrderDataType(?string $orderDataType): DataTablesColumnInterface {
         $this->orderDataType = $orderDataType;
         return $this;
     }
@@ -365,10 +365,10 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * Set the order sequence.
      *
-     * @param string $orderSequence The order sequence.
+     * @param string|null $orderSequence The order sequence.
      * @return DataTablesColumnInterface Returns this column.
      */
-    public function setOrderSequence($orderSequence) {
+    public function setOrderSequence(?string $orderSequence): DataTablesColumnInterface {
         if (false === in_array($orderSequence, DataTablesEnumerator::enumOrderSequences())) {
             $orderSequence = null;
         }
@@ -379,7 +379,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * {@inheritDoc}
      */
-    public function setOrderable($orderable) {
+    public function setOrderable(bool $orderable): DataTablesColumnInterface {
         $this->orderable = $orderable;
         return $this;
     }
@@ -387,7 +387,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * {@inheritDoc}
      */
-    public function setSearch(DataTablesSearchInterface $search) {
+    public function setSearch(?DataTablesSearchInterface $search): DataTablesColumnInterface {
         $this->search = $search;
         return $this;
     }
@@ -395,7 +395,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * {@inheritDoc}
      */
-    public function setSearchable($searchable) {
+    public function setSearchable(bool $searchable): DataTablesColumnInterface {
         $this->searchable = $searchable;
         return $this;
     }
@@ -403,7 +403,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * {@inheritDoc}
      */
-    public function setTitle($title) {
+    public function setTitle(?string $title): DataTablesColumnInterface {
         $this->title = $title;
         return $this;
     }
@@ -411,7 +411,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * {@inheritDoc}
      */
-    public function setType($type) {
+    public function setType(?string $type): DataTablesColumnInterface {
         if (false === in_array($type, DataTablesEnumerator::enumTypes())) {
             throw new InvalidArgumentException(sprintf('The type "%s" is invalid', $type));
         }
@@ -422,7 +422,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * {@inheritDoc}
      */
-    public function setVisible($visible) {
+    public function setVisible(bool $visible): DataTablesColumnInterface {
         $this->visible = $visible;
         return $this;
     }
@@ -430,7 +430,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * {@inheritDoc}
      */
-    public function setWidth($width) {
+    public function setWidth(?string $width): DataTablesColumnInterface {
         $this->width = $width;
         return $this;
     }

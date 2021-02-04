@@ -118,8 +118,8 @@ class DataTablesColumnTest extends AbstractTestCase {
 
         $obj = new DataTablesColumn();
 
-        $obj->setOrderData(1);
-        $this->assertEquals(1, $obj->getOrderData());
+        $obj->setOrderData([1]);
+        $this->assertEquals([1], $obj->getOrderData());
     }
 
     /**

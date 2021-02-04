@@ -39,7 +39,7 @@ class DataTablesNormalizerTest extends AbstractTestCase {
         $arg->setData("data");
         $arg->setDefaultContent("defaultContent");
         $arg->setName("name");
-        $arg->setOrderData("orderData");
+        $arg->setOrderData([1]);
         $arg->setOrderDataType("orderDataType");
         $arg->setOrderSequence("asc");
         $arg->setOrderable(false);
@@ -55,7 +55,7 @@ class DataTablesNormalizerTest extends AbstractTestCase {
             "data"           => "data",
             "defaultContent" => "defaultContent",
             "name"           => "name",
-            "orderData"      => "orderData",
+            "orderData"      => [1],
             "orderDataType"  => "orderDataType",
             "orderSequence"  => "asc",
             "orderable"      => false,

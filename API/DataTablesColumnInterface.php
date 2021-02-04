@@ -117,119 +117,119 @@ interface DataTablesColumnInterface {
      *
      * @return string Returns the cell type.
      */
-    public function getCellType();
+    public function getCellType(): string;
 
     /**
      * Get the class name.
      *
-     * @return string Returns the class name.
+     * @return string|null Returns the class name.
      */
-    public function getClassname();
+    public function getClassname(): ?string;
 
     /**
      * Get the content padding.
      *
-     * @return string Returns the content padding.
+     * @return string|null Returns the content padding.
      */
-    public function getContentPadding();
+    public function getContentPadding(): ?string;
 
     /**
      * Get the data.
      *
-     * @return integer|string Returns the data.
+     * @return string|null Returns the data.
      */
-    public function getData();
+    public function getData(): ?string;
 
     /**
      * Get the default content
      *
-     * @return string Returns the default content.
+     * @return string|null Returns the default content.
      */
-    public function getDefaultContent();
+    public function getDefaultContent(): ?string;
 
     /**
      * Get the mapping.
      *
      * @return DataTablesMappingInterface The mapping.
      */
-    public function getMapping();
+    public function getMapping(): DataTablesMappingInterface;
 
     /**
      * Get the name.
      *
-     * @return string Returns the name.
+     * @return string|null Returns the name.
      */
-    public function getName();
+    public function getName(): ?string;
 
     /**
      * Get the order data.
      *
-     * @return integer|array Returns the order data.
+     * @return array|null Returns the order data.
      */
-    public function getOrderData();
+    public function getOrderData(): ?array;
 
     /**
      * Get the order data type.
      *
-     * @return string Returns the order data type.
+     * @return string|null Returns the order data type.
      */
-    public function getOrderDataType();
+    public function getOrderDataType(): ?string;
 
     /**
      * Get the order sequence.
      *
-     * @return string Returns the order sequence.
+     * @return string|null Returns the order sequence.
      */
-    public function getOrderSequence();
+    public function getOrderSequence(): ?string;
 
     /**
      * Get the orderable.
      *
      * @return bool Returns the orderable.
      */
-    public function getOrderable();
+    public function getOrderable(): bool;
 
     /**
      * Get the search.
      *
-     * @return DataTablesSearchInterface Returns the search.
+     * @return DataTablesSearchInterface|null Returns the search.
      */
-    public function getSearch();
+    public function getSearch(): ?DataTablesSearchInterface;
 
     /**
      * Get the searchable.
      *
      * @return bool Returns the searchable.
      */
-    public function getSearchable();
+    public function getSearchable(): bool;
 
     /**
      * Get the title.
      *
-     * @return string Returns the title.
+     * @return string|null Returns the title.
      */
-    public function getTitle();
+    public function getTitle(): ?string;
 
     /**
      * Get the type.
      *
-     * @return string Returns the type.
+     * @return string|null Returns the type.
      */
-    public function getType();
+    public function getType(): ?string;
 
     /**
      * Get the visible.
      *
      * @return bool Returns the visible.
      */
-    public function getVisible();
+    public function getVisible(): bool;
 
     /**
      * Get the width.
      *
-     * @return string Returns the width.
+     * @return string|null Returns the width.
      */
-    public function getWidth();
+    public function getWidth(): ?string;
 
     /**
      * Set the cell type.
@@ -237,31 +237,31 @@ interface DataTablesColumnInterface {
      * @param string $cellType The cell type.
      * @return DataTablesColumnInterface Returns this column.
      */
-    public function setCellType($cellType);
+    public function setCellType(string $cellType): DataTablesColumnInterface;
 
     /**
      * Set the class name.
      *
-     * @param string $classname The class name.
+     * @param string|null $classname The class name.
      * @return DataTablesColumnInterface Returns this column.
      */
-    public function setClassname($classname);
+    public function setClassname(?string $classname): DataTablesColumnInterface;
 
     /**
      * Set the content padding.
      *
-     * @param string $contentPadding The content padding.
+     * @param string|null $contentPadding The content padding.
      * @return DataTablesColumnInterface Returns this column.
      */
-    public function setContentPadding($contentPadding);
+    public function setContentPadding(?string $contentPadding): DataTablesColumnInterface;
 
     /**
      * Set the default content.
      *
-     * @param string $defaultContent The default content.
+     * @param string|null $defaultContent The default content.
      * @return DataTablesColumnInterface Returns this column.
      */
-    public function setDefaultContent($defaultContent);
+    public function setDefaultContent(?string $defaultContent): DataTablesColumnInterface;
 
     /**
      * Set the orderable.
@@ -269,15 +269,15 @@ interface DataTablesColumnInterface {
      * @param bool $orderable The orderable.
      * @return DataTablesColumnInterface Returns this column.
      */
-    public function setOrderable($orderable);
+    public function setOrderable(bool $orderable): DataTablesColumnInterface;
 
     /**
      * Set the search.
      *
-     * @param DataTablesSearchInterface $search The search.
+     * @param DataTablesSearchInterface|null $search The search.
      * @return DataTablesColumnInterface Returns this column.
      */
-    public function setSearch(DataTablesSearchInterface $search);
+    public function setSearch(?DataTablesSearchInterface $search): DataTablesColumnInterface;
 
     /**
      * Set the searchable.
@@ -285,24 +285,24 @@ interface DataTablesColumnInterface {
      * @param bool $searchable The searchable.
      * @return DataTablesColumnInterface Returns this column.
      */
-    public function setSearchable($searchable);
+    public function setSearchable(bool $searchable): DataTablesColumnInterface;
 
     /**
      * Set the title.
      *
-     * @param string $title The title.
+     * @param string|null $title The title.
      * @return DataTablesColumnInterface Returns this column.
      */
-    public function setTitle($title);
+    public function setTitle(?string $title): DataTablesColumnInterface;
 
     /**
      * Set the type.
      *
-     * @param string $type The type.
+     * @param string|null $type The type.
      * @return DataTablesColumnInterface Returns this column.
      * @throws InvalidArgumentException Throws an invalid argument exception if the type is invalid.
      */
-    public function setType($type);
+    public function setType(?string $type): DataTablesColumnInterface;
 
     /**
      * Set the visible.
@@ -310,13 +310,13 @@ interface DataTablesColumnInterface {
      * @param bool $visible The visible.
      * @return DataTablesColumnInterface Returns this column.
      */
-    public function setVisible($visible);
+    public function setVisible(bool $visible): DataTablesColumnInterface;
 
     /**
      * Set the width.
      *
-     * @param string $width The width.
+     * @param string|null $width The width.
      * @return DataTablesColumnInterface Returns this column.
      */
-    public function setWidth($width);
+    public function setWidth(?string $width): DataTablesColumnInterface;
 }
