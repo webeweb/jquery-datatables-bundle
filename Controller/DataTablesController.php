@@ -272,7 +272,7 @@ class DataTablesController extends AbstractController {
             $this->logInfo($ex->getMessage());
         }
 
-        $data = DataTablesEntityHelper::jsonSerialize(null !== $entity ? $entity : []);
+        $data = DataTablesEntityHelper::jsonSerialize($entity);
 
         return new Response($data, 200, ["Content-type" => "application/json"]);
     }

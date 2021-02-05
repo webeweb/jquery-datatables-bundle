@@ -91,9 +91,9 @@ class DataTablesMappingHelper {
     public static function getWhere(DataTablesMappingInterface $mapping): string {
 
         $where = [
-            static::getAlias($mapping),
-            static::getComparator($mapping),
-            static::getParam($mapping),
+            DataTablesMappingHelper::getAlias($mapping),
+            DataTablesMappingHelper::getComparator($mapping),
+            DataTablesMappingHelper::getParam($mapping),
         ];
 
         return implode(" ", $where);

@@ -178,7 +178,7 @@ class DataTablesFactory {
      */
     protected static function parseColumn(array $rawColumn, DataTablesWrapperInterface $wrapper): ?DataTablesColumnInterface {
 
-        if (false === static::isValidRawColumn($rawColumn)) {
+        if (false === DataTablesFactory::isValidRawColumn($rawColumn)) {
             return null;
         }
 
@@ -190,11 +190,11 @@ class DataTablesFactory {
             return null;
         }
         if (false === $dtColumn->getSearchable()) {
-            $dtColumn->setSearch(static::parseSearch([])); // Set a default search.
+            $dtColumn->setSearch(DataTablesFactory::parseSearch([])); // Set a default search.
             return $dtColumn;
         }
 
-        $dtColumn->setSearch(static::parseSearch($rawColumn[DataTablesColumnInterface::DATATABLES_PARAMETER_SEARCH]));
+        $dtColumn->setSearch(DataTablesFactory::parseSearch($rawColumn[DataTablesColumnInterface::DATATABLES_PARAMETER_SEARCH]));
 
         return $dtColumn;
     }
@@ -212,7 +212,7 @@ class DataTablesFactory {
 
         foreach ($rawColumns as $current) {
 
-            $dtColumn = static::parseColumn($current, $wrapper);
+            $dtColumn = DataTablesFactory::parseColumn($current, $wrapper);
             if (null === $dtColumn) {
                 continue;
             }
@@ -233,7 +233,7 @@ class DataTablesFactory {
 
         $dtOrder = new DataTablesOrder();
 
-        if (false === static::isValidRawOrder($rawOrder)) {
+        if (false === DataTablesFactory::isValidRawOrder($rawOrder)) {
             return $dtOrder;
         }
 
@@ -254,7 +254,7 @@ class DataTablesFactory {
         $dtOrders = [];
 
         foreach ($rawOrders as $current) {
-            $dtOrders[] = static::parseOrder($current);
+            $dtOrders[] = DataTablesFactory::parseOrder($current);
         }
 
         return $dtOrders;
@@ -271,8 +271,8 @@ class DataTablesFactory {
 
         $dtRequest = new DataTablesRequest();
 
-        static::copyParameterBag($request->query, $dtRequest->getQuery());
-        static::copyParameterBag($request->request, $dtRequest->getRequest());
+        DataTablesFactory::copyParameterBag($request->query, $dtRequest->getQuery());
+        DataTablesFactory::copyParameterBag($request->request, $dtRequest->getRequest());
 
         if (HttpInterface::HTTP_METHOD_GET === $request->getMethod()) {
             $parameterBag = $request->query;
@@ -286,11 +286,11 @@ class DataTablesFactory {
         $search  = null !== $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_SEARCH) ? $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_SEARCH) : [];
 
         // Set the request.
-        $dtRequest->setColumns(static::parseColumns($columns, $wrapper));
+        $dtRequest->setColumns(DataTablesFactory::parseColumns($columns, $wrapper));
         $dtRequest->setDraw($parameterBag->getInt(DataTablesRequestInterface::DATATABLES_PARAMETER_DRAW));
         $dtRequest->setLength($parameterBag->getInt(DataTablesRequestInterface::DATATABLES_PARAMETER_LENGTH));
-        $dtRequest->setOrder(static::parseOrders($orders));
-        $dtRequest->setSearch(static::parseSearch($search));
+        $dtRequest->setOrder(DataTablesFactory::parseOrders($orders));
+        $dtRequest->setSearch(DataTablesFactory::parseSearch($search));
         $dtRequest->setStart($parameterBag->getInt(DataTablesRequestInterface::DATATABLES_PARAMETER_START));
         $dtRequest->setWrapper($wrapper);
 
@@ -307,7 +307,7 @@ class DataTablesFactory {
 
         $dtSearch = new DataTablesSearch();
 
-        if (false === static::isValidRawSearch($rawSearch)) {
+        if (false === DataTablesFactory::isValidRawSearch($rawSearch)) {
             return $dtSearch;
         }
 
@@ -325,7 +325,7 @@ class DataTablesFactory {
      * @return void
      */
     public static function parseWrapper(DataTablesWrapperInterface $wrapper, Request $request): void {
-        $wrapper->setRequest(static::parseRequest($wrapper, $request));
-        $wrapper->setResponse(static::newResponse($wrapper));
+        $wrapper->setRequest(DataTablesFactory::parseRequest($wrapper, $request));
+        $wrapper->setResponse(DataTablesFactory::newResponse($wrapper));
     }
 }

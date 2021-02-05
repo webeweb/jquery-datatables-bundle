@@ -144,7 +144,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
      * Constructor.
      */
     public function __construct() {
-        $this->setCellType(self::DATATABLES_CELL_TYPE_TD);
+        $this->setCellType(static::DATATABLES_CELL_TYPE_TD);
         $this->setMapping(new DataTablesMapping());
         $this->setOrderable(true);
         $this->setSearchable(true);
@@ -277,7 +277,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
      */
     public function setCellType(string $cellType): DataTablesColumnInterface {
         if (false === in_array($cellType, DataTablesEnumerator::enumCellTypes())) {
-            $cellType = self::DATATABLES_CELL_TYPE_TD;
+            $cellType = static::DATATABLES_CELL_TYPE_TD;
         }
         $this->cellType = $cellType;
         return $this;

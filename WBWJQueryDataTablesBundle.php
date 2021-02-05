@@ -37,7 +37,7 @@ class WBWJQueryDataTablesBundle extends Bundle implements AssetsProviderInterfac
      * {@inheritDoc}
      */
     public function getAssetsRelativeDirectory(): string {
-        return self::ASSETS_RELATIVE_DIRECTORY;
+        return static::ASSETS_RELATIVE_DIRECTORY;
     }
 
     /**

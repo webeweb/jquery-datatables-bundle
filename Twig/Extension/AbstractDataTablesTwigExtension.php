@@ -112,7 +112,7 @@ EOT;
         $searches = ["%var%", "%selector%", "%options%"];
         $replaces = [$var, null === $selector ? "#" . $var : $selector, $this->encodeOptions($options)];
 
-        $javascript = str_replace($searches, $replaces, self::JQUERY_DATATABLES);
+        $javascript = str_replace($searches, $replaces, static::JQUERY_DATATABLES);
         return $this->getRendererTwigExtension()->coreScriptFilter($javascript);
     }
 
@@ -134,7 +134,7 @@ EOT;
         $searches = ["%selector%", "%options%"];
         $replaces = [$selector, $this->encodeOptions($options)];
 
-        $javascript = str_replace($searches, $replaces, self::JQUERY_DATATABLES_STANDALONE);
+        $javascript = str_replace($searches, $replaces, static::JQUERY_DATATABLES_STANDALONE);
         return $this->getRendererTwigExtension()->coreScriptFilter($javascript);
     }
 

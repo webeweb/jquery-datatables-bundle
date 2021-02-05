@@ -135,18 +135,18 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTable
 
         switch ($dtRow) {
 
-            case self::DATATABLES_ROW_ATTR:
+            case static::DATATABLES_ROW_ATTR:
                 break;
 
-            case self::DATATABLES_ROW_CLASS:
+            case static::DATATABLES_ROW_CLASS:
                 $output = (0 === $rowNumber % 2 ? "even" : "odd");
                 break;
 
-            case self::DATATABLES_ROW_DATA:
+            case static::DATATABLES_ROW_DATA:
                 $output = ["pkey" => $entity->getId()];
                 break;
 
-            case self::DATATABLES_ROW_ID:
+            case static::DATATABLES_ROW_ID:
                 $output = "office_" . $entity->getId();
                 break;
         }

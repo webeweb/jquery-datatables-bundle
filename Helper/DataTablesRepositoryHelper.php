@@ -51,7 +51,7 @@ class DataTablesRepositoryHelper {
      */
     public static function appendWhere(QueryBuilder $queryBuilder, DataTablesWrapperInterface $dtWrapper): void {
 
-        $operator = static::determineOperator($dtWrapper);
+        $operator = DataTablesRepositoryHelper::determineOperator($dtWrapper);
         if (null === $operator) {
             return;
         }

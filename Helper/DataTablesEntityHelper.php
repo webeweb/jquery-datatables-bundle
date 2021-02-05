@@ -47,14 +47,17 @@ class DataTablesEntityHelper {
     /**
      * Serialize an entity.
      *
-     * @param object $entity The entity.
+     * @param object|null $entity The entity.
      * @return string Returns the serialized entity.
      */
     public static function jsonSerialize($entity): string {
 
         $data = true === ($entity instanceof JsonSerializable) ? $entity->jsonSerialize() : $entity;
+        if (null === $data) {
+            $data = [];
+        }
 
-        return static::newSerializer()->serialize($data, "json");
+        return DataTablesEntityHelper::newSerializer()->serialize($data, "json");
     }
 
     /**

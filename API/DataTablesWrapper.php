@@ -242,7 +242,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HttpInterface {
      * @return DataTablesWrapperInterface Returns this wrapper.
      */
     public function setMethod(?string $method): DataTablesWrapperInterface {
-        $this->method = (true === in_array($method, [self::HTTP_METHOD_GET, self::HTTP_METHOD_POST]) ? $method : self::HTTP_METHOD_POST);
+        $this->method = (true === in_array($method, [static::HTTP_METHOD_GET, static::HTTP_METHOD_POST]) ? $method : static::HTTP_METHOD_POST);
         return $this;
     }
 
