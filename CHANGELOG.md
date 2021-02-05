@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.12.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.12.1) (2021-02-05)
+
+- Replace Class:: by static::
+
 ### [3.12.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.12.0) (2021-02-04)
 
 > IMPORTANT NOTICE: The following Symfony versions are now not supported
