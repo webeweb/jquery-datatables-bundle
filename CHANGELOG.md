@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.12.2](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.12.2) (2021-02-08)
+
+- Fix some class_alias uses
+
 ### [3.12.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.12.1) (2021-02-05)
 
 - Replace Class:: by static::
