@@ -47,7 +47,7 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
      * @param BaseTranslatorInterface $translator The translator.
      * @param ButtonTwigExtension $buttonTwigExtension The button Twig extension.
      */
-    public function __construct(RouterInterface $router, BaseTranslatorInterface $translator, ButtonTwigExtension $buttonTwigExtension) {
+    public function __construct(RouterInterface $router, $translator, ButtonTwigExtension $buttonTwigExtension) {
         $this->setButtonTwigExtension($buttonTwigExtension);
         $this->setRouter($router);
         $this->setTranslator($translator);
