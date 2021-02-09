@@ -38,16 +38,4 @@ class DataTablesManagerTraitTest extends AbstractTestCase {
         $obj->setDataTablesManager($dataTablesManager);
         $this->assertSame($dataTablesManager, $obj->getDataTablesManager());
     }
-
-    /**
-     * Tests the __construct() mmethod.
-     *
-     * @return void
-     */
-    public function test__construct(): void {
-
-        $obj = new TestDataTablesManagerTrait();
-
-        $this->assertNull($obj->getDataTablesManager());
-    }
 }
