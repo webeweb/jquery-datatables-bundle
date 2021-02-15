@@ -69,5 +69,7 @@ wbw_jquery_datatables:
         - "rowgroup"
         - "rowreorder"
         - "scroller"
+        - "searchbuilder"
+        - "searchpanes"
         - "select"
         - "editabletable"
