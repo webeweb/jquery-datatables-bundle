@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+### [3.13.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.13.0) (2021-02-15)
+
+- Update jQuery DataTables to 1.10.23
+- Add DataTables SearchBuilder plugin
+- Add DataTables SearchPanes plugin
+
 ### [3.12.3](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.12.3) (2021-02-09)
 
 - Improve unit tests
