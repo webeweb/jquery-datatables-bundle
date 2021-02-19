@@ -34,9 +34,9 @@ Includes :
 - [DataTables Responsive 2.2.7](https://datatables.net/extensions/responsive/) (DataTables plugin)
 - [DataTables RowGroup 1.1.2](https://datatables.net/extensions/rowgroup/) (DataTables plugin)
 - [DataTables RowReorder 1.2.7](https://datatables.net/extensions/rowreorder/) (DataTables plugin)
+- [DataTables Scroller 2.0.3](https://datatables.net/extensions/scroller/) (DataTables plugin)
 - [DataTables SearchBuilder 1.0.1](https://datatables.net/extensions/searchbuilder/) (DataTables plugin)
 - [DataTables SearchPanes 1.2.2](https://datatables.net/extensions/searchpanes/) (DataTables plugin)
-- [DataTables Scroller 2.0.3](https://datatables.net/extensions/scroller/) (DataTables plugin)
 - [DataTables Select 1.3.1](https://datatables.net/extensions/select/) (DataTables plugin)
 - [editableTable](https://github.com/mindmup/editable-table/)
 
