@@ -37,7 +37,7 @@ class WBWJQueryDataTablesExtension extends Extension {
      * {@inheritDoc}
      */
     public function getAlias(): string {
-        return static::EXTENSION_ALIAS;
+        return self::EXTENSION_ALIAS;
     }
 
     /**

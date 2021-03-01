@@ -73,7 +73,7 @@ class DataTablesOrder implements DataTablesOrderInterface {
      */
     public function setDir(?string $dir): DataTablesOrderInterface {
         if (false === in_array($dir, DataTablesEnumerator::enumDirs())) {
-            $dir = static::DATATABLES_DIR_ASC;
+            $dir = self::DATATABLES_DIR_ASC;
         }
         $this->dir = strtoupper($dir);
         return $this;
