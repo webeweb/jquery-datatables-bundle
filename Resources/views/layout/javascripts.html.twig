@@ -10,7 +10,6 @@
 {% endif %}
 <script type="text/javascript" src="{{ asset(_webPath ~ "/datatables-" ~ _version ~ "/js/jquery.dataTables.min.js") }}"></script>
 <script type="text/javascript" src="{{ asset(_webPath ~ "/datatables-" ~ _version ~ "/js/dataTables." ~ _appTheme ~ ".min.js") }}"></script>
-
 {% for _appPlugin in _appPlugins %}
 
     {% if ("buttons" == _appPlugin) %}
