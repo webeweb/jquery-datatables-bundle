@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Move API classes
+
 ### [3.13.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.13.1) (2021-03-01)
 
 - Improve code quality
