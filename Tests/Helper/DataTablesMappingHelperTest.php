@@ -11,9 +11,9 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
 
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesMapping;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesMappingHelper;
+use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesColumn;
+use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesMapping;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 
 /**

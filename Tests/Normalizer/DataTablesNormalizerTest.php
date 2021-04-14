@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Normalizer;
 
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponse;
+use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesColumn;
+use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\Normalizer\DataTablesNormalizer;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 

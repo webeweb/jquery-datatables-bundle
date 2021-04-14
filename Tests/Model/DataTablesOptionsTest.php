@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Model;
 
 use Exception;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptions;
+use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesOptions;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
  * DataTables options test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\API
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Model
  */
 class DataTablesOptionsTest extends AbstractTestCase {
 

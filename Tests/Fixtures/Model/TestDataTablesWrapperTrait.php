@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\API;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Model;
 
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesWrapperTrait;
 
 /**
  * Test DataTables wrapper trait.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\API
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Model
  */
 class TestDataTablesWrapperTrait {
 

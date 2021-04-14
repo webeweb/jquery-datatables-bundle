@@ -9,20 +9,22 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\API;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Model;
+
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 
 /**
  * DataTables wrapper trait.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\API
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Model
  */
 trait DataTablesWrapperTrait {
 
     /**
      * Wrapper.
      *
-     * @var DataTablesWrapperInterface
+     * @var DataTablesWrapperInterface|null
      */
     private $wrapper;
 

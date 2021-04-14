@@ -9,15 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\API;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Model;
 
 use InvalidArgumentException;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesMappingInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearchInterface;
 
 /**
  * DataTables column.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\API
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Model
  */
 class DataTablesColumn implements DataTablesColumnInterface {
 

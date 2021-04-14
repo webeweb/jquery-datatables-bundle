@@ -9,9 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\API;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Model;
 
 use WBW\Bundle\CoreBundle\Model\UserTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesMappingInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequestInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Library\Core\Network\HTTP\HttpInterface;
 
@@ -19,7 +25,7 @@ use WBW\Library\Core\Network\HTTP\HttpInterface;
  * DataTables wrapper.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\API
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Model
  */
 class DataTablesWrapper implements DataTablesWrapperInterface, HttpInterface {
 

@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Model;
 
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrder;
+use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesOrder;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
  * DataTables order test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\API
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Model
  */
 class DataTablesOrderTest extends AbstractTestCase {
 

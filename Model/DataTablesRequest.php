@@ -9,16 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\API;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Model;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrderInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequestInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearchInterface;
 use WBW\Library\Core\Network\HTTP\HttpInterface;
 
 /**
  * DataTables request.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\API
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Model
  */
 class DataTablesRequest implements DataTablesRequestInterface, HttpInterface {
 

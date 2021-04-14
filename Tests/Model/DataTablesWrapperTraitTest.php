@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Model;
 
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\API\TestDataTablesWrapperTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Model\TestDataTablesWrapperTrait;
 
 /**
  * DataTables wrapper trait test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\API
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Model
  */
 class DataTablesWrapperTraitTest extends AbstractTestCase {
 

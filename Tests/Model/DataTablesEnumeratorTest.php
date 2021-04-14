@@ -9,59 +9,73 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\API;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Model;
+
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrderInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequestInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesEnumerator;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
- * DataTables enumerator.
+ * DataTables enumerator test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\API
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Model
  */
-class DataTablesEnumerator {
+class DataTablesEnumeratorTest extends AbstractTestCase {
 
     /**
-     * Enumerates cell types.
+     * Tests the enumCellTypes() method.
      *
-     * @return string[] Returns the cell types enumeration.
+     * @return void
      */
-    public static function enumCellTypes(): array {
-        return [
+    public function testEnumCellTypes(): void {
+
+        $res = [
             DataTablesColumnInterface::DATATABLES_CELL_TYPE_TD,
             DataTablesColumnInterface::DATATABLES_CELL_TYPE_TH,
         ];
+        $this->assertEquals($res, DataTablesEnumerator::enumCellTypes());
     }
 
     /**
-     * Enumerates dirs.
+     * Tests the enumDirs() method.
      *
-     * @return string[] Returns the dirs enumeration.
+     * @return void
      */
-    public static function enumDirs(): array {
-        return [
+    public function testEnumDirs(): void {
+
+        $res = [
             DataTablesOrderInterface::DATATABLES_DIR_ASC,
             DataTablesOrderInterface::DATATABLES_DIR_DESC,
         ];
+        $this->assertEquals($res, DataTablesEnumerator::enumDirs());
     }
 
     /**
-     * Enumerates order sequences.
+     * Tests the enumOrderSequences() method.
      *
-     * @return string[] Returns the order sequences enumeration.
+     * @return void
      */
-    public static function enumOrderSequences(): array {
-        return [
+    public function testEnumOrderSequences(): void {
+
+        $res = [
             DataTablesColumnInterface::DATATABLES_ORDER_SEQUENCE_ASC,
             DataTablesColumnInterface::DATATABLES_ORDER_SEQUENCE_DESC,
         ];
+        $this->assertEquals($res, DataTablesEnumerator::enumOrderSequences());
     }
 
     /**
-     * Enumerates parameters.
+     * Tests the enumParameters() method.
      *
-     * @return string[] Returns the parameters enumeration.
+     * @return void
      */
-    public static function enumParameters(): array {
-        return [
+    public function testEnumParameters(): void {
+
+        $res = [
             DataTablesRequestInterface::DATATABLES_PARAMETER_COLUMNS,
             DataTablesRequestInterface::DATATABLES_PARAMETER_DRAW,
             DataTablesRequestInterface::DATATABLES_PARAMETER_LENGTH,
@@ -69,29 +83,33 @@ class DataTablesEnumerator {
             DataTablesRequestInterface::DATATABLES_PARAMETER_SEARCH,
             DataTablesRequestInterface::DATATABLES_PARAMETER_START,
         ];
+        $this->assertEquals($res, DataTablesEnumerator::enumParameters());
     }
 
     /**
-     * Enumerates rows.
+     * Tests the enumRows() method.
      *
-     * @return string[] Returns the rows enumeration.
+     * @return void
      */
-    public static function enumRows(): array {
-        return [
+    public function testEnumRows(): void {
+
+        $res = [
             DataTablesResponseInterface::DATATABLES_ROW_ATTR,
             DataTablesResponseInterface::DATATABLES_ROW_CLASS,
             DataTablesResponseInterface::DATATABLES_ROW_DATA,
             DataTablesResponseInterface::DATATABLES_ROW_ID,
         ];
+        $this->assertEquals($res, DataTablesEnumerator::enumRows());
     }
 
     /**
-     * Enumerates types.
+     * Tests the enumTypes() method.
      *
-     * @return string[] Returns the types enumeration.
+     * @return void
      */
-    public static function enumTypes(): array {
-        return [
+    public function testEnumTypes(): void {
+
+        $res = [
             DataTablesColumnInterface::DATATABLES_TYPE_DATE,
             DataTablesColumnInterface::DATATABLES_TYPE_HTML,
             DataTablesColumnInterface::DATATABLES_TYPE_HTML_NUM,
@@ -99,5 +117,6 @@ class DataTablesEnumerator {
             DataTablesColumnInterface::DATATABLES_TYPE_NUM_FMT,
             DataTablesColumnInterface::DATATABLES_TYPE_STRING,
         ];
+        $this->assertEquals($res, DataTablesEnumerator::enumTypes());
     }
 }

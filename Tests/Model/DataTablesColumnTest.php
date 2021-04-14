@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\API;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Model;
 
 use Exception;
 use InvalidArgumentException;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumn;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearch;
+use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesColumn;
+use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesSearch;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
  * DataTables column test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Column
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Model
  */
 class DataTablesColumnTest extends AbstractTestCase {
 
