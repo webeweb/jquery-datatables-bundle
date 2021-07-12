@@ -137,7 +137,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testI18n(): void {
 
-        $directory = getcwd() . "/Resources/public/datatables-i18n";
+        $directory = realpath(__DIR__ . "/../../../Resources/public/datatables-i18n");
 
         $found = 0;
 

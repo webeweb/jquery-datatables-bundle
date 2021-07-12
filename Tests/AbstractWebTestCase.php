@@ -33,8 +33,10 @@ abstract class AbstractWebTestCase extends WebTestCase {
      */
     public static function listCSSAssets(): array {
 
+        $directory = realpath(__DIR__ . "/../DependencyInjection");
+
         // Load the YAML configuration.
-        $config  = ConfigurationHelper::loadYamlConfig(getcwd() . "/DependencyInjection", "assets");
+        $config  = ConfigurationHelper::loadYamlConfig($directory, "assets");
         $version = $config["assets"]["wbw.jquery_datatables.asset.jquery_datatables"]["version"];
         $plugins = $config["assets"]["wbw.jquery_datatables.asset.jquery_datatables"]["plugins"];
 
@@ -62,8 +64,10 @@ abstract class AbstractWebTestCase extends WebTestCase {
      */
     public static function listJavascriptAssets(): array {
 
+        $directory = realpath(__DIR__ . "/../DependencyInjection");
+
         // Load the YAML configuration.
-        $config   = ConfigurationHelper::loadYamlConfig(getcwd() . "/DependencyInjection", "assets");
+        $config   = ConfigurationHelper::loadYamlConfig($directory, "assets");
         $version  = $config["assets"]["wbw.jquery_datatables.asset.jquery_datatables"]["version"];
         $requires = $config["assets"]["wbw.jquery_datatables.asset.jquery_datatables"]["requires"];
         $plugins  = $config["assets"]["wbw.jquery_datatables.asset.jquery_datatables"]["plugins"];

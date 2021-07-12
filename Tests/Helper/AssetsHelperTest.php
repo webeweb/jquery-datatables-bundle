@@ -38,7 +38,7 @@ class AssetsHelperTest extends AbstractTestCase {
         parent::setUp();
 
         // Set the directories.
-        $this->directoryAssets = getcwd() . "/Resources/assets";
+        $this->directoryAssets = realpath(__DIR__ . "/../../Resources/assets");
     }
 
     /**
@@ -49,8 +49,10 @@ class AssetsHelperTest extends AbstractTestCase {
      */
     public function testListAssets(): void {
 
+        $directory = realpath(__DIR__ . "/../../DependencyInjection");
+
         // Load the YAML configuration.
-        $config   = ConfigurationHelper::loadYamlConfig(getcwd() . "/DependencyInjection", "assets");
+        $config   = ConfigurationHelper::loadYamlConfig($directory, "assets");
         $version  = $config["assets"]["wbw.jquery_datatables.asset.jquery_datatables"]["version"];
         $requires = $config["assets"]["wbw.jquery_datatables.asset.jquery_datatables"]["requires"];
         $plugins  = $config["assets"]["wbw.jquery_datatables.asset.jquery_datatables"]["plugins"];
