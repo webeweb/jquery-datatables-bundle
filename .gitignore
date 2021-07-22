@@ -1,7 +1,5 @@
-# Composer
 /composer.lock
 /vendor/*
 
-# Fixtures
 /Tests/Fixtures/app/var/*
 !/Tests/Fixtures/app/var/.gitkeep
