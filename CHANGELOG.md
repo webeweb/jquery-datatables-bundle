@@ -5,6 +5,7 @@ CHANGELOG
 
 - Improve unit tests
 - Move API classes
+- Remove jQuery DataTables events
 
 ### [3.13.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.13.1) (2021-03-01)
 
