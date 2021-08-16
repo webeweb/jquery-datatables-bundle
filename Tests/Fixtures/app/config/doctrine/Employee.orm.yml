@@ -1,4 +1,4 @@
-# Tests/Fixtures/App/config/doctrine/Employee.orm.yml
+# Tests/Fixtures/app/config/doctrine/Employee.orm.yml
 WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee:
 
     type:            "entity"

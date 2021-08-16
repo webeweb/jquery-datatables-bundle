@@ -1,4 +1,4 @@
-# Tests/Fixtures/App/config/doctrine/Office.orm.yml
+# Tests/Fixtures/app/config/doctrine/Office.orm.yml
 WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Office:
 
     type:            "entity"

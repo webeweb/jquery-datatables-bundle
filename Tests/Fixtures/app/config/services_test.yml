@@ -1,4 +1,4 @@
-# Tests/Fixtures/App/config/services_test.yml
+# Tests/Fixtures/app/config/services_test.yml
 services:
 
     wbw.jquery.datatables.event_listener:

@@ -1,4 +1,4 @@
-# Tests/Fixtures/App/config/routing_test.yml
+# Tests/Fixtures/app/config/routing_test.yml
 wbw_jquery_datatables:
     prefix:   "/"
     resource: "@WBWJQueryDataTablesBundle/Resources/config/routing.yml"
