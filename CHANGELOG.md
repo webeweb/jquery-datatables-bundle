@@ -1,8 +1,11 @@
 CHANGELOG
 =========
 
-### master
+### [3.14.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.14.0) (2021-08-17)
 
+- Update jQuery DataTables to 1.10.25
+- Add DataTables DateTime plugin
+- Improve code quality
 - Improve unit tests
 - Move API classes
 - Remove jQuery DataTables events
