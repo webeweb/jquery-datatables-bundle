@@ -34,7 +34,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesRouterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Repository\DataTablesRepositoryInterface;
-use WBW\Library\Core\Database\Helper\PaginateHelper;
+use WBW\Library\Database\Helper\PaginateHelper;
 
 /**
  * Abstract controller.

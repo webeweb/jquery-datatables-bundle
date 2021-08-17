@@ -19,7 +19,6 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequestInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Library\Core\Network\HTTP\HttpInterface;
 
 /**
  * DataTables wrapper.
@@ -27,7 +26,7 @@ use WBW\Library\Core\Network\HTTP\HttpInterface;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Model
  */
-class DataTablesWrapper implements DataTablesWrapperInterface, HttpInterface {
+class DataTablesWrapper implements DataTablesWrapperInterface {
 
     use UserTrait {
         setUser as public;
@@ -109,7 +108,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HttpInterface {
     public function __construct() {
         $this->setColumns([]);
         $this->setMapping(new DataTablesMapping());
-        $this->setMethod(HttpInterface::HTTP_METHOD_POST);
+        $this->setMethod("POST");
         $this->setProcessing(true);
         $this->setServerSide(true);
     }
@@ -248,7 +247,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface, HttpInterface {
      * @return DataTablesWrapperInterface Returns this wrapper.
      */
     public function setMethod(?string $method): DataTablesWrapperInterface {
-        $this->method = (true === in_array($method, [self::HTTP_METHOD_GET, self::HTTP_METHOD_POST]) ? $method : self::HTTP_METHOD_POST);
+        $this->method = (true === in_array($method, ["GET", "POST"]) ? $method : "POST");
         return $this;
     }
 

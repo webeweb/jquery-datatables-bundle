@@ -26,7 +26,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesEntityHelper;
-use WBW\Library\Core\Renderer\DateTimeRenderer;
+use WBW\Library\Types\Helper\DateTimeHelper;
 
 /**
  * Abstract DataTables provider.
@@ -214,7 +214,7 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
      * @return string Returns the rendered date.
      */
     protected function renderDate(?DateTime $date, string $format = "Y-m-d"): string {
-        return DateTimeRenderer::renderDateTime($date, $format);
+        return DateTimeHelper::toString($date, $format);
     }
 
     /**
@@ -224,8 +224,8 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
      * @param string $format The format.
      * @return string Returns the rendered date/time.
      */
-    protected function renderDateTime(?DateTime $date, string $format = DateTimeRenderer::DATETIME_FORMAT): string {
-        return DateTimeRenderer::renderDateTime($date, $format);
+    protected function renderDateTime(?DateTime $date, string $format = DateTimeHelper::DATETIME_FORMAT): string {
+        return DateTimeHelper::toString($date, $format);
     }
 
     /**

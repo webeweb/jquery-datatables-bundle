@@ -29,7 +29,6 @@ use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesEntityHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesExportHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesEnumerator;
-use WBW\Library\Core\Network\HTTP\HttpInterface;
 
 /**
  * DataTables controller.
@@ -96,7 +95,7 @@ class DataTablesController extends AbstractController {
 
             $entity = $this->getDataTablesEntityById($dtProvider, $id);
 
-            if (true === $request->isMethod(HttpInterface::HTTP_METHOD_POST)) {
+            if (true === $request->isMethod("POST")) {
                 $value = $request->request->get("value");
             }
 
