@@ -62,6 +62,7 @@ wbw_jquery_datatables:
         - "autofill"
         - "buttons"
         - "colreorder"
+        - "datetime"
         - "fixedcolumns"
         - "fixedheader"
         - "keytable"

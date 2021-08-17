@@ -58,7 +58,7 @@ class AssetsHelperTest extends AbstractTestCase {
         $plugins  = $config["assets"]["wbw.jquery_datatables.asset.jquery_datatables"]["plugins"];
 
         $res = TestAssetsHelper::listAssets($this->directoryAssets);
-        $this->assertCount(17, $res);
+        $this->assertCount(18, $res);
 
         $i = -1;
 
@@ -66,6 +66,7 @@ class AssetsHelperTest extends AbstractTestCase {
         $this->assertRegexp("/datatables\-autofill\-" . preg_quote($plugins["autofill"]["version"]) . "\.zip$/", $res[++$i]);
         $this->assertRegexp("/datatables\-buttons\-" . preg_quote($plugins["buttons"]["version"]) . "\.zip$/", $res[++$i]);
         $this->assertRegexp("/datatables\-colreorder\-" . preg_quote($plugins["colreorder"]["version"]) . "\.zip$/", $res[++$i]);
+        $this->assertRegexp("/datatables\-datetime\-" . preg_quote($plugins["datetime"]["version"]) . "\.zip$/", $res[++$i]);
         $this->assertRegexp("/datatables\-fixedcolumns\-" . preg_quote($plugins["fixedcolumns"]["version"]) . "\.zip$/", $res[++$i]);
         $this->assertRegexp("/datatables\-fixedheader\-" . preg_quote($plugins["fixedheader"]["version"]) . "\.zip$/", $res[++$i]);
         $this->assertRegexp("/datatables\-jszip\-" . preg_quote($requires["jszip"]["version"]) . "\.zip$/", $res[++$i]);
