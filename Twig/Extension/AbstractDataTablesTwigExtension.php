@@ -87,6 +87,7 @@ EOT;
         }
 
         $output = json_encode($options, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+
         return str_replace("\n", "\n        ", $output);
     }
 
@@ -113,6 +114,7 @@ EOT;
         $replaces = [$var, null === $selector ? "#" . $var : $selector, $this->encodeOptions($options)];
 
         $javascript = str_replace($searches, $replaces, self::JQUERY_DATATABLES);
+
         return $this->getRendererTwigExtension()->coreScriptFilter($javascript);
     }
 
@@ -135,6 +137,7 @@ EOT;
         $replaces = [$selector, $this->encodeOptions($options)];
 
         $javascript = str_replace($searches, $replaces, self::JQUERY_DATATABLES_STANDALONE);
+
         return $this->getRendererTwigExtension()->coreScriptFilter($javascript);
     }
 
@@ -149,10 +152,10 @@ EOT;
      */
     protected function renderDataTables(DataTablesWrapperInterface $dtWrapper, ?string $class, bool $includeTHead, bool $includeTFoot): string {
 
-        $attributes = [];
-
-        $attributes["class"] = ["table", $class];
-        $attributes["id"]    = DataTablesWrapperHelper::getName($dtWrapper);
+        $attributes = [
+            "class" => ["table", $class],
+            "id"    => DataTablesWrapperHelper::getName($dtWrapper),
+        ];
 
         $thead = true === $includeTHead ? $this->renderDataTablesRow($dtWrapper, "thead") . "\n" : "";
         $tfoot = true === $includeTFoot ? $this->renderDataTablesRow($dtWrapper, "tfoot") . "\n" : "";
@@ -171,11 +174,11 @@ EOT;
      */
     private function renderDataTablesColumn(DataTablesColumnInterface $dtColumn, $rowScope = false): string {
 
-        $attributes = [];
-
-        $attributes["scope"] = true === $rowScope ? "row" : null;
-        $attributes["class"] = $dtColumn->getClassname();
-        $attributes["width"] = $dtColumn->getWidth();
+        $attributes = [
+            "scope" => true === $rowScope ? "row" : null,
+            "class" => $dtColumn->getClassname(),
+            "width" => $dtColumn->getWidth(),
+        ];
 
         return static::coreHTMLElement("th", $dtColumn->getTitle(), $attributes);
     }

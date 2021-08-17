@@ -49,10 +49,13 @@ class DataTablesFactory {
      * @return void
      */
     protected static function copyParameterBag(ParameterBag $src, ParameterBag $dst): void {
+
         foreach ($src->keys() as $current) {
+
             if (true === in_array($current, DataTablesEnumerator::enumParameters())) {
                 continue;
             }
+
             $dst->set($current, $src->get($current));
         }
     }
@@ -64,12 +67,15 @@ class DataTablesFactory {
      * @return bool Returns true in case of success, false otherwise.
      */
     protected static function isValidRawColumn(array $rawColumn): bool {
+
         if (false === array_key_exists(DataTablesColumnInterface::DATATABLES_PARAMETER_DATA, $rawColumn)) {
             return false;
         }
+
         if (false === array_key_exists(DataTablesColumnInterface::DATATABLES_PARAMETER_NAME, $rawColumn)) {
             return false;
         }
+
         return true;
     }
 
@@ -80,12 +86,15 @@ class DataTablesFactory {
      * @return bool Returns true in case of success, false otherwise.
      */
     protected static function isValidRawOrder(array $rawOrder): bool {
+
         if (false === array_key_exists(DataTablesOrderInterface::DATATABLES_PARAMETER_COLUMN, $rawOrder)) {
             return false;
         }
+
         if (false === array_key_exists(DataTablesOrderInterface::DATATABLES_PARAMETER_DIR, $rawOrder)) {
             return false;
         }
+
         return true;
     }
 
@@ -96,12 +105,15 @@ class DataTablesFactory {
      * @return bool Returns true in case of success, false otherwise.
      */
     protected static function isValidRawSearch(array $rawSearch): bool {
+
         if (false === array_key_exists(DataTablesSearchInterface::DATATABLES_PARAMETER_REGEX, $rawSearch)) {
             return false;
         }
+
         if (false === array_key_exists(DataTablesSearchInterface::DATATABLES_PARAMETER_VALUE, $rawSearch)) {
             return false;
         }
+
         return true;
     }
 

@@ -89,10 +89,8 @@ class DataTablesController extends AbstractController {
     public function editAction(Request $request, string $name, string $id, string $data, $value): Response {
 
         $dtProvider = $this->getDataTablesProvider($name);
-
-        $dtEditor = $this->getDataTablesEditor($dtProvider);
-
-        $dtColumn = $this->getDataTablesColumn($dtProvider, $data);
+        $dtEditor   = $this->getDataTablesEditor($dtProvider);
+        $dtColumn   = $this->getDataTablesColumn($dtProvider, $data);
 
         try {
 
@@ -136,9 +134,7 @@ class DataTablesController extends AbstractController {
         $windows = DataTablesExportHelper::isWindows($request);
 
         $dtProvider = $this->getDataTablesProvider($name);
-
         $dtExporter = $this->getDataTablesCSVExporter($dtProvider);
-
         $repository = $this->getDataTablesRepository($dtProvider);
 
         $filename = (new DateTime())->format("Y.m.d-H.i.s") . "-" . $dtProvider->getName() . ".csv";
@@ -217,10 +213,8 @@ class DataTablesController extends AbstractController {
     public function optionsAction(string $name): Response {
 
         $dtProvider = $this->getDataTablesProvider($name);
-
-        $dtWrapper = $this->getDataTablesWrapper($dtProvider);
-
-        $dtOptions = DataTablesWrapperHelper::getOptions($dtWrapper);
+        $dtWrapper  = $this->getDataTablesWrapper($dtProvider);
+        $dtOptions  = DataTablesWrapperHelper::getOptions($dtWrapper);
 
         return new JsonResponse($dtOptions);
     }
@@ -235,8 +229,7 @@ class DataTablesController extends AbstractController {
     public function renderAction(string $name): Response {
 
         $dtProvider = $this->getDataTablesProvider($name);
-
-        $dtWrapper = $this->getDataTablesWrapper($dtProvider);
+        $dtWrapper  = $this->getDataTablesWrapper($dtProvider);
 
         $dtView = $dtProvider->getView();
         if (null === $dtProvider->getView()) {

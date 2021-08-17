@@ -310,14 +310,15 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
      */
     protected function wrapContent(?string $prefix, string $content, ?string $suffix): string {
 
-        $output = [];
+        $output = [
+            $content,
+        ];
 
         if (null !== $prefix) {
-            $output[] = $prefix;
+            array_unshift($output, $prefix);
         }
-        $output[] = $content;
         if (null !== $suffix) {
-            $output[] = $suffix;
+            array_push($output, $suffix);
         }
 
         return implode("", $output);

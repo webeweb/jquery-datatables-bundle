@@ -76,12 +76,13 @@ class DataTablesWrapperHelper {
             $output = $dtWrapper->getOptions()->getOptions();
         }
 
-        $output["ajax"]         = [];
-        $output["ajax"]["type"] = $dtWrapper->getMethod();
-        $output["ajax"]["url"]  = $dtWrapper->getUrl();
-        $output["columns"]      = [];
-        $output["processing"]   = $dtWrapper->getProcessing();
-        $output["serverSide"]   = $dtWrapper->getServerSide();
+        $output["ajax"]       = [
+            "type" => $dtWrapper->getMethod(),
+            "url"  => $dtWrapper->getUrl(),
+        ];
+        $output["columns"]    = [];
+        $output["processing"] = $dtWrapper->getProcessing();
+        $output["serverSide"] = $dtWrapper->getServerSide();
 
         foreach ($dtWrapper->getColumns() as $current) {
             $output["columns"][] = DataTablesNormalizer::normalizeColumn($current);

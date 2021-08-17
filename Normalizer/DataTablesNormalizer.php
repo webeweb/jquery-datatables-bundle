@@ -59,13 +59,11 @@ class DataTablesNormalizer {
      */
     public static function normalizeResponse(DataTablesResponseInterface $response): array {
 
-        $output = [];
-
-        $output["data"]            = $response->getData();
-        $output["draw"]            = $response->getDraw();
-        $output["recordsFiltered"] = $response->getRecordsFiltered();
-        $output["recordsTotal"]    = $response->getRecordsTotal();
-
-        return $output;
+        return [
+            "data"            => $response->getData(),
+            "draw"            => $response->getDraw(),
+            "recordsFiltered" => $response->getRecordsFiltered(),
+            "recordsTotal"    => $response->getRecordsTotal(),
+        ];
     }
 }
