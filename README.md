@@ -22,22 +22,23 @@ Dry out your DataTables code by writing it all in PHP !
 
 Includes :
 
-- [DataTables 1.10.23](https://datatables.net/)
-- [DataTables AutoFill 2.3.5](https://datatables.net/extensions/autofill/) (DataTables plugin)
-- [DataTables Buttons 1.6.5](https://datatables.net/extensions/buttons/) (DataTables plugin)
+- [DataTables 1.10.25](https://datatables.net/)
+- [DataTables AutoFill 2.3.7](https://datatables.net/extensions/autofill/) (DataTables plugin)
+- [DataTables Buttons 1.7.1](https://datatables.net/extensions/buttons/) (DataTables plugin)
 - DataTables JSZip 2.5.0
 - DataTables pdfmake 0.1.36
-- [DataTables ColReorder 1.5.3](https://datatables.net/extensions/colreorder/) (DataTables plugin)
-- [DataTables FixedColumns 3.3.2](https://datatables.net/extensions/fixedcolumns/) (DataTables plugin)
-- [DataTables FixedHeader 3.1.8](https://datatables.net/extensions/fixedheader/) (DataTables plugin)
-- [DataTables KeyTable 2.6.0](https://datatables.net/extensions/keytable/) (DataTables plugin)
-- [DataTables Responsive 2.2.7](https://datatables.net/extensions/responsive/) (DataTables plugin)
-- [DataTables RowGroup 1.1.2](https://datatables.net/extensions/rowgroup/) (DataTables plugin)
-- [DataTables RowReorder 1.2.7](https://datatables.net/extensions/rowreorder/) (DataTables plugin)
-- [DataTables Scroller 2.0.3](https://datatables.net/extensions/scroller/) (DataTables plugin)
-- [DataTables SearchBuilder 1.0.1](https://datatables.net/extensions/searchbuilder/) (DataTables plugin)
-- [DataTables SearchPanes 1.2.2](https://datatables.net/extensions/searchpanes/) (DataTables plugin)
-- [DataTables Select 1.3.1](https://datatables.net/extensions/select/) (DataTables plugin)
+- [DataTables ColReorder 1.5.4](https://datatables.net/extensions/colreorder/) (DataTables plugin)
+- [DataTables DateTime 1.1.0](https://datatables.net/extensions/datetime/) (DataTables plugin)
+- [DataTables FixedColumns 3.3.3](https://datatables.net/extensions/fixedcolumns/) (DataTables plugin)
+- [DataTables FixedHeader 3.1.9](https://datatables.net/extensions/fixedheader/) (DataTables plugin)
+- [DataTables KeyTable 2.6.2](https://datatables.net/extensions/keytable/) (DataTables plugin)
+- [DataTables Responsive 2.2.9](https://datatables.net/extensions/responsive/) (DataTables plugin)
+- [DataTables RowGroup 1.1.3](https://datatables.net/extensions/rowgroup/) (DataTables plugin)
+- [DataTables RowReorder 1.2.8](https://datatables.net/extensions/rowreorder/) (DataTables plugin)
+- [DataTables Scroller 2.0.4](https://datatables.net/extensions/scroller/) (DataTables plugin)
+- [DataTables SearchBuilder 1.1.0](https://datatables.net/extensions/searchbuilder/) (DataTables plugin)
+- [DataTables SearchPanes 1.3.0](https://datatables.net/extensions/searchpanes/) (DataTables plugin)
+- [DataTables Select 1.3.3](https://datatables.net/extensions/select/) (DataTables plugin)
 - [editableTable](https://github.com/mindmup/editable-table/)
 
 Provides :
@@ -117,7 +118,7 @@ wbw_jquery_datatables:
 ```
 
 > IMPORTANT NOTICE: For use with Bootstrap 4, replace '3' by '4' into wbw_bootstrap.version and 
-> 'bootstrap' by 'bootstrap4' into wbw_jquery_datatables.theme.
+> 'bootstrap' by 'bootstrap4' into wbw_jquery_datatables theme.
 
 Add the bundle routing in the `app/config/routing.yml` file of your project:
 
