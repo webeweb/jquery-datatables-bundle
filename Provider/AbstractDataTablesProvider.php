@@ -311,11 +311,9 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
      * @return string Returns the translated id in case of success, id otherwise.
      */
     protected function translate(string $id, array $parameters = [], string $domain = null, string $locale = null): string {
-
         if (null === $domain) {
             $domain = TranslatorInterface::DOMAIN;
         }
-
         return $this->getTranslator()->trans($id, $parameters, $domain, $locale);
     }
 
