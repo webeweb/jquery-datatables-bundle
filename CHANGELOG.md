@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.16.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.16.0) (2021-08-17)
+
+- Improve translations
+
 ### [3.15.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.15.0) (2021-08-17)
 
 - Update dependencies
