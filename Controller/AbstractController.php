@@ -34,6 +34,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesRouterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Repository\DataTablesRepositoryInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorInterface;
 use WBW\Library\Database\Helper\PaginateHelper;
 
 /**
@@ -421,7 +422,7 @@ abstract class AbstractController extends BaseController {
      */
     protected function prepareActionResponse(int $status, string $notificationId): ActionResponse {
 
-        $notify = $this->getTranslator()->trans($notificationId, [], "WBWJQueryDataTablesBundle");
+        $notify = $this->getTranslator()->trans($notificationId, [], TranslatorInterface::DOMAIN);
 
         $response = new ActionResponse();
         $response->setStatus($status);

@@ -26,6 +26,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesEntityHelper;
+use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorInterface;
 use WBW\Library\Types\Helper\DateTimeHelper;
 
 /**
@@ -101,12 +102,12 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
     protected function renderActionButtonDelete($entity, string $route): string {
 
         if (false === DataTablesEntityHelper::isCompatible($entity)) {
-            throw new InvalidArgumentException(sprintf("The entity must implements DataTablesEntityInterface or declare a getId() method"));
+            throw new InvalidArgumentException("The entity must implements DataTablesEntityInterface or declare a getId() method");
         }
 
         $args = "wbw_jquery_datatables_delete" === $route ? ["name" => $this->getName()] : [];
 
-        $title  = $this->getTranslator()->trans("label.delete", [], "WBWJQueryDataTablesBundle");
+        $title  = $this->translate("label.delete");
         $button = $this->getButtonTwigExtension()->bootstrapButtonDangerFunction(["icon" => "fa:trash", "title" => $title, "size" => "xs"]);
         $url    = $this->getRouter()->generate($route, array_merge($args, ["id" => $entity->getId()]));
 
@@ -127,10 +128,10 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
     protected function renderActionButtonDuplicate($entity, string $route): string {
 
         if (false === DataTablesEntityHelper::isCompatible($entity)) {
-            throw new InvalidArgumentException(sprintf("The entity must implements DataTablesEntityInterface or declare a getId() method"));
+            throw new InvalidArgumentException("The entity must implements DataTablesEntityInterface or declare a getId() method");
         }
 
-        $title  = $this->getTranslator()->trans("label.duplicate", [], "WBWJQueryDataTablesBundle");
+        $title  = $this->translate("label.duplicate");
         $button = $this->getButtonTwigExtension()->bootstrapButtonDefaultFunction(["icon" => "fa:copy", "title" => $title, "size" => "xs"]);
         $url    = $this->getRouter()->generate($route, ["id" => $entity->getId()]);
 
@@ -151,10 +152,10 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
     protected function renderActionButtonEdit($entity, string $route): string {
 
         if (false === DataTablesEntityHelper::isCompatible($entity)) {
-            throw new InvalidArgumentException(sprintf("The entity must implements DataTablesEntityInterface or declare a getId() method"));
+            throw new InvalidArgumentException("The entity must implements DataTablesEntityInterface or declare a getId() method");
         }
 
-        $title  = $this->getTranslator()->trans("label.edit", [], "WBWJQueryDataTablesBundle");
+        $title  = $this->translate("label.edit");
         $button = $this->getButtonTwigExtension()->bootstrapButtonDefaultFunction(["icon" => "fa:pen", "title" => $title, "size" => "xs"]);
         $url    = $this->getRouter()->generate($route, ["id" => $entity->getId()]);
 
@@ -175,10 +176,10 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
     protected function renderActionButtonShow($entity, string $route): string {
 
         if (false === DataTablesEntityHelper::isCompatible($entity)) {
-            throw new InvalidArgumentException(sprintf("The entity must implements DataTablesEntityInterface or declare a getId() method"));
+            throw new InvalidArgumentException("The entity must implements DataTablesEntityInterface or declare a getId() method");
         }
 
-        $title  = $this->getTranslator()->trans("label.show", [], "WBWJQueryDataTablesBundle");
+        $title  = $this->translate("label.show");
         $button = $this->getButtonTwigExtension()->bootstrapButtonInfoFunction(["icon" => "fa:eye", "title" => $title, "size" => "xs"]);
         $url    = $this->getRouter()->generate($route, ["id" => $entity->getId()]);
 
@@ -250,7 +251,7 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
     public function renderRow(string $dtRow, $entity, int $rowNumber) {
 
         if (false === DataTablesEntityHelper::isCompatible($entity)) {
-            throw new InvalidArgumentException(sprintf("The entity must implements DataTablesEntityInterface or declare a getId() method"));
+            throw new InvalidArgumentException("The entity must implements DataTablesEntityInterface or declare a getId() method");
         }
 
         switch ($dtRow) {
@@ -298,6 +299,24 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
         }
 
         return implode(" ", $anchors);
+    }
+
+    /**
+     * Translate.
+     *
+     * @param string $id The id.
+     * @param array $parameters Teh parameters.
+     * @param string|null $domain The domain.
+     * @param string|null $locale The locale.
+     * @return string Returns the translated id in case of success, id otherwise.
+     */
+    protected function translate(string $id, array $parameters = [], string $domain = null, string $locale = null): string {
+
+        if (null === $domain) {
+            $domain = TranslatorInterface::DOMAIN;
+        }
+
+        return $this->getTranslator()->trans($id, $parameters, $domain, $locale);
     }
 
     /**
