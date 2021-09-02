@@ -34,28 +34,6 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
     use StringEnvironmentTrait;
 
     /**
-     * jQuery DataTables.
-     *
-     * @var string
-     */
-    const JQUERY_DATATABLES = <<< EOT
-    $(document).ready(function () {
-        var %var% = $("%selector%").DataTable(%options%);
-    });
-EOT;
-
-    /**
-     * jQuery DataTables.
-     *
-     * @var string
-     */
-    const JQUERY_DATATABLES_STANDALONE = <<< EOT
-    $(document).ready(function () {
-        $("%selector%").DataTable(%options%);
-    });
-EOT;
-
-    /**
      * Constructor.
      *
      * @param Environment $twigEnvironment The Twig environment.
@@ -112,8 +90,9 @@ EOT;
 
         $searches = ["%var%", "%selector%", "%options%"];
         $replaces = [$var, null === $selector ? "#" . $var : $selector, $this->encodeOptions($options)];
+        $template = file_get_contents(__DIR__ . "/AbstractDataTablesTwigExtension.jQueryDataTables.js.txt");
 
-        $javascript = str_replace($searches, $replaces, self::JQUERY_DATATABLES);
+        $javascript = str_replace($searches, $replaces, $template);
 
         return $this->getRendererTwigExtension()->coreScriptFilter($javascript);
     }
@@ -135,8 +114,9 @@ EOT;
 
         $searches = ["%selector%", "%options%"];
         $replaces = [$selector, $this->encodeOptions($options)];
+        $template = file_get_contents(__DIR__ . "/AbstractDataTablesTwigExtension.jQueryDataTablesStandalone.js.txt");
 
-        $javascript = str_replace($searches, $replaces, self::JQUERY_DATATABLES_STANDALONE);
+        $javascript = str_replace($searches, $replaces, $template);
 
         return $this->getRendererTwigExtension()->coreScriptFilter($javascript);
     }
