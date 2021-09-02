@@ -12,8 +12,8 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
 
 use WBW\Bundle\CoreBundle\Provider\ProviderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;
 
 /**
  * DataTables provider interface.

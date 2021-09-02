@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\API;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Api;
 
 use WBW\Library\Types\Exception\StringArgumentException;
 
@@ -17,7 +17,7 @@ use WBW\Library\Types\Exception\StringArgumentException;
  * DataTables options interface.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\API
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Api
  */
 interface DataTablesOptionsInterface {
 

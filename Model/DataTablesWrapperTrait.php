@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Model;
 
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesWrapperInterface;
 
 /**
  * DataTables wrapper trait.

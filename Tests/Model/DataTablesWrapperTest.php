@@ -11,9 +11,9 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Model;
 
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesMappingInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesMappingInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;

@@ -11,13 +11,13 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Model;
 
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearchInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesSearchInterface;
 
 /**
  * DataTables search.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\API
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Api
  */
 class DataTablesSearch implements DataTablesSearchInterface {
 

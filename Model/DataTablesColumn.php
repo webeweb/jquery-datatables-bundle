@@ -12,9 +12,9 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Model;
 
 use InvalidArgumentException;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesMappingInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesSearchInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesMappingInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesSearchInterface;
 
 /**
  * DataTables column.

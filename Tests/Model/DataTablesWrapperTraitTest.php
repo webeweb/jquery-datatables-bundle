@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Model;
 
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Model\TestDataTablesWrapperTrait;
 

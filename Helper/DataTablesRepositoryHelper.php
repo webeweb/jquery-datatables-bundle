@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
 
 use Doctrine\ORM\QueryBuilder;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesWrapperInterface;
 
 /**
  * DataTables repository helper.

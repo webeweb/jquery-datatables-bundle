@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Model;
 
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Normalizer\DataTablesNormalizer;
 
 /**

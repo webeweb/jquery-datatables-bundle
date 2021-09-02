@@ -12,12 +12,12 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Model;
 
 use WBW\Bundle\CoreBundle\Model\UserTrait;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesMappingInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOptionsInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequestInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesWrapperInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesMappingInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesRequestInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesResponseInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 
 /**

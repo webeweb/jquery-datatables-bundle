@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\API;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Api;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
 
@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\ParameterBag;
  * DataTables request interface.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\API
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Api
  */
 interface DataTablesRequestInterface {
 

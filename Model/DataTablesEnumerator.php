@@ -11,10 +11,10 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Model;
 
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesColumnInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesRequestInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesResponseInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOrderInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesRequestInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesResponseInterface;
 
 /**
  * DataTables enumerator.

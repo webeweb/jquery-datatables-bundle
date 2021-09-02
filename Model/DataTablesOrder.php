@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Model;
 
-use WBW\Bundle\JQuery\DataTablesBundle\API\DataTablesOrderInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOrderInterface;
 
 /**
  * DataTables order.
