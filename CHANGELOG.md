@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [3.16.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.16.1) (2021-09-02)
+
+- Fix API namespace
+- Improve DataTables Twig extension
+
 ### [3.16.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.16.0) (2021-08-17)
 
 - Improve translations
