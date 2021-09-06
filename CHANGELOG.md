@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+### [3.17.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.17.0) (2021-09-06)
+
+- Add renderPercent() method into abstract DataTables provider
+- Add renderPrice() method into abstract DataTables provider
+- Improve unit tests
+
 ### [3.16.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.16.1) (2021-09-02)
 
 - Fix API namespace
