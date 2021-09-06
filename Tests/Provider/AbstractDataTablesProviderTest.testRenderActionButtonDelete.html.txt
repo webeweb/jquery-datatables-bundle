@@ -1,0 +1,1 @@
+<a class="btn btn-danger btn-xs" title="label.delete" href="deleteRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash"></i></a>

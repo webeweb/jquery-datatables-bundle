@@ -124,6 +124,20 @@ class TestDataTablesProvider extends AbstractDataTablesProvider {
     /**
      *{@inheritDoc}
      */
+    public function renderPercent(?float $number): string {
+        return parent::renderPercent($number);
+    }
+
+    /**
+     *{@inheritDoc}
+     */
+    public function renderPrice(?float $number, string $currency = "€"): string {
+        return parent::renderPrice($number, $currency);
+    }
+
+    /**
+     *{@inheritDoc}
+     */
     public function renderRow(string $dtRow, $entity, int $rowNumber) {
         return parent::renderRow($dtRow, $entity, $rowNumber);
     }

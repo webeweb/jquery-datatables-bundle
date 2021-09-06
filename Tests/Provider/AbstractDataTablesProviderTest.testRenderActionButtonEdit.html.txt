@@ -1,0 +1,1 @@
+<a class="btn btn-default btn-xs" title="label.edit" href="editRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-pen"></i></a>

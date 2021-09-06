@@ -246,6 +246,39 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
     }
 
     /**
+     * Render a percent.
+     *
+     * @param float|null $number The number.
+     * @return string Returns the rendered percent.
+     */
+    protected function renderPercent(?float $number): string {
+
+        $float = $this->renderFloat($number);
+        if ("" === $float) {
+            return "";
+        }
+
+        return "$float %";
+    }
+
+    /**
+     * Render a price.
+     *
+     * @param float|null $number The number.
+     * @param string $currency The currency.
+     * @return string Returns the rendered amount.
+     */
+    protected function renderPrice(?float $number, string $currency = "€"): string {
+
+        $float = $this->renderFloat($number);
+        if ("" === $float) {
+            return "";
+        }
+
+        return "$float $currency";
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function renderRow(string $dtRow, $entity, int $rowNumber) {

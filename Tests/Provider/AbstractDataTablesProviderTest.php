@@ -115,10 +115,8 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
-        $res = <<< EOT
-<a class="btn btn-danger btn-xs" title="label.delete" href="route" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash"></i></a>
-EOT;
-        $this->assertEquals($res, $obj->renderActionButtonDelete(new Employee(), "route"));
+        $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonDelete.html.txt");
+        $this->assertEquals($res, $obj->renderActionButtonDelete(new Employee(), "deleteRoute"));
     }
 
     /**
@@ -149,10 +147,8 @@ EOT;
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
-        $res = <<< EOT
-<a class="btn btn-default btn-xs" title="label.duplicate" href="route" data-toggle="tooltip" data-placement="top"><i class="fa fa-copy"></i></a>
-EOT;
-        $this->assertEquals($res, $obj->renderActionButtonDuplicate(new Employee(), "route"));
+        $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonDuplicate.html.txt");
+        $this->assertEquals($res, $obj->renderActionButtonDuplicate(new Employee(), "duplicateRoute"));
     }
 
     /**
@@ -183,10 +179,8 @@ EOT;
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
-        $res = <<< EOT
-<a class="btn btn-default btn-xs" title="label.edit" href="route" data-toggle="tooltip" data-placement="top"><i class="fa fa-pen"></i></a>
-EOT;
-        $this->assertEquals($res, $obj->renderActionButtonEdit(new Employee(), "route"));
+        $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonEdit.html.txt");
+        $this->assertEquals($res, $obj->renderActionButtonEdit(new Employee(), "editRoute"));
     }
 
     /**
@@ -217,10 +211,8 @@ EOT;
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
-        $res = <<< EOT
-<a class="btn btn-info btn-xs" title="label.show" href="route" data-toggle="tooltip" data-placement="top"><i class="fa fa-eye"></i></a>
-EOT;
-        $this->assertEquals($res, $obj->renderActionButtonShow(new Employee(), "route"));
+        $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonShow.html.txt");
+        $this->assertEquals($res, $obj->renderActionButtonShow(new Employee(), "showRoute"));
     }
 
     /**
@@ -303,6 +295,33 @@ EOT;
     }
 
     /**
+     * Tests the renderPercent() methods.
+     *
+     * @return void
+     */
+    public function testRenderPercent(): void {
+
+        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+
+        $this->assertEquals("", $obj->renderPercent(null));
+        $this->assertEquals("100.00 %", $obj->renderPercent(100));
+    }
+
+    /**
+     * Tests the renderPrice() methods.
+     *
+     * @return void
+     */
+    public function testRenderPrice(): void {
+
+        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+
+        $this->assertEquals("", $obj->renderPrice(null));
+        $this->assertEquals("1,000.00 €", $obj->renderPrice(1000));
+        $this->assertEquals("1,000.00 $", $obj->renderPrice(1000, "$"));
+    }
+
+    /**
      * Tests the renderRow() method.
      *
      * @return void
@@ -330,9 +349,11 @@ EOT;
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
-        $res = <<< EOT
-<a class="btn btn-info btn-xs" title="label.show" href="showRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-eye"></i></a> <a class="btn btn-default btn-xs" title="label.edit" href="editRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-pen"></i></a> <a class="btn btn-danger btn-xs" title="label.delete" href="deleteRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash"></i></a>
-EOT;
+        $res = implode(" ", [
+            file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonShow.html.txt"),
+            file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonEdit.html.txt"),
+            file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonDelete.html.txt"),
+        ]);
         $this->assertEquals($res, $obj->renderRowButtons(new Employee(), "editRoute", "deleteRoute", "showRoute"));
     }
 
@@ -345,9 +366,7 @@ EOT;
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
-        $res = <<< EOT
-<a class="btn btn-danger btn-xs" title="label.delete" href="deleteRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash"></i></a>
-EOT;
+        $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonDelete.html.txt");
         $this->assertEquals($res, $obj->renderRowButtons(new Employee(), null, "deleteRoute"));
     }
 
@@ -360,9 +379,7 @@ EOT;
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
-        $res = <<< EOT
-<a class="btn btn-default btn-xs" title="label.edit" href="editRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-pen"></i></a>
-EOT;
+        $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonEdit.html.txt");
         $this->assertEquals($res, $obj->renderRowButtons(new Employee(), "editRoute"));
     }
 
@@ -375,9 +392,7 @@ EOT;
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
-        $res = <<< EOT
-<a class="btn btn-info btn-xs" title="label.show" href="showRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-eye"></i></a>
-EOT;
+        $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonShow.html.txt");
         $this->assertEquals($res, $obj->renderRowButtons(new Employee(), null, null, "showRoute"));
     }
 
