@@ -32,10 +32,9 @@ doctrine:
         auto_mapping:                true
         mappings:
             WBWJQueryDataTablesBundle:
-                dir:       "Tests/Fixtures/app/config/doctrine"
-                type:      "yml"
-                is_bundle: true
-                prefix:    "WBW\\Bundle\\JQuery\\DataTablesBundle\\Tests\\Fixtures\\Entity"
+                type:   "yml"
+                dir:    "Tests/Fixtures/app/config/doctrine"
+                prefix: "WBW\\Bundle\\JQuery\\DataTablesBundle\\Tests\\Fixtures\\Entity"
         naming_strategy:             "doctrine.orm.naming_strategy.underscore"
 
 # Monolog configuration
