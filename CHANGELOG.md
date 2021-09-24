@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Add list DataTables provider command
+
 ### [3.17.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.17.0) (2021-09-06)
 
 - Add renderPercent() method into abstract DataTables provider
