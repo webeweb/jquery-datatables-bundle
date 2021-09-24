@@ -110,13 +110,17 @@ EOT;
      * @return string[] Returns the rendered row.
      */
     protected function renderRow(DataTablesProviderInterface $provider): array {
+
+        $length = strlen($this->getHeaders()[2]);
+        $format = "%{$length}d";
+
         return [
             $provider->getName(),
-            implode("\n", [
+            implode(PHP_EOL, [
                 get_class($provider),
                 "└ " . $provider->getEntity(),
             ]),
-            count($provider->getColumns()),
+            sprintf($format, count($provider->getColumns())),
             $provider->getPrefix(),
             $provider->getView(),
             $this->getCheckbox($provider instanceof DataTablesCSVExporterInterface),
