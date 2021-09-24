@@ -133,6 +133,11 @@ wbw_jquery_datatables:
 
 Read the [documentation](Resources/doc/index.md).
 
+The following commands are available:
+```bash
+$ php bin/console wbw:jquery:datatables:list-provider
+```
+
 ## Testing
 
 To test the package, is better to clone this repository on your computer.
