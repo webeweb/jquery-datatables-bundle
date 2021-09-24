@@ -14,3 +14,10 @@ label:
     duplicate: "Duplicate"
     edit:      "Edit"
     show:      "Show"
+
+    class:     "Class"
+    columns:   "Columns"
+    entity:    "Entity"
+    name:      "Name"
+    prefix:    "Prefix"
+    view:      "View"
