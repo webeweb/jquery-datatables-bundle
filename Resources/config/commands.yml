@@ -9,4 +9,3 @@ services:
             - [ "setTranslator",        [ "@translator" ] ]
         tags:
             - { name: "console.command" }
-
