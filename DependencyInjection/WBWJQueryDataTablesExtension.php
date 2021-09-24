@@ -55,10 +55,15 @@ class WBWJQueryDataTablesExtension extends Extension {
 
         $config = $this->processConfiguration($configuration, $configs);
 
+        if (true === $config["command"]) {
+            $serviceLoader->load("commands.yml");
+        }
+
         if (true === $config["twig"]) {
             $serviceLoader->load("twig.yml");
         }
 
+        ConfigurationHelper::registerContainerParameter($container, $config, $this->getAlias(), "command");
         ConfigurationHelper::registerContainerParameter($container, $config, $this->getAlias(), "twig");
         ConfigurationHelper::registerContainerParameter($container, $config, $this->getAlias(), "theme");
         ConfigurationHelper::registerContainerParameter($container, $config, $this->getAlias(), "plugins");

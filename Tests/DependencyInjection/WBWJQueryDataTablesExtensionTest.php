@@ -14,6 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection;
 use Exception;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtension;
+use WBW\Bundle\JQuery\DataTablesBundle\Command\ListDataTablesProviderCommand;
 use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Configuration;
 use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\WBWJQueryDataTablesExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
@@ -47,7 +48,8 @@ class DataTablesExtensionTest extends AbstractTestCase {
         // Set a configs array mock.
         $this->configs = [
             WBWJQueryDataTablesExtension::EXTENSION_ALIAS => [
-                "twig" => true,
+                "command" => true,
+                "twig"    => true,
             ],
         ];
     }
@@ -88,11 +90,38 @@ class DataTablesExtensionTest extends AbstractTestCase {
 
         $this->assertNull($obj->load($this->configs, $this->containerBuilder));
 
+        // Commands
+        $this->assertInstanceOf(ListDataTablesProviderCommand::class, $this->containerBuilder->get(ListDataTablesProviderCommand::SERVICE_NAME));
+
         // Managers
         $this->assertInstanceOf(DataTablesManager::class, $this->containerBuilder->get(DataTablesManager::SERVICE_NAME));
 
         // Twig extensions.
         $this->assertInstanceOf(DataTablesTwigExtension::class, $this->containerBuilder->get(DataTablesTwigExtension::SERVICE_NAME));
+    }
+
+    /**
+     * Tests the load() method.
+     *
+     * @return void
+     */
+    public function testLoadWithoutCommand(): void {
+
+        // Set the configs mock.
+        $this->configs[WBWJQueryDataTablesExtension::EXTENSION_ALIAS]["command"] = false;
+
+        $obj = new WBWJQueryDataTablesExtension();
+
+        $this->assertNull($obj->load($this->configs, $this->containerBuilder));
+
+        try {
+
+            $this->containerBuilder->get(ListDataTablesProviderCommand::SERVICE_NAME);
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(ServiceNotFoundException::class, $ex);
+            $this->assertStringContainsString(ListDataTablesProviderCommand::SERVICE_NAME, $ex->getMessage());
+        }
     }
 
     /**
