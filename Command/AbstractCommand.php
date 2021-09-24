@@ -42,10 +42,6 @@ abstract class AbstractCommand extends BaseCommand {
             return $id;
         }
 
-        if (null === $domain) {
-            $domain = TranslatorInterface::DOMAIN;
-        }
-
-        return $this->getTranslator()->trans($id, $parameters, $domain, $locale);
+        return $this->getTranslator()->trans($id, $parameters, TranslatorInterface::DOMAIN, "en");
     }
 }

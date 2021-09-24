@@ -15,9 +15,10 @@ label:
     edit:      "Edit"
     show:      "Show"
 
-    class:     "Class"
+    class:     "Class/Entity"
     columns:   "Columns"
-    entity:    "Entity"
+    csv:       "CSV"
     name:      "Name"
     prefix:    "Prefix"
     view:      "View"
+    xls:       "XLS"

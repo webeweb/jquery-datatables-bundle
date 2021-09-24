@@ -14,6 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManagerTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 
 /**
@@ -96,9 +97,9 @@ EOT;
             $this->translate("label.name"),
             $this->translate("label.class"),
             $this->translate("label.columns"),
-            $this->translate("label.entity"),
             $this->translate("label.prefix"),
             $this->translate("label.view"),
+            $this->translate("label.csv"),
         ];
     }
 
@@ -111,11 +112,14 @@ EOT;
     protected function renderRow(DataTablesProviderInterface $provider): array {
         return [
             $provider->getName(),
-            get_class($provider),
+            implode("\n", [
+                get_class($provider),
+                "└ " . $provider->getEntity(),
+            ]),
             count($provider->getColumns()),
-            $provider->getEntity(),
             $provider->getPrefix(),
             $provider->getView(),
+            $this->getCheckbox($provider instanceof DataTablesCSVExporterInterface),
         ];
     }
 
