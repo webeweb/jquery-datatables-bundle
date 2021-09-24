@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-### master
+### [3.18.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.18.0) (2021-09-24)
 
 - Add list DataTables provider command
 
