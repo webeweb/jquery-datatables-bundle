@@ -1,0 +1,12 @@
+# Resources/config/commands.yml
+services:
+
+    wbw.jquery.datatables.command.list_provider:
+        class:  WBW\Bundle\JQuery\DataTablesBundle\Command\ListDataTablesProviderCommand
+        public: false
+        calls:
+            - [ "setDataTablesManager", [ "@wbw.jquery.datatables.manager" ] ]
+            - [ "setTranslator",        [ "@translator" ] ]
+        tags:
+            - { name: "console.command" }
+
