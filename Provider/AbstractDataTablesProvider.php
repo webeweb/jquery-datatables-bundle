@@ -11,7 +11,6 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
 
-use DateTime;
 use InvalidArgumentException;
 use Symfony\Component\Routing\Exception\InvalidParameterException;
 use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
@@ -26,8 +25,11 @@ use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesEntityHelper;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\DateRendererTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\DateTimeRendererTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\FloatRendererTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\StringWrapperTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorInterface;
-use WBW\Library\Types\Helper\DateTimeHelper;
 
 /**
  * Abstract DataTables provider.
@@ -40,6 +42,11 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
     use ButtonTwigExtensionTrait;
     use RouterTrait;
     use TranslatorTrait;
+
+    use DateRendererTrait;
+    use DateTimeRendererTrait;
+    use FloatRendererTrait;
+    use StringWrapperTrait;
 
     /**
      * Constructor.
@@ -208,54 +215,16 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
     }
 
     /**
-     * Render a date.
-     *
-     * @param DateTime|null $date The date.
-     * @param string $format The format.
-     * @return string Returns the rendered date.
-     */
-    protected function renderDate(?DateTime $date, string $format = "Y-m-d"): string {
-        return DateTimeHelper::toString($date, $format);
-    }
-
-    /**
-     * Render a date/time.
-     *
-     * @param DateTime|null $date The date/time.
-     * @param string $format The format.
-     * @return string Returns the rendered date/time.
-     */
-    protected function renderDateTime(?DateTime $date, string $format = DateTimeHelper::DATETIME_FORMAT): string {
-        return DateTimeHelper::toString($date, $format);
-    }
-
-    /**
-     * Render a float.
-     *
-     * @param float|null $number The number.
-     * @param int $decimals The decimals.
-     * @param string $decPoint The decimal point.
-     * @param string $thousandsSep The thousands separator.
-     * @return string Returns the rendered number.
-     */
-    protected function renderFloat(?float $number, int $decimals = 2, string $decPoint = ".", string $thousandsSep = ","): string {
-        if (null === $number) {
-            return "";
-        }
-        return number_format($number, $decimals, $decPoint, $thousandsSep);
-    }
-
-    /**
      * Render a percent.
      *
      * @param float|null $number The number.
      * @return string Returns the rendered percent.
      */
-    protected function renderPercent(?float $number): string {
+    protected function renderPercent(?float $number): ?string {
 
         $float = $this->renderFloat($number);
-        if ("" === $float) {
-            return "";
+        if (null === $float) {
+            return null;
         }
 
         return "$float %";
@@ -266,13 +235,13 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
      *
      * @param float|null $number The number.
      * @param string $currency The currency.
-     * @return string Returns the rendered amount.
+     * @return string|null Returns the rendered price.
      */
-    protected function renderPrice(?float $number, string $currency = "€"): string {
+    protected function renderPrice(?float $number, string $currency = "€"): ?string {
 
         $float = $this->renderFloat($number);
-        if ("" === $float) {
-            return "";
+        if (null === $float) {
+            return null;
         }
 
         return "$float $currency";
@@ -344,11 +313,9 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
      * @return string Returns the translated id in case of success, id otherwise.
      */
     protected function translate(string $id, array $parameters = [], string $domain = null, string $locale = null): string {
-
         if (null === $domain) {
             $domain = TranslatorInterface::DOMAIN;
         }
-
         return $this->getTranslator()->trans($id, $parameters, $domain, $locale);
     }
 
@@ -361,18 +328,6 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
      * @return string Returns the wrapped content.
      */
     protected function wrapContent(?string $prefix, string $content, ?string $suffix): string {
-
-        $output = [
-            $content,
-        ];
-
-        if (null !== $prefix) {
-            array_unshift($output, $prefix);
-        }
-        if (null !== $suffix) {
-            array_push($output, $suffix);
-        }
-
-        return implode("", $output);
+        return $this->wrapString($content, $prefix, $suffix);
     }
 }
