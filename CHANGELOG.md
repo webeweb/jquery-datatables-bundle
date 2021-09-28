@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+### [3.19.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.19.0) (2021-09-28)
+
+- Add color renderer trait
+- Add date renderer trait
+- Add date/time renderer trait
+- Add float renderer trait
+- Add image renderer trait
+- Add string wrapper trait
+
 ### [3.18.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.18.0) (2021-09-24)
 
 - Add list DataTables provider command
