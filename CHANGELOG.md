@@ -4,6 +4,7 @@ CHANGELOG
 ### [3.19.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.19.1) (2021-10-06)
 
 - Fix some options erasing
+- Minor fixes
 
 ### [3.19.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.19.0) (2021-09-28)
 
