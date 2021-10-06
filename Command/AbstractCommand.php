@@ -32,16 +32,12 @@ abstract class AbstractCommand extends BaseCommand {
      *
      * @param string $id The id.
      * @param array $parameters The parameters.
-     * @param string|null $domain The domain.
-     * @param string|null $locale The locale.
      * @return string Returns the translated id in case of success, id otherwise.
      */
-    protected function translate(string $id, array $parameters = [], string $domain = null, string $locale = null): string {
-
+    protected function translate(string $id, array $parameters = []): string {
         if (null === $this->getTranslator()) {
             return $id;
         }
-
         return $this->getTranslator()->trans($id, $parameters, TranslatorInterface::DOMAIN, "en");
     }
 }
