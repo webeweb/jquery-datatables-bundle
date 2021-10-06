@@ -259,7 +259,7 @@ EOT;
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
-        $this->assertEquals("", $obj->renderDate(null));
+        $this->assertEquals(null, $obj->renderDate(null));
         $this->assertEquals("14/01/2019", $obj->renderDate(new DateTime("2019-01-14")));
         $this->assertEquals("14-01-2019", $obj->renderDate(new DateTime("2019-01-14"), "d-m-Y"));
     }
@@ -274,7 +274,7 @@ EOT;
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
-        $this->assertEquals("", $obj->renderDateTime(null));
+        $this->assertEquals(null, $obj->renderDateTime(null));
         $this->assertEquals("14/01/2019 18:15", $obj->renderDateTime(new DateTime("2019-01-14 18:15:00")));
         $this->assertEquals("14-01-2019 18h15", $obj->renderDateTime(new DateTime("2019-01-14 18:15:00"), "d-m-Y H\hi"));
     }
@@ -288,7 +288,7 @@ EOT;
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
-        $this->assertEquals("", $obj->renderFloat(null));
+        $this->assertEquals(null, $obj->renderFloat(null));
         $this->assertEquals("1,000.00", $obj->renderFloat(1000));
         $this->assertEquals("1,000.000", $obj->renderFloat(1000, 3));
         $this->assertEquals("1 000,000", $obj->renderFloat(1000, 3, ",", " "));
@@ -303,7 +303,7 @@ EOT;
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
-        $this->assertEquals("", $obj->renderPercent(null));
+        $this->assertEquals(null, $obj->renderPercent(null));
         $this->assertEquals("100.00 %", $obj->renderPercent(100));
     }
 
@@ -316,7 +316,7 @@ EOT;
 
         $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
 
-        $this->assertEquals("", $obj->renderPrice(null));
+        $this->assertEquals(null, $obj->renderPrice(null));
         $this->assertEquals("1,000.00 €", $obj->renderPrice(1000));
         $this->assertEquals("1,000.00 $", $obj->renderPrice(1000, "$"));
     }

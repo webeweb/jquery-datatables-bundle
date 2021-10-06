@@ -27,9 +27,9 @@ trait DateTimeRendererTrait {
      *
      * @param DateTime|null $date The date/time.
      * @param string $format The format.
-     * @return string Returns the rendered date/time.
+     * @return string|null Returns the rendered date/time.
      */
-    protected function renderDateTime(?DateTime $date, string $format = DateTimeHelper::DATETIME_FORMAT): string {
+    protected function renderDateTime(?DateTime $date, string $format = DateTimeHelper::DATETIME_FORMAT): ?string {
         return DateTimeHelper::toString($date, $format);
     }
 }

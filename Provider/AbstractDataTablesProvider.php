@@ -316,7 +316,7 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
         if (null === $domain) {
             $domain = TranslatorInterface::DOMAIN;
         }
-        return $this->getTranslator()->trans($id, $parameters, $domain, $locale);
+        return null !== $this->getTranslator() ? $this->getTranslator()->trans($id, $parameters, $domain, $locale) : $id;
     }
 
     /**
@@ -325,9 +325,9 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
      * @param string|null $prefix The prefix
      * @param string $content The content.
      * @param string|null $suffix The suffix.
-     * @return string Returns the wrapped content.
+     * @return string|null Returns the wrapped content.
      */
-    protected function wrapContent(?string $prefix, string $content, ?string $suffix): string {
+    protected function wrapContent(?string $prefix, string $content, ?string $suffix): ?string {
         return $this->wrapString($content, $prefix, $suffix);
     }
 }

@@ -103,14 +103,14 @@ class TestDataTablesProvider extends AbstractDataTablesProvider {
     /**
      *{@inheritDoc}
      */
-    public function renderDate(?DateTime $date, string $format = "d/m/Y"): string {
+    public function renderDate(?DateTime $date, string $format = "d/m/Y"): ?string {
         return parent::renderDate($date, $format);
     }
 
     /**
      *{@inheritDoc}
      */
-    public function renderDateTime(?DateTime $date, string $format = "d/m/Y H:i"): string {
+    public function renderDateTime(?DateTime $date, string $format = "d/m/Y H:i"): ?string {
         return parent::renderDateTime($date, $format);
     }
 
