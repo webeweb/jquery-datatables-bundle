@@ -152,7 +152,7 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
      * @param bool $rowScope Row scope ?
      * @return string Returns the rendered column.
      */
-    private function renderDataTablesColumn(DataTablesColumnInterface $dtColumn, $rowScope = false): string {
+    private function renderDataTablesColumn(DataTablesColumnInterface $dtColumn, bool $rowScope = false): string {
 
         $attributes = [
             "scope" => true === $rowScope ? "row" : null,

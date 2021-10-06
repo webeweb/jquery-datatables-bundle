@@ -124,7 +124,7 @@ class DataTablesFactory {
      * @param string $cellType The column cell type.
      * @return DataTablesColumnInterface Returns a column.
      */
-    public static function newColumn(string $data, string $name, $cellType = DataTablesColumnInterface::DATATABLES_CELL_TYPE_TD): DataTablesColumnInterface {
+    public static function newColumn(string $data, string $name, string $cellType = DataTablesColumnInterface::DATATABLES_CELL_TYPE_TD): DataTablesColumnInterface {
 
         $dtColumn = new DataTablesColumn();
         $dtColumn->getMapping()->setColumn($data);

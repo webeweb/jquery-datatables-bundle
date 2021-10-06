@@ -269,7 +269,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface {
      * @return DataTablesWrapperInterface Returns this wrapper.
      */
     public function setProcessing(?bool $processing): DataTablesWrapperInterface {
-        $this->processing = (false === $processing ? false : true);
+        $this->processing = !(false === $processing);
         return $this;
     }
 
@@ -307,7 +307,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface {
      * @return DataTablesWrapperInterface Returns this wrapper.
      */
     public function setServerSide(?bool $serverSide): DataTablesWrapperInterface {
-        $this->serverSide = (false === $serverSide ? false : true);
+        $this->serverSide = !(false === $serverSide);
         return $this;
     }
 
