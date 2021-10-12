@@ -18,7 +18,7 @@
 
     {% for _stylesheet in _plugins[_appPlugin].stylesheets %}
 
-        {% set _path = (_webPath ~ _stylesheet) | replace(_replaces) %}
+        {% set _path = (_webPath ~ _stylesheet)|replace(_replaces) %}
         <link type="text/css" rel="stylesheet" href="{{ asset(_path) }}">
     {% endfor %}
 {% endfor %}
