@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
 
+use InvalidArgumentException;
 use JsonSerializable;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
@@ -29,9 +30,11 @@ class DataTablesEntityHelper {
      * Determines if an entity is compatible.
      *
      * @param object $entity The entity.
+     * @param bool $throwException Throw exception ?
      * @return bool Returns true in case of success, false otherwise.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the entity is incompatible.
      */
-    public static function isCompatible($entity): bool {
+    public static function isCompatible($entity, bool $throwException = false): bool {
 
         if (true === ($entity instanceof DataTablesEntityInterface)) {
             return true;
@@ -39,6 +42,10 @@ class DataTablesEntityHelper {
 
         if (true === is_object($entity) && true === method_exists($entity, "getId")) {
             return true;
+        }
+
+        if (true === $throwException) {
+            throw new InvalidArgumentException("The entity must implements DataTablesEntityInterface or declare a getId() method");
         }
 
         return false;

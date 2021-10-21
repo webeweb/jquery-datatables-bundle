@@ -1,0 +1,1 @@
+<a class="btn btn-primary btn-xs" title="label.new" href="newRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-plus"></i></a>
