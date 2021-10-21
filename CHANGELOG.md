@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [3.20.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.20.0) (2021-10-21)
+
+- Add renderActionButtonNew() into abstract DataTables provider
+- Improve code quality
+
 ### [3.19.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.19.1) (2021-10-06)
 
 - Fix some options erasing
