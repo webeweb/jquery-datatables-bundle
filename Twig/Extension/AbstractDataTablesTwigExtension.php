@@ -60,11 +60,8 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
 
         ksort($options);
 
-        if ("prod" === $this->getEnvironment()) {
-            return json_encode($options);
-        }
-
-        $output = json_encode($options, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        $flags  = "prod" === $this->getEnvironment() ? 0 : JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES;
+        $output = json_encode($options, $flags);
 
         return str_replace("\n", "\n        ", $output);
     }
