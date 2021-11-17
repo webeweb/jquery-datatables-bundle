@@ -11,7 +11,6 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Renderer;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\AbstractDataTablesProvider;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\TestFloatRendererTrait;
 
