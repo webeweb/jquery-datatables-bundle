@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.21.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.21.0) (2021-11-17)
+
+- Add alone parameter into renderAction() to provide a simple DataTables HTML rendering
+
 ### [3.20.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.20.0) (2021-10-21)
 
 - Add renderActionButtonNew() into abstract DataTables provider
