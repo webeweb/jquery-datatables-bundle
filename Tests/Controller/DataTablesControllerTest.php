@@ -672,6 +672,33 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
+     * Tests the renderAction() method.
+     *
+     * @return void
+     */
+    public function testRenderActionWithAlone(): void {
+
+        $client = $this->client;
+
+        $client->request("GET", "/datatables/employee/render/true");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
+
+        // Get the response content.
+        $content = $client->getResponse()->getContent();
+
+        // Check the CSS.
+        foreach (static::listCSSAssets() as $current) {
+            $this->assertNotRegExp("/" . preg_quote($current, "/") . "/", $content);
+        }
+
+        // Check the Javascript.
+        foreach (static::listJavascriptAssets() as $current) {
+            $this->assertNotRegExp("/" . preg_quote($current, "/") . "/", $content);
+        }
+    }
+
+    /**
      * Tests the serializeAction() method.
      *
      * @return void

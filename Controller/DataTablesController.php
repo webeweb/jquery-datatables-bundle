@@ -222,10 +222,11 @@ class DataTablesController extends AbstractController {
      * Render a DataTables.
      *
      * @param string $name The provider name.
+     * @param bool $alone Alone ?
      * @return Response Returns the response.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
-    public function renderAction(string $name): Response {
+    public function renderAction(string $name, bool $alone = false): Response {
 
         $dtProvider = $this->getDataTablesProvider($name);
         $dtWrapper  = $this->getDataTablesWrapper($dtProvider);
@@ -233,6 +234,9 @@ class DataTablesController extends AbstractController {
         $dtView = $dtProvider->getView();
         if (null === $dtProvider->getView()) {
             $dtView = "@WBWJQueryDataTables/DataTables/index.html.twig";
+        }
+        if (true === $alone) {
+            $dtView = "@WBWJQueryDataTables/DataTables/render.html.twig";
         }
 
         return $this->render($dtView, [
