@@ -29,6 +29,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesEntityHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesExportHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesEnumerator;
+use WBW\Library\Types\Helper\BooleanHelper;
 
 /**
  * DataTables controller.
@@ -222,11 +223,11 @@ class DataTablesController extends AbstractController {
      * Render a DataTables.
      *
      * @param string $name The provider name.
-     * @param bool $alone Alone ?
+     * @param string|null $alone Alone ?
      * @return Response Returns the response.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
-    public function renderAction(string $name, bool $alone = false): Response {
+    public function renderAction(string $name, string $alone = null): Response {
 
         $dtProvider = $this->getDataTablesProvider($name);
         $dtWrapper  = $this->getDataTablesWrapper($dtProvider);
@@ -235,7 +236,7 @@ class DataTablesController extends AbstractController {
         if (null === $dtProvider->getView()) {
             $dtView = "@WBWJQueryDataTables/DataTables/index.html.twig";
         }
-        if (true === $alone) {
+        if (true === BooleanHelper::parseString($alone)) {
             $dtView = "@WBWJQueryDataTables/DataTables/render.html.twig";
         }
 

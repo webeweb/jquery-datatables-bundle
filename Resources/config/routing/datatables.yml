@@ -26,7 +26,7 @@ wbw_jquery_datatables_options:
 
 wbw_jquery_datatables_render:
     path: "/datatables/{name}/render/{alone}"
-    defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:render", alone: false }
+    defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:render", alone: null }
     methods: [ "GET" ]
 
 wbw_jquery_datatables_serialize:
