@@ -94,6 +94,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
 
         $qb = $this->createQueryBuilder($prefix)
             ->setFirstResult($dtWrapper->getRequest()->getStart());
+
         if (0 < $dtWrapper->getRequest()->getLength()) {
             $qb->setMaxResults($dtWrapper->getRequest()->getLength());
         }

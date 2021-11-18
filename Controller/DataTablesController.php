@@ -138,8 +138,7 @@ class DataTablesController extends AbstractController {
         $repository = $this->getDataTablesRepository($dtProvider);
 
         $filename = (new DateTime())->format("Y.m.d-H.i.s") . "-" . $dtProvider->getName() . ".csv";
-
-        $charset = true === $windows ? "iso-8859-1" : "utf-8";
+        $charset  = true === $windows ? "iso-8859-1" : "utf-8";
 
         $response = new StreamedResponse();
         $response->headers->set("Content-Disposition", 'attachment; filename="' . $filename . '"');
