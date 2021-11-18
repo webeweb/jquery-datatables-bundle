@@ -292,9 +292,9 @@ class DataTablesFactory {
         }
 
         // Get the request parameters.
-        $columns = null !== $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_COLUMNS) ? $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_COLUMNS) : [];
-        $orders  = null !== $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_ORDER) ? $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_ORDER) : [];
-        $search  = null !== $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_SEARCH) ? $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_SEARCH) : [];
+        $columns = $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_COLUMNS, []);
+        $orders  = $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_ORDER, []);
+        $search  = $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_SEARCH, []);
 
         // Set the request.
         $dtRequest->setColumns(DataTablesFactory::parseColumns($columns, $wrapper));

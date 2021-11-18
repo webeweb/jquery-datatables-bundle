@@ -35,16 +35,16 @@ class DataTablesWrapperHelper {
 
         // Initialize the directory.
         $dir = (new WBWJQueryDataTablesBundle())->getPath();
-        $dir .= "/Resources/public/datatables-i18n/%language%.json";
+        $dir .= "/Resources/public/datatables-i18n/%s.json";
 
         // Initialize the URI.
-        $uri = "/bundles/wbwjquerydatatables/datatables-i18n/%language%.json";
+        $uri = "/bundles/wbwjquerydatatables/datatables-i18n/%s.json";
 
         // Initialize the URL.
-        $url = str_replace(["%language%"], [$language], $uri);
+        $url = sprintf($uri, $language);
 
         // Initialize and check the filename.
-        $file = str_replace(["%language%"], [$language], $dir);
+        $file = sprintf($dir, $language);
         if (false === file_exists($file)) {
             throw new FileNotFoundException(null, 500, null, $url);
         }

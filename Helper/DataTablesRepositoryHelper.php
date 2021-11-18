@@ -70,7 +70,7 @@ class DataTablesRepositoryHelper {
             }
         }
 
-        $queryBuilder->andWhere("(" . implode(" " . $operator . " ", $wheres) . ")");
+        $queryBuilder->andWhere("(" . implode(" $operator ", $wheres) . ")");
         for ($i = count($params) - 1; 0 <= $i; --$i) {
             $queryBuilder->setParameter($params[$i], $values[$i]);
         }

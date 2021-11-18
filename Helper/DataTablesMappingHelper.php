@@ -38,7 +38,10 @@ class DataTablesMappingHelper {
             return $mapping->getColumn();
         }
 
-        return implode(".", [$mapping->getPrefix(), $mapping->getColumn()]);
+        return implode(".", [
+            $mapping->getPrefix(),
+            $mapping->getColumn(),
+        ]);
     }
 
     /**
@@ -72,14 +75,11 @@ class DataTablesMappingHelper {
      * @return string Returns the param.
      */
     public static function getParam(DataTablesMappingInterface $mapping): string {
-
-        $param = [
+        return implode("", [
             ":",
             $mapping->getPrefix(),
             $mapping->getColumn(),
-        ];
-
-        return implode("", $param);
+        ]);
     }
 
     /**
@@ -89,13 +89,10 @@ class DataTablesMappingHelper {
      * @return string Returns the where.
      */
     public static function getWhere(DataTablesMappingInterface $mapping): string {
-
-        $where = [
+        return implode(" ", [
             DataTablesMappingHelper::getAlias($mapping),
             DataTablesMappingHelper::getComparator($mapping),
             DataTablesMappingHelper::getParam($mapping),
-        ];
-
-        return implode(" ", $where);
+        ]);
     }
 }
