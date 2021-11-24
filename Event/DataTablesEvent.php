@@ -99,6 +99,7 @@ class DataTablesEvent extends AbstractEvent {
      */
     public function __construct(string $eventName, array $entities) {
         parent::__construct($eventName);
+
         $this->setEntities($entities);
     }
 

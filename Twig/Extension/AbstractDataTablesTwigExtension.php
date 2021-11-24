@@ -42,6 +42,7 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
      */
     public function __construct(Environment $twigEnvironment, RendererTwigExtension $rendererTwigExtension, string $environment) {
         parent::__construct($twigEnvironment);
+
         $this->setEnvironment($environment);
         $this->setRendererTwigExtension($rendererTwigExtension);
     }
