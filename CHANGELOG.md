@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-### [3.22.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.22.0) (2021-11-17)
+### [3.22.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.22.0) (2021-11-26)
 
 - Add Translator trait
 - Improve list DataTables provider command
