@@ -20,7 +20,6 @@ use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtension;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtensionTrait;
 use WBW\Bundle\CoreBundle\Component\Translation\BaseTranslatorInterface;
 use WBW\Bundle\CoreBundle\Service\RouterTrait;
-use WBW\Bundle\CoreBundle\Service\TranslatorTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
@@ -29,7 +28,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Renderer\DateRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\DateTimeRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\FloatRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\StringWrapperTrait;
-use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorTrait;
 
 /**
  * Abstract DataTables provider.
@@ -322,22 +321,6 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
         }
 
         return implode(" ", $anchors);
-    }
-
-    /**
-     * Translate.
-     *
-     * @param string $id The id.
-     * @param array $parameters Teh parameters.
-     * @param string|null $domain The domain.
-     * @param string|null $locale The locale.
-     * @return string Returns the translated id in case of success, id otherwise.
-     */
-    protected function translate(string $id, array $parameters = [], string $domain = null, string $locale = null): string {
-        if (null === $domain) {
-            $domain = TranslatorInterface::DOMAIN;
-        }
-        return null !== $this->getTranslator() ? $this->getTranslator()->trans($id, $parameters, $domain, $locale) : $id;
     }
 
     /**
