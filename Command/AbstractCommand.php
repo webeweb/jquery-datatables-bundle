@@ -12,8 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Command;
 
 use WBW\Bundle\CoreBundle\Command\AbstractCommand as BaseCommand;
-use WBW\Bundle\CoreBundle\Service\TranslatorTrait;
-use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorTrait;
 
 /**
  * Abstract command.
@@ -25,19 +24,5 @@ abstract class AbstractCommand extends BaseCommand {
 
     use TranslatorTrait {
         setTranslator as public;
-    }
-
-    /**
-     * Translate.
-     *
-     * @param string $id The id.
-     * @param array $parameters The parameters.
-     * @return string Returns the translated id in case of success, id otherwise.
-     */
-    protected function translate(string $id, array $parameters = []): string {
-        if (null === $this->getTranslator()) {
-            return $id;
-        }
-        return $this->getTranslator()->trans($id, $parameters, TranslatorInterface::DOMAIN, "en");
     }
 }

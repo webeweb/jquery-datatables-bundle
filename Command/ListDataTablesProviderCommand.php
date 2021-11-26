@@ -94,12 +94,12 @@ EOT;
      */
     protected function getHeaders(): array {
         return [
-            $this->translate("label.name"),
-            $this->translate("label.class"),
-            $this->translate("label.columns"),
-            $this->translate("label.prefix"),
-            $this->translate("label.view"),
-            $this->translate("label.csv"),
+            $this->translate("label.name", [], null, "en"),
+            $this->translate("label.class", [], null, "en"),
+            $this->translate("label.columns", [], null, "en"),
+            $this->translate("label.prefix", [], null, "en"),
+            $this->translate("label.view", [], null, "en"),
+            $this->translate("label.csv", [], null, "en"),
         ];
     }
 
