@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+### [3.22.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.22.0) (2021-11-17)
+
+- Add Translator trait
+- Improve list DataTables provider command
+- Improve abstract DataTables provider
+
 ### [3.21.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.21.0) (2021-11-17)
 
 - Add alone parameter into renderAction() to provide a simple DataTables HTML rendering
