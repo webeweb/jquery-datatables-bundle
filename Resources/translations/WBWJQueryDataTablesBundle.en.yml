@@ -10,11 +10,18 @@ DataTablesController:
         warning: "Failed editing"
 
 label:
+    cancel:    "Cancel"
     delete:    "Delete"
     duplicate: "Duplicate"
     edit:      "Edit"
     show:      "Show"
 
+swal:
+    error:
+        title: "Oups !"
+        text:  "An error occurs"
+
+command:
     class:     "Class/Entity"
     columns:   "Columns"
     csv:       "CSV"

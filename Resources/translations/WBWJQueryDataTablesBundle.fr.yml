@@ -10,7 +10,13 @@ DataTablesController:
         warning: "Edition échouée"
 
 label:
+    cancel:    "Annuler"
     delete:    "Supprimer"
     duplicate: "Dupliquer"
     edit:      "Editer"
     show:      "Voir"
+
+swal:
+    error:
+        title: "Oups !"
+        text:  "Une erreur est survenue"
