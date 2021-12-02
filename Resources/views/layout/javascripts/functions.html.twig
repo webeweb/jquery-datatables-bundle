@@ -1,0 +1,12 @@
+{# Resources/views/layout/javascripts/functions.html.twig #}
+{% set _DOMAIN = constant("WBW\\Bundle\\JQuery\\DataTablesBundle\\Translation\\TranslatorInterface::DOMAIN") %}
+<script type="text/javascript">
+    $.fn.dataTable.ext.errMode = function () {
+        swal({
+            icon      : "error",
+            title     : "{{ "swal.error.title"|trans([], _DOMAIN)|e("js") }}",
+            text      : "{{ "swal.error.text"|trans([], _DOMAIN)|e("js") }}",
+            dangerMode: true
+        });
+    }
+</script>
