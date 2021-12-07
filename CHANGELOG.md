@@ -3,7 +3,9 @@ CHANGELOG
 
 ### master
 
+- Add DataTables provider trait
 - Add sample javascript functions
+- Improve DataTables events
 - Improve translations
 
 ### [3.22.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.22.0) (2021-11-26)
