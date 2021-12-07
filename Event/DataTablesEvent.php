@@ -12,6 +12,8 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Event;
 
 use WBW\Bundle\CoreBundle\Event\AbstractEvent;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderTrait;
 
 /**
  * DataTables event.
@@ -20,6 +22,8 @@ use WBW\Bundle\CoreBundle\Event\AbstractEvent;
  * @package WBW\Bundle\JQuery\DataTablesBundle\Event
  */
 class DataTablesEvent extends AbstractEvent {
+
+    use DataTablesProviderTrait;
 
     /**
      * Event "post delete".
@@ -78,6 +82,13 @@ class DataTablesEvent extends AbstractEvent {
     const PRE_INDEX = "wbw.jquery.datatables.event.pre_index";
 
     /**
+     * Event "pre serialize".
+     *
+     * @var string
+     */
+    const PRE_SERIALIZE = "wbw.jquery.datatables.event.pre_serialize";
+
+    /**
      * Event "pre show".
      *
      * @var string
@@ -96,11 +107,13 @@ class DataTablesEvent extends AbstractEvent {
      *
      * @param string $eventName The name.
      * @param object[] $entities The entities.
+     * @param DataTablesProviderInterface|null $provider The provider.
      */
-    public function __construct(string $eventName, array $entities) {
+    public function __construct(string $eventName, array $entities, ?DataTablesProviderInterface $provider = null) {
         parent::__construct($eventName);
 
         $this->setEntities($entities);
+        $this->setProvider($provider);
     }
 
     /**
