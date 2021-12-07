@@ -252,7 +252,7 @@ abstract class AbstractController extends BaseController {
 
         $context["_entity"] = get_class($entity);
 
-        $this->logInfo(sprintf("DataTables controller found an entity with id [%s]", $id));
+        $this->logInfo(sprintf("DataTables controller found an entity with id [%s]", $id), $context);
 
         return $entity;
     }
