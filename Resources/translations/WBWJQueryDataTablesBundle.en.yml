@@ -22,10 +22,10 @@ swal:
         text:  "An error occurs"
 
 command:
-    class:     "Class/Entity"
-    columns:   "Columns"
-    csv:       "CSV"
-    name:      "Name"
-    prefix:    "Prefix"
-    view:      "View"
-    xls:       "XLS"
+    class:   "Class/Entity"
+    columns: "Columns"
+    csv:     "CSV"
+    name:    "Name"
+    prefix:  "Prefix"
+    view:    "View"
+    xls:     "XLS"
