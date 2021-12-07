@@ -124,11 +124,11 @@ abstract class AbstractController extends BaseController {
 
             while (false !== ($row = $result->next())) {
 
-                $this->dispatchDataTablesEvent(DataTablesEvent::PRE_EXPORT, [$row[0]]);
+                $this->dispatchDataTablesEvent(DataTablesEvent::PRE_EXPORT, [$row[0]], $dtProvider);
 
                 fputcsv($stream, DataTablesExportHelper::convert($dtExporter->exportRow($row[0]), $windows), ";");
 
-                $this->dispatchDataTablesEvent(DataTablesEvent::POST_EXPORT, [$row[0]]);
+                $this->dispatchDataTablesEvent(DataTablesEvent::POST_EXPORT, [$row[0]], $dtProvider);
             }
 
             $em->clear(); // Detach the entity to avoid memory consumption.
