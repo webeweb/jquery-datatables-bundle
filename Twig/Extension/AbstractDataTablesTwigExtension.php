@@ -61,10 +61,10 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
 
         ksort($options);
 
-        $flags  = "prod" === $this->getEnvironment() ? 0 : JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES;
-        $output = json_encode($options, $flags);
+        $flags = "prod" === $this->getEnvironment() ? 0 : JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES;
+        $json  = json_encode($options, $flags);
 
-        return str_replace("\n", "\n        ", $output);
+        return str_replace("\n", "\n        ", $json);
     }
 
     /**
@@ -170,19 +170,18 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
      */
     private function renderDataTablesRow(DataTablesWrapperInterface $dtWrapper, string $wrapper): string {
 
-        $innerHTML = "";
+        $row = "";
 
         $count = count($dtWrapper->getColumns());
         for ($i = 0; $i < $count; ++$i) {
 
             $dtColumn = array_values($dtWrapper->getColumns())[$i];
 
-            $th = $this->renderDataTablesColumn($dtColumn, ("thead" === $wrapper && 0 === $i));
-
-            $innerHTML .= $th . "\n";
+            $col = $this->renderDataTablesColumn($dtColumn, ("thead" === $wrapper && 0 === $i));
+            $row .= $col . "\n";
         }
 
-        $tr = static::coreHTMLElement("tr", "\n" . $innerHTML);
+        $tr = static::coreHTMLElement("tr", "\n" . $row);
 
         return static::coreHTMLElement($wrapper, "\n" . $tr . "\n");
     }
