@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.23.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.23.1) (2021-12-10)
+
+- Fix sample javascript functions
+
 ### [3.23.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.23.0) (2021-12-08)
 
 - Add DataTables provider trait
