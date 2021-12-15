@@ -58,7 +58,7 @@ class AssetsHelperTest extends AbstractTestCase {
         $plugins  = $config["assets"]["wbw.jquery_datatables.asset.jquery_datatables"]["plugins"];
 
         $res = TestAssetsHelper::listAssets($this->directoryAssets);
-        $this->assertCount(18, $res);
+        $this->assertCount(19, $res);
 
         $i = -1;
 
@@ -79,6 +79,7 @@ class AssetsHelperTest extends AbstractTestCase {
         $this->assertRegexp("/datatables\-searchbuilder\-" . preg_quote($plugins["searchbuilder"]["version"]) . "\.zip$/", $res[++$i]);
         $this->assertRegexp("/datatables\-searchpanes\-" . preg_quote($plugins["searchpanes"]["version"]) . "\.zip$/", $res[++$i]);
         $this->assertRegexp("/datatables\-select\-" . preg_quote($plugins["select"]["version"]) . "\.zip$/", $res[++$i]);
+        $this->assertRegexp("/datatables\-staterestore\-" . preg_quote($plugins["staterestore"]["version"]) . "\.zip$/", $res[++$i]);
         $this->assertRegexp("/editable\-table\.zip$/", $res[++$i]);
     }
 }
