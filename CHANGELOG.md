@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [3.24.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.24.0) (2021-12-15)
+
+- Update jQuery DataTables to 1.11.3
+- Add StateRestore DataTables plugin
+
 ### [3.23.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.23.1) (2021-12-10)
 
 - Fix sample javascript functions
