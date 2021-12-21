@@ -41,6 +41,7 @@ class DataTablesEntityHelper {
 
             static::isCompatible($current, true);
 
+            /** @var DataTablesEntityInterface $current */
             $key = $current->getId();
             if (true === array_key_exists($key, $map)) {
                 continue;
