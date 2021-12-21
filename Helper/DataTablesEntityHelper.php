@@ -27,6 +27,32 @@ use WBW\Bundle\JQuery\DataTablesBundle\Entity\DataTablesEntityInterface;
 class DataTablesEntityHelper {
 
     /**
+     * Indexes the entities.
+     *
+     * @param array $entities The entities.
+     * @return array Returns the indexed entities.
+     * @throws InvalidArgumentException Throws an invalid argument exception if an entity is incompatible.
+     */
+    public static function indexEntities(array $entities): array {
+
+        $map = [];
+
+        foreach ($entities as $current) {
+
+            static::isCompatible($current, true);
+
+            $key = $current->getId();
+            if (true === array_key_exists($key, $map)) {
+                continue;
+            }
+
+            $map[$key] = $current;
+        }
+
+        return $map;
+    }
+
+    /**
      * Determines if an entity is compatible.
      *
      * @param object $entity The entity.
@@ -52,7 +78,7 @@ class DataTablesEntityHelper {
     }
 
     /**
-     * Serialize an entity.
+     * Serializes an entity.
      *
      * @param object|null $entity The entity.
      * @return string Returns the serialized entity.
