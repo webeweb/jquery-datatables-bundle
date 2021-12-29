@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.26.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.26.0) (2021-12-29)
+
+- Improve views organization
+
 ### [3.25.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.25.0) (2021-12-21)
 
 - Add indexEntities() into DataTables entity helper
