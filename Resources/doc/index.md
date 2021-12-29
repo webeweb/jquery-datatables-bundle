@@ -507,9 +507,9 @@ Create a template in the `src/AppBundle/Resources/views/Employee`directory of yo
 
 {% block stylesheets %}
     {{ parent() }}
-    {% include "@WBWCore/layout/stylesheets.html.twig" %}
-    {% include "@WBWBootstrap/layout/stylesheets.html.twig" %}
-    {% include "@WBWJQueryDataTables/layout/stylesheets.html.twig" %}
+    {% include "@WBWCore/assets/stylesheets.html.twig" %}
+    {% include "@WBWBootstrap/assets/stylesheets.html.twig" %}
+    {% include "@WBWJQueryDataTables/assets/stylesheets.html.twig" %}
 {% endblock %}
 
 {% block content %}
@@ -518,9 +518,9 @@ Create a template in the `src/AppBundle/Resources/views/Employee`directory of yo
 
 {% block javascripts %}
     {{ parent() }}
-    {% include "@WBWCore/layout/javascripts.html.twig" %}
-    {% include "@WBWBootstrap/layout/javascripts.html.twig" %}
-    {% include "@WBWJQueryDataTables/layout/javascripts.html.twig" %}
+    {% include "@WBWCore/assets/javascripts.html.twig" %}
+    {% include "@WBWBootstrap/assets/javascripts.html.twig" %}
+    {% include "@WBWJQueryDataTables/assets/javascripts.html.twig" %}
     {{ jQueryDataTables(dtWrapper) }}
 {% endblock %}
 ```
