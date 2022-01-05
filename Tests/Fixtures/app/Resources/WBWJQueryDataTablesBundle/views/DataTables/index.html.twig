@@ -3,7 +3,7 @@
 
 {% block bootstrapStylesheets %}
     {{ parent() }}
-    {% include "@WBWJQueryDataTables/assets/stylesheets.html.twig" %}
+    {% include "@WBWJQueryDataTables/assets/_stylesheets.html.twig" %}
     <style type="text/css">
         .content {
             margin: 70px 0 0;
@@ -13,7 +13,7 @@
     {% endblock %}
 {% endblock %}
 
-{% block bootstrapTitle %}webeweb/jquery-detatabales-bundle{% endblock %}
+{% block bootstrapTitle %}webeweb/jquery-datatables-bundle{% endblock %}
 
 {% block bootstrapContainer %}
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -34,7 +34,7 @@
             {% if (0 < app.session.flashbag.peekAll()|length) %}
                 <div class="row clearfix">
                     <div class="{{ bootstrapGrid({"lg": 12, "md": 12, "sm": 12, "xs": 12}) }}">
-                        {% include "@WBWBootstrap/layout/flashbag.html.twig" %}
+                        {% include "@WBWBootstrap/layout/_flashbag.html.twig" %}
                     </div>
                 </div>
             {% endif %}
@@ -51,7 +51,7 @@
 
 {% block bootstrapJavascripts %}
     {{ parent() }}
-    {% include "@WBWJQueryDataTables/assets/javascripts.html.twig" %}
+    {% include "@WBWJQueryDataTables/assets/_javascripts.html.twig" %}
     {% block jQueryDataTablesJavascripts %}
     {% endblock %}
 {% endblock %}
