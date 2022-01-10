@@ -29,6 +29,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesEntityHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesExportHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesEnumerator;
+use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesLoop;
 use WBW\Library\Types\Helper\BooleanHelper;
 
 /**
@@ -167,11 +168,10 @@ class DataTablesController extends AbstractController {
         }
 
         $dtProvider = $this->getDataTablesProvider($name);
+        $repository = $this->getDataTablesRepository($dtProvider);
 
         $dtWrapper = $this->getDataTablesWrapper($dtProvider);
         DataTablesFactory::parseWrapper($dtWrapper, $request);
-
-        $repository = $this->getDataTablesRepository($dtProvider);
 
         $dtWrapper->getResponse()->setRecordsFiltered($repository->dataTablesCountFiltered($dtWrapper));
         $dtWrapper->getResponse()->setRecordsTotal($repository->dataTablesCountTotal($dtWrapper));
@@ -180,21 +180,23 @@ class DataTablesController extends AbstractController {
 
         $this->dispatchDataTablesEvent(DataTablesEvent::PRE_INDEX, $entities, $dtProvider);
 
-        foreach ($entities as $entity) {
+        $dtLoop = new DataTablesLoop(count($entities));
 
-            $rows = $dtWrapper->getResponse()->rowsCount();
+        foreach ($entities as $entity) {
 
             $dtWrapper->getResponse()->addRow();
 
             // Render each row.
             foreach (DataTablesEnumerator::enumRows() as $dtRow) {
-                $dtWrapper->getResponse()->setRow($dtRow, $dtProvider->renderRow($dtRow, $entity, $rows));
+                $dtWrapper->getResponse()->setRow($dtRow, $dtProvider->renderRow($dtRow, $entity, $dtLoop->getIndex0()));
             }
 
             // Render each column.
             foreach ($dtWrapper->getColumns() as $dtColumn) {
                 $dtWrapper->getResponse()->setRow($dtColumn->getData(), $dtProvider->renderColumn($dtColumn, $entity));
             }
+
+            $dtLoop->next();
         }
 
         $this->dispatchDataTablesEvent(DataTablesEvent::POST_INDEX, $entities, $dtProvider);
