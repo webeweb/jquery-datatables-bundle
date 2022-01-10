@@ -117,12 +117,12 @@ class DataTablesFactory {
     }
 
     /**
-     * Create a new column instance.
+     * Creates a column.
      *
      * @param string $data The column data.
      * @param string $name The column name.
      * @param string $cellType The column cell type.
-     * @return DataTablesColumnInterface Returns a column.
+     * @return DataTablesColumnInterface Returns the column.
      */
     public static function newColumn(string $data, string $name, string $cellType = DataTablesColumnInterface::DATATABLES_CELL_TYPE_TD): DataTablesColumnInterface {
 
@@ -137,19 +137,19 @@ class DataTablesFactory {
     }
 
     /**
-     * Create a new options.
+     * Creates an options.
      *
-     * @return DataTablesOptionsInterface Returns an options.
+     * @return DataTablesOptionsInterface Returns the options.
      */
     public static function newOptions(): DataTablesOptionsInterface {
         return new DataTablesOptions();
     }
 
     /**
-     * Create a new response.
+     * Creates a response.
      *
      * @param DataTablesWrapperInterface $wrapper The wrapper.
-     * @return DataTablesResponseInterface Returns a response.
+     * @return DataTablesResponseInterface Returns the response.
      */
     protected static function newResponse(DataTablesWrapperInterface $wrapper): DataTablesResponseInterface {
 
@@ -161,12 +161,12 @@ class DataTablesFactory {
     }
 
     /**
-     * Create a new wrapper.
+     * Creates a wrapper.
      *
      * @param string $url The URL.
      * @param DataTablesProviderInterface $provider The provider.
      * @param UserInterface|null $user The user.
-     * @return DataTablesWrapperInterface Returns a wrapper.
+     * @return DataTablesWrapperInterface Returns the wrapper.
      */
     public static function newWrapper(string $url, DataTablesProviderInterface $provider, UserInterface $user = null): DataTablesWrapperInterface {
 
@@ -181,7 +181,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Parse a raw column.
+     * Parses a raw column.
      *
      * @param array $rawColumn The raw column.
      * @param DataTablesWrapperInterface $wrapper The wrapper.
@@ -211,7 +211,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Parse a raw columns.
+     * Parses the raw columns.
      *
      * @param array $rawColumns The raw columns.
      * @param DataTablesWrapperInterface $wrapper The wrapper.
@@ -235,7 +235,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Parse a raw order.
+     * Parses a raw order.
      *
      * @param array $rawOrder The raw order.
      * @return DataTablesOrderInterface Returns the order.
@@ -255,7 +255,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Parse raw orders.
+     * Parses the raw orders.
      *
      * @param array $rawOrders The raw orders.
      * @return DataTablesOrderInterface[] Returns the orders.
@@ -272,7 +272,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Parse a request.
+     * Parses a request.
      *
      * @param DataTablesWrapperInterface $wrapper The wrapper.
      * @param Request $request The request.
@@ -309,7 +309,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Parse a raw search.
+     * Parses a raw search.
      *
      * @param array $rawSearch The raw search.
      * @return DataTablesSearchInterface Returns the search.
@@ -329,7 +329,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Parse a request.
+     * Parses a request.
      *
      * @param DataTablesWrapperInterface $wrapper The wrapper.
      * @param Request $request The request.
