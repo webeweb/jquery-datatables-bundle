@@ -24,7 +24,7 @@ use WBW\Library\Types\Helper\ArrayHelper;
 class DataTablesNormalizer {
 
     /**
-     * Normalize a column.
+     * Normalizes a column.
      *
      * @param DataTablesColumnInterface $column The column.
      * @return array Returns teh normalized column.
@@ -52,7 +52,7 @@ class DataTablesNormalizer {
     }
 
     /**
-     * Normalize a response.
+     * Normalizes a response.
      *
      * @param DataTablesResponseInterface $response The response.
      * @return array Returns the normalized response.
