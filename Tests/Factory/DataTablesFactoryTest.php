@@ -59,13 +59,13 @@ class DataTablesFactoryTest extends AbstractTestCase {
 
         $this->assertInstanceOf(DataTablesResponseInterface::class, $obj);
 
-        $this->assertEquals(0, $obj->countRows());
         $this->assertEquals([], $obj->getData());
         $this->assertEquals(0, $obj->getDraw());
         $this->assertNull($obj->getError());
         $this->assertEquals(0, $obj->getRecordsFiltered());
         $this->assertEquals(0, $obj->getRecordsTotal());
         $this->assertSame($wrapper, $obj->getWrapper());
+        $this->assertEquals(0, $obj->rowsCount());
     }
 
     /**

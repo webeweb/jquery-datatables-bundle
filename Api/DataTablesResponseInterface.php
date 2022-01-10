@@ -57,13 +57,6 @@ interface DataTablesResponseInterface extends JsonSerializable {
     public function addRow(): DataTablesResponseInterface;
 
     /**
-     * Count rows.
-     *
-     * @return int Returns the rows count.
-     */
-    public function countRows(): int;
-
-    /**
      * Get the data.
      *
      * @return array Returns the data.
@@ -104,6 +97,13 @@ interface DataTablesResponseInterface extends JsonSerializable {
      * @return DataTablesWrapperInterface|null Returns the wrapper.
      */
     public function getWrapper(): ?DataTablesWrapperInterface;
+
+    /**
+     * Rows count.
+     *
+     * @return int Returns the rows count.
+     */
+    public function rowsCount(): int;
 
     /**
      * Set the error.

@@ -182,7 +182,7 @@ class DataTablesController extends AbstractController {
 
         foreach ($entities as $entity) {
 
-            $rows = $dtWrapper->getResponse()->countRows();
+            $rows = $dtWrapper->getResponse()->rowsCount();
 
             $dtWrapper->getResponse()->addRow();
 

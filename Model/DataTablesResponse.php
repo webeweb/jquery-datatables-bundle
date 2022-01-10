@@ -76,7 +76,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
      */
     public function addRow(): DataTablesResponseInterface {
 
-        $index = $this->countRows();
+        $index = $this->rowsCount();
 
         $this->data[] = [];
 
@@ -86,13 +86,6 @@ class DataTablesResponse implements DataTablesResponseInterface {
         }
 
         return $this;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function countRows(): int {
-        return count($this->data);
     }
 
     /**
@@ -135,6 +128,13 @@ class DataTablesResponse implements DataTablesResponseInterface {
      */
     public function jsonSerialize(): array {
         return DataTablesNormalizer::normalizeResponse($this);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function rowsCount(): int {
+        return count($this->data);
     }
 
     /**
@@ -188,7 +188,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
      */
     public function setRow(string $data, $value): DataTablesResponseInterface {
 
-        $index = $this->countRows() - 1;
+        $index = $this->rowsCount() - 1;
 
         if ((true === in_array($data, DataTablesEnumerator::enumRows()) && null !== $value) || (true === in_array($data, array_keys($this->data[$index])))) {
             $this->data[$index][$data] = $value;

@@ -114,12 +114,12 @@ class DataTablesResponseTest extends AbstractTestCase {
 
         $obj = new DataTablesResponse();
 
-        $this->assertEquals(0, $obj->countRows());
         $this->assertEquals([], $obj->getData());
         $this->assertEquals(0, $obj->getDraw());
         $this->assertNull($obj->getError());
         $this->assertEquals(0, $obj->getRecordsFiltered());
         $this->assertEquals(0, $obj->getRecordsTotal());
         $this->assertNull($obj->getWrapper());
+        $this->assertEquals(0, $obj->rowsCount());
     }
 }
