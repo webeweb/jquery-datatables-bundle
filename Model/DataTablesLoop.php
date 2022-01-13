@@ -22,6 +22,13 @@ use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesLoopInterface;
 class DataTablesLoop implements DataTablesLoopInterface {
 
     /**
+     * Entities.
+     *
+     * @var object[]
+     */
+    private $entities;
+
+    /**
      * Index.
      *
      * @var int
@@ -29,18 +36,20 @@ class DataTablesLoop implements DataTablesLoopInterface {
     private $index;
 
     /**
-     * Length.
+     * Constructor.
      *
-     * @var int
+     * @param object[] $entities The entities.
      */
-    private $length;
+    public function __construct(array $entities) {
+        $this->setEntities($entities);
+        $this->setIndex(1);
+    }
 
     /**
-     * Constructor.
+     * {@inheritDoc}
      */
-    public function __construct(int $length) {
-        $this->setIndex(1);
-        $this->setLength($length);
+    public function getEntities(): array {
+        return $this->entities;
     }
 
     /**
@@ -61,7 +70,7 @@ class DataTablesLoop implements DataTablesLoopInterface {
      * {@inheritDoc}
      */
     public function getLength(): int {
-        return $this->length;
+        return count($this->entities);
     }
 
     /**
@@ -103,6 +112,17 @@ class DataTablesLoop implements DataTablesLoopInterface {
     }
 
     /**
+     * Set the entities.
+     *
+     * @param object[] $entities The entities.
+     * @return DataTablesLoop Returns this loop.
+     */
+    protected function setEntities(array $entities): DataTablesLoop {
+        $this->entities = $entities;
+        return $this;
+    }
+
+    /**
      * Set the index.
      *
      * @param int $index The index.
@@ -110,17 +130,6 @@ class DataTablesLoop implements DataTablesLoopInterface {
      */
     protected function setIndex(int $index): DataTablesLoop {
         $this->index = $index;
-        return $this;
-    }
-
-    /**
-     * Set the length.
-     *
-     * @param int $length The length.
-     * @return DataTablesLoop Returns this loop.
-     */
-    protected function setLength(int $length): DataTablesLoop {
-        $this->length = $length;
         return $this;
     }
 }

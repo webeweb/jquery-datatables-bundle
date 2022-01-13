@@ -29,7 +29,10 @@ class DataTablesLoopTest extends AbstractTestCase {
      */
     public function testIsFirst(): void {
 
-        $obj = new DataTablesLoop(9);
+        // Set an entities mock.
+        $entities = [0, 1];
+
+        $obj = new DataTablesLoop($entities);
 
         $this->assertTrue($obj->isFirst());
         $this->assertFalse($obj->isLast());
@@ -42,7 +45,10 @@ class DataTablesLoopTest extends AbstractTestCase {
      */
     public function testIsLast(): void {
 
-        $obj = new DataTablesLoop(2);
+        // Set an entities mock.
+        $entities = [0, 1];
+
+        $obj = new DataTablesLoop($entities);
         $obj->next();
 
         $this->assertTrue($obj->isLast());
@@ -56,7 +62,10 @@ class DataTablesLoopTest extends AbstractTestCase {
      */
     public function testNext(): void {
 
-        $obj = new DataTablesLoop(9);
+        // Set an entities mock.
+        $entities = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+
+        $obj = new DataTablesLoop($entities);
 
         $obj->next();
         $this->assertEquals(2, $obj->getIndex());
@@ -72,8 +81,12 @@ class DataTablesLoopTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $obj = new DataTablesLoop(9);
+        // Set an entities mock.
+        $entities = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
+        $obj = new DataTablesLoop($entities);
+
+        $this->assertEquals($entities, $obj->getEntities());
         $this->assertEquals(1, $obj->getIndex());
         $this->assertEquals(0, $obj->getIndex0());
         $this->assertEquals(9, $obj->getLength());

@@ -180,7 +180,7 @@ class DataTablesController extends AbstractController {
 
         $this->dispatchDataTablesEvent(DataTablesEvent::PRE_INDEX, $entities, $dtProvider);
 
-        $dtLoop = new DataTablesLoop(count($entities));
+        $dtLoop = new DataTablesLoop($entities);
 
         foreach ($entities as $entity) {
 

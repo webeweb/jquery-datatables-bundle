@@ -20,6 +20,13 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Api;
 interface DataTablesLoopInterface {
 
     /**
+     * Get the entities.
+     *
+     * @return object[]
+     */
+    public function getEntities(): array;
+
+    /**
      * Get the index (1 indexed).
      *
      * @return int Returns the index (1 indexed).
