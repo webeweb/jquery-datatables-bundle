@@ -645,6 +645,31 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
+     * Tests the optionsAction() method.
+     *
+     * @return void
+     */
+    public function testOptionsActionWithDataTablesRouterInterface(): void {
+
+        $client = $this->client;
+
+        $client->request("GET", "/datatables/office/options");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
+
+        // Check the JSON response.
+        $res = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertCount(4, $res);
+        $this->assertCount(2, $res["columns"]);
+
+        $this->assertEquals("POST", $res["ajax"]["type"]);
+        $this->assertEquals("url", $res["ajax"]["url"]);
+        $this->assertEquals(true, $res["processing"]);
+        $this->assertEquals(true, $res["serverSide"]);
+    }
+
+    /**
      * Tests the renderAction() method.
      *
      * @return void
@@ -751,6 +776,30 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         $client = $this->client;
 
         $client->request("GET", "/datatables/employee/show/55");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
+
+        // Check the JSON response.
+        $res = json_decode($client->getResponse()->getContent(), true);
+
+        $this->assertEquals("Shad decker", $res["name"]);
+        $this->assertEquals("Regional Director", $res["position"]);
+        $this->assertEquals("Edinburgh", $res["office"]);
+        $this->assertEquals(51, $res["age"]);
+        $this->assertEquals(1226534400, $res["startDate"]["timestamp"]);
+        $this->assertEquals(183000, $res["salary"]);
+    }
+
+    /**
+     * Tests the showAction() method.
+     *
+     * @return void
+     */
+    public function testShowActionWithDeprecatedMethod(): void {
+
+        $client = $this->client;
+
+        $client->request("GET", "/datatables/employee/deprecated-show/55");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
 

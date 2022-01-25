@@ -34,9 +34,11 @@ class DataTablesEntityHelperTest extends AbstractTestCase {
      */
     public function testIndexEntities(): void {
 
+        $count = 57;
+
         // Set the entities mock.
         $entities = [];
-        for ($i = 57; 0 < $i; --$i) {
+        for ($i = $count; 0 < $i; --$i) {
 
             $id = rand();
 
@@ -46,8 +48,10 @@ class DataTablesEntityHelperTest extends AbstractTestCase {
             $entities[] = $buffer;
         }
 
+        $entities[] = $entities[$count - 1];
+
         $res = DataTablesEntityHelper::indexEntities($entities);
-        $this->assertCount(count($entities), $res);
+        $this->assertCount($count, $res);
 
         foreach ($entities as $current) {
             $this->assertSame($current, $res[$current->getId()]);
