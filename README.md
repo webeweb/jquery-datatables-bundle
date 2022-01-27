@@ -22,15 +22,15 @@ Dry out your DataTables code by writing it all in PHP !
 
 Includes :
 
-- [DataTables 1.11.3](https://datatables.net/)
+- [DataTables 1.11.4](https://datatables.net/)
 - [DataTables AutoFill 2.3.7](https://datatables.net/extensions/autofill/) (DataTables plugin)
-- [DataTables Buttons 2.1.1](https://datatables.net/extensions/buttons/) (DataTables plugin)
+- [DataTables Buttons 2.2.2](https://datatables.net/extensions/buttons/) (DataTables plugin)
 - DataTables JSZip 2.5.0
 - DataTables pdfmake 0.1.36
 - [DataTables ColReorder 1.5.5](https://datatables.net/extensions/colreorder/) (DataTables plugin)
 - [DataTables DateTime 1.1.1](https://datatables.net/extensions/datetime/) (DataTables plugin)
 - [DataTables FixedColumns 4.0.1](https://datatables.net/extensions/fixedcolumns/) (DataTables plugin)
-- [DataTables FixedHeader 3.2.0](https://datatables.net/extensions/fixedheader/) (DataTables plugin)
+- [DataTables FixedHeader 3.2.1](https://datatables.net/extensions/fixedheader/) (DataTables plugin)
 - [DataTables KeyTable 2.6.4](https://datatables.net/extensions/keytable/) (DataTables plugin)
 - [DataTables Responsive 2.2.9](https://datatables.net/extensions/responsive/) (DataTables plugin)
 - [DataTables RowGroup 1.1.4](https://datatables.net/extensions/rowgroup/) (DataTables plugin)
@@ -38,8 +38,8 @@ Includes :
 - [DataTables Scroller 2.0.5](https://datatables.net/extensions/scroller/) (DataTables plugin)
 - [DataTables SearchBuilder 1.3.0](https://datatables.net/extensions/searchbuilder/) (DataTables plugin)
 - [DataTables SearchPanes 1.4.0](https://datatables.net/extensions/searchpanes/) (DataTables plugin)
-- [DataTables Select 1.3.3](https://datatables.net/extensions/select/) (DataTables plugin)
-- [DataTables StateRestore 1.0.1](https://datatables.net/extensions/staterestore/) (DataTables plugin)
+- [DataTables Select 1.3.4](https://datatables.net/extensions/select/) (DataTables plugin)
+- [DataTables StateRestore 1.1.0](https://datatables.net/extensions/staterestore/) (DataTables plugin)
 - [editableTable](https://github.com/mindmup/editable-table/)
 
 Provides :
