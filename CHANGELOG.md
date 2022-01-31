@@ -3,7 +3,7 @@ CHANGELOG
 
 ### [3.27.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.27.0) (2022-01-05)
 
-- Improve views organization
+- Update jQuery DataTables to 1.11.4
 
 ### [3.26.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.26.0) (2021-12-29)
 
