@@ -38,5 +38,4 @@ class DateRendererTraitTest extends AbstractTestCase {
         $this->assertEquals("2019-01-14", $obj->renderDate(new DateTime("2019-01-14")));
         $this->assertEquals("14/01/2019", $obj->renderDate(new DateTime("2019-01-14"), "d/m/Y"));
     }
-
 }
