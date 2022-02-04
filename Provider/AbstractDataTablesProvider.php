@@ -24,12 +24,24 @@ use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesEntityHelper;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\BoldTextRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\CenterAlignedRendererTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\CenterAlignedTextRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\DateRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\DateTimeRendererTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\DeletedTextRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\FloatRendererTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\InsertedTextRendererTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\ItalicTextRendererTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\JustifiedAlignedTextRendererTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\LeftAlignedTextRendererTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\MarkedTextRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\RightAlignedRendererTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\RightAlignedTextRendererTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\SmallTextRendererTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\StrikethroughTextRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\StringWrapperTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\UnderlinedTextRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorTrait;
 
 /**
@@ -44,12 +56,24 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
     use RouterTrait;
     use TranslatorTrait;
 
+    use BoldTextRendererTrait;
     use CenterAlignedRendererTrait;
+    use CenterAlignedTextRendererTrait;
     use DateRendererTrait;
     use DateTimeRendererTrait;
+    use DeletedTextRendererTrait;
     use FloatRendererTrait;
+    use InsertedTextRendererTrait;
+    use ItalicTextRendererTrait;
+    use JustifiedAlignedTextRendererTrait;
+    use LeftAlignedTextRendererTrait;
+    use MarkedTextRendererTrait;
     use RightAlignedRendererTrait;
+    use RightAlignedTextRendererTrait;
+    use SmallTextRendererTrait;
+    use StrikethroughTextRendererTrait;
     use StringWrapperTrait;
+    use UnderlinedTextRendererTrait;
 
     /**
      * Constructor.
