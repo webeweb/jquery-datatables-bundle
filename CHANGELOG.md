@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+### [3.30.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.30.0) (2022-02-04)
+
+- Add center-aligned text renderer trait
+- Add justified-aligned text renderer trait
+- Add left-aligned text renderer trait
+- Add right-aligned text renderer trait
+- Fix right-aligned renderer trait
+- Fix center-aligned renderer trait
+
 ### [3.29.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.29.0) (2022-02-04)
 
 - Add center-aligned renderer trait
