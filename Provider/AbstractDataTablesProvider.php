@@ -24,9 +24,11 @@ use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesEntityHelper;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\CenterAlignedRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\DateRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\DateTimeRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\FloatRendererTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\RightAlignedRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\StringWrapperTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorTrait;
 
@@ -42,9 +44,11 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
     use RouterTrait;
     use TranslatorTrait;
 
+    use CenterAlignedRendererTrait;
     use DateRendererTrait;
     use DateTimeRendererTrait;
     use FloatRendererTrait;
+    use RightAlignedRendererTrait;
     use StringWrapperTrait;
 
     /**
