@@ -27,7 +27,7 @@ class RightAlignedRendererTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testRenderRight(): void {
+    public function testRenderRightAligned(): void {
 
         $obj = new TestRightAlignedRendererTrait();
 
