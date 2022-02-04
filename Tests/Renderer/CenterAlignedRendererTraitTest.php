@@ -27,12 +27,12 @@ class CenterAlignedRendererTraitTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testRenderCenter(): void {
+    public function testRenderCenterAligned(): void {
 
         $obj = new TestCenterAlignedRendererTrait();
 
         $this->assertNull( $obj->renderCenterAligned(null));
         $this->assertNull( $obj->renderCenterAligned(""));
-        $this->assertEquals('<em>content</em>', $obj->renderCenterAligned("content"));
+        $this->assertEquals('<div class="align-center">content</div>', $obj->renderCenterAligned("content"));
     }
 }

@@ -31,6 +31,6 @@ trait CenterAlignedRendererTrait {
         if (null === $str || "" === $str) {
             return null;
         }
-        return StringHelper::domNode("em", $str);
+        return StringHelper::domNode("div", $str, ["class" => "align-center"]);
     }
 }
