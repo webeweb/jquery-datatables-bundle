@@ -1,9 +1,18 @@
 CHANGELOG
 =========
 
-### [3.27.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.27.0) (2022-01-05)
+### [3.29.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.29.0) (2022-02-04)
+
+- Add center-aligned renderer trait
+- Add right-aligned renderer trait
+
+### [3.28.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.28.0) (2022-01-27)
 
 - Update jQuery DataTables to 1.11.4
+
+### [3.27.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.27.0) (2021-12-29)
+
+- Improve views organization
 
 ### [3.26.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.26.0) (2021-12-29)
 
