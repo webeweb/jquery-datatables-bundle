@@ -3,7 +3,7 @@
 /*
  * This file is part of the jquery-datatables-bundle package.
  *
- * (c) 2021 WEBEWEB
+ * (c) 2022 WEBEWEB
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -31,8 +31,8 @@ class NoWrapTextRendererTraitTest extends AbstractTestCase {
 
         $obj = new TestNoWrapTextRendererTrait();
 
-        $this->assertNull( $obj->renderNoWrapText(null));
-        $this->assertNull( $obj->renderNoWrapText(""));
+        $this->assertNull($obj->renderNoWrapText(null));
+        $this->assertNull($obj->renderNoWrapText(""));
         $this->assertEquals('<span class="text-nowrap">content</span>', $obj->renderNoWrapText("content"));
     }
 }

@@ -3,7 +3,7 @@
 /*
  * This file is part of the jquery-datatables-bundle package.
  *
- * (c) 2021 WEBEWEB
+ * (c) 2022 WEBEWEB
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -31,8 +31,8 @@ class JustifiedAlignedTextRendererTraitTest extends AbstractTestCase {
 
         $obj = new TestJustifiedAlignedTextRendererTrait();
 
-        $this->assertNull( $obj->renderJustifiedAlignedText(null));
-        $this->assertNull( $obj->renderJustifiedAlignedText(""));
+        $this->assertNull($obj->renderJustifiedAlignedText(null));
+        $this->assertNull($obj->renderJustifiedAlignedText(""));
         $this->assertEquals('<span class="text-justified">content</span>', $obj->renderJustifiedAlignedText("content"));
     }
 }

@@ -3,7 +3,7 @@
 /*
  * This file is part of the jquery-datatables-bundle package.
  *
- * (c) 2021 WEBEWEB
+ * (c) 2022 WEBEWEB
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -31,8 +31,8 @@ class CenterAlignedRendererTraitTest extends AbstractTestCase {
 
         $obj = new TestCenterAlignedRendererTrait();
 
-        $this->assertNull( $obj->renderCenterAligned(null));
-        $this->assertNull( $obj->renderCenterAligned(""));
+        $this->assertNull($obj->renderCenterAligned(null));
+        $this->assertNull($obj->renderCenterAligned(""));
         $this->assertEquals('<div class="align-center">content</div>', $obj->renderCenterAligned("content"));
     }
 }

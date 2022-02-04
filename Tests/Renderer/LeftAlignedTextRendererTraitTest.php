@@ -3,7 +3,7 @@
 /*
  * This file is part of the jquery-datatables-bundle package.
  *
- * (c) 2021 WEBEWEB
+ * (c) 2022 WEBEWEB
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -31,8 +31,8 @@ class LeftAlignedTextRendererTraitTest extends AbstractTestCase {
 
         $obj = new TestLeftAlignedTextRendererTrait();
 
-        $this->assertNull( $obj->renderLeftAlignedText(null));
-        $this->assertNull( $obj->renderLeftAlignedText(""));
+        $this->assertNull($obj->renderLeftAlignedText(null));
+        $this->assertNull($obj->renderLeftAlignedText(""));
         $this->assertEquals('<span class="text-left">content</span>', $obj->renderLeftAlignedText("content"));
     }
 }
