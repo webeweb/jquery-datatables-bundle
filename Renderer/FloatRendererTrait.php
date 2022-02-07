@@ -34,4 +34,37 @@ trait FloatRendererTrait {
         }
         return number_format($number, $decimals, $decPoint, $thousandsSep);
     }
+
+    /**
+     * Render a percent.
+     *
+     * @param float|null $number The number.
+     * @return string Returns the rendered percent.
+     */
+    protected function renderPercent(?float $number): ?string {
+
+        $float = $this->renderFloat($number);
+        if (null === $float) {
+            return null;
+        }
+
+        return "$float %";
+    }
+
+    /**
+     * Render a price.
+     *
+     * @param float|null $number The number.
+     * @param string $currency The currency.
+     * @return string|null Returns the rendered price.
+     */
+    protected function renderPrice(?float $number, string $currency = "€"): ?string {
+
+        $float = $this->renderFloat($number);
+        if (null === $float) {
+            return null;
+        }
+
+        return "$float $currency";
+    }
 }

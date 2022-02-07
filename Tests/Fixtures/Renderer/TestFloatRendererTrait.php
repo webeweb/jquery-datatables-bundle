@@ -23,5 +23,7 @@ class TestFloatRendererTrait {
 
     use FloatRendererTrait {
         renderFloat as public;
+        renderPercent as public;
+        renderPrice as public;
     }
 }

@@ -36,4 +36,31 @@ class FloatRendererTraitTest extends AbstractTestCase {
         $this->assertEquals("1,000.000", $obj->renderFloat(1000, 3));
         $this->assertEquals("1 000,000", $obj->renderFloat(1000, 3, ",", " "));
     }
+
+    /**
+     * Tests the renderPercent() methods.
+     *
+     * @return void
+     */
+    public function testRenderPercent(): void {
+
+        $obj = new TestFloatRendererTrait();
+
+        $this->assertEquals(null, $obj->renderPercent(null));
+        $this->assertEquals("100.00 %", $obj->renderPercent(100));
+    }
+
+    /**
+     * Tests the renderPrice() methods.
+     *
+     * @return void
+     */
+    public function testRenderPrice(): void {
+
+        $obj = new TestFloatRendererTrait();
+
+        $this->assertEquals(null, $obj->renderPrice(null));
+        $this->assertEquals("1,000.00 €", $obj->renderPrice(1000));
+        $this->assertEquals("1,000.00 $", $obj->renderPrice(1000, "$"));
+    }
 }
