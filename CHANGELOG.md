@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+### [3.31.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.31.0) (2022-02-07)
+
+- Add Column width interface
+- Improve abstract DataTables provider
+- Improve float renderer trait
+
 ### [3.30.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.30.0) (2022-02-04)
 
 - Add center-aligned text renderer trait
