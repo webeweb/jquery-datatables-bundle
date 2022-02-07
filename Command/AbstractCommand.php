@@ -19,6 +19,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorTrait;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Command
+ * @abstract
  */
 abstract class AbstractCommand extends BaseCommand {
 

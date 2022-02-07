@@ -50,6 +50,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorTrait;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Provider
+ * @abstract
  */
 abstract class AbstractDataTablesProvider implements DataTablesProviderInterface, ColumnWidthInterface {
 
