@@ -27,6 +27,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesEntityHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\BoldTextRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\CenterAlignedRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\CenterAlignedTextRendererTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\ColumnWidthInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\DateRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\DateTimeRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\DeletedTextRendererTrait;
@@ -50,7 +51,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorTrait;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Provider
  */
-abstract class AbstractDataTablesProvider implements DataTablesProviderInterface {
+abstract class AbstractDataTablesProvider implements DataTablesProviderInterface, ColumnWidthInterface {
 
     use ButtonTwigExtensionTrait;
     use RouterTrait;
@@ -262,39 +263,6 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
             $deleteRoute = "wbw_jquery_datatables_delete";
         }
         return $this->renderRowButtons($entity, $editRoute, $deleteRoute);
-    }
-
-    /**
-     * Render a percent.
-     *
-     * @param float|null $number The number.
-     * @return string Returns the rendered percent.
-     */
-    protected function renderPercent(?float $number): ?string {
-
-        $float = $this->renderFloat($number);
-        if (null === $float) {
-            return null;
-        }
-
-        return "$float %";
-    }
-
-    /**
-     * Render a price.
-     *
-     * @param float|null $number The number.
-     * @param string $currency The currency.
-     * @return string|null Returns the rendered price.
-     */
-    protected function renderPrice(?float $number, string $currency = "€"): ?string {
-
-        $float = $this->renderFloat($number);
-        if (null === $float) {
-            return null;
-        }
-
-        return "$float $currency";
     }
 
     /**

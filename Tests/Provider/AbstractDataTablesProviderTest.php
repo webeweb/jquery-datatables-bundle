@@ -14,9 +14,12 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Provider;
 use DateTime;
 use Exception;
 use InvalidArgumentException;
+use Symfony\Component\Routing\RouterInterface;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesResponseInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\ColumnWidthInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\TestDataTablesProvider;
@@ -37,18 +40,31 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     private $buttonTwigExtension;
 
     /**
+     * DataTables provider.
+     *
+     * @var TestDataTablesProvider
+     */
+    private $dataTablesProvider;
+
+    /**
      * {@inheritDoc}
      */
     protected function setUp(): void {
         parent::setUp();
 
+        // Set a generate() closure.
+        $generate = function($name, $parameters = [], $referenceType = RouterInterface::ABSOLUTE_PATH) {
+            return $name;
+        };
+
+        // Set the Router mock.
+        $this->router->expects($this->any())->method("generate")->willReturnCallback($generate);
+
         // Set a Button Twig extension mock.
         $this->buttonTwigExtension = new ButtonTwigExtension($this->twigEnvironment);
 
-        // Set the Router mock.
-        $this->router->expects($this->any())->method("generate")->willReturnCallback(function($name, $parameters = [], $referenceType = RouterInterface::ABSOLUTE_PATH) {
-            return $name;
-        });
+        // Set a DataTables provider mock.
+        $this->dataTablesProvider = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
     }
 
     /**
@@ -58,7 +74,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      */
     public function testGetCSVExporter(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         $this->assertNull($obj->getCSVExporter());
     }
@@ -70,7 +86,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      */
     public function testGetEditor(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         $this->assertNull($obj->getEditor());
     }
@@ -82,7 +98,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      */
     public function testGetMethod(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         $this->assertNull($obj->getMethod());
     }
@@ -94,7 +110,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      */
     public function testGetOptions(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         $res = $obj->getOptions();
         $this->assertInstanceOf(DataTablesOptionsInterface::class, $res);
@@ -113,7 +129,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      */
     public function testRenderActionButtonDelete(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonDelete.html.txt");
         $this->assertEquals($res, $obj->renderActionButtonDelete(new Employee(), "deleteRoute"));
@@ -126,7 +142,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      */
     public function testRenderActionButtonDeleteWithInvalidArgumentException(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         try {
 
@@ -145,7 +161,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      */
     public function testRenderActionButtonDuplicate(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonDuplicate.html.txt");
         $this->assertEquals($res, $obj->renderActionButtonDuplicate(new Employee(), "duplicateRoute"));
@@ -158,7 +174,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      */
     public function testRenderActionButtonDuplicateWithInvalidArgumentException(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         try {
 
@@ -177,7 +193,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      */
     public function testRenderActionButtonEdit(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonEdit.html.txt");
         $this->assertEquals($res, $obj->renderActionButtonEdit(new Employee(), "editRoute"));
@@ -190,7 +206,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      */
     public function testRenderActionButtonEditWithInvalidArgumentException(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         try {
 
@@ -209,7 +225,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      */
     public function testRenderActionButtonNew(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonNew.html.txt");
         $this->assertEquals($res, $obj->renderActionButtonNew(new Employee(), "newRoute"));
@@ -222,7 +238,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      */
     public function testRenderActionButtonNewWithInvalidArgumentException(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         try {
 
@@ -241,7 +257,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      */
     public function testRenderActionButtonNewWithNullEntity(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonNew.html.txt");
         $this->assertEquals($res, $obj->renderActionButtonNew(null, "newRoute"));
@@ -254,7 +270,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      */
     public function testRenderActionButtonShow(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonShow.html.txt");
         $this->assertEquals($res, $obj->renderActionButtonShow(new Employee(), "showRoute"));
@@ -267,7 +283,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      */
     public function testRenderActionButtonShowWithInvalidArgumentException(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         try {
 
@@ -286,7 +302,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      */
     public function testRenderButtons(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         $res = <<< EOT
 <a class="btn btn-default btn-xs" title="label.edit" href="editRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-pen"></i></a> <a class="btn btn-danger btn-xs" title="label.delete" href="wbw_jquery_datatables_delete" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash"></i></a>
@@ -302,7 +318,7 @@ EOT;
      */
     public function testRenderDate(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         $this->assertEquals(null, $obj->renderDate(null));
         $this->assertEquals("14/01/2019", $obj->renderDate(new DateTime("2019-01-14")));
@@ -317,7 +333,7 @@ EOT;
      */
     public function testRenderDateTime(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         $this->assertEquals(null, $obj->renderDateTime(null));
         $this->assertEquals("14/01/2019 18:15", $obj->renderDateTime(new DateTime("2019-01-14 18:15:00")));
@@ -331,39 +347,12 @@ EOT;
      */
     public function testRenderFloat(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         $this->assertEquals(null, $obj->renderFloat(null));
         $this->assertEquals("1,000.00", $obj->renderFloat(1000));
         $this->assertEquals("1,000.000", $obj->renderFloat(1000, 3));
         $this->assertEquals("1 000,000", $obj->renderFloat(1000, 3, ",", " "));
-    }
-
-    /**
-     * Tests the renderPercent() methods.
-     *
-     * @return void
-     */
-    public function testRenderPercent(): void {
-
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
-
-        $this->assertEquals(null, $obj->renderPercent(null));
-        $this->assertEquals("100.00 %", $obj->renderPercent(100));
-    }
-
-    /**
-     * Tests the renderPrice() methods.
-     *
-     * @return void
-     */
-    public function testRenderPrice(): void {
-
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
-
-        $this->assertEquals(null, $obj->renderPrice(null));
-        $this->assertEquals("1,000.00 €", $obj->renderPrice(1000));
-        $this->assertEquals("1,000.00 $", $obj->renderPrice(1000, "$"));
     }
 
     /**
@@ -377,7 +366,7 @@ EOT;
         $entity = $this->getMockBuilder(Employee::class)->getMock();
         $entity->expects($this->any())->method("getId")->willReturn(1);
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         $this->assertEquals(["data-id" => 1], $obj->renderRow(DataTablesResponseInterface::DATATABLES_ROW_ATTR, $entity, 0));
         $this->assertNull($obj->renderRow(DataTablesResponseInterface::DATATABLES_ROW_CLASS, $entity, 0));
@@ -392,7 +381,7 @@ EOT;
      */
     public function testRenderRowButtons(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         $res = implode(" ", [
             file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonShow.html.txt"),
@@ -409,7 +398,7 @@ EOT;
      */
     public function testRenderRowButtonsWithDeleteRoute(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonDelete.html.txt");
         $this->assertEquals($res, $obj->renderRowButtons(new Employee(), null, "deleteRoute"));
@@ -422,7 +411,7 @@ EOT;
      */
     public function testRenderRowButtonsWithEditRoute(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonEdit.html.txt");
         $this->assertEquals($res, $obj->renderRowButtons(new Employee(), "editRoute"));
@@ -435,7 +424,7 @@ EOT;
      */
     public function testRenderRowButtonsWithShowRoute(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonShow.html.txt");
         $this->assertEquals($res, $obj->renderRowButtons(new Employee(), null, null, "showRoute"));
@@ -448,7 +437,7 @@ EOT;
      */
     public function testWrapContent(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
 
         $this->assertEquals("content", $obj->wrapContent(null, "content", null));
         $this->assertEquals("prefix-content", $obj->wrapContent("prefix-", "content", null));
@@ -463,7 +452,10 @@ EOT;
      */
     public function test__construct(): void {
 
-        $obj = new TestDataTablesProvider($this->router, $this->translator, $this->buttonTwigExtension);
+        $obj = $this->dataTablesProvider;
+
+        $this->assertInstanceOf(DataTablesProviderInterface::class, $obj);
+        $this->assertInstanceOf(ColumnWidthInterface::class, $obj);
 
         $this->assertSame($this->buttonTwigExtension, $obj->getButtonTwigExtension());
         $this->assertSame($this->router, $obj->getRouter());
