@@ -41,7 +41,7 @@ trait StringWrapperTrait {
             array_unshift($output, $prefix);
         }
         if (null !== $suffix) {
-            array_push($output, $suffix);
+            $output[] = $suffix;
         }
 
         return implode("", $output);
