@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.31.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.31.1) (2022-02-09)
+
+- Reorganize renderer traits
+
 ### [3.31.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.31.0) (2022-02-07)
 
 - Add Column width interface
