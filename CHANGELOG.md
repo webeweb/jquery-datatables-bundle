@@ -7,6 +7,7 @@ CHANGELOG
 - Add renderActionButtonSwitch() into abstract DataTables provider
 - Improve code quality
 - Improve unit tests
+- Update translations
 
 ### [3.31.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.31.1) (2022-02-09)
 
