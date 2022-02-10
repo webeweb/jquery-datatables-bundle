@@ -12,8 +12,11 @@ DataTablesController:
 label:
     cancel:    "Cancel"
     delete:    "Delete"
+    disable:   "Disable"
     duplicate: "Duplicate"
     edit:      "Edit"
+    enable:    "Enable"
+    new:       "New"
     show:      "Show"
 
 swal:
