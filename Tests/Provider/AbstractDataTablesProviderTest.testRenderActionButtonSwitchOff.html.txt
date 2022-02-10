@@ -1,0 +1,1 @@
+<a class="btn btn-danger btn-xs" title="label.enable" href="switchRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-toggle-off"></i></a>

@@ -296,6 +296,32 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
+     * Tests the renderActionButtonSwitch() method.
+     *
+     * @return void
+     */
+    public function testRenderActionButtonSwitchWithFalse(): void {
+
+        $obj = $this->dataTablesProvider;
+
+        $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonSwitchOff.html.txt");
+        $this->assertEquals($res, $obj->renderActionButtonSwitch(new Employee(), "switchRoute", false));
+    }
+
+    /**
+     * Tests the renderActionButtonSwitch() method.
+     *
+     * @return void
+     */
+    public function testRenderActionButtonSwitchWithTrue(): void {
+
+        $obj = $this->dataTablesProvider;
+
+        $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonSwitchOn.html.txt");
+        $this->assertEquals($res, $obj->renderActionButtonSwitch(new Employee(), "switchRoute", true));
+    }
+
+    /**
      * Tests the renderButtons() method.
      *
      * @return void
@@ -304,9 +330,10 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
 
         $obj = $this->dataTablesProvider;
 
-        $res = <<< EOT
-<a class="btn btn-default btn-xs" title="label.edit" href="editRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-pen"></i></a> <a class="btn btn-danger btn-xs" title="label.delete" href="wbw_jquery_datatables_delete" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash"></i></a>
-EOT;
+        $res = implode(" ", [
+            file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonEdit.html.txt"),
+            '<a class="btn btn-danger btn-xs" title="label.delete" href="wbw_jquery_datatables_delete" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash"></i></a>',
+        ]);
         $this->assertEquals($res, $obj->renderButtons(new Employee(), "editRoute"));
     }
 
