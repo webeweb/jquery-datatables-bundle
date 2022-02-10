@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+### [3.32.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.32.0) (2022-02-10)
+
+- Add DataTables buttons renderer trait
+- Add renderActionButtonSwitch() into abstract DataTables provider
+- Improve code quality
+- Improve unit tests
+
 ### [3.31.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.31.1) (2022-02-09)
 
 - Reorganize renderer traits
