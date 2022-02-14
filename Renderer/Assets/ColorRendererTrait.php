@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Renderer;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Renderer\Assets;
 
 use WBW\Library\Types\Helper\StringHelper;
 
@@ -17,7 +17,7 @@ use WBW\Library\Types\Helper\StringHelper;
  * Color renderer trait.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Renderer
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Renderer\Assets
  */
 trait ColorRendererTrait {
 
