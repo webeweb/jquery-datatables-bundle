@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Renderer;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Renderer\Strings;
 
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\TestStringWrapperTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings\TestStringWrapperTrait;
 
 /**
  * String wrapper trait test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Renderer
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Renderer\Strings
  */
 class StringWrapperTraitTest extends AbstractTestCase {
 

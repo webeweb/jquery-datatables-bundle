@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Renderer\StringWrapperTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings\StringWrapperTrait;
 
 /**
  * Test string wrapper trait.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings
  */
 class TestStringWrapperTrait {
 
