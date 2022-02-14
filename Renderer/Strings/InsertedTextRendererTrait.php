@@ -24,13 +24,15 @@ trait InsertedTextRendererTrait {
     /**
      * Render a inserted text.
      *
-     * @param string|null $str The string.
+     * @param string|null $text The text.
      * @return string|null Returns the inserted text.
      */
-    protected function renderInsertedText(?string $str): ?string {
-        if (null === $str || "" === $str) {
+    protected function renderInsertedText(?string $text): ?string {
+
+        if (null === $text || "" === $text) {
             return null;
         }
-        return StringHelper::domNode("ins", $str);
+
+        return StringHelper::domNode("ins", $text);
     }
 }

@@ -24,13 +24,15 @@ trait RightAlignedTextRendererTrait {
     /**
      * Render a right-aligned text.
      *
-     * @param string|null $str The string.
+     * @param string|null $text The text.
      * @return string|null Returns the right-aligned text.
      */
-    protected function renderRightAlignedText(?string $str): ?string {
-        if (null === $str || "" === $str) {
+    protected function renderRightAlignedText(?string $text): ?string {
+
+        if (null === $text || "" === $text) {
             return null;
         }
-        return StringHelper::domNode("span", $str, ["class" => "text-right"]);
+
+        return StringHelper::domNode("span", $text, ["class" => "text-right"]);
     }
 }

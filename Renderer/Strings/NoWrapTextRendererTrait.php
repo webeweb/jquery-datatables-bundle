@@ -24,13 +24,15 @@ trait NoWrapTextRendererTrait {
     /**
      * Render a no wrap text.
      *
-     * @param string|null $str The string.
+     * @param string|null $text The text.
      * @return string|null Returns the no wrap text.
      */
-    protected function renderNoWrapText(?string $str): ?string {
-        if (null === $str || "" === $str) {
+    protected function renderNoWrapText(?string $text): ?string {
+
+        if (null === $text || "" === $text) {
             return null;
         }
-        return StringHelper::domNode("span", $str, ["class" => "text-nowrap"]);
+
+        return StringHelper::domNode("span", $text, ["class" => "text-nowrap"]);
     }
 }

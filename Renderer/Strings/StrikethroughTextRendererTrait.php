@@ -24,13 +24,15 @@ trait StrikethroughTextRendererTrait {
     /**
      * Render a strikethrough text.
      *
-     * @param string|null $str The string.
+     * @param string|null $text The text.
      * @return string|null Returns the strikethrough text.
      */
-    protected function renderStrikethroughText(?string $str): ?string {
-        if (null === $str || "" === $str) {
+    protected function renderStrikethroughText(?string $text): ?string {
+
+        if (null === $text || "" === $text) {
             return null;
         }
-        return StringHelper::domNode("s", $str);
+
+        return StringHelper::domNode("s", $text);
     }
 }

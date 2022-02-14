@@ -24,13 +24,15 @@ trait MarkedTextRendererTrait {
     /**
      * Render a marked text.
      *
-     * @param string|null $str The string.
+     * @param string|null $text The text.
      * @return string|null Returns the marked text.
      */
-    protected function renderMarkedText(?string $str): ?string {
-        if (null === $str || "" === $str) {
+    protected function renderMarkedText(?string $text): ?string {
+
+        if (null === $text || "" === $text) {
             return null;
         }
-        return StringHelper::domNode("mark", $str);
+
+        return StringHelper::domNode("mark", $text);
     }
 }

@@ -24,13 +24,15 @@ trait BoldTextRendererTrait {
     /**
      * Render a bold text.
      *
-     * @param string|null $str The string.
+     * @param string|null $text The text.
      * @return string|null Returns the bold text.
      */
-    protected function renderBoldText(?string $str): ?string {
-        if (null === $str || "" === $str) {
+    protected function renderBoldText(?string $text): ?string {
+
+        if (null === $text || "" === $text) {
             return null;
         }
-        return StringHelper::domNode("strong", $str);
+
+        return StringHelper::domNode("strong", $text);
     }
 }

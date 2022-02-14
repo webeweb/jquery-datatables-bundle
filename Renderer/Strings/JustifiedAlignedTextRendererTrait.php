@@ -24,13 +24,15 @@ trait JustifiedAlignedTextRendererTrait {
     /**
      * Render a justified-aligned text.
      *
-     * @param string|null $str The string.
+     * @param string|null $text The text.
      * @return string|null Returns the justified-aligned text.
      */
-    protected function renderJustifiedAlignedText(?string $str): ?string {
-        if (null === $str || "" === $str) {
+    protected function renderJustifiedAlignedText(?string $text): ?string {
+
+        if (null === $text || "" === $text) {
             return null;
         }
-        return StringHelper::domNode("span", $str, ["class" => "text-justified"]);
+
+        return StringHelper::domNode("span", $text, ["class" => "text-justified"]);
     }
 }

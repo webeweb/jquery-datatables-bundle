@@ -24,13 +24,15 @@ trait ItalicTextRendererTrait {
     /**
      * Render a italic text.
      *
-     * @param string|null $str The string.
+     * @param string|null $text The text.
      * @return string|null Returns the italic text.
      */
-    protected function renderItalicText(?string $str): ?string {
-        if (null === $str || "" === $str) {
+    protected function renderItalicText(?string $text): ?string {
+
+        if (null === $text || "" === $text) {
             return null;
         }
-        return StringHelper::domNode("em", $str);
+
+        return StringHelper::domNode("em", $text);
     }
 }

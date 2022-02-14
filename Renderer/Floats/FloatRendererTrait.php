@@ -29,9 +29,11 @@ trait FloatRendererTrait {
      * @return string|null Returns the rendered number.
      */
     protected function renderFloat(?float $number, int $decimals = 2, string $decPoint = ".", string $thousandsSep = ","): ?string {
+
         if (null === $number) {
             return null;
         }
+
         return number_format($number, $decimals, $decPoint, $thousandsSep);
     }
 

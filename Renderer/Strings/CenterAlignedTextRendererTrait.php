@@ -24,13 +24,15 @@ trait CenterAlignedTextRendererTrait {
     /**
      * Render a center-aligned text.
      *
-     * @param string|null $str The string.
+     * @param string|null $text The text.
      * @return string|null Returns the center-aligned text.
      */
-    protected function renderCenterAlignedText(?string $str): ?string {
-        if (null === $str || "" === $str) {
+    protected function renderCenterAlignedText(?string $text): ?string {
+
+        if (null === $text || "" === $text) {
             return null;
         }
-        return StringHelper::domNode("span", $str, ["class" => "text-center"]);
+
+        return StringHelper::domNode("span", $text, ["class" => "text-center"]);
     }
 }

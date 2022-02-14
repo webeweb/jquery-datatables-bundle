@@ -24,13 +24,15 @@ trait SmallTextRendererTrait {
     /**
      * Render a small text.
      *
-     * @param string|null $str The string.
+     * @param string|null $text The text.
      * @return string|null Returns the small text.
      */
-    protected function renderSmallText(?string $str): ?string {
-        if (null === $str || "" === $str) {
+    protected function renderSmallText(?string $text): ?string {
+
+        if (null === $text || "" === $text) {
             return null;
         }
-        return StringHelper::domNode("small", $str);
+
+        return StringHelper::domNode("small", $text);
     }
 }

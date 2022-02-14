@@ -24,13 +24,15 @@ trait DeletedTextRendererTrait {
     /**
      * Render a deleted text.
      *
-     * @param string|null $str The string.
+     * @param string|null $text The text.
      * @return string|null Returns the deleted text.
      */
-    protected function renderDeletedText(?string $str): ?string {
-        if (null === $str || "" === $str) {
+    protected function renderDeletedText(?string $text): ?string {
+
+        if (null === $text || "" === $text) {
             return null;
         }
-        return StringHelper::domNode("del", $str);
+
+        return StringHelper::domNode("del", $text);
     }
 }
