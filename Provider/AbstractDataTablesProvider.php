@@ -41,8 +41,8 @@ use WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings\MarkedTextRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings\RightAlignedTextRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings\SmallTextRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings\StrikethroughTextRendererTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings\StringWrapperTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings\UnderlinedTextRendererTrait;
-use WBW\Bundle\JQuery\DataTablesBundle\Renderer\StringWrapperTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorTrait;
 
 /**
