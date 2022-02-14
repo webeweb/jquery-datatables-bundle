@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Assets;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Renderer\ImageRendererTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Renderer\Assets\ImageRendererTrait;
 
 /**
  * Test image renderer trait.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Assets
  */
 class TestImageRendererTrait {
 
