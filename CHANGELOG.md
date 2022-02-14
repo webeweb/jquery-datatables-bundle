@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+### [3.33.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.33.0) (2022-02-14)
+
+- Add Icon renderer trait
+- Improve code quality
+- Reorganize renderer traits
+
 ### [3.32.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.32.0) (2022-02-10)
 
 - Add DataTables buttons renderer trait
