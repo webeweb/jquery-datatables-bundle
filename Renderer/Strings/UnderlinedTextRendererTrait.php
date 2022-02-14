@@ -24,13 +24,15 @@ trait UnderlinedTextRendererTrait {
     /**
      * Render a underlined text.
      *
-     * @param string|null $str The string.
+     * @param string|null $text The text.
      * @return string|null Returns the underlined text.
      */
-    protected function renderUnderlinedText(?string $str): ?string {
-        if (null === $str || "" === $str) {
+    protected function renderUnderlinedText(?string $text): ?string {
+
+        if (null === $text || "" === $text) {
             return null;
         }
-        return StringHelper::domNode("u", $str);
+
+        return StringHelper::domNode("u", $text);
     }
 }
