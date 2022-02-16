@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings\TestSmall
 class SmallTextRendererTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the renderSmallText() method.
+     * Tests renderSmallText()
      *
      * @return void
      */

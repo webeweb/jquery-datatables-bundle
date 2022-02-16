@@ -45,7 +45,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the getFilters() method.
+     * Tests getFilters()
      *
      * @return void
      */
@@ -68,7 +68,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the getFunctions() method.
+     * Tests getFunctions()
      *
      * @return void
      */
@@ -159,7 +159,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the jQueryDataTablesFunction() method.
+     * Tests jQueryDataTablesFunction()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -177,7 +177,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the jQueryDataTablesFunction() method.
+     * Tests jQueryDataTablesFunction()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -192,7 +192,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the jQueryDataTablesNameFunction() method.
+     * Tests jQueryDataTablesNameFunction()
      *
      * @return void
      */
@@ -204,7 +204,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the jQueryDataTablesOptionsFunction() method.
+     * Tests jQueryDataTablesOptionsFunction()
      *
      * @return void
      */
@@ -263,7 +263,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the jQueryDataTablesStandaloneFunction() method.
+     * Tests jQueryDataTablesStandaloneFunction()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -278,7 +278,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the jQueryDataTablesStandaloneFunction() method.
+     * Tests jQueryDataTablesStandaloneFunction()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -292,7 +292,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the renderDataTablesFunction() method.
+     * Tests renderDataTablesFunction()
      *
      * @return void
      */
@@ -312,7 +312,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the renderDataTablesFunction() method.
+     * Tests renderDataTablesFunction()
      *
      * @return void
      */
@@ -326,7 +326,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the renderDataTablesFunction() method.
+     * Tests renderDataTablesFunction()
      *
      * @return void
      */
@@ -340,7 +340,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the renderDataTablesFunction() method.
+     * Tests renderDataTablesFunction()
      *
      * @return void
      */
@@ -354,7 +354,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the renderDataTablesFunction() method.
+     * Tests renderDataTablesFunction()
      *
      * @return void
      */
@@ -368,7 +368,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

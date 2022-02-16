@@ -24,7 +24,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class BadDataTablesCSVExporterExceptionTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class BadDataTablesCSVExporterExceptionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

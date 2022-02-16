@@ -24,7 +24,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Model\TestDataTablesWrappe
 class DataTablesWrapperTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the setWrapper() method.
+     * Tests setWrapper()
      *
      * @return void
      */

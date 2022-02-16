@@ -55,7 +55,7 @@ class DataTablesExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the getAlias() method.
+     * Tests getAlias()
      *
      * @return void
      */
@@ -67,7 +67,7 @@ class DataTablesExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the getConfiguration() method.
+     * Tests getConfiguration()
      *
      * @return void
      */
@@ -79,7 +79,7 @@ class DataTablesExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the load() method.
+     * Tests load()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -101,7 +101,7 @@ class DataTablesExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the load() method.
+     * Tests load()
      *
      * @return void
      */
@@ -125,7 +125,7 @@ class DataTablesExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the load() method.
+     * Tests load()
      *
      * @return void
      */
@@ -149,7 +149,7 @@ class DataTablesExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

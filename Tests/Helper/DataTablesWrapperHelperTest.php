@@ -27,7 +27,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 class DataTablesWrapperHelperTest extends AbstractTestCase {
 
     /**
-     * Tests the getLanguageUrl() method.
+     * Tests getLanguageUrl()
      *
      * @return void
      */
@@ -44,7 +44,7 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the getLanguageUrl() method.
+     * Tests getLanguageUrl()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -56,7 +56,7 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the getName() method.
+     * Tests getName()
      *
      * @return void
      */
@@ -73,7 +73,7 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the getOptions() method.
+     * Tests getOptions()
      *
      * @return void
      */

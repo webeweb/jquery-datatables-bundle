@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Translation\TestTranslator
 class TranslatorTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the translate() method.
+     * Tests translate()
      *
      * @return void
      */

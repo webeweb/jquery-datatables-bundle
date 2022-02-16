@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings\TestMarke
 class MarkedTextRendererTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the renderMarkedText() method.
+     * Tests renderMarkedText()
      *
      * @return void
      */

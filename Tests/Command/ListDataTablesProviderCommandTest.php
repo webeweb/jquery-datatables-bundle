@@ -26,7 +26,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractWebTestCase;
 class ListDataTablesProviderCommandTest extends AbstractWebTestCase {
 
     /**
-     * Tests the execute() method.
+     * Tests execute()
      *
      * @return void
      */
@@ -53,7 +53,7 @@ class ListDataTablesProviderCommandTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

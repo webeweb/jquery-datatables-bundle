@@ -24,7 +24,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesOptionsTest extends AbstractTestCase {
 
     /**
-     * Tests the addOption() method.
+     * Tests addOption()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -38,7 +38,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the getOption() method.
+     * Tests getOption()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -53,7 +53,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the hasOption() method.
+     * Tests hasOption()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -68,7 +68,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the removeOption() method.
+     * Tests removeOption()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -85,7 +85,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setOption() method.
+     * Tests setOption()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
@@ -99,7 +99,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

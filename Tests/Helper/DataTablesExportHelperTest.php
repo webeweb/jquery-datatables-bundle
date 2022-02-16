@@ -24,7 +24,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesExportHelperTest extends AbstractTestCase {
 
     /**
-     * Tests the convert() method.
+     * Tests convert()
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class DataTablesExportHelperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the convert() method.
+     * Tests convert()
      *
      * @return void
      */
@@ -48,7 +48,7 @@ class DataTablesExportHelperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the isWindows() method.
+     * Tests isWindows()
      *
      * @return void
      */
@@ -61,7 +61,7 @@ class DataTablesExportHelperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the isWindows() method.
+     * Tests isWindows()
      *
      * @return void
      */
@@ -74,7 +74,7 @@ class DataTablesExportHelperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the isWindows() method.
+     * Tests isWindows()
      *
      * @return void
      */

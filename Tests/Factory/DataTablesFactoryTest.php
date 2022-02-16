@@ -33,7 +33,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 class DataTablesFactoryTest extends AbstractTestCase {
 
     /**
-     * Tests the newResponse() method.
+     * Tests newResponse()
      *
      * @return void
      */
@@ -45,7 +45,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the newResponse() method.
+     * Tests newResponse()
      *
      * @return void
      */
@@ -69,7 +69,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the newWrapper() method.
+     * Tests newWrapper()
      *
      * @return void
      */
@@ -96,7 +96,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the parseColumn() method.
+     * Tests parseColumn()
      *
      * @return void
      */
@@ -121,7 +121,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the parseColumn() method.
+     * Tests parseColumn()
      *
      * @return void
      */
@@ -142,7 +142,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the parseColumn() method.
+     * Tests parseColumn()
      *
      * @return void
      */
@@ -163,7 +163,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the parseColumn() method.
+     * Tests parseColumn()
      *
      * @return void
      */
@@ -184,7 +184,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the parseColumn() method.
+     * Tests parseColumn()
      *
      * @return void
      */
@@ -205,7 +205,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the parseColumn() method.
+     * Tests parseColumn()
      *
      * @return void
      */
@@ -231,7 +231,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the parseColumns() method.
+     * Tests parseColumns()
      *
      * @return void
      */
@@ -249,7 +249,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the parseColumns() method.
+     * Tests parseColumns()
      *
      * @return void
      */
@@ -270,7 +270,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the parseOrder() method.
+     * Tests parseOrder()
      *
      * @return void
      */
@@ -292,7 +292,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the parseOrder() method.
+     * Tests parseOrder()
      *
      * @return void
      */
@@ -311,7 +311,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the parseOrder() method.
+     * Tests parseOrder()
      *
      * @return void
      */
@@ -330,7 +330,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the parseOrder() method.
+     * Tests parseOrder()
      *
      * @return void
      */
@@ -349,7 +349,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the parseOrders() method.
+     * Tests parseOrders()
      *
      * @return void
      */
@@ -369,7 +369,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the parseRequest() method.
+     * Tests parseRequest()
      *
      * @return void
      */
@@ -397,7 +397,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the parseRequest() method.
+     * Tests parseRequest()
      *
      * @return void
      */
@@ -425,7 +425,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the parseSearch() method.
+     * Tests parseSearch()
      *
      * @return void
      */
@@ -447,7 +447,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the parseSearch() method.
+     * Tests parseSearch()
      *
      * @return void
      */
@@ -470,7 +470,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the parseSearch() method.
+     * Tests parseSearch()
      *
      * @return void
      */
@@ -493,7 +493,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the parseWrapper() method.
+     * Tests parseWrapper()
      *
      * @return void
      */

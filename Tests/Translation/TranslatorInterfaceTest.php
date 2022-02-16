@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorInterface;
 class TranslatorInterfaceTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

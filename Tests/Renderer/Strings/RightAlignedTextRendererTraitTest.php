@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings\TestRight
 class RightAlignedTextRendererTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the renderRightAlignedText() method.
+     * Tests renderRightAlignedText()
      *
      * @return void
      */

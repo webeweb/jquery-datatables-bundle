@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings\TestUnder
 class UnderlinedTextRendererTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the renderUnderlinedText() method.
+     * Tests renderUnderlinedText()
      *
      * @return void
      */

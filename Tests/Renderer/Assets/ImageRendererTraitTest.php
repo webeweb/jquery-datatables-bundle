@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Assets\TestImageR
 class ImageRendererTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the renderImage() method.
+     * Tests renderImage()
      *
      * @return void
      */

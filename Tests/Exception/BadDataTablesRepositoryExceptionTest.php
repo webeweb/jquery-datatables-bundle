@@ -24,7 +24,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class BadDataTablesRepositoryExceptionTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

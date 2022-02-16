@@ -32,7 +32,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the deleteAction() method.
+     * Tests deleteAction()
      *
      * @return void
      */
@@ -50,7 +50,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the deleteAction() method.
+     * Tests deleteAction()
      *
      * @return void
      */
@@ -68,7 +68,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the deleteAction() method.
+     * Tests deleteAction()
      *
      * @return void
      */
@@ -91,7 +91,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the deleteAction() method.
+     * Tests deleteAction()
      *
      * @return void
      */
@@ -114,7 +114,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the editAction() method.
+     * Tests editAction()
      *
      * @return void
      */
@@ -137,7 +137,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the editAction() method.
+     * Tests editAction()
      *
      * @return void
      */
@@ -153,7 +153,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the editAction() method.
+     * Tests editAction()
      *
      * @return void
      */
@@ -169,7 +169,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the editAction() method.
+     * Tests editAction()
      *
      * @return void
      */
@@ -192,7 +192,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the editAction() method.
+     * Tests editAction()
      *
      * @return void
      */
@@ -215,7 +215,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the exportAction() method.
+     * Tests exportAction()
      *
      * @return void
      */
@@ -230,7 +230,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the exportAction() method.
+     * Tests exportAction()
      *
      * @return void
      */
@@ -246,7 +246,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the indexAction() method.
+     * Tests indexAction()
      *
      * @return void
      */
@@ -260,7 +260,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the indexAction() method.
+     * Tests indexAction()
      *
      * @return void
      */
@@ -276,7 +276,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the indexAction() method.
+     * Tests indexAction()
      *
      * @return void
      */
@@ -325,7 +325,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the indexAction() method.
+     * Tests indexAction()
      *
      * @return void
      */
@@ -372,7 +372,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the indexAction() method.
+     * Tests indexAction()
      *
      * @return void
      */
@@ -410,7 +410,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the indexAction() method.
+     * Tests indexAction()
      *
      * @return void
      */
@@ -449,7 +449,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the indexAction() method.
+     * Tests indexAction()
      *
      * @return void
      */
@@ -485,7 +485,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the indexAction() method.
+     * Tests indexAction()
      *
      * @return void
      */
@@ -523,7 +523,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the indexAction() method.
+     * Tests indexAction()
      *
      * @return void
      */
@@ -553,7 +553,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the indexAction() method.
+     * Tests indexAction()
      *
      * @return void
      */
@@ -591,7 +591,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the indexAction() method.
+     * Tests indexAction()
      *
      * @return void
      */
@@ -620,7 +620,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the optionsAction() method.
+     * Tests optionsAction()
      *
      * @return void
      */
@@ -645,7 +645,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the optionsAction() method.
+     * Tests optionsAction()
      *
      * @return void
      */
@@ -670,7 +670,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the renderAction() method.
+     * Tests renderAction()
      *
      * @return void
      */
@@ -697,7 +697,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the renderAction() method.
+     * Tests renderAction()
      *
      * @return void
      */
@@ -724,7 +724,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the serializeAction() method.
+     * Tests serializeAction()
      *
      * @return void
      */
@@ -748,7 +748,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the serializeAction() method.
+     * Tests serializeAction()
      *
      * @return void
      */
@@ -767,7 +767,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the showAction() method.
+     * Tests showAction()
      *
      * @return void
      */
@@ -791,7 +791,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the showAction() method.
+     * Tests showAction()
      *
      * @return void
      */
@@ -815,7 +815,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the showAction() method.
+     * Tests showAction()
      *
      * @return void
      */

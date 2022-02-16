@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings\TestDelet
 class DeletedTextRendererTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the renderDeletedText() method.
+     * Tests renderDeletedText()
      *
      * @return void
      */

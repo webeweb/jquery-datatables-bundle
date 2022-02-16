@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings\TestBoldT
 class BoldTextRendererTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the renderBoldText() method.
+     * Tests renderBoldText()
      *
      * @return void
      */

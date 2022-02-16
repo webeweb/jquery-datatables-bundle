@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings\TestNoWra
 class NoWrapTextRendererTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the renderNoWrapText() method.
+     * Tests renderNoWrapText()
      *
      * @return void
      */

@@ -27,7 +27,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesEnumeratorTest extends AbstractTestCase {
 
     /**
-     * Tests the enumCellTypes() method.
+     * Tests enumCellTypes()
      *
      * @return void
      */
@@ -41,7 +41,7 @@ class DataTablesEnumeratorTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the enumDirs() method.
+     * Tests enumDirs()
      *
      * @return void
      */
@@ -55,7 +55,7 @@ class DataTablesEnumeratorTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the enumOrderSequences() method.
+     * Tests enumOrderSequences()
      *
      * @return void
      */
@@ -69,7 +69,7 @@ class DataTablesEnumeratorTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the enumParameters() method.
+     * Tests enumParameters()
      *
      * @return void
      */
@@ -87,7 +87,7 @@ class DataTablesEnumeratorTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the enumRows() method.
+     * Tests enumRows()
      *
      * @return void
      */
@@ -103,7 +103,7 @@ class DataTablesEnumeratorTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the enumTypes() method.
+     * Tests enumTypes()
      *
      * @return void
      */

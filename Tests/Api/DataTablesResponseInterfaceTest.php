@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesResponseInterfaceTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

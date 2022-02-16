@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesLoopTest extends AbstractTestCase {
 
     /**
-     * Tests the isFirst() method.
+     * Tests isFirst()
      *
      * @return void
      */
@@ -39,7 +39,7 @@ class DataTablesLoopTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the isLast() method.
+     * Tests isLast()
      *
      * @return void
      */
@@ -56,7 +56,7 @@ class DataTablesLoopTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the next() method.
+     * Tests next()
      *
      * @return void
      */
@@ -75,7 +75,7 @@ class DataTablesLoopTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

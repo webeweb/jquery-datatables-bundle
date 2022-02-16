@@ -25,7 +25,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\DateTimes\TestDat
 class DateTimeRendererTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the renderDateTime() method.
+     * Tests renderDateTime()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.

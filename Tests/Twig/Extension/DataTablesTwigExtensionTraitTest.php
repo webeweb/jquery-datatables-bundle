@@ -25,7 +25,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 class DataTablesTwigExtensionTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the setDataTablesTwigExtension() method.
+     * Tests setDataTablesTwigExtension()
      *
      * @return void
      */

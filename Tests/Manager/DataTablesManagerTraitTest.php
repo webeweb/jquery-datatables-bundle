@@ -24,7 +24,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Manager\TestDataTablesMana
 class DataTablesManagerTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the setDataTablesManager() method.
+     * Tests setDataTablesManager()
      *
      * @return void
      */
