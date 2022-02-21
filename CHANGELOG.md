@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.33.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.33.1) (2022-02-21)
+
+- Fix getDataTablesUrl()
+
 ### [3.33.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.33.0) (2022-02-14)
 
 - Add Icon renderer trait
