@@ -341,9 +341,10 @@ abstract class AbstractController extends BaseController {
 
         $this->logInfo(sprintf('DataTables controller search for an URL with name "%s"', $dtProvider->getName()), $context);
 
-        $url = $this->getRouter()->generate("wbw_jquery_datatables_index", ["name" => $dtProvider->getName()]);
         if (true === ($dtProvider instanceof DataTablesRouterInterface)) {
             $url = $dtProvider->getUrl();
+        } else {
+            $url = $this->getRouter()->generate("wbw_jquery_datatables_index", ["name" => $dtProvider->getName()]);
         }
 
         $context["_url"] = $url;
