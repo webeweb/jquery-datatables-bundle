@@ -1,6 +1,21 @@
 CHANGELOG
 =========
 
+### [3.34.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.34.0) (2022-02-23)
+
+> IMPORTANT NOTICE: The following methods has been deprecated
+> - WBW\Bundle\JQuery\DataTablesBundle\Repository\DefaultDataTablesRepository::buildDataTablesCountExported()
+> - WBW\Bundle\JQuery\DataTablesBundle\Repository\DefaultDataTablesRepository::buildDataTablesCountFiltered()
+> - WBW\Bundle\JQuery\DataTablesBundle\Repository\DefaultDataTablesRepository::buildDataTablesCountTotal()
+> - WBW\Bundle\JQuery\DataTablesBundle\Repository\DefaultDataTablesRepository::buildDataTablesExportAll()
+> - WBW\Bundle\JQuery\DataTablesBundle\Repository\DefaultDataTablesRepository::buildDataTablesFindAll()
+
+- Add dataTablesCountExportedQueryBuilder()
+- Add dataTablesCountFilteredQueryBuilder()
+- Add dataTablesCountTotalQueryBuilder()
+- Add dataTablesExportAllQueryBuilder()
+- Add dataTablesFindAllQueryBuilder()
+
 ### [3.33.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.33.1) (2022-02-21)
 
 - Fix getDataTablesUrl()
