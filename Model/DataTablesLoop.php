@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Model;
 
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesLoopInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Model\Attribute\ArrayEntitiesTrait;
 
 /**
  * DataTables loop.
@@ -21,12 +22,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesLoopInterface;
  */
 class DataTablesLoop implements DataTablesLoopInterface {
 
-    /**
-     * Entities.
-     *
-     * @var object[]
-     */
-    private $entities;
+    use ArrayEntitiesTrait;
 
     /**
      * Index.
@@ -43,13 +39,6 @@ class DataTablesLoop implements DataTablesLoopInterface {
     public function __construct(array $entities) {
         $this->setEntities($entities);
         $this->setIndex(1);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getEntities(): array {
-        return $this->entities;
     }
 
     /**
@@ -108,17 +97,6 @@ class DataTablesLoop implements DataTablesLoopInterface {
      */
     public function next(): DataTablesLoop {
         ++$this->index;
-        return $this;
-    }
-
-    /**
-     * Set the entities.
-     *
-     * @param object[] $entities The entities.
-     * @return DataTablesLoop Returns this loop.
-     */
-    protected function setEntities(array $entities): DataTablesLoop {
-        $this->entities = $entities;
         return $this;
     }
 
