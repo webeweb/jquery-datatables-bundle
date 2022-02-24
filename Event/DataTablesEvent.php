@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Event;
 
 use WBW\Bundle\CoreBundle\Event\AbstractEvent;
+use WBW\Bundle\JQuery\DataTablesBundle\Model\Attribute\ArrayEntitiesTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderTrait;
 
@@ -23,6 +24,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderTrait;
  */
 class DataTablesEvent extends AbstractEvent {
 
+    use ArrayEntitiesTrait;
     use DataTablesProviderTrait;
 
     /**
@@ -96,13 +98,6 @@ class DataTablesEvent extends AbstractEvent {
     const PRE_SHOW = "wbw.jquery.datatables.event.pre_show";
 
     /**
-     * Entities.
-     *
-     * @var array
-     */
-    private $entities;
-
-    /**
      * Constructor.
      *
      * @param string $eventName The name.
@@ -114,25 +109,5 @@ class DataTablesEvent extends AbstractEvent {
 
         $this->setEntities($entities);
         $this->setProvider($provider);
-    }
-
-    /**
-     * Get the entities.
-     *
-     * @return object[] Returns the entities.
-     */
-    public function getEntities(): array {
-        return $this->entities;
-    }
-
-    /**
-     * Set the entities.
-     *
-     * @param object[] $entities The entities.
-     * @return DataTablesEvent Returns this event.
-     */
-    protected function setEntities(array $entities): DataTablesEvent {
-        $this->entities = $entities;
-        return $this;
     }
 }
