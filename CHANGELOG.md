@@ -5,6 +5,7 @@ CHANGELOG
 
 - Add array entities trait
 - Improve code quality
+- Improve PHPDoc
 
 ### [3.34.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.34.0) (2022-02-23)
 
