@@ -4,6 +4,7 @@ CHANGELOG
 ### master
 
 - Add array entities trait
+- Improve code quality
 
 ### [3.34.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.34.0) (2022-02-23)
 
