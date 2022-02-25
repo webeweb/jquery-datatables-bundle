@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManagerTrait;
 /**
  * Test DataTables manager trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Manager
  */
 class TestDataTablesManagerTrait {

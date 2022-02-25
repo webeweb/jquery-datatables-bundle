@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension;
 /**
  * DataTables Twig extension trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension
  */
 trait DataTablesTwigExtensionTrait {

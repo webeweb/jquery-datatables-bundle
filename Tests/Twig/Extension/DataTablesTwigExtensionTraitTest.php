@@ -19,7 +19,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 /**
  * DataTables Twig extension trait test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Twig\Extension
  */
 class DataTablesTwigExtensionTraitTest extends AbstractTestCase {

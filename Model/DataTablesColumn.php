@@ -19,7 +19,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesSearchInterface;
 /**
  * DataTables column.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Model
  */
 class DataTablesColumn implements DataTablesColumnInterface {

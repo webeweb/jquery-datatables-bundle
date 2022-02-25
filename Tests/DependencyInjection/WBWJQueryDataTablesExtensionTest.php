@@ -24,7 +24,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 /**
  * DataTables extension test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection
  */
 class DataTablesExtensionTest extends AbstractTestCase {

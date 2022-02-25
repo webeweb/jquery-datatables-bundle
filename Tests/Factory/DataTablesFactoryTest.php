@@ -27,7 +27,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 /**
  * DataTables factory test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Factory
  */
 class DataTablesFactoryTest extends AbstractTestCase {

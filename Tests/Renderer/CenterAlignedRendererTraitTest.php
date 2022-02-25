@@ -17,7 +17,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\TestCenterAligned
 /**
  * Center-aligned renderer trait test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Renderer
  */
 class CenterAlignedRendererTraitTest extends AbstractTestCase {

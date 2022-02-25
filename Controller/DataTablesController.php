@@ -35,7 +35,7 @@ use WBW\Library\Types\Helper\BooleanHelper;
 /**
  * DataTables controller.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Controller
  */
 class DataTablesController extends AbstractController {

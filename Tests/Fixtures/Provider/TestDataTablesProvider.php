@@ -18,7 +18,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\AbstractDataTablesProvider;
 /**
  * Test DataTables provider.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider
  */
 class TestDataTablesProvider extends AbstractDataTablesProvider {

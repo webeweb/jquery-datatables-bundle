@@ -22,7 +22,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Entity\DataTablesEntityInterface;
 /**
  * DataTables entity helper.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Helper
  */
 class DataTablesEntityHelper {

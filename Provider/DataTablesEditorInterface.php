@@ -18,7 +18,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
 /**
  * DataTables editor interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Provider
  */
 interface DataTablesEditorInterface extends ProviderInterface {

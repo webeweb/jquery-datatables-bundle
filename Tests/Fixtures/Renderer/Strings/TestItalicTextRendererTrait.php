@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings\ItalicTextRendererTrait;
 /**
  * Test italic text renderer trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings
  */
 class TestItalicTextRendererTrait {

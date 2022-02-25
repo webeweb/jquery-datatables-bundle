@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Renderer\Assets\ImageRendererTrait;
 /**
  * Test image renderer trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Assets
  */
 class TestImageRendererTrait {

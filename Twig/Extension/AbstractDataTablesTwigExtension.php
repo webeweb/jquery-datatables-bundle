@@ -24,7 +24,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
 /**
  * Abstract DataTables Twig extension.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension
  * @abstract
  */

@@ -16,7 +16,7 @@ use WBW\Library\Types\Exception\StringArgumentException;
 /**
  * DataTables options interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Api
  */
 interface DataTablesOptionsInterface {

@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
 /**
  * DataTables provider trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Provider
  */
 trait DataTablesProviderTrait {

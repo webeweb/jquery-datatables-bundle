@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings\LeftAlignedTextRendererT
 /**
  * Test left-aligned text renderer trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings
  */
 class TestLeftAlignedTextRendererTrait {

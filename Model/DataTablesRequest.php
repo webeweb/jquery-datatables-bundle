@@ -20,7 +20,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesSearchInterface;
 /**
  * DataTables request.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Model
  */
 class DataTablesRequest implements DataTablesRequestInterface {

@@ -18,7 +18,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle;
 /**
  * jQuery DataTables bundle test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests
  */
 class WBWJQueryDataTablesBundleTest extends AbstractTestCase {

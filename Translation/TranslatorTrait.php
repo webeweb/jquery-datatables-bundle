@@ -16,7 +16,7 @@ use WBW\Bundle\CoreBundle\Service\TranslatorTrait as BaseTranslatorTrait;
 /**
  * Translator trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Translation
  */
 trait TranslatorTrait {

@@ -14,7 +14,7 @@ use WBW\Bundle\CoreBundle\Tests\AbstractKernel as BaseKernel;
 /**
  * Test kernel.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  */
 class TestKernel extends BaseKernel {
 

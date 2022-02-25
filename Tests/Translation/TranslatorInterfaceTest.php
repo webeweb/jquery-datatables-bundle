@@ -17,7 +17,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorInterface;
 /**
  * Translator interface test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Translation
  */
 class TranslatorInterfaceTest extends AbstractTestCase {

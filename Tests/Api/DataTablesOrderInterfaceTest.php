@@ -17,7 +17,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 /**
  * DataTables order interface test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Api
  */
 class DataTablesOrderInterfaceTest extends AbstractTestCase {

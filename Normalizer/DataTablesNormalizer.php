@@ -18,7 +18,7 @@ use WBW\Library\Types\Helper\ArrayHelper;
 /**
  * DataTables normalizer.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Normalizer
  */
 class DataTablesNormalizer {

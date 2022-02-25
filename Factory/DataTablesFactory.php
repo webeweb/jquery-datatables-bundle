@@ -35,7 +35,7 @@ use WBW\Library\Types\Helper\BooleanHelper;
 /**
  * DataTables factory.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Factory
  */
 class DataTablesFactory {

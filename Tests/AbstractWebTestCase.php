@@ -20,7 +20,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 /**
  * Abstract web test case.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests
  * @abstract
  */

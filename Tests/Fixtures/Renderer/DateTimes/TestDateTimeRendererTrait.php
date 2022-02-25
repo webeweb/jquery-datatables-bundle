@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Renderer\DateTimes\DateTimeRendererTrait;
 /**
  * Test date/time renderer trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\DateTimes
  */
 class TestDateTimeRendererTrait {

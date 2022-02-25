@@ -17,7 +17,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings\TestStrin
 /**
  * String wrapper trait test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Renderer\Strings
  */
 class StringWrapperTraitTest extends AbstractTestCase {

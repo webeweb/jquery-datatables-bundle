@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
 /**
  * DataTables router interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Provider
  */
 interface DataTablesRouterInterface {

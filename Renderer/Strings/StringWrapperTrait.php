@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings;
 /**
  * String wrapper trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings
  */
 trait StringWrapperTrait {

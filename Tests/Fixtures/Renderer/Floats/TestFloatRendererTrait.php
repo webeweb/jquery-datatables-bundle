@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Renderer\Floats\FloatRendererTrait;
 /**
  * Test float renderer trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Floats
  */
 class TestFloatRendererTrait {

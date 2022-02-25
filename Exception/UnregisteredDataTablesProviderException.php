@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Exception;
 /**
  * Unregistered DataTables provider exception.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Exception
  */
 class UnregisteredDataTablesProviderException extends AbstractDataTablesException {

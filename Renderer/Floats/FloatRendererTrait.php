@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Renderer\Floats;
 /**
  * Float renderer trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Renderer\Floats
  */
 trait FloatRendererTrait {

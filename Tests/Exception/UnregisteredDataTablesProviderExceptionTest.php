@@ -17,7 +17,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 /**
  * Unregistered DataTables provider exception test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception
  */
 class UnregisteredDataTablesProviderExceptionTest extends AbstractTestCase {

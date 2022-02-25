@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderTrait;
 /**
  * Test DataTables provider trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider
  */
 class TestDataTablesProviderTrait {

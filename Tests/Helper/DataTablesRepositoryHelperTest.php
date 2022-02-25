@@ -21,7 +21,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 /**
  * DataTables repository helper test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper
  */
 class DataTablesRepositoryHelperTest extends AbstractTestCase {

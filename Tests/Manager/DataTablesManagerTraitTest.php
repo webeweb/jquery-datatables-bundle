@@ -18,7 +18,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Manager\TestDataTablesMana
 /**
  * DataTables manager trait test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Manager
  */
 class DataTablesManagerTraitTest extends AbstractTestCase {

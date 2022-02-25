@@ -18,7 +18,7 @@ use WBW\Bundle\CoreBundle\DependencyInjection\ConfigurationHelper;
 /**
  * Configuration.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection
  */
 class Configuration implements ConfigurationInterface {

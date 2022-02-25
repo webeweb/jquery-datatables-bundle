@@ -48,7 +48,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorTrait;
 /**
  * Abstract DataTables provider.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Provider
  * @abstract
  */

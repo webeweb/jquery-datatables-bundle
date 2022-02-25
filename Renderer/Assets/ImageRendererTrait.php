@@ -16,7 +16,7 @@ use WBW\Library\Types\Helper\StringHelper;
 /**
  * Image renderer trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Renderer\Assets
  */
 trait ImageRendererTrait {

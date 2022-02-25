@@ -16,7 +16,7 @@ use WBW\Bundle\CoreBundle\Provider\ProviderInterface;
 /**
  * DataTables CSV exporter interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Provider
  */
 interface DataTablesCSVExporterInterface extends ProviderInterface {

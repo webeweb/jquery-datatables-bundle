@@ -17,7 +17,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Translation\TestTranslator
 /**
  * Translator trait test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Translation
  */
 class TranslatorTraitTest extends AbstractTestCase {

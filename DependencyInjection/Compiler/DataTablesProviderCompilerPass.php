@@ -20,7 +20,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 /**
  * jQuery DataTables provider compiler pass.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Compiler
  */
 class DataTablesProviderCompilerPass implements CompilerPassInterface {

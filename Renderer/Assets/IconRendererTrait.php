@@ -17,7 +17,7 @@ use WBW\Bundle\BootstrapBundle\Twig\Extension\RendererTwigExtension;
 /**
  * Icon renderer trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Renderer\Assets
  */
 trait IconRendererTrait {

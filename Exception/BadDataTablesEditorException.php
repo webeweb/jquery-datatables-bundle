@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Exception;
 /**
  * BadDataTables editor exception.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Exception
  */
 class BadDataTablesEditorException extends AbstractDataTablesException {

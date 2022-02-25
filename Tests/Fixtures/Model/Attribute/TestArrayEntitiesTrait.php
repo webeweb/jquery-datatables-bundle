@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Model\Attribute\ArrayEntitiesTrait;
 /**
  * Test array entities trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Model\Attribute
  */
 class TestArrayEntitiesTrait {

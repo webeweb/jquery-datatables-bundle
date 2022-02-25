@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesSearchInterface;
 /**
  * DataTables search.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Api
  */
 class DataTablesSearch implements DataTablesSearchInterface {

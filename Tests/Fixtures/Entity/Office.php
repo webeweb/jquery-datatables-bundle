@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity;
 /**
  * Office.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity
  */
 class Office {

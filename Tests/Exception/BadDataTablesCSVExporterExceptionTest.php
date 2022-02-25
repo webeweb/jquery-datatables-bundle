@@ -18,7 +18,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 /**
  * Bad DataTables CSV exporter exception test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception
  */
 class BadDataTablesCSVExporterExceptionTest extends AbstractTestCase {

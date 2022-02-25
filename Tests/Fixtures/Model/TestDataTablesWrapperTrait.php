@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesWrapperTrait;
 /**
  * Test DataTables wrapper trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Model
  */
 class TestDataTablesWrapperTrait {

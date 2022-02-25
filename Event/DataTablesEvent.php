@@ -19,7 +19,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderTrait;
 /**
  * DataTables event.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Event
  */
 class DataTablesEvent extends AbstractEvent {

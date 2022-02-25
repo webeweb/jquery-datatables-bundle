@@ -18,7 +18,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Assets\TestIconRe
 /**
  * Icon renderer trait test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Renderer\Assets
  */
 class IconRendererTraitTest extends AbstractTestCase {

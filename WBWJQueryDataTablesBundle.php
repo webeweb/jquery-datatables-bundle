@@ -21,7 +21,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\WBWJQueryDataTablesEx
 /**
  * jQuery DataTables bundle.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\jQuery\DatatablesBundle
  */
 class WBWJQueryDataTablesBundle extends Bundle implements AssetsProviderInterface {

@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Exception;
 /**
  * Already registered DataTables provider exception.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Exception
  */
 class AlreadyRegisteredDataTablesProviderException extends AbstractDataTablesException {

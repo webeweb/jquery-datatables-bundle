@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtensionTra
 /**
  * Test DataTables Twig extension trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Twig\Extension
  */
 class TestDataTablesTwigExtensionTrait {

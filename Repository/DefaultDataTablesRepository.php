@@ -20,7 +20,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 /**
  * Default DataTables repository.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Repository
  * @abstract
  */

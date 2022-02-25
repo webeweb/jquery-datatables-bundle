@@ -20,7 +20,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 /**
  * List DataTables provider command.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Command
  */
 class ListDataTablesProviderCommand extends AbstractCommand {

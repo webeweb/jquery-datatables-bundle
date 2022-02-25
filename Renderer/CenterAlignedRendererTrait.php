@@ -16,7 +16,7 @@ use WBW\Library\Types\Helper\StringHelper;
 /**
  * Center-aligned renderer trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Renderer
  */
 trait CenterAlignedRendererTrait {

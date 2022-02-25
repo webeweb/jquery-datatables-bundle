@@ -21,7 +21,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee;
 /**
  * DataTables entity helper.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper
  */
 class DataTablesEntityHelperTest extends AbstractTestCase {

@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Office;
 /**
  * Office DataTables provider.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider
  */
 class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTablesRouterInterface {

@@ -23,7 +23,7 @@ use WBW\Library\Types\Helper\StringHelper;
 /**
  * Test fixtures.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\App
  */
 class TestFixtures {

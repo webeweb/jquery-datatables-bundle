@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;
 /**
  * DataTables options.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Model
  */
 class DataTablesOptions implements DataTablesOptionsInterface {

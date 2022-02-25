@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOrderInterface;
 /**
  * DataTables order.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Model
  */
 class DataTablesOrder implements DataTablesOrderInterface {

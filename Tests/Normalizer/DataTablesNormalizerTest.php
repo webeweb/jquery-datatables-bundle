@@ -19,7 +19,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 /**
  * DataTables normalizer test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Normalizer
  */
 class DataTablesNormalizerTest extends AbstractTestCase {

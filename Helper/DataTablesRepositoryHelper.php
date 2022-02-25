@@ -17,7 +17,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesWrapperInterface;
 /**
  * DataTables repository helper.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Helper
  */
 class DataTablesRepositoryHelper {

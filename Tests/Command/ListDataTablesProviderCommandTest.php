@@ -20,7 +20,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractWebTestCase;
 /**
  * List DataTables provider command test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Command
  */
 class ListDataTablesProviderCommandTest extends AbstractWebTestCase {

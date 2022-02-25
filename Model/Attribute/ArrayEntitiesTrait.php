@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Model\Attribute;
 /**
  * Array entities trait.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Model\Attribute
  */
 trait ArrayEntitiesTrait {

@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 /**
  * Test DataTables factory.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Factory
  */
 class TestDataTablesFactory extends DataTablesFactory {
