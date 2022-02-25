@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
 
 use Exception;
-use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\SerializerInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Entity\DataTablesEntityInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesEntityHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
@@ -82,6 +82,6 @@ class DataTablesEntityHelperTest extends AbstractTestCase {
 
         $res = DataTablesEntityHelper::newSerializer();
 
-        $this->assertInstanceOf(Serializer::class, $res);
+        $this->assertInstanceOf(SerializerInterface::class, $res);
     }
 }

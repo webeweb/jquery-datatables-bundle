@@ -16,6 +16,7 @@ use JsonSerializable;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\SerializerInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Entity\DataTablesEntityInterface;
 
 /**
@@ -97,9 +98,9 @@ class DataTablesEntityHelper {
     /**
      * Creates a serializer.
      *
-     * @return Serializer Returns the serializer.
+     * @return SerializerInterface Returns the serializer.
      */
-    public static function newSerializer(): Serializer {
+    public static function newSerializer(): SerializerInterface {
         return new Serializer([new ObjectNormalizer()], [new JsonEncoder()]);
     }
 }
