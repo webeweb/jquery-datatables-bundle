@@ -102,7 +102,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
         $prefix = $dtProvider->getPrefix();
 
         return $this->createQueryBuilder($prefix)
-            ->select("COUNT(" . $prefix . ")");
+            ->select("COUNT($prefix)");
     }
 
     /**
@@ -126,7 +126,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
         $prefix = $dtWrapper->getMapping()->getPrefix();
 
         $qb = $this->createQueryBuilder($prefix)
-            ->select("COUNT(" . $prefix . ")");
+            ->select("COUNT($prefix)");
 
         DataTablesRepositoryHelper::appendWhere($qb, $dtWrapper);
 
@@ -154,7 +154,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
         $prefix = $dtWrapper->getMapping()->getPrefix();
 
         return $this->createQueryBuilder($prefix)
-            ->select("COUNT(" . $prefix . ")");
+            ->select("COUNT($prefix)");
     }
 
     /**
