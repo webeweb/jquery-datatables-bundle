@@ -15,8 +15,6 @@ framework:
     secret:         "ThisTokenIsNotSoSecretChangeIt"
     session:
         storage_id: "session.storage.mock_file"
-    templating:
-        engines: [ "twig" ]
     test:           ~
     translator: { fallbacks: [ "%locale%" ] }
     validation:
