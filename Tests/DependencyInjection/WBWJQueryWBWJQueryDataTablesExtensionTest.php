@@ -15,6 +15,7 @@ use Exception;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use WBW\Bundle\CoreBundle\Twig\Extension\AssetsTwigExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\Command\ListDataTablesProviderCommand;
+use WBW\Bundle\JQuery\DataTablesBundle\Controller\DataTablesController;
 use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Configuration;
 use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\WBWJQueryDataTablesExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
@@ -27,7 +28,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection
  */
-class DataTablesExtensionTest extends AbstractTestCase {
+class WBWJQueryDataTablesExtensionTest extends AbstractTestCase {
 
     /**
      * Configs.
@@ -92,6 +93,9 @@ class DataTablesExtensionTest extends AbstractTestCase {
 
         // Commands
         $this->assertInstanceOf(ListDataTablesProviderCommand::class, $this->containerBuilder->get(ListDataTablesProviderCommand::SERVICE_NAME));
+
+        // Controllers
+        $this->assertInstanceOf(DataTablesController::class, $this->containerBuilder->get(DataTablesController::SERVICE_NAME));
 
         // Managers
         $this->assertInstanceOf(DataTablesManager::class, $this->containerBuilder->get(DataTablesManager::SERVICE_NAME));

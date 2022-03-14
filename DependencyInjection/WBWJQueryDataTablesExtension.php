@@ -48,6 +48,7 @@ class WBWJQueryDataTablesExtension extends Extension {
         $fileLocator = new FileLocator(__DIR__ . "/../Resources/config");
 
         $serviceLoader = new YamlFileLoader($container, $fileLocator);
+        $serviceLoader->load("controllers.yml");
         $serviceLoader->load("services.yml");
 
         /** @var ConfigurationInterface $configuration */
