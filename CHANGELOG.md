@@ -3,7 +3,16 @@ CHANGELOG
 
 ### master
 
+> IMPORTANT NOTICE: The following Symfony versions are now not supported
+> - Symfony 3.4
+> - Symfony 4.0
+> - Symfony 4.1
+> - Symfony 4.2
+> - Symfony 4.3
+
 - Add array entities trait
+- Add PHP 8.x support
+- Add Symfony 5.x support
 - Improve code quality
 - Improve PHPDoc
 
