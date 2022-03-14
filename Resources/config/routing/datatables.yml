@@ -1,40 +1,40 @@
 # Resources/config/routing/datatables.yml
 wbw_jquery_datatables_delete:
     path: "/datatables/{name}/delete/{id}"
-    defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:delete" }
+    defaults: { _controller: "WBW\\Bundle\\JQuery\\DataTablesBundle\\Controller\\DataTablesController::deleteAction" }
     methods: [ "GET" ]
 
 wbw_jquery_datatables_edit:
     path: "/datatables/{name}/edit/{id}/{data}/{value}"
-    defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:edit", value: null }
+    defaults: { _controller: "WBW\\Bundle\\JQuery\\DataTablesBundle\\Controller\\DataTablesController::editAction", value: null }
     methods: [ "GET", "POST" ]
 
 wbw_jquery_datatables_export:
     path: "/datatables/{name}/export"
-    defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:export" }
+    defaults: { _controller: "WBW\\Bundle\\JQuery\\DataTablesBundle\\Controller\\DataTablesController::exportAction" }
     methods: [ "GET" ]
 
 wbw_jquery_datatables_index:
     path: "/datatables/{name}/index"
-    defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:index" }
+    defaults: { _controller: "WBW\\Bundle\\JQuery\\DataTablesBundle\\Controller\\DataTablesController::indexAction" }
     methods: [ "GET", "POST" ]
 
 wbw_jquery_datatables_options:
     path: "/datatables/{name}/options"
-    defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:options" }
+    defaults: { _controller: "WBW\\Bundle\\JQuery\\DataTablesBundle\\Controller\\DataTablesController::optionsAction" }
     methods: [ "GET" ]
 
 wbw_jquery_datatables_render:
     path: "/datatables/{name}/render/{alone}"
-    defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:render", alone: null }
+    defaults: { _controller: "WBW\\Bundle\\JQuery\\DataTablesBundle\\Controller\\DataTablesController::renderAction", alone: null }
     methods: [ "GET" ]
 
 wbw_jquery_datatables_serialize:
     path: "/datatables/{name}/serialize/{id}"
-    defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:serialize" }
+    defaults: { _controller: "WBW\\Bundle\\JQuery\\DataTablesBundle\\Controller\\DataTablesController::serializeAction" }
     methods: [ "GET" ]
 
 wbw_jquery_datatables_show:
     path: "/datatables/{name}/show/{id}"
-    defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:serialize" }
+    defaults: { _controller: "WBW\\Bundle\\JQuery\\DataTablesBundle\\Controller\\DataTablesController::serializeAction" }
     methods: [ "GET" ]

@@ -2,8 +2,3 @@
 wbw_jquery_datatables:
     prefix:   "/"
     resource: "@WBWJQueryDataTablesBundle/Resources/config/routing/datatables.yml"
-
-wbw_jquery_datatables_deprecated_show:
-    path: "/datatables/{name}/deprecated-show/{id}"
-    defaults: { _controller: "WBWJQueryDataTablesBundle:DataTables:show" }
-    methods: [ "GET" ]
