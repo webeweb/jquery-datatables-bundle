@@ -2,3 +2,18 @@
 wbw_jquery_datatables:
     prefix:   "/"
     resource: "@WBWJQueryDataTablesBundle/Resources/config/routing.yml"
+
+wbw_jquery_datatables_deprecated_show:
+    path: "/datatables/{name}/deprecated-show/{id}"
+    defaults: { _controller: "WBW\\Bundle\\JQuery\\DataTablesBundle\\Controller\\DataTablesController::showAction" }
+    methods: [ "GET" ]
+
+wbw_jquery_datatables_javascripts:
+    path: "/javascripts"
+    defaults: { _controller: "WBW\\Bundle\\JQuery\\DataTablesBundle\\Tests\\Fixtures\\Controller\\TestLayoutController::javascriptsAction" }
+    methods: [ "GET" ]
+
+wbw_jquery_datatables_stylesheets:
+    path: "/stylesheets"
+    defaults: { _controller: "WBW\\Bundle\\JQuery\\DataTablesBundle\\Tests\\Fixtures\\Controller\\TestLayoutController::stylesheetsAction" }
+    methods: [ "GET" ]
