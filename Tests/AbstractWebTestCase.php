@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Exception;
-use WBW\Bundle\CoreBundle\DependencyInjection\ConfigurationHelper;
+use WBW\Bundle\CoreBundle\Config\ConfigurationHelper;
 use WBW\Bundle\CoreBundle\Tests\AbstractWebTestCase as WebTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 

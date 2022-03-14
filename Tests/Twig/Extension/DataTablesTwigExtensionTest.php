@@ -15,7 +15,7 @@ use Exception;
 use Twig\Node\Node;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
-use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtension;
+use WBW\Bundle\CoreBundle\Twig\Extension\AssetsTwigExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 
@@ -28,11 +28,11 @@ use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 class DataTablesTwigExtensionTest extends AbstractTestCase {
 
     /**
-     * Renderer Twig extension.
+     * Assets Twig extension.
      *
-     * @var RendererTwigExtension
+     * @var AssetsTwigExtension
      */
-    private $rendererTwigExtension;
+    private $assetsTwigExtension;
 
     /**
      * {@inheritDoc}
@@ -41,7 +41,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         parent::setUp();
 
         // Set a Renderer Twig extension mock.
-        $this->rendererTwigExtension = new RendererTwigExtension($this->twigEnvironment);
+        $this->assetsTwigExtension = new AssetsTwigExtension($this->twigEnvironment);
     }
 
     /**
@@ -51,7 +51,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testGetFilters(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
         $res = $obj->getFilters();
         $this->assertCount(2, $res);
@@ -74,7 +74,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testGetFunctions(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
         $res = $obj->getFunctions();
         $this->assertCount(10, $res);
@@ -166,7 +166,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testJQueryDataTablesFunction(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
         $arg = [
             "selector" => "#selector",
@@ -184,7 +184,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testJQueryDataTablesFunctionWithoutArguments(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
         $arg = [];
         $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testJQueryDataTablesFunctionWithoutArguments.html.txt");
@@ -198,7 +198,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testJQueryDataTablesNameFunction(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
         $this->assertSame("dtemployee", $obj->jQueryDataTablesNameFunction($this->dtWrapper));
     }
@@ -210,7 +210,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testJQueryDataTablesOptionsFunction(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
         $res = [
             "ajax"       => [
@@ -270,7 +270,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testJQueryDataTablesStandaloneFunction(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
         $arg = ["selector" => "#selector", "language" => "French", "options" => ["columnDefs" => [["orderable" => false, "targets" => -1]]]];
         $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testJQueryDataTablesStandaloneFunction.html.txt");
@@ -285,7 +285,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testJQueryDataTablesStandaloneFunctionWithoutArguments(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
         $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testJQueryDataTablesStandaloneFunctionWithoutArguments.html.txt");
         $this->assertEquals($res, $obj->jQueryDataTablesStandaloneFunction() . "\n");
@@ -298,7 +298,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testRenderDataTablesFunction(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
         $i = 0;
         foreach ($this->dtWrapper->getColumns() as $dtColumn) {
@@ -318,7 +318,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testRenderDataTablesFunctionWithClass(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
         $arg = ["class" => "class"];
         $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testRenderDataTablesFunctionWithClass.html.txt");
@@ -332,7 +332,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testRenderDataTablesFunctionWithTFoot(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
         $arg = ["tfoot" => false];
         $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testRenderDataTablesFunctionWithTFoot.html.txt");
@@ -346,7 +346,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testRenderDataTablesFunctionWithTHead(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
         $arg = ["thead" => false];
         $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testRenderDataTablesFunctionWithTHead.html.txt");
@@ -360,7 +360,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testRenderDataTablesFunctionWithoutArguments(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
         $arg = [];
         $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testRenderDataTablesFunctionWithoutArguments.html.txt");
@@ -376,7 +376,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
 
         $this->assertEquals("wbw.jquery.datatables.twig.extension", DataTablesTwigExtension::SERVICE_NAME);
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->rendererTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
         $this->assertSame($this->twigEnvironment, $obj->getTwigEnvironment());
     }

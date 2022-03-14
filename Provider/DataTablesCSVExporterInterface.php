@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
 
-use WBW\Bundle\CoreBundle\Provider\ProviderInterface;
+use WBW\Library\Symfony\Provider\ProviderInterface;
 
 /**
  * DataTables CSV exporter interface.

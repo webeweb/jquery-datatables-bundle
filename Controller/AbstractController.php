@@ -17,7 +17,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use WBW\Bundle\BootstrapBundle\Controller\AbstractController as BaseController;
-use WBW\Bundle\CoreBundle\Model\ActionResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Event\DataTablesEvent;
@@ -36,6 +35,8 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesRouterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Repository\DataTablesRepositoryInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorInterface;
 use WBW\Library\Database\Helper\PaginateHelper;
+use WBW\Library\Symfony\Response\SimpleJsonResponseData;
+use WBW\Library\Symfony\Response\SimpleJsonResponseDataInterface;
 
 /**
  * Abstract controller.
@@ -51,10 +52,10 @@ abstract class AbstractController extends BaseController {
      *
      * @param Request $request The request.
      * @param string $name The provider name.
-     * @param ActionResponse $output The output.
+     * @param SimpleJsonResponseDataInterface $output The output.
      * @return Response Returns the response.
      */
-    protected function buildDataTablesResponse(Request $request, string $name, ActionResponse $output): Response {
+    protected function buildDataTablesResponse(Request $request, string $name, SimpleJsonResponseDataInterface $output): Response {
 
         if (true === $request->isXmlHttpRequest()) {
             return new JsonResponse($output);
@@ -389,9 +390,9 @@ abstract class AbstractController extends BaseController {
      *
      * @param Exception $ex The exception.
      * @param string $notificationBaseId The notification base id.
-     * @return ActionResponse Returns the action response.
+     * @return SimpleJsonResponseDataInterface Returns the action response.
      */
-    protected function handleDataTablesException(Exception $ex, string $notificationBaseId): ActionResponse {
+    protected function handleDataTablesException(Exception $ex, string $notificationBaseId): SimpleJsonResponseDataInterface {
 
         $this->logInfo($ex->getMessage());
 
@@ -419,13 +420,13 @@ abstract class AbstractController extends BaseController {
      *
      * @param int $status The status.
      * @param string $notificationId The notification id.
-     * @return ActionResponse Returns the action response.
+     * @return SimpleJsonResponseDataInterface Returns the action response.
      */
-    protected function prepareActionResponse(int $status, string $notificationId): ActionResponse {
+    protected function prepareActionResponse(int $status, string $notificationId): SimpleJsonResponseDataInterface {
 
         $notify = $this->getTranslator()->trans($notificationId, [], TranslatorInterface::DOMAIN);
 
-        $response = new ActionResponse();
+        $response = new SimpleJsonResponseData();
         $response->setStatus($status);
         $response->setNotify($notify);
 

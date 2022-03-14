@@ -13,13 +13,13 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension;
 
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 use Twig\Environment;
-use WBW\Bundle\CoreBundle\Model\Attribute\StringEnvironmentTrait;
 use WBW\Bundle\CoreBundle\Twig\Extension\AbstractTwigExtension;
-use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtension;
-use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtensionTrait;
+use WBW\Bundle\CoreBundle\Twig\Extension\AssetsTwigExtension;
+use WBW\Bundle\CoreBundle\Twig\Extension\AssetsTwigExtensionTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesWrapperInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
+use WBW\Library\Traits\Strings\StringEnvironmentTrait;
 
 /**
  * Abstract DataTables Twig extension.
@@ -30,21 +30,21 @@ use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
  */
 abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
 
-    use RendererTwigExtensionTrait;
+    use AssetsTwigExtensionTrait;
     use StringEnvironmentTrait;
 
     /**
      * Constructor.
      *
      * @param Environment $twigEnvironment The Twig environment.
-     * @param RendererTwigExtension $rendererTwigExtension The renderer Twig extension.
+     * @param AssetsTwigExtension $assetsTwigExtension The assets Twig extension.
      * @param string $environment The environment
      */
-    public function __construct(Environment $twigEnvironment, RendererTwigExtension $rendererTwigExtension, string $environment) {
+    public function __construct(Environment $twigEnvironment, AssetsTwigExtension $assetsTwigExtension, string $environment) {
         parent::__construct($twigEnvironment);
 
         $this->setEnvironment($environment);
-        $this->setRendererTwigExtension($rendererTwigExtension);
+        $this->setAssetsTwigExtension($assetsTwigExtension);
     }
 
     /**
@@ -92,7 +92,7 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
 
         $javascript = str_replace($searches, $replaces, $template);
 
-        return $this->getRendererTwigExtension()->coreScriptFilter($javascript);
+        return $this->getAssetsTwigExtension()->coreScriptFilter($javascript);
     }
 
     /**
@@ -116,7 +116,7 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
 
         $javascript = str_replace($searches, $replaces, $template);
 
-        return $this->getRendererTwigExtension()->coreScriptFilter($javascript);
+        return $this->getAssetsTwigExtension()->coreScriptFilter($javascript);
     }
 
     /**

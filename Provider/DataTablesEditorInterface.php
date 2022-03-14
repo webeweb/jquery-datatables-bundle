@@ -12,8 +12,8 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
 
 use Exception;
-use WBW\Bundle\CoreBundle\Provider\ProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Library\Symfony\Provider\ProviderInterface;
 
 /**
  * DataTables editor interface.

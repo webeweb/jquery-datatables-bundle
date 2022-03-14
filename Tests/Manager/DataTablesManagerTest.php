@@ -13,12 +13,12 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Manager;
 
 use Exception;
 use InvalidArgumentException;
-use WBW\Bundle\CoreBundle\Color\MaterialDesignColorPalette\RedColorProvider;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Library\Symfony\Color\MaterialDesignColorPalette\RedColorProvider;
 
 /**
  * DataTables manager test.

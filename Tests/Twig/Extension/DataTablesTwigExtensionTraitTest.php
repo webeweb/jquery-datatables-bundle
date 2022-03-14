@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Twig\Extension;
 
 use WBW\Bundle\CoreBundle\Tests\AbstractTestCase;
-use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtension;
+use WBW\Bundle\CoreBundle\Twig\Extension\AssetsTwigExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Twig\Extension\TestDataTablesTwigExtensionTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 
@@ -32,7 +32,7 @@ class DataTablesTwigExtensionTraitTest extends AbstractTestCase {
     public function testSetDataTablesTwigExtension(): void {
 
         // Set a DataTables Twig extension mock.
-        $dataTablesTwigExtension = new DataTablesTwigExtension($this->twigEnvironment, new RendererTwigExtension($this->twigEnvironment), "test");
+        $dataTablesTwigExtension = new DataTablesTwigExtension($this->twigEnvironment, new AssetsTwigExtension($this->twigEnvironment), "test");
 
         $obj = new TestDataTablesTwigExtensionTrait();
 

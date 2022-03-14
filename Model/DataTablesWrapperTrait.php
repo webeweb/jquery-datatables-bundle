@@ -29,7 +29,7 @@ trait DataTablesWrapperTrait {
     private $wrapper;
 
     /**
-     * Get the the wrapper.
+     * Get the wrapper.
      *
      * @return DataTablesWrapperInterface|null Returns the wrapper.
      */

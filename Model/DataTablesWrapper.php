@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Model;
 
-use WBW\Bundle\CoreBundle\Model\UserTrait;
+use WBW\Bundle\CoreBundle\Security\Core\User\UserTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesMappingInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;

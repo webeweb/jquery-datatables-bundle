@@ -11,7 +11,6 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Renderer\Assets;
 
-use AcSent\Bundle\AppBundle\Tests\Fixtures\DataTables\Provider\TestDataTablesProvider;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Assets\TestIconRendererTrait;
 

@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection;
 
 use Exception;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
-use WBW\Bundle\CoreBundle\Twig\Extension\RendererTwigExtension;
+use WBW\Bundle\CoreBundle\Twig\Extension\AssetsTwigExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\Command\ListDataTablesProviderCommand;
 use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Configuration;
 use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\WBWJQueryDataTablesExtension;
@@ -43,7 +43,7 @@ class DataTablesExtensionTest extends AbstractTestCase {
         parent::setUp();
 
         // Set a Bootstrap renderer Twig extension mock
-        $this->containerBuilder->set("wbw.core.twig.extension.renderer", new RendererTwigExtension($this->twigEnvironment));
+        $this->containerBuilder->set(AssetsTwigExtension::SERVICE_NAME, new AssetsTwigExtension($this->twigEnvironment));
 
         // Set a configs array mock.
         $this->configs = [

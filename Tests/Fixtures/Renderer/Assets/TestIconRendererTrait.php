@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Assets;
 
-use WBW\Bundle\CoreBundle\Service\TwigEnvironmentTrait;
+use WBW\Bundle\CoreBundle\Twig\Environment\TwigEnvironmentTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\Assets\IconRendererTrait;
 
 /**

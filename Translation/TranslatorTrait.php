@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Translation;
 
-use WBW\Bundle\CoreBundle\Service\TranslatorTrait as BaseTranslatorTrait;
+use WBW\Bundle\CoreBundle\Translation\TranslatorTrait as BaseTranslatorTrait;
 
 /**
  * Translator trait.

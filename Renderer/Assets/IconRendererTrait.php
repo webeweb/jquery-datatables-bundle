@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Renderer\Assets;
 
 use Twig\Environment;
-use WBW\Bundle\BootstrapBundle\Twig\Extension\RendererTwigExtension;
+use WBW\Bundle\BootstrapBundle\Twig\Extension\AssetsTwigExtension;
 
 /**
  * Icon renderer trait.
@@ -41,6 +41,6 @@ trait IconRendererTrait {
             return "";
         }
 
-        return RendererTwigExtension::renderIcon($this->getTwigEnvironment(), $icon);
+        return AssetsTwigExtension::renderIcon($this->getTwigEnvironment(), $icon);
     }
 }

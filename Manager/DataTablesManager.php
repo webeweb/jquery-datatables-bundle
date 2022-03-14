@@ -12,12 +12,12 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Manager;
 
 use InvalidArgumentException;
-use WBW\Bundle\CoreBundle\Manager\AbstractManager;
-use WBW\Bundle\CoreBundle\Manager\ManagerInterface;
-use WBW\Bundle\CoreBundle\Provider\ProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Library\Symfony\Manager\AbstractManager;
+use WBW\Library\Symfony\Manager\ManagerInterface;
+use WBW\Library\Symfony\Provider\ProviderInterface;
 
 /**
  * DataTables manager.
