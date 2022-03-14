@@ -27,14 +27,14 @@ class DataTablesProviderCompilerPassTest extends AbstractTestCase {
     /**
      * DataTables manager.
      *
-     * @var DataTablesManager
+     * @var string
      */
     private $dataTablesManager;
 
     /**
      * DataTables provider.
      *
-     * @var DataTablesProviderInterface
+     * @var string
      */
     private $dataTablesProvider;
 
@@ -45,11 +45,10 @@ class DataTablesProviderCompilerPassTest extends AbstractTestCase {
         parent::setUp();
 
         // Set a DataTables manager mock.
-        $this->dataTablesManager = new DataTablesManager();
+        $this->dataTablesManager = DataTablesManager::class;
 
         // Set a DataTables provider mock.
-        $this->dataTablesProvider = $this->getMockBuilder(DataTablesProviderInterface::class)->getMock();
-        $this->dataTablesProvider->expects($this->any())->method("getName")->willReturn("name");
+        $this->dataTablesProvider = DataTablesProviderInterface::class;
     }
 
     /**
