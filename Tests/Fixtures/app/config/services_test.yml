@@ -23,3 +23,12 @@ services:
         class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\OfficeDataTablesProvider
         tags:
             - { name: "wbw.jquery.datatables.provider" }
+
+    WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Controller\TestLayoutController:
+        alias:  "wbw.jquery.datatables.tests.fixtures.controller.test_layout"
+        public: true
+
+    wbw.jquery.datatables.tests.fixtures.controller.test_layout:
+        class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Controller\TestLayoutController
+        calls:
+            - [ "setContainer", [ "@service_container" ] ]
