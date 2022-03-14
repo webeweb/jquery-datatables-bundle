@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Controller;
 
+use WBW\Bundle\JQuery\DataTablesBundle\Controller\DataTablesController;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractWebTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
@@ -831,5 +832,15 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         $res = json_decode($client->getResponse()->getContent(), true);
 
         $this->assertCount(0, $res);
+    }
+
+    /**
+     * Tests __construct()
+     *
+     * @return void
+     */
+    public function test__construct(): void {
+
+        $this->assertEquals("wbw.jquery.datatables.controller.datatables", DataTablesController::SERVICE_NAME);
     }
 }

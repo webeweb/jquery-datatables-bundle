@@ -41,6 +41,13 @@ use WBW\Library\Types\Helper\BooleanHelper;
 class DataTablesController extends AbstractController {
 
     /**
+     * Service name.
+     *
+     * @var string
+     */
+    const SERVICE_NAME = "wbw.jquery.datatables.controller.datatables";
+
+    /**
      * Delete an existing entity.
      *
      * @param Request $request The request.
