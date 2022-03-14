@@ -11,28 +11,4 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings;
 
-use WBW\Library\Types\Helper\StringHelper;
-
-/**
- * No wrap text renderer trait.
- *
- * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings
- */
-trait NoWrapTextRendererTrait {
-
-    /**
-     * Render a no wrap text.
-     *
-     * @param string|null $text The text.
-     * @return string|null Returns the no wrap text.
-     */
-    protected function renderNoWrapText(?string $text): ?string {
-
-        if (null === $text || "" === $text) {
-            return null;
-        }
-
-        return StringHelper::domNode("span", $text, ["class" => "text-nowrap"]);
-    }
-}
+class_alias("WBW\Bundle\BootstrapBundle\Renderer\Strings\NoWrapTextRendererTrait", "WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings\NoWrapTextRendererTrait");

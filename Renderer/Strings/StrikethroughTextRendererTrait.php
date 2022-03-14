@@ -11,28 +11,4 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings;
 
-use WBW\Library\Types\Helper\StringHelper;
-
-/**
- * Striktehrough text renderer trait.
- *
- * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings
- */
-trait StrikethroughTextRendererTrait {
-
-    /**
-     * Render a strikethrough text.
-     *
-     * @param string|null $text The text.
-     * @return string|null Returns the strikethrough text.
-     */
-    protected function renderStrikethroughText(?string $text): ?string {
-
-        if (null === $text || "" === $text) {
-            return null;
-        }
-
-        return StringHelper::domNode("s", $text);
-    }
-}
+class_alias("WBW\Library\Symfony\Renderer\Strings\StrikethroughTextRendererTrait", "WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings\StrikethroughTextRendererTrait");

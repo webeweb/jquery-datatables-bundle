@@ -11,36 +11,4 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Renderer\Assets;
 
-use WBW\Library\Types\Helper\StringHelper;
-
-/**
- * Image renderer trait.
- *
- * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Renderer\Assets
- */
-trait ImageRendererTrait {
-
-    /**
-     * Render an image.
-     *
-     * @param string|null $source The source.
-     * @param string|null $alt The alt.
-     * @param string|null $width The width.
-     * @param string|null $height The height.
-     * @return string|null Returns the rendered image.
-     */
-    protected function renderImage(?string $source, ?string $alt = null, ?string $width = null, ?string $height = null): ?string {
-
-        if (null === $source) {
-            return null;
-        }
-
-        return StringHelper::domNode("img", null, [
-            "src"    => $source,
-            "alt"    => $alt,
-            "width"  => $width,
-            "height" => $height,
-        ], true);
-    }
-}
+class_alias("WBW\Library\Symfony\Renderer\Assets\ImageRendererTrait", "WBW\Bundle\JQuery\DataTablesBundle\Renderer\Assets\ImageRendererTrait");

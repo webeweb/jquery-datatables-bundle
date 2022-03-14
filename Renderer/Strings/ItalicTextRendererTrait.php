@@ -11,28 +11,4 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings;
 
-use WBW\Library\Types\Helper\StringHelper;
-
-/**
- * Italic text renderer trait.
- *
- * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings
- */
-trait ItalicTextRendererTrait {
-
-    /**
-     * Render a italic text.
-     *
-     * @param string|null $text The text.
-     * @return string|null Returns the italic text.
-     */
-    protected function renderItalicText(?string $text): ?string {
-
-        if (null === $text || "" === $text) {
-            return null;
-        }
-
-        return StringHelper::domNode("em", $text);
-    }
-}
+class_alias("WBW\Library\Symfony\Renderer\Strings\ItalicTextRendererTrait", "WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings\ItalicTextRendererTrait");

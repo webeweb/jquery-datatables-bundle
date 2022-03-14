@@ -11,25 +11,4 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Renderer\DateTimes;
 
-use DateTime;
-use WBW\Library\Types\Helper\DateTimeHelper;
-
-/**
- * Date/time renderer trait.
- *
- * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Renderer\DateTimes
- */
-trait DateTimeRendererTrait {
-
-    /**
-     * Render a date/time.
-     *
-     * @param DateTime|null $date The date/time.
-     * @param string $format The format.
-     * @return string|null Returns the rendered date/time.
-     */
-    protected function renderDateTime(?DateTime $date, string $format = DateTimeHelper::DATETIME_FORMAT): ?string {
-        return DateTimeHelper::toString($date, $format);
-    }
-}
+class_alias("WBW\Library\Symfony\Renderer\DateTimes\DateTimeRendererTrait", "WBW\Bundle\JQuery\DataTablesBundle\Renderer\DateTimes\DateTimeRendererTrait");

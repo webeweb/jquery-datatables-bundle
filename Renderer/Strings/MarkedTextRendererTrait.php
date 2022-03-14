@@ -11,28 +11,4 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings;
 
-use WBW\Library\Types\Helper\StringHelper;
-
-/**
- * Marked text renderer trait.
- *
- * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings
- */
-trait MarkedTextRendererTrait {
-
-    /**
-     * Render a marked text.
-     *
-     * @param string|null $text The text.
-     * @return string|null Returns the marked text.
-     */
-    protected function renderMarkedText(?string $text): ?string {
-
-        if (null === $text || "" === $text) {
-            return null;
-        }
-
-        return StringHelper::domNode("mark", $text);
-    }
-}
+class_alias("WBW\Library\Symfony\Renderer\Strings\MarkedTextRendererTrait", "WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings\MarkedTextRendererTrait");

@@ -11,26 +11,4 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Renderer;
 
-use WBW\Library\Types\Helper\StringHelper;
-
-/**
- * Center-aligned renderer trait.
- *
- * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Renderer
- */
-trait CenterAlignedRendererTrait {
-
-    /**
-     * Render a center-aligned.
-     *
-     * @param string|null $str The string.
-     * @return string|null Returns the rendered center-aligned.
-     */
-    protected function renderCenterAligned(?string $str): ?string {
-        if (null === $str || "" === $str) {
-            return null;
-        }
-        return StringHelper::domNode("div", $str, ["class" => "align-center"]);
-    }
-}
+class_alias("WBW\Bundle\BootstrapBundle\Renderer\CenterAlignedRendererTrait", "WBW\Bundle\JQuery\DataTablesBundle\Renderer\CenterAlignedRendererTrait");

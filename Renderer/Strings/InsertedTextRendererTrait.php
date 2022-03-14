@@ -11,28 +11,4 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings;
 
-use WBW\Library\Types\Helper\StringHelper;
-
-/**
- * Inserted text renderer trait.
- *
- * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings
- */
-trait InsertedTextRendererTrait {
-
-    /**
-     * Render a inserted text.
-     *
-     * @param string|null $text The text.
-     * @return string|null Returns the inserted text.
-     */
-    protected function renderInsertedText(?string $text): ?string {
-
-        if (null === $text || "" === $text) {
-            return null;
-        }
-
-        return StringHelper::domNode("ins", $text);
-    }
-}
+class_alias("WBW\Library\Symfony\Renderer\Strings\InsertedTextRendererTrait", "WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings\InsertedTextRendererTrait");

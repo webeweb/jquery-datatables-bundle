@@ -11,39 +11,4 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings;
 
-/**
- * String wrapper trait.
- *
- * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings
- */
-trait StringWrapperTrait {
-
-    /**
-     * Wrap a string.
-     *
-     * @param string|null $str The string.
-     * @param string|null $prefix The prefix.
-     * @param string|null $suffix The suffix.
-     * @return string|null Returns the wrapped string.
-     */
-    protected function wrapString(?string $str, ?string $prefix, ?string $suffix): ?string {
-
-        if (null === $str) {
-            return null;
-        }
-
-        $output = [
-            $str,
-        ];
-
-        if (null !== $prefix) {
-            array_unshift($output, $prefix);
-        }
-        if (null !== $suffix) {
-            $output[] = $suffix;
-        }
-
-        return implode("", $output);
-    }
-}
+class_alias("WBW\Library\Symfony\Renderer\Strings\StringWrapperTrait", "WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings\StringWrapperTrait");

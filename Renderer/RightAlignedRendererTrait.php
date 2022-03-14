@@ -11,26 +11,4 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Renderer;
 
-use WBW\Library\Types\Helper\StringHelper;
-
-/**
- * Right-aligned renderer trait.
- *
- * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Renderer
- */
-trait RightAlignedRendererTrait {
-
-    /**
-     * Render a right-aligned.
-     *
-     * @param string|null $str The string.
-     * @return string|null Returns the rendered right-aligned.
-     */
-    protected function renderRightAligned(?string $str): ?string {
-        if (null === $str || "" === $str) {
-            return null;
-        }
-        return StringHelper::domNode("span", $str, ["class" => "pull-right"]);
-    }
-}
+class_alias("WBW\Bundle\BootstrapBundle\Renderer\RightAlignedRendererTrait", "WBW\Bundle\JQuery\DataTablesBundle\Renderer\RightAlignedRendererTrait");
