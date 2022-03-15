@@ -140,7 +140,7 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
 
         $inner = "\n" . $thead . $tfoot;
 
-        return static::coreHTMLElement("table", $inner, $attributes);
+        return static::coreHtmlElement("table", $inner, $attributes);
     }
 
     /**
@@ -158,7 +158,7 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
             "width" => $dtColumn->getWidth(),
         ];
 
-        return static::coreHTMLElement("th", $dtColumn->getTitle(), $attributes);
+        return static::coreHtmlElement("th", $dtColumn->getTitle(), $attributes);
     }
 
     /**
@@ -181,8 +181,8 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
             $row .= $col . "\n";
         }
 
-        $tr = static::coreHTMLElement("tr", "\n" . $row);
+        $tr = static::coreHtmlElement("tr", "\n" . $row);
 
-        return static::coreHTMLElement($wrapper, "\n" . $tr . "\n");
+        return static::coreHtmlElement($wrapper, "\n" . $tr . "\n");
     }
 }
