@@ -7,6 +7,7 @@ parameters:
     locale: "en"
 
 framework:
+    assets:         true
     default_locale: "%locale%"
     form:           true
     router:
