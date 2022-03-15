@@ -34,15 +34,8 @@ use WBW\Bundle\JQuery\DataTablesBundle\Renderer\ColumnWidthInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Renderer\Floats\FloatRendererTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorTrait;
 use WBW\Library\Symfony\Renderer\DateTimesRendererTrait;
-use WBW\Library\Symfony\Renderer\Strings\BoldTextRendererTrait;
-use WBW\Library\Symfony\Renderer\Strings\DeletedTextRendererTrait;
-use WBW\Library\Symfony\Renderer\Strings\InsertedTextRendererTrait;
-use WBW\Library\Symfony\Renderer\Strings\ItalicTextRendererTrait;
-use WBW\Library\Symfony\Renderer\Strings\MarkedTextRendererTrait;
-use WBW\Library\Symfony\Renderer\Strings\SmallTextRendererTrait;
-use WBW\Library\Symfony\Renderer\Strings\StrikethroughTextRendererTrait;
 use WBW\Library\Symfony\Renderer\Strings\StringWrapperTrait;
-use WBW\Library\Symfony\Renderer\Strings\UnderlinedTextRendererTrait;
+use WBW\Library\Symfony\Renderer\StringsRendererTrait;
 
 /**
  * Abstract DataTables provider.
@@ -59,23 +52,18 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
 
     use DataTablesButtonsRendererTrait;
 
-    use BoldTextRendererTrait;
-    use CenterAlignedRendererTrait;
-    use CenterAlignedTextRendererTrait;
     use DateTimesRendererTrait;
-    use DeletedTextRendererTrait;
     use FloatRendererTrait;
-    use InsertedTextRendererTrait;
-    use ItalicTextRendererTrait;
+    use StringsRendererTrait;
+    use StringWrapperTrait;
+
+    use CenterAlignedTextRendererTrait;
     use JustifiedAlignedTextRendererTrait;
     use LeftAlignedTextRendererTrait;
-    use MarkedTextRendererTrait;
-    use RightAlignedRendererTrait;
     use RightAlignedTextRendererTrait;
-    use SmallTextRendererTrait;
-    use StrikethroughTextRendererTrait;
-    use StringWrapperTrait;
-    use UnderlinedTextRendererTrait;
+
+    use CenterAlignedRendererTrait;
+    use RightAlignedRendererTrait;
 
     /**
      * Constructor.
@@ -139,9 +127,11 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
      * @deprecated since 3.4.0 use {@see WBW\Bundle\JQuery\DataTablesBundle\Provider\AbstractDataTablesProvider::renderRowButtons()} instead
      */
     protected function renderButtons($entity, string $editRoute, string $deleteRoute = null, bool $enableDelete = true): string {
+
         if (null === $deleteRoute && true === $enableDelete) {
             $deleteRoute = "wbw_jquery_datatables_delete";
         }
+
         return $this->renderRowButtons($entity, $editRoute, $deleteRoute);
     }
 
