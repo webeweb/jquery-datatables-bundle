@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-### master
+### [3.35.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.35.0) (2022-03-15)
 
 > IMPORTANT NOTICE: The following Symfony versions are now not supported
 > - Symfony 3.4
@@ -10,9 +10,9 @@ CHANGELOG
 > - Symfony 4.2
 > - Symfony 4.3
 
-- Add array entities trait
 - Add PHP 8.x support
 - Add Symfony 5.x support
+- Add array entities trait
 - Improve abstract DataTables provider
 - Improve code quality
 - Improve PHPDoc
