@@ -13,8 +13,10 @@ CHANGELOG
 - Add array entities trait
 - Add PHP 8.x support
 - Add Symfony 5.x support
+- Improve abstract DataTables provider
 - Improve code quality
 - Improve PHPDoc
+- Update dependencies
 
 ### [3.34.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.34.0) (2022-02-23)
 
