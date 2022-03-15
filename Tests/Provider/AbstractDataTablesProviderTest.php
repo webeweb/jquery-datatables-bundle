@@ -14,8 +14,8 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Provider;
 use DateTime;
 use Exception;
 use InvalidArgumentException;
-use Symfony\Component\Routing\RouterInterface;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtension;
+use WBW\Bundle\CoreBundle\Tests\TestCaseHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
@@ -53,9 +53,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
         parent::setUp();
 
         // Set a generate() closure.
-        $generate = function($name, $parameters = [], $referenceType = RouterInterface::ABSOLUTE_PATH) {
-            return $name;
-        };
+        $generate = TestCaseHelper::getRouterGenerateFunction();
 
         // Set the Router mock.
         $this->router->expects($this->any())->method("generate")->willReturnCallback($generate);
