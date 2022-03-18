@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Improve DataTables buttons renderer trait
+
 ### [3.35.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.35.0) (2022-03-15)
 
 > IMPORTANT NOTICE: The following Symfony versions are now not supported
