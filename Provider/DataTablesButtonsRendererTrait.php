@@ -50,6 +50,34 @@ trait DataTablesButtonsRendererTrait {
     abstract public function getRouter(): ?RouterInterface;
 
     /**
+     * Render an action button.
+     *
+     * @param object $entity The entity.
+     * @param string $route The route.
+     * @param string $type The type.
+     * @param string $icon The icon.
+     * @param string $label The label.
+     * @param array $args The route arguments.
+     * @return string Returns the action button.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the entity is invalid.
+     * @throws InvalidParameterException Throws an invalid parameter exception if a parameter is invalid.
+     * @throws RouteNotFoundException Throws a route not found exception if the route doesn't exist.
+     * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory parameter is missing.
+     */
+    private function renderActionButton($entity, string $route, string $type, string $icon, string $label, array $args = []): string {
+
+        DataTablesEntityHelper::isCompatible($entity, true);
+
+        $method = sprintf("bootstrapButton%sFunction", $type);
+
+        $title  = $this->translate($label);
+        $button = $this->getButtonTwigExtension()->$method(["icon" => $icon, "title" => $title, "size" => "xs"]);
+        $href   = $this->getRouter()->generate($route, array_merge($args, ["id" => $entity->getId()]));
+
+        return $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($button, $href);
+    }
+
+    /**
      * Render an action button "delete".
      *
      * @param object $entity The entity.
@@ -62,15 +90,9 @@ trait DataTablesButtonsRendererTrait {
      */
     protected function renderActionButtonDelete($entity, string $route): string {
 
-        DataTablesEntityHelper::isCompatible($entity, true);
-
         $args = "wbw_jquery_datatables_delete" === $route ? ["name" => $this->getName()] : [];
 
-        $title  = $this->translate("label.delete");
-        $button = $this->getButtonTwigExtension()->bootstrapButtonDangerFunction(["icon" => "fa:trash", "title" => $title, "size" => "xs"]);
-        $url    = $this->getRouter()->generate($route, array_merge($args, ["id" => $entity->getId()]));
-
-        return $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($button, $url);
+        return $this->renderActionButton($entity, $route, "Danger", "fa:trash", "label.delete", $args);
     }
 
     /**
@@ -85,14 +107,7 @@ trait DataTablesButtonsRendererTrait {
      * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory parameter is missing.
      */
     protected function renderActionButtonDuplicate($entity, string $route): string {
-
-        DataTablesEntityHelper::isCompatible($entity, true);
-
-        $title  = $this->translate("label.duplicate");
-        $button = $this->getButtonTwigExtension()->bootstrapButtonPrimaryFunction(["icon" => "fa:copy", "title" => $title, "size" => "xs"]);
-        $url    = $this->getRouter()->generate($route, ["id" => $entity->getId()]);
-
-        return $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($button, $url);
+        return $this->renderActionButton($entity, $route, "Primary", "fa:copy", "label.duplicate");
     }
 
     /**
@@ -107,14 +122,7 @@ trait DataTablesButtonsRendererTrait {
      * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory parameter is missing.
      */
     protected function renderActionButtonEdit($entity, string $route): string {
-
-        DataTablesEntityHelper::isCompatible($entity, true);
-
-        $title  = $this->translate("label.edit");
-        $button = $this->getButtonTwigExtension()->bootstrapButtonDefaultFunction(["icon" => "fa:pen", "title" => $title, "size" => "xs"]);
-        $url    = $this->getRouter()->generate($route, ["id" => $entity->getId()]);
-
-        return $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($button, $url);
+        return $this->renderActionButton($entity, $route, "Default", "fa:pen", "label.edit");
     }
 
     /**
@@ -130,16 +138,16 @@ trait DataTablesButtonsRendererTrait {
      */
     protected function renderActionButtonNew($entity, string $route): string {
 
-        $parameters = [];
+        $args = [];
         if (null !== $entity && DataTablesEntityHelper::isCompatible($entity, true)) {
-            $parameters = ["id" => $entity->getId()];
+            $args = ["id" => $entity->getId()];
         }
 
         $title  = $this->translate("label.new");
         $button = $this->getButtonTwigExtension()->bootstrapButtonPrimaryFunction(["icon" => "fa:plus", "title" => $title, "size" => "xs"]);
-        $url    = $this->getRouter()->generate($route, $parameters);
+        $href   = $this->getRouter()->generate($route, $args);
 
-        return $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($button, $url);
+        return $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($button, $href);
     }
 
     /**
@@ -154,14 +162,7 @@ trait DataTablesButtonsRendererTrait {
      * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory parameter is missing.
      */
     protected function renderActionButtonShow($entity, string $route): string {
-
-        DataTablesEntityHelper::isCompatible($entity, true);
-
-        $title  = $this->translate("label.show");
-        $button = $this->getButtonTwigExtension()->bootstrapButtonInfoFunction(["icon" => "fa:eye", "title" => $title, "size" => "xs"]);
-        $url    = $this->getRouter()->generate($route, ["id" => $entity->getId()]);
-
-        return $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($button, $url);
+        return $this->renderActionButton($entity, $route, "Info", "fa:eye", "label.show");
     }
 
     /**
@@ -178,16 +179,11 @@ trait DataTablesButtonsRendererTrait {
      */
     protected function renderActionButtonSwitch($entity, string $route, ?bool $enabled): string {
 
-        DataTablesEntityHelper::isCompatible($entity, true);
+        if (true === $enabled) {
+            return $this->renderActionButton($entity, $route, "Success", "fa:toggle-on", "label.disable");
+        }
 
-        $type = sprintf("bootstrapButton%sFunction", true === $enabled ? "Success" : "Danger");
-        $icon = true === $enabled ? "fa:toggle-on" : "fa:toggle-off";
-
-        $title  = $this->translate(true === $enabled ? "label.disable" : "label.enable");
-        $button = $this->getButtonTwigExtension()->$type(["icon" => $icon, "title" => $title, "size" => "xs"]);
-        $url    = $this->getRouter()->generate($route, ["id" => $entity->getId()]);
-
-        return $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($button, $url);
+        return $this->renderActionButton($entity, $route, "Danger", "fa:toggle-off", "label.enable");
     }
 
     /**
