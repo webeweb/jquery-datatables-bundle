@@ -50,13 +50,24 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
     }
 
     /**
+     * Tests getContainerExtension()
+     *
+     * @return void
+     */
+    public function testGetContainerExtension(): void {
+
+        $obj = new WBWJQueryDataTablesBundle();
+
+        $this->assertInstanceOf(WBWJQueryDataTablesExtension::class, $obj->getContainerExtension());
+    }
+
+    /**
      * Tests listAssets()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
     public function testListAssets(): void {
-
 
         $config = realpath(__DIR__ . "/../DependencyInjection");
         $assets = realpath(__DIR__ . "/../Resources/assets");
@@ -91,16 +102,5 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
         $this->assertRegexp("/datatables\-select\-" . preg_quote($plugins["select"]["version"]) . "\.zip$/", $res[++$i]);
         $this->assertRegexp("/datatables\-staterestore\-" . preg_quote($plugins["staterestore"]["version"]) . "\.zip$/", $res[++$i]);
         $this->assertRegexp("/editable\-table\.zip$/", $res[++$i]);
-    }
-    /**
-     * Tests getContainerExtension()
-     *
-     * @return void
-     */
-    public function testGetContainerExtension(): void {
-
-        $obj = new WBWJQueryDataTablesBundle();
-
-        $this->assertInstanceOf(WBWJQueryDataTablesExtension::class, $obj->getContainerExtension());
     }
 }
