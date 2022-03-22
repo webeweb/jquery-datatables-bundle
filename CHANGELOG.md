@@ -1,8 +1,9 @@
 CHANGELOG
 =========
 
-### master
+### [3.36.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.36.0) (2022-03-22)
 
+- Add renderActionButtonComment() into DataTables buttons renderer
 - Improve DataTables buttons renderer trait
 
 ### [3.35.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.35.0) (2022-03-15)
