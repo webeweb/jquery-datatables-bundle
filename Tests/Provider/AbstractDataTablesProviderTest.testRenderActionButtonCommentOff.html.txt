@@ -1,0 +1,1 @@
+<a class="btn btn-default btn-xs" title="label.comment" href="commentRoute" data-toggle="tooltip" data-placement="top"><i class="fa fa-comment-slash"></i></a>

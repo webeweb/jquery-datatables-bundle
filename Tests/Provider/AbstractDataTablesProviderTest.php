@@ -121,6 +121,32 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
+     * Tests renderActionButtonComment()
+     *
+     * @return void
+     */
+    public function testRenderActionButtonCommentWithComment(): void {
+
+        $obj = $this->dataTablesProvider;
+
+        $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonCommentOn.html.txt");
+        $this->assertEquals($res, $obj->renderActionButtonComment(new Employee(), "commentRoute", "comment"));
+    }
+
+    /**
+     * Tests renderActionButtonComment()
+     *
+     * @return void
+     */
+    public function testRenderActionButtonCommentWithoutComment(): void {
+
+        $obj = $this->dataTablesProvider;
+
+        $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonCommentOff.html.txt");
+        $this->assertEquals($res, $obj->renderActionButtonComment(new Employee(), "commentRoute", null));
+    }
+
+    /**
      * Tests renderActionButtonDelete()
      *
      * @return void

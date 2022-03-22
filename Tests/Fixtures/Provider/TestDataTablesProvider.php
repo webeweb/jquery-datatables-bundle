@@ -61,6 +61,13 @@ class TestDataTablesProvider extends AbstractDataTablesProvider {
     /**
      *{@inheritDoc}
      */
+    public function renderActionButtonComment($entity, string $route, ?string $comment): string {
+        return parent::renderActionButtonComment($entity, $route, $comment);
+    }
+
+    /**
+     *{@inheritDoc}
+     */
     public function renderActionButtonDelete($entity, string $route): string {
         return parent::renderActionButtonDelete($entity, $route);
     }

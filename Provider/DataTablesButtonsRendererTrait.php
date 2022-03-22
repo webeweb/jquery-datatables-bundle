@@ -78,6 +78,25 @@ trait DataTablesButtonsRendererTrait {
     }
 
     /**
+     * Render an action button "comment".
+     *
+     * @param object $entity The entity.
+     * @param string $route The route.
+     * @param string|null $comment The comment.
+     * @return string Returns the action button "comment".
+     * @throws InvalidArgumentException Throws an invalid argument exception if the entity is invalid.
+     * @throws InvalidParameterException Throws an invalid parameter exception if a parameter is invalid.
+     * @throws RouteNotFoundException Throws a route not found exception if the route doesn't exist.
+     * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory parameter is missing.
+     */
+    protected function renderActionButtonComment($entity, string $route, ?string $comment): string {
+
+        $icon = 0 < strlen($comment) ? "fa:comment" : "fa:comment-slash";
+
+        return $this->renderActionButton($entity, $route, "Default", $icon, "label.comment");
+    }
+
+    /**
      * Render an action button "delete".
      *
      * @param object $entity The entity.
