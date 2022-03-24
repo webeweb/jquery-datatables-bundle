@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+### [3.37.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.37.0) (2022-03-24)
+
+- Add renderActionButtonPdf() into DataTables buttons renderer
+- Add Enabled badge renderer trait
+- Add Enabled label renderer trait
+
 ### [3.36.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.36.0) (2022-03-22)
 
 - Add renderActionButtonComment() into DataTables buttons renderer
