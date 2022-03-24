@@ -13,9 +13,11 @@ label:
     cancel:    "Cancel"
     delete:    "Delete"
     disable:   "Disable"
+    disabled:  "Disabled"
     duplicate: "Duplicate"
     edit:      "Edit"
     enable:    "Enable"
+    enabled:   "Enabled"
     new:       "New"
     show:      "Show"
 
