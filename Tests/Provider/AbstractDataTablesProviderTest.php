@@ -129,7 +129,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
 
         $obj = $this->dataTablesProvider;
 
-        $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonCommentOn.html.txt");
+        $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonCommentWithComment.html.txt");
         $this->assertEquals($res, $obj->renderActionButtonComment(new Employee(), "commentRoute", "comment"));
     }
 
@@ -142,7 +142,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
 
         $obj = $this->dataTablesProvider;
 
-        $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonCommentOff.html.txt");
+        $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonCommentWithoutComment.html.txt");
         $this->assertEquals($res, $obj->renderActionButtonComment(new Employee(), "commentRoute", null));
     }
 
@@ -160,25 +160,6 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderActionButtonDelete()
-     *
-     * @return void
-     */
-    public function testRenderActionButtonDeleteWithInvalidArgumentException(): void {
-
-        $obj = $this->dataTablesProvider;
-
-        try {
-
-            $obj->renderActionButtonDelete($this, "route");
-        } catch (Exception $ex) {
-
-            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The entity must implements DataTablesEntityInterface or declare a getId() method", $ex->getMessage());
-        }
-    }
-
-    /**
      * Tests renderActionButtonDuplicate()
      *
      * @return void
@@ -192,25 +173,6 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderActionButtonDuplicate()
-     *
-     * @return void
-     */
-    public function testRenderActionButtonDuplicateWithInvalidArgumentException(): void {
-
-        $obj = $this->dataTablesProvider;
-
-        try {
-
-            $obj->renderActionButtonDuplicate($this, "route");
-        } catch (Exception $ex) {
-
-            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The entity must implements DataTablesEntityInterface or declare a getId() method", $ex->getMessage());
-        }
-    }
-
-    /**
      * Tests renderActionButtonEdit()
      *
      * @return void
@@ -221,25 +183,6 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
 
         $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonEdit.html.txt");
         $this->assertEquals($res, $obj->renderActionButtonEdit(new Employee(), "editRoute"));
-    }
-
-    /**
-     * Tests renderActionButtonEdit()
-     *
-     * @return void
-     */
-    public function testRenderActionButtonEditWithInvalidArgumentException(): void {
-
-        $obj = $this->dataTablesProvider;
-
-        try {
-
-            $obj->renderActionButtonEdit($this, "route");
-        } catch (Exception $ex) {
-
-            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The entity must implements DataTablesEntityInterface or declare a getId() method", $ex->getMessage());
-        }
     }
 
     /**
@@ -260,31 +203,25 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testRenderActionButtonNewWithInvalidArgumentException(): void {
-
-        $obj = $this->dataTablesProvider;
-
-        try {
-
-            $obj->renderActionButtonNew($this, "route");
-        } catch (Exception $ex) {
-
-            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The entity must implements DataTablesEntityInterface or declare a getId() method", $ex->getMessage());
-        }
-    }
-
-    /**
-     * Tests renderActionButtonNew()
-     *
-     * @return void
-     */
     public function testRenderActionButtonNewWithNullEntity(): void {
 
         $obj = $this->dataTablesProvider;
 
         $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonNew.html.txt");
         $this->assertEquals($res, $obj->renderActionButtonNew(null, "newRoute"));
+    }
+
+    /**
+     * Tests renderActionButtonPdf()
+     *
+     * @return void
+     */
+    public function testRenderActionButtonPdf(): void {
+
+        $obj = $this->dataTablesProvider;
+
+        $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonPdf.html.txt");
+        $this->assertEquals($res, $obj->renderActionButtonPdf(new Employee(), "pdfRoute"));
     }
 
     /**
@@ -301,25 +238,6 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderActionButtonShow()
-     *
-     * @return void
-     */
-    public function testRenderActionButtonShowWithInvalidArgumentException(): void {
-
-        $obj = $this->dataTablesProvider;
-
-        try {
-
-            $obj->renderActionButtonShow($this, "route");
-        } catch (Exception $ex) {
-
-            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The entity must implements DataTablesEntityInterface or declare a getId() method", $ex->getMessage());
-        }
-    }
-
-    /**
      * Tests renderActionButtonSwitch()
      *
      * @return void
@@ -328,7 +246,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
 
         $obj = $this->dataTablesProvider;
 
-        $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonSwitchOff.html.txt");
+        $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonSwitchWithFalse.html.txt");
         $this->assertEquals($res, $obj->renderActionButtonSwitch(new Employee(), "switchRoute", false));
     }
 
@@ -341,8 +259,27 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
 
         $obj = $this->dataTablesProvider;
 
-        $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonSwitchOn.html.txt");
+        $res = file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonSwitchWithTrue.html.txt");
         $this->assertEquals($res, $obj->renderActionButtonSwitch(new Employee(), "switchRoute", true));
+    }
+
+    /**
+     * Tests renderActionButton()
+     *
+     * @return void
+     */
+    public function testRenderActionButtonWithInvalidArgumentException(): void {
+
+        $obj = $this->dataTablesProvider;
+
+        try {
+
+            $obj->renderActionButtonDelete($this, "route");
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
+            $this->assertEquals("The entity must implements DataTablesEntityInterface or declare a getId() method", $ex->getMessage());
+        }
     }
 
     /**
@@ -356,8 +293,10 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
 
         $res = implode(" ", [
             file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonEdit.html.txt"),
-            '<a class="btn btn-danger btn-xs" title="label.delete" href="wbw_jquery_datatables_delete" data-toggle="tooltip" data-placement="top"><i class="fa fa-trash"></i></a>',
+            file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonDelete.html.txt"),
         ]);
+
+        $res = str_replace("deleteRoute", "wbw_jquery_datatables_delete", $res);
         $this->assertEquals($res, $obj->renderButtons(new Employee(), "editRoute"));
     }
 

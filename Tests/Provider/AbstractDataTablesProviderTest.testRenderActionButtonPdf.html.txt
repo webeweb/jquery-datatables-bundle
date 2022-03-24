@@ -1,0 +1,1 @@
+<a class="btn btn-danger btn-xs" title="PDF" href="pdfRoute" target="_blank" data-toggle="tooltip" data-placement="top"><i class="fa fa-file-pdf"></i></a>

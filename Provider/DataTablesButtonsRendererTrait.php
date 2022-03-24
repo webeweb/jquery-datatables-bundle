@@ -58,13 +58,14 @@ trait DataTablesButtonsRendererTrait {
      * @param string $icon The icon.
      * @param string $label The label.
      * @param array $args The route arguments.
+     * @param string|null $target The target.
      * @return string Returns the action button.
      * @throws InvalidArgumentException Throws an invalid argument exception if the entity is invalid.
      * @throws InvalidParameterException Throws an invalid parameter exception if a parameter is invalid.
      * @throws RouteNotFoundException Throws a route not found exception if the route doesn't exist.
      * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory parameter is missing.
      */
-    private function renderActionButton($entity, string $route, string $type, string $icon, string $label, array $args = []): string {
+    private function renderActionButton($entity, string $route, string $type, string $icon, string $label, array $args = [], string $target = null): string {
 
         DataTablesEntityHelper::isCompatible($entity, true);
 
@@ -74,7 +75,7 @@ trait DataTablesButtonsRendererTrait {
         $button = $this->getButtonTwigExtension()->$method(["icon" => $icon, "title" => $title, "size" => "xs"]);
         $href   = $this->getRouter()->generate($route, array_merge($args, ["id" => $entity->getId()]));
 
-        return $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($button, $href);
+        return $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($button, $href, $target);
     }
 
     /**
@@ -167,6 +168,21 @@ trait DataTablesButtonsRendererTrait {
         $href   = $this->getRouter()->generate($route, $args);
 
         return $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($button, $href);
+    }
+
+    /**
+     * Render an action button "PDF".
+     *
+     * @param object $entity The entity.
+     * @param string $route The route.
+     * @return string Returns the action button "PDF".
+     * @throws InvalidArgumentException Throws an invalid argument exception if the entity is invalid.
+     * @throws InvalidParameterException Throws an invalid parameter exception if a parameter is invalid.
+     * @throws RouteNotFoundException Throws a route not found exception if the route doesn't exist.
+     * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory parameter is missing.
+     */
+    protected function renderActionButtonPdf($entity, string $route): string {
+        return $this->renderActionButton($entity, $route, "Danger", "fa:file-pdf", "PDF", [], "_blank");
     }
 
     /**
