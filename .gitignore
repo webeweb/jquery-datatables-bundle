@@ -2,4 +2,3 @@
 /vendor/*
 
 /Tests/Fixtures/app/var/*
-!/Tests/Fixtures/app/var/.gitkeep
