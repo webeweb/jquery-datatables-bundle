@@ -47,7 +47,7 @@ EOT;
      *
      * @var string
      */
-    const COMMAND_NAME = "wbw:jquery:datatables:list-provider";
+    const COMMAND_NAME = "wbw:jquery:datatables:provider:list";
 
     /**
      * Service name.

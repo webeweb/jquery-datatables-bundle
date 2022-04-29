@@ -136,7 +136,7 @@ Read the [documentation](Resources/doc/index.md).
 
 The following commands are available:
 ```bash
-$ php bin/console wbw:jquery:datatables:list-provider
+$ php bin/console wbw:jquery:datatables:provider:list
 ```
 
 ## Testing

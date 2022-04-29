@@ -60,7 +60,7 @@ class ListDataTablesProviderCommandTest extends AbstractWebTestCase {
     public function test__construct(): void {
 
         $this->assertEquals("wbw.jquery.datatables.command.list_provider", ListDataTablesProviderCommand::SERVICE_NAME);
-        $this->assertEquals("wbw:jquery:datatables:list-provider", ListDataTablesProviderCommand::COMMAND_NAME);
+        $this->assertEquals("wbw:jquery:datatables:provider:list", ListDataTablesProviderCommand::COMMAND_NAME);
 
         $obj = new ListDataTablesProviderCommand();
 
