@@ -65,7 +65,7 @@ class ListDataTablesProviderCommandTest extends AbstractWebTestCase {
         $obj = new ListDataTablesProviderCommand();
 
         $this->assertEquals("List the DataTables providers", $obj->getDescription());
-        $this->assertEquals(ListDataTablesProviderCommand::COMMAND_HELP, $obj->getHelp());
+        $this->assertNotNull($obj->getHelp());
         $this->assertEquals(ListDataTablesProviderCommand::COMMAND_NAME, $obj->getName());
     }
 }

@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Command;
 
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use WBW\Bundle\CoreBundle\Console\ConsoleHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManagerTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
@@ -28,19 +29,6 @@ class ListDataTablesProviderCommand extends AbstractCommand {
     use DataTablesManagerTrait {
         setDataTablesManager as public;
     }
-
-    /**
-     * Command help.
-     *
-     * @var string
-     */
-    const COMMAND_HELP = <<< EOT
-The <info>%command.name%</info> command list the DatTables providers.
-
-    <info>php %command.full_name%</info>
-
-
-EOT;
 
     /**
      * Command name.
@@ -62,7 +50,7 @@ EOT;
     protected function configure() {
         $this
             ->setDescription("List the DataTables providers")
-            ->setHelp(self::COMMAND_HELP)
+            ->setHelp(ConsoleHelper::formatCommandHelp("list the DatTables providers"))
             ->setName(self::COMMAND_NAME);
     }
 
