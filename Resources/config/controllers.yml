@@ -1,11 +1,11 @@
 # Resources/config/controllers.yml
 services:
 
-    WBW\Bundle\JQuery\DataTablesBundle\Controller\DataTablesController:
-        alias:  "wbw.jquery.datatables.controller.datatables"
-        public: true
-
     wbw.jquery.datatables.controller.datatables:
         class: WBW\Bundle\JQuery\DataTablesBundle\Controller\DataTablesController
         calls:
             - [ "setContainer", [ "@service_container" ] ]
+
+    WBW\Bundle\JQuery\DataTablesBundle\Controller\DataTablesController:
+        alias:  "wbw.jquery.datatables.controller.datatables"
+        public: true
