@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### master
+
+- Update dependencies
+- Update List providers command
+
 ### [3.37.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.37.0) (2022-03-24)
 
 - Add renderActionButtonPdf() into DataTables buttons renderer
