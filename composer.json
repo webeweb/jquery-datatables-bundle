@@ -28,7 +28,7 @@
         "symfony/translation": "^4.4|^5.0",
         "twig/twig": "^2.10|^3.0",
         "webeweb/bootstrap-bundle": "^4.0",
-        "webeweb/core-bundle": "^3.0",
+        "webeweb/core-bundle": "^3.6",
         "webeweb/core-library": "^8.34"
     },
     "require-dev": {
