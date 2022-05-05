@@ -26,7 +26,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 class DataTablesProviderCompilerPass implements CompilerPassInterface {
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function process(ContainerBuilder $container): void {
 

@@ -79,28 +79,28 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCSVExporter(): ?DataTablesCSVExporterInterface {
         return null;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getEditor(): ?DataTablesEditorInterface {
         return null;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getMethod(): ?string {
         return null;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getOptions(): DataTablesOptionsInterface {
 

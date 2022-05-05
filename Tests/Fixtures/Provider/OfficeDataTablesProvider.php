@@ -29,14 +29,14 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Office;
 class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTablesRouterInterface {
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCSVExporter(): ?DataTablesCSVExporterInterface {
         return null;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getColumns(): array {
 
@@ -49,63 +49,63 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTable
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getEditor(): ?DataTablesEditorInterface {
         return null;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getEntity(): string {
         return Office::class;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getMethod(): string {
         return "POST";
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getName(): string {
         return "office";
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getOptions(): ?DataTablesOptionsInterface {
         return null;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getPrefix(): string {
         return "o";
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getUrl(): string {
         return "url";
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getView(): ?string {
         return null;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function renderColumn(DataTablesColumnInterface $dtColumn, $entity): ?string {
 
@@ -126,7 +126,7 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTable
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function renderRow(string $dtRow, $entity, int $rowNumber) {
 

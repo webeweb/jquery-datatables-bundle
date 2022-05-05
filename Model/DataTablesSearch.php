@@ -44,14 +44,14 @@ class DataTablesSearch implements DataTablesSearchInterface {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getRegex(): bool {
         return $this->regex;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getValue(): string {
         return $this->value;

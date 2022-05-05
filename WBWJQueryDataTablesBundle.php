@@ -27,21 +27,21 @@ use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\WBWJQueryDataTablesEx
 class WBWJQueryDataTablesBundle extends Bundle implements AssetsProviderInterface {
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function build(ContainerBuilder $container): void {
         $container->addCompilerPass(new DataTablesProviderCompilerPass());
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getAssetsRelativeDirectory(): string {
         return self::ASSETS_RELATIVE_DIRECTORY;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getContainerExtension(): Extension {
         return new WBWJQueryDataTablesExtension();

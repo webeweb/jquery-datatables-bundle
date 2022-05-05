@@ -35,7 +35,7 @@ class DataTablesManager extends AbstractManager {
     const SERVICE_NAME = "wbw.jquery.datatables.manager";
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function addProvider(ProviderInterface $provider): ManagerInterface {
 
@@ -48,7 +48,7 @@ class DataTablesManager extends AbstractManager {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function contains(ProviderInterface $provider): bool {
 

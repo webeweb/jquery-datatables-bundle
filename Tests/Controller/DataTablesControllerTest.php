@@ -24,7 +24,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 class DataTablesControllerTest extends AbstractWebTestCase {
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function setUpBeforeClass(): void {
         parent::setUpBeforeClass();

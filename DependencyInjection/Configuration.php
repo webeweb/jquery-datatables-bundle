@@ -24,7 +24,7 @@ use WBW\Bundle\CoreBundle\Config\ConfigurationHelper;
 class Configuration implements ConfigurationInterface {
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      *
      * wbw_jquery_datatables:
      *      twig:  false

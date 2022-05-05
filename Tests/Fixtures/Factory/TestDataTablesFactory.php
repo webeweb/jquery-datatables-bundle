@@ -29,49 +29,49 @@ use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 class TestDataTablesFactory extends DataTablesFactory {
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function newResponse(DataTablesWrapperInterface $wrapper): DataTablesResponseInterface {
         return parent::newResponse($wrapper);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function parseColumn(array $rawColumn, DataTablesWrapperInterface $wrapper): ?DataTablesColumnInterface {
         return parent::parseColumn($rawColumn, $wrapper);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function parseColumns(array $rawColumns, DataTablesWrapperInterface $wrapper): array {
         return parent::parseColumns($rawColumns, $wrapper);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function parseOrder(array $rawOrder): DataTablesOrderInterface {
         return parent::parseOrder($rawOrder);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function parseOrders(array $rawOrders): array {
         return parent::parseOrders($rawOrders);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function parseRequest(DataTablesWrapperInterface $wrapper, Request $request): DataTablesRequestInterface {
         return parent::parseRequest($wrapper, $request);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function parseSearch(array $rawSearch): DataTablesSearchInterface {
         return parent::parseSearch($rawSearch);

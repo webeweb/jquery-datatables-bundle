@@ -34,14 +34,14 @@ class WBWJQueryDataTablesExtension extends Extension {
     const EXTENSION_ALIAS = "wbw_jquery_datatables";
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getAlias(): string {
         return self::EXTENSION_ALIAS;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function load(array $configs, ContainerBuilder $container): void {
 

@@ -31,7 +31,7 @@ class EnabledBadgeRendererTraitTest extends AbstractTestCase {
     private $badgeTwigExtension;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     protected function setUp(): void {
         parent::setUp();

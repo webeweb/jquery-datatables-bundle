@@ -45,7 +45,7 @@ class ListDataTablesProviderCommand extends AbstractCommand {
     const SERVICE_NAME = "wbw.jquery.datatables.command.list_provider";
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     protected function configure() {
         $this
@@ -55,7 +55,7 @@ class ListDataTablesProviderCommand extends AbstractCommand {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     protected function execute(InputInterface $input, OutputInterface $output): ?int {
 

@@ -35,7 +35,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     private $assetsTwigExtension;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     protected function setUp(): void {
         parent::setUp();

@@ -241,7 +241,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTablesCSVExporterInterface, DataTablesEditorInterface {
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function editColumn(DataTablesColumnInterface $dtColumn, $entity, $value) {
 
@@ -275,7 +275,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function exportColumns() {
 
@@ -295,7 +295,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function exportRow($entity) {
 
@@ -319,7 +319,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getColumns() {
 
@@ -341,42 +341,42 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCSVExporter() {
         return $this;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getEditor() {
         return $this;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getEntity() {
         return Employee::class;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getMethod() {
         return "POST";
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getName() {
         return "employee";
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getOptions() {
         return null;
@@ -390,14 +390,14 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getPrefix() {
         return "e";
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getView() {
         return null;
@@ -407,7 +407,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function renderColumn(DataTablesColumnInterface $dtColumn, $entity) {
 
@@ -453,7 +453,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function renderRow($dtRow, $entity, $rowNumber) {
 
@@ -644,7 +644,7 @@ Modify the repository in the `src/AppBundle/Repository/EmployeeRepository.php` f
 class EmployeeRepository extends DefaultDataTablesRepository {
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function dataTablesCountFiltered(DataTablesWrapperInterface $dtWrapper) {
 
@@ -657,7 +657,7 @@ class EmployeeRepository extends DefaultDataTablesRepository {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function dataTablesCountTotal(DataTablesWrapperInterface $dtWrapper) {
 
@@ -670,7 +670,7 @@ class EmployeeRepository extends DefaultDataTablesRepository {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function dataTablesFindAll(DataTablesWrapperInterface $dtWrapper) {
 
@@ -689,7 +689,7 @@ Modify the provider in the `src/AppBundle/Provider/EmployeeDataTablesProvider.ph
 
 ```php
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getColumns() {
 
@@ -709,7 +709,7 @@ Modify the provider in the `src/AppBundle/Provider/EmployeeDataTablesProvider.ph
     // ...
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function renderColumn(DataTablesColumnInterface $dtColumn, $entity) {
 

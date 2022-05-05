@@ -36,7 +36,7 @@ class DataTablesOptions implements DataTablesOptionsInterface {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function addOption(string $name, $value): DataTablesOptionsInterface {
         if (false === array_key_exists($name, $this->options)) {
@@ -46,7 +46,7 @@ class DataTablesOptions implements DataTablesOptionsInterface {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getOption(string $name) {
         if (true === array_key_exists($name, $this->options)) {
@@ -56,21 +56,21 @@ class DataTablesOptions implements DataTablesOptionsInterface {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getOptions(): array {
         return $this->options;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function hasOption(string $name): bool {
         return array_key_exists($name, $this->options);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function removeOption(string $name): DataTablesOptionsInterface {
         if (true === array_key_exists($name, $this->options)) {
@@ -80,7 +80,7 @@ class DataTablesOptions implements DataTablesOptionsInterface {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function setOption(string $name, $value): DataTablesOptionsInterface {
         $this->options[$name] = $value;
