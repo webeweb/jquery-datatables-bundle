@@ -103,14 +103,14 @@ assets:
                 stylesheets:
                     - "/datatables-searchbuilder-{{ version }}/css/searchBuilder.{{ theme }}.min.css"
                 javascripts:
-                    - "/datatables-searchbuilder-{{ version }}/js/dataTables.scroller.min.js"
+                    - "/datatables-searchbuilder-{{ version }}/js/dataTables.searchBuilder.min.js"
                     - "/datatables-searchbuilder-{{ version }}/js/searchBuilder.{{ theme }}.min.js"
             searchpanes:
                 version: "2.0.2"
                 stylesheets:
                     - "/datatables-searchpanes-{{ version }}/css/searchPanes.{{ theme }}.min.css"
                 javascripts:
-                    - "/datatables-searchpanes-{{ version }}/js/dataTables.scroller.min.js"
+                    - "/datatables-searchpanes-{{ version }}/js/dataTables.searchPanes.min.js"
                     - "/datatables-searchpanes-{{ version }}/js/searchPanes.{{ theme }}.min.js"
             select:
                 version: "1.4.0"
