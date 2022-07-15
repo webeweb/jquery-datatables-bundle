@@ -1,8 +1,9 @@
 CHANGELOG
 =========
 
-### master
+### [3.38.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.38.0) (2022-07-15)
 
+- Update jQuery DataTables to 1.12.1
 - Update dependencies
 - Update List providers command
 
