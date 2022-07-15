@@ -2,7 +2,7 @@
 assets:
 
     wbw.jquery_datatables.asset.jquery_datatables:
-        version: "1.11.4"
+        version: "1.12.1"
         themes:
             - "datatables"
             - "bootstrap"
@@ -26,14 +26,14 @@ assets:
                     - "/datatables-pdfmake-{{ version }}/vfs_fonts.js"
         plugins:
             autofill:
-                version: "2.3.7"
+                version: "2.4.0"
                 stylesheets:
                     - "/datatables-autofill-{{ version }}/css/autoFill.{{ theme }}.min.css"
                 javascripts:
                     - "/datatables-autofill-{{ version }}/js/dataTables.autoFill.min.js"
                     - "/datatables-autofill-{{ version }}/js/autoFill.{{ theme }}.min.js"
             buttons:
-                version: "2.2.2"
+                version: "2.2.3"
                 stylesheets:
                     - "/datatables-buttons-{{ version }}/css/buttons.{{ theme }}.min.css"
                 javascripts:
@@ -44,44 +44,44 @@ assets:
                     - "/datatables-buttons-{{ version }}/js/buttons.print.min.js"
                     - "/datatables-buttons-{{ version }}/js/buttons.{{ theme }}.min.js"
             colreorder:
-                version: "1.5.5"
+                version: "1.5.6"
                 stylesheets:
                     - "/datatables-colreorder-{{ version }}/css/colReorder.{{ theme }}.min.css"
                 javascripts:
                     - "/datatables-colreorder-{{ version }}/js/dataTables.colReorder.min.js"
             datetime:
-                version: "1.1.1"
+                version: "1.1.2"
                 stylesheets:
                     - "/datatables-datetime-{{ version }}/css/dataTables.dateTime.min.css"
                 javascripts:
                     - "/datatables-datetime-{{ version }}/js/dataTables.dateTime.min.js"
             fixedcolumns:
-                version: "4.0.1"
+                version: "4.1.0"
                 stylesheets:
                     - "/datatables-fixedcolumns-{{ version }}/css/fixedColumns.{{ theme }}.min.css"
                 javascripts:
                     - "/datatables-fixedcolumns-{{ version }}/js/dataTables.fixedColumns.min.js"
             fixedheader:
-                version: "3.2.1"
+                version: "3.2.4"
                 stylesheets:
                     - "/datatables-fixedheader-{{ version }}/css/fixedHeader.{{ theme }}.min.css"
                 javascripts:
                     - "/datatables-fixedheader-{{ version }}/js/dataTables.fixedHeader.min.js"
             keytable:
-                version: "2.6.4"
+                version: "2.7.0"
                 stylesheets:
                     - "/datatables-keytable-{{ version }}/css/keyTable.{{ theme }}.min.css"
                 javascripts:
                     - "/datatables-keytable-{{ version }}/js/dataTables.keyTable.min.js"
             responsive:
-                version: "2.2.9"
+                version: "2.3.0"
                 stylesheets:
                     - "/datatables-responsive-{{ version }}/css/responsive.{{ theme }}.min.css"
                 javascripts:
                     - "/datatables-responsive-{{ version }}/js/dataTables.responsive.min.js"
                     - "/datatables-responsive-{{ version }}/js/responsive.{{ theme }}.min.js"
             rowgroup:
-                version: "1.1.4"
+                version: "1.2.0"
                 stylesheets:
                     - "/datatables-rowgroup-{{ version }}/css/rowGroup.{{ theme }}.min.css"
                 javascripts:
@@ -93,33 +93,33 @@ assets:
                 javascripts:
                     - "/datatables-rowreorder-{{ version }}/js/dataTables.rowReorder.min.js"
             scroller:
-                version: "2.0.5"
+                version: "2.0.7"
                 stylesheets:
                     - "/datatables-scroller-{{ version }}/css/scroller.{{ theme }}.min.css"
                 javascripts:
                     - "/datatables-scroller-{{ version }}/js/dataTables.scroller.min.js"
             searchbuilder:
-                version: "1.3.0"
+                version: "1.3.4"
                 stylesheets:
                     - "/datatables-searchbuilder-{{ version }}/css/searchBuilder.{{ theme }}.min.css"
                 javascripts:
                     - "/datatables-searchbuilder-{{ version }}/js/dataTables.scroller.min.js"
                     - "/datatables-searchbuilder-{{ version }}/js/searchBuilder.{{ theme }}.min.js"
             searchpanes:
-                version: "1.4.0"
+                version: "2.0.2"
                 stylesheets:
                     - "/datatables-searchpanes-{{ version }}/css/searchPanes.{{ theme }}.min.css"
                 javascripts:
                     - "/datatables-searchpanes-{{ version }}/js/dataTables.scroller.min.js"
                     - "/datatables-searchpanes-{{ version }}/js/searchPanes.{{ theme }}.min.js"
             select:
-                version: "1.3.4"
+                version: "1.4.0"
                 stylesheets:
                     - "/datatables-select-{{ version }}/css/select.{{ theme }}.min.css"
                 javascripts:
                     - "/datatables-select-{{ version }}/js/dataTables.select.min.js"
             staterestore:
-                version: "1.1.0"
+                version: "1.1.1"
                 stylesheets:
                     - "/datatables-staterestore-{{ version }}/css/stateRestore.{{ theme }}.min.css"
                 javascripts:
