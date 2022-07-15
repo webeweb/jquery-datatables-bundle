@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.38.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.38.1) (2022-07-15)
+
+- Fix assets configuration
+
 ### [3.38.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.38.0) (2022-07-15)
 
 - Update jQuery DataTables to 1.12.1
