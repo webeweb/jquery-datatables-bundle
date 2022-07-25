@@ -117,7 +117,7 @@ wbw_jquery_datatables:
         - "responsive"
 ```
 
-> IMPORTANT NOTICE: For use with Bootstrap 4, replace '3' by '4' into wbw_bootstrap.version and 
+> IMPORTANT NOTICE: For use with Bootstrap 4, replace '3' by '4' into wbw_bootstrap.version and
 > 'bootstrap' by 'bootstrap4' into wbw_jquery_datatables theme.
 
 Add the bundle routing in the `app/config/routing.yml` file of your project:
@@ -134,6 +134,7 @@ wbw_jquery_datatables:
 Read the [documentation](Resources/doc/index.md).
 
 The following commands are available:
+
 ```bash
 $ php bin/console wbw:jquery:datatables:provider:list
 ```
