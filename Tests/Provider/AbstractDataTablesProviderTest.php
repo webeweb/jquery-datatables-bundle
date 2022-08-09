@@ -52,7 +52,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     protected function setUp(): void {
         parent::setUp();
 
-        // Set a generate() closure.
+        // Set a generate() callback.
         $generate = TestCaseHelper::getRouterGenerateFunction();
 
         // Set the Router mock.
