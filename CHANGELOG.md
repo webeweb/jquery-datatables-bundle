@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Improve code quality
+
 ### [3.38.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.38.1) (2022-07-15)
 
 - Fix assets configuration
