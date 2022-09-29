@@ -70,6 +70,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
      * {@inheritdoc}
      */
     public function exportColumns(): array {
+
         return [
             "#",
             "Name",
@@ -85,6 +86,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
      * {@inheritdoc}
      */
     public function exportRow($entity): array {
+
         return [
             $entity->getId(),
             $entity->getName(),

@@ -39,6 +39,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      * @return TwigFilter[] Returns the Twig filters.
      */
     public function getFilters(): array {
+
         return [
             new TwigFilter("jQueryDataTablesName", [$this, "jQueryDataTablesNameFunction"], ["is_safe" => ["html"]]),
             new TwigFilter("jQueryDTName", [$this, "jQueryDataTablesNameFunction"], ["is_safe" => ["html"]]),
@@ -51,6 +52,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      * @return TwigFunction[] Returns the Twig functions.
      */
     public function getFunctions(): array {
+
         return [
             new TwigFunction("jQueryDataTables", [$this, "jQueryDataTablesFunction"], ["is_safe" => ["html"]]),
             new TwigFunction("jQueryDT", [$this, "jQueryDataTablesFunction"], ["is_safe" => ["html"]]),

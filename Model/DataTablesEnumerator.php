@@ -30,6 +30,7 @@ class DataTablesEnumerator {
      * @return string[] Returns the cell types enumeration.
      */
     public static function enumCellTypes(): array {
+
         return [
             DataTablesColumnInterface::DATATABLES_CELL_TYPE_TD,
             DataTablesColumnInterface::DATATABLES_CELL_TYPE_TH,
@@ -42,6 +43,7 @@ class DataTablesEnumerator {
      * @return string[] Returns the dirs enumeration.
      */
     public static function enumDirs(): array {
+
         return [
             DataTablesOrderInterface::DATATABLES_DIR_ASC,
             DataTablesOrderInterface::DATATABLES_DIR_DESC,
@@ -54,6 +56,7 @@ class DataTablesEnumerator {
      * @return string[] Returns the order sequences enumeration.
      */
     public static function enumOrderSequences(): array {
+
         return [
             DataTablesColumnInterface::DATATABLES_ORDER_SEQUENCE_ASC,
             DataTablesColumnInterface::DATATABLES_ORDER_SEQUENCE_DESC,
@@ -66,6 +69,7 @@ class DataTablesEnumerator {
      * @return string[] Returns the parameters enumeration.
      */
     public static function enumParameters(): array {
+
         return [
             DataTablesRequestInterface::DATATABLES_PARAMETER_COLUMNS,
             DataTablesRequestInterface::DATATABLES_PARAMETER_DRAW,
@@ -82,6 +86,7 @@ class DataTablesEnumerator {
      * @return string[] Returns the rows enumeration.
      */
     public static function enumRows(): array {
+
         return [
             DataTablesResponseInterface::DATATABLES_ROW_ATTR,
             DataTablesResponseInterface::DATATABLES_ROW_CLASS,
@@ -96,6 +101,7 @@ class DataTablesEnumerator {
      * @return string[] Returns the types enumeration.
      */
     public static function enumTypes(): array {
+
         return [
             DataTablesColumnInterface::DATATABLES_TYPE_DATE,
             DataTablesColumnInterface::DATATABLES_TYPE_HTML,

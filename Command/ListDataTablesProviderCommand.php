@@ -81,6 +81,7 @@ class ListDataTablesProviderCommand extends AbstractCommand {
      * @return string[] Returns the headers.
      */
     protected function getHeaders(): array {
+
         return [
             $this->translate("command.name", [], null, "en"),
             $this->translate("command.class", [], null, "en"),
