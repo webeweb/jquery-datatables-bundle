@@ -92,7 +92,7 @@ trait DataTablesButtonsRendererTrait {
      */
     protected function renderActionButtonComment($entity, string $route, ?string $comment): string {
 
-        $icon = 0 < strlen($comment) ? "fa:comment" : "fa:comment-slash";
+        $icon = 0 < mb_strlen($comment) ? "fa:comment" : "fa:comment-slash";
 
         return $this->renderActionButton($entity, $route, "Default", $icon, "label.comment");
     }
