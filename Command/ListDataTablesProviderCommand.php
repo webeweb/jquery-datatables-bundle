@@ -17,7 +17,6 @@ use WBW\Bundle\CoreBundle\Console\ConsoleHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManagerTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorInterface;
 
 /**
  * List DataTables provider command.
@@ -84,12 +83,12 @@ class ListDataTablesProviderCommand extends AbstractCommand {
     protected function getHeaders(): array {
 
         return [
-            $this->translate("command.name", [], TranslatorInterface::DOMAIN, "en"),
-            $this->translate("command.class", [], TranslatorInterface::DOMAIN, "en"),
-            $this->translate("command.columns", [], TranslatorInterface::DOMAIN, "en"),
-            $this->translate("command.prefix", [], TranslatorInterface::DOMAIN, "en"),
-            $this->translate("command.view", [], TranslatorInterface::DOMAIN, "en"),
-            $this->translate("command.csv", [], TranslatorInterface::DOMAIN, "en"),
+            $this->translate("command.name", [], null, "en"),
+            $this->translate("command.class", [], null, "en"),
+            $this->translate("command.columns", [], null, "en"),
+            $this->translate("command.prefix", [], null, "en"),
+            $this->translate("command.view", [], null, "en"),
+            $this->translate("command.csv", [], null, "en"),
         ];
     }
 
