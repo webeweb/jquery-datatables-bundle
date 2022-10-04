@@ -123,6 +123,7 @@ class ListDataTablesProviderCommand extends AbstractCommand {
      * @return void
      */
     protected function sortRows(array &$rows): void {
+
         usort($rows, function(array $a, array $b) {
             return strcmp($a[0], $b[0]);
         });
