@@ -75,6 +75,7 @@ class DataTablesMappingHelper {
      * @return string Returns the param.
      */
     public static function getParam(DataTablesMappingInterface $mapping): string {
+
         return implode("", [
             ":",
             $mapping->getPrefix(),
@@ -89,6 +90,7 @@ class DataTablesMappingHelper {
      * @return string Returns the where.
      */
     public static function getWhere(DataTablesMappingInterface $mapping): string {
+
         return implode(" ", [
             DataTablesMappingHelper::getAlias($mapping),
             DataTablesMappingHelper::getComparator($mapping),
