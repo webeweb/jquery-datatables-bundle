@@ -15,12 +15,12 @@ assets:
         requires:
             jszip:
                 version: "2.5.0"
-                stylesheets: [ ]
+                stylesheets:
                 javascripts:
                     - "/datatables-jszip-{{ version }}/jszip.min.js"
             pdfmake:
                 version: "0.1.36"
-                stylesheets: [ ]
+                stylesheets:
                 javascripts:
                     - "/datatables-pdfmake-{{ version }}/pdfmake.min.js"
                     - "/datatables-pdfmake-{{ version }}/vfs_fonts.js"
@@ -128,6 +128,6 @@ assets:
 
             editabletable:
                 version: ""
-                stylesheets: [ ]
+                stylesheets:
                 javascripts:
                     - "/editable-table/mindmup-editabletable.js"
