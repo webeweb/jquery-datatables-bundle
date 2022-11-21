@@ -3,6 +3,21 @@ CHANGELOG
 
 ### master
 
+- Update DataTables to 1.13.1
+- Update DataTables AutoFill to 2.5.1
+- Update DataTables Buttons to 2.3.3
+- Update DataTables ColReorder to 1.6.1
+- Update DataTables Datetime to 1.2.0
+- Update DataTables FixedColumns to 4.2.1
+- Update DataTables FixedHeader to 3.3.1
+- Update DataTables KeyTable to 2.8.0
+- Update DataTables Responsive to 2.4.0
+- Update DataTables RowGroup to 1.3.0
+- Update DataTables RowReorder to 1.3.1
+- Update DataTables SearchBuilder to 1.4.0
+- Update DataTables SearchPanes to 2.1.0
+- Update DataTables Select to 1.5.0
+- Update DataTables StateRestore to 1.2.0
 - Improve code quality
 
 ### [3.38.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.38.1) (2022-07-15)
