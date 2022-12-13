@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Twig\Extension;
 
 use Exception;
+use Twig\Extension\ExtensionInterface;
 use Twig\Node\Node;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
@@ -377,6 +378,8 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         $this->assertEquals("wbw.jquery.datatables.twig.extension", DataTablesTwigExtension::SERVICE_NAME);
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
+
+        $this->assertInstanceOf(ExtensionInterface::class, $obj);
 
         $this->assertSame($this->twigEnvironment, $obj->getTwigEnvironment());
     }
