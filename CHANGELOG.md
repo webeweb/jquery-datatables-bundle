@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Improve unit tests
+
 ### [3.39.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.39.0) (2022-11-21)
 
 - Update DataTables to 1.13.1
