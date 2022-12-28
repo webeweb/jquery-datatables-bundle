@@ -15,28 +15,28 @@ use Symfony\Component\HttpFoundation\Response;
 use WBW\Bundle\CoreBundle\Controller\AbstractController;
 
 /**
- * Test layout controller.
+ * Test views controller.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Controller
  */
-class TestLayoutController extends AbstractController {
+class TestViewsController extends AbstractController {
 
     /**
-     * Displays a javascripts template.
+     * Render assets/_javascripts.html.twig
      *
      * @return Response Returns the response.
      */
-    public function javascriptsAction(): Response {
+    public function assetsJavascriptsAction(): Response {
         return $this->render("@WBWJQueryDataTables/assets/_javascripts.html.twig");
     }
 
     /**
-     * Displays a stylesheets template.
+     * Render assets/_stylesheets.html.twig
      *
      * @return Response Returns the response.
      */
-    public function stylesheetsAction(): Response {
+    public function assetsStylesheetsAction(): Response {
         return $this->render("@WBWJQueryDataTables/assets/_stylesheets.html.twig");
     }
 }

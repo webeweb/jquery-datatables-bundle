@@ -14,37 +14,37 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Controller;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractWebTestCase;
 
 /**
- * Layout controller test.
+ * Views controller test.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Controller
  */
-class LayoutControllerTest extends AbstractWebTestCase {
+class ViewsControllerTest extends AbstractWebTestCase {
 
     /**
-     * Tests javascriptsAction()
+     * Tests assetsJavascriptsAction()
      *
      * @return void
      */
-    public function testJavascriptsAction(): void {
+    public function testAssetsJavascriptsAction(): void {
 
         $client = $this->client;
 
-        $client->request("GET", "/javascripts");
+        $client->request("GET", "/assets/javascripts");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
     }
 
     /**
-     * Tests stylesheetsAction()
+     * Tests assetsStylesheetsAction()
      *
      * @return void
      */
-    public function testStylesheetsAction(): void {
+    public function testAssetsStylesheetsAction(): void {
 
         $client = $this->client;
 
-        $client->request("GET", "/stylesheets");
+        $client->request("GET", "/assets/stylesheets");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
     }
