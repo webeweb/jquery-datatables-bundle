@@ -1,6 +1,15 @@
 # Tests/Fixtures/app/config/services_test.yml
 services:
 
+    WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Controller\TestViewsController:
+        alias:  "wbw.jquery.datatables.tests.fixtures.controller.test_views"
+        public: true
+
+    wbw.jquery.datatables.tests.fixtures.controller.test_views:
+        class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Controller\TestViewsController
+        calls:
+            - [ "setContainer", [ "@service_container" ] ]
+
     wbw.jquery.datatables.event_listener:
         class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\EventListener\DataTablesEventListener
         tags:
@@ -23,12 +32,3 @@ services:
         class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\OfficeDataTablesProvider
         tags:
             - { name: "wbw.jquery.datatables.provider" }
-
-    WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Controller\TestLayoutController:
-        alias:  "wbw.jquery.datatables.tests.fixtures.controller.test_layout"
-        public: true
-
-    wbw.jquery.datatables.tests.fixtures.controller.test_layout:
-        class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Controller\TestLayoutController
-        calls:
-            - [ "setContainer", [ "@service_container" ] ]
