@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Improve functional tests
+
 ### [3.40.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.40.0) (2022-12-20)
 
 - Add PHP 8.2 support
