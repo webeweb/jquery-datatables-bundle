@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
 
-use Exception;
+use Throwable;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
 use WBW\Library\Symfony\Provider\ProviderInterface;
 
@@ -30,7 +30,7 @@ interface DataTablesEditorInterface extends ProviderInterface {
      * @param object $entity The entity.
      * @param mixed $value The value.
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function editColumn(DataTablesColumnInterface $dtColumn, $entity, $value);
 }

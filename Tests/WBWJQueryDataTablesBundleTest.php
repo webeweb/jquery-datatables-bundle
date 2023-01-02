@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
 
+use Throwable;
 use WBW\Bundle\CoreBundle\Config\ConfigurationHelper;
 use WBW\Bundle\CoreBundle\Provider\AssetsProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\WBWJQueryDataTablesExtension;
@@ -65,7 +66,7 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
      * Tests listAssets()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testListAssets(): void {
 

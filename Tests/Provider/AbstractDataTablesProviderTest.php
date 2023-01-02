@@ -12,8 +12,8 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Provider;
 
 use DateTime;
-use Exception;
 use InvalidArgumentException;
+use Throwable;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtension;
 use WBW\Bundle\CoreBundle\Tests\TestCaseHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;
@@ -275,7 +275,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
         try {
 
             $obj->renderActionButtonDelete($this, "route");
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The entity must implements DataTablesEntityInterface or declare a getId() method", $ex->getMessage());
@@ -304,7 +304,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      * Tests renderDate()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testRenderDate(): void {
 
@@ -319,7 +319,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
      * Tests renderDateTime()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testRenderDateTime(): void {
 

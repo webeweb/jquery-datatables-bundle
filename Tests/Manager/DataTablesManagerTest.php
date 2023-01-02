@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Manager;
 
-use Exception;
 use InvalidArgumentException;
+use Throwable;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
@@ -50,7 +50,7 @@ class DataTablesManagerTest extends AbstractTestCase {
      * Tests addProvider()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testAddProvider(): void {
 
@@ -65,7 +65,7 @@ class DataTablesManagerTest extends AbstractTestCase {
      * Tests addProvider()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testAddProviderWithAlreadyRegisteredDataTablesProviderException(): void {
 
@@ -75,7 +75,7 @@ class DataTablesManagerTest extends AbstractTestCase {
         try {
 
             $obj->addProvider($this->dataTablesProvider);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(AlreadyRegisteredDataTablesProviderException::class, $ex);
             $this->assertEquals('A DataTables provider with name "name" is already registered', $ex->getMessage());
@@ -86,7 +86,7 @@ class DataTablesManagerTest extends AbstractTestCase {
      * Tests contains()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testContains(): void {
 
@@ -110,7 +110,7 @@ class DataTablesManagerTest extends AbstractTestCase {
         try {
 
             $obj->contains(new RedColorProvider());
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The provider must implements DataTablesProviderInterface", $ex->getMessage());
@@ -121,7 +121,7 @@ class DataTablesManagerTest extends AbstractTestCase {
      * Tests getProvider()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testGetProvider(): void {
 
@@ -143,7 +143,7 @@ class DataTablesManagerTest extends AbstractTestCase {
         try {
 
             $obj->getProvider("exception");
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(UnregisteredDataTablesProviderException::class, $ex);
             $this->assertEquals('None DataTables provider registered with name "exception"', $ex->getMessage());

@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Renderer\DateTimes;
 
 use DateTime;
-use Exception;
+use Throwable;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\DateTimes\TestDateRendererTrait;
 
@@ -28,7 +28,7 @@ class DateRendererTraitTest extends AbstractTestCase {
      * Tests renderDate()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testRenderDate(): void {
 

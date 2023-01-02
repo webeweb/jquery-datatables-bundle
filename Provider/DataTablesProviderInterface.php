@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
 
-use Exception;
+use Throwable;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;
 use WBW\Library\Symfony\Provider\ProviderInterface;
@@ -100,7 +100,7 @@ interface DataTablesProviderInterface extends ProviderInterface {
      * @param DataTablesColumnInterface $dtColumn The column.
      * @param object $entity The entity.
      * @return string|null Returns the rendered column.
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function renderColumn(DataTablesColumnInterface $dtColumn, $entity): ?string;
 

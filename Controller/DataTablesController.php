@@ -13,11 +13,11 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Controller;
 
 use DateTime;
 use Doctrine\ORM\EntityNotFoundException;
-use Exception;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Throwable;
 use WBW\Bundle\JQuery\DataTablesBundle\Event\DataTablesEvent;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesColumnException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
@@ -73,7 +73,7 @@ class DataTablesController extends AbstractController {
             $this->dispatchDataTablesEvent(DataTablesEvent::POST_DELETE, [$entity], $dtProvider);
 
             $output = $this->prepareActionResponse(200, "DataTablesController.deleteAction.success");
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $output = $this->handleDataTablesException($ex, "DataTablesController.deleteAction");
         }
@@ -119,7 +119,7 @@ class DataTablesController extends AbstractController {
             $this->dispatchDataTablesEvent(DataTablesEvent::POST_EDIT, [$entity], $dtProvider);
 
             $output = $this->prepareActionResponse(200, "DataTablesController.editAction.success");
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $output = $this->handleDataTablesException($ex, "DataTablesController.editAction");
         }

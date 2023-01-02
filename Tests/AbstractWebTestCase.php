@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Exception;
+use Throwable;
 use WBW\Bundle\CoreBundle\Config\ConfigurationHelper;
 use WBW\Bundle\CoreBundle\Tests\AbstractWebTestCase as WebTestCase;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
@@ -118,7 +118,7 @@ abstract class AbstractWebTestCase extends WebTestCase {
      * Set up the employee fixtures.
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     protected static function setUpEmployeeFixtures(): void {
 

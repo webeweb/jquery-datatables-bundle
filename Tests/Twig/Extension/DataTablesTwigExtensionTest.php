@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Twig\Extension;
 
-use Exception;
+use Throwable;
 use Twig\Extension\ExtensionInterface;
 use Twig\Node\Node;
 use Twig\TwigFilter;
@@ -163,7 +163,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      * Tests jQueryDataTablesFunction()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testJQueryDataTablesFunction(): void {
 
@@ -181,7 +181,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      * Tests jQueryDataTablesFunction()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testJQueryDataTablesFunctionWithoutArguments(): void {
 
@@ -267,7 +267,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      * Tests jQueryDataTablesStandaloneFunction()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testJQueryDataTablesStandaloneFunction(): void {
 
@@ -282,7 +282,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      * Tests jQueryDataTablesStandaloneFunction()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testJQueryDataTablesStandaloneFunctionWithoutArguments(): void {
 

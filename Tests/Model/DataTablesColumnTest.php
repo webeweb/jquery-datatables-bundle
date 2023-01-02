@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Model;
 
-use Exception;
 use InvalidArgumentException;
+use Throwable;
 use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesColumn;
 use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesSearch;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
@@ -248,7 +248,7 @@ class DataTablesColumnTest extends AbstractTestCase {
         try {
 
             $obj->setType("exception");
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The type "exception" is invalid', $ex->getMessage());

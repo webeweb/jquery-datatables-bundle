@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection;
 
-use Exception;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
+use Throwable;
 use WBW\Bundle\CoreBundle\Twig\Extension\AssetsTwigExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\Command\ListDataTablesProviderCommand;
 use WBW\Bundle\JQuery\DataTablesBundle\Controller\DataTablesController;
@@ -83,7 +83,7 @@ class WBWJQueryDataTablesExtensionTest extends AbstractTestCase {
      * Tests load()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testLoad(): void {
 
@@ -121,7 +121,7 @@ class WBWJQueryDataTablesExtensionTest extends AbstractTestCase {
         try {
 
             $this->containerBuilder->get(ListDataTablesProviderCommand::SERVICE_NAME);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ServiceNotFoundException::class, $ex);
             $this->assertStringContainsString(ListDataTablesProviderCommand::SERVICE_NAME, $ex->getMessage());
@@ -145,7 +145,7 @@ class WBWJQueryDataTablesExtensionTest extends AbstractTestCase {
         try {
 
             $this->containerBuilder->get(DataTablesTwigExtension::SERVICE_NAME);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(ServiceNotFoundException::class, $ex);
             $this->assertStringContainsString(DataTablesTwigExtension::SERVICE_NAME, $ex->getMessage());

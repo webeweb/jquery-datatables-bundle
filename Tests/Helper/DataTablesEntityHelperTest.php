@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
 
-use Exception;
 use Symfony\Component\Serializer\SerializerInterface;
+use Throwable;
 use WBW\Bundle\JQuery\DataTablesBundle\Entity\DataTablesEntityInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesEntityHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
@@ -30,7 +30,7 @@ class DataTablesEntityHelperTest extends AbstractTestCase {
      * Tests indexEntities()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testIndexEntities(): void {
 

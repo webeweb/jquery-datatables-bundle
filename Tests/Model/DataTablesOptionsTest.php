@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Model;
 
-use Exception;
+use Throwable;
 use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesOptions;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 
@@ -27,7 +27,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
      * Tests addOption()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testAddOption(): void {
 
@@ -41,7 +41,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
      * Tests getOption()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testGetOption(): void {
 
@@ -56,7 +56,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
      * Tests hasOption()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testHasOption(): void {
 
@@ -71,7 +71,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
      * Tests removeOption()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testRemoveOption(): void {
 
@@ -88,7 +88,7 @@ class DataTablesOptionsTest extends AbstractTestCase {
      * Tests setOption()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testSetOption(): void {
 

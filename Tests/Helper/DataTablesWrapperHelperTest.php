@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
 
-use Exception;
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
+use Throwable;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
@@ -36,7 +36,7 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
         try {
 
             DataTablesWrapperHelper::getLanguageUrl("exception");
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(FileNotFoundException::class, $ex);
             $this->assertEquals('File "/bundles/wbwjquerydatatables/datatables-i18n/exception.json" could not be found.', $ex->getMessage());
@@ -47,7 +47,7 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
      * Tests getLanguageUrl()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testGetLanguageUrl(): void {
 
