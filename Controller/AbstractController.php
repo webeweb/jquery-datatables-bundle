@@ -12,10 +12,10 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Controller;
 
 use Doctrine\ORM\EntityNotFoundException;
-use Exception;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Throwable;
 use WBW\Bundle\BootstrapBundle\Controller\AbstractController as BaseController;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesWrapperInterface;
@@ -388,11 +388,11 @@ abstract class AbstractController extends BaseController {
     /**
      * Handle an exception.
      *
-     * @param Exception $ex The exception.
+     * @param Throwable $ex The exception.
      * @param string $notificationBaseId The notification base id.
      * @return SimpleJsonResponseDataInterface Returns the action response.
      */
-    protected function handleDataTablesException(Exception $ex, string $notificationBaseId): SimpleJsonResponseDataInterface {
+    protected function handleDataTablesException(Throwable $ex, string $notificationBaseId): SimpleJsonResponseDataInterface {
 
         $this->logInfo($ex->getMessage());
 
