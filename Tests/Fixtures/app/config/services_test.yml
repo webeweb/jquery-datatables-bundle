@@ -2,11 +2,11 @@
 services:
 
     WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Controller\TestViewsController:
-        alias:  "wbw.jquery.datatables.tests.fixtures.controller.test_views"
-        public: true
+        alias: "wbw.jquery.datatables.tests.fixtures.controller.test_views"
 
     wbw.jquery.datatables.tests.fixtures.controller.test_views:
-        class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Controller\TestViewsController
+        class:  WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Controller\TestViewsController
+        public: true
         calls:
             - [ "setContainer", [ "@service_container" ] ]
 
