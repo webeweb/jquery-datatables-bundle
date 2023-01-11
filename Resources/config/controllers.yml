@@ -2,10 +2,10 @@
 services:
 
     WBW\Bundle\JQuery\DataTablesBundle\Controller\DataTablesController:
-        alias: "wbw.jquery.datatables.controller.datatables"
+        alias:  "wbw.jquery.datatables.controller.datatables"
+        public: true
 
     wbw.jquery.datatables.controller.datatables:
-        class:  WBW\Bundle\JQuery\DataTablesBundle\Controller\DataTablesController
-        public: true
+        class: WBW\Bundle\JQuery\DataTablesBundle\Controller\DataTablesController
         calls:
             - [ "setContainer", [ "@service_container" ] ]
