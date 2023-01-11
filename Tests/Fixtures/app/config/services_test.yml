@@ -3,7 +3,7 @@ services:
 
     WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Controller\TestViewsController:
         alias: "wbw.jquery.datatables.tests.fixtures.controller.test_views"
-        public: false
+        public: true
 
     wbw.jquery.datatables.tests.fixtures.controller.test_views:
         class:  WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Controller\TestViewsController
@@ -12,7 +12,7 @@ services:
 
     wbw.jquery.datatables.event_listener:
         class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\EventListener\DataTablesEventListener
-        public: false
+        public: true
         tags:
             - { name: "kernel.event_listener", event: "wbw.jquery.datatables.event.pre_delete",  method: "onPreDelete" }
             - { name: "kernel.event_listener", event: "wbw.jquery.datatables.event.pre_edit",    method: "onPreEdit" }
@@ -26,12 +26,12 @@ services:
 
     wbw.jquery.datatables.provider.employee:
         class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider
-        public: false
+        public: true
         tags:
             - { name: "wbw.jquery.datatables.provider" }
 
     wbw.jquery.datatables.provider.office:
         class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\OfficeDataTablesProvider
-        public: false
+        public: true
         tags:
             - { name: "wbw.jquery.datatables.provider" }
