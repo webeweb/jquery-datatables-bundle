@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Translation;
 
 use WBW\Bundle\CoreBundle\Translation\TranslatorTrait as BaseTranslatorTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle;
 
 /**
  * Translator trait.
@@ -39,7 +40,7 @@ trait TranslatorTrait {
         }
 
         if (null === $domain) {
-            $domain = TranslatorInterface::DOMAIN;
+            $domain = WBWJQueryDataTablesBundle::getTranslationDomain();
         }
 
         return null !== $this->getTranslator() ? $this->getTranslator()->trans($id, $parameters, $domain, $locale) : $id;

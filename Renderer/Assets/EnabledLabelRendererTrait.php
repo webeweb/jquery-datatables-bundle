@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Renderer\Assets;
 
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\LabelTwigExtension;
 use WBW\Bundle\CoreBundle\Translation\BaseTranslatorInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle;
 
 /**
  * Enabled label renderer trait.
@@ -50,7 +50,7 @@ trait EnabledLabelRendererTrait {
         }
 
         $method  = sprintf("bootstrapLabel%sFunction", true === $enabled ? "Success" : "Danger");
-        $content = $this->getTranslator()->trans(true === $enabled ? "label.enabled" : "label.disabled", [], TranslatorInterface::DOMAIN);
+        $content = $this->getTranslator()->trans(true === $enabled ? "label.enabled" : "label.disabled", [], WBWJQueryDataTablesBundle::getTranslationDomain());
 
         return $this->getLabelTwigExtension()->$method(["content" => $content]);
     }

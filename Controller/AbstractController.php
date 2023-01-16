@@ -33,7 +33,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesRouterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Repository\DataTablesRepositoryInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle;
 use WBW\Library\Database\Helper\PaginateHelper;
 use WBW\Library\Symfony\Response\SimpleJsonResponseData;
 use WBW\Library\Symfony\Response\SimpleJsonResponseDataInterface;
@@ -424,7 +424,7 @@ abstract class AbstractController extends BaseController {
      */
     protected function prepareActionResponse(int $status, string $notificationId): SimpleJsonResponseDataInterface {
 
-        $notify = $this->getTranslator()->trans($notificationId, [], TranslatorInterface::DOMAIN);
+        $notify = $this->getTranslator()->trans($notificationId, [], WBWJQueryDataTablesBundle::getTranslationDomain());
 
         $response = new SimpleJsonResponseData();
         $response->setStatus($status);
