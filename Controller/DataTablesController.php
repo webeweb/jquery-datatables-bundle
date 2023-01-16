@@ -72,10 +72,10 @@ class DataTablesController extends AbstractController {
 
             $this->dispatchDataTablesEvent(DataTablesEvent::POST_DELETE, [$entity], $dtProvider);
 
-            $output = $this->prepareActionResponse(200, "DataTablesController.deleteAction.success");
+            $output = $this->prepareActionResponse(200, "controller.datatables.delete.success");
         } catch (Throwable $ex) {
 
-            $output = $this->handleDataTablesException($ex, "DataTablesController.deleteAction");
+            $output = $this->handleDataTablesException($ex, "controller.datatables.delete");
         }
 
         return $this->buildDataTablesResponse($request, $name, $output);
@@ -118,10 +118,10 @@ class DataTablesController extends AbstractController {
 
             $this->dispatchDataTablesEvent(DataTablesEvent::POST_EDIT, [$entity], $dtProvider);
 
-            $output = $this->prepareActionResponse(200, "DataTablesController.editAction.success");
+            $output = $this->prepareActionResponse(200, "controller.datatables.edit.success");
         } catch (Throwable $ex) {
 
-            $output = $this->handleDataTablesException($ex, "DataTablesController.editAction");
+            $output = $this->handleDataTablesException($ex, "controller.datatables.edit");
         }
 
         return new JsonResponse($output);
@@ -242,10 +242,10 @@ class DataTablesController extends AbstractController {
 
         $dtView = $dtProvider->getView();
         if (null === $dtProvider->getView()) {
-            $dtView = "@WBWJQueryDataTables/DataTables/index.html.twig";
+            $dtView = "@WBWJQueryDataTables/datatables/index.html.twig";
         }
         if (true === BooleanHelper::parseString($alone)) {
-            $dtView = "@WBWJQueryDataTables/DataTables/render.html.twig";
+            $dtView = "@WBWJQueryDataTables/datatables/render.html.twig";
         }
 
         return $this->render($dtView, [
