@@ -20,7 +20,7 @@ label:
     enable:    "Activer"
     enabled:   "Activé"
     new:       "Nouveau"
-    show:      "Voir"
+    show:      "Consulter"
 
 swal:
     error:
