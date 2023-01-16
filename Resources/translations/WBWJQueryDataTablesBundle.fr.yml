@@ -1,13 +1,14 @@
 # Resources/translations/WBWJQueryDataTablesBundle.en.yml
-DataTablesController:
-    deleteAction:
-        danger:  "Enregistrement non trouvé"
-        success: "Suppression réussie"
-        warning: "Suppression échouée"
-    editAction:
-        danger:  "Enregistrement non trouvé"
-        success: "Edition réussie"
-        warning: "Edition échouée"
+controller:
+    datatables:
+        delete:
+            danger:  "Enregistrement non trouvé"
+            success: "Suppression réussie"
+            warning: "Suppression échouée"
+        edit:
+            danger:  "Enregistrement non trouvé"
+            success: "Edition réussie"
+            warning: "Edition échouée"
 
 label:
     cancel:    "Annuler"

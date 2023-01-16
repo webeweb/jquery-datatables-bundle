@@ -1,13 +1,14 @@
 # Resources/translations/WBWJQueryDataTablesBundle.en.yml
-DataTablesController:
-    deleteAction:
-        danger:  "Record not found"
-        success: "Successful deletion"
-        warning: "Failed deletion"
-    editAction:
-        danger:  "Record not found"
-        success: "Successful editing"
-        warning: "Failed editing"
+controller:
+    datatables:
+        delete:
+            danger:  "Record not found"
+            success: "Successful deletion"
+            warning: "Failed deletion"
+        edit:
+            danger:  "Record not found"
+            success: "Successful editing"
+            warning: "Failed editing"
 
 label:
     cancel:    "Cancel"
