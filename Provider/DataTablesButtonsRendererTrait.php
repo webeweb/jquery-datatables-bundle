@@ -143,9 +143,10 @@ trait DataTablesButtonsRendererTrait {
     protected function renderActionButtonDuplicate($entity, string $route): string {
 
         return $this->renderActionButton($entity, $route, [
-            "type"  => "Primary",
-            "icon"  => "fa:copy",
-            "label" => "label.duplicate",
+            "type"               => "Primary",
+            "icon"               => "fa:copy",
+            "label"              => "label.duplicate",
+            "translation_domain" => WBWJQueryDataTablesBundle::getTranslationDomain(),
         ]);
     }
 
@@ -231,10 +232,10 @@ trait DataTablesButtonsRendererTrait {
     protected function renderActionButtonShow($entity, string $route): string {
 
         return $this->renderActionButton($entity, $route, [
-            "type"              => "Info",
-            "icon"              => "fa:eye",
-            "label"             => "label.show",
-            "translation_label" => WBWJQueryDataTablesBundle::getTranslationDomain(),
+            "type"               => "Info",
+            "icon"               => "fa:eye",
+            "label"              => "label.show",
+            "translation_domain" => WBWJQueryDataTablesBundle::getTranslationDomain(),
         ]);
     }
 
