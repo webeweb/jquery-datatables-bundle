@@ -2,16 +2,16 @@
 services:
 
     WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Controller\TestViewsController:
-        alias: "wbw.jquery.datatables.tests.fixtures.controller.test_views"
+        alias:  "wbw.jquery.datatables.tests.fixtures.controller.test_views"
         public: true
 
     wbw.jquery.datatables.tests.fixtures.controller.test_views:
-        class:  WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Controller\TestViewsController
+        class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Controller\TestViewsController
         calls:
             - [ "setContainer", [ "@service_container" ] ]
 
     wbw.jquery.datatables.event_listener:
-        class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\EventListener\DataTablesEventListener
+        class:  WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\EventListener\DataTablesEventListener
         public: true
         tags:
             - { name: "kernel.event_listener", event: "wbw.jquery.datatables.event.pre_delete",  method: "onPreDelete" }
@@ -25,13 +25,13 @@ services:
             - { name: "kernel.event_listener", event: "wbw.jquery.datatables.event.post_index",  method: "onPostIndex" }
 
     wbw.jquery.datatables.provider.employee:
-        class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider
+        class:  WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider
         public: true
         tags:
             - { name: "wbw.jquery.datatables.provider" }
 
     wbw.jquery.datatables.provider.office:
-        class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\OfficeDataTablesProvider
+        class:  WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\OfficeDataTablesProvider
         public: true
         tags:
             - { name: "wbw.jquery.datatables.provider" }
