@@ -18,6 +18,8 @@ use Symfony\Component\Routing\Exception\RouteNotFoundException;
 use Symfony\Component\Routing\RouterInterface;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesEntityHelper;
+use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle;
+use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
  * DataTables buttons renderer trait.
@@ -54,28 +56,31 @@ trait DataTablesButtonsRendererTrait {
      *
      * @param object $entity The entity.
      * @param string $route The route.
-     * @param string $type The type.
-     * @param string $icon The icon.
-     * @param string $label The label.
-     * @param array $args The route arguments.
-     * @param string|null $target The target.
+     * @param array $options The options.
      * @return string Returns the action button.
      * @throws InvalidArgumentException Throws an invalid argument exception if the entity is invalid.
      * @throws InvalidParameterException Throws an invalid parameter exception if a parameter is invalid.
      * @throws RouteNotFoundException Throws a route not found exception if the route doesn't exist.
      * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory parameter is missing.
+     * @internal
      */
-    private function renderActionButton($entity, string $route, string $type, string $icon, string $label, array $args = [], string $target = null): string {
+    private function renderActionButton($entity, string $route, array $options): string {
 
         DataTablesEntityHelper::isCompatible($entity, true);
 
-        $method = sprintf("bootstrapButton%sFunction", $type);
+        $_label  = ArrayHelper::get($options, "label");
+        $_domain = ArrayHelper::get($options, "translation_domain");
+        $_icon   = ArrayHelper::get($options, "icon");
+        $_params = ArrayHelper::get($options, "route", []);
+        $_target = ArrayHelper::get($options, "target");
 
-        $title  = $this->translate($label);
-        $button = $this->getButtonTwigExtension()->$method(["icon" => $icon, "title" => $title, "size" => "xs"]);
-        $href   = $this->getRouter()->generate($route, array_merge($args, ["id" => $entity->getId()]));
+        $method = sprintf("bootstrapButton%sFunction", ArrayHelper::get($options, "type", "Default"));
 
-        return $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($button, $href, $target);
+        $title  = $this->translate($_label, [], $_domain);
+        $button = $this->getButtonTwigExtension()->$method(["icon" => $_icon, "title" => $title, "size" => "xs"]);
+        $href   = $this->getRouter()->generate($route, array_merge($_params, ["id" => $entity->getId()]));
+
+        return $this->getButtonTwigExtension()->bootstrapButtonLinkFilter($button, $href, $_target);
     }
 
     /**
@@ -92,9 +97,12 @@ trait DataTablesButtonsRendererTrait {
      */
     protected function renderActionButtonComment($entity, string $route, ?string $comment): string {
 
-        $icon = 0 < mb_strlen($comment) ? "fa:comment" : "fa:comment-slash";
-
-        return $this->renderActionButton($entity, $route, "Default", $icon, "label.comment");
+        return $this->renderActionButton($entity, $route, [
+            "type"               => "Default",
+            "icon"               => 0 < mb_strlen($comment) ? "fa:comment" : "fa:comment-slash",
+            "label"              => "label.comment",
+            "translation_domain" => WBWJQueryDataTablesBundle::getTranslationDomain(),
+        ]);
     }
 
     /**
@@ -112,7 +120,13 @@ trait DataTablesButtonsRendererTrait {
 
         $args = "wbw_jquery_datatables_delete" === $route ? ["name" => $this->getName()] : [];
 
-        return $this->renderActionButton($entity, $route, "Danger", "fa:trash", "label.delete", $args);
+        return $this->renderActionButton($entity, $route, [
+            "type"               => "Danger",
+            "icon"               => "fa:trash",
+            "label"              => "label.delete",
+            "translation_domain" => WBWJQueryDataTablesBundle::getTranslationDomain(),
+            "route"              => $args,
+        ]);
     }
 
     /**
@@ -127,7 +141,12 @@ trait DataTablesButtonsRendererTrait {
      * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory parameter is missing.
      */
     protected function renderActionButtonDuplicate($entity, string $route): string {
-        return $this->renderActionButton($entity, $route, "Primary", "fa:copy", "label.duplicate");
+
+        return $this->renderActionButton($entity, $route, [
+            "type"  => "Primary",
+            "icon"  => "fa:copy",
+            "label" => "label.duplicate",
+        ]);
     }
 
     /**
@@ -142,7 +161,13 @@ trait DataTablesButtonsRendererTrait {
      * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory parameter is missing.
      */
     protected function renderActionButtonEdit($entity, string $route): string {
-        return $this->renderActionButton($entity, $route, "Default", "fa:pen", "label.edit");
+
+        return $this->renderActionButton($entity, $route, [
+            "type"               => "Default",
+            "icon"               => "fa:pen",
+            "label"              => "label.edit",
+            "translation_domain" => WBWJQueryDataTablesBundle::getTranslationDomain(),
+        ]);
     }
 
     /**
@@ -163,7 +188,7 @@ trait DataTablesButtonsRendererTrait {
             $args = ["id" => $entity->getId()];
         }
 
-        $title  = $this->translate("label.new");
+        $title  = $this->translate("label.new", [], WBWJQueryDataTablesBundle::getTranslationDomain());
         $button = $this->getButtonTwigExtension()->bootstrapButtonPrimaryFunction(["icon" => "fa:plus", "title" => $title, "size" => "xs"]);
         $href   = $this->getRouter()->generate($route, $args);
 
@@ -182,7 +207,14 @@ trait DataTablesButtonsRendererTrait {
      * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory parameter is missing.
      */
     protected function renderActionButtonPdf($entity, string $route): string {
-        return $this->renderActionButton($entity, $route, "Danger", "fa:file-pdf", "PDF", [], "_blank");
+
+        return $this->renderActionButton($entity, $route, [
+            "type"               => "Danger",
+            "icon"               => "fa:file-pdf",
+            "label"              => "PDF",
+            "translation_domain" => WBWJQueryDataTablesBundle::getTranslationDomain(),
+            "target"             => "_blank",
+        ]);
     }
 
     /**
@@ -197,7 +229,13 @@ trait DataTablesButtonsRendererTrait {
      * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory parameter is missing.
      */
     protected function renderActionButtonShow($entity, string $route): string {
-        return $this->renderActionButton($entity, $route, "Info", "fa:eye", "label.show");
+
+        return $this->renderActionButton($entity, $route, [
+            "type"              => "Info",
+            "icon"              => "fa:eye",
+            "label"             => "label.show",
+            "translation_label" => WBWJQueryDataTablesBundle::getTranslationDomain(),
+        ]);
     }
 
     /**
@@ -214,11 +252,12 @@ trait DataTablesButtonsRendererTrait {
      */
     protected function renderActionButtonSwitch($entity, string $route, ?bool $enabled): string {
 
-        if (true === $enabled) {
-            return $this->renderActionButton($entity, $route, "Success", "fa:toggle-on", "label.disable");
-        }
-
-        return $this->renderActionButton($entity, $route, "Danger", "fa:toggle-off", "label.enable");
+        return $this->renderActionButton($entity, $route, [
+            "type"               => true === $enabled ? "Success" : "Danger",
+            "icon"               => true === $enabled ? "fa:toggle-on" : "fa:toggle-off",
+            "label"              => true === $enabled ? "label.disable" : "label.enable",
+            "translation_domain" => WBWJQueryDataTablesBundle::getTranslationDomain(),
+        ]);
     }
 
     /**
