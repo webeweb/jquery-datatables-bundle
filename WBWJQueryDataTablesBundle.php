@@ -27,6 +27,13 @@ use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\WBWJQueryDataTablesEx
 class WBWJQueryDataTablesBundle extends Bundle implements AssetsProviderInterface {
 
     /**
+     * Translation domain.
+     *
+     * @var string
+     */
+    const TRANSLATION_DOMAIN = "WBWJQueryDataTablesBundle";
+
+    /**
      * {@inheritdoc}
      */
     public function build(ContainerBuilder $container): void {
@@ -45,5 +52,14 @@ class WBWJQueryDataTablesBundle extends Bundle implements AssetsProviderInterfac
      */
     public function getContainerExtension(): Extension {
         return new WBWJQueryDataTablesExtension();
+    }
+
+    /**
+     * Get the translation domain.
+     *
+     * @return string Returns the translation domain.
+     */
+    public static function getTranslationDomain(): string {
+        return self::TRANSLATION_DOMAIN;
     }
 }

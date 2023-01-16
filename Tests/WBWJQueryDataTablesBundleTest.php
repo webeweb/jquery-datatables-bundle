@@ -63,6 +63,16 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
     }
 
     /**
+     * Tests getTranslationDomain()
+     *
+     * @return void
+     */
+    public function testGetTranslationDomain(): void {
+
+        $this->assertEquals(WBWJQueryDataTablesBundle::TRANSLATION_DOMAIN, WBWJQueryDataTablesBundle::getTranslationDomain());
+    }
+
+    /**
      * Tests listAssets()
      *
      * @return void
@@ -103,5 +113,15 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
         $this->assertRegexp("/datatables\-select\-" . preg_quote($plugins["select"]["version"]) . "\.zip$/", $res[++$i]);
         $this->assertRegexp("/datatables\-staterestore\-" . preg_quote($plugins["staterestore"]["version"]) . "\.zip$/", $res[++$i]);
         $this->assertRegexp("/editable\-table\.zip$/", $res[++$i]);
+    }
+
+    /**
+     * Tests __construct()
+     *
+     * @return void
+     */
+    public function test__construct(): void {
+
+        $this->assertEquals("WBWJQueryDataTablesBundle", WBWJQueryDataTablesBundle::TRANSLATION_DOMAIN);
     }
 }
