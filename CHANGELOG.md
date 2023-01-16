@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+### [3.42.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.42.0) (2023-01-16)
+
+- Add TRANSLATION_DOMAIN constant
+- Add getTranslationDomain()
+- Remove Translator interface (replaced by TRANSLATION_DOMAIN)
+
 ### [3.41.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.41.1) (2023-01-02)
 
 - Improve code quality
