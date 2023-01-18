@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.43.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.43.0) (2023-01-18)
+
+- Improve DataTables buttons renderer trait
+
 ### [3.42.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.42.0) (2023-01-16)
 
 - Add TRANSLATION_DOMAIN constant
