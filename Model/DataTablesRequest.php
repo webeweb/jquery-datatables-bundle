@@ -102,11 +102,14 @@ class DataTablesRequest implements DataTablesRequestInterface {
      * {@inheritdoc}
      */
     public function getColumn(string $data): ?DataTablesColumnInterface {
+
         foreach ($this->columns as $current) {
+
             if ($data === $current->getData()) {
                 return $current;
             }
         }
+
         return null;
     }
 

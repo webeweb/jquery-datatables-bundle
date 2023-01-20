@@ -279,9 +279,11 @@ class DataTablesColumn implements DataTablesColumnInterface {
      * {@inheritdoc}
      */
     public function setCellType(string $cellType): DataTablesColumnInterface {
+
         if (false === in_array($cellType, DataTablesEnumerator::enumCellTypes())) {
             $cellType = self::DATATABLES_CELL_TYPE_TD;
         }
+
         $this->cellType = $cellType;
         return $this;
     }
@@ -372,9 +374,11 @@ class DataTablesColumn implements DataTablesColumnInterface {
      * @return DataTablesColumnInterface Returns this column.
      */
     public function setOrderSequence(?string $orderSequence): DataTablesColumnInterface {
+
         if (false === in_array($orderSequence, DataTablesEnumerator::enumOrderSequences())) {
             $orderSequence = null;
         }
+
         $this->orderSequence = $orderSequence;
         return $this;
     }
@@ -415,9 +419,11 @@ class DataTablesColumn implements DataTablesColumnInterface {
      * {@inheritdoc}
      */
     public function setType(?string $type): DataTablesColumnInterface {
+
         if (false === in_array($type, DataTablesEnumerator::enumTypes())) {
             throw new InvalidArgumentException(sprintf('The type "%s" is invalid', $type));
         }
+
         $this->type = $type;
         return $this;
     }

@@ -117,9 +117,11 @@ class DataTablesWrapper implements DataTablesWrapperInterface {
      * {@inheritdoc}
      */
     public function addColumn(DataTablesColumnInterface $column): DataTablesWrapperInterface {
+
         if (null === $column->getMapping()->getPrefix()) {
             $column->getMapping()->setPrefix($this->mapping->getPrefix());
         }
+
         $this->columns[$column->getData()] = $column;
         return $this;
     }
@@ -128,9 +130,11 @@ class DataTablesWrapper implements DataTablesWrapperInterface {
      * {@inheritdoc}
      */
     public function getColumn(string $data): ?DataTablesColumnInterface {
+
         if (true === array_key_exists($data, $this->columns)) {
             return $this->columns[$data];
         }
+
         return null;
     }
 
@@ -211,10 +215,13 @@ class DataTablesWrapper implements DataTablesWrapperInterface {
      * @return DataTablesWrapperInterface Returns this wrapper.
      */
     public function removeColumn(DataTablesColumnInterface $column): DataTablesWrapperInterface {
+
         if (true === array_key_exists($column->getData(), $this->columns)) {
+
             $this->columns[$column->getData()]->getMapping()->setPrefix(null);
             unset($this->columns[$column->getData()]);
         }
+
         return $this;
     }
 
