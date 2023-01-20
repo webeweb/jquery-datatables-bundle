@@ -1,8 +1,9 @@
 CHANGELOG
 =========
 
-### master
+### [3.43.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.43.1) (2023-01-20)
 
+- Fix translations
 - Improve code quality
 
 ### [3.43.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.43.0) (2023-01-18)
