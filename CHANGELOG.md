@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Improve exception messages
+
 ### [3.43.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.43.1) (2023-01-20)
 
 - Fix translations
