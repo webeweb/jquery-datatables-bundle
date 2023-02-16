@@ -54,7 +54,7 @@ class DataTablesManager extends AbstractManager {
 
         /** @var DataTablesProviderInterface $provider */
         if (false === ($provider instanceof DataTablesProviderInterface)) {
-            throw new InvalidArgumentException("The provider must implements DataTablesProviderInterface");
+            throw new InvalidArgumentException("The provider must implements " . DataTablesProviderInterface::class);
         }
 
         /** @var DataTablesProviderInterface $current */

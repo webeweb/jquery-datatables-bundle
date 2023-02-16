@@ -11,6 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Exception;
 
+use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
+
 /**
  * BadDataTables editor exception.
  *
@@ -29,7 +31,7 @@ class BadDataTablesEditorException extends AbstractDataTablesException {
         $message = "The DataTables editor is null";
 
         if (null !== $object) {
-            $format  = 'The DataTables editor "%s" must implement DataTablesEditorInterface';
+            $format  = 'The DataTables editor "%s" must implement ' . DataTablesEditorInterface::class;
             $message = sprintf($format, get_class($object));
         }
 

@@ -113,7 +113,7 @@ class DataTablesManagerTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The provider must implements DataTablesProviderInterface", $ex->getMessage());
+            $this->assertEquals("The provider must implements " . DataTablesProviderInterface::class, $ex->getMessage());
         }
     }
 

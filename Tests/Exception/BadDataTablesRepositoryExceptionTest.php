@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception;
 
 use Exception;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
+use WBW\Bundle\JQuery\DataTablesBundle\Repository\DataTablesRepositoryInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
@@ -32,6 +33,6 @@ class BadDataTablesRepositoryExceptionTest extends AbstractTestCase {
 
         $obj = new BadDataTablesRepositoryException(new Exception());
 
-        $this->assertEquals('The DataTables repository "Exception" must implement DataTablesRepositoryInterface', $obj->getMessage());
+        $this->assertEquals('The DataTables repository "Exception" must implement ' . DataTablesRepositoryInterface::class, $obj->getMessage());
     }
 }
