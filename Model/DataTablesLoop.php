@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Model;
 
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesLoopInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Model\Attribute\ArrayEntitiesTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Traits\Arrays\ArrayEntitiesTrait;
 
 /**
  * DataTables loop.

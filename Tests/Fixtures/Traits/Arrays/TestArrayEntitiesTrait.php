@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Model\Attribute;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Traits\Arrays;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Model\Attribute\ArrayEntitiesTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Traits\Arrays\ArrayEntitiesTrait;
 
 /**
  * Test array entities trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Model\Attribute
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Traits\Arrays
  */
 class TestArrayEntitiesTrait {
 

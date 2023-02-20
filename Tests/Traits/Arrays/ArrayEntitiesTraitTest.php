@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Model\Attribute;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Traits\Arrays;
 
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Model\Attribute\TestArrayEntitiesTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Traits\Arrays\TestArrayEntitiesTrait;
 
 /**
  * Array entities trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Model\Attribute
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Traits\Arrays
  */
 class ArrayEntitiesTraitTest extends AbstractTestCase {
 

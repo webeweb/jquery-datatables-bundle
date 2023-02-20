@@ -12,9 +12,9 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Event;
 
 use WBW\Bundle\CoreBundle\Event\AbstractEvent;
-use WBW\Bundle\JQuery\DataTablesBundle\Model\Attribute\ArrayEntitiesTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Traits\Arrays\ArrayEntitiesTrait;
 
 /**
  * DataTables event.

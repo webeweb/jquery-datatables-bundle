@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Model\Attribute;
+namespace WBW\Bundle\JQuery\DataTablesBundle\Traits\Arrays;
 
 /**
  * Array entities trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Model\Attribute
+ * @package WBW\Bundle\JQuery\DataTablesBundle\Traits\Arrays
  */
 trait ArrayEntitiesTrait {
 
