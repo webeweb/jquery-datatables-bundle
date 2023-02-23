@@ -18,7 +18,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderE
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Library\Symfony\Color\MaterialDesignColorPalette\RedColorProvider;
+use WBW\Library\Symfony\Provider\ProviderInterface;
 
 /**
  * DataTables manager test.
@@ -89,11 +89,14 @@ class DataTablesManagerTest extends AbstractTestCase {
      */
     public function testAddProviderWithInvalidArgumentException(): void {
 
+        // Set a Provider mock.
+        $provider = $this->getMockBuilder(ProviderInterface::class)->getMock();
+
         $obj = new DataTablesManager();
 
         try {
 
-            $obj->addProvider(new RedColorProvider());
+            $obj->addProvider($provider);
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
