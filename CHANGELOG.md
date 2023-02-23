@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.45.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.45.0) (2023-02-23)
+
+- Improve code quality
+
 ### [3.44.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.44.0) (2023-02-23)
 
 - Improve exception messages
