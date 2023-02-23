@@ -40,7 +40,7 @@ class DataTablesManager extends AbstractManager {
     public function addProvider(ProviderInterface $provider): ManagerInterface {
 
         /** @var DataTablesProviderInterface $provider */
-        if (true === $this->contains($provider)) {
+        if (true === $this->containsProvider($provider)) {
             throw new AlreadyRegisteredDataTablesProviderException($provider->getName());
         }
 
@@ -50,7 +50,7 @@ class DataTablesManager extends AbstractManager {
     /**
      * {@inheritdoc}
      */
-    public function contains(ProviderInterface $provider): bool {
+    public function containsProvider(ProviderInterface $provider): bool {
 
         /** @var DataTablesProviderInterface $provider */
         if (false === ($provider instanceof DataTablesProviderInterface)) {
