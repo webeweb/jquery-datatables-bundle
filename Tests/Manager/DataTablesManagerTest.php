@@ -83,33 +83,17 @@ class DataTablesManagerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests containsProvider()
-     *
-     * @return void
-     * @throws Throwable Throws an exception if an error occurs.
-     */
-    public function testContainsProvider(): void {
-
-        $obj = new DataTablesManager();
-
-        $this->assertFalse($obj->containsProvider($this->dataTablesProvider));
-
-        $obj->addProvider($this->dataTablesProvider);
-        $this->assertTrue($obj->containsProvider($this->dataTablesProvider));
-    }
-
-    /**
-     * Tests containsProvider()
+     * Tests addProvider()
      *
      * @return void
      */
-    public function testContainsProviderWithInvalidArgumentException(): void {
+    public function testAddProviderWithInvalidArgumentException(): void {
 
         $obj = new DataTablesManager();
 
         try {
 
-            $obj->containsProvider(new RedColorProvider());
+            $obj->addProvider(new RedColorProvider());
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
