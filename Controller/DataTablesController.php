@@ -180,8 +180,14 @@ class DataTablesController extends AbstractController {
         $dtWrapper = $this->getDataTablesWrapper($dtProvider);
         DataTablesFactory::parseWrapper($dtWrapper, $request);
 
-        $dtWrapper->getResponse()->setRecordsFiltered($repository->dataTablesCountFiltered($dtWrapper));
-        $dtWrapper->getResponse()->setRecordsTotal($repository->dataTablesCountTotal($dtWrapper));
+        $dtRecords = $repository->dataTablesCountTotal($dtWrapper);
+
+        $dtWrapper->getResponse()->setRecordsTotal($dtRecords);
+        $dtWrapper->getResponse()->setRecordsFiltered($dtRecords);
+
+        if (true === DataTablesWrapperHelper::hasSearch($dtWrapper)) {
+            $dtWrapper->getResponse()->setRecordsFiltered($repository->dataTablesCountFiltered($dtWrapper));
+        }
 
         $entities = $repository->dataTablesFindAll($dtWrapper);
 
