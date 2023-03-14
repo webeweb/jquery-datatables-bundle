@@ -283,7 +283,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testIndexActionWithLength(): void {
 
-        $parameters = TestFixtures::getPOSTData();
+        $parameters = TestFixtures::getPostData();
 
         $parameters["length"] = "20";
 
@@ -332,7 +332,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testIndexActionWithNegativeLength(): void {
 
-        $parameters = TestFixtures::getPOSTData();
+        $parameters = TestFixtures::getPostData();
 
         $parameters["length"] = "-1";
 
@@ -379,7 +379,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testIndexActionWithOrder(): void {
 
-        $parameters = TestFixtures::getPOSTData();
+        $parameters = TestFixtures::getPostData();
 
         $parameters["order"][0]["dir"] = "desc";
 
@@ -417,7 +417,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testIndexActionWithOrderOnNoOrderableColumn(): void {
 
-        $parameters = TestFixtures::getPOSTData();
+        $parameters = TestFixtures::getPostData();
 
         $parameters["order"][6]["column"] = "6";
         $parameters["order"][6]["dir"]    = "desc";
@@ -456,7 +456,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testIndexActionWithParameters(): void {
 
-        $parameters = TestFixtures::getPOSTData();
+        $parameters = TestFixtures::getPostData();
 
         $client = $this->client;
 
@@ -492,7 +492,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testIndexActionWithSearch(): void {
 
-        $parameters = TestFixtures::getPOSTData();
+        $parameters = TestFixtures::getPostData();
 
         $parameters["search"]["value"] = "New York";
 
@@ -530,7 +530,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testIndexActionWithSearchColumn(): void {
 
-        $parameters = TestFixtures::getPOSTData();
+        $parameters = TestFixtures::getPostData();
 
         $parameters["columns"][0]["search"]["value"] = "Brielle";
         $parameters["columns"][2]["search"]["value"] = "New York";
@@ -560,7 +560,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testIndexActionWithSearchColumnOnNoSearchableColumn(): void {
 
-        $parameters = TestFixtures::getPOSTData();
+        $parameters = TestFixtures::getPostData();
 
         $parameters["column"][6]["search"]["value"] = "search";
 
@@ -598,7 +598,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function testIndexActionWithStart(): void {
 
-        $parameters = TestFixtures::getPOSTData();
+        $parameters = TestFixtures::getPostData();
 
         $parameters["start"] = "50";
 

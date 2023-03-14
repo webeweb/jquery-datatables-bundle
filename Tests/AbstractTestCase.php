@@ -143,7 +143,7 @@ abstract class AbstractTestCase extends TestCase {
 
         // Set the request parameters.
         $get  = ["query" => "query"];
-        $post = array_merge(TestFixtures::getPOSTData(), ["request" => "request"]);
+        $post = array_merge(TestFixtures::getPostData(), ["request" => "request"]);
 
         // Set a DataTables request mock.
         $this->request = new Request($get, $post, [], [], [], ["REQUEST_METHOD" => "POST"]);

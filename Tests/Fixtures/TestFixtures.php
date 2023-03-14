@@ -144,7 +144,7 @@ class TestFixtures {
      *
      * @return array Returns the POST data.
      */
-    public static function getPOSTData(): array {
+    public static function getPostData(): array {
 
         $fixtures = [];
 
