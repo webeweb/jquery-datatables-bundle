@@ -30,8 +30,20 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
      * Tests getLanguageUrl()
      *
      * @return void
+     * @throws Throwable Throws an exception if an error occurs.
      */
-    public function testGetLanguageURLWithFileNotFoundException(): void {
+    public function testGetLanguageUrl(): void {
+
+        $res = "/bundles/wbwjquerydatatables/datatables-i18n/French.json";
+        $this->assertEquals($res, DataTablesWrapperHelper::getLanguageUrl("French"));
+    }
+
+    /**
+     * Tests getLanguageUrl()
+     *
+     * @return void
+     */
+    public function testGetLanguageUrlWithFileNotFoundException(): void {
 
         try {
 
@@ -41,18 +53,6 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
             $this->assertInstanceOf(FileNotFoundException::class, $ex);
             $this->assertEquals('File "/bundles/wbwjquerydatatables/datatables-i18n/exception.json" could not be found.', $ex->getMessage());
         }
-    }
-
-    /**
-     * Tests getLanguageUrl()
-     *
-     * @return void
-     * @throws Throwable Throws an exception if an error occurs.
-     */
-    public function testGetLanguageUrl(): void {
-
-        $res = "/bundles/wbwjquerydatatables/datatables-i18n/French.json";
-        $this->assertEquals($res, DataTablesWrapperHelper::getLanguageUrl("French"));
     }
 
     /**
@@ -99,5 +99,18 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
             "serverSide" => true,
         ];
         $this->assertEquals($res, DataTablesWrapperHelper::getOptions($obj));
+    }
+
+    /**
+     * Tests hasSearch()
+     *
+     * @return void
+     */
+    public function testHasSearch(): void {
+
+        $obj = TestFixtures::getWrapper();
+        DataTablesFactory::parseWrapper($obj, $this->request);
+
+        $this->assertFalse(DataTablesWrapperHelper::hasSearch($obj));
     }
 }

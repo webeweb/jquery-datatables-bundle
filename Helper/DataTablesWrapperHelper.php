@@ -88,4 +88,14 @@ class DataTablesWrapperHelper {
 
         return $output;
     }
+
+    /**
+     * Determines if a wrapper contains a search.
+     *
+     * @param DataTablesWrapperInterface $dtWrapper The wrapper.
+     * @return bool Returns true in case of success, false otherwise.
+     */
+    public static function hasSearch(DataTablesWrapperInterface $dtWrapper): bool {
+        return null !== DataTablesRepositoryHelper::determineOperator($dtWrapper);
+    }
 }
