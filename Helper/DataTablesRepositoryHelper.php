@@ -85,9 +85,11 @@ class DataTablesRepositoryHelper {
     public static function determineOperator(DataTablesWrapperInterface $dtWrapper): ?string {
 
         foreach ($dtWrapper->getRequest()->getColumns() as $dtColumn) {
+
             if (false === $dtColumn->getSearchable()) {
                 continue;
             }
+
             if ("" !== $dtColumn->getSearch()->getValue()) {
                 return "AND";
             }
