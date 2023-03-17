@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Fix documentation
+
 ### [3.46.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.46.0) (2023-03-14)
 
 - Add hasSearch() into DataTables wrapper helper
