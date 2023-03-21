@@ -1,14 +1,29 @@
 CHANGELOG
 =========
 
-### master
+### [3.47.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.47.0) (2023-03-21)
 
 - Fix documentation
+- Update DataTables to 1.13.4
+- Update DataTables AutoFill to 2.5.3
+- Update DataTables Buttons to 2.3.6
+- Update DataTables ColReorder to 1.6.2
+- Update DataTables Datetime to 1.4.0
+- Update DataTables FixedColumns to 4.2.2
+- Update DataTables FixedHeader to 3.3.2
+- Update DataTables KeyTable to 2.8.2
+- Update DataTables Responsive to 2.4.1
+- Update DataTables RowGroup to 1.3.1
+- Update DataTables RowReorder to 1.3.3
+- Update DataTables SearchBuilder to 1.4.2
+- Update DataTables SearchPanes to 2.1.2
+- Update DataTables Select to 1.6.2
+- Update DataTables StateRestore to 1.2.2
 
 ### [3.46.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.46.0) (2023-03-14)
 
 - Add hasSearch() into DataTables wrapper helper
-- Improve DataTables controller by removing a duplicate SQL query when the HTTP request doesn't contain a search 
+- Improve DataTables controller by removing a duplicate SQL query when the HTTP request doesn't contain a search
 
 ### [3.45.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.45.0) (2023-02-23)
 
