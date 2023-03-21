@@ -21,24 +21,24 @@ Dry out your DataTables code by writing it all in PHP !
 
 Includes :
 
-- [DataTables 1.13.1](https://datatables.net/)
-- [DataTables AutoFill 2.5.1](https://datatables.net/extensions/autofill/) (DataTables plugin)
-- [DataTables Buttons 2.3.3](https://datatables.net/extensions/buttons/) (DataTables plugin)
+- [DataTables 1.13.4](https://datatables.net/)
+- [DataTables AutoFill 2.5.3](https://datatables.net/extensions/autofill/) (DataTables plugin)
+- [DataTables Buttons 2.3.6](https://datatables.net/extensions/buttons/) (DataTables plugin)
 - DataTables JSZip 2.5.0
 - DataTables pdfmake 0.1.36
-- [DataTables ColReorder 1.6.1](https://datatables.net/extensions/colreorder/) (DataTables plugin)
-- [DataTables DateTime 1.2.0](https://datatables.net/extensions/datetime/) (DataTables plugin)
-- [DataTables FixedColumns 4.2.1](https://datatables.net/extensions/fixedcolumns/) (DataTables plugin)
-- [DataTables FixedHeader 3.3.1](https://datatables.net/extensions/fixedheader/) (DataTables plugin)
-- [DataTables KeyTable 2.8.0](https://datatables.net/extensions/keytable/) (DataTables plugin)
-- [DataTables Responsive 2.4.0](https://datatables.net/extensions/responsive/) (DataTables plugin)
-- [DataTables RowGroup 1.3.0](https://datatables.net/extensions/rowgroup/) (DataTables plugin)
-- [DataTables RowReorder 1.3.1](https://datatables.net/extensions/rowreorder/) (DataTables plugin)
-- [DataTables Scroller 2.0.7](https://datatables.net/extensions/scroller/) (DataTables plugin)
-- [DataTables SearchBuilder 1.4.0](https://datatables.net/extensions/searchbuilder/) (DataTables plugin)
-- [DataTables SearchPanes 2.1.0](https://datatables.net/extensions/searchpanes/) (DataTables plugin)
-- [DataTables Select 1.5.0](https://datatables.net/extensions/select/) (DataTables plugin)
-- [DataTables StateRestore 1.2.0](https://datatables.net/extensions/staterestore/) (DataTables plugin)
+- [DataTables ColReorder 1.6.2](https://datatables.net/extensions/colreorder/) (DataTables plugin)
+- [DataTables DateTime 1.4.0](https://datatables.net/extensions/datetime/) (DataTables plugin)
+- [DataTables FixedColumns 4.2.2](https://datatables.net/extensions/fixedcolumns/) (DataTables plugin)
+- [DataTables FixedHeader 3.3.2](https://datatables.net/extensions/fixedheader/) (DataTables plugin)
+- [DataTables KeyTable 2.8.2](https://datatables.net/extensions/keytable/) (DataTables plugin)
+- [DataTables Responsive 2.4.1](https://datatables.net/extensions/responsive/) (DataTables plugin)
+- [DataTables RowGroup 1.3.1](https://datatables.net/extensions/rowgroup/) (DataTables plugin)
+- [DataTables RowReorder 1.3.3](https://datatables.net/extensions/rowreorder/) (DataTables plugin)
+- [DataTables Scroller 2.1.1](https://datatables.net/extensions/scroller/) (DataTables plugin)
+- [DataTables SearchBuilder 1.4.2](https://datatables.net/extensions/searchbuilder/) (DataTables plugin)
+- [DataTables SearchPanes 2.1.2](https://datatables.net/extensions/searchpanes/) (DataTables plugin)
+- [DataTables Select 1.6.2](https://datatables.net/extensions/select/) (DataTables plugin)
+- [DataTables StateRestore 1.2.2](https://datatables.net/extensions/staterestore/) (DataTables plugin)
 - [editableTable](https://github.com/mindmup/editable-table/)
 
 Provides :
