@@ -14,7 +14,7 @@ assets:
             - "semanticui"
         requires:
             jszip:
-                version: "2.5.3"
+                version: "2.5.0"
                 stylesheets:
                 javascripts:
                     - "/datatables-jszip-{{ version }}/jszip.min.js"
