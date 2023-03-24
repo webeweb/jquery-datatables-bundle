@@ -1,7 +1,7 @@
 {
     "name": "webeweb/jquery-datatables-bundle",
     "type": "symfony-bundle",
-    "description": "Integrate jQuery Datatables with Symfony 2 and more",
+    "description": "Integrate jQuery Datatables with Symfony 4 and more",
     "keywords": [
         "bundle",
         "datatable",
