@@ -8,7 +8,7 @@ jquery-datatables-bundle
 [![License](https://img.shields.io/packagist/l/webeweb/jquery-datatables-bundle.svg?style=flat-square)](https://packagist.org/packages/webeweb/jquery-datatables-bundle)
 [![composer.lock](https://img.shields.io/badge/.lock-uncommited-important.svg?style=flat-square)](https://packagist.org/packages/webeweb/jquery-datatables-bundle)
 
-Integrate jQuery DataTables with Symfony 2 and more.
+Integrate jQuery DataTables with Symfony 4 and more.
 
 `jquery-datatables-bundle` eases the use of jQuery DataTables to display rich
 DataTables in your Symfony application by providing Twig extensions and PHP
