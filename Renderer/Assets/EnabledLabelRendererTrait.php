@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Renderer\Assets;
 
+use Symfony\Contracts\Translation\TranslatorInterface;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\LabelTwigExtension;
-use WBW\Bundle\CoreBundle\Translation\BaseTranslatorInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle;
 
 /**
@@ -33,9 +33,9 @@ trait EnabledLabelRendererTrait {
     /**
      * Get the translator.
      *
-     * @return BaseTranslatorInterface|null Returns the translator.
+     * @return TranslatorInterface|null Returns the translator.
      */
-    abstract public function getTranslator();
+    abstract public function getTranslator(): ?TranslatorInterface;
 
     /**
      * Render an enabled label.

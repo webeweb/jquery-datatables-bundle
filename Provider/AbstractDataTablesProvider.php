@@ -16,6 +16,7 @@ use Symfony\Component\Routing\Exception\InvalidParameterException;
 use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
 use Symfony\Component\Routing\RouterInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 use WBW\Bundle\BootstrapBundle\Renderer\CenterAlignedRendererTrait;
 use WBW\Bundle\BootstrapBundle\Renderer\RightAlignedRendererTrait;
 use WBW\Bundle\BootstrapBundle\Renderer\Strings\CenterAlignedTextRendererTrait;
@@ -25,7 +26,6 @@ use WBW\Bundle\BootstrapBundle\Renderer\Strings\RightAlignedTextRendererTrait;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtension;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtensionTrait;
 use WBW\Bundle\CoreBundle\Routing\RouterTrait;
-use WBW\Bundle\CoreBundle\Translation\BaseTranslatorInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
@@ -69,10 +69,10 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
      * Constructor.
      *
      * @param RouterInterface $router The router.
-     * @param BaseTranslatorInterface $translator The translator.
+     * @param TranslatorInterface $translator The translator.
      * @param ButtonTwigExtension $buttonTwigExtension The button Twig extension.
      */
-    public function __construct(RouterInterface $router, $translator, ButtonTwigExtension $buttonTwigExtension) {
+    public function __construct(RouterInterface $router, TranslatorInterface $translator, ButtonTwigExtension $buttonTwigExtension) {
         $this->setButtonTwigExtension($buttonTwigExtension);
         $this->setRouter($router);
         $this->setTranslator($translator);
