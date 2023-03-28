@@ -30,6 +30,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesResponse;
 use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesSearch;
 use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Library\Types\Helper\ArrayHelper;
 use WBW\Library\Types\Helper\BooleanHelper;
 
 /**
@@ -55,7 +56,7 @@ class DataTablesFactory {
                 continue;
             }
 
-            $dst->set($current, $src->get($current));
+            $dst->set($current, ArrayHelper::get($src->all(), $current));
         }
     }
 
@@ -292,16 +293,16 @@ class DataTablesFactory {
         }
 
         // Get the request parameters.
-        $columns = $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_COLUMNS);
-        $orders  = $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_ORDER);
-        $search  = $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_SEARCH);
+        $columns = ArrayHelper::get($parameterBag->all(), DataTablesRequestInterface::DATATABLES_PARAMETER_COLUMNS, []);
+        $orders  = ArrayHelper::get($parameterBag->all(), DataTablesRequestInterface::DATATABLES_PARAMETER_ORDER, []);
+        $search  = ArrayHelper::get($parameterBag->all(), DataTablesRequestInterface::DATATABLES_PARAMETER_SEARCH, []);
 
         // Set the request.
-        $dtRequest->setColumns(DataTablesFactory::parseColumns(null !== $columns ? $columns : [], $wrapper));
+        $dtRequest->setColumns(DataTablesFactory::parseColumns($columns, $wrapper));
         $dtRequest->setDraw($parameterBag->getInt(DataTablesRequestInterface::DATATABLES_PARAMETER_DRAW));
         $dtRequest->setLength($parameterBag->getInt(DataTablesRequestInterface::DATATABLES_PARAMETER_LENGTH));
-        $dtRequest->setOrder(DataTablesFactory::parseOrders(null !== $orders ? $orders : []));
-        $dtRequest->setSearch(DataTablesFactory::parseSearch(null !== $search ? $search : []));
+        $dtRequest->setOrder(DataTablesFactory::parseOrders($orders));
+        $dtRequest->setSearch(DataTablesFactory::parseSearch($search));
         $dtRequest->setStart($parameterBag->getInt(DataTablesRequestInterface::DATATABLES_PARAMETER_START));
         $dtRequest->setWrapper($wrapper);
 
