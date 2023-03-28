@@ -292,16 +292,16 @@ class DataTablesFactory {
         }
 
         // Get the request parameters.
-        $columns = $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_COLUMNS, []);
-        $orders  = $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_ORDER, []);
-        $search  = $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_SEARCH, []);
+        $columns = $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_COLUMNS);
+        $orders  = $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_ORDER);
+        $search  = $parameterBag->get(DataTablesRequestInterface::DATATABLES_PARAMETER_SEARCH);
 
         // Set the request.
-        $dtRequest->setColumns(DataTablesFactory::parseColumns($columns, $wrapper));
+        $dtRequest->setColumns(DataTablesFactory::parseColumns(null !== $columns ? $columns : [], $wrapper));
         $dtRequest->setDraw($parameterBag->getInt(DataTablesRequestInterface::DATATABLES_PARAMETER_DRAW));
         $dtRequest->setLength($parameterBag->getInt(DataTablesRequestInterface::DATATABLES_PARAMETER_LENGTH));
-        $dtRequest->setOrder(DataTablesFactory::parseOrders($orders));
-        $dtRequest->setSearch(DataTablesFactory::parseSearch($search));
+        $dtRequest->setOrder(DataTablesFactory::parseOrders(null !== $orders ? $orders : []));
+        $dtRequest->setSearch(DataTablesFactory::parseSearch(null !== $search ? $search : []));
         $dtRequest->setStart($parameterBag->getInt(DataTablesRequestInterface::DATATABLES_PARAMETER_START));
         $dtRequest->setWrapper($wrapper);
 
