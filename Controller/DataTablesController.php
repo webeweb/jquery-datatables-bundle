@@ -54,6 +54,7 @@ class DataTablesController extends AbstractController {
      * @param string $name The provider name.
      * @param string $id The entity id.
      * @return Response Returns the response.
+     * @throws Throwable Throws an exception if an error occurs.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
     public function deleteAction(Request $request, string $name, string $id): Response {
@@ -66,7 +67,7 @@ class DataTablesController extends AbstractController {
 
             $this->dispatchDataTablesEvent(DataTablesEvent::PRE_DELETE, [$entity], $dtProvider);
 
-            $em = $this->getDoctrine()->getManager();
+            $em = $this->getEntityManager();
             $em->remove($entity);
             $em->flush();
 
@@ -112,7 +113,7 @@ class DataTablesController extends AbstractController {
 
             $dtEditor->editColumn($dtColumn, $entity, $value);
 
-            $em = $this->getDoctrine()->getManager();
+            $em = $this->getEntityManager();
             $em->persist($entity);
             $em->flush();
 

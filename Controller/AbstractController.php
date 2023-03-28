@@ -27,7 +27,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryExceptio
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesExportHelper;
-use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
+use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManagerTrait;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
@@ -47,6 +47,10 @@ use WBW\Library\Symfony\Response\SimpleJsonResponseDataInterface;
  */
 abstract class AbstractController extends BaseController {
 
+    use DataTablesManagerTrait {
+        setDataTablesManager as public;
+    }
+
     /**
      * Build a response.
      *
@@ -54,6 +58,7 @@ abstract class AbstractController extends BaseController {
      * @param string $name The provider name.
      * @param SimpleJsonResponseDataInterface $output The output.
      * @return Response Returns the response.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     protected function buildDataTablesResponse(Request $request, string $name, SimpleJsonResponseDataInterface $output): Response {
 
@@ -86,6 +91,7 @@ abstract class AbstractController extends BaseController {
      * @param array $entities The entities.
      * @param DataTablesProviderInterface|null $provider The provider.
      * @return DataTablesEvent|null Returns the event in case of success, null otherwise.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     protected function dispatchDataTablesEvent(string $eventName, array $entities, ?DataTablesProviderInterface $provider = null): ?DataTablesEvent {
         return $this->dispatchEvent($eventName, new DataTablesEvent($eventName, $entities, $provider));
@@ -99,6 +105,7 @@ abstract class AbstractController extends BaseController {
      * @param DataTablesCSVExporterInterface $dtExporter The exporter.
      * @param bool $windows Windows ?
      * @return void
+     * @throws Throwable Throws an exception if an error occurs.
      */
     protected function exportDataTablesCallback(DataTablesProviderInterface $dtProvider, DataTablesRepositoryInterface $repository, DataTablesCSVExporterInterface $dtExporter, bool $windows): void {
 
@@ -109,7 +116,7 @@ abstract class AbstractController extends BaseController {
         $total = $repository->dataTablesCountExported($dtProvider);
         $pages = PaginateHelper::getPagesCount($total, DataTablesRepositoryInterface::REPOSITORY_LIMIT);
 
-        $em = $this->getDoctrine()->getManager();
+        $em = $this->getEntityManager();
 
         for ($i = 0; $i < $pages; ++$i) {
 
@@ -260,15 +267,6 @@ abstract class AbstractController extends BaseController {
     }
 
     /**
-     * Get the manager.
-     *
-     * @return DataTablesManager Returns the manager.
-     */
-    protected function getDataTablesManager(): DataTablesManager {
-        return $this->get(DataTablesManager::SERVICE_NAME);
-    }
-
-    /**
      * Get the provider.
      *
      * @param string $name The provider name.
@@ -300,11 +298,12 @@ abstract class AbstractController extends BaseController {
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
      * @return DataTablesRepositoryInterface Returns the repository.
+     * @throws Throwable Throws an exception if an error occurs.
      * @throws BadDataTablesRepositoryException Throws a bad repository exception.
      */
     protected function getDataTablesRepository(DataTablesProviderInterface $dtProvider): DataTablesRepositoryInterface {
 
-        $em = $this->getDoctrine()->getManager();
+        $em = $this->getEntityManager();
 
         $context = [
             "_controller" => get_class($this),
@@ -332,6 +331,7 @@ abstract class AbstractController extends BaseController {
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
      * @return string Returns the URL.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     protected function getDataTablesUrl(DataTablesProviderInterface $dtProvider): string {
 
@@ -360,6 +360,7 @@ abstract class AbstractController extends BaseController {
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
      * @return DataTablesWrapperInterface Returns the wrapper.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     protected function getDataTablesWrapper(DataTablesProviderInterface $dtProvider): DataTablesWrapperInterface {
 
@@ -409,6 +410,7 @@ abstract class AbstractController extends BaseController {
      * @param string $message The message.
      * @param array $context The context.
      * @return AbstractController Returns this controller.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     protected function logInfo(string $message, array $context = []): AbstractController {
         $this->getLogger()->info($message, $context);
@@ -421,6 +423,7 @@ abstract class AbstractController extends BaseController {
      * @param int $status The status.
      * @param string $notificationId The notification id.
      * @return SimpleJsonResponseDataInterface Returns the action response.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     protected function prepareActionResponse(int $status, string $notificationId): SimpleJsonResponseDataInterface {
 
