@@ -2,13 +2,11 @@
 services:
 
     WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Controller\TestViewsController:
-        alias:  "wbw.jquery.datatables.tests.fixtures.controller.test_views"
         public: true
-
-    wbw.jquery.datatables.tests.fixtures.controller.test_views:
-        class: WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Controller\TestViewsController
         calls:
-            - [ "setContainer", [ "@service_container" ] ]
+            - [ "setContainer", [ "@Psr\\Container\\ContainerInterface" ] ]
+        tags:
+            - { name: "container.service_subscriber" }
 
     wbw.jquery.datatables.event_listener:
         class:  WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\EventListener\DataTablesEventListener

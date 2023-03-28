@@ -1,6 +1,6 @@
 # Tests/Fixtures/app/config/config_test.yml
 imports:
-    - { resource: "security_test.yml" }
+    - { resource: "security_test.old.yml" }
     - { resource: "services_test.yml" }
 
 parameters:
@@ -15,11 +15,8 @@ framework:
         strict_requirements: true
     secret:         "ThisTokenIsNotSoSecretChangeIt"
     session:
-        handler_id:         null
-        cookie_secure:      "auto"
-        cookie_samesite:    "lax"
-        storage_factory_id: "session.storage.factory.mock_file"
-    test:           true
+        storage_id: "session.storage.mock_file"
+    test:           ~
     translator: { fallbacks: [ "%locale%" ] }
     validation:
         enabled: false

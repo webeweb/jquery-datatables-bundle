@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\HttpKernel\Kernel;
 use WBW\Bundle\CoreBundle\Tests\AbstractKernel as BaseKernel;
 
 /**
@@ -33,5 +35,18 @@ class TestKernel extends BaseKernel {
             new WBW\Bundle\CoreBundle\WBWCoreBundle(),
             new WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle(),
         ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function registerContainerConfiguration(LoaderInterface $loader): void {
+
+        if (6 <= Kernel::MAJOR_VERSION) {
+            parent::registerContainerConfiguration($loader);
+            return;
+        }
+
+        $loader->load(getcwd() . "/Tests/Fixtures/app/config/config_test.old.yml");
     }
 }
