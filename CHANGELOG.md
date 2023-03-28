@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### [3.48.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.48.0) (2023-03-28)
+
+- Add Symfony 6.x support
+- Improve DataTables factory
+
 ### [3.47.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.47.0) (2023-03-21)
 
 - Fix documentation
