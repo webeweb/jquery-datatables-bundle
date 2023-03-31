@@ -22,7 +22,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractWebTestCase;
 class ViewsControllerTest extends AbstractWebTestCase {
 
     /**
-     * Tests assetsJavascriptsAction()
+     * Tests Resources/views/assets/_javascripts.html.twig
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class ViewsControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests assetsStylesheetsAction()
+     * Tests Resources/views/assets/_stylesheets.html.twig
      *
      * @return void
      */
