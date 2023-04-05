@@ -33,3 +33,7 @@ services:
         public: true
         tags:
             - { name: "wbw.jquery.datatables.provider" }
+
+    wbw.jquery.datatables.manager.alias:
+        alias:  "wbw.jquery.datatables.manager"
+        public: true

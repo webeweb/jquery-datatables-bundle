@@ -33,7 +33,7 @@ class ListDataTablesProviderCommandTest extends AbstractWebTestCase {
     public function testExecute(): void {
 
         $obj = new ListDataTablesProviderCommand();
-        $obj->setDataTablesManager(static::$kernel->getContainer()->get(DataTablesManager::SERVICE_NAME));
+        $obj->setDataTablesManager(static::$kernel->getContainer()->get(DataTablesManager::SERVICE_NAME . ".alias"));
         $obj->setTranslator(static::$kernel->getContainer()->get("translator"));
 
         // Set an Application mock.
