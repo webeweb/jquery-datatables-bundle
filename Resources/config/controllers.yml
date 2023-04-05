@@ -7,7 +7,7 @@ services:
 
     wbw.jquery.datatables.controller.datatables:
         class:  WBW\Bundle\JQuery\DataTablesBundle\Controller\DataTablesController
-        public: true
+        public: false
         calls:
             - [ "setContainer",         [ "@Psr\\Container\\ContainerInterface" ] ]
             - [ "setDataTablesManager", [ "@wbw.jquery.datatables.manager" ] ]
