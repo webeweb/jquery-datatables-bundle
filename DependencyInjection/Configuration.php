@@ -27,7 +27,6 @@ class Configuration implements ConfigurationInterface {
      * {@inheritdoc}
      *
      * wbw_jquery_datatables:
-     *      twig:  false
      *      theme: "bootstrap"
      *      plugins:
      *          - "buttons"
@@ -44,8 +43,6 @@ class Configuration implements ConfigurationInterface {
         $rootNode = ConfigurationHelper::getRootNode($treeBuilder, WBWJQueryDataTablesExtension::EXTENSION_ALIAS);
         $rootNode
             ->children()
-                ->booleanNode("command")->defaultTrue()->info("Load commands")->end()
-                ->booleanNode("twig")->defaultTrue()->info("Load Twig extensions")->end()
                 ->variableNode("theme")->defaultValue("bootstrap")->info("jQuery DataTables theme")
                     ->validate()
                         ->ifNotInArray($themes)

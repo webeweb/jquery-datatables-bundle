@@ -11,7 +11,6 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection;
 
-use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use Throwable;
 use WBW\Bundle\CoreBundle\Twig\Extension\AssetsTwigExtension;
 use WBW\Bundle\JQuery\DataTablesBundle\Command\ListDataTablesProviderCommand;
@@ -48,10 +47,7 @@ class WBWJQueryDataTablesExtensionTest extends AbstractTestCase {
 
         // Set a configs array mock.
         $this->configs = [
-            WBWJQueryDataTablesExtension::EXTENSION_ALIAS => [
-                "command" => true,
-                "twig"    => true,
-            ],
+            WBWJQueryDataTablesExtension::EXTENSION_ALIAS => [],
         ];
     }
 
@@ -102,54 +98,6 @@ class WBWJQueryDataTablesExtensionTest extends AbstractTestCase {
 
         // Twig extensions.
         $this->assertInstanceOf(DataTablesTwigExtension::class, $this->containerBuilder->get(DataTablesTwigExtension::SERVICE_NAME));
-    }
-
-    /**
-     * Tests load()
-     *
-     * @return void
-     */
-    public function testLoadWithoutCommand(): void {
-
-        // Set the configs mock.
-        $this->configs[WBWJQueryDataTablesExtension::EXTENSION_ALIAS]["command"] = false;
-
-        $obj = new WBWJQueryDataTablesExtension();
-
-        $this->assertNull($obj->load($this->configs, $this->containerBuilder));
-
-        try {
-
-            $this->containerBuilder->get(ListDataTablesProviderCommand::SERVICE_NAME);
-        } catch (Throwable $ex) {
-
-            $this->assertInstanceOf(ServiceNotFoundException::class, $ex);
-            $this->assertStringContainsString(ListDataTablesProviderCommand::SERVICE_NAME, $ex->getMessage());
-        }
-    }
-
-    /**
-     * Tests load()
-     *
-     * @return void
-     */
-    public function testLoadWithoutTwig(): void {
-
-        // Set the configs mock.
-        $this->configs[WBWJQueryDataTablesExtension::EXTENSION_ALIAS]["twig"] = false;
-
-        $obj = new WBWJQueryDataTablesExtension();
-
-        $this->assertNull($obj->load($this->configs, $this->containerBuilder));
-
-        try {
-
-            $this->containerBuilder->get(DataTablesTwigExtension::SERVICE_NAME);
-        } catch (Throwable $ex) {
-
-            $this->assertInstanceOf(ServiceNotFoundException::class, $ex);
-            $this->assertStringContainsString(DataTablesTwigExtension::SERVICE_NAME, $ex->getMessage());
-        }
     }
 
     /**

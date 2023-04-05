@@ -48,24 +48,16 @@ class WBWJQueryDataTablesExtension extends Extension {
         $fileLocator = new FileLocator(__DIR__ . "/../Resources/config");
 
         $serviceLoader = new YamlFileLoader($container, $fileLocator);
+        $serviceLoader->load("commands.yml");
         $serviceLoader->load("controllers.yml");
-        $serviceLoader->load("services.yml");
+        $serviceLoader->load("managers.yml");
+        $serviceLoader->load("twig.yml");
 
         /** @var ConfigurationInterface $configuration */
         $configuration = $this->getConfiguration($configs, $container);
 
         $config = $this->processConfiguration($configuration, $configs);
 
-        if (true === $config["command"]) {
-            $serviceLoader->load("commands.yml");
-        }
-
-        if (true === $config["twig"]) {
-            $serviceLoader->load("twig.yml");
-        }
-
-        ConfigurationHelper::registerContainerParameter($container, $config, $this->getAlias(), "command");
-        ConfigurationHelper::registerContainerParameter($container, $config, $this->getAlias(), "twig");
         ConfigurationHelper::registerContainerParameter($container, $config, $this->getAlias(), "theme");
         ConfigurationHelper::registerContainerParameter($container, $config, $this->getAlias(), "plugins");
 
