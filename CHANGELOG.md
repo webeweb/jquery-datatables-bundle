@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+### [3.49.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.49.0) (2023-04-05)
+
+- Remove unneeded configuration parameters
+- Set Twig extensions as private
+
+
 ### [3.48.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.48.0) (2023-03-28)
 
 - Add Symfony 6.x support
