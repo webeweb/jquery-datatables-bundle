@@ -151,6 +151,7 @@ abstract class AbstractController extends BaseController {
      * @param DataTablesProviderInterface $dtProvider The provider.
      * @return DataTablesCSVExporterInterface Returns the CSV exporter.
      * @throws BadDataTablesCSVExporterException Throws a bad CSV exporter exception.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     protected function getDataTablesCSVExporter(DataTablesProviderInterface $dtProvider): DataTablesCSVExporterInterface {
 
@@ -180,6 +181,7 @@ abstract class AbstractController extends BaseController {
      * @param string $data The data.
      * @return DataTablesColumnInterface Returns the column.
      * @throws BadDataTablesColumnException Throws a bad column exception.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     protected function getDataTablesColumn(DataTablesProviderInterface $dtProvider, string $data): DataTablesColumnInterface {
 
@@ -211,6 +213,7 @@ abstract class AbstractController extends BaseController {
      * @param DataTablesProviderInterface $dtProvider The provider.
      * @return DataTablesEditorInterface Returns the editor.
      * @throws BadDataTablesEditorException Throws a bad editor exception.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     protected function getDataTablesEditor(DataTablesProviderInterface $dtProvider): DataTablesEditorInterface {
 
@@ -241,6 +244,7 @@ abstract class AbstractController extends BaseController {
      * @return object Returns the entity.
      * @throws BadDataTablesRepositoryException Throws a bad repository exception.
      * @throws EntityNotFoundException Throws an Entity not found exception.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     protected function getDataTablesEntityById(DataTablesProviderInterface $dtProvider, string $id) {
 
@@ -272,6 +276,7 @@ abstract class AbstractController extends BaseController {
      * @param string $name The provider name.
      * @return DataTablesProviderInterface Returns the provider.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     protected function getDataTablesProvider(string $name): DataTablesProviderInterface {
 
@@ -392,6 +397,7 @@ abstract class AbstractController extends BaseController {
      * @param Throwable $ex The exception.
      * @param string $notificationBaseId The notification base id.
      * @return SimpleJsonResponseDataInterface Returns the action response.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     protected function handleDataTablesException(Throwable $ex, string $notificationBaseId): SimpleJsonResponseDataInterface {
 
