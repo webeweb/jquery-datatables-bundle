@@ -310,7 +310,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
 
         $obj = $this->dataTablesProvider;
 
-        $this->assertEquals(null, $obj->renderDate(null));
+        $this->assertNull($obj->renderDate(null));
         $this->assertEquals("14/01/2019", $obj->renderDate(new DateTime("2019-01-14")));
         $this->assertEquals("14-01-2019", $obj->renderDate(new DateTime("2019-01-14"), "d-m-Y"));
     }
@@ -325,7 +325,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
 
         $obj = $this->dataTablesProvider;
 
-        $this->assertEquals(null, $obj->renderDateTime(null));
+        $this->assertNull($obj->renderDateTime(null));
         $this->assertEquals("14/01/2019 18:15", $obj->renderDateTime(new DateTime("2019-01-14 18:15:00")));
         $this->assertEquals("14-01-2019 18h15", $obj->renderDateTime(new DateTime("2019-01-14 18:15:00"), "d-m-Y H\hi"));
     }
@@ -339,7 +339,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
 
         $obj = $this->dataTablesProvider;
 
-        $this->assertEquals(null, $obj->renderFloat(null));
+        $this->assertNull($obj->renderFloat(null));
         $this->assertEquals("1,000.00", $obj->renderFloat(1000));
         $this->assertEquals("1,000.000", $obj->renderFloat(1000, 3));
         $this->assertEquals("1 000,000", $obj->renderFloat(1000, 3, ",", " "));

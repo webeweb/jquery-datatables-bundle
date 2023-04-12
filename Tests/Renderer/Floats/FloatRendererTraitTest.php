@@ -46,7 +46,7 @@ class FloatRendererTraitTest extends AbstractTestCase {
 
         $obj = new TestFloatRendererTrait();
 
-        $this->assertEquals(null, $obj->renderPercent(null));
+        $this->assertNull($obj->renderPercent(null));
         $this->assertEquals("100.00 %", $obj->renderPercent(100));
     }
 
@@ -59,7 +59,7 @@ class FloatRendererTraitTest extends AbstractTestCase {
 
         $obj = new TestFloatRendererTrait();
 
-        $this->assertEquals(null, $obj->renderPrice(null));
+        $this->assertNull($obj->renderPrice(null));
         $this->assertEquals("1,000.00 €", $obj->renderPrice(1000));
         $this->assertEquals("1,000.00 $", $obj->renderPrice(1000, "$"));
     }

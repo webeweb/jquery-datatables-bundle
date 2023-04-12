@@ -31,7 +31,7 @@ class StringWrapperTraitTest extends AbstractTestCase {
 
         $obj = new TestStringWrapperTrait();
 
-        $this->assertEquals(null, $obj->wrapString(null, "prefix-", "-suffix"));
+        $this->assertNull($obj->wrapString(null, "prefix-", "-suffix"));
         $this->assertEquals("content", $obj->wrapString("content", null, null));
         $this->assertEquals("prefix-content", $obj->wrapString("content", "prefix-", null));
         $this->assertEquals("prefix-content-suffix", $obj->wrapString("content", "prefix-", "-suffix"));

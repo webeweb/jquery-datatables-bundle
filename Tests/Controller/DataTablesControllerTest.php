@@ -641,8 +641,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
 
         $this->assertEquals("POST", $res["ajax"]["type"]);
         $this->assertEquals("/datatables/employee/index", $res["ajax"]["url"]);
-        $this->assertEquals(true, $res["processing"]);
-        $this->assertEquals(true, $res["serverSide"]);
+        $this->assertTrue($res["processing"]);
+        $this->assertTrue($res["serverSide"]);
     }
 
     /**
@@ -666,8 +666,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
 
         $this->assertEquals("POST", $res["ajax"]["type"]);
         $this->assertEquals("url", $res["ajax"]["url"]);
-        $this->assertEquals(true, $res["processing"]);
-        $this->assertEquals(true, $res["serverSide"]);
+        $this->assertTrue($res["processing"]);
+        $this->assertTrue($res["serverSide"]);
     }
 
     /**

@@ -31,7 +31,7 @@ class ColorRendererTraitTest extends AbstractTestCase {
 
         $obj = new TestColorRendererTrait();
 
-        $this->assertEquals(null, $obj->renderColor(null));
+        $this->assertNull($obj->renderColor(null));
         $this->assertEquals('<div style="background-color: #ffffff;"></div>', $obj->renderColor("#ffffff"));
         $this->assertEquals('<div style="background-color: #ffffff; width: 50px;"></div>', $obj->renderColor("#ffffff", 50));
         $this->assertEquals('<div style="background-color: #ffffff; width: 50px; height: 30px;"></div>', $obj->renderColor("#ffffff", 50, 30));
