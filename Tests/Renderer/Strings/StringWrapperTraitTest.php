@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings\TestStrin
 class StringWrapperTraitTest extends AbstractTestCase {
 
     /**
-     * Tests wrapString()
+     * Test wrapString()
      *
      * @return void
      */

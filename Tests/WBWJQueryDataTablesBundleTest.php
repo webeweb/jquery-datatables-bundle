@@ -27,7 +27,7 @@ use WBW\Library\Symfony\Helper\AssetsHelper;
 class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
 
     /**
-     * Tests build()
+     * Test build()
      *
      * @return void
      */
@@ -39,7 +39,7 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getAssetsRelativeDirectory()
+     * Test getAssetsRelativeDirectory()
      *
      * @return void
      */
@@ -51,7 +51,7 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getContainerExtension()
+     * Test getContainerExtension()
      *
      * @return void
      */
@@ -63,7 +63,7 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getTranslationDomain()
+     * Test getTranslationDomain()
      *
      * @return void
      */
@@ -73,7 +73,7 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
     }
 
     /**
-     * Tests listAssets()
+     * Test listAssets()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
@@ -116,7 +116,7 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

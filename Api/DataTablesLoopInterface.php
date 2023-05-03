@@ -62,14 +62,14 @@ interface DataTablesLoopInterface {
     public function getRevIndex0(): int;
 
     /**
-     * Determines if this is the first iteration.
+     * Determine if this is the first iteration.
      *
      * @return bool Returns true in cas of success, false otherwise.
      */
     public function isFirst(): bool;
 
     /**
-     * Determines if this is the last iteration.
+     * Determine if this is the last iteration.
      *
      * @return bool Returns true in cas of success, false otherwise.
      */

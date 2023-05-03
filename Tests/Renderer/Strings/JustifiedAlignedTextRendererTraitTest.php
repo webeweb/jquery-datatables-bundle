@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings\TestJusti
 class JustifiedAlignedTextRendererTraitTest extends AbstractTestCase {
 
     /**
-     * Tests renderJustifiedAlignedText()
+     * Test renderJustifiedAlignedText()
      *
      * @return void
      */

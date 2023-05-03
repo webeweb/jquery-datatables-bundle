@@ -25,7 +25,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesMappingHelperTest extends AbstractTestCase {
 
     /**
-     * Tests getAlias()
+     * Test getAlias()
      *
      * @return void
      */
@@ -43,7 +43,7 @@ class DataTablesMappingHelperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getComparator()
+     * Test getComparator()
      *
      * @return void
      */
@@ -81,7 +81,7 @@ class DataTablesMappingHelperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getParam()
+     * Test getParam()
      *
      * @return void
      */
@@ -95,7 +95,7 @@ class DataTablesMappingHelperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getWhere()
+     * Test getWhere()
      *
      * @return void
      */

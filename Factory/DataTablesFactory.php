@@ -61,7 +61,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Determines if a raw column is valid.
+     * Determine if a raw column is valid.
      *
      * @param array $rawColumn The raw column.
      * @return bool Returns true in case of success, false otherwise.
@@ -80,7 +80,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Determines if a raw order is valid.
+     * Determine if a raw order is valid.
      *
      * @param array $rawOrder The raw order.
      * @return bool Returns true in case of success, false otherwise.
@@ -99,7 +99,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Determines if a raw search is valid.
+     * Determine if a raw search is valid.
      *
      * @param array $rawSearch The raw search.
      * @return bool Returns true in case of success, false otherwise.
@@ -118,7 +118,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Creates a column.
+     * Create a column.
      *
      * @param string $data The column data.
      * @param string $name The column name.
@@ -138,7 +138,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Creates an options.
+     * Create an options.
      *
      * @return DataTablesOptionsInterface Returns the options.
      */
@@ -147,7 +147,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Creates a response.
+     * Create a response.
      *
      * @param DataTablesWrapperInterface $wrapper The wrapper.
      * @return DataTablesResponseInterface Returns the response.
@@ -162,7 +162,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Creates a wrapper.
+     * Create a wrapper.
      *
      * @param string $url The URL.
      * @param DataTablesProviderInterface $provider The provider.
@@ -182,7 +182,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Parses a raw column.
+     * Parse a raw column.
      *
      * @param array $rawColumn The raw column.
      * @param DataTablesWrapperInterface $wrapper The wrapper.
@@ -212,7 +212,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Parses the raw columns.
+     * Parse the raw columns.
      *
      * @param array $rawColumns The raw columns.
      * @param DataTablesWrapperInterface $wrapper The wrapper.
@@ -236,7 +236,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Parses a raw order.
+     * Parse a raw order.
      *
      * @param array $rawOrder The raw order.
      * @return DataTablesOrderInterface Returns the order.
@@ -256,7 +256,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Parses the raw orders.
+     * Parse the raw orders.
      *
      * @param array $rawOrders The raw orders.
      * @return DataTablesOrderInterface[] Returns the orders.
@@ -273,7 +273,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Parses a request.
+     * Parse a request.
      *
      * @param DataTablesWrapperInterface $wrapper The wrapper.
      * @param Request $request The request.
@@ -310,7 +310,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Parses a raw search.
+     * Parse a raw search.
      *
      * @param array $rawSearch The raw search.
      * @return DataTablesSearchInterface Returns the search.
@@ -330,7 +330,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Parses a request.
+     * Parse a request.
      *
      * @param DataTablesWrapperInterface $wrapper The wrapper.
      * @param Request $request The request.

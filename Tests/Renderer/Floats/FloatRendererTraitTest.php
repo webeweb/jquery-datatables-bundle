@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Floats\TestFloatR
 class FloatRendererTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the renderFloat() methods.
+     * Test the renderFloat() methods.
      *
      * @return void
      */
@@ -38,7 +38,7 @@ class FloatRendererTraitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the renderPercent() methods.
+     * Test the renderPercent() methods.
      *
      * @return void
      */
@@ -51,7 +51,7 @@ class FloatRendererTraitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the renderPrice() methods.
+     * Test the renderPrice() methods.
      *
      * @return void
      */

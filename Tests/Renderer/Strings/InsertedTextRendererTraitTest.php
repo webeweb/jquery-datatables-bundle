@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings\TestInser
 class InsertedTextRendererTraitTest extends AbstractTestCase {
 
     /**
-     * Tests renderInsertedText()
+     * Test renderInsertedText()
      *
      * @return void
      */

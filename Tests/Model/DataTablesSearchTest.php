@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesSearchTest extends AbstractTestCase {
 
     /**
-     * Tests setRegex()
+     * Test setRegex()
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class DataTablesSearchTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setValue()
+     * Test setValue()
      *
      * @return void
      */
@@ -49,7 +49,7 @@ class DataTablesSearchTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      */
     public function test__construct(): void {
 

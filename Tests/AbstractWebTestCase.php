@@ -27,7 +27,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 abstract class AbstractWebTestCase extends WebTestCase {
 
     /**
-     * Lists CSS assets.
+     * List CSS assets.
      *
      * @return string[] Returns the CSS assets list.
      */
@@ -58,7 +58,7 @@ abstract class AbstractWebTestCase extends WebTestCase {
     }
 
     /**
-     * Lists Javascript assets.
+     * List Javascript assets.
      *
      * @return string[] Returns the Javascript assets list.
      */

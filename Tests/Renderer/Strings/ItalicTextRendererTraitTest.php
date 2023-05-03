@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings\TestItali
 class ItalicTextRendererTraitTest extends AbstractTestCase {
 
     /**
-     * Tests renderItalicText()
+     * Test renderItalicText()
      *
      * @return void
      */

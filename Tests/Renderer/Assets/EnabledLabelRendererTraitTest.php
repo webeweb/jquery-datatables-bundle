@@ -41,7 +41,7 @@ class EnabledLabelRendererTraitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderEnabledLabel()
+     * Test renderEnabledLabel()
      *
      * @return void
      */
@@ -59,7 +59,7 @@ class EnabledLabelRendererTraitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderEnabledLabel()
+     * Test renderEnabledLabel()
      *
      * @return void
      */
@@ -74,7 +74,7 @@ class EnabledLabelRendererTraitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderEnabledLabel()
+     * Test renderEnabledLabel()
      *
      * @return void
      */

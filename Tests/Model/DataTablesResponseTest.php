@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesResponseTest extends AbstractTestCase {
 
     /**
-     * Tests addRow()
+     * Test addRow()
      *
      * @return void
      */
@@ -38,7 +38,7 @@ class DataTablesResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests jsonSerialize()
+     * Test jsonSerialize()
      *
      * @return void
      */
@@ -51,7 +51,7 @@ class DataTablesResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setError()
+     * Test setError()
      *
      * @return void
      */
@@ -64,7 +64,7 @@ class DataTablesResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setRecordFiltered()
+     * Test setRecordFiltered()
      *
      * @return void
      */
@@ -77,7 +77,7 @@ class DataTablesResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setRecordTotal()
+     * Test setRecordTotal()
      *
      * @return void
      */
@@ -90,7 +90,7 @@ class DataTablesResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setRow()
+     * Test setRow()
      *
      * @return void
      */
@@ -106,7 +106,7 @@ class DataTablesResponseTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

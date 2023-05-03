@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Traits\Arrays\TestArrayEnt
 class ArrayEntitiesTraitTest extends AbstractTestCase {
 
     /**
-     * Tests setEntities()
+     * Test setEntities()
      *
      * @return void
      */

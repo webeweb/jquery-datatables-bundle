@@ -92,7 +92,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     }
 
     /**
-     * Creates a query builder "count exported".
+     * Create a query builder "count exported".
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
      * @return QueryBuilder Returns the query builder "count exported".
@@ -116,7 +116,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     }
 
     /**
-     * Creates a query builder "count filtered".
+     * Create a query builder "count filtered".
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return QueryBuilder Returns the query builder "count filtered".
@@ -144,7 +144,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     }
 
     /**
-     * Creates a query builder "Count total".
+     * Create a query builder "Count total".
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return QueryBuilder Returns the query builder "count total".
@@ -165,7 +165,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     }
 
     /**
-     * Creates a query builder "export all".
+     * Create a query builder "export all".
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
      * @return QueryBuilder Returns the query builder "export all".
@@ -185,7 +185,7 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
     }
 
     /**
-     * Creates a query builder "find all".
+     * Create a query builder "find all".
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return QueryBuilder Returns the query builder "find all".

@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Assets\TestColorR
 class ColorRendererTraitTest extends AbstractTestCase {
 
     /**
-     * Tests renderColor()
+     * Test renderColor()
      *
      * @return void
      */

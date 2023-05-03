@@ -24,7 +24,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesMappingTest extends AbstractTestCase {
 
     /**
-     * Tests setColumn()
+     * Test setColumn()
      *
      * @return void
      */
@@ -37,7 +37,7 @@ class DataTablesMappingTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setParent()
+     * Test setParent()
      *
      * @return void
      */
@@ -53,7 +53,7 @@ class DataTablesMappingTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setPrefix()
+     * Test setPrefix()
      *
      * @return void
      */
@@ -66,7 +66,7 @@ class DataTablesMappingTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

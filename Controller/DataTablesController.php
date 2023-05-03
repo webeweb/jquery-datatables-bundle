@@ -161,7 +161,7 @@ class DataTablesController extends AbstractController {
     }
 
     /**
-     * Lists all entities.
+     * List all entities.
      *
      * @param Request $request The request.
      * @param string $name The provider name.

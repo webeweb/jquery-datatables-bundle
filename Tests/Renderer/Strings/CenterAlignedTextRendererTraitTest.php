@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings\TestCente
 class CenterAlignedTextRendererTraitTest extends AbstractTestCase {
 
     /**
-     * Tests renderCenterAlignedText()
+     * Test renderCenterAlignedText()
      *
      * @return void
      */

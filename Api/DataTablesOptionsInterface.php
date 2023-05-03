@@ -46,7 +46,7 @@ interface DataTablesOptionsInterface {
     public function getOptions(): array;
 
     /**
-     * Determines if an option exists.
+     * Determine if an option exists.
      *
      * @param string $name The name.
      * @return bool Returns true in case of success, false otherwise.

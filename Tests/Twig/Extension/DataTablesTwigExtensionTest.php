@@ -29,7 +29,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 class DataTablesTwigExtensionTest extends AbstractTestCase {
 
     /**
-     * Assets Twig extension.
+     * Asset Twig extension.
      *
      * @var AssetsTwigExtension
      */
@@ -46,7 +46,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getFilters()
+     * Test getFilters()
      *
      * @return void
      */
@@ -69,7 +69,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getFunctions()
+     * Test getFunctions()
      *
      * @return void
      */
@@ -132,7 +132,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the datatables-i18n-<version> directory.
+     * Test the datatables-i18n-<version> directory.
      *
      * @return void
      */
@@ -160,7 +160,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests jQueryDataTablesFunction()
+     * Test jQueryDataTablesFunction()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
@@ -178,7 +178,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests jQueryDataTablesFunction()
+     * Test jQueryDataTablesFunction()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
@@ -193,7 +193,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests jQueryDataTablesNameFunction()
+     * Test jQueryDataTablesNameFunction()
      *
      * @return void
      */
@@ -205,7 +205,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests jQueryDataTablesOptionsFunction()
+     * Test jQueryDataTablesOptionsFunction()
      *
      * @return void
      */
@@ -264,7 +264,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests jQueryDataTablesStandaloneFunction()
+     * Test jQueryDataTablesStandaloneFunction()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
@@ -279,7 +279,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests jQueryDataTablesStandaloneFunction()
+     * Test jQueryDataTablesStandaloneFunction()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
@@ -293,7 +293,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderDataTablesFunction()
+     * Test renderDataTablesFunction()
      *
      * @return void
      */
@@ -313,7 +313,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderDataTablesFunction()
+     * Test renderDataTablesFunction()
      *
      * @return void
      */
@@ -327,7 +327,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderDataTablesFunction()
+     * Test renderDataTablesFunction()
      *
      * @return void
      */
@@ -341,7 +341,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderDataTablesFunction()
+     * Test renderDataTablesFunction()
      *
      * @return void
      */
@@ -355,7 +355,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderDataTablesFunction()
+     * Test renderDataTablesFunction()
      *
      * @return void
      */
@@ -369,7 +369,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

@@ -26,7 +26,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesColumnTest extends AbstractTestCase {
 
     /**
-     * Tests setCellType()
+     * Test setCellType()
      *
      * @return void
      */
@@ -45,7 +45,7 @@ class DataTablesColumnTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setClassname()
+     * Test setClassname()
      *
      * @return void
      */
@@ -58,7 +58,7 @@ class DataTablesColumnTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setContentPadding()
+     * Test setContentPadding()
      *
      * @return void
      */
@@ -71,7 +71,7 @@ class DataTablesColumnTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setData()
+     * Test setData()
      *
      * @return void
      */
@@ -84,7 +84,7 @@ class DataTablesColumnTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setDefaultContent()
+     * Test setDefaultContent()
      *
      * @return void
      */
@@ -97,7 +97,7 @@ class DataTablesColumnTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setName()
+     * Test setName()
      *
      * @return void
      */
@@ -110,7 +110,7 @@ class DataTablesColumnTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setOrderData()
+     * Test setOrderData()
      *
      * @return void
      */
@@ -123,7 +123,7 @@ class DataTablesColumnTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setOrderDataType()
+     * Test setOrderDataType()
      *
      * @return void
      */
@@ -136,7 +136,7 @@ class DataTablesColumnTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setOrderSequence()
+     * Test setOrderSequence()
      *
      * @return void
      */
@@ -155,7 +155,7 @@ class DataTablesColumnTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setOrderable()
+     * Test setOrderable()
      *
      * @return void
      */
@@ -168,7 +168,7 @@ class DataTablesColumnTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setSearch()
+     * Test setSearch()
      *
      * @return void
      */
@@ -183,7 +183,7 @@ class DataTablesColumnTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setSearchable()
+     * Test setSearchable()
      *
      * @return void
      */
@@ -196,7 +196,7 @@ class DataTablesColumnTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setTitle()
+     * Test setTitle()
      *
      * @return void
      */
@@ -209,7 +209,7 @@ class DataTablesColumnTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setType()
+     * Test setType()
      *
      * @return void
      */
@@ -237,7 +237,7 @@ class DataTablesColumnTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setType()
+     * Test setType()
      *
      * @return void
      */
@@ -256,7 +256,7 @@ class DataTablesColumnTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setVisible()
+     * Test setVisible()
      *
      * @return void
      */
@@ -269,7 +269,7 @@ class DataTablesColumnTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setWidth()
+     * Test setWidth()
      *
      * @return void
      */
@@ -282,7 +282,7 @@ class DataTablesColumnTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

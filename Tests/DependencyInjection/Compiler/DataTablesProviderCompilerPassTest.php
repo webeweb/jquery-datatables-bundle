@@ -52,7 +52,7 @@ class DataTablesProviderCompilerPassTest extends AbstractTestCase {
     }
 
     /**
-     * Tests process()
+     * Test process()
      *
      * @return void
      */

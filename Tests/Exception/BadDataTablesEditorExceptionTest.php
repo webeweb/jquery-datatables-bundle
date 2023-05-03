@@ -25,7 +25,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class BadDataTablesEditorExceptionTest extends AbstractTestCase {
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */
@@ -37,7 +37,7 @@ class BadDataTablesEditorExceptionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

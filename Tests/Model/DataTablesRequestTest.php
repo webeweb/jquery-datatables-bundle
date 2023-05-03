@@ -24,7 +24,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesRequestTest extends AbstractTestCase {
 
     /**
-     * Tests getColumn()
+     * Test getColumn()
      *
      * @return void
      */
@@ -39,7 +39,7 @@ class DataTablesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setColumns()
+     * Test setColumns()
      *
      * @return void
      */
@@ -52,7 +52,7 @@ class DataTablesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setDraw()
+     * Test setDraw()
      *
      * @return void
      */
@@ -65,7 +65,7 @@ class DataTablesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setLength()
+     * Test setLength()
      *
      * @return void
      */
@@ -78,7 +78,7 @@ class DataTablesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setOrder()
+     * Test setOrder()
      *
      * @return void
      */
@@ -91,7 +91,7 @@ class DataTablesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setSearch()
+     * Test setSearch()
      *
      * @return void
      */
@@ -104,7 +104,7 @@ class DataTablesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setStart()
+     * Test setStart()
      *
      * @return void
      */
@@ -117,7 +117,7 @@ class DataTablesRequestTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

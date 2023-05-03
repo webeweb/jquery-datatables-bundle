@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Assets\TestIconRe
 class IconRendererTraitTest extends AbstractTestCase {
 
     /**
-     * Tests the renderIcon() methods.
+     * Test the renderIcon() methods.
      *
      * @return void
      */

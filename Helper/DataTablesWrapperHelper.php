@@ -90,7 +90,7 @@ class DataTablesWrapperHelper {
     }
 
     /**
-     * Determines if a wrapper contains a search.
+     * Determine if a wrapper contains a search.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return bool Returns true in case of success, false otherwise.

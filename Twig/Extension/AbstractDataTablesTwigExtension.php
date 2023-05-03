@@ -68,7 +68,7 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
     }
 
     /**
-     * Displays a jQuery DataTables.
+     * Display a jQuery DataTables.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @param string|null $selector The selector.
@@ -96,7 +96,7 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
     }
 
     /**
-     * Displays a jQuery DataTables "standalone".
+     * Display a jQuery DataTables "standalone".
      *
      * @param string $selector The selector.
      * @param string|null $language The language.

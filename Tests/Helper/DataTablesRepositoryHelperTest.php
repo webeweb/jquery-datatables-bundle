@@ -47,7 +47,7 @@ class DataTablesRepositoryHelperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests appendOrder()
+     * Test appendOrder()
      *
      * @return void
      */
@@ -61,7 +61,7 @@ class DataTablesRepositoryHelperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests appendWhere()
+     * Test appendWhere()
      *
      * @return void
      */

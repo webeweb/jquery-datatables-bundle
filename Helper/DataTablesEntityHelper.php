@@ -28,7 +28,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Entity\DataTablesEntityInterface;
 class DataTablesEntityHelper {
 
     /**
-     * Indexes the entities.
+     * Indexe the entities.
      *
      * @param array $entities The entities.
      * @return array Returns the indexed entities.
@@ -55,7 +55,7 @@ class DataTablesEntityHelper {
     }
 
     /**
-     * Determines if an entity is compatible.
+     * Determine if an entity is compatible.
      *
      * @param object $entity The entity.
      * @param bool $throwException Throw exception ?
@@ -80,7 +80,7 @@ class DataTablesEntityHelper {
     }
 
     /**
-     * Serializes an entity.
+     * Serialize an entity.
      *
      * @param object|null $entity The entity.
      * @return string Returns the serialized entity.
@@ -96,7 +96,7 @@ class DataTablesEntityHelper {
     }
 
     /**
-     * Creates a serializer.
+     * Create a serializer.
      *
      * @return SerializerInterface Returns the serializer.
      */

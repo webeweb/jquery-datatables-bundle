@@ -27,7 +27,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesWrapperTest extends AbstractTestCase {
 
     /**
-     * Tests addColumn()
+     * Test addColumn()
      *
      * @return void
      */
@@ -53,7 +53,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getColumn()
+     * Test getColumn()
      *
      * @return void
      */
@@ -68,7 +68,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests removeColumn()
+     * Test removeColumn()
      *
      * @return void
      */
@@ -93,7 +93,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setMethod()
+     * Test setMethod()
      *
      * @return void
      */
@@ -109,7 +109,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setOptions()
+     * Test setOptions()
      *
      * @return void
      */
@@ -125,7 +125,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setProcessing()
+     * Test setProcessing()
      *
      * @return void
      */
@@ -141,7 +141,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setProvider()
+     * Test setProvider()
      *
      * @return void
      */
@@ -158,7 +158,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setRequest()
+     * Test setRequest()
      *
      * @return void
      */
@@ -171,7 +171,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setResponse()
+     * Test setResponse()
      *
      * @return void
      */
@@ -184,7 +184,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setServerSide()
+     * Test setServerSide()
      *
      * @return void
      */
@@ -200,7 +200,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setUrl()
+     * Test setUrl()
      *
      * @return void
      */
@@ -213,7 +213,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

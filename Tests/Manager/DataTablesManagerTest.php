@@ -47,7 +47,7 @@ class DataTablesManagerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests addProvider()
+     * Test addProvider()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
@@ -62,7 +62,7 @@ class DataTablesManagerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests addProvider()
+     * Test addProvider()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
@@ -83,7 +83,7 @@ class DataTablesManagerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests addProvider()
+     * Test addProvider()
      *
      * @return void
      */
@@ -105,7 +105,7 @@ class DataTablesManagerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getProvider()
+     * Test getProvider()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
@@ -119,7 +119,7 @@ class DataTablesManagerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getProvider()
+     * Test getProvider()
      *
      * @return void
      */
@@ -138,7 +138,7 @@ class DataTablesManagerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

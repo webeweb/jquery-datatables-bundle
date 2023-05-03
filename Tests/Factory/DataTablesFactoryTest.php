@@ -33,7 +33,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
 class DataTablesFactoryTest extends AbstractTestCase {
 
     /**
-     * Tests newResponse()
+     * Test newResponse()
      *
      * @return void
      */
@@ -45,7 +45,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests newResponse()
+     * Test newResponse()
      *
      * @return void
      */
@@ -69,7 +69,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests newWrapper()
+     * Test newWrapper()
      *
      * @return void
      */
@@ -96,7 +96,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests parseColumn()
+     * Test parseColumn()
      *
      * @return void
      */
@@ -121,7 +121,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests parseColumn()
+     * Test parseColumn()
      *
      * @return void
      */
@@ -140,7 +140,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests parseColumn()
+     * Test parseColumn()
      *
      * @return void
      */
@@ -159,7 +159,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests parseColumn()
+     * Test parseColumn()
      *
      * @return void
      */
@@ -178,7 +178,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests parseColumn()
+     * Test parseColumn()
      *
      * @return void
      */
@@ -197,7 +197,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests parseColumn()
+     * Test parseColumn()
      *
      * @return void
      */
@@ -221,7 +221,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests parseColumns()
+     * Test parseColumns()
      *
      * @return void
      */
@@ -239,7 +239,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests parseColumns()
+     * Test parseColumns()
      *
      * @return void
      */
@@ -258,7 +258,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests parseOrder()
+     * Test parseOrder()
      *
      * @return void
      */
@@ -278,7 +278,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests parseOrder()
+     * Test parseOrder()
      *
      * @return void
      */
@@ -295,7 +295,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests parseOrder()
+     * Test parseOrder()
      *
      * @return void
      */
@@ -312,7 +312,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests parseOrder()
+     * Test parseOrder()
      *
      * @return void
      */
@@ -329,7 +329,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests parseOrders()
+     * Test parseOrders()
      *
      * @return void
      */
@@ -347,7 +347,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests parseRequest()
+     * Test parseRequest()
      *
      * @return void
      */
@@ -375,7 +375,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests parseRequest()
+     * Test parseRequest()
      *
      * @return void
      */
@@ -403,7 +403,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests parseSearch()
+     * Test parseSearch()
      *
      * @return void
      */
@@ -423,7 +423,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests parseSearch()
+     * Test parseSearch()
      *
      * @return void
      */
@@ -442,7 +442,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests parseSearch()
+     * Test parseSearch()
      *
      * @return void
      */
@@ -461,7 +461,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests parseWrapper()
+     * Test parseWrapper()
      *
      * @return void
      */

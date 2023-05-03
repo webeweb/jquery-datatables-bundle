@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings\TestStrik
 class StrikethroughTextRendererTraitTest extends AbstractTestCase {
 
     /**
-     * Tests renderStrikethroughText()
+     * Test renderStrikethroughText()
      *
      * @return void
      */

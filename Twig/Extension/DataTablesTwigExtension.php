@@ -72,7 +72,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
     }
 
     /**
-     * Displays a jQuery DataTables.
+     * Display a jQuery DataTables.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @param array $args The arguments.
@@ -84,7 +84,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
     }
 
     /**
-     * Displays a jQuery DataTables name.
+     * Display a jQuery DataTables name.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return string Returns the jQuery DataTables name.
@@ -94,7 +94,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
     }
 
     /**
-     * Displays a jQuery DataTables options.
+     * Display a jQuery DataTables options.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return array Returns the jQuery DataTables options.
@@ -104,7 +104,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
     }
 
     /**
-     * Displays a jQuery DataTables "Standalone".
+     * Display a jQuery DataTables "Standalone".
      *
      * @param array $args The arguments.
      * @return string Returns the jQuery DataTables "Standalone".

@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesOrderTest extends AbstractTestCase {
 
     /**
-     * Tests setColumn()
+     * Test setColumn()
      *
      * @retrun void
      */
@@ -36,7 +36,7 @@ class DataTablesOrderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests setDir()
+     * Test setDir()
      *
      * @retrun void
      */
@@ -55,7 +55,7 @@ class DataTablesOrderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

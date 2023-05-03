@@ -27,7 +27,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee;
 class DataTablesEntityHelperTest extends AbstractTestCase {
 
     /**
-     * Tests indexEntities()
+     * Test indexEntities()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
@@ -59,7 +59,7 @@ class DataTablesEntityHelperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests isCompatible()
+     * Test isCompatible()
      *
      * @return void
      */
@@ -74,7 +74,7 @@ class DataTablesEntityHelperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests newSerializer()
+     * Test newSerializer()
      *
      * @return void
      */

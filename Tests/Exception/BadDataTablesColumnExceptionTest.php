@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class BadDataTablesColumnExceptionTest extends AbstractTestCase {
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

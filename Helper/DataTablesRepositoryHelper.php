@@ -77,7 +77,7 @@ class DataTablesRepositoryHelper {
     }
 
     /**
-     * Determines an operator.
+     * Determine an operator.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @return string|null Returns the operator.

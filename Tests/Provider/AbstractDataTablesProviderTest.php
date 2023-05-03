@@ -40,7 +40,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     private $buttonTwigExtension;
 
     /**
-     * DataTables provider.
+     * DataTable provider.
      *
      * @var TestDataTablesProvider
      */
@@ -66,7 +66,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getCSVExporter()
+     * Test getCSVExporter()
      *
      * @return void
      */
@@ -78,7 +78,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getEditor()
+     * Test getEditor()
      *
      * @return void
      */
@@ -90,7 +90,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getMethod()
+     * Test getMethod()
      *
      * @return void
      */
@@ -102,7 +102,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests getOptions()
+     * Test getOptions()
      *
      * @return void
      */
@@ -121,7 +121,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderActionButtonComment()
+     * Test renderActionButtonComment()
      *
      * @return void
      */
@@ -134,7 +134,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderActionButtonComment()
+     * Test renderActionButtonComment()
      *
      * @return void
      */
@@ -147,7 +147,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderActionButtonDelete()
+     * Test renderActionButtonDelete()
      *
      * @return void
      */
@@ -160,7 +160,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderActionButtonDuplicate()
+     * Test renderActionButtonDuplicate()
      *
      * @return void
      */
@@ -173,7 +173,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderActionButtonEdit()
+     * Test renderActionButtonEdit()
      *
      * @return void
      */
@@ -186,7 +186,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderActionButtonNew()
+     * Test renderActionButtonNew()
      *
      * @return void
      */
@@ -199,7 +199,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderActionButtonNew()
+     * Test renderActionButtonNew()
      *
      * @return void
      */
@@ -212,7 +212,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderActionButtonPdf()
+     * Test renderActionButtonPdf()
      *
      * @return void
      */
@@ -225,7 +225,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderActionButtonShow()
+     * Test renderActionButtonShow()
      *
      * @return void
      */
@@ -238,7 +238,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderActionButtonSwitch()
+     * Test renderActionButtonSwitch()
      *
      * @return void
      */
@@ -251,7 +251,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderActionButtonSwitch()
+     * Test renderActionButtonSwitch()
      *
      * @return void
      */
@@ -264,7 +264,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderActionButton()
+     * Test renderActionButton()
      *
      * @return void
      */
@@ -283,7 +283,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderButtons()
+     * Test renderButtons()
      *
      * @return void
      */
@@ -301,7 +301,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderDate()
+     * Test renderDate()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
@@ -316,7 +316,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderDateTime()
+     * Test renderDateTime()
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
@@ -331,7 +331,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the renderFloat() methods.
+     * Test the renderFloat() methods.
      *
      * @return void
      */
@@ -346,7 +346,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderRow()
+     * Test renderRow()
      *
      * @return void
      */
@@ -365,7 +365,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderRowButtons()
+     * Test renderRowButtons()
      *
      * @return void
      */
@@ -382,7 +382,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderRowButtons()
+     * Test renderRowButtons()
      *
      * @return void
      */
@@ -395,7 +395,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderRowButtons()
+     * Test renderRowButtons()
      *
      * @return void
      */
@@ -408,7 +408,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderRowButtons()
+     * Test renderRowButtons()
      *
      * @return void
      */
@@ -421,7 +421,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests wrapContent()
+     * Test wrapContent()
      *
      * @return void
      */
@@ -436,7 +436,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

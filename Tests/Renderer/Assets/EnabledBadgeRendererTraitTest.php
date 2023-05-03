@@ -41,7 +41,7 @@ class EnabledBadgeRendererTraitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderEnabledBadge()
+     * Test renderEnabledBadge()
      *
      * @return void
      */
@@ -59,7 +59,7 @@ class EnabledBadgeRendererTraitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderEnabledBadge()
+     * Test renderEnabledBadge()
      *
      * @return void
      */
@@ -74,7 +74,7 @@ class EnabledBadgeRendererTraitTest extends AbstractTestCase {
     }
 
     /**
-     * Tests renderEnabledBadge()
+     * Test renderEnabledBadge()
      *
      * @return void
      */

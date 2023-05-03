@@ -41,7 +41,7 @@ class DataTablesExportHelper {
     }
 
     /**
-     * Determines if the operating system is windows.
+     * Determine if the operating system is windows.
      *
      * @param Request $request The request.
      * @return bool Returns true in case of success, false otherwise.

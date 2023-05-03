@@ -25,7 +25,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesResponseInterface;
 class DataTablesEnumerator {
 
     /**
-     * Enumerates cell types.
+     * Enumerate cell types.
      *
      * @return string[] Returns the cell types enumeration.
      */
@@ -38,7 +38,7 @@ class DataTablesEnumerator {
     }
 
     /**
-     * Enumerates dirs.
+     * Enumerate dirs.
      *
      * @return string[] Returns the dirs enumeration.
      */
@@ -51,7 +51,7 @@ class DataTablesEnumerator {
     }
 
     /**
-     * Enumerates order sequences.
+     * Enumerate order sequences.
      *
      * @return string[] Returns the order sequences enumeration.
      */
@@ -64,7 +64,7 @@ class DataTablesEnumerator {
     }
 
     /**
-     * Enumerates parameters.
+     * Enumerate parameters.
      *
      * @return string[] Returns the parameters enumeration.
      */
@@ -81,7 +81,7 @@ class DataTablesEnumerator {
     }
 
     /**
-     * Enumerates rows.
+     * Enumerate rows.
      *
      * @return string[] Returns the rows enumeration.
      */
@@ -96,7 +96,7 @@ class DataTablesEnumerator {
     }
 
     /**
-     * Enumerates types.
+     * Enumerate types.
      *
      * @return string[] Returns the types enumeration.
      */

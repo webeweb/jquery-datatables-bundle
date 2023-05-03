@@ -33,7 +33,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests deleteAction()
+     * Test deleteAction()
      *
      * @return void
      */
@@ -51,7 +51,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests deleteAction()
+     * Test deleteAction()
      *
      * @return void
      */
@@ -69,7 +69,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests deleteAction()
+     * Test deleteAction()
      *
      * @return void
      */
@@ -92,7 +92,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests deleteAction()
+     * Test deleteAction()
      *
      * @return void
      */
@@ -115,7 +115,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests editAction()
+     * Test editAction()
      *
      * @return void
      */
@@ -138,7 +138,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests editAction()
+     * Test editAction()
      *
      * @return void
      */
@@ -154,7 +154,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests editAction()
+     * Test editAction()
      *
      * @return void
      */
@@ -170,7 +170,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests editAction()
+     * Test editAction()
      *
      * @return void
      */
@@ -193,7 +193,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests editAction()
+     * Test editAction()
      *
      * @return void
      */
@@ -216,7 +216,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests exportAction()
+     * Test exportAction()
      *
      * @return void
      */
@@ -231,7 +231,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests exportAction()
+     * Test exportAction()
      *
      * @return void
      */
@@ -247,7 +247,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests indexAction()
+     * Test indexAction()
      *
      * @return void
      */
@@ -261,7 +261,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests indexAction()
+     * Test indexAction()
      *
      * @return void
      */
@@ -277,7 +277,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests indexAction()
+     * Test indexAction()
      *
      * @return void
      */
@@ -326,7 +326,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests indexAction()
+     * Test indexAction()
      *
      * @return void
      */
@@ -373,7 +373,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests indexAction()
+     * Test indexAction()
      *
      * @return void
      */
@@ -411,7 +411,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests indexAction()
+     * Test indexAction()
      *
      * @return void
      */
@@ -450,7 +450,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests indexAction()
+     * Test indexAction()
      *
      * @return void
      */
@@ -486,7 +486,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests indexAction()
+     * Test indexAction()
      *
      * @return void
      */
@@ -524,7 +524,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests indexAction()
+     * Test indexAction()
      *
      * @return void
      */
@@ -554,7 +554,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests indexAction()
+     * Test indexAction()
      *
      * @return void
      */
@@ -592,7 +592,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests indexAction()
+     * Test indexAction()
      *
      * @return void
      */
@@ -621,7 +621,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests optionsAction()
+     * Test optionsAction()
      *
      * @return void
      */
@@ -646,7 +646,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests optionsAction()
+     * Test optionsAction()
      *
      * @return void
      */
@@ -671,7 +671,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests renderAction()
+     * Test renderAction()
      *
      * @return void
      */
@@ -698,7 +698,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests renderAction()
+     * Test renderAction()
      *
      * @return void
      */
@@ -725,7 +725,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests serializeAction()
+     * Test serializeAction()
      *
      * @return void
      */
@@ -749,7 +749,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests serializeAction()
+     * Test serializeAction()
      *
      * @return void
      */
@@ -768,7 +768,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests showAction()
+     * Test showAction()
      *
      * @return void
      */
@@ -792,7 +792,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests showAction()
+     * Test showAction()
      *
      * @return void
      */
@@ -816,7 +816,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests showAction()
+     * Test showAction()
      *
      * @return void
      */
@@ -835,7 +835,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

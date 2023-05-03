@@ -24,7 +24,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\TestDataTablesPro
 class DataTablesProviderTraitTest extends AbstractTestCase {
 
     /**
-     * Tests setProvider()
+     * Test setProvider()
      *
      * @return void
      */

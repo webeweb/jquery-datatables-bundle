@@ -25,7 +25,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesNormalizerTest extends AbstractTestCase {
 
     /**
-     * Tests normalizeColumn()
+     * Test normalizeColumn()
      *
      * @return void
      */
@@ -68,7 +68,7 @@ class DataTablesNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests normalizeColumn()
+     * Test normalizeColumn()
      *
      * @return void
      */
@@ -82,7 +82,7 @@ class DataTablesNormalizerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests normalizeResponse()
+     * Test normalizeResponse()
      *
      * @return void
      */
