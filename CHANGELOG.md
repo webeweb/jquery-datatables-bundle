@@ -5,6 +5,7 @@ CHANGELOG
 
 - Improve code quality
 - Improve PHPDoc
+- Update dependencies
 
 ### [3.49.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.49.0) (2023-04-05)
 
