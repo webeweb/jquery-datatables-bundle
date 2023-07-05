@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+### master
+
+- Improve code quality
+- Improve PHPDoc
+
 ### [3.50.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.50.0) (2023-06-03)
 
 - Improve code quality
