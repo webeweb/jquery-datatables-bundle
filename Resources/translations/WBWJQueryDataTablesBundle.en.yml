@@ -28,11 +28,16 @@ swal:
         title: "Oups !"
         text:  "An error occurs"
 
-command:
-    class:   "Class/Entity"
+header:
     columns: "Columns"
-    csv:     "CSV"
     name:    "Name"
     prefix:  "Prefix"
+    service: "Service/Entity"
     view:    "View"
-    xls:     "XLS"
+
+message:
+    command:
+        provider:
+            list:
+                success: "All DataTables providers were successfully listed"
+                warning: "No DataTables provider to list"
