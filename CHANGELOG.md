@@ -6,6 +6,23 @@ CHANGELOG
 - Improve List DataTables provider command
 - Improve code quality
 - Improve PHPDoc
+- Update DataTables to 1.13.5
+- Update DataTables AutoFill to 2.6.0
+- Update DataTables Buttons to 2.4.0
+- Update DataTables ColReorder to 1.7.0
+- Update DataTables Datetime to 1.5.0
+- Update DataTables FixedColumns to 4.3.0
+- Update DataTables FixedHeader to 3.4.0
+- Update DataTables KeyTable to 2.10.0
+- Update DataTables PDFMake to 0.2.7
+- Update DataTables Responsive to 2.5.0
+- Update DataTables RowGroup to 1.4.0
+- Update DataTables RowReorder to 1.4.0
+- Update DataTables Scroller to 2.2.0
+- Update DataTables SearchBuilder to 1.5.0
+- Update DataTables SearchPanes to 2.2.0
+- Update DataTables Select to 1.7.0
+- Update DataTables StateRestore to 1.3.0
 
 ### [3.50.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.50.0) (2023-06-03)
 
