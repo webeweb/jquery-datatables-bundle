@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### master
+
+- Improve PHPDoc
+
 ### [3.51.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.51.0) (2023-07-06)
 
 - Improve List DataTables provider command
