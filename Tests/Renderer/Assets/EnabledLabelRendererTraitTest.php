@@ -31,7 +31,7 @@ class EnabledLabelRendererTraitTest extends AbstractTestCase {
     private $labelTwigExtension;
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     protected function setUp(): void {
         parent::setUp();

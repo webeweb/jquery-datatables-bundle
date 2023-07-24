@@ -103,7 +103,7 @@ abstract class AbstractWebTestCase extends WebTestCase {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public static function setUpBeforeClass(): void {
         parent::setUpBeforeClass();

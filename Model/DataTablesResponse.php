@@ -72,7 +72,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function addRow(): DataTablesResponseInterface {
 
@@ -89,49 +89,49 @@ class DataTablesResponse implements DataTablesResponseInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getData(): array {
         return $this->data;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getDraw(): int {
         return $this->draw;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getError(): ?string {
         return $this->error;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getRecordsFiltered(): int {
         return $this->recordsFiltered;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getRecordsTotal(): int {
         return $this->recordsTotal;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function jsonSerialize(): array {
         return DataTablesNormalizer::normalizeResponse($this);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function rowsCount(): int {
         return count($this->data);
@@ -160,7 +160,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setError(?string $error): DataTablesResponseInterface {
         $this->error = $error;
@@ -168,7 +168,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setRecordsFiltered(int $recordsFiltered): DataTablesResponseInterface {
         $this->recordsFiltered = $recordsFiltered;
@@ -176,7 +176,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setRecordsTotal(int $recordsTotal): DataTablesResponseInterface {
         $this->recordsTotal = $recordsTotal;
@@ -184,7 +184,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setRow(string $data, $value): DataTablesResponseInterface {
 

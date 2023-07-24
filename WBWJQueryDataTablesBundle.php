@@ -34,21 +34,21 @@ class WBWJQueryDataTablesBundle extends Bundle implements AssetsProviderInterfac
     const TRANSLATION_DOMAIN = "WBWJQueryDataTablesBundle";
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function build(ContainerBuilder $container): void {
         $container->addCompilerPass(new DataTablesProviderCompilerPass());
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getAssetsRelativeDirectory(): string {
         return self::ASSETS_RELATIVE_DIRECTORY;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getContainerExtension(): Extension {
         return new WBWJQueryDataTablesExtension();

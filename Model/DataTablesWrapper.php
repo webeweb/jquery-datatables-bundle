@@ -114,7 +114,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function addColumn(DataTablesColumnInterface $column): DataTablesWrapperInterface {
 
@@ -127,7 +127,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getColumn(string $data): ?DataTablesColumnInterface {
 
@@ -139,70 +139,70 @@ class DataTablesWrapper implements DataTablesWrapperInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getColumns(): array {
         return $this->columns;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getMapping(): DataTablesMappingInterface {
         return $this->mapping;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getMethod(): string {
         return $this->method;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getOptions(): ?DataTablesOptionsInterface {
         return $this->options;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getProcessing(): ?bool {
         return $this->processing;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getProvider(): ?DataTablesProviderInterface {
         return $this->provider;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getRequest(): ?DataTablesRequestInterface {
         return $this->request;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getResponse(): ?DataTablesResponseInterface {
         return $this->response;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getServerSide(): ?bool {
         return $this->serverSide;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getUrl(): ?string {
         return $this->url;
@@ -292,7 +292,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setRequest(?DataTablesRequestInterface $request): DataTablesWrapperInterface {
         $this->request = $request;
@@ -300,7 +300,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function setResponse(?DataTablesResponseInterface $response): DataTablesWrapperInterface {
         $this->response = $response;

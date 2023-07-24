@@ -24,161 +24,161 @@ use WBW\Bundle\JQuery\DataTablesBundle\Provider\AbstractDataTablesProvider;
 class TestDataTablesProvider extends AbstractDataTablesProvider {
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function getColumns(): array {
         return [];
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function getEntity() {
         return null;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getName(): string {
         return "test";
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function getPrefix(): string {
         return "t";
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function getView(): ?string {
         return null;
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderActionButtonComment($entity, string $route, ?string $comment): string {
         return parent::renderActionButtonComment($entity, $route, $comment);
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderActionButtonDelete($entity, string $route): string {
         return parent::renderActionButtonDelete($entity, $route);
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderActionButtonDuplicate($entity, string $route): string {
         return parent::renderActionButtonDuplicate($entity, $route);
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderActionButtonEdit($entity, string $route): string {
         return parent::renderActionButtonEdit($entity, $route);
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderActionButtonNew($entity, string $route): string {
         return parent::renderActionButtonNew($entity, $route);
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderActionButtonPdf($entity, string $route): string {
         return parent::renderActionButtonPdf($entity, $route);
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderActionButtonShow($entity, string $route): string {
         return parent::renderActionButtonShow($entity, $route);
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderActionButtonSwitch($entity, string $route, ?bool $enabled): string {
         return parent::renderActionButtonSwitch($entity, $route, $enabled);
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderButtons($entity, string $editRoute, string $deleteRoute = null, bool $enableDelete = true): string {
         return parent::renderButtons($entity, $editRoute, $deleteRoute, $enableDelete);
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderColumn(DataTablesColumnInterface $dtColumn, $entity): ?string {
         return null;
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderDate(?DateTime $date, string $format = "d/m/Y"): ?string {
         return parent::renderDate($date, $format);
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderDateTime(?DateTime $date, string $format = "d/m/Y H:i"): ?string {
         return parent::renderDateTime($date, $format);
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderFloat(?float $number, int $decimals = 2, string $decPoint = ".", string $thousandsSep = ","): ?string {
         return parent::renderFloat($number, $decimals, $decPoint, $thousandsSep);
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderPercent(?float $number): ?string {
         return parent::renderPercent($number);
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderPrice(?float $number, string $currency = "€"): ?string {
         return parent::renderPrice($number, $currency);
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderRow(string $dtRow, $entity, int $rowNumber) {
         return parent::renderRow($dtRow, $entity, $rowNumber);
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function renderRowButtons($entity, string $editRoute = null, string $deleteRoute = null, string $showRoute = null): string {
         return parent::renderRowButtons($entity, $editRoute, $deleteRoute, $showRoute);
     }
 
     /**
-     *{@inheritdoc}
+     *{@inheritDoc}
      */
     public function wrapContent(?string $prefix, string $content, ?string $suffix): string {
         return parent::wrapContent($prefix, $content, $suffix);

@@ -79,28 +79,28 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getCSVExporter(): ?DataTablesCSVExporterInterface {
         return null;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getEditor(): ?DataTablesEditorInterface {
         return null;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getMethod(): ?string {
         return null;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getOptions(): DataTablesOptionsInterface {
 
@@ -136,7 +136,7 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function renderRow(string $dtRow, $entity, int $rowNumber) {
 

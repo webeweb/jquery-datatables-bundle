@@ -21,7 +21,7 @@ use WBW\Bundle\CoreBundle\Tests\AbstractKernel as BaseKernel;
 class TestKernel extends BaseKernel {
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function registerBundles(): array {
 
@@ -38,7 +38,7 @@ class TestKernel extends BaseKernel {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function registerContainerConfiguration(LoaderInterface $loader): void {
 

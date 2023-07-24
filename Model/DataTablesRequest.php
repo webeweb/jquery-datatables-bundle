@@ -99,7 +99,7 @@ class DataTablesRequest implements DataTablesRequestInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getColumn(string $data): ?DataTablesColumnInterface {
 
@@ -114,56 +114,56 @@ class DataTablesRequest implements DataTablesRequestInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getColumns(): array {
         return $this->columns;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getDraw(): int {
         return $this->draw;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getLength(): int {
         return $this->length;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getOrder(): array {
         return $this->order;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getQuery(): ParameterBag {
         return $this->query;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getRequest(): ParameterBag {
         return $this->request;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getSearch(): ?DataTablesSearchInterface {
         return $this->search;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getStart(): int {
         return $this->start;

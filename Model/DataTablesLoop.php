@@ -42,49 +42,49 @@ class DataTablesLoop implements DataTablesLoopInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getIndex(): int {
         return $this->index;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getIndex0(): int {
         return $this->index - 1;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getLength(): int {
         return count($this->entities);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getRevIndex(): int {
         return $this->getLength() - $this->getIndex() + 1;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getRevIndex0(): int {
         return $this->getRevIndex() - 1;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function isFirst(): bool {
         return 1 === $this->getIndex();
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function isLast(): bool {
         return $this->getLength() === $this->getIndex();

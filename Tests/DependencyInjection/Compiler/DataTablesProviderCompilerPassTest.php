@@ -39,7 +39,7 @@ class DataTablesProviderCompilerPassTest extends AbstractTestCase {
     private $dataTablesProvider;
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     protected function setUp(): void {
         parent::setUp();

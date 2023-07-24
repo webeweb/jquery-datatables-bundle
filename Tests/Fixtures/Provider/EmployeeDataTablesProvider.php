@@ -31,7 +31,7 @@ use WBW\Library\Types\Exception\IntegerArgumentException;
 class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTablesCSVExporterInterface, DataTablesEditorInterface {
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function editColumn(DataTablesColumnInterface $dtColumn, $entity, $value): void {
 
@@ -67,7 +67,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function exportColumns(): array {
 
@@ -83,7 +83,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function exportRow($entity): array {
 
@@ -99,14 +99,14 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getCSVExporter(): ?DataTablesCSVExporterInterface {
         return $this;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getColumns(): array {
 
@@ -126,56 +126,56 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getEditor(): ?DataTablesEditorInterface {
         return $this;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getEntity(): string {
         return Employee::class;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getMethod(): string {
         return "POST";
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getName(): string {
         return "employee";
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getOptions(): DataTablesOptionsInterface {
         return DataTablesFactory::newOptions();
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getPrefix(): string {
         return "e";
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getView(): ?string {
         return null;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function renderColumn(DataTablesColumnInterface $dtColumn, $entity): ?string {
 
@@ -218,7 +218,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function renderRow(string $dtRow, $entity, int $rowNumber) {
 

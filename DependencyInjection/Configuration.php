@@ -24,7 +24,7 @@ use WBW\Bundle\CoreBundle\Config\ConfigurationHelper;
 class Configuration implements ConfigurationInterface {
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      *
      * wbw_jquery_datatables:
      *      theme: "bootstrap"
