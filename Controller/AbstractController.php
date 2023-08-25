@@ -279,8 +279,8 @@ abstract class AbstractController extends BaseController {
      *
      * @param string $name The provider name.
      * @return DataTablesProviderInterface Returns the provider.
-     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      * @throws Throwable Throws an exception if an error occurs.
+     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
     protected function getDataTablesProvider(string $name): DataTablesProviderInterface {
 
@@ -307,8 +307,8 @@ abstract class AbstractController extends BaseController {
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
      * @return DataTablesRepositoryInterface Returns the repository.
-     * @throws Throwable Throws an exception if an error occurs.
      * @throws BadDataTablesRepositoryException Throws a bad repository exception.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     protected function getDataTablesRepository(DataTablesProviderInterface $dtProvider): DataTablesRepositoryInterface {
 

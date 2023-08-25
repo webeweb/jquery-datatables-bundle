@@ -94,6 +94,7 @@ class DataTablesController extends AbstractController {
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      * @throws BadDataTablesEditorException Throws a bad editor exception.
      * @throws BadDataTablesColumnException Throws a bad column exception.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function editAction(Request $request, string $name, string $id, string $data, $value): Response {
 
@@ -137,6 +138,7 @@ class DataTablesController extends AbstractController {
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      * @throws BadDataTablesCSVExporterException Throws a bad CSV exporter exception.
      * @throws BadDataTablesRepositoryException Throws a bad repository exception.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function exportAction(Request $request, string $name): Response {
 
@@ -166,8 +168,9 @@ class DataTablesController extends AbstractController {
      * @param Request $request The request.
      * @param string $name The provider name.
      * @return Response Returns the response.
-     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      * @throws BadDataTablesRepositoryException Throws a bad repository exception.
+     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function indexAction(Request $request, string $name): Response {
 
@@ -223,6 +226,7 @@ class DataTablesController extends AbstractController {
      *
      * @param string $name The provider name.
      * @return Response Returns a response.
+     * @throws Throwable Throws an exception if an error occurs.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
     public function optionsAction(string $name): Response {
@@ -240,6 +244,7 @@ class DataTablesController extends AbstractController {
      * @param string $name The provider name.
      * @param string|null $alone Alone ?
      * @return Response Returns the response.
+     * @throws Throwable Throws an exception if an error occurs.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
     public function renderAction(string $name, string $alone = null): Response {
@@ -267,6 +272,7 @@ class DataTablesController extends AbstractController {
      * @param string $id The entity id.
      * @return Response Returns the response.
      * @throws BadDataTablesRepositoryException Throws a bad repository exception.
+     * @throws Throwable Throws an exception if an error occurs.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
     public function serializeAction(string $name, string $id): Response {
@@ -296,6 +302,7 @@ class DataTablesController extends AbstractController {
      * @param string $id The entity id.
      * @return Response Returns the response.
      * @throws BadDataTablesRepositoryException Throws a bad repository exception.
+     * @throws Throwable Throws an exception if an error occurs.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      * @deprecated since 3.9.0 use {@see WBW\Bundle\JQuery\DataTablesBundle\Controller\DataTablesController::serializeAction()} instead.
      */
