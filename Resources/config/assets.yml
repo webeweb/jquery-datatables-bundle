@@ -2,7 +2,7 @@
 assets:
 
     wbw.jquery_datatables.asset.jquery_datatables:
-        version: "1.13.5"
+        version: "1.13.6"
         themes:
             - "datatables"
             - "bootstrap"
@@ -14,7 +14,7 @@ assets:
             - "semanticui"
         requires:
             jszip:
-                version: "2.5.0"
+                version: "3.10.1"
                 stylesheets:
                 javascripts:
                     - "/datatables-jszip-{{ version }}/jszip.min.js"
@@ -33,7 +33,7 @@ assets:
                     - "/datatables-autofill-{{ version }}/js/dataTables.autoFill.min.js"
                     - "/datatables-autofill-{{ version }}/js/autoFill.{{ theme }}.min.js"
             buttons:
-                version: "2.4.0"
+                version: "2.4.2"
                 stylesheets:
                     - "/datatables-buttons-{{ version }}/css/buttons.{{ theme }}.min.css"
                 javascripts:
@@ -50,7 +50,7 @@ assets:
                 javascripts:
                     - "/datatables-colreorder-{{ version }}/js/dataTables.colReorder.min.js"
             datetime:
-                version: "1.5.0"
+                version: "1.5.1"
                 stylesheets:
                     - "/datatables-datetime-{{ version }}/css/dataTables.dateTime.min.css"
                 javascripts:
@@ -87,7 +87,7 @@ assets:
                 javascripts:
                     - "/datatables-rowgroup-{{ version }}/js/dataTables.rowGroup.min.js"
             rowreorder:
-                version: "1.4.0"
+                version: "1.4.1"
                 stylesheets:
                     - "/datatables-rowreorder-{{ version }}/css/rowReorder.{{ theme }}.min.css"
                 javascripts:
