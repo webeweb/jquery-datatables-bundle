@@ -1,9 +1,14 @@
 CHANGELOG
 =========
 
-### master
+### [3.52.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.52.0) (2023-09-25)
 
 - Improve PHPDoc
+- Update DataTables to 1.13.6
+- Update DataTables Buttons to 2.4.2
+- Update DataTables Datetime to 1.5.1
+- Update DataTables JSZip to 3.10.1
+- Update DataTables RowReorder to 1.4.1
 
 ### [3.51.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.51.0) (2023-07-06)
 
