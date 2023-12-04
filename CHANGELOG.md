@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [3.53.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.53.0) (2023-12-04)
+
+- Add Symfony 6.4 support
+
 ### [3.52.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.52.0) (2023-09-25)
 
 - Improve PHPDoc
