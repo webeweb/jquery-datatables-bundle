@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+### [3.54.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.54.0) (2024-01-08)
+
+- Update DataTables to 1.13.8
+- Update DataTables KeyTable to 2.11.0
+- Update DataTables RowGroup to 1.4.1
+- Update DataTables Scroller to 2.3.0
+- Update DataTables SearchBuilder to 1.6.0
+
 ### [3.53.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.53.0) (2023-12-04)
 
 - Add Symfony 6.4 support
