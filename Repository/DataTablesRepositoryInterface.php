@@ -13,7 +13,6 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Repository;
 
 use Doctrine\ORM\QueryBuilder;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesWrapperInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
 
 /**
  * DataTables repository interface.
@@ -33,10 +32,10 @@ interface DataTablesRepositoryInterface {
     /**
      * Count exported entities.
      *
-     * @param DataTablesProviderInterface $dtProvider The provider.
+     * @param DataTablesWrapperInterface $dtWrapper The provider.
      * @return int Returns the exported entities count.
      */
-    public function dataTablesCountExported(DataTablesProviderInterface $dtProvider): int;
+    public function dataTablesCountExported(DataTablesWrapperInterface $dtWrapper): int;
 
     /**
      * Count filtered entities.
@@ -57,10 +56,10 @@ interface DataTablesRepositoryInterface {
     /**
      * Export all query builder.
      *
-     * @param DataTablesProviderInterface $dtProvider The provider.
+     * @param DataTablesWrapperInterface $dtWrapper The provider.
      * @return QueryBuilder Returns the query builder.
      */
-    public function dataTablesExportAll(DataTablesProviderInterface $dtProvider): QueryBuilder;
+    public function dataTablesExportAll(DataTablesWrapperInterface $dtWrapper): QueryBuilder;
 
     /**
      * Find all entities.
