@@ -104,20 +104,20 @@ abstract class AbstractController extends BaseController {
     /**
      * Export callback.
      *
-     * @param DataTablesProviderInterface $dtProvider The provider.
+     * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @param DataTablesRepositoryInterface $repository The repository.
      * @param DataTablesCSVExporterInterface $dtExporter The exporter.
      * @param bool $windows Windows ?
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
      */
-    protected function exportDataTablesCallback(DataTablesProviderInterface $dtProvider, DataTablesRepositoryInterface $repository, DataTablesCSVExporterInterface $dtExporter, bool $windows): void {
+    protected function exportDataTablesCallback(DataTablesWrapperInterface $dtWrapper, DataTablesRepositoryInterface $repository, DataTablesCSVExporterInterface $dtExporter, bool $windows): void {
 
         $stream = fopen("php://output", "w+");
         fputcsv($stream, DataTablesExportHelper::convert($dtExporter->exportColumns(), $windows), ";");
 
         // Paginates.
-        $total = $repository->dataTablesCountExported($dtProvider);
+        $total = $repository->dataTablesCountExported($dtWrapper);
         $pages = PaginateHelper::getPagesCount($total, DataTablesRepositoryInterface::REPOSITORY_LIMIT);
 
         $em = $this->getEntityManager();
@@ -128,7 +128,7 @@ abstract class AbstractController extends BaseController {
             [$offset, $limit] = PaginateHelper::getPageOffsetAndLimit($i, DataTablesRepositoryInterface::REPOSITORY_LIMIT, $total);
 
             // Get the export query with offset and limit.
-            $result = $repository->dataTablesExportAll($dtProvider)
+            $result = $repository->dataTablesExportAll($dtWrapper)
                 ->setFirstResult($offset)
                 ->setMaxResults($limit)
                 ->getQuery()
@@ -136,11 +136,11 @@ abstract class AbstractController extends BaseController {
 
             while (false !== ($row = $result->next())) {
 
-                $this->dispatchDataTablesEvent(DataTablesEvent::PRE_EXPORT, [$row[0]], $dtProvider);
+                $this->dispatchDataTablesEvent(DataTablesEvent::PRE_EXPORT, [$row[0]], $dtWrapper->getProvider());
 
                 fputcsv($stream, DataTablesExportHelper::convert($dtExporter->exportRow($row[0]), $windows), ";");
 
-                $this->dispatchDataTablesEvent(DataTablesEvent::POST_EXPORT, [$row[0]], $dtProvider);
+                $this->dispatchDataTablesEvent(DataTablesEvent::POST_EXPORT, [$row[0]], $dtWrapper->getProvider());
             }
 
             $em->clear(); // Detach the entity to avoid memory consumption.

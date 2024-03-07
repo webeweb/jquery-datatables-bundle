@@ -148,14 +148,17 @@ class DataTablesController extends AbstractController {
         $dtExporter = $this->getDataTablesCSVExporter($dtProvider);
         $repository = $this->getDataTablesRepository($dtProvider);
 
+        $dtWrapper = $this->getDataTablesWrapper($dtProvider);
+        DataTablesFactory::parseWrapper($dtWrapper, $request);
+
         $filename = (new DateTime())->format("Y.m.d-H.i.s") . "-" . $dtProvider->getName() . ".csv";
         $charset  = true === $windows ? "iso-8859-1" : "utf-8";
 
         $response = new StreamedResponse();
         $response->headers->set("Content-Disposition", 'attachment; filename="' . $filename . '"');
         $response->headers->set("Content-Type", "text/csv; charset=" . $charset);
-        $response->setCallback(function() use ($dtProvider, $repository, $dtExporter, $windows) {
-            $this->exportDataTablesCallback($dtProvider, $repository, $dtExporter, $windows);
+        $response->setCallback(function() use ($dtWrapper, $repository, $dtExporter, $windows) {
+            $this->exportDataTablesCallback($dtWrapper, $repository, $dtExporter, $windows);
         });
         $response->setStatusCode(200);
 
