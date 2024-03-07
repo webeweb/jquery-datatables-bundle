@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [4.0.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v4.0.1) (2024-03-07)
+
+- Revert matomo/device-detector to 5.0
+
 ### [4.0.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v4.0.0) (2024-03-07)
 
 - Introduces DataTables wrapper into export action for allow an export of search
