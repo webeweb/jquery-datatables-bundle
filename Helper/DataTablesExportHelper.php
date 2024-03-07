@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
 
 use DeviceDetector\DeviceDetector;
-use DeviceDetector\Yaml\Symfony as SYP;
+use DeviceDetector\Yaml\Pecl as SYP;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
