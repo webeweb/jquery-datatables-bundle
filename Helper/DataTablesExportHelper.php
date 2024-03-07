@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
 
 use DeviceDetector\DeviceDetector;
+use DeviceDetector\Yaml\Symfony as SYP;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -53,6 +54,7 @@ class DataTablesExportHelper {
         }
 
         $dd = new DeviceDetector($request->headers->get("user-agent"));
+        $dd->setYamlParser(new SYP());
         $dd->parse();
 
         $os = $dd->getOs("name");
