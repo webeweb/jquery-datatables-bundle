@@ -12,7 +12,7 @@ wbw_jquery_datatables_edit:
 wbw_jquery_datatables_export:
     path: "/datatables/{name}/export"
     defaults: { _controller: "WBW\\Bundle\\JQuery\\DataTablesBundle\\Controller\\DataTablesController::exportAction" }
-    methods: [ "GET" ]
+    methods: [ "GET", "POST" ]
 
 wbw_jquery_datatables_index:
     path: "/datatables/{name}/index"
