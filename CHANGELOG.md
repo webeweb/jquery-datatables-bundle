@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+### [4.0.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v4.0.0) (2024-03-07)
+
+- Introduces DataTables wrapper into export action for allow an export of search
+
 ### [3.54.0](https://github.com/webeweb/jquery-datatables-bundle/tree/v3.54.0) (2024-01-08)
 
 - Update DataTables to 1.13.8
