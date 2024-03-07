@@ -47,8 +47,12 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
 
         $prefix = $dtWrapper->getProvider()->getPrefix();
 
-        return $this->createQueryBuilder($prefix)
+        $qb = $this->createQueryBuilder($prefix)
             ->select("COUNT($prefix)");
+
+        DataTablesRepositoryHelper::appendWhere($qb, $dtWrapper);
+
+        return $qb;
     }
 
     /**
@@ -119,7 +123,14 @@ abstract class DefaultDataTablesRepository extends EntityRepository implements D
      * @return QueryBuilder Returns the query builder "export all".
      */
     protected function dataTablesExportAllQueryBuilder(DataTablesWrapperInterface $dtWrapper): QueryBuilder {
-        return $this->createQueryBuilder($dtWrapper->getProvider()->getPrefix());
+
+        $prefix = $dtWrapper->getProvider()->getPrefix();
+
+        $qb = $this->createQueryBuilder($prefix);
+
+        DataTablesRepositoryHelper::appendWhere($qb, $dtWrapper);
+
+        return $qb;
     }
 
     /**
