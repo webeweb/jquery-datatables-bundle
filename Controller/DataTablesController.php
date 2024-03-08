@@ -297,25 +297,4 @@ class DataTablesController extends AbstractController {
 
         return new Response($data, 200, ["Content-type" => "application/json"]);
     }
-
-    /**
-     * Show an existing entity.
-     *
-     * @param string $name The provider name.
-     * @param string $id The entity id.
-     * @return Response Returns the response.
-     * @throws BadDataTablesRepositoryException Throws a bad repository exception.
-     * @throws Throwable Throws an exception if an error occurs.
-     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
-     * @deprecated since 3.9.0 use {@see WBW\Bundle\JQuery\DataTablesBundle\Controller\DataTablesController::serializeAction()} instead.
-     */
-    public function showAction(string $name, string $id): Response {
-
-        $format = "The %s::showAction() is deprecated: use %s::serializeAction() instead";
-        $myself = get_class($this);
-
-        $this->getLogger()->warning(sprintf($format, $myself, $myself));
-
-        return $this->serializeAction($name, $id);
-    }
 }
