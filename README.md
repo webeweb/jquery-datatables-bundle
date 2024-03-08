@@ -57,7 +57,7 @@ If you like this package, pay me a beer (or a coffee)
 
 ## Compatibility
 
-[![PHP](https://img.shields.io/badge/php-%5E7.1%7C%5E8.0-777BB4.svg?style=for-the-badge&logo=php)](https://php.net)
+[![PHP](https://img.shields.io/packagist/php-v/webeweb/jquery-datatables-bundle.svg?style=for-the-badge&logo=php&color=777bb4)](https://php.net)
 [![Symfony](https://img.shields.io/badge/symfony-%5E4.4%7C%5E5.0%7C%5E6.0-000000.svg?style=for-the-badge&logo=symfony)](https://symfony.com)
 
 ## Installation
