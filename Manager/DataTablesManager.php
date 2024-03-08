@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Manager;
 
 use InvalidArgumentException;
+use Throwable;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
@@ -36,6 +37,7 @@ class DataTablesManager extends AbstractManager {
 
     /**
      * {@inheritDoc}
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function addProvider(ProviderInterface $provider): ManagerInterface {
 
