@@ -29,7 +29,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
     /**
      * Data.
      *
-     * @var array
+     * @var array<string,mixed>[]
      */
     private $data;
 
@@ -125,6 +125,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
 
     /**
      * {@inheritDoc}
+     * @return array<string,mixed> Returns this serialized instance.
      */
     public function jsonSerialize(): array {
         return DataTablesNormalizer::normalizeResponse($this);
@@ -140,7 +141,7 @@ class DataTablesResponse implements DataTablesResponseInterface {
     /**
      * Set the data.
      *
-     * @param array $data The data.
+     * @param array<string,mixed>[] $data The data.
      * @return DataTablesResponseInterface Returns this response.
      */
     protected function setData(array $data): DataTablesResponseInterface {
