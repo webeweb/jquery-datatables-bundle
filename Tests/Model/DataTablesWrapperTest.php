@@ -41,7 +41,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
         $col->expects($this->any())->method("getData")->willReturn("col");
         $col->expects($this->any())->method("getMapping")->willReturn($map);
 
-        $obj = new DataTablesWrapper("url", "name");
+        $obj = new DataTablesWrapper();
 
         $this->assertSame($obj, $obj->addColumn($this->dtColumn));
         $this->assertCount(1, $obj->getColumns());
@@ -59,7 +59,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
      */
     public function testGetColumn(): void {
 
-        $obj = new DataTablesWrapper("url", "name");
+        $obj = new DataTablesWrapper();
 
         $this->assertNull($obj->getColumn("data"));
 
@@ -79,7 +79,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
         $col->expects($this->any())->method("getData")->willReturn("col");
         $col->expects($this->any())->method("getMapping")->willReturn($this->dtMapping);
 
-        $obj = new DataTablesWrapper("url", "name");
+        $obj = new DataTablesWrapper();
 
         $this->assertSame($obj, $obj->addColumn($this->dtColumn));
         $this->assertSame($obj, $obj->addColumn($col));
@@ -99,7 +99,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
      */
     public function testSetMethod(): void {
 
-        $obj = new DataTablesWrapper("url", "name");
+        $obj = new DataTablesWrapper();
 
         $obj->setMethod("exception");
         $this->assertEquals("POST", $obj->getMethod());
@@ -118,7 +118,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
         // Set a DataTables options mock.
         $arg = $this->getMockBuilder(DataTablesOptionsInterface::class)->getMock();
 
-        $obj = new DataTablesWrapper("url", "name");
+        $obj = new DataTablesWrapper();
 
         $obj->setOptions($arg);
         $this->assertSame($arg, $obj->getOptions());
@@ -131,7 +131,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
      */
     public function testSetProcessing(): void {
 
-        $obj = new DataTablesWrapper("url", "name");
+        $obj = new DataTablesWrapper();
 
         $obj->setProcessing(null);
         $this->assertTrue($obj->getProcessing());
@@ -151,7 +151,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
         $arg = $this->getMockBuilder(DataTablesProviderInterface::class)->getMock();
         $arg->expects($this->any())->method("getName")->willReturn("name");
 
-        $obj = new DataTablesWrapper("url", "name");
+        $obj = new DataTablesWrapper();
 
         $obj->setProvider($arg);
         $this->assertSame($arg, $obj->getProvider());
@@ -164,7 +164,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
      */
     public function testSetRequest(): void {
 
-        $obj = new DataTablesWrapper("url", "name");
+        $obj = new DataTablesWrapper();
 
         $obj->setRequest($this->dtRequest);
         $this->assertSame($this->dtRequest, $obj->getRequest());
@@ -177,7 +177,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
      */
     public function testSetResponse(): void {
 
-        $obj = new DataTablesWrapper("url", "name");
+        $obj = new DataTablesWrapper();
 
         $obj->setResponse($this->dtResponse);
         $this->assertSame($this->dtResponse, $obj->getResponse());
@@ -190,7 +190,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
      */
     public function testSetServerSide(): void {
 
-        $obj = new DataTablesWrapper("url", "name");
+        $obj = new DataTablesWrapper();
 
         $obj->setServerSide(false);
         $this->assertFalse($obj->getServerSide());
@@ -206,7 +206,7 @@ class DataTablesWrapperTest extends AbstractTestCase {
      */
     public function testSetUrl(): void {
 
-        $obj = new DataTablesWrapper("url", "name");
+        $obj = new DataTablesWrapper();
 
         $obj->setUrl("anotherUrl");
         $this->assertEquals("anotherUrl", $obj->getUrl());
