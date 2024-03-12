@@ -304,7 +304,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         $i = 0;
         foreach ($this->dtWrapper->getColumns() as $dtColumn) {
             $dtColumn->setClassname($dtColumn->getData());
-            $dtColumn->setWidth(++$i);
+            $dtColumn->setWidth((string) ++$i);
         }
 
         $arg = ["class" => "class", "thead" => true, "tfoot" => true];
