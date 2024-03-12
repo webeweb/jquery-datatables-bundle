@@ -11,6 +11,8 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity;
 
+use WBW\Library\Traits\Integers\IntegerIdTrait;
+
 /**
  * Office.
  *
@@ -19,12 +21,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity;
  */
 class Office {
 
-    /**
-     * Id.
-     *
-     * @var int|null
-     */
-    private $id;
+    use IntegerIdTrait;
 
     /**
      * Name.
@@ -38,15 +35,6 @@ class Office {
      */
     public function __construct() {
         // NOTHING TO DO
-    }
-
-    /**
-     * Get the id.
-     *
-     * @return int|null Returns the id.
-     */
-    public function getId(): ?int {
-        return $this->id;
     }
 
     /**
