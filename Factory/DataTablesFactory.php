@@ -63,7 +63,7 @@ class DataTablesFactory {
     /**
      * Determine if a raw column is valid.
      *
-     * @param array $rawColumn The raw column.
+     * @param array<string,mixed> $rawColumn The raw column.
      * @return bool Returns true in case of success, false otherwise.
      */
     protected static function isValidRawColumn(array $rawColumn): bool {
@@ -82,7 +82,7 @@ class DataTablesFactory {
     /**
      * Determine if a raw order is valid.
      *
-     * @param array $rawOrder The raw order.
+     * @param array<string,string> $rawOrder The raw order.
      * @return bool Returns true in case of success, false otherwise.
      */
     protected static function isValidRawOrder(array $rawOrder): bool {
@@ -101,7 +101,7 @@ class DataTablesFactory {
     /**
      * Determine if a raw search is valid.
      *
-     * @param array $rawSearch The raw search.
+     * @param array<string,string> $rawSearch The raw search.
      * @return bool Returns true in case of success, false otherwise.
      */
     protected static function isValidRawSearch(array $rawSearch): bool {
@@ -184,7 +184,7 @@ class DataTablesFactory {
     /**
      * Parse a raw column.
      *
-     * @param array $rawColumn The raw column.
+     * @param array<string,mixed> $rawColumn The raw column.
      * @param DataTablesWrapperInterface $wrapper The wrapper.
      * @return DataTablesColumnInterface|null Returns the column.
      */
@@ -214,7 +214,7 @@ class DataTablesFactory {
     /**
      * Parse the raw columns.
      *
-     * @param array $rawColumns The raw columns.
+     * @param array<string,mixed>[] $rawColumns The raw columns.
      * @param DataTablesWrapperInterface $wrapper The wrapper.
      * @return DataTablesColumnInterface[] Returns the columns.
      */
@@ -238,7 +238,7 @@ class DataTablesFactory {
     /**
      * Parse a raw order.
      *
-     * @param array $rawOrder The raw order.
+     * @param array<string,string> $rawOrder The raw order.
      * @return DataTablesOrderInterface Returns the order.
      */
     protected static function parseOrder(array $rawOrder): DataTablesOrderInterface {
@@ -258,7 +258,7 @@ class DataTablesFactory {
     /**
      * Parse the raw orders.
      *
-     * @param array $rawOrders The raw orders.
+     * @param array<string,string>[] $rawOrders The raw orders.
      * @return DataTablesOrderInterface[] Returns the orders.
      */
     protected static function parseOrders(array $rawOrders): array {
@@ -312,7 +312,7 @@ class DataTablesFactory {
     /**
      * Parse a raw search.
      *
-     * @param array $rawSearch The raw search.
+     * @param array<string,string> $rawSearch The raw search.
      * @return DataTablesSearchInterface Returns the search.
      */
     protected static function parseSearch(array $rawSearch): DataTablesSearchInterface {
