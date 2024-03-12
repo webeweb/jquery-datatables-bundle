@@ -10,6 +10,7 @@
  */
 
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 use Symfony\Component\HttpKernel\Kernel;
 use WBW\Bundle\CoreBundle\Tests\AbstractKernel as BaseKernel;
 
@@ -22,6 +23,7 @@ class TestKernel extends BaseKernel {
 
     /**
      * {@inheritDoc}
+     * @return BundleInterface[] Returns the registered bundles.
      */
     public function registerBundles(): array {
 
