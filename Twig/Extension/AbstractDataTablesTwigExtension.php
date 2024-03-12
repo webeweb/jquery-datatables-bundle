@@ -50,7 +50,7 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
     /**
      * Encode the options.
      *
-     * @param array $options The options.
+     * @param array<string,mixed> $options The options.
      * @return string Returns the encoded options.
      */
     protected function encodeOptions(array $options): string {
@@ -100,7 +100,7 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
      *
      * @param string $selector The selector.
      * @param string|null $language The language.
-     * @param array $options The options.
+     * @param array<string,mixed> $options The options.
      * @return string Returns the jQuery DataTables "Standalone".
      * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
      */
