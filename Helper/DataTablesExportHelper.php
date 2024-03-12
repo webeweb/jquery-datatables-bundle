@@ -14,6 +14,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
 use DeviceDetector\DeviceDetector;
 use DeviceDetector\Yaml\Symfony as SYP;
 use Symfony\Component\HttpFoundation\Request;
+use Throwable;
 
 /**
  * DataTables export helper.
@@ -26,9 +27,9 @@ class DataTablesExportHelper {
     /**
      * Convert.
      *
-     * @param array $values The values.
+     * @param string[] $values The values.
      * @param bool $windows Windows ?
-     * @return array Returns the converted values.
+     * @return string[] Returns the converted values.
      */
     public static function convert(array $values, bool $windows = false): array {
 
@@ -46,6 +47,7 @@ class DataTablesExportHelper {
      *
      * @param Request $request The request.
      * @return bool Returns true in case of success, false otherwise.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public static function isWindows(Request $request): bool {
 
