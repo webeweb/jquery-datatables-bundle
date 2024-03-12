@@ -76,7 +76,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * Order data.
      *
-     * @var array|null
+     * @var mixed[]|null
      */
     private $orderData;
 
@@ -147,13 +147,14 @@ class DataTablesColumn implements DataTablesColumnInterface {
      * Constructor.
      */
     public function __construct() {
+
+        $dtMapping = (new DataTablesMapping())->setParent($this);
+
         $this->setCellType(self::DATATABLES_CELL_TYPE_TD);
-        $this->setMapping(new DataTablesMapping());
+        $this->setMapping($dtMapping);
         $this->setOrderable(true);
         $this->setSearchable(true);
         $this->setVisible(true);
-
-        $this->getMapping()->setParent($this);
     }
 
     /**
@@ -348,7 +349,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * Set the order data.
      *
-     * @param array|null $orderData The order data.
+     * @param mixed[]|null $orderData The order data.
      * @return DataTablesColumnInterface Returns this column.
      */
     public function setOrderData(?array $orderData): DataTablesColumnInterface {
