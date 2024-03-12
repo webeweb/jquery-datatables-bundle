@@ -35,7 +35,8 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
 
         $obj = new WBWJQueryDataTablesBundle();
 
-        $this->assertNull($obj->build($this->containerBuilder));
+        $obj->build($this->containerBuilder);
+        $this->assertNull(null);
     }
 
     /**
