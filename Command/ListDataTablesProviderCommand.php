@@ -47,7 +47,7 @@ class ListDataTablesProviderCommand extends AbstractCommand {
     /**
      * {@inheritDoc}
      */
-    protected function configure() {
+    protected function configure(): void {
         $this
             ->setDescription("List the DataTables providers")
             ->setHelp(ConsoleHelper::formatCommandHelp("list the DatTables providers"))
@@ -64,6 +64,7 @@ class ListDataTablesProviderCommand extends AbstractCommand {
 
         $rows = [];
 
+        /** @var DataTablesProviderInterface $current */
         foreach ($this->getDataTablesManager()->getProviders() as $current) {
             $rows[] = $this->renderRow($current);
         }
@@ -120,12 +121,12 @@ class ListDataTablesProviderCommand extends AbstractCommand {
     /**
      * Sort the rows.
      *
-     * @param array $rows The rows.
+     * @param string[][] $rows The rows.
      * @return void
      */
     protected function sortRows(array &$rows): void {
 
-        usort($rows, function(array $a, array $b) {
+        usort($rows, function(array $a, array $b): int {
             return strcmp($a[0], $b[0]);
         });
     }
