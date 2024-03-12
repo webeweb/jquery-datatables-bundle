@@ -30,8 +30,8 @@ class DataTablesEntityHelper {
     /**
      * Indexe the entities.
      *
-     * @param array $entities The entities.
-     * @return array Returns the indexed entities.
+     * @param object[] $entities The entities.
+     * @return array<int,object> Returns the indexed entities.
      * @throws InvalidArgumentException Throws an invalid argument exception if an entity is incompatible.
      */
     public static function indexEntities(array $entities): array {
