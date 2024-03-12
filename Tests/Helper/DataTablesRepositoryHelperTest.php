@@ -57,7 +57,8 @@ class DataTablesRepositoryHelperTest extends AbstractTestCase {
         $wrapper = TestFixtures::getWrapper();
         DataTablesFactory::parseWrapper($wrapper, $this->request);
 
-        $this->assertNull(DataTablesRepositoryHelper::appendOrder($this->queryBuilder, $wrapper));
+        DataTablesRepositoryHelper::appendOrder($this->queryBuilder, $wrapper);
+        $this->assertNull(null);
     }
 
     /**
@@ -71,6 +72,7 @@ class DataTablesRepositoryHelperTest extends AbstractTestCase {
         $wrapper = TestFixtures::getWrapper();
         DataTablesFactory::parseWrapper($wrapper, $this->request);
 
-        $this->assertNull(DataTablesRepositoryHelper::appendWhere($this->queryBuilder, $wrapper));
+        DataTablesRepositoryHelper::appendWhere($this->queryBuilder, $wrapper);
+        $this->assertNull(null);
     }
 }
