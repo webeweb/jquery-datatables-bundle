@@ -56,7 +56,7 @@ trait DataTablesButtonsRendererTrait {
      *
      * @param object $entity The entity.
      * @param string $route The route.
-     * @param array $options The options.
+     * @param array<string,mixed> $options The options.
      * @return string Returns the action button.
      * @throws InvalidArgumentException Throws an invalid argument exception if the entity is invalid.
      * @throws InvalidParameterException Throws an invalid parameter exception if a parameter is invalid.
