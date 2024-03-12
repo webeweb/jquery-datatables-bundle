@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+### master
+
+- Improve code quality
+- Improve PHPDoc
+- Update dependencies
+
 ### [4.0.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v4.0.1) (2024-03-07)
 
 - Revert matomo/device-detector to 5.0
