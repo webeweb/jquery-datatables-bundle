@@ -28,6 +28,7 @@ use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderE
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesExportHelper;
 use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManagerTrait;
+use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesWrapper;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
@@ -88,7 +89,7 @@ abstract class AbstractController extends BaseController {
      * Dispatch an event.
      *
      * @param string $eventName The event name.
-     * @param array $entities The entities.
+     * @param object[] $entities The entities.
      * @param DataTablesProviderInterface|null $provider The provider.
      * @return DataTablesEvent Returns the event.
      * @throws Throwable Throws an exception if an error occurs.
@@ -373,6 +374,7 @@ abstract class AbstractController extends BaseController {
      */
     protected function getDataTablesWrapper(DataTablesProviderInterface $dtProvider): DataTablesWrapperInterface {
 
+        /** @var DataTablesWrapper $dtWrapper */
         $dtWrapper = DataTablesFactory::newWrapper($this->getDataTablesUrl($dtProvider), $dtProvider, $this->getKernelEventListener()->getUser());
 
         $context = [
@@ -418,7 +420,7 @@ abstract class AbstractController extends BaseController {
      * Log an info.
      *
      * @param string $message The message.
-     * @param array $context The context.
+     * @param mixed[] $context The context.
      * @return AbstractController Returns this controller.
      * @throws Throwable Throws an exception if an error occurs.
      */
