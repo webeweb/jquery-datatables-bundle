@@ -65,7 +65,7 @@ interface DataTablesRepositoryInterface {
      * Find all entities.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
-     * @return array Returns the entities.
+     * @return object[] Returns the entities.
      */
     public function dataTablesFindAll(DataTablesWrapperInterface $dtWrapper): array;
 }
