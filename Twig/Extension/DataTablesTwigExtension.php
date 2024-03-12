@@ -75,7 +75,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      * Display a jQuery DataTables.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the jQuery DataTables.
      * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
      */
@@ -97,7 +97,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      * Display a jQuery DataTables options.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
-     * @return array Returns the jQuery DataTables options.
+     * @return array<string,mixed> Returns the jQuery DataTables options.
      */
     public function jQueryDataTablesOptionsFunction(DataTablesWrapperInterface $dtWrapper): array {
         return DataTablesWrapperHelper::getOptions($dtWrapper);
@@ -106,7 +106,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
     /**
      * Display a jQuery DataTables "Standalone".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the jQuery DataTables "Standalone".
      * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
      */
@@ -118,7 +118,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      * Render a DataTables.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the rendered DataTables.
      */
     public function renderDataTablesFunction(DataTablesWrapperInterface $dtWrapper, array $args = []): string {
