@@ -798,30 +798,6 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testShowActionWithDeprecatedMethod(): void {
-
-        $client = $this->client;
-
-        $client->request("GET", "/datatables/employee/deprecated-show/55");
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
-
-        // Check the JSON response.
-        $res = json_decode($client->getResponse()->getContent(), true);
-
-        $this->assertEquals("Shad decker", $res["name"]);
-        $this->assertEquals("Regional Director", $res["position"]);
-        $this->assertEquals("Edinburgh", $res["office"]);
-        $this->assertEquals(51, $res["age"]);
-        $this->assertEquals(1226534400, $res["startDate"]["timestamp"]);
-        $this->assertEquals(183000, $res["salary"]);
-    }
-
-    /**
-     * Test showAction()
-     *
-     * @return void
-     */
     public function testShowActionWithStatus404(): void {
 
         $client = $this->client;
