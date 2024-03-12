@@ -32,7 +32,7 @@ class TestFixtures {
      * Build POST data.
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
-     * @return array Returns the POST data.
+     * @return array<string, mixed> Returns the POST data.
      */
     public static function buildPOSTData(DataTablesProviderInterface $dtProvider): array {
 
@@ -142,7 +142,7 @@ class TestFixtures {
     /**
      * Get the POST data.
      *
-     * @return array Returns the POST data.
+     * @return array<string,mixed> Returns the POST data.
      */
     public static function getPostData(): array {
 
