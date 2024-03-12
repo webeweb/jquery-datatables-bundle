@@ -16,6 +16,7 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use Throwable;
 use WBW\Bundle\CoreBundle\Config\ConfigurationHelper;
 
 /**
@@ -42,6 +43,8 @@ class WBWJQueryDataTablesExtension extends Extension {
 
     /**
      * {@inheritDoc}
+     * @param array<string,mixed> $configs The configurations.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function load(array $configs, ContainerBuilder $container): void {
 
