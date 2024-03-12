@@ -28,7 +28,7 @@ trait TranslatorTrait {
      * Translate.
      *
      * @param string|null $id The id.
-     * @param array $parameters Teh parameters.
+     * @param array<string,mixed> $parameters Teh parameters.
      * @param string|null $domain The domain.
      * @param string|null $locale The locale.
      * @return string Returns the translated id in case of success, id otherwise.
