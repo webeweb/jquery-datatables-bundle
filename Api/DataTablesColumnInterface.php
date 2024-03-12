@@ -164,7 +164,7 @@ interface DataTablesColumnInterface {
     /**
      * Get the order data.
      *
-     * @return array|null Returns the order data.
+     * @return mixed[]|null Returns the order data.
      */
     public function getOrderData(): ?array;
 
