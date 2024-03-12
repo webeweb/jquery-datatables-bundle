@@ -41,7 +41,7 @@ interface DataTablesOptionsInterface {
     /**
      * Get the options.
      *
-     * @return array Returns the options.
+     * @return array<string,mixed> Returns the options.
      */
     public function getOptions(): array;
 
