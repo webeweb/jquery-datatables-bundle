@@ -36,63 +36,63 @@ abstract class AbstractTestCase extends TestCase {
     /**
      * DataTables column.
      *
-     * @var DataTablesColumnInterface
+     * @var DataTablesColumnInterface|null
      */
     protected $dtColumn;
 
     /**
      * DataTables mapping.
      *
-     * @var DataTablesMappingInterface
+     * @var DataTablesMappingInterface|null
      */
     protected $dtMapping;
 
     /**
      * DataTables option.
      *
-     * @var DataTablesOptionsInterface
+     * @var DataTablesOptionsInterface|null
      */
     protected $dtOptions;
 
     /**
      * DataTables order.
      *
-     * @var DataTablesOrderInterface
+     * @var DataTablesOrderInterface|null
      */
     protected $dtOrder;
 
     /**
      * DataTables provider.
      *
-     * @var DataTablesProviderInterface
+     * @var DataTablesProviderInterface|null
      */
     protected $dtProvider;
 
     /**
      * DataTables request.
      *
-     * @var DataTablesRequestInterface
+     * @var DataTablesRequestInterface|null
      */
     protected $dtRequest;
 
     /**
      * DataTables response.
      *
-     * @var DataTablesResponseInterface
+     * @var DataTablesResponseInterface|null
      */
     protected $dtResponse;
 
     /**
      * DataTables search.
      *
-     * @var DataTablesSearchInterface
+     * @var DataTablesSearchInterface|null
      */
     protected $dtSearch;
 
     /**
      * DataTables wrapper.
      *
-     * @var DataTablesWrapperInterface
+     * @var DataTablesWrapperInterface|null
      */
     protected $dtWrapper;
 
