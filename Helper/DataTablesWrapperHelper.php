@@ -66,7 +66,7 @@ class DataTablesWrapperHelper {
      * Get the options.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
-     * @return array Returns the options.
+     * @return array<string,mixed> Returns the options.
      */
     public static function getOptions(DataTablesWrapperInterface $dtWrapper): array {
 
