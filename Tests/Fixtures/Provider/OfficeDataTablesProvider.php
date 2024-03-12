@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider;
 
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesResponseInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
@@ -134,18 +135,18 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTable
 
         switch ($dtRow) {
 
-            case self::DATATABLES_ROW_ATTR:
+            case DataTablesResponseInterface::DATATABLES_ROW_ATTR:
                 break;
 
-            case self::DATATABLES_ROW_CLASS:
+            case DataTablesResponseInterface::DATATABLES_ROW_CLASS:
                 $output = (0 === $rowNumber % 2 ? "even" : "odd");
                 break;
 
-            case self::DATATABLES_ROW_DATA:
+            case DataTablesResponseInterface::DATATABLES_ROW_DATA:
                 $output = ["pkey" => $entity->getId()];
                 break;
 
-            case self::DATATABLES_ROW_ID:
+            case DataTablesResponseInterface::DATATABLES_ROW_ID:
                 $output = "office_" . $entity->getId();
                 break;
         }
