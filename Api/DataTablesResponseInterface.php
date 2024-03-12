@@ -59,7 +59,7 @@ interface DataTablesResponseInterface extends JsonSerializable {
     /**
      * Get the data.
      *
-     * @return array Returns the data.
+     * @return array<string,mixed>[] Returns the data.
      */
     public function getData(): array;
 
