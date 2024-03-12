@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Model;
 
+use WBW\Bundle\JQuery\DataTablesBundle\Entity\DataTablesEntityInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesLoop;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 
@@ -23,14 +24,37 @@ use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesLoopTest extends AbstractTestCase {
 
     /**
+     * Entities.
+     *
+     * @var object[]|null
+     */
+    private $entities;
+
+    protected function setUp(): void {
+        parent::setUp();
+
+        // Set an entities mock.
+        $this->entities = [
+            $this->getMockBuilder(DataTablesEntityInterface::class)->getMock(), // 0
+            $this->getMockBuilder(DataTablesEntityInterface::class)->getMock(), // 1
+            $this->getMockBuilder(DataTablesEntityInterface::class)->getMock(), // 2
+            $this->getMockBuilder(DataTablesEntityInterface::class)->getMock(), // 3
+            $this->getMockBuilder(DataTablesEntityInterface::class)->getMock(), // 4
+            $this->getMockBuilder(DataTablesEntityInterface::class)->getMock(), // 5
+            $this->getMockBuilder(DataTablesEntityInterface::class)->getMock(), // 6
+            $this->getMockBuilder(DataTablesEntityInterface::class)->getMock(), // 7
+            $this->getMockBuilder(DataTablesEntityInterface::class)->getMock(), // 8
+        ];
+    }
+
+    /**
      * Test isFirst()
      *
      * @return void
      */
     public function testIsFirst(): void {
 
-        // Set an entities mock.
-        $entities = [0, 1];
+        $entities = array_slice($this->entities, 0,2);
 
         $obj = new DataTablesLoop($entities);
 
@@ -45,8 +69,7 @@ class DataTablesLoopTest extends AbstractTestCase {
      */
     public function testIsLast(): void {
 
-        // Set an entities mock.
-        $entities = [0, 1];
+        $entities = array_slice($this->entities, 0,2);
 
         $obj = new DataTablesLoop($entities);
         $obj->next();
@@ -62,10 +85,7 @@ class DataTablesLoopTest extends AbstractTestCase {
      */
     public function testNext(): void {
 
-        // Set an entities mock.
-        $entities = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-
-        $obj = new DataTablesLoop($entities);
+        $obj = new DataTablesLoop($this->entities);
 
         $obj->next();
         $this->assertEquals(2, $obj->getIndex());
@@ -81,12 +101,9 @@ class DataTablesLoopTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        // Set an entities mock.
-        $entities = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+        $obj = new DataTablesLoop($this->entities);
 
-        $obj = new DataTablesLoop($entities);
-
-        $this->assertEquals($entities, $obj->getEntities());
+        $this->assertEquals($this->entities, $obj->getEntities());
         $this->assertEquals(1, $obj->getIndex());
         $this->assertEquals(0, $obj->getIndex0());
         $this->assertEquals(9, $obj->getLength());
