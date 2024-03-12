@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity;
 
 use DateTime;
+use WBW\Library\Traits\Integers\IntegerIdTrait;
 
 /**
  * Employee entity.
@@ -21,19 +22,14 @@ use DateTime;
  */
 class Employee {
 
+    use IntegerIdTrait;
+
     /**
      * Age.
      *
      * @var int|null
      */
     private $age;
-
-    /**
-     * Id.
-     *
-     * @var int|null
-     */
-    private $id;
 
     /**
      * Name.
@@ -84,15 +80,6 @@ class Employee {
      */
     public function getAge(): ?int {
         return $this->age;
-    }
-
-    /**
-     * Get the id.
-     *
-     * @return int|null Returns the id.
-     */
-    public function getId(): ?int {
-        return $this->id;
     }
 
     /**
