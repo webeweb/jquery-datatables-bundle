@@ -32,7 +32,7 @@ class WBWJQueryDataTablesExtensionTest extends AbstractTestCase {
     /**
      * Configs.
      *
-     * @var array
+     * @var array<string,mixed>
      */
     private $configs;
 
@@ -85,7 +85,7 @@ class WBWJQueryDataTablesExtensionTest extends AbstractTestCase {
 
         $obj = new WBWJQueryDataTablesExtension();
 
-        $this->assertNull($obj->load($this->configs, $this->containerBuilder));
+        $obj->load($this->configs, $this->containerBuilder);
 
         // Commands
         $this->assertInstanceOf(ListDataTablesProviderCommand::class, $this->containerBuilder->get(ListDataTablesProviderCommand::SERVICE_NAME));
