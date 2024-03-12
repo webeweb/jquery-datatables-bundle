@@ -12,6 +12,8 @@
 namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Model;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOrderInterface;
 use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesRequest;
 use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
 
@@ -45,10 +47,13 @@ class DataTablesRequestTest extends AbstractTestCase {
      */
     public function testSetColumns(): void {
 
+        // Set a DataTables column mock.
+        $dtColumn = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
+
         $obj = new DataTablesRequest();
 
-        $obj->setColumns(["columns"]);
-        $this->assertEquals(["columns"], $obj->getColumns());
+        $obj->setColumns([$dtColumn]);
+        $this->assertEquals([$dtColumn], $obj->getColumns());
     }
 
     /**
@@ -84,10 +89,13 @@ class DataTablesRequestTest extends AbstractTestCase {
      */
     public function testSetOrder(): void {
 
+        // Set a DataTables column mock.
+        $dtOrder = $this->getMockBuilder(DataTablesOrderInterface::class)->getMock();
+
         $obj = new DataTablesRequest();
 
-        $obj->setOrder(["order"]);
-        $this->assertEquals(["order"], $obj->getOrder());
+        $obj->setOrder([$dtOrder]);
+        $this->assertEquals([$dtOrder], $obj->getOrder());
     }
 
     /**
