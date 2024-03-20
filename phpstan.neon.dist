@@ -3,5 +3,6 @@ parameters:
     paths:
         - ./
     excludePaths:
-        - Tests/Fixtures/app
+        - Resources/
+        - Tests/Fixtures/app/var
         - vendor/
