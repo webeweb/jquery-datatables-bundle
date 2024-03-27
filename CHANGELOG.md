@@ -3,6 +3,8 @@ CHANGELOG
 
 ### master
 
+- Add declare(strict_types = 1)
+- Add PHPStan
 - Improve code quality
 - Improve PHPDoc
 - Update dependencies
