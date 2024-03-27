@@ -24,28 +24,28 @@ interface DataTablesOrderInterface {
      *
      * @var string
      */
-    const DATATABLES_DIR_ASC = "asc";
+    public const DATATABLES_DIR_ASC = "asc";
 
     /**
      * Dir "desc".
      *
      * @var string
      */
-    const DATATABLES_DIR_DESC = "desc";
+    public const DATATABLES_DIR_DESC = "desc";
 
     /**
      * Parameter "column".
      *
      * @var string
      */
-    const DATATABLES_PARAMETER_COLUMN = "column";
+    public const DATATABLES_PARAMETER_COLUMN = "column";
 
     /**
      * Parameter "dir".
      *
      * @var string
      */
-    const DATATABLES_PARAMETER_DIR = "dir";
+    public const DATATABLES_PARAMETER_DIR = "dir";
 
     /**
      * Get the column.
