@@ -35,14 +35,14 @@ class ListDataTablesProviderCommand extends AbstractCommand {
      *
      * @var string
      */
-    const COMMAND_NAME = "wbw:jquery:datatables:provider:list";
+    public const COMMAND_NAME = "wbw:jquery:datatables:provider:list";
 
     /**
      * Service name.
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.jquery.datatables.command.list_provider";
+    public const SERVICE_NAME = "wbw.jquery.datatables.command.list_provider";
 
     /**
      * {@inheritDoc}
