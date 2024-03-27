@@ -32,70 +32,70 @@ class DataTablesEvent extends AbstractEvent {
      *
      * @var string
      */
-    const POST_DELETE = "wbw.jquery.datatables.event.post_delete";
+    public const POST_DELETE = "wbw.jquery.datatables.event.post_delete";
 
     /**
      * Event "post edit".
      *
      * @var string
      */
-    const POST_EDIT = "wbw.jquery.datatables.event.post_edit";
+    public const POST_EDIT = "wbw.jquery.datatables.event.post_edit";
 
     /**
      * Event "post export".
      *
      * @var string
      */
-    const POST_EXPORT = "wbw.jquery.datatables.event.post_export";
+    public const POST_EXPORT = "wbw.jquery.datatables.event.post_export";
 
     /**
      * Event "post show".
      *
      * @var string
      */
-    const POST_INDEX = "wbw.jquery.datatables.event.post_index";
+    public const POST_INDEX = "wbw.jquery.datatables.event.post_index";
 
     /**
      * Event "pre delete".
      *
      * @var string
      */
-    const PRE_DELETE = "wbw.jquery.datatables.event.pre_delete";
+    public const PRE_DELETE = "wbw.jquery.datatables.event.pre_delete";
 
     /**
      * Event "pre edit".
      *
      * @var string
      */
-    const PRE_EDIT = "wbw.jquery.datatables.event.pre_edit";
+    public const PRE_EDIT = "wbw.jquery.datatables.event.pre_edit";
 
     /**
      * Event "pre export".
      *
      * @var string
      */
-    const PRE_EXPORT = "wbw.jquery.datatables.event.pre_export";
+    public const PRE_EXPORT = "wbw.jquery.datatables.event.pre_export";
 
     /**
      * Event "pre index".
      *
      * @var string
      */
-    const PRE_INDEX = "wbw.jquery.datatables.event.pre_index";
+    public const PRE_INDEX = "wbw.jquery.datatables.event.pre_index";
 
     /**
      * Event "pre serialize".
      *
      * @var string
      */
-    const PRE_SERIALIZE = "wbw.jquery.datatables.event.pre_serialize";
+    public const PRE_SERIALIZE = "wbw.jquery.datatables.event.pre_serialize";
 
     /**
      * Event "pre show".
      *
      * @var string
      */
-    const PRE_SHOW = "wbw.jquery.datatables.event.pre_show";
+    public const PRE_SHOW = "wbw.jquery.datatables.event.pre_show";
 
     /**
      * Constructor.
