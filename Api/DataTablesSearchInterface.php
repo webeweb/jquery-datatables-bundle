@@ -24,14 +24,14 @@ interface DataTablesSearchInterface {
      *
      * @var string
      */
-    const DATATABLES_PARAMETER_REGEX = "regex";
+    public const DATATABLES_PARAMETER_REGEX = "regex";
 
     /**
      * Parameter "value".
      *
      * @var string
      */
-    const DATATABLES_PARAMETER_VALUE = "value";
+    public const DATATABLES_PARAMETER_VALUE = "value";
 
     /**
      * Get the regex.
