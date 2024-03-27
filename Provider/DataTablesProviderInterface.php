@@ -29,7 +29,7 @@ interface DataTablesProviderInterface extends ProviderInterface {
      *
      * @var string
      */
-    const DATATABLES_TAG_NAME = "wbw.jquery.datatables.provider";
+    public const DATATABLES_TAG_NAME = "wbw.jquery.datatables.provider";
 
     /**
      * Get the CSV exporter.
