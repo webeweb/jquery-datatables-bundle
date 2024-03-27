@@ -33,7 +33,7 @@ class DataTablesManager extends AbstractManager {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.jquery.datatables.manager";
+    public const SERVICE_NAME = "wbw.jquery.datatables.manager";
 
     /**
      * {@inheritDoc}
