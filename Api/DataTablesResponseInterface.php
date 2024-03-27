@@ -26,28 +26,28 @@ interface DataTablesResponseInterface extends JsonSerializable {
      *
      * @var string
      */
-    const DATATABLES_ROW_ATTR = "DT_RowAttr";
+    public const DATATABLES_ROW_ATTR = "DT_RowAttr";
 
     /**
      * Row "class".
      *
      * @var string
      */
-    const DATATABLES_ROW_CLASS = "DT_RowClass";
+    public const DATATABLES_ROW_CLASS = "DT_RowClass";
 
     /**
      * Row "data".
      *
      * @var string
      */
-    const DATATABLES_ROW_DATA = "DT_RowData";
+    public const DATATABLES_ROW_DATA = "DT_RowData";
 
     /**
      * Row "ID".
      *
      * @var string
      */
-    const DATATABLES_ROW_ID = "DT_RowId";
+    public const DATATABLES_ROW_ID = "DT_RowId";
 
     /**
      * Add a row.
