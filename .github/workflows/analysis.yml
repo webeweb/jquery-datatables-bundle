@@ -26,12 +26,7 @@ jobs:
                       COMPOSER_MEMORY_LIMIT=-1 composer update
 
             -   name: "Application"
-                run:  |
-                      mkdir -p build/logs
-                      wget -c -nc --retry-connrefused --tries=0 https://github.com/phpstan/phpstan/releases/download/1.4.10/phpstan.phar -O phpstan.phar
-                      chmod +x phpstan.phar
-                      php phpstan.phar --version
-                      echo -e "parameters:\n    level: 0\n    excludePaths:\n        -   \"Resources/*\"\n        -   \"Tests/*\"\n        -   \"vendor/*\"" > phpstan.neon
+                run:  vendor/bin/phpstan --version
 
             -   name: "Analyses"
-                run:  php phpstan.phar analyse . --error-format=github --configuration phpstan.neon
+                run:  vendor/bin/phpstan analyse --error-format=github --configuration phpstan.conf.neon
