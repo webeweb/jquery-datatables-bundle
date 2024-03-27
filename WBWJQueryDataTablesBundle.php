@@ -31,7 +31,7 @@ class WBWJQueryDataTablesBundle extends Bundle implements AssetsProviderInterfac
      *
      * @var string
      */
-    const TRANSLATION_DOMAIN = "WBWJQueryDataTablesBundle";
+    public const TRANSLATION_DOMAIN = "WBWJQueryDataTablesBundle";
 
     /**
      * {@inheritDoc}
