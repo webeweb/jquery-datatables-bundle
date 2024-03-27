@@ -32,7 +32,7 @@ class WBWJQueryDataTablesExtension extends Extension {
      *
      * @var string
      */
-    const EXTENSION_ALIAS = "wbw_jquery_datatables";
+    public const EXTENSION_ALIAS = "wbw_jquery_datatables";
 
     /**
      * {@inheritDoc}
