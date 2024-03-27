@@ -6,3 +6,8 @@ parameters:
         - Resources/
         - Tests/Fixtures/app/var
         - vendor/
+    ignoreErrors:
+        -
+            message: '#Comparison operation "[<=>]+" between [0-9]+ and [0-9]+ is always false#'
+            paths:
+                - Tests/Fixtures/app/TestKernel.php
