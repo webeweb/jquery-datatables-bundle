@@ -26,42 +26,42 @@ interface DataTablesRequestInterface {
      *
      * @var string
      */
-    const DATATABLES_PARAMETER_COLUMNS = "columns";
+    public const DATATABLES_PARAMETER_COLUMNS = "columns";
 
     /**
      * Parameter "draw".
      *
      * @var string
      */
-    const DATATABLES_PARAMETER_DRAW = "draw";
+    public const DATATABLES_PARAMETER_DRAW = "draw";
 
     /**
      * Parameter "length".
      *
      * @var string
      */
-    const DATATABLES_PARAMETER_LENGTH = "length";
+    public const DATATABLES_PARAMETER_LENGTH = "length";
 
     /**
      * Parameter "order".
      *
      * @var string
      */
-    const DATATABLES_PARAMETER_ORDER = "order";
+    public const DATATABLES_PARAMETER_ORDER = "order";
 
     /**
      * Parameter "search".
      *
      * @var string
      */
-    const DATATABLES_PARAMETER_SEARCH = "search";
+    public const DATATABLES_PARAMETER_SEARCH = "search";
 
     /**
      * Parameter "search".
      *
      * @var string
      */
-    const DATATABLES_PARAMETER_START = "start";
+    public const DATATABLES_PARAMETER_START = "start";
 
     /**
      * Get a column.
