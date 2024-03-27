@@ -45,7 +45,7 @@ class DataTablesController extends AbstractController {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.jquery.datatables.controller.datatables";
+    public const SERVICE_NAME = "wbw.jquery.datatables.controller.datatables";
 
     /**
      * Delete an existing entity.
