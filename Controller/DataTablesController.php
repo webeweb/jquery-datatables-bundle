@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -11,7 +11,7 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Controller;
+namespace WBW\Bundle\DataTablesBundle\Controller;
 
 use DateTime;
 use Doctrine\ORM\EntityNotFoundException;
@@ -20,25 +20,25 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use Throwable;
-use WBW\Bundle\JQuery\DataTablesBundle\Event\DataTablesEvent;
-use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesColumnException;
-use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
-use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesEditorException;
-use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
-use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
-use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
-use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesEntityHelper;
-use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesExportHelper;
-use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
-use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesEnumerator;
-use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesLoop;
+use WBW\Bundle\DataTablesBundle\Event\DataTablesEvent;
+use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesColumnException;
+use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
+use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesEditorException;
+use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesRepositoryException;
+use WBW\Bundle\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
+use WBW\Bundle\DataTablesBundle\Factory\DataTablesFactory;
+use WBW\Bundle\DataTablesBundle\Helper\DataTablesEntityHelper;
+use WBW\Bundle\DataTablesBundle\Helper\DataTablesExportHelper;
+use WBW\Bundle\DataTablesBundle\Helper\DataTablesWrapperHelper;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesEnumerator;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesLoop;
 use WBW\Library\Types\Helper\BooleanHelper;
 
 /**
  * DataTables controller.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Controller
+ * @package WBW\Bundle\DataTablesBundle\Controller
  */
 class DataTablesController extends AbstractController {
 
@@ -47,7 +47,7 @@ class DataTablesController extends AbstractController {
      *
      * @var string
      */
-    public const SERVICE_NAME = "wbw.jquery.datatables.controller.datatables";
+    public const SERVICE_NAME = "wbw.datatables.controller.datatables";
 
     /**
      * Delete an existing entity.
@@ -259,10 +259,10 @@ class DataTablesController extends AbstractController {
 
         $dtView = $dtProvider->getView();
         if (null === $dtProvider->getView()) {
-            $dtView = "@WBWJQueryDataTables/datatables/index.html.twig";
+            $dtView = "@WBWDataTables/datatables/index.html.twig";
         }
         if (true === BooleanHelper::parseString($alone)) {
-            $dtView = "@WBWJQueryDataTables/datatables/render.html.twig";
+            $dtView = "@WBWDataTables/datatables/render.html.twig";
         }
 
         return $this->render($dtView, [

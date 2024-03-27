@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -11,23 +11,23 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension;
+namespace WBW\Bundle\DataTablesBundle\Twig\Extension;
 
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 use Twig\Environment;
 use WBW\Bundle\CoreBundle\Twig\Extension\AbstractTwigExtension;
 use WBW\Bundle\CoreBundle\Twig\Extension\AssetsTwigExtension;
 use WBW\Bundle\CoreBundle\Twig\Extension\AssetsTwigExtensionTrait;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesWrapperInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesWrapperInterface;
+use WBW\Bundle\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Library\Traits\Strings\StringEnvironmentTrait;
 
 /**
  * Abstract DataTables Twig extension.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension
+ * @package WBW\Bundle\DataTablesBundle\Twig\Extension
  * @abstract
  */
 abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {

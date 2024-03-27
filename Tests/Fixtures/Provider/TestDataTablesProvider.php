@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2019 WEBEWEB
  *
@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider;
+namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Provider;
 
 use DateTime;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\AbstractDataTablesProvider;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Provider\AbstractDataTablesProvider;
 
 /**
  * Test DataTables provider.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider
+ * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\Provider
  */
 class TestDataTablesProvider extends AbstractDataTablesProvider {
 

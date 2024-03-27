@@ -6,16 +6,16 @@ jquery-datatables-bundle
 [![Packagist version](https://img.shields.io/packagist/v/webeweb/jquery-datatables-bundle.svg?style=for-the-badge&color=F28D1A&logo=packagist)](https://packagist.org/packages/webeweb/jquery-datatables-bundle)
 [![Packagist license](https://img.shields.io/packagist/l/webeweb/jquery-datatables-bundle.svg?style=for-the-badge&colorF28D1A&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRiIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0ibTMgNiAzIDFtMCAwLTMgOWE1LjAwMiA1LjAwMiAwIDAgMCA2LjAwMSAwTTYgN2wzIDlNNiA3bDYtMm02IDIgMy0xbS0zIDEtMyA5YTUuMDAyIDUuMDAyIDAgMCAwIDYuMDAxIDBNMTggN2wzIDltLTMtOS02LTJtMC0ydjJtMCAxNlY1bTAgMTZIOW0zIDBoMyIvPjwvc3ZnPg==)](./LICENSE)
 
-Integrate jQuery DataTables with Symfony 4 and more.
+Integrate DataTables with Symfony 4 and more.
 
-`jquery-datatables-bundle` eases the use of **jQuery DataTables** to display rich
-DataTables in your Symfony application by providing Twig extensions and PHP
+`jquery-datatables-bundle` eases the use of **DataTables** to display rich
+data tables in your Symfony application by providing Twig extensions and PHP
 objects to do the heavy lifting. The bundle include the excellent JS library
-[jQuery DataTables](https://datatables.net/) and this plug-ins.
+[DataTables](https://datatables.net/) and this plug-ins.
 
 Dry out your DataTables code by writing it all in PHP !
 
-<img src="https://raw.githubusercontent.com/webeweb/jquery-datatables-bundle/master/Resources/doc/screenshot_readme.png" alt="jQuery DataTables bundle" align="right" height="456"/>
+<img src="https://raw.githubusercontent.com/webeweb/jquery-datatables-bundle/master/Resources/doc/screenshot_readme.png" alt="DataTables bundle" align="right" height="456"/>
 
 Includes :
 
@@ -41,13 +41,13 @@ Includes :
 
 Provides :
 
-- a "wbw_jquery_datatables_delete" route to delete a managed entity by a DataTable
-- a "wbw_jquery_datatables_edit" route to edit all columns provided by a DataTable
-- a "wbw_jquery_datatables_export" route to export all managed entities by a DataTable
-- a "wbw_jquery_datatables_index" route to display a DataTable (main and columns searches is also provide with a generic implementation)
-- a "wbw_jquery_datatables_options" route to retrieve with an XML HTTP request the options of a DataTable
-- a "wbw_jquery_datatables_render" route to retrieve with an XML HTTP request the HTML rendering of a DataTable
-- a "wbw_jquery_datatables_serialize" route to retrieve with an XML HTTP request a managed entity by a DataTable into JSON format
+- a "wbw_datatables_delete" route to delete a managed entity by a DataTable
+- a "wbw_datatables_edit" route to edit all columns provided by a DataTable
+- a "wbw_datatables_export" route to export all managed entities by a DataTable
+- a "wbw_datatables_index" route to display a DataTable (main and columns searches is also provide with a generic implementation)
+- a "wbw_datatables_options" route to retrieve with an XML HTTP request the options of a DataTable
+- a "wbw_datatables_render" route to retrieve with an XML HTTP request the HTML rendering of a DataTable
+- a "wbw_datatables_serialize" route to retrieve with an XML HTTP request a managed entity by a DataTable into JSON format
 
 If you like this package, pay me a beer (or a coffee)
 [![paypal.me](https://img.shields.io/badge/paypal.me-webeweb-003087.svg?style=flat-square&logo=paypal)](https://www.paypal.me/webeweb)
@@ -79,7 +79,7 @@ in the `app/AppKernel.php` file of your project:
             // ...
             new WBW\Bundle\CoreBundle\WBWCoreBundle(),
             new WBW\Bundle\BootstrapBundle\WBWBootstrapBundle(),
-            new WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle(),
+            new WBW\Bundle\DataTablesBundle\WBWDataTablesBundle(),
         ];
 
         // ...
@@ -108,8 +108,8 @@ wbw_core:
 wbw_bootstrap:
     version: 3
 
-# jQuery DataTables configuration
-wbw_jquery_datatables:
+# DataTables configuration
+wbw_datatables:
     theme: "bootstrap"
     plugins:
         - "responsive"
@@ -117,15 +117,15 @@ wbw_jquery_datatables:
 
 > IMPORTANT NOTICE: For use with Bootstrap 4 or 5, replace '3' by version number
 > into wbw_bootstrap.version and append the number number at 'bootstrap' into
-> wbw_jquery_datatables theme.
+> wbw_datatables theme.
 
 Add the bundle routing in the `app/config/routing.yml` file of your project:
 
 ```yaml
 # ...
-wbw_jquery_datatables:
+wbw_datatables:
     prefix:   "/"
-    resource: "@WBWJQueryDataTablesBundle/Resources/config/routing.yml"
+    resource: "@WBWDataTablesBundle/Resources/config/routing.yml"
 ```
 
 ## Usage
@@ -135,7 +135,7 @@ Read the [documentation](Resources/doc/index.md).
 The following commands are available:
 
 ```bash
-php bin/console wbw:jquery:datatables:provider:list
+php bin/console wbw:datatables:provider:list
 ```
 
 ## Testing

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2022 WEBEWEB
  *
@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Assets;
+namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Renderer\Assets;
 
 use WBW\Bundle\CoreBundle\Twig\Environment\TwigEnvironmentTrait;
-use WBW\Bundle\JQuery\DataTablesBundle\Renderer\Assets\IconRendererTrait;
+use WBW\Bundle\DataTablesBundle\Renderer\Assets\IconRendererTrait;
 
 /**
  * Test icon renderer trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Assets
+ * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\Renderer\Assets
  */
 class TestIconRendererTrait {
 

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Event;
+namespace WBW\Bundle\DataTablesBundle\Tests\Event;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Event\DataTablesEvent;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Event\DataTablesEvent;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
  * DataTables event test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Event
+ * @package WBW\Bundle\DataTablesBundle\Tests\Event
  */
 class DataTablesEventTest extends AbstractTestCase {
 
@@ -30,16 +30,16 @@ class DataTablesEventTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw.jquery.datatables.event.pre_delete", DataTablesEvent::PRE_DELETE);
-        $this->assertEquals("wbw.jquery.datatables.event.pre_edit", DataTablesEvent::PRE_EDIT);
-        $this->assertEquals("wbw.jquery.datatables.event.pre_export", DataTablesEvent::PRE_EXPORT);
-        $this->assertEquals("wbw.jquery.datatables.event.pre_index", DataTablesEvent::PRE_INDEX);
-        $this->assertEquals("wbw.jquery.datatables.event.pre_serialize", DataTablesEvent::PRE_SERIALIZE);
-        $this->assertEquals("wbw.jquery.datatables.event.pre_show", DataTablesEvent::PRE_SHOW);
-        $this->assertEquals("wbw.jquery.datatables.event.post_delete", DataTablesEvent::POST_DELETE);
-        $this->assertEquals("wbw.jquery.datatables.event.post_edit", DataTablesEvent::POST_EDIT);
-        $this->assertEquals("wbw.jquery.datatables.event.post_export", DataTablesEvent::POST_EXPORT);
-        $this->assertEquals("wbw.jquery.datatables.event.post_index", DataTablesEvent::POST_INDEX);
+        $this->assertEquals("wbw.datatables.event.pre_delete", DataTablesEvent::PRE_DELETE);
+        $this->assertEquals("wbw.datatables.event.pre_edit", DataTablesEvent::PRE_EDIT);
+        $this->assertEquals("wbw.datatables.event.pre_export", DataTablesEvent::PRE_EXPORT);
+        $this->assertEquals("wbw.datatables.event.pre_index", DataTablesEvent::PRE_INDEX);
+        $this->assertEquals("wbw.datatables.event.pre_serialize", DataTablesEvent::PRE_SERIALIZE);
+        $this->assertEquals("wbw.datatables.event.pre_show", DataTablesEvent::PRE_SHOW);
+        $this->assertEquals("wbw.datatables.event.post_delete", DataTablesEvent::POST_DELETE);
+        $this->assertEquals("wbw.datatables.event.post_edit", DataTablesEvent::POST_EDIT);
+        $this->assertEquals("wbw.datatables.event.post_export", DataTablesEvent::POST_EXPORT);
+        $this->assertEquals("wbw.datatables.event.post_index", DataTablesEvent::POST_INDEX);
 
         // Set a DataTables provider mock.
         $provider = $this->getMockBuilder(DataTablesProviderInterface::class)->getMock();

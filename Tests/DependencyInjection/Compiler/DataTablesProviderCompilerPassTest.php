@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection\Compiler;
+namespace WBW\Bundle\DataTablesBundle\Tests\DependencyInjection\Compiler;
 
-use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Compiler\DataTablesProviderCompilerPass;
-use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\DependencyInjection\Compiler\DataTablesProviderCompilerPass;
+use WBW\Bundle\DataTablesBundle\Manager\DataTablesManager;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
- * jQuery DataTables compiler pass test.
+ * DataTables compiler pass test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection\Compiler
+ * @package WBW\Bundle\DataTablesBundle\Tests\DependencyInjection\Compiler
  */
 class DataTablesProviderCompilerPassTest extends AbstractTestCase {
 

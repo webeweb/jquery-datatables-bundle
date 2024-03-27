@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2022 WEBEWEB
  *
@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Assets;
+namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Renderer\Assets;
 
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\BadgeTwigExtensionTrait;
 use WBW\Bundle\CoreBundle\Translation\TranslatorTrait;
-use WBW\Bundle\JQuery\DataTablesBundle\Renderer\Assets\EnabledBadgeRendererTrait;
+use WBW\Bundle\DataTablesBundle\Renderer\Assets\EnabledBadgeRendererTrait;
 
 /**
  * Test enabled badge renderer trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Assets
+ * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\Renderer\Assets
  */
 class TestEnabledBadgeRendererTrait {
 

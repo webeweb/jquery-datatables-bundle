@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,24 +9,24 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider;
+namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Provider;
 
 use DateTime;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesResponseInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesOptionsInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
+use WBW\Bundle\DataTablesBundle\Factory\DataTablesFactory;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesEditorInterface;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Entity\Employee;
 use WBW\Library\Types\Exception\IntegerArgumentException;
 
 /**
  * Employee DataTables provider.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity
+ * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\Entity
  */
 class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTablesCSVExporterInterface, DataTablesEditorInterface {
 

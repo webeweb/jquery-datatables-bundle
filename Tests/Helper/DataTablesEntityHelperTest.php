@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2019 WEBEWEB
  *
@@ -9,20 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
+namespace WBW\Bundle\DataTablesBundle\Tests\Helper;
 
 use Symfony\Component\Serializer\SerializerInterface;
 use Throwable;
-use WBW\Bundle\JQuery\DataTablesBundle\Entity\DataTablesEntityInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesEntityHelper;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee;
+use WBW\Bundle\DataTablesBundle\Entity\DataTablesEntityInterface;
+use WBW\Bundle\DataTablesBundle\Helper\DataTablesEntityHelper;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Entity\Employee;
 
 /**
  * DataTables entity helper.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper
+ * @package WBW\Bundle\DataTablesBundle\Tests\Helper
  */
 class DataTablesEntityHelperTest extends AbstractTestCase {
 

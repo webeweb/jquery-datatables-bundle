@@ -1,7 +1,7 @@
 # Resources/config/managers.yml
 services:
 
-    wbw.jquery.datatables.manager:
-        class:  WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager
+    wbw.datatables.manager:
+        class:  WBW\Bundle\DataTablesBundle\Manager\DataTablesManager
         public: false
         arguments: [ "@logger" ]

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2022 WEBEWEB
  *
@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Renderer\Strings;
+namespace WBW\Bundle\DataTablesBundle\Tests\Renderer\Strings;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings\TestJustifiedAlignedTextRendererTrait;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Renderer\Strings\TestJustifiedAlignedTextRendererTrait;
 
 /**
  * Justified-aligned text renderer trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Renderer\Strings
+ * @package WBW\Bundle\DataTablesBundle\Tests\Renderer\Strings
  */
 class JustifiedAlignedTextRendererTraitTest extends AbstractTestCase {
 

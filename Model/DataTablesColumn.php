@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -11,18 +11,18 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Model;
+namespace WBW\Bundle\DataTablesBundle\Model;
 
 use InvalidArgumentException;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesMappingInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesSearchInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesMappingInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesSearchInterface;
 
 /**
  * DataTables column.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Model
+ * @package WBW\Bundle\DataTablesBundle\Model
  */
 class DataTablesColumn implements DataTablesColumnInterface {
 

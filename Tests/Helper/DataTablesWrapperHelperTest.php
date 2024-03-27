@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,20 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
+namespace WBW\Bundle\DataTablesBundle\Tests\Helper;
 
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 use Throwable;
-use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
-use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
+use WBW\Bundle\DataTablesBundle\Factory\DataTablesFactory;
+use WBW\Bundle\DataTablesBundle\Helper\DataTablesWrapperHelper;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
 /**
  * DataTables wrapper helper test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper
+ * @package WBW\Bundle\DataTablesBundle\Tests\Helper
  */
 class DataTablesWrapperHelperTest extends AbstractTestCase {
 
@@ -34,7 +34,7 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
      */
     public function testGetLanguageUrl(): void {
 
-        $res = "/bundles/wbwjquerydatatables/datatables-i18n/French.json";
+        $res = "/bundles/wbwdatatables/datatables-i18n/French.json";
         $this->assertEquals($res, DataTablesWrapperHelper::getLanguageUrl("French"));
     }
 
@@ -51,7 +51,7 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
         } catch (Throwable $ex) {
 
             $this->assertInstanceOf(FileNotFoundException::class, $ex);
-            $this->assertEquals('File "/bundles/wbwjquerydatatables/datatables-i18n/exception.json" could not be found.', $ex->getMessage());
+            $this->assertEquals('File "/bundles/wbwdatatables/datatables-i18n/exception.json" could not be found.', $ex->getMessage());
         }
     }
 

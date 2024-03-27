@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,22 +9,22 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
+namespace WBW\Bundle\DataTablesBundle\Tests;
 
 use Throwable;
 use WBW\Bundle\CoreBundle\Config\ConfigurationHelper;
 use WBW\Bundle\CoreBundle\Provider\AssetsProviderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\WBWJQueryDataTablesExtension;
-use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle;
+use WBW\Bundle\DataTablesBundle\DependencyInjection\WBWDataTablesExtension;
+use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
 use WBW\Library\Symfony\Helper\AssetsHelper;
 
 /**
- * jQuery DataTables bundle test.
+ * DataTables bundle test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests
+ * @package WBW\Bundle\DataTablesBundle\Tests
  */
-class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
+class WBWDataTablesBundleTest extends AbstractTestCase {
 
     /**
      * Test build()
@@ -33,7 +33,7 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
      */
     public function testBuild(): void {
 
-        $obj = new WBWJQueryDataTablesBundle();
+        $obj = new WBWDataTablesBundle();
 
         $obj->build($this->containerBuilder);
         $this->assertNull(null);
@@ -46,7 +46,7 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
      */
     public function testGetAssetsRelativeDirectory(): void {
 
-        $obj = new WBWJQueryDataTablesBundle();
+        $obj = new WBWDataTablesBundle();
 
         $this->assertEquals(AssetsProviderInterface::ASSETS_RELATIVE_DIRECTORY, $obj->getAssetsRelativeDirectory());
     }
@@ -58,9 +58,9 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
      */
     public function testGetContainerExtension(): void {
 
-        $obj = new WBWJQueryDataTablesBundle();
+        $obj = new WBWDataTablesBundle();
 
-        $this->assertInstanceOf(WBWJQueryDataTablesExtension::class, $obj->getContainerExtension());
+        $this->assertInstanceOf(WBWDataTablesExtension::class, $obj->getContainerExtension());
     }
 
     /**
@@ -70,7 +70,7 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
      */
     public function testGetTranslationDomain(): void {
 
-        $this->assertEquals(WBWJQueryDataTablesBundle::TRANSLATION_DOMAIN, WBWJQueryDataTablesBundle::getTranslationDomain());
+        $this->assertEquals(WBWDataTablesBundle::TRANSLATION_DOMAIN, WBWDataTablesBundle::getTranslationDomain());
     }
 
     /**
@@ -86,9 +86,9 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
 
         // Load the YAML configuration.
         $config   = ConfigurationHelper::loadYamlConfig($config, "assets");
-        $version  = $config["assets"]["wbw.jquery_datatables.asset.jquery_datatables"]["version"];
-        $requires = $config["assets"]["wbw.jquery_datatables.asset.jquery_datatables"]["requires"];
-        $plugins  = $config["assets"]["wbw.jquery_datatables.asset.jquery_datatables"]["plugins"];
+        $version  = $config["assets"]["wbw.datatables.asset.datatables"]["version"];
+        $requires = $config["assets"]["wbw.datatables.asset.datatables"]["requires"];
+        $plugins  = $config["assets"]["wbw.datatables.asset.datatables"]["plugins"];
 
         $res = AssetsHelper::listAssets($assets);
         $this->assertCount(19, $res);
@@ -123,6 +123,6 @@ class WBWJQueryDataTablesBundleTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("WBWJQueryDataTablesBundle", WBWJQueryDataTablesBundle::TRANSLATION_DOMAIN);
+        $this->assertEquals("WBWDataTablesBundle", WBWDataTablesBundle::TRANSLATION_DOMAIN);
     }
 }

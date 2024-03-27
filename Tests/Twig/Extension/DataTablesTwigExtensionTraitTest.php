@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Twig\Extension;
+namespace WBW\Bundle\DataTablesBundle\Tests\Twig\Extension;
 
 use WBW\Bundle\CoreBundle\Tests\AbstractTestCase;
 use WBW\Bundle\CoreBundle\Twig\Extension\AssetsTwigExtension;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Twig\Extension\TestDataTablesTwigExtensionTrait;
-use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Twig\Extension\TestDataTablesTwigExtensionTrait;
+use WBW\Bundle\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 
 /**
  * DataTables Twig extension trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Twig\Extension
+ * @package WBW\Bundle\DataTablesBundle\Tests\Twig\Extension
  */
 class DataTablesTwigExtensionTraitTest extends AbstractTestCase {
 

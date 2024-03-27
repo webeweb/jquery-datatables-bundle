@@ -1,14 +1,13 @@
 {
     "name": "webeweb/jquery-datatables-bundle",
-    "description": "Integrate jQuery Datatables with Symfony 2 and more",
+    "description": "Integrate Datatables with Symfony 2 and more",
     "license": "MIT",
     "type": "symfony-bundle",
     "keywords": [
-        "bundle",
-        "datatable",
-        "jquery",
+        "webeweb",
         "symfony",
-        "webeweb"
+        "bundle",
+        "datatables"
     ],
     "authors": [
         {
@@ -50,7 +49,7 @@
     },
     "autoload": {
         "psr-4": {
-            "WBW\\Bundle\\JQuery\\DataTablesBundle\\": ""
+            "WBW\\Bundle\\DataTablesBundle\\": ""
         },
         "exclude-from-classmap": [
             "/Tests/"
@@ -58,7 +57,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "WBW\\Bundle\\JQuery\\QueryBuilderBundle\\Tests\\": "Tests/"
+            "WBW\\Bundle\\QueryBuilderBundle\\Tests\\": "Tests/"
         }
     },
     "config": {

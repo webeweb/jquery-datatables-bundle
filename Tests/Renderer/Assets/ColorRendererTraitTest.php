@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2021 WEBEWEB
  *
@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Renderer\Assets;
+namespace WBW\Bundle\DataTablesBundle\Tests\Renderer\Assets;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Assets\TestColorRendererTrait;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Renderer\Assets\TestColorRendererTrait;
 
 /**
  * Color renderer trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Renderer\Assets
+ * @package WBW\Bundle\DataTablesBundle\Tests\Renderer\Assets
  */
 class ColorRendererTraitTest extends AbstractTestCase {
 

@@ -1,7 +1,7 @@
 # Resources/config/assets.yml
 assets:
 
-    wbw.jquery_datatables.asset.jquery_datatables:
+    wbw.datatables.asset.datatables:
         version: "1.13.8"
         themes:
             - "datatables"

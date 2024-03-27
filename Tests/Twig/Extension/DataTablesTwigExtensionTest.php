@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Twig\Extension;
+namespace WBW\Bundle\DataTablesBundle\Tests\Twig\Extension;
 
 use Throwable;
 use Twig\Extension\ExtensionInterface;
@@ -17,14 +17,14 @@ use Twig\Node\Node;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
 use WBW\Bundle\CoreBundle\Twig\Extension\AssetsTwigExtension;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 
 /**
  * DataTables Twig extension test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Twig\Extension
+ * @package WBW\Bundle\DataTablesBundle\Tests\Twig\Extension
  */
 class DataTablesTwigExtensionTest extends AbstractTestCase {
 
@@ -375,7 +375,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw.jquery.datatables.twig.extension", DataTablesTwigExtension::SERVICE_NAME);
+        $this->assertEquals("wbw.datatables.twig.extension", DataTablesTwigExtension::SERVICE_NAME);
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 

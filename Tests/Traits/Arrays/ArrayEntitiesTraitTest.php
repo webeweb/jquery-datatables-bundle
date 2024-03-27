@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2022 WEBEWEB
  *
@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Traits\Arrays;
+namespace WBW\Bundle\DataTablesBundle\Tests\Traits\Arrays;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Traits\Arrays\TestArrayEntitiesTrait;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Traits\Arrays\TestArrayEntitiesTrait;
 
 /**
  * Array entities trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Traits\Arrays
+ * @package WBW\Bundle\DataTablesBundle\Tests\Traits\Arrays
  */
 class ArrayEntitiesTraitTest extends AbstractTestCase {
 

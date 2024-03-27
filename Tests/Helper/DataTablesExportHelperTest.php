@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
+namespace WBW\Bundle\DataTablesBundle\Tests\Helper;
 
 use Symfony\Component\HttpFoundation\Request;
-use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesExportHelper;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Helper\DataTablesExportHelper;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
  * DataTables export helper test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper
+ * @package WBW\Bundle\DataTablesBundle\Tests\Helper
  */
 class DataTablesExportHelperTest extends AbstractTestCase {
 

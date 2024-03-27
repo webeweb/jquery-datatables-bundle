@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2021 WEBEWEB
  *
@@ -11,20 +11,20 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Command;
+namespace WBW\Bundle\DataTablesBundle\Command;
 
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use WBW\Bundle\CoreBundle\Console\ConsoleHelper;
-use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManagerTrait;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\DataTablesBundle\Manager\DataTablesManagerTrait;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 
 /**
  * List DataTables provider command.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Command
+ * @package WBW\Bundle\DataTablesBundle\Command
  */
 class ListDataTablesProviderCommand extends AbstractCommand {
 
@@ -37,14 +37,14 @@ class ListDataTablesProviderCommand extends AbstractCommand {
      *
      * @var string
      */
-    public const COMMAND_NAME = "wbw:jquery:datatables:provider:list";
+    public const COMMAND_NAME = "wbw:datatables:provider:list";
 
     /**
      * Service name.
      *
      * @var string
      */
-    public const SERVICE_NAME = "wbw.jquery.datatables.command.list_provider";
+    public const SERVICE_NAME = "wbw.datatables.command.list_provider";
 
     /**
      * {@inheritDoc}

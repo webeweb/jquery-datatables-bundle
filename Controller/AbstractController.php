@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -11,7 +11,7 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Controller;
+namespace WBW\Bundle\DataTablesBundle\Controller;
 
 use Doctrine\ORM\EntityNotFoundException;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -19,24 +19,24 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Throwable;
 use WBW\Bundle\BootstrapBundle\Controller\AbstractController as BaseController;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesWrapperInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Event\DataTablesEvent;
-use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesColumnException;
-use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
-use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesEditorException;
-use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesRepositoryException;
-use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
-use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
-use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesExportHelper;
-use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManagerTrait;
-use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesWrapper;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesRouterInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Repository\DataTablesRepositoryInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesWrapperInterface;
+use WBW\Bundle\DataTablesBundle\Event\DataTablesEvent;
+use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesColumnException;
+use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
+use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesEditorException;
+use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesRepositoryException;
+use WBW\Bundle\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
+use WBW\Bundle\DataTablesBundle\Factory\DataTablesFactory;
+use WBW\Bundle\DataTablesBundle\Helper\DataTablesExportHelper;
+use WBW\Bundle\DataTablesBundle\Manager\DataTablesManagerTrait;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapper;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesEditorInterface;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesRouterInterface;
+use WBW\Bundle\DataTablesBundle\Repository\DataTablesRepositoryInterface;
+use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
 use WBW\Library\Database\Helper\PaginateHelper;
 use WBW\Library\Symfony\Response\SimpleJsonResponseData;
 use WBW\Library\Symfony\Response\SimpleJsonResponseDataInterface;
@@ -45,7 +45,7 @@ use WBW\Library\Symfony\Response\SimpleJsonResponseDataInterface;
  * Abstract controller.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Controller
+ * @package WBW\Bundle\DataTablesBundle\Controller
  * @abstract
  */
 abstract class AbstractController extends BaseController {
@@ -84,7 +84,7 @@ abstract class AbstractController extends BaseController {
                 break;
         }
 
-        return $this->redirectToRoute("wbw_jquery_datatables_index", ["name" => $name]);
+        return $this->redirectToRoute("wbw_datatables_index", ["name" => $name]);
     }
 
     /**
@@ -357,7 +357,7 @@ abstract class AbstractController extends BaseController {
         if (true === ($dtProvider instanceof DataTablesRouterInterface)) {
             $url = $dtProvider->getUrl();
         } else {
-            $url = $this->getRouter()->generate("wbw_jquery_datatables_index", ["name" => $dtProvider->getName()]);
+            $url = $this->getRouter()->generate("wbw_datatables_index", ["name" => $dtProvider->getName()]);
         }
 
         $context["_url"] = $url;
@@ -441,7 +441,7 @@ abstract class AbstractController extends BaseController {
      */
     protected function prepareActionResponse(int $status, string $notificationId): SimpleJsonResponseDataInterface {
 
-        $notify = $this->getTranslator()->trans($notificationId, [], WBWJQueryDataTablesBundle::getTranslationDomain());
+        $notify = $this->getTranslator()->trans($notificationId, [], WBWDataTablesBundle::getTranslationDomain());
 
         $response = new SimpleJsonResponseData();
         $response->setStatus($status);

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2019 WEBEWEB
  *
@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Model;
+namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Model;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesWrapperTrait;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperTrait;
 
 /**
  * Test DataTables wrapper trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Model
+ * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\Model
  */
 class TestDataTablesWrapperTrait {
 

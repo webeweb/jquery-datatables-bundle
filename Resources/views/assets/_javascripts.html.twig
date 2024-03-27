@@ -1,18 +1,18 @@
 {# Resources/views/assets/_javascripts.html.twig #}
-{% set _webPath    = "bundles/wbwjquerydatatables" %}
-{% set _version    = getContainerParameter("wbw.jquery_datatables.asset.jquery_datatables").version %}
-{% set _plugins    = getContainerParameter("wbw.jquery_datatables.asset.jquery_datatables").plugins %}
-{% set _appTheme   = getContainerParameter("wbw_jquery_datatables.theme") %}
-{% set _appPlugins = getContainerParameter("wbw_jquery_datatables.plugins") %}
+{% set _webPath    = "bundles/wbwdatatables" %}
+{% set _version    = getContainerParameter("wbw.datatables.asset.datatables").version %}
+{% set _plugins    = getContainerParameter("wbw.datatables.asset.datatables").plugins %}
+{% set _appTheme   = getContainerParameter("wbw_datatables.theme") %}
+{% set _appPlugins = getContainerParameter("wbw_datatables.plugins") %}
 
-{% if ("prod" != app.environment) %}<!-- jQuery DataTables -->{% endif %}
+{% if ("prod" != app.environment) %}<!-- DataTables -->{% endif %}
 <script type="text/javascript" src="{{ asset(_webPath ~ "/datatables-" ~ _version ~ "/js/jquery.dataTables.min.js") }}"></script>
 <script type="text/javascript" src="{{ asset(_webPath ~ "/datatables-" ~ _version ~ "/js/dataTables." ~ _appTheme ~ ".min.js") }}"></script>
 {% for _appPlugin in _appPlugins %}
 
     {% if ("buttons" == _appPlugin) %}
 
-        {% set _requires = getContainerParameter("wbw.jquery_datatables.asset.jquery_datatables").requires %}
+        {% set _requires = getContainerParameter("wbw.datatables.asset.datatables").requires %}
         <script type="text/javascript" src="{{ asset((_webPath ~ _requires["jszip"].javascripts[0])|replace({"{{ version }}": _requires["jszip"].version})) }}"></script>
         <script type="text/javascript" src="{{ asset((_webPath ~ _requires["pdfmake"].javascripts[0])|replace({"{{ version }}": _requires["pdfmake"].version})) }}"></script>
         <script type="text/javascript" src="{{ asset((_webPath ~ _requires["pdfmake"].javascripts[1])|replace({"{{ version }}": _requires["pdfmake"].version})) }}"></script>

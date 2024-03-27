@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2022 WEBEWEB
  *
@@ -11,6 +11,6 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings;
+namespace WBW\Bundle\DataTablesBundle\Renderer\Strings;
 
-class_alias("WBW\Library\Symfony\Renderer\Strings\BoldTextRendererTrait", "WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings\BoldTextRendererTrait");
+class_alias("WBW\Library\Symfony\Renderer\Strings\BoldTextRendererTrait", "WBW\Bundle\DataTablesBundle\Renderer\Strings\BoldTextRendererTrait");

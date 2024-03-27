@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -11,20 +11,20 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension;
+namespace WBW\Bundle\DataTablesBundle\Twig\Extension;
 
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesWrapperInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesWrapperHelper;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesWrapperInterface;
+use WBW\Bundle\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
  * DataTables Twig extension.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension
+ * @package WBW\Bundle\DataTablesBundle\Twig\Extension
  */
 class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
 
@@ -33,7 +33,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      *
      * @var string
      */
-    public const SERVICE_NAME = "wbw.jquery.datatables.twig.extension";
+    public const SERVICE_NAME = "wbw.datatables.twig.extension";
 
     /**
      * Get the Twig filters.
@@ -74,11 +74,11 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
     }
 
     /**
-     * Display a jQuery DataTables.
+     * Display a DataTables.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @param array<string,mixed> $args The arguments.
-     * @return string Returns the jQuery DataTables.
+     * @return string Returns the DataTables.
      * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
      */
     public function jQueryDataTablesFunction(DataTablesWrapperInterface $dtWrapper, array $args = []): string {
@@ -86,30 +86,30 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
     }
 
     /**
-     * Display a jQuery DataTables name.
+     * Display a DataTables name.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
-     * @return string Returns the jQuery DataTables name.
+     * @return string Returns the DataTables name.
      */
     public function jQueryDataTablesNameFunction(DataTablesWrapperInterface $dtWrapper): string {
         return DataTablesWrapperHelper::getName($dtWrapper);
     }
 
     /**
-     * Display a jQuery DataTables options.
+     * Display a DataTables options.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
-     * @return array<string,mixed> Returns the jQuery DataTables options.
+     * @return array<string,mixed> Returns the DataTables options.
      */
     public function jQueryDataTablesOptionsFunction(DataTablesWrapperInterface $dtWrapper): array {
         return DataTablesWrapperHelper::getOptions($dtWrapper);
     }
 
     /**
-     * Display a jQuery DataTables "Standalone".
+     * Display a DataTables "Standalone".
      *
      * @param array<string,mixed> $args The arguments.
-     * @return string Returns the jQuery DataTables "Standalone".
+     * @return string Returns the DataTables "Standalone".
      * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
      */
     public function jQueryDataTablesStandaloneFunction(array $args = []): string {

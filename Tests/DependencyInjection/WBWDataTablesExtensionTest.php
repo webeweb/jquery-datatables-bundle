@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,25 +9,25 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection;
+namespace WBW\Bundle\DataTablesBundle\Tests\DependencyInjection;
 
 use Throwable;
 use WBW\Bundle\CoreBundle\Twig\Extension\AssetsTwigExtension;
-use WBW\Bundle\JQuery\DataTablesBundle\Command\ListDataTablesProviderCommand;
-use WBW\Bundle\JQuery\DataTablesBundle\Controller\DataTablesController;
-use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Configuration;
-use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\WBWJQueryDataTablesExtension;
-use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
+use WBW\Bundle\DataTablesBundle\Command\ListDataTablesProviderCommand;
+use WBW\Bundle\DataTablesBundle\Controller\DataTablesController;
+use WBW\Bundle\DataTablesBundle\DependencyInjection\Configuration;
+use WBW\Bundle\DataTablesBundle\DependencyInjection\WBWDataTablesExtension;
+use WBW\Bundle\DataTablesBundle\Manager\DataTablesManager;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 
 /**
  * DataTables extension test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\DependencyInjection
+ * @package WBW\Bundle\DataTablesBundle\Tests\DependencyInjection
  */
-class WBWJQueryDataTablesExtensionTest extends AbstractTestCase {
+class WBWDataTablesExtensionTest extends AbstractTestCase {
 
     /**
      * Configs.
@@ -47,7 +47,7 @@ class WBWJQueryDataTablesExtensionTest extends AbstractTestCase {
 
         // Set a configs array mock.
         $this->configs = [
-            WBWJQueryDataTablesExtension::EXTENSION_ALIAS => [],
+            WBWDataTablesExtension::EXTENSION_ALIAS => [],
         ];
     }
 
@@ -58,9 +58,9 @@ class WBWJQueryDataTablesExtensionTest extends AbstractTestCase {
      */
     public function testGetAlias(): void {
 
-        $obj = new WBWJQueryDataTablesExtension();
+        $obj = new WBWDataTablesExtension();
 
-        $this->assertEquals(WBWJQueryDataTablesExtension::EXTENSION_ALIAS, $obj->getAlias());
+        $this->assertEquals(WBWDataTablesExtension::EXTENSION_ALIAS, $obj->getAlias());
     }
 
     /**
@@ -70,7 +70,7 @@ class WBWJQueryDataTablesExtensionTest extends AbstractTestCase {
      */
     public function testGetConfiguration(): void {
 
-        $obj = new WBWJQueryDataTablesExtension();
+        $obj = new WBWDataTablesExtension();
 
         $this->assertInstanceOf(Configuration::class, $obj->getConfiguration([], $this->containerBuilder));
     }
@@ -83,7 +83,7 @@ class WBWJQueryDataTablesExtensionTest extends AbstractTestCase {
      */
     public function testLoad(): void {
 
-        $obj = new WBWJQueryDataTablesExtension();
+        $obj = new WBWDataTablesExtension();
 
         $obj->load($this->configs, $this->containerBuilder);
 
@@ -107,6 +107,6 @@ class WBWJQueryDataTablesExtensionTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw_jquery_datatables", WBWJQueryDataTablesExtension::EXTENSION_ALIAS);
+        $this->assertEquals("wbw_datatables", WBWDataTablesExtension::EXTENSION_ALIAS);
     }
 }

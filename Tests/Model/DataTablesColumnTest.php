@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Model;
+namespace WBW\Bundle\DataTablesBundle\Tests\Model;
 
 use InvalidArgumentException;
 use Throwable;
-use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesColumn;
-use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesSearch;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesColumn;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesSearch;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
  * DataTables column test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Model
+ * @package WBW\Bundle\DataTablesBundle\Tests\Model
  */
 class DataTablesColumnTest extends AbstractTestCase {
 

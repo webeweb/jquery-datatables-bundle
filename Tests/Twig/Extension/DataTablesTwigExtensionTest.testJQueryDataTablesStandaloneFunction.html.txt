@@ -8,7 +8,7 @@
                 }
             ],
             "language": {
-                "url": "/bundles/wbwjquerydatatables/datatables-i18n/French.json"
+                "url": "/bundles/wbwdatatables/datatables-i18n/French.json"
             }
         });
     });

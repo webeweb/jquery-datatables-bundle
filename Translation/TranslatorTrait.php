@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2021 WEBEWEB
  *
@@ -11,16 +11,16 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Translation;
+namespace WBW\Bundle\DataTablesBundle\Translation;
 
 use WBW\Bundle\CoreBundle\Translation\TranslatorTrait as BaseTranslatorTrait;
-use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle;
+use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
 
 /**
  * Translator trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Translation
+ * @package WBW\Bundle\DataTablesBundle\Translation
  */
 trait TranslatorTrait {
 
@@ -42,7 +42,7 @@ trait TranslatorTrait {
         }
 
         if (null === $domain) {
-            $domain = WBWJQueryDataTablesBundle::getTranslationDomain();
+            $domain = WBWDataTablesBundle::getTranslationDomain();
         }
 
         return null !== $this->getTranslator() ? $this->getTranslator()->trans($id, $parameters, $domain, $locale) : $id;

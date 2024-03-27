@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2022 WEBEWEB
  *
@@ -11,17 +11,17 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Renderer\Assets;
+namespace WBW\Bundle\DataTablesBundle\Renderer\Assets;
 
 use Symfony\Contracts\Translation\TranslatorInterface;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\BadgeTwigExtension;
-use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle;
+use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
 
 /**
  * Enabled badge renderer trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Renderer\Assets
+ * @package WBW\Bundle\DataTablesBundle\Renderer\Assets
  */
 trait EnabledBadgeRendererTrait {
 
@@ -52,7 +52,7 @@ trait EnabledBadgeRendererTrait {
         }
 
         $method  = sprintf("bootstrapBadge%sFunction", true === $enabled ? "Success" : "Danger");
-        $content = $this->getTranslator()->trans(true === $enabled ? "label.enabled" : "label.disabled", [], WBWJQueryDataTablesBundle::getTranslationDomain());
+        $content = $this->getTranslator()->trans(true === $enabled ? "label.enabled" : "label.disabled", [], WBWDataTablesBundle::getTranslationDomain());
 
         return $this->getBadgeTwigExtension()->$method(["content" => $content]);
     }

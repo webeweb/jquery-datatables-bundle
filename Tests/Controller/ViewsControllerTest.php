@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2022 WEBEWEB
  *
@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Controller;
+namespace WBW\Bundle\DataTablesBundle\Tests\Controller;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractWebTestCase;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractWebTestCase;
 
 /**
  * Views controller test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Controller
+ * @package WBW\Bundle\DataTablesBundle\Tests\Controller
  */
 class ViewsControllerTest extends AbstractWebTestCase {
 

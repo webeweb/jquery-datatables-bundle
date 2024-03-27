@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Model;
+namespace WBW\Bundle\DataTablesBundle\Tests\Model;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOrderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesRequest;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesOrderInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesRequest;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
  * DataTables request test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Model
+ * @package WBW\Bundle\DataTablesBundle\Tests\Model
  */
 class DataTablesRequestTest extends AbstractTestCase {
 

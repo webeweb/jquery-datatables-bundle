@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2022 WEBEWEB
  *
@@ -11,7 +11,7 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
+namespace WBW\Bundle\DataTablesBundle\Provider;
 
 use InvalidArgumentException;
 use Symfony\Component\Routing\Exception\InvalidParameterException;
@@ -19,15 +19,15 @@ use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
 use Symfony\Component\Routing\RouterInterface;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtension;
-use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesEntityHelper;
-use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle;
+use WBW\Bundle\DataTablesBundle\Helper\DataTablesEntityHelper;
+use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
 use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
  * DataTables buttons renderer trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Provider
+ * @package WBW\Bundle\DataTablesBundle\Provider
  * @internal
  */
 trait DataTablesButtonsRendererTrait {
@@ -103,7 +103,7 @@ trait DataTablesButtonsRendererTrait {
             "type"               => "Default",
             "icon"               => null === $comment || 0 === mb_strlen($comment) ? "fa:comment-slash" : "fa:comment",
             "label"              => "label.comment",
-            "translation_domain" => WBWJQueryDataTablesBundle::getTranslationDomain(),
+            "translation_domain" => WBWDataTablesBundle::getTranslationDomain(),
         ]);
     }
 
@@ -120,13 +120,13 @@ trait DataTablesButtonsRendererTrait {
      */
     protected function renderActionButtonDelete($entity, string $route): string {
 
-        $args = "wbw_jquery_datatables_delete" === $route ? ["name" => $this->getName()] : [];
+        $args = "wbw_datatables_delete" === $route ? ["name" => $this->getName()] : [];
 
         return $this->renderActionButton($entity, $route, [
             "type"               => "Danger",
             "icon"               => "fa:trash",
             "label"              => "label.delete",
-            "translation_domain" => WBWJQueryDataTablesBundle::getTranslationDomain(),
+            "translation_domain" => WBWDataTablesBundle::getTranslationDomain(),
             "route"              => $args,
         ]);
     }
@@ -148,7 +148,7 @@ trait DataTablesButtonsRendererTrait {
             "type"               => "Primary",
             "icon"               => "fa:copy",
             "label"              => "label.duplicate",
-            "translation_domain" => WBWJQueryDataTablesBundle::getTranslationDomain(),
+            "translation_domain" => WBWDataTablesBundle::getTranslationDomain(),
         ]);
     }
 
@@ -169,7 +169,7 @@ trait DataTablesButtonsRendererTrait {
             "type"               => "Default",
             "icon"               => "fa:pen",
             "label"              => "label.edit",
-            "translation_domain" => WBWJQueryDataTablesBundle::getTranslationDomain(),
+            "translation_domain" => WBWDataTablesBundle::getTranslationDomain(),
         ]);
     }
 
@@ -191,7 +191,7 @@ trait DataTablesButtonsRendererTrait {
             $args = ["id" => $entity->getId()];
         }
 
-        $title  = $this->translate("label.new", [], WBWJQueryDataTablesBundle::getTranslationDomain());
+        $title  = $this->translate("label.new", [], WBWDataTablesBundle::getTranslationDomain());
         $button = $this->getButtonTwigExtension()->bootstrapButtonPrimaryFunction(["icon" => "fa:plus", "title" => $title, "size" => "xs"]);
         $href   = $this->getRouter()->generate($route, $args);
 
@@ -215,7 +215,7 @@ trait DataTablesButtonsRendererTrait {
             "type"               => "Danger",
             "icon"               => "fa:file-pdf",
             "label"              => "PDF",
-            "translation_domain" => WBWJQueryDataTablesBundle::getTranslationDomain(),
+            "translation_domain" => WBWDataTablesBundle::getTranslationDomain(),
             "target"             => "_blank",
         ]);
     }
@@ -237,7 +237,7 @@ trait DataTablesButtonsRendererTrait {
             "type"               => "Info",
             "icon"               => "fa:eye",
             "label"              => "label.show",
-            "translation_domain" => WBWJQueryDataTablesBundle::getTranslationDomain(),
+            "translation_domain" => WBWDataTablesBundle::getTranslationDomain(),
         ]);
     }
 
@@ -259,7 +259,7 @@ trait DataTablesButtonsRendererTrait {
             "type"               => true === $enabled ? "Success" : "Danger",
             "icon"               => true === $enabled ? "fa:toggle-on" : "fa:toggle-off",
             "label"              => true === $enabled ? "label.disable" : "label.enable",
-            "translation_domain" => WBWJQueryDataTablesBundle::getTranslationDomain(),
+            "translation_domain" => WBWDataTablesBundle::getTranslationDomain(),
         ]);
     }
 

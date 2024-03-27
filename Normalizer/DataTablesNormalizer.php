@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2019 WEBEWEB
  *
@@ -11,17 +11,17 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Normalizer;
+namespace WBW\Bundle\DataTablesBundle\Normalizer;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesResponseInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
 use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
  * DataTables normalizer.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Normalizer
+ * @package WBW\Bundle\DataTablesBundle\Normalizer
  */
 class DataTablesNormalizer {
 

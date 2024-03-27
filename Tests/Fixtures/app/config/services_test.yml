@@ -1,39 +1,39 @@
 # Tests/Fixtures/app/config/services_test.yml
 services:
 
-    WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Controller\TestViewsController:
+    WBW\Bundle\DataTablesBundle\Tests\Fixtures\Controller\TestViewsController:
         public: true
         calls:
             - [ "setContainer", [ "@Psr\\Container\\ContainerInterface" ] ]
         tags:
             - { name: "container.service_subscriber" }
 
-    wbw.jquery.datatables.event_listener:
-        class:  WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\EventListener\DataTablesEventListener
+    wbw.datatables.event_listener:
+        class:  WBW\Bundle\DataTablesBundle\Tests\Fixtures\EventListener\DataTablesEventListener
         public: true
         tags:
-            - { name: "kernel.event_listener", event: "wbw.jquery.datatables.event.pre_delete",  method: "onPreDelete" }
-            - { name: "kernel.event_listener", event: "wbw.jquery.datatables.event.pre_edit",    method: "onPreEdit" }
-            - { name: "kernel.event_listener", event: "wbw.jquery.datatables.event.pre_export",  method: "onPreExport" }
-            - { name: "kernel.event_listener", event: "wbw.jquery.datatables.event.pre_index",   method: "onPreIndex" }
-            - { name: "kernel.event_listener", event: "wbw.jquery.datatables.event.pre_show",    method: "onPreShow" }
-            - { name: "kernel.event_listener", event: "wbw.jquery.datatables.event.post_delete", method: "onPostDelete" }
-            - { name: "kernel.event_listener", event: "wbw.jquery.datatables.event.post_edit",   method: "onPostEdit" }
-            - { name: "kernel.event_listener", event: "wbw.jquery.datatables.event.post_export", method: "onPostExport" }
-            - { name: "kernel.event_listener", event: "wbw.jquery.datatables.event.post_index",  method: "onPostIndex" }
+            - { name: "kernel.event_listener", event: "wbw.datatables.event.pre_delete",  method: "onPreDelete" }
+            - { name: "kernel.event_listener", event: "wbw.datatables.event.pre_edit",    method: "onPreEdit" }
+            - { name: "kernel.event_listener", event: "wbw.datatables.event.pre_export",  method: "onPreExport" }
+            - { name: "kernel.event_listener", event: "wbw.datatables.event.pre_index",   method: "onPreIndex" }
+            - { name: "kernel.event_listener", event: "wbw.datatables.event.pre_show",    method: "onPreShow" }
+            - { name: "kernel.event_listener", event: "wbw.datatables.event.post_delete", method: "onPostDelete" }
+            - { name: "kernel.event_listener", event: "wbw.datatables.event.post_edit",   method: "onPostEdit" }
+            - { name: "kernel.event_listener", event: "wbw.datatables.event.post_export", method: "onPostExport" }
+            - { name: "kernel.event_listener", event: "wbw.datatables.event.post_index",  method: "onPostIndex" }
 
-    wbw.jquery.datatables.provider.employee:
-        class:  WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider
+    wbw.datatables.provider.employee:
+        class:  WBW\Bundle\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider
         public: true
         tags:
-            - { name: "wbw.jquery.datatables.provider" }
+            - { name: "wbw.datatables.provider" }
 
-    wbw.jquery.datatables.provider.office:
-        class:  WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\OfficeDataTablesProvider
+    wbw.datatables.provider.office:
+        class:  WBW\Bundle\DataTablesBundle\Tests\Fixtures\Provider\OfficeDataTablesProvider
         public: true
         tags:
-            - { name: "wbw.jquery.datatables.provider" }
+            - { name: "wbw.datatables.provider" }
 
-    wbw.jquery.datatables.manager.alias:
-        alias:  "wbw.jquery.datatables.manager"
+    wbw.datatables.manager.alias:
+        alias:  "wbw.datatables.manager"
         public: true

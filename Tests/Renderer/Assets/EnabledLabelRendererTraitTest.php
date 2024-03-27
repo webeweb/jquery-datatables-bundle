@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2022 WEBEWEB
  *
@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Renderer\Assets;
+namespace WBW\Bundle\DataTablesBundle\Tests\Renderer\Assets;
 
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\LabelTwigExtension;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Assets\TestEnabledLabelRendererTrait;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Renderer\Assets\TestEnabledLabelRendererTrait;
 
 /**
  * Enabled label renderer trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Renderer\Assets
+ * @package WBW\Bundle\DataTablesBundle\Tests\Renderer\Assets
  */
 class EnabledLabelRendererTraitTest extends AbstractTestCase {
 

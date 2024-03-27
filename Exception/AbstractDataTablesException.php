@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -11,7 +11,7 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Exception;
+namespace WBW\Bundle\DataTablesBundle\Exception;
 
 use Exception;
 
@@ -19,7 +19,7 @@ use Exception;
  * Abstract DataTables exception.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Exception
+ * @package WBW\Bundle\DataTablesBundle\Exception
  * @abstract
  */
 abstract class AbstractDataTablesException extends Exception {

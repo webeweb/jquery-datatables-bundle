@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2022 WEBEWEB
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Controller;
+namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use WBW\Bundle\CoreBundle\Controller\AbstractController;
@@ -18,7 +18,7 @@ use WBW\Bundle\CoreBundle\Controller\AbstractController;
  * Test views controller.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Controller
+ * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\Controller
  */
 class TestViewsController extends AbstractController {
 
@@ -28,7 +28,7 @@ class TestViewsController extends AbstractController {
      * @return Response Returns the response.
      */
     public function assetsJavascriptsAction(): Response {
-        return $this->render("@WBWJQueryDataTables/assets/_javascripts.html.twig");
+        return $this->render("@WBWDataTables/assets/_javascripts.html.twig");
     }
 
     /**
@@ -37,6 +37,6 @@ class TestViewsController extends AbstractController {
      * @return Response Returns the response.
      */
     public function assetsStylesheetsAction(): Response {
-        return $this->render("@WBWJQueryDataTables/assets/_stylesheets.html.twig");
+        return $this->render("@WBWDataTables/assets/_stylesheets.html.twig");
     }
 }

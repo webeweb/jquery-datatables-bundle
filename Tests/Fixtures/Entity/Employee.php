@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity;
+namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Entity;
 
 use DateTime;
 use WBW\Library\Traits\Integers\IntegerIdTrait;
@@ -18,7 +18,7 @@ use WBW\Library\Traits\Integers\IntegerIdTrait;
  * Employee entity.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity
+ * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\Entity
  */
 class Employee {
 

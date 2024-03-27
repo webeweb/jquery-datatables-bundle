@@ -4,7 +4,7 @@
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                                       https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <entity name="WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Office" table="wbw_dt_office" repository-class="WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Repository\OfficeRepository">
+    <entity name="WBW\Bundle\DataTablesBundle\Tests\Fixtures\Entity\Office" table="wbw_dt_office" repository-class="WBW\Bundle\DataTablesBundle\Tests\Fixtures\Repository\OfficeRepository">
 
         <id name="id" column="id" type="integer">
             <generator/>

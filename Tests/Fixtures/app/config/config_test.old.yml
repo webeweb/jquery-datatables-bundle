@@ -31,10 +31,10 @@ doctrine:
         auto_mapping:                true
         naming_strategy:             "doctrine.orm.naming_strategy.underscore"
         mappings:
-            WBWJQueryDataTablesBundle:
+            WBWDataTablesBundle:
                 type:   "xml"
                 dir:    "Tests/Fixtures/app/config/doctrine"
-                prefix: "WBW\\Bundle\\JQuery\\DataTablesBundle\\Tests\\Fixtures\\Entity"
+                prefix: "WBW\\Bundle\\DataTablesBundle\\Tests\\Fixtures\\Entity"
 
 # Monolog configuration
 monolog:
@@ -53,8 +53,8 @@ twig:
 wbw_bootstrap:
     version: 3
 
-# jQuery DataTables configuration
-wbw_jquery_datatables:
+# DataTables configuration
+wbw_datatables:
     theme: "bootstrap"
     plugins:
         - "autofill"

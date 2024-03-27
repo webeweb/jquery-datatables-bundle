@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -11,27 +11,27 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Factory;
+namespace WBW\Bundle\DataTablesBundle\Factory;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\User\UserInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOrderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesRequestInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesResponseInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesSearchInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesWrapperInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesColumn;
-use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesEnumerator;
-use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesOptions;
-use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesOrder;
-use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesRequest;
-use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesResponse;
-use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesSearch;
-use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesWrapper;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesOptionsInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesOrderInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesRequestInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesSearchInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesWrapperInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesColumn;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesEnumerator;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesOptions;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesOrder;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesRequest;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesResponse;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesSearch;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapper;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Library\Types\Helper\ArrayHelper;
 use WBW\Library\Types\Helper\BooleanHelper;
 
@@ -39,7 +39,7 @@ use WBW\Library\Types\Helper\BooleanHelper;
  * DataTables factory.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Factory
+ * @package WBW\Bundle\DataTablesBundle\Factory
  */
 class DataTablesFactory {
 

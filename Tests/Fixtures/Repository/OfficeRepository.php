@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Repository;
+namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
@@ -17,7 +17,7 @@ use Doctrine\ORM\EntityRepository;
  * Office repository.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Repository
+ * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\Repository
  */
 class OfficeRepository extends EntityRepository {
 

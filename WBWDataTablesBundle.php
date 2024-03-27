@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -11,29 +11,29 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle;
+namespace WBW\Bundle\DataTablesBundle;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use WBW\Bundle\CoreBundle\Provider\AssetsProviderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Compiler\DataTablesProviderCompilerPass;
-use WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\WBWJQueryDataTablesExtension;
+use WBW\Bundle\DataTablesBundle\DependencyInjection\Compiler\DataTablesProviderCompilerPass;
+use WBW\Bundle\DataTablesBundle\DependencyInjection\WBWDataTablesExtension;
 
 /**
- * jQuery DataTables bundle.
+ * DataTables bundle.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\jQuery\DatatablesBundle
+ * @package WBW\Bundle\DatatablesBundle
  */
-class WBWJQueryDataTablesBundle extends Bundle implements AssetsProviderInterface {
+class WBWDataTablesBundle extends Bundle implements AssetsProviderInterface {
 
     /**
      * Translation domain.
      *
      * @var string
      */
-    public const TRANSLATION_DOMAIN = "WBWJQueryDataTablesBundle";
+    public const TRANSLATION_DOMAIN = "WBWDataTablesBundle";
 
     /**
      * {@inheritDoc}
@@ -53,7 +53,7 @@ class WBWJQueryDataTablesBundle extends Bundle implements AssetsProviderInterfac
      * {@inheritDoc}
      */
     public function getContainerExtension(): Extension {
-        return new WBWJQueryDataTablesExtension();
+        return new WBWDataTablesExtension();
     }
 
     /**

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2022 WEBEWEB
  *
@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Renderer;
+namespace WBW\Bundle\DataTablesBundle\Tests\Renderer;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Renderer\ColumnWidthInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Renderer\ColumnWidthInterface;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
  * Column width interface test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Renderer
+ * @package WBW\Bundle\DataTablesBundle\Tests\Renderer
  */
 class ColumnWidthInterfaceTest extends AbstractTestCase {
 

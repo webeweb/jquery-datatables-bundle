@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -11,15 +11,15 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Model;
+namespace WBW\Bundle\DataTablesBundle\Model;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesSearchInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesSearchInterface;
 
 /**
  * DataTables search.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Api
+ * @package WBW\Bundle\DataTablesBundle\Api
  */
 class DataTablesSearch implements DataTablesSearchInterface {
 

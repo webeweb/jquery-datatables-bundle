@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2019 WEBEWEB
  *
@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Normalizer;
+namespace WBW\Bundle\DataTablesBundle\Tests\Normalizer;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesColumn;
-use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesResponse;
-use WBW\Bundle\JQuery\DataTablesBundle\Normalizer\DataTablesNormalizer;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesColumn;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesResponse;
+use WBW\Bundle\DataTablesBundle\Normalizer\DataTablesNormalizer;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
  * DataTables normalizer test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Normalizer
+ * @package WBW\Bundle\DataTablesBundle\Tests\Normalizer
  */
 class DataTablesNormalizerTest extends AbstractTestCase {
 

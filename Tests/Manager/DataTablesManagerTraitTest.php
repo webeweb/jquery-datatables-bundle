@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Manager;
+namespace WBW\Bundle\DataTablesBundle\Tests\Manager;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Manager\TestDataTablesManagerTrait;
+use WBW\Bundle\DataTablesBundle\Manager\DataTablesManager;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Manager\TestDataTablesManagerTrait;
 
 /**
  * DataTables manager trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Manager
+ * @package WBW\Bundle\DataTablesBundle\Tests\Manager
  */
 class DataTablesManagerTraitTest extends AbstractTestCase {
 

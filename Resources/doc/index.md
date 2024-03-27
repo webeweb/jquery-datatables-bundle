@@ -209,7 +209,7 @@ Create a repository in the `src/AppBundle/Repository` directory of your project:
 ```php
 namespace AppBundle\Repository;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Repository\DefaultDataTablesRepository;
+use WBW\Bundle\DataTablesBundle\Repository\DefaultDataTablesRepository;
 
 /**
  * Employee repository.
@@ -228,12 +228,12 @@ namespace AppBundle\Provider;
 
 use AppBundle\Entity\Employee;
 use DateTime;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesResponseInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
+use WBW\Bundle\DataTablesBundle\Factory\DataTablesFactory;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesEditorInterface;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 
 /**
  * Employee DataTables provider.
@@ -478,7 +478,7 @@ services:
     app.datatables.provider.employee:
         class: AppBundle\Provider\EmployeeDataTablesProvider
         tags:
-            - { name: "wbw.jquery.datatables.provider" }
+            - { name: "wbw.datatables.provider" }
 ```
 
 You can add as many providers as you want as long as the name of the providers are different.
@@ -494,7 +494,7 @@ Create a template in the `src/AppBundle/Resources/views/Employee`directory of yo
     {{ parent() }}
     {% include "@WBWCore/assets/_stylesheets.html.twig" %}
     {% include "@WBWBootstrap/assets/_stylesheets.html.twig" %}
-    {% include "@WBWJQueryDataTables/assets/_stylesheets.html.twig" %}
+    {% include "@WBWDataTables/assets/_stylesheets.html.twig" %}
 {% endblock %}
 
 {% block content %}
@@ -505,7 +505,7 @@ Create a template in the `src/AppBundle/Resources/views/Employee`directory of yo
     {{ parent() }}
     {% include "@WBWCore/assets/_javascripts.html.twig" %}
     {% include "@WBWBootstrap/assets/_javascripts.html.twig" %}
-    {% include "@WBWJQueryDataTables/assets/_javascripts.html.twig" %}
+    {% include "@WBWDataTables/assets/_javascripts.html.twig" %}
     {{ jQueryDataTables(dtWrapper) }}
 {% endblock %}
 ```

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,26 +9,26 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests;
+namespace WBW\Bundle\DataTablesBundle\Tests;
 
 use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\CoreBundle\Tests\AbstractTestCase as TestCase;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesMappingInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOrderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesRequestInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesResponseInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesSearchInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesWrapperInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesMappingInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesOptionsInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesOrderInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesRequestInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesSearchInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesWrapperInterface;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
 /**
  * Abstract framework test case.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests
+ * @package WBW\Bundle\DataTablesBundle\Tests
  * @abstract
  */
 abstract class AbstractTestCase extends TestCase {

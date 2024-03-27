@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2022 WEBEWEB
  *
@@ -11,13 +11,13 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Renderer;
+namespace WBW\Bundle\DataTablesBundle\Renderer;
 
 /**
  * Column width interface.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Renderer
+ * @package WBW\Bundle\DataTablesBundle\Renderer
  */
 interface ColumnWidthInterface {
 

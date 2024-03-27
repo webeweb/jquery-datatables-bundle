@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Twig\Extension;
+namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Twig\Extension;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtensionTrait;
+use WBW\Bundle\DataTablesBundle\Twig\Extension\DataTablesTwigExtensionTrait;
 
 /**
  * Test DataTables Twig extension trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Twig\Extension
+ * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\Twig\Extension
  */
 class TestDataTablesTwigExtensionTrait {
 

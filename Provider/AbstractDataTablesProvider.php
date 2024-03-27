@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2019 WEBEWEB
  *
@@ -11,7 +11,7 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
+namespace WBW\Bundle\DataTablesBundle\Provider;
 
 use InvalidArgumentException;
 use Symfony\Component\Routing\Exception\InvalidParameterException;
@@ -28,13 +28,13 @@ use WBW\Bundle\BootstrapBundle\Renderer\Strings\RightAlignedTextRendererTrait;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtension;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtensionTrait;
 use WBW\Bundle\CoreBundle\Routing\RouterTrait;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesResponseInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
-use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesEntityHelper;
-use WBW\Bundle\JQuery\DataTablesBundle\Renderer\ColumnWidthInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Renderer\Floats\FloatRendererTrait;
-use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorTrait;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesOptionsInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
+use WBW\Bundle\DataTablesBundle\Factory\DataTablesFactory;
+use WBW\Bundle\DataTablesBundle\Helper\DataTablesEntityHelper;
+use WBW\Bundle\DataTablesBundle\Renderer\ColumnWidthInterface;
+use WBW\Bundle\DataTablesBundle\Renderer\Floats\FloatRendererTrait;
+use WBW\Bundle\DataTablesBundle\Translation\TranslatorTrait;
 use WBW\Library\Symfony\Renderer\DateTimesRendererTrait;
 use WBW\Library\Symfony\Renderer\Strings\StringWrapperTrait;
 use WBW\Library\Symfony\Renderer\StringsRendererTrait;
@@ -43,7 +43,7 @@ use WBW\Library\Symfony\Renderer\StringsRendererTrait;
  * Abstract DataTables provider.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Provider
+ * @package WBW\Bundle\DataTablesBundle\Provider
  * @abstract
  */
 abstract class AbstractDataTablesProvider implements DataTablesProviderInterface, ColumnWidthInterface {
@@ -126,12 +126,12 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
      * @throws InvalidParameterException Throws an invalid parameter exception if a parameter is invalid.
      * @throws RouteNotFoundException Throws a route not found exception if the route doesn't exist.
      * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory exception is missing.
-     * @deprecated since 3.4.0 use {@see WBW\Bundle\JQuery\DataTablesBundle\Provider\AbstractDataTablesProvider::renderRowButtons()} instead
+     * @deprecated since 3.4.0 use {@see WBW\Bundle\DataTablesBundle\Provider\AbstractDataTablesProvider::renderRowButtons()} instead
      */
     protected function renderButtons($entity, string $editRoute, string $deleteRoute = null, bool $enableDelete = true): string {
 
         if (null === $deleteRoute && true === $enableDelete) {
-            $deleteRoute = "wbw_jquery_datatables_delete";
+            $deleteRoute = "wbw_datatables_delete";
         }
 
         return $this->renderRowButtons($entity, $editRoute, $deleteRoute);

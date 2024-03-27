@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,26 +9,26 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Factory;
+namespace WBW\Bundle\DataTablesBundle\Tests\Factory;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\User\UserInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOrderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesRequestInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesResponseInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesSearchInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesWrapperInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Factory\TestDataTablesFactory;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\TestFixtures;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesOptionsInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesOrderInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesRequestInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesSearchInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesWrapperInterface;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Factory\TestDataTablesFactory;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
 /**
  * DataTables factory test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Factory
+ * @package WBW\Bundle\DataTablesBundle\Tests\Factory
  */
 class DataTablesFactoryTest extends AbstractTestCase {
 

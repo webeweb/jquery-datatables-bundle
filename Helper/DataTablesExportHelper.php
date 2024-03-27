@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -11,7 +11,7 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
+namespace WBW\Bundle\DataTablesBundle\Helper;
 
 use DeviceDetector\DeviceDetector;
 use DeviceDetector\Yaml\Symfony as SYP;
@@ -22,7 +22,7 @@ use Throwable;
  * DataTables export helper.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Helper
+ * @package WBW\Bundle\DataTablesBundle\Helper
  */
 class DataTablesExportHelper {
 

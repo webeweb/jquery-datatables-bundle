@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Provider;
+namespace WBW\Bundle\DataTablesBundle\Tests\Provider;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
  * DataTables provider interface test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Manager
+ * @package WBW\Bundle\DataTablesBundle\Manager
  */
 class DataTablesProviderInterfaceTest extends AbstractTestCase {
 
@@ -29,6 +29,6 @@ class DataTablesProviderInterfaceTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw.jquery.datatables.provider", DataTablesProviderInterface::DATATABLES_TAG_NAME);
+        $this->assertEquals("wbw.datatables.provider", DataTablesProviderInterface::DATATABLES_TAG_NAME);
     }
 }

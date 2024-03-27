@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2022 WEBEWEB
  *
@@ -11,16 +11,16 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Model;
+namespace WBW\Bundle\DataTablesBundle\Model;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesLoopInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Traits\Arrays\ArrayEntitiesTrait;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesLoopInterface;
+use WBW\Bundle\DataTablesBundle\Traits\Arrays\ArrayEntitiesTrait;
 
 /**
  * DataTables loop.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Model
+ * @package WBW\Bundle\DataTablesBundle\Model
  */
 class DataTablesLoop implements DataTablesLoopInterface {
 

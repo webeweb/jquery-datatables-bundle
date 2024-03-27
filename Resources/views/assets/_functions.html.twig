@@ -1,8 +1,8 @@
 {# Resources/views/assets/_functions.html.twig #}
-{% set _DOMAIN = constant("WBW\\Bundle\\JQuery\\DataTablesBundle\\WBWJQueryDataTablesBundle::TRANSLATION_DOMAIN") %}
+{% set _DOMAIN = constant("WBW\\Bundle\\DataTablesBundle\\WBWDataTablesBundle::TRANSLATION_DOMAIN") %}
 <script type="text/javascript">
     $.fn.dataTable.ext.errMode = function () {
-        wbwJQueryDataTablesOups();
+        wbwDataTablesOups();
     }
 
     /**
@@ -10,7 +10,7 @@
      *
      * @return {undefined}
      */
-    function wbwJQueryDataTablesOups() {
+    function wbwDataTablesOups() {
 
         if ("function" === typeof swal) {
 

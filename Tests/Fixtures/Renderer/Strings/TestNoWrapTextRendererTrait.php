@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2022 WEBEWEB
  *
@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings;
+namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Renderer\Strings;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Renderer\Strings\NoWrapTextRendererTrait;
+use WBW\Bundle\DataTablesBundle\Renderer\Strings\NoWrapTextRendererTrait;
 
 /**
  * Test no wrap text renderer trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Renderer\Strings
+ * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\Renderer\Strings
  */
 class TestNoWrapTextRendererTrait {
 

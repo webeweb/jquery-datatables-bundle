@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2022 WEBEWEB
  *
@@ -11,6 +11,6 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Renderer;
+namespace WBW\Bundle\DataTablesBundle\Renderer;
 
-class_alias("WBW\Bundle\BootstrapBundle\Renderer\RightAlignedRendererTrait", "WBW\Bundle\JQuery\DataTablesBundle\Renderer\RightAlignedRendererTrait");
+class_alias("WBW\Bundle\BootstrapBundle\Renderer\RightAlignedRendererTrait", "WBW\Bundle\DataTablesBundle\Renderer\RightAlignedRendererTrait");

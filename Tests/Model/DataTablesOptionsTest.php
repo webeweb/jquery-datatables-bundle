@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Model;
+namespace WBW\Bundle\DataTablesBundle\Tests\Model;
 
 use Throwable;
-use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesOptions;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesOptions;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
  * DataTables options test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Model
+ * @package WBW\Bundle\DataTablesBundle\Model
  */
 class DataTablesOptionsTest extends AbstractTestCase {
 

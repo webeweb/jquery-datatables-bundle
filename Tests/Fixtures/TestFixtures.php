@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,22 +9,22 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures;
+namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures;
 
 use DateTime;
 use Throwable;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesWrapperInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Factory\DataTablesFactory;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesWrapperInterface;
+use WBW\Bundle\DataTablesBundle\Factory\DataTablesFactory;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Entity\Employee;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider;
 use WBW\Library\Types\Helper\StringHelper;
 
 /**
  * Test fixtures.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\App
+ * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\App
  */
 class TestFixtures {
 

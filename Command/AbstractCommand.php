@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2021 WEBEWEB
  *
@@ -11,17 +11,17 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Command;
+namespace WBW\Bundle\DataTablesBundle\Command;
 
 use Symfony\Component\Console\Style\StyleInterface;
 use WBW\Bundle\CoreBundle\Command\AbstractCommand as BaseCommand;
-use WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorTrait;
+use WBW\Bundle\DataTablesBundle\Translation\TranslatorTrait;
 
 /**
  * Abstract command.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Command
+ * @package WBW\Bundle\DataTablesBundle\Command
  * @abstract
  */
 abstract class AbstractCommand extends BaseCommand {

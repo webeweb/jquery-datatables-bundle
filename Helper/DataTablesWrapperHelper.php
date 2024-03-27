@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -11,18 +11,18 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
+namespace WBW\Bundle\DataTablesBundle\Helper;
 
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesWrapperInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Normalizer\DataTablesNormalizer;
-use WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesWrapperInterface;
+use WBW\Bundle\DataTablesBundle\Normalizer\DataTablesNormalizer;
+use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
 
 /**
  * DataTables wrapper helper.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Helper
+ * @package WBW\Bundle\DataTablesBundle\Helper
  */
 class DataTablesWrapperHelper {
 
@@ -36,11 +36,11 @@ class DataTablesWrapperHelper {
     public static function getLanguageUrl(string $language): string {
 
         // Initialize the directory.
-        $dir = (new WBWJQueryDataTablesBundle())->getPath();
+        $dir = (new WBWDataTablesBundle())->getPath();
         $dir .= "/Resources/public/datatables-i18n/%s.json";
 
         // Initialize the URI.
-        $uri = "/bundles/wbwjquerydatatables/datatables-i18n/%s.json";
+        $uri = "/bundles/wbwdatatables/datatables-i18n/%s.json";
 
         // Initialize the URL.
         $url = sprintf($uri, $language);

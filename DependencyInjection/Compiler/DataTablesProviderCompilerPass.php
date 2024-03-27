@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -11,19 +11,19 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Compiler;
+namespace WBW\Bundle\DataTablesBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
-use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\DataTablesBundle\Manager\DataTablesManager;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 
 /**
- * jQuery DataTables provider compiler pass.
+ * DataTables provider compiler pass.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\DependencyInjection\Compiler
+ * @package WBW\Bundle\DataTablesBundle\DependencyInjection\Compiler
  */
 class DataTablesProviderCompilerPass implements CompilerPassInterface {
 

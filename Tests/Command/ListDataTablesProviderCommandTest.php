@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2021 WEBEWEB
  *
@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Command;
+namespace WBW\Bundle\DataTablesBundle\Tests\Command;
 
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
-use WBW\Bundle\JQuery\DataTablesBundle\Command\ListDataTablesProviderCommand;
-use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractWebTestCase;
+use WBW\Bundle\DataTablesBundle\Command\ListDataTablesProviderCommand;
+use WBW\Bundle\DataTablesBundle\Manager\DataTablesManager;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractWebTestCase;
 
 /**
  * List DataTables provider command test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Command
+ * @package WBW\Bundle\DataTablesBundle\Tests\Command
  */
 class ListDataTablesProviderCommandTest extends AbstractWebTestCase {
 
@@ -59,8 +59,8 @@ class ListDataTablesProviderCommandTest extends AbstractWebTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw.jquery.datatables.command.list_provider", ListDataTablesProviderCommand::SERVICE_NAME);
-        $this->assertEquals("wbw:jquery:datatables:provider:list", ListDataTablesProviderCommand::COMMAND_NAME);
+        $this->assertEquals("wbw.datatables.command.list_provider", ListDataTablesProviderCommand::SERVICE_NAME);
+        $this->assertEquals("wbw:datatables:provider:list", ListDataTablesProviderCommand::COMMAND_NAME);
 
         $obj = new ListDataTablesProviderCommand();
 

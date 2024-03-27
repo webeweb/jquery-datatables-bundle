@@ -1,8 +1,8 @@
 # Resources/config/services.yml
 services:
 
-    wbw.jquery.datatables.twig.extension:
-        class:  WBW\Bundle\JQuery\DataTablesBundle\Twig\Extension\DataTablesTwigExtension
+    wbw.datatables.twig.extension:
+        class:  WBW\Bundle\DataTablesBundle\Twig\Extension\DataTablesTwigExtension
         arguments: [ "@twig", "@wbw.core.twig.extension.assets", "%kernel.environment%" ]
         public: false
         tags:

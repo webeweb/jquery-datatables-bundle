@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -35,7 +35,7 @@ class TestKernel extends BaseKernel {
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new WBW\Bundle\BootstrapBundle\WBWBootstrapBundle(),
             new WBW\Bundle\CoreBundle\WBWCoreBundle(),
-            new WBW\Bundle\JQuery\DataTablesBundle\WBWJQueryDataTablesBundle(),
+            new WBW\Bundle\DataTablesBundle\WBWDataTablesBundle(),
         ];
     }
 

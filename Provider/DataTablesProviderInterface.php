@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -11,18 +11,18 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Provider;
+namespace WBW\Bundle\DataTablesBundle\Provider;
 
 use Throwable;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesOptionsInterface;
 use WBW\Library\Symfony\Provider\ProviderInterface;
 
 /**
  * DataTables provider interface.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Provider;
+ * @package WBW\Bundle\DataTablesBundle\Provider;
  */
 interface DataTablesProviderInterface extends ProviderInterface {
 
@@ -31,7 +31,7 @@ interface DataTablesProviderInterface extends ProviderInterface {
      *
      * @var string
      */
-    public const DATATABLES_TAG_NAME = "wbw.jquery.datatables.provider";
+    public const DATATABLES_TAG_NAME = "wbw.datatables.provider";
 
     /**
      * Get the CSV exporter.

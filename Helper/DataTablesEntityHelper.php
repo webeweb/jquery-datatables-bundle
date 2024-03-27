@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2019 WEBEWEB
  *
@@ -11,7 +11,7 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Helper;
+namespace WBW\Bundle\DataTablesBundle\Helper;
 
 use InvalidArgumentException;
 use JsonSerializable;
@@ -19,13 +19,13 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\SerializerInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Entity\DataTablesEntityInterface;
+use WBW\Bundle\DataTablesBundle\Entity\DataTablesEntityInterface;
 
 /**
  * DataTables entity helper.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Helper
+ * @package WBW\Bundle\DataTablesBundle\Helper
  */
 class DataTablesEntityHelper {
 

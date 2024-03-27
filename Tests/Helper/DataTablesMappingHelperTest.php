@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper;
+namespace WBW\Bundle\DataTablesBundle\Tests\Helper;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Helper\DataTablesMappingHelper;
-use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesColumn;
-use WBW\Bundle\JQuery\DataTablesBundle\Model\DataTablesMapping;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Helper\DataTablesMappingHelper;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesColumn;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesMapping;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
  * DataTables mapping helper test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Helper
+ * @package WBW\Bundle\DataTablesBundle\Tests\Helper
  */
 class DataTablesMappingHelperTest extends AbstractTestCase {
 

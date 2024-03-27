@@ -1,4 +1,4 @@
-# Resources/translations/WBWJQueryDataTablesBundle.en.yml
+# Resources/translations/WBWDataTablesBundle.en.yml
 controller:
     datatables:
         delete:

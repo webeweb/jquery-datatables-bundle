@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2019 WEBEWEB
  *
@@ -9,26 +9,26 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Provider;
+namespace WBW\Bundle\DataTablesBundle\Tests\Provider;
 
 use DateTime;
 use InvalidArgumentException;
 use Throwable;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtension;
 use WBW\Bundle\CoreBundle\Tests\TestCaseHelper;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOptionsInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesResponseInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Renderer\ColumnWidthInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Provider\TestDataTablesProvider;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesOptionsInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\DataTablesBundle\Renderer\ColumnWidthInterface;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Entity\Employee;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Provider\TestDataTablesProvider;
 
 /**
  * Abstract DataTables provider test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Provider
+ * @package WBW\Bundle\DataTablesBundle\Tests\Provider
  */
 class AbstractDataTablesProviderTest extends AbstractTestCase {
 
@@ -296,7 +296,7 @@ class AbstractDataTablesProviderTest extends AbstractTestCase {
             file_get_contents(__DIR__ . "/AbstractDataTablesProviderTest.testRenderActionButtonDelete.html.txt"),
         ]);
 
-        $res = str_replace("deleteRoute", "wbw_jquery_datatables_delete", $res);
+        $res = str_replace("deleteRoute", "wbw_datatables_delete", $res);
         $this->assertEquals($res, $obj->renderButtons(new Employee(), "editRoute"));
     }
 

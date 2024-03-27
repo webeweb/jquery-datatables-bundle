@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -11,18 +11,18 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Model;
+namespace WBW\Bundle\DataTablesBundle\Model;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesColumnInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesOrderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesRequestInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Api\DataTablesResponseInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesOrderInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesRequestInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
 
 /**
  * DataTables enumerator.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Model
+ * @package WBW\Bundle\DataTablesBundle\Model
  */
 class DataTablesEnumerator {
 

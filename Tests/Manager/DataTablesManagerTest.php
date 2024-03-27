@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,22 +9,22 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Manager;
+namespace WBW\Bundle\DataTablesBundle\Tests\Manager;
 
 use InvalidArgumentException;
 use Throwable;
-use WBW\Bundle\JQuery\DataTablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
-use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
-use WBW\Bundle\JQuery\DataTablesBundle\Manager\DataTablesManager;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
+use WBW\Bundle\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
+use WBW\Bundle\DataTablesBundle\Manager\DataTablesManager;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Library\Symfony\Provider\ProviderInterface;
 
 /**
  * DataTables manager test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Manager
+ * @package WBW\Bundle\DataTablesBundle\Tests\Manager
  */
 class DataTablesManagerTest extends AbstractTestCase {
 
@@ -144,7 +144,7 @@ class DataTablesManagerTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw.jquery.datatables.manager", DataTablesManager::SERVICE_NAME);
+        $this->assertEquals("wbw.datatables.manager", DataTablesManager::SERVICE_NAME);
 
         $obj = new DataTablesManager();
 

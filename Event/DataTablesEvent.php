@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -11,18 +11,18 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Event;
+namespace WBW\Bundle\DataTablesBundle\Event;
 
 use WBW\Bundle\CoreBundle\Event\AbstractEvent;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderTrait;
-use WBW\Bundle\JQuery\DataTablesBundle\Traits\Arrays\ArrayEntitiesTrait;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderTrait;
+use WBW\Bundle\DataTablesBundle\Traits\Arrays\ArrayEntitiesTrait;
 
 /**
  * DataTables event.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Event
+ * @package WBW\Bundle\DataTablesBundle\Event
  */
 class DataTablesEvent extends AbstractEvent {
 
@@ -34,70 +34,70 @@ class DataTablesEvent extends AbstractEvent {
      *
      * @var string
      */
-    public const POST_DELETE = "wbw.jquery.datatables.event.post_delete";
+    public const POST_DELETE = "wbw.datatables.event.post_delete";
 
     /**
      * Event "post edit".
      *
      * @var string
      */
-    public const POST_EDIT = "wbw.jquery.datatables.event.post_edit";
+    public const POST_EDIT = "wbw.datatables.event.post_edit";
 
     /**
      * Event "post export".
      *
      * @var string
      */
-    public const POST_EXPORT = "wbw.jquery.datatables.event.post_export";
+    public const POST_EXPORT = "wbw.datatables.event.post_export";
 
     /**
      * Event "post show".
      *
      * @var string
      */
-    public const POST_INDEX = "wbw.jquery.datatables.event.post_index";
+    public const POST_INDEX = "wbw.datatables.event.post_index";
 
     /**
      * Event "pre delete".
      *
      * @var string
      */
-    public const PRE_DELETE = "wbw.jquery.datatables.event.pre_delete";
+    public const PRE_DELETE = "wbw.datatables.event.pre_delete";
 
     /**
      * Event "pre edit".
      *
      * @var string
      */
-    public const PRE_EDIT = "wbw.jquery.datatables.event.pre_edit";
+    public const PRE_EDIT = "wbw.datatables.event.pre_edit";
 
     /**
      * Event "pre export".
      *
      * @var string
      */
-    public const PRE_EXPORT = "wbw.jquery.datatables.event.pre_export";
+    public const PRE_EXPORT = "wbw.datatables.event.pre_export";
 
     /**
      * Event "pre index".
      *
      * @var string
      */
-    public const PRE_INDEX = "wbw.jquery.datatables.event.pre_index";
+    public const PRE_INDEX = "wbw.datatables.event.pre_index";
 
     /**
      * Event "pre serialize".
      *
      * @var string
      */
-    public const PRE_SERIALIZE = "wbw.jquery.datatables.event.pre_serialize";
+    public const PRE_SERIALIZE = "wbw.datatables.event.pre_serialize";
 
     /**
      * Event "pre show".
      *
      * @var string
      */
-    public const PRE_SHOW = "wbw.jquery.datatables.event.pre_show";
+    public const PRE_SHOW = "wbw.datatables.event.pre_show";
 
     /**
      * Constructor.

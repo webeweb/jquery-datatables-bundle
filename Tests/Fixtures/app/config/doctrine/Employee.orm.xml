@@ -4,7 +4,7 @@
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                                       https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <entity name="WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Entity\Employee" table="wbw_dt_employee" repository-class="WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\Repository\EmployeeRepository">
+    <entity name="WBW\Bundle\DataTablesBundle\Tests\Fixtures\Entity\Employee" table="wbw_dt_employee" repository-class="WBW\Bundle\DataTablesBundle\Tests\Fixtures\Repository\EmployeeRepository">
 
         <id name="id" column="id" type="integer">
             <generator/>

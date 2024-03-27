@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\EventListener;
+namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\EventListener;
 
-use WBW\Bundle\JQuery\DataTablesBundle\Event\DataTablesEvent;
+use WBW\Bundle\DataTablesBundle\Event\DataTablesEvent;
 
 /**
  * DataTables event listener.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Fixtures\EventListener
+ * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\EventListener
  */
 class DataTablesEventListener {
 

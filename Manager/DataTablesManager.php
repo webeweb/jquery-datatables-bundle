@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -11,13 +11,13 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Manager;
+namespace WBW\Bundle\DataTablesBundle\Manager;
 
 use InvalidArgumentException;
 use Throwable;
-use WBW\Bundle\JQuery\DataTablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
-use WBW\Bundle\JQuery\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\DataTablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
+use WBW\Bundle\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Library\Symfony\Manager\AbstractManager;
 use WBW\Library\Symfony\Manager\ManagerInterface;
 use WBW\Library\Symfony\Provider\ProviderInterface;
@@ -26,7 +26,7 @@ use WBW\Library\Symfony\Provider\ProviderInterface;
  * DataTables manager.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Manager
+ * @package WBW\Bundle\DataTablesBundle\Manager
  */
 class DataTablesManager extends AbstractManager {
 
@@ -35,7 +35,7 @@ class DataTablesManager extends AbstractManager {
      *
      * @var string
      */
-    public const SERVICE_NAME = "wbw.jquery.datatables.manager";
+    public const SERVICE_NAME = "wbw.datatables.manager";
 
     /**
      * {@inheritDoc}

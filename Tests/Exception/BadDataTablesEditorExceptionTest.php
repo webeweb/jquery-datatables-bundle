@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the jquery-datatables-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception;
+namespace WBW\Bundle\DataTablesBundle\Tests\Exception;
 
 use Exception;
-use WBW\Bundle\JQuery\DataTablesBundle\Exception\BadDataTablesEditorException;
-use WBW\Bundle\JQuery\DataTablesBundle\Provider\DataTablesEditorInterface;
-use WBW\Bundle\JQuery\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesEditorException;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesEditorInterface;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
  * Bad DataTables editor exception test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\JQuery\DataTablesBundle\Tests\Exception
+ * @package WBW\Bundle\DataTablesBundle\Tests\Exception
  */
 class BadDataTablesEditorExceptionTest extends AbstractTestCase {
 

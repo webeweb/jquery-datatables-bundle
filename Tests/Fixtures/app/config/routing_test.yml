@@ -1,19 +1,19 @@
 # Tests/Fixtures/app/config/routing_test.yml
-wbw_jquery_datatables:
+wbw_datatables:
     prefix:   "/"
-    resource: "@WBWJQueryDataTablesBundle/Resources/config/routing.yml"
+    resource: "@WBWDataTablesBundle/Resources/config/routing.yml"
 
-wbw_jquery_datatables_assets_javascripts:
+wbw_datatables_assets_javascripts:
     path: "/assets/javascripts"
-    defaults: { _controller: "WBW\\Bundle\\JQuery\\DataTablesBundle\\Tests\\Fixtures\\Controller\\TestViewsController::assetsJavascriptsAction" }
+    defaults: { _controller: "WBW\\Bundle\\DataTablesBundle\\Tests\\Fixtures\\Controller\\TestViewsController::assetsJavascriptsAction" }
     methods: [ "GET" ]
 
-wbw_jquery_datatables_assets_stylesheets:
+wbw_datatables_assets_stylesheets:
     path: "/assets/stylesheets"
-    defaults: { _controller: "WBW\\Bundle\\JQuery\\DataTablesBundle\\Tests\\Fixtures\\Controller\\TestViewsController::assetsStylesheetsAction" }
+    defaults: { _controller: "WBW\\Bundle\\DataTablesBundle\\Tests\\Fixtures\\Controller\\TestViewsController::assetsStylesheetsAction" }
     methods: [ "GET" ]
 
-wbw_jquery_datatables_deprecated_show:
+wbw_datatables_deprecated_show:
     path: "/datatables/{name}/deprecated-show/{id}"
-    defaults: { _controller: "WBW\\Bundle\\JQuery\\DataTablesBundle\\Controller\\DataTablesController::showAction" }
+    defaults: { _controller: "WBW\\Bundle\\DataTablesBundle\\Controller\\DataTablesController::showAction" }
     methods: [ "GET" ]
