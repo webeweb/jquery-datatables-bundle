@@ -26,91 +26,91 @@ interface DataTablesColumnInterface {
      *
      * @var string
      */
-    const DATATABLES_CELL_TYPE_TD = "td";
+    public const DATATABLES_CELL_TYPE_TD = "td";
 
     /**
      * Cell type "th".
      *
      * @var string
      */
-    const DATATABLES_CELL_TYPE_TH = "th";
+    public const DATATABLES_CELL_TYPE_TH = "th";
 
     /**
      * Order sequence "asc".
      *
      * @var string
      */
-    const DATATABLES_ORDER_SEQUENCE_ASC = "asc";
+    public const DATATABLES_ORDER_SEQUENCE_ASC = "asc";
 
     /**
      * Order sequence "desc".
      *
      * @var string
      */
-    const DATATABLES_ORDER_SEQUENCE_DESC = "desc";
+    public const DATATABLES_ORDER_SEQUENCE_DESC = "desc";
 
     /**
      * Parameter "data".
      *
      * @var string
      */
-    const DATATABLES_PARAMETER_DATA = "data";
+    public const DATATABLES_PARAMETER_DATA = "data";
 
     /**
      * Parameter "name".
      *
      * @var string
      */
-    const DATATABLES_PARAMETER_NAME = "name";
+    public const DATATABLES_PARAMETER_NAME = "name";
 
     /**
      * Parameter "search".
      *
      * @var string
      */
-    const DATATABLES_PARAMETER_SEARCH = "search";
+    public const DATATABLES_PARAMETER_SEARCH = "search";
 
     /**
      * Type "date".
      *
      * @var string
      */
-    const DATATABLES_TYPE_DATE = "date";
+    public const DATATABLES_TYPE_DATE = "date";
 
     /**
      * Type "html".
      *
      * @var string
      */
-    const DATATABLES_TYPE_HTML = "html";
+    public const DATATABLES_TYPE_HTML = "html";
 
     /**
      * Type "html-num".
      *
      * @var string
      */
-    const DATATABLES_TYPE_HTML_NUM = "html-num";
+    public const DATATABLES_TYPE_HTML_NUM = "html-num";
 
     /**
      * Type "num".
      *
      * @var string
      */
-    const DATATABLES_TYPE_NUM = "num";
+    public const DATATABLES_TYPE_NUM = "num";
 
     /**
      * Type "num-fmt".
      *
      * @var string
      */
-    const DATATABLES_TYPE_NUM_FMT = "num-fmt";
+    public const DATATABLES_TYPE_NUM_FMT = "num-fmt";
 
     /**
      * Type "string".
      *
      * @var string
      */
-    const DATATABLES_TYPE_STRING = "string";
+    public const DATATABLES_TYPE_STRING = "string";
 
     /**
      * Get the cell type.
