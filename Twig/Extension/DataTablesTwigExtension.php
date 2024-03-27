@@ -31,7 +31,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.jquery.datatables.twig.extension";
+    public const SERVICE_NAME = "wbw.jquery.datatables.twig.extension";
 
     /**
      * Get the Twig filters.
