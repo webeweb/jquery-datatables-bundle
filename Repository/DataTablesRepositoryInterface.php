@@ -27,7 +27,7 @@ interface DataTablesRepositoryInterface {
      *
      * @var int
      */
-    const REPOSITORY_LIMIT = 10000;
+    public const REPOSITORY_LIMIT = 10000;
 
     /**
      * Count exported entities.
