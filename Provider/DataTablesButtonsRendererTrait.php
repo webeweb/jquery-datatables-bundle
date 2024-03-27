@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 /*
  * This file is part of the jquery-datatables-bundle package.
  *
@@ -99,7 +101,7 @@ trait DataTablesButtonsRendererTrait {
 
         return $this->renderActionButton($entity, $route, [
             "type"               => "Default",
-            "icon"               => 0 < mb_strlen($comment) ? "fa:comment" : "fa:comment-slash",
+            "icon"               => null === $comment || 0 === mb_strlen($comment) ? "fa:comment-slash" : "fa:comment",
             "label"              => "label.comment",
             "translation_domain" => WBWJQueryDataTablesBundle::getTranslationDomain(),
         ]);
