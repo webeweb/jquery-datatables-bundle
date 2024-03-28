@@ -498,7 +498,7 @@ Create a template in the `src/AppBundle/Resources/views/Employee`directory of yo
 {% endblock %}
 
 {% block content %}
-    {{ renderDataTables(dtWrapper) }}
+    {{ hDataTables(dtWrapper) }}
 {% endblock %}
 
 {% block javascripts %}
@@ -506,7 +506,7 @@ Create a template in the `src/AppBundle/Resources/views/Employee`directory of yo
     {% include "@WBWCore/assets/_javascripts.html.twig" %}
     {% include "@WBWBootstrap/assets/_javascripts.html.twig" %}
     {% include "@WBWDataTables/assets/_javascripts.html.twig" %}
-    {{ jQueryDataTables(dtWrapper) }}
+    {{ jDataTables(dtWrapper) }}
 {% endblock %}
 ```
 

@@ -70,75 +70,23 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
     }
 
     /**
-     * Display a jQuery DataTables.
-     *
-     * @param DataTablesWrapperInterface $dtWrapper The wrapper.
-     * @param string|null $selector The selector.
-     * @param string|null $language The language.
-     * @return string Returns the jQuery DataTables.
-     * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
-     */
-    protected function jQueryDataTables(DataTablesWrapperInterface $dtWrapper, ?string $selector, ?string $language): string {
-
-        $options = DataTablesWrapperHelper::getOptions($dtWrapper);
-
-        if (null !== $language) {
-            $options["language"] = ["url" => DataTablesWrapperHelper::getLanguageUrl($language)];
-        }
-
-        $var = DataTablesWrapperHelper::getName($dtWrapper);
-
-        $searches = ["%var%", "%selector%", "%options%"];
-        $replaces = [$var, null === $selector ? "#" . $var : $selector, $this->encodeOptions($options)];
-        $template = file_get_contents(__DIR__ . "/AbstractDataTablesTwigExtension.jQueryDataTables.js.txt");
-
-        $javascript = str_replace($searches, $replaces, $template);
-
-        return $this->getAssetsTwigExtension()->coreScriptFilter($javascript);
-    }
-
-    /**
-     * Display a jQuery DataTables "standalone".
-     *
-     * @param string $selector The selector.
-     * @param string|null $language The language.
-     * @param array<string,mixed> $options The options.
-     * @return string Returns the jQuery DataTables "Standalone".
-     * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
-     */
-    protected function jQueryDataTablesStandalone(string $selector, ?string $language, array $options): string {
-
-        if (null !== $language) {
-            $options["language"] = ["url" => DataTablesWrapperHelper::getLanguageUrl($language)];
-        }
-
-        $searches = ["%selector%", "%options%"];
-        $replaces = [$selector, $this->encodeOptions($options)];
-        $template = file_get_contents(__DIR__ . "/AbstractDataTablesTwigExtension.jQueryDataTablesStandalone.js.txt");
-
-        $javascript = str_replace($searches, $replaces, $template);
-
-        return $this->getAssetsTwigExtension()->coreScriptFilter($javascript);
-    }
-
-    /**
-     * Render a DataTables.
+     * Render a HTML DataTables.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @param string|null $class The class.
      * @param bool $includeTHead Include thead ?
      * @param bool $includeTFoot Include tfoot ?
-     * @return string Returns the rendered DataTables.
+     * @return string Returns the rendered HTML DataTables.
      */
-    protected function renderDataTables(DataTablesWrapperInterface $dtWrapper, ?string $class, bool $includeTHead, bool $includeTFoot): string {
+    protected function hDataTables(DataTablesWrapperInterface $dtWrapper, ?string $class, bool $includeTHead, bool $includeTFoot): string {
 
         $attributes = [
             "class" => ["table", $class],
             "id"    => DataTablesWrapperHelper::getName($dtWrapper),
         ];
 
-        $thead = true === $includeTHead ? $this->renderDataTablesRow($dtWrapper, "thead") . "\n" : "";
-        $tfoot = true === $includeTFoot ? $this->renderDataTablesRow($dtWrapper, "tfoot") . "\n" : "";
+        $thead = true === $includeTHead ? $this->hDataTablesRow($dtWrapper, "thead") . "\n" : "";
+        $tfoot = true === $includeTFoot ? $this->hDataTablesRow($dtWrapper, "tfoot") . "\n" : "";
 
         $inner = "\n" . $thead . $tfoot;
 
@@ -146,13 +94,13 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
     }
 
     /**
-     * Render a column.
+     * Render a HTML DataTables column.
      *
      * @param DataTablesColumnInterface $dtColumn The column.
      * @param bool $rowScope Row scope ?
-     * @return string Returns the rendered column.
+     * @return string Returns the rendered HTML DataTables column.
      */
-    private function renderDataTablesColumn(DataTablesColumnInterface $dtColumn, bool $rowScope = false): string {
+    private function hDataTablesColumn(DataTablesColumnInterface $dtColumn, bool $rowScope = false): string {
 
         $attributes = [
             "scope" => true === $rowScope ? "row" : null,
@@ -164,13 +112,13 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
     }
 
     /**
-     * Render a row.
+     * Render a HTML DataTables row.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @param string $wrapper The wrapper (thead or tfoot)
-     * @return string Returns the rendered row.
+     * @return string Returns the rendered HTML DataTables row.
      */
-    private function renderDataTablesRow(DataTablesWrapperInterface $dtWrapper, string $wrapper): string {
+    private function hDataTablesRow(DataTablesWrapperInterface $dtWrapper, string $wrapper): string {
 
         $row = "";
 
@@ -179,12 +127,64 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
 
             $dtColumn = array_values($dtWrapper->getColumns())[$i];
 
-            $col = $this->renderDataTablesColumn($dtColumn, ("thead" === $wrapper && 0 === $i));
+            $col = $this->hDataTablesColumn($dtColumn, ("thead" === $wrapper && 0 === $i));
             $row .= $col . "\n";
         }
 
         $tr = static::coreHtmlElement("tr", "\n" . $row);
 
         return static::coreHtmlElement($wrapper, "\n" . $tr . "\n");
+    }
+
+    /**
+     * Display a javascript DataTables.
+     *
+     * @param DataTablesWrapperInterface $dtWrapper The wrapper.
+     * @param string|null $selector The selector.
+     * @param string|null $language The language.
+     * @return string Returns the javascript DataTables.
+     * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
+     */
+    protected function jDataTables(DataTablesWrapperInterface $dtWrapper, ?string $selector, ?string $language): string {
+
+        $options = DataTablesWrapperHelper::getOptions($dtWrapper);
+
+        if (null !== $language) {
+            $options["language"] = ["url" => DataTablesWrapperHelper::getLanguageUrl($language)];
+        }
+
+        $var = DataTablesWrapperHelper::getName($dtWrapper);
+
+        $searches = ["%var%", "%selector%", "%options%"];
+        $replaces = [$var, null === $selector ? "#" . $var : $selector, $this->encodeOptions($options)];
+        $template = file_get_contents(__DIR__ . "/AbstractDataTablesTwigExtension.jDataTables.js.txt");
+
+        $javascript = str_replace($searches, $replaces, $template);
+
+        return $this->getAssetsTwigExtension()->coreScriptFilter($javascript);
+    }
+
+    /**
+     * Display a javascript DataTables "standalone".
+     *
+     * @param string $selector The selector.
+     * @param string|null $language The language.
+     * @param array<string,mixed> $options The options.
+     * @return string Returns the javascript DataTables "Standalone".
+     * @throws FileNotFoundException Throws a file not found exception if the language file does not exist.
+     */
+    protected function jDataTablesStandalone(string $selector, ?string $language, array $options): string {
+
+        if (null !== $language) {
+            $options["language"] = ["url" => DataTablesWrapperHelper::getLanguageUrl($language)];
+        }
+
+        $searches = ["%selector%", "%options%"];
+        $replaces = [$selector, $this->encodeOptions($options)];
+        $template = file_get_contents(__DIR__ . "/AbstractDataTablesTwigExtension.jDataTablesStandalone.js.txt");
+
+        $javascript = str_replace($searches, $replaces, $template);
+
+        return $this->getAssetsTwigExtension()->coreScriptFilter($javascript);
     }
 }

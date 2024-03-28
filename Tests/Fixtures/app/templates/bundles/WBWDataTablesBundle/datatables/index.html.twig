@@ -9,7 +9,7 @@
             margin: 70px 0 0;
         }
     </style>
-    {% block jQueryDataTablesStylesheets %}
+    {% block dataTablesStylesheets %}
     {% endblock %}
 {% endblock %}
 
@@ -41,7 +41,7 @@
             <div class="row clearfix">
                 <div class="{{ bootstrapGrid({"lg": 12, "md": 12, "sm": 12, "xs": 12}) }}">
                     <div class="row clearfix">
-                        {{ renderDataTables(dtWrapper) }}
+                        {{ hDataTables(dtWrapper) }}
                     </div>
                 </div>
             </div>
@@ -52,6 +52,6 @@
 {% block bootstrapJavascripts %}
     {{ parent() }}
     {% include "@WBWDataTables/assets/_javascripts.html.twig" %}
-    {% block jQueryDataTablesJavascripts %}
+    {% block dataTablesJavascripts %}
     {% endblock %}
 {% endblock %}

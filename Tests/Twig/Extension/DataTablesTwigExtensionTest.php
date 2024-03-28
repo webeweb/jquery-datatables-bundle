@@ -46,170 +46,23 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Test getFilters()
+     * Test dataTablesNameFunction()
      *
      * @return void
      */
-    public function testGetFilters(): void {
+    public function testDataTablesNameFunction(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
-        $res = $obj->getFilters();
-        $this->assertCount(2, $res);
-
-        $this->assertInstanceOf(TwigFilter::class, $res[0]);
-        $this->assertEquals("jQueryDataTablesName", $res[0]->getName());
-        $this->assertEquals([$obj, "jQueryDataTablesNameFunction"], $res[0]->getCallable());
-        $this->assertEquals(["html"], $res[0]->getSafe(new Node()));
-
-        $this->assertInstanceOf(TwigFilter::class, $res[1]);
-        $this->assertEquals("jQueryDTName", $res[1]->getName());
-        $this->assertEquals([$obj, "jQueryDataTablesNameFunction"], $res[1]->getCallable());
-        $this->assertEquals(["html"], $res[1]->getSafe(new Node()));
+        $this->assertSame("dtemployee", $obj->dataTablesNameFunction($this->dtWrapper));
     }
 
     /**
-     * Test getFunctions()
+     * Test dataTablesOptionsFunction()
      *
      * @return void
      */
-    public function testGetFunctions(): void {
-
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
-
-        $res = $obj->getFunctions();
-        $this->assertCount(10, $res);
-
-        $this->assertInstanceOf(TwigFunction::class, $res[0]);
-        $this->assertEquals("jQueryDataTables", $res[0]->getName());
-        $this->assertEquals([$obj, "jQueryDataTablesFunction"], $res[0]->getCallable());
-        $this->assertEquals(["html"], $res[0]->getSafe(new Node()));
-
-        $this->assertInstanceOf(TwigFunction::class, $res[1]);
-        $this->assertEquals("jQueryDT", $res[1]->getName());
-        $this->assertEquals([$obj, "jQueryDataTablesFunction"], $res[1]->getCallable());
-        $this->assertEquals(["html"], $res[1]->getSafe(new Node()));
-
-        $this->assertInstanceOf(TwigFunction::class, $res[2]);
-        $this->assertEquals("jQueryDataTablesName", $res[2]->getName());
-        $this->assertEquals([$obj, "jQueryDataTablesNameFunction"], $res[2]->getCallable());
-        $this->assertEquals(["html"], $res[2]->getSafe(new Node()));
-
-        $this->assertInstanceOf(TwigFunction::class, $res[3]);
-        $this->assertEquals("jQueryDTName", $res[3]->getName());
-        $this->assertEquals([$obj, "jQueryDataTablesNameFunction"], $res[3]->getCallable());
-        $this->assertEquals(["html"], $res[3]->getSafe(new Node()));
-
-        $this->assertInstanceOf(TwigFunction::class, $res[4]);
-        $this->assertEquals("jQueryDataTablesOptions", $res[4]->getName());
-        $this->assertEquals([$obj, "jQueryDataTablesOptionsFunction"], $res[4]->getCallable());
-        $this->assertEquals(["html"], $res[4]->getSafe(new Node()));
-
-        $this->assertInstanceOf(TwigFunction::class, $res[5]);
-        $this->assertEquals("jQueryDTOptions", $res[5]->getName());
-        $this->assertEquals([$obj, "jQueryDataTablesOptionsFunction"], $res[5]->getCallable());
-        $this->assertEquals(["html"], $res[5]->getSafe(new Node()));
-
-        $this->assertInstanceOf(TwigFunction::class, $res[6]);
-        $this->assertEquals("jQueryDataTablesStandalone", $res[6]->getName());
-        $this->assertEquals([$obj, "jQueryDataTablesStandaloneFunction"], $res[6]->getCallable());
-        $this->assertEquals(["html"], $res[6]->getSafe(new Node()));
-
-        $this->assertInstanceOf(TwigFunction::class, $res[7]);
-        $this->assertEquals("jQueryDTStandalone", $res[7]->getName());
-        $this->assertEquals([$obj, "jQueryDataTablesStandaloneFunction"], $res[7]->getCallable());
-        $this->assertEquals(["html"], $res[7]->getSafe(new Node()));
-
-        $this->assertInstanceOf(TwigFunction::class, $res[8]);
-        $this->assertEquals("renderDataTables", $res[8]->getName());
-        $this->assertEquals([$obj, "renderDataTablesFunction"], $res[8]->getCallable());
-        $this->assertEquals(["html"], $res[8]->getSafe(new Node()));
-
-        $this->assertInstanceOf(TwigFunction::class, $res[9]);
-        $this->assertEquals("renderDT", $res[9]->getName());
-        $this->assertEquals([$obj, "renderDataTablesFunction"], $res[9]->getCallable());
-        $this->assertEquals(["html"], $res[9]->getSafe(new Node()));
-    }
-
-    /**
-     * Test the datatables-i18n-<version> directory.
-     *
-     * @return void
-     */
-    public function testI18n(): void {
-
-        $directory = realpath(__DIR__ . "/../../../Resources/public/datatables-i18n");
-
-        $found = 0;
-
-        $stream = opendir($directory);
-        while (false !== ($file = readdir($stream))) {
-
-            if (true === in_array($file, [".", ".."])) {
-                continue;
-            }
-
-            ++$found;
-
-            $this->assertJson(file_get_contents($directory . "/" . $file), $file);
-        }
-
-        closedir($stream);
-
-        $this->assertEquals(70, $found);
-    }
-
-    /**
-     * Test jQueryDataTablesFunction()
-     *
-     * @return void
-     * @throws Throwable Throws an exception if an error occurs.
-     */
-    public function testJQueryDataTablesFunction(): void {
-
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
-
-        $arg = [
-            "selector" => "#selector",
-            "language" => "French",
-        ];
-        $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testJQueryDataTablesFunction.html.txt");
-        $this->assertEquals($res, $obj->jQueryDataTablesFunction($this->dtWrapper, $arg) . "\n");
-    }
-
-    /**
-     * Test jQueryDataTablesFunction()
-     *
-     * @return void
-     * @throws Throwable Throws an exception if an error occurs.
-     */
-    public function testJQueryDataTablesFunctionWithoutArguments(): void {
-
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
-
-        $arg = [];
-        $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testJQueryDataTablesFunctionWithoutArguments.html.txt");
-        $this->assertEquals($res, $obj->jQueryDataTablesFunction($this->dtWrapper, $arg) . "\n");
-    }
-
-    /**
-     * Test jQueryDataTablesNameFunction()
-     *
-     * @return void
-     */
-    public function testJQueryDataTablesNameFunction(): void {
-
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
-
-        $this->assertSame("dtemployee", $obj->jQueryDataTablesNameFunction($this->dtWrapper));
-    }
-
-    /**
-     * Test jQueryDataTablesOptionsFunction()
-     *
-     * @return void
-     */
-    public function testJQueryDataTablesOptionsFunction(): void {
+    public function testDataTablesOptionsFunction(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
@@ -260,44 +113,105 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
             "processing" => true,
             "serverSide" => true,
         ];
-        $this->assertSame($res, $obj->jQueryDataTablesOptionsFunction($this->dtWrapper));
+        $this->assertSame($res, $obj->dataTablesOptionsFunction($this->dtWrapper));
     }
 
     /**
-     * Test jQueryDataTablesStandaloneFunction()
+     * Test getFilters()
      *
      * @return void
-     * @throws Throwable Throws an exception if an error occurs.
      */
-    public function testJQueryDataTablesStandaloneFunction(): void {
+    public function testGetFilters(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
-        $arg = ["selector" => "#selector", "language" => "French", "options" => ["columnDefs" => [["orderable" => false, "targets" => -1]]]];
-        $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testJQueryDataTablesStandaloneFunction.html.txt");
-        $this->assertEquals($res, $obj->jQueryDataTablesStandaloneFunction($arg) . "\n");
+        $res = $obj->getFilters();
+        $this->assertCount(2, $res);
+
+        $i = -1;
+
+        $this->assertInstanceOf(TwigFilter::class, $res[++$i]);
+        $this->assertEquals("dataTablesName", $res[$i]->getName());
+        $this->assertEquals([$obj, "dataTablesNameFunction"], $res[$i]->getCallable());
+        $this->assertEquals(["html"], $res[$i]->getSafe(new Node()));
+
+        $this->assertInstanceOf(TwigFilter::class, $res[++$i]);
+        $this->assertEquals("dtName", $res[$i]->getName());
+        $this->assertEquals([$obj, "dataTablesNameFunction"], $res[$i]->getCallable());
+        $this->assertEquals(["html"], $res[$i]->getSafe(new Node()));
     }
 
     /**
-     * Test jQueryDataTablesStandaloneFunction()
+     * Test getFunctions()
      *
      * @return void
-     * @throws Throwable Throws an exception if an error occurs.
      */
-    public function testJQueryDataTablesStandaloneFunctionWithoutArguments(): void {
+    public function testGetFunctions(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
-        $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testJQueryDataTablesStandaloneFunctionWithoutArguments.html.txt");
-        $this->assertEquals($res, $obj->jQueryDataTablesStandaloneFunction() . "\n");
+        $res = $obj->getFunctions();
+        $this->assertCount(10, $res);
+
+        $i = -1;
+
+        $this->assertInstanceOf(TwigFunction::class, $res[++$i]);
+        $this->assertEquals("dataTablesName", $res[$i]->getName());
+        $this->assertEquals([$obj, "dataTablesNameFunction"], $res[$i]->getCallable());
+        $this->assertEquals(["html"], $res[$i]->getSafe(new Node()));
+
+        $this->assertInstanceOf(TwigFunction::class, $res[++$i]);
+        $this->assertEquals("dtName", $res[$i]->getName());
+        $this->assertEquals([$obj, "dataTablesNameFunction"], $res[$i]->getCallable());
+        $this->assertEquals(["html"], $res[$i]->getSafe(new Node()));
+
+        $this->assertInstanceOf(TwigFunction::class, $res[++$i]);
+        $this->assertEquals("dataTablesOptions", $res[$i]->getName());
+        $this->assertEquals([$obj, "dataTablesOptionsFunction"], $res[$i]->getCallable());
+        $this->assertEquals(["html"], $res[$i]->getSafe(new Node()));
+
+        $this->assertInstanceOf(TwigFunction::class, $res[++$i]);
+        $this->assertEquals("dtOptions", $res[$i]->getName());
+        $this->assertEquals([$obj, "dataTablesOptionsFunction"], $res[$i]->getCallable());
+        $this->assertEquals(["html"], $res[$i]->getSafe(new Node()));
+
+        $this->assertInstanceOf(TwigFunction::class, $res[++$i]);
+        $this->assertEquals("hDataTables", $res[$i]->getName());
+        $this->assertEquals([$obj, "hDataTablesFunction"], $res[$i]->getCallable());
+        $this->assertEquals(["html"], $res[$i]->getSafe(new Node()));
+
+        $this->assertInstanceOf(TwigFunction::class, $res[++$i]);
+        $this->assertEquals("hDT", $res[$i]->getName());
+        $this->assertEquals([$obj, "hDataTablesFunction"], $res[$i]->getCallable());
+        $this->assertEquals(["html"], $res[$i]->getSafe(new Node()));
+
+        $this->assertInstanceOf(TwigFunction::class, $res[++$i]);
+        $this->assertEquals("jDataTables", $res[$i]->getName());
+        $this->assertEquals([$obj, "jDataTablesFunction"], $res[$i]->getCallable());
+        $this->assertEquals(["html"], $res[$i]->getSafe(new Node()));
+
+        $this->assertInstanceOf(TwigFunction::class, $res[++$i]);
+        $this->assertEquals("jDT", $res[$i]->getName());
+        $this->assertEquals([$obj, "jDataTablesFunction"], $res[$i]->getCallable());
+        $this->assertEquals(["html"], $res[$i]->getSafe(new Node()));
+
+        $this->assertInstanceOf(TwigFunction::class, $res[++$i]);
+        $this->assertEquals("jDataTablesStandalone", $res[$i]->getName());
+        $this->assertEquals([$obj, "jDataTablesStandaloneFunction"], $res[$i]->getCallable());
+        $this->assertEquals(["html"], $res[$i]->getSafe(new Node()));
+
+        $this->assertInstanceOf(TwigFunction::class, $res[++$i]);
+        $this->assertEquals("jDTStandalone", $res[$i]->getName());
+        $this->assertEquals([$obj, "jDataTablesStandaloneFunction"], $res[$i]->getCallable());
+        $this->assertEquals(["html"], $res[$i]->getSafe(new Node()));
     }
 
     /**
-     * Test renderDataTablesFunction()
+     * Test hDataTablesFunction()
      *
      * @return void
      */
-    public function testRenderDataTablesFunction(): void {
+    public function testHDataTablesFunction(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
@@ -308,64 +222,154 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         }
 
         $arg = ["class" => "class", "thead" => true, "tfoot" => true];
-        $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testRenderDataTablesFunction.html.txt");
-        $this->assertEquals($res, $obj->renderDataTablesFunction($this->dtWrapper, $arg) . "\n");
+        $res = file_get_contents(__DIR__ . "/../../Fixtures/Twig/Extension/DataTablesTwigExtensionTest.testHDataTablesFunction.html.txt");
+        $this->assertEquals($res, $obj->hDataTablesFunction($this->dtWrapper, $arg) . "\n");
     }
 
     /**
-     * Test renderDataTablesFunction()
+     * Test hDataTablesFunction()
      *
      * @return void
      */
-    public function testRenderDataTablesFunctionWithClass(): void {
+    public function testHDataTablesFunctionWithClass(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
         $arg = ["class" => "class"];
-        $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testRenderDataTablesFunctionWithClass.html.txt");
-        $this->assertEquals($res, $obj->renderDataTablesFunction($this->dtWrapper, $arg) . "\n");
+        $res = file_get_contents(__DIR__ . "/../../Fixtures/Twig/Extension/DataTablesTwigExtensionTest.testHDataTablesFunctionWithClass.html.txt");
+        $this->assertEquals($res, $obj->hDataTablesFunction($this->dtWrapper, $arg) . "\n");
     }
 
     /**
-     * Test renderDataTablesFunction()
+     * Test hDataTablesFunction()
      *
      * @return void
      */
-    public function testRenderDataTablesFunctionWithTFoot(): void {
+    public function testHDataTablesFunctionWithTFoot(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
         $arg = ["tfoot" => false];
-        $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testRenderDataTablesFunctionWithTFoot.html.txt");
-        $this->assertEquals($res, $obj->renderDataTablesFunction($this->dtWrapper, $arg) . "\n");
+        $res = file_get_contents(__DIR__ . "/../../Fixtures/Twig/Extension/DataTablesTwigExtensionTest.testHDataTablesFunctionWithTFoot.html.txt");
+        $this->assertEquals($res, $obj->hDataTablesFunction($this->dtWrapper, $arg) . "\n");
     }
 
     /**
-     * Test renderDataTablesFunction()
+     * Test hDataTablesFunction()
      *
      * @return void
      */
-    public function testRenderDataTablesFunctionWithTHead(): void {
+    public function testHDataTablesFunctionWithTHead(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
         $arg = ["thead" => false];
-        $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testRenderDataTablesFunctionWithTHead.html.txt");
-        $this->assertEquals($res, $obj->renderDataTablesFunction($this->dtWrapper, $arg) . "\n");
+        $res = file_get_contents(__DIR__ . "/../../Fixtures/Twig/Extension/DataTablesTwigExtensionTest.testHDataTablesFunctionWithTHead.html.txt");
+        $this->assertEquals($res, $obj->hDataTablesFunction($this->dtWrapper, $arg) . "\n");
     }
 
     /**
-     * Test renderDataTablesFunction()
+     * Test hDataTablesFunction()
      *
      * @return void
      */
-    public function testRenderDataTablesFunctionWithoutArguments(): void {
+    public function testHDataTablesFunctionWithoutArguments(): void {
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
 
         $arg = [];
-        $res = file_get_contents(__DIR__ . "/DataTablesTwigExtensionTest.testRenderDataTablesFunctionWithoutArguments.html.txt");
-        $this->assertEquals($res, $obj->renderDataTablesFunction($this->dtWrapper, $arg) . "\n");
+        $res = file_get_contents(__DIR__ . "/../../Fixtures/Twig/Extension/DataTablesTwigExtensionTest.testHDataTablesFunctionWithoutArguments.html.txt");
+        $this->assertEquals($res, $obj->hDataTablesFunction($this->dtWrapper, $arg) . "\n");
+    }
+
+    /**
+     * Test the datatables-i18n-<version> directory.
+     *
+     * @return void
+     */
+    public function testI18n(): void {
+
+        $directory = realpath(__DIR__ . "/../../../Resources/public/datatables-i18n");
+
+        $found = 0;
+
+        $stream = opendir($directory);
+        while (false !== ($file = readdir($stream))) {
+
+            if (true === in_array($file, [".", ".."])) {
+                continue;
+            }
+
+            ++$found;
+
+            $this->assertJson(file_get_contents($directory . "/" . $file), $file);
+        }
+
+        closedir($stream);
+
+        $this->assertEquals(70, $found);
+    }
+
+    /**
+     * Test jDataTablesFunction()
+     *
+     * @return void
+     * @throws Throwable Throws an exception if an error occurs.
+     */
+    public function testJDataTablesFunction(): void {
+
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
+
+        $arg = [
+            "selector" => "#selector",
+            "language" => "French",
+        ];
+        $res = file_get_contents(__DIR__ . "/../../Fixtures/Twig/Extension/DataTablesTwigExtensionTest.testJDataTablesFunction.html.txt");
+        $this->assertEquals($res, $obj->jDataTablesFunction($this->dtWrapper, $arg) . "\n");
+    }
+
+    /**
+     * Test jDataTablesFunction()
+     *
+     * @return void
+     * @throws Throwable Throws an exception if an error occurs.
+     */
+    public function testJDataTablesFunctionWithoutArguments(): void {
+
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
+
+        $arg = [];
+        $res = file_get_contents(__DIR__ . "/../../Fixtures/Twig/Extension/DataTablesTwigExtensionTest.testJDataTablesFunctionWithoutArguments.html.txt");
+        $this->assertEquals($res, $obj->jDataTablesFunction($this->dtWrapper, $arg) . "\n");
+    }
+
+    /**
+     * Test jDataTablesStandaloneFunction()
+     *
+     * @return void
+     * @throws Throwable Throws an exception if an error occurs.
+     */
+    public function testJDataTablesStandaloneFunction(): void {
+
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
+
+        $arg = ["selector" => "#selector", "language" => "French", "options" => ["columnDefs" => [["orderable" => false, "targets" => -1]]]];
+        $res = file_get_contents(__DIR__ . "/../../Fixtures/Twig/Extension/DataTablesTwigExtensionTest.testJDataTablesStandaloneFunction.html.txt");
+        $this->assertEquals($res, $obj->jDataTablesStandaloneFunction($arg) . "\n");
+    }
+
+    /**
+     * Test jDataTablesStandaloneFunction()
+     *
+     * @return void
+     * @throws Throwable Throws an exception if an error occurs.
+     */
+    public function testJDataTablesStandaloneFunctionWithoutArguments(): void {
+
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
+
+        $res = file_get_contents(__DIR__ . "/../../Fixtures/Twig/Extension/DataTablesTwigExtensionTest.testJDataTablesStandaloneFunctionWithoutArguments.html.txt");
+        $this->assertEquals($res, $obj->jDataTablesStandaloneFunction() . "\n");
     }
 
     /**
