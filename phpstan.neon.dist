@@ -1,11 +1,10 @@
 parameters:
     level: 6
     paths:
-        - ./
+        - src/common
+        - tests/common
     excludePaths:
-        - Resources/
-        - Tests/Fixtures/app/var
-        - vendor/
+        - tests/fixtures/app/var
     ignoreErrors:
         -
             message: '#Comparison operation "[<=>]+" between [0-9]+ and [0-9]+ is always false#'
