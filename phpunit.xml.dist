@@ -2,12 +2,13 @@
 <!-- https://phpunit.de/manual/current/en/appendixes.configuration.html -->
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
-         bootstrap="Tests/bootstrap.php"
+         bootstrap="tests/bootstrap.php"
          colors="true">
     <filter>
         <whitelist>
             <directory>./</directory>
             <exclude>
+                <directory>tests</directory>
                 <directory>Resources</directory>
                 <directory>Tests</directory>
                 <directory>vendor</directory>
@@ -15,8 +16,8 @@
         </whitelist>
     </filter>
     <testsuites>
-        <testsuite name="webeweb/jquery-datatables-bundle">
-            <directory>./Tests</directory>
+        <testsuite name="webeweb/common-bundle">
+            <directory>./tests</directory>
         </testsuite>
     </testsuites>
 </phpunit>
