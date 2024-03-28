@@ -47,4 +47,17 @@ trait TranslatorTrait {
         $this->translator = $translator;
         return $this;
     }
+
+    /**
+     * Translate.
+     *
+     * @param string|null $id The id.
+     * @param array<string,mixed> $parameters Teh parameters.
+     * @param string|null $domain The domain.
+     * @param string|null $locale The locale.
+     * @return string Returns the translated id in case of success, id otherwise.
+     */
+    protected function translate(?string $id, array $parameters = [], string $domain = null, string $locale = null): string {
+        return null !== $this->getTranslator() ? $this->getTranslator()->trans($id, $parameters, $domain, $locale) : $id;
+    }
 }
