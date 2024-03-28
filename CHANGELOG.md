@@ -6,6 +6,7 @@ CHANGELOG
 > IMPORTANT NOTICE: The following classes has been removed
 > - WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorTrait
 
+- Add PHP 8.3 support
 - Add declare(strict_types = 1)
 - Add PHPStan
 - Copy Container trait (from [core-bundle](https://github.com/webeweb/core-bundle))
