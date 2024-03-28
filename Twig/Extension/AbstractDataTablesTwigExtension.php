@@ -88,7 +88,7 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
         $thead = true === $includeTHead ? $this->hDataTablesRow($dtWrapper, "thead") . "\n" : "";
         $tfoot = true === $includeTFoot ? $this->hDataTablesRow($dtWrapper, "tfoot") . "\n" : "";
 
-        $inner = "\n" . $thead . $tfoot;
+        $inner = "\n{$thead}{$tfoot}";
 
         return static::coreHtmlElement("table", $inner, $attributes);
     }
@@ -131,9 +131,9 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
             $row .= $col . "\n";
         }
 
-        $tr = static::coreHtmlElement("tr", "\n" . $row);
+        $tr = static::coreHtmlElement("tr", "\n$row");
 
-        return static::coreHtmlElement($wrapper, "\n" . $tr . "\n");
+        return static::coreHtmlElement($wrapper, "\n$tr\n");
     }
 
     /**
@@ -156,7 +156,7 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
         $var = DataTablesWrapperHelper::getName($dtWrapper);
 
         $searches = ["%var%", "%selector%", "%options%"];
-        $replaces = [$var, null === $selector ? "#" . $var : $selector, $this->encodeOptions($options)];
+        $replaces = [$var, null === $selector ? "#$var" : $selector, $this->encodeOptions($options)];
         $template = file_get_contents(__DIR__ . "/AbstractDataTablesTwigExtension.jDataTables.js.txt");
 
         $javascript = str_replace($searches, $replaces, $template);

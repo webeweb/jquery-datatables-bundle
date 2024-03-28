@@ -302,7 +302,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
 
             ++$found;
 
-            $this->assertJson(file_get_contents($directory . "/" . $file), $file);
+            $this->assertJson(file_get_contents("$directory/$file"), $file);
         }
 
         closedir($stream);
