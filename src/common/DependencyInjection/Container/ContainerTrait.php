@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Symfony\DependencyInjection\Container;
+namespace WBW\Bundle\CommonBundle\DependencyInjection\Container;
 
 use Psr\Container\ContainerInterface;
 
@@ -17,7 +17,7 @@ use Psr\Container\ContainerInterface;
  * Container trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Symfony\DependencyInjection\Container
+ * @package WBW\Bundle\CommonBundle\DependencyInjection\Container
  */
 trait ContainerTrait {
 

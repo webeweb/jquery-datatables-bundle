@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Symfony\DependencyInjection\Container;
+namespace WBW\Bundle\CommonBundle\Tests\Fixtures\DependencyInjection\Container;
 
-use WBW\Bundle\DataTablesBundle\Symfony\DependencyInjection\Container\ContainerTrait;
+use WBW\Bundle\CommonBundle\DependencyInjection\Container\ContainerTrait;
 
 /**
  * Test container trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\Symfony\DependencyInjection\Container
+ * @package WBW\Bundle\CommonBundle\Tests\Fixtures\DependencyInjection\Container
  */
 class TestContainerTrait {
 
