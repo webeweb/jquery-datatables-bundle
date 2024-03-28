@@ -19,6 +19,7 @@ jobs:
                     -   php-version: "8.0"
                     -   php-version: "8.1"
                     -   php-version: "8.2"
+                    -   php-version: "8.3"
                     -   php-version:     "7.1"
                         symfony-version: "4.4.*"
                         symfony-label:   ": Symfony 4.4.*"
