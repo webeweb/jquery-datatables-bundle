@@ -15,7 +15,8 @@ namespace WBW\Bundle\DataTablesBundle\Command;
 
 use Symfony\Component\Console\Style\StyleInterface;
 use WBW\Bundle\CoreBundle\Command\AbstractCommand as BaseCommand;
-use WBW\Bundle\DataTablesBundle\Translation\TranslatorTrait;
+use WBW\Bundle\DataTablesBundle\Symfony\Translation\TranslatorTrait;
+use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
 
 /**
  * Abstract command.
@@ -41,7 +42,7 @@ abstract class AbstractCommand extends BaseCommand {
      */
     protected function displayFooter(StyleInterface $io, int $count, string $success, string $warning): void {
 
-        $message = $this->translate(0 < $count ? $success : $warning, [], null, "en");
+        $message = $this->translate(0 < $count ? $success : $warning, [], WBWDataTablesBundle::getTranslationDomain(), "en");
 
         $io->success($message);
     }

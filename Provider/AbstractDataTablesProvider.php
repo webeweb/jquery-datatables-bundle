@@ -34,7 +34,7 @@ use WBW\Bundle\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\DataTablesBundle\Helper\DataTablesEntityHelper;
 use WBW\Bundle\DataTablesBundle\Renderer\ColumnWidthInterface;
 use WBW\Bundle\DataTablesBundle\Renderer\Floats\FloatRendererTrait;
-use WBW\Bundle\DataTablesBundle\Translation\TranslatorTrait;
+use WBW\Bundle\DataTablesBundle\Symfony\Translation\TranslatorTrait;
 use WBW\Library\Symfony\Renderer\DateTimesRendererTrait;
 use WBW\Library\Symfony\Renderer\Strings\StringWrapperTrait;
 use WBW\Library\Symfony\Renderer\StringsRendererTrait;
