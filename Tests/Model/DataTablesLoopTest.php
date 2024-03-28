@@ -54,7 +54,7 @@ class DataTablesLoopTest extends AbstractTestCase {
      */
     public function testIsFirst(): void {
 
-        $entities = array_slice($this->entities, 0,2);
+        $entities = array_slice($this->entities, 0, 2);
 
         $obj = new DataTablesLoop($entities);
 
@@ -69,7 +69,7 @@ class DataTablesLoopTest extends AbstractTestCase {
      */
     public function testIsLast(): void {
 
-        $entities = array_slice($this->entities, 0,2);
+        $entities = array_slice($this->entities, 0, 2);
 
         $obj = new DataTablesLoop($entities);
         $obj->next();
