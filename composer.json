@@ -50,7 +50,7 @@
     },
     "autoload": {
         "psr-4": {
-            "WBW\\Bundle\\DataTablesBundle\\": ""
+            "WBW\\Bundle\\CommonBundle\\": "src/common"
         },
         "exclude-from-classmap": [
             "/Tests/"
@@ -58,7 +58,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "WBW\\Bundle\\QueryBuilderBundle\\Tests\\": "Tests/"
+            "WBW\\Bundle\\CommonBundle\\Tests\\": "tests/common"
         }
     },
     "config": {
