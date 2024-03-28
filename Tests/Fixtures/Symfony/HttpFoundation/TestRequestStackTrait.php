@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Symfony\HttpFoundation;
 
-use WBW\Bundle\CoreBundle\HttpFoundation\RequestStackTrait;
+use WBW\Bundle\DataTablesBundle\Symfony\HttpFoundation\RequestStackTrait;
 
 /**
  * Test request stack trait.

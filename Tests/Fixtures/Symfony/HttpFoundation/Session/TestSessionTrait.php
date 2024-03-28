@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Symfony\HttpFoundation\Session;
 
-use WBW\Bundle\CoreBundle\HttpFoundation\Session\SessionTrait;
+use WBW\Bundle\DataTablesBundle\Symfony\HttpFoundation\Session\SessionTrait;
 
 /**
  * Test session trait.

@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Symfony\HttpFoundation;
 
-use WBW\Bundle\CoreBundle\HttpFoundation\ResponseTrait;
+use WBW\Bundle\DataTablesBundle\Symfony\HttpFoundation\ResponseTrait;
 
 /**
  * Test response trait.
