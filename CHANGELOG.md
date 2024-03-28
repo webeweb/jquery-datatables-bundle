@@ -3,8 +3,21 @@ CHANGELOG
 
 ### master
 
+> IMPORTANT NOTICE: The following classes has been removed
+> - WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorTrait
+
 - Add declare(strict_types = 1)
 - Add PHPStan
+- Copy Container trait (from [core-bundle](https://github.com/webeweb/core-bundle))
+- Copy Entity manager trait (from [core-bundle](https://github.com/webeweb/core-bundle))
+- Copy Event dispatcher trait (from [core-bundle](https://github.com/webeweb/core-bundle))
+- Copy Mailer trait (from [core-bundle](https://github.com/webeweb/core-bundle))
+- Copy Request stack trait (from [core-bundle](https://github.com/webeweb/core-bundle))
+- Copy Request trait (from [core-bundle](https://github.com/webeweb/core-bundle))
+- Copy Response trait (from [core-bundle](https://github.com/webeweb/core-bundle))
+- Copy Router trait (from [core-bundle](https://github.com/webeweb/core-bundle))
+- Copy Session trait (from [core-bundle](https://github.com/webeweb/core-bundle))
+- Copy Translator trait (from [core-bundle](https://github.com/webeweb/core-bundle))
 - Improve code quality
 - Improve PHPDoc
 - Update dependencies
