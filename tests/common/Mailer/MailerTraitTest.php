@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Tests\Symfony\Mailer;
+namespace WBW\Bundle\CommonBundle\Tests\Mailer;
 
 use Symfony\Component\Mailer\MailerInterface;
-use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Symfony\Mailer\TestMailerTrait;
+use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
+use WBW\Bundle\CommonBundle\Tests\Fixtures\Mailer\TestMailerTrait;
 
 /**
  * Mailer trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Tests\Symfony\Mailer
+ * @package WBW\Bundle\CommonBundle\Tests\Mailer
  */
 class MailerTraitTest extends AbstractTestCase {
 

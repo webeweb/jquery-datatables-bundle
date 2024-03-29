@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Symfony\Mailer;
+namespace WBW\Bundle\CommonBundle\Tests\Fixtures\Mailer;
 
-use WBW\Bundle\DataTablesBundle\Symfony\Mailer\MailerTrait;
+use WBW\Bundle\CommonBundle\Mailer\MailerTrait;
 
 /**
  * Test mailer trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\Symfony\Mailer
+ * @package WBW\Bundle\CommonBundle\Tests\Fixtures\Mailer
  */
 class TestMailerTrait {
 

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Symfony\Mailer;
+namespace WBW\Bundle\CommonBundle\Mailer;
 
 use Symfony\Component\Mailer\MailerInterface;
 
@@ -17,7 +17,7 @@ use Symfony\Component\Mailer\MailerInterface;
  * Mailer trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Symfony\Mailer
+ * @package WBW\Bundle\CommonBundle\Mailer
  */
 trait MailerTrait {
 
