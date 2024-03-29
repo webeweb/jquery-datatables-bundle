@@ -22,7 +22,7 @@ use WBW\Library\Symfony\Assets\NavigationNodeInterface;
  * Abstract Twig extension test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\CoreBundle\Tests\Twig\Extension
+ * @package WBW\Bundle\CommonBundle\Tests\Twig\Extension
  */
 class AbstractTwigExtensionTest extends AbstractTestCase {
 

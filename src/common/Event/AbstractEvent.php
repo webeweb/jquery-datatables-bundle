@@ -17,7 +17,7 @@ use Symfony\Contracts\EventDispatcher\Event as BaseEvent;
  * Abstract event.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\CoreBundle\Event
+ * @package WBW\Bundle\CommonBundle\Event
  * @abstract
  */
 abstract class AbstractEvent extends BaseEvent {

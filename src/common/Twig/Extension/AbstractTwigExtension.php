@@ -21,7 +21,7 @@ use WBW\Library\Types\Helper\StringHelper;
  * Abstract Twig extension.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\CoreBundle\Twig\Extension
+ * @package WBW\Bundle\CommonBundle\Twig\Extension
  * @abstract
  */
 abstract class AbstractTwigExtension extends AbstractExtension {

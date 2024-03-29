@@ -17,7 +17,7 @@ use Exception as BaseException;
  * Abstract exception.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\CoreBundle\Exception
+ * @package WBW\Bundle\CommonBundle\Exception
  * @abstract
  */
 abstract class AbstractException extends BaseException {
