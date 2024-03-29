@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Symfony\Translation;
+namespace WBW\Bundle\CommonBundle\Translation;
 
 use Symfony\Contracts\Translation\TranslatorInterface;
 
@@ -17,7 +17,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
  * Translator trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Symfony\Translation
+ * @package WBW\Bundle\CommonBundle\Translation
  */
 trait TranslatorTrait {
 

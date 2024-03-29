@@ -9,16 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Tests\Symfony\Translation;
+namespace WBW\Bundle\CommonBundle\Tests\Translation;
 
-use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Symfony\Translation\TestTranslatorTrait;
+use Symfony\Contracts\Translation\TranslatorInterface;
+use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
+use WBW\Bundle\CommonBundle\Tests\Fixtures\Translation\TestTranslatorTrait;
 
 /**
  * Translator trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Tests\Symfony\Translation
+ * @package WBW\Bundle\CommonBundle\Tests\Translation
  */
 class TranslatorTraitTest extends AbstractTestCase {
 
@@ -29,9 +30,12 @@ class TranslatorTraitTest extends AbstractTestCase {
      */
     public function testSetTranslator(): void {
 
+        // Set a Translator mock.
+        $translator = $this->getMockBuilder(TranslatorInterface::class)->getMock();
+
         $obj = new TestTranslatorTrait();
 
-        $obj->setTranslator($this->translator);
-        $this->assertSame($this->translator, $obj->getTranslator());
+        $obj->setTranslator($translator);
+        $this->assertSame($translator, $obj->getTranslator());
     }
 }
