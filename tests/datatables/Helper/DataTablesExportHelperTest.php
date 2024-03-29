@@ -12,6 +12,7 @@
 namespace WBW\Bundle\DataTablesBundle\Tests\Helper;
 
 use Symfony\Component\HttpFoundation\Request;
+use Throwable;
 use WBW\Bundle\DataTablesBundle\Helper\DataTablesExportHelper;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 
@@ -51,6 +52,7 @@ class DataTablesExportHelperTest extends AbstractTestCase {
      * Test isWindows()
      *
      * @return void
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testIsWindows(): void {
 
@@ -64,6 +66,7 @@ class DataTablesExportHelperTest extends AbstractTestCase {
      * Test isWindows()
      *
      * @return void
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testIsWindowsWithLinuxUserAgent(): void {
 
@@ -77,6 +80,7 @@ class DataTablesExportHelperTest extends AbstractTestCase {
      * Test isWindows()
      *
      * @return void
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testIsWindowsWithoutUserAgent(): void {
 
