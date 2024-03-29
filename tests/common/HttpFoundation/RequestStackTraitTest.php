@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Tests\Symfony\HttpFoundation;
+namespace WBW\Bundle\CommonBundle\Tests\HttpFoundation;
 
 use Symfony\Component\HttpFoundation\RequestStack;
-use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Symfony\HttpFoundation\TestRequestStackTrait;
+use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
+use WBW\Bundle\CommonBundle\Tests\Fixtures\HttpFoundation\TestRequestStackTrait;
 
 /**
  * Request stack trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Tests\Symfony\HttpFoundation
+ * @package WBW\Bundle\CommonBundle\Tests\HttpFoundation
  */
 class RequestStackTraitTest extends AbstractTestCase {
 

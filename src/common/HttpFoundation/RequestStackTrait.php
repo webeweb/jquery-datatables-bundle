@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Symfony\HttpFoundation;
+namespace WBW\Bundle\CommonBundle\HttpFoundation;
 
 use Symfony\Component\HttpFoundation\RequestStack;
 
@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
  * Request stack trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Symfony\HttpFoundation
+ * @package WBW\Bundle\CommonBundle\HttpFoundation
  */
 trait RequestStackTrait {
 

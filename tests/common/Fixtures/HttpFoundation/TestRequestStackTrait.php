@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Symfony\HttpFoundation;
+namespace WBW\Bundle\CommonBundle\Tests\Fixtures\HttpFoundation;
 
-use WBW\Bundle\DataTablesBundle\Symfony\HttpFoundation\RequestStackTrait;
+use WBW\Bundle\CommonBundle\HttpFoundation\RequestStackTrait;
 
 /**
  * Test request stack trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\Symfony\HttpFoundation
+ * @package WBW\Bundle\CommonBundle\Tests\Fixtures\HttpFoundation
  */
 class TestRequestStackTrait {
 
