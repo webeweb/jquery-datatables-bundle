@@ -11,9 +11,11 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Api;
+namespace WBW\Bundle\DataTablesBundle\Model;
 
 use InvalidArgumentException;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesMappingInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesSearchInterface;
 
 /**
  * DataTables column interface.

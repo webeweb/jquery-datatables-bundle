@@ -14,6 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\DataTablesBundle\Api;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
 
 /**
  * DataTables request interface.

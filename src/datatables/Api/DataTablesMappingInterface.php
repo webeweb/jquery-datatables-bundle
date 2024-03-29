@@ -13,6 +13,8 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Api;
 
+use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
+
 /**
  * DataTables mapping interface.
  *

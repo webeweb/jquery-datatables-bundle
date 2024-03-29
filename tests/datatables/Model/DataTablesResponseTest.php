@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\DataTablesBundle\Tests\Model;
 
-use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
 use WBW\Bundle\DataTablesBundle\Api\DataTablesWrapperInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesResponse;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 
