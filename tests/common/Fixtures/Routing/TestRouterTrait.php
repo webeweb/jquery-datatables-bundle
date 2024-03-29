@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Symfony\Routing;
+namespace WBW\Bundle\CommonBundle\Tests\Fixtures\Routing;
 
-use WBW\Bundle\DataTablesBundle\Symfony\Routing\RouterTrait;
+use WBW\Bundle\CommonBundle\Routing\RouterTrait;
 
 /**
  * Test router trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\Symfony\Routing
+ * @package WBW\Bundle\CommonBundle\Tests\Fixtures\Routing
  */
 class TestRouterTrait {
 

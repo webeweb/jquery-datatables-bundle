@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Symfony\Routing;
+namespace WBW\Bundle\CommonBundle\Routing;
 
 use Symfony\Component\Routing\RouterInterface;
 
@@ -17,7 +17,7 @@ use Symfony\Component\Routing\RouterInterface;
  * Router trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Symfony\Routing
+ * @package WBW\Bundle\CommonBundle\Routing
  */
 trait RouterTrait {
 

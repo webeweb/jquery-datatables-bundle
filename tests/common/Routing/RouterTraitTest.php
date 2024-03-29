@@ -9,16 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Tests\Symfony\Routing;
+namespace WBW\Bundle\CommonBundle\Tests\Routing;
 
-use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Symfony\Routing\TestRouterTrait;
+use Symfony\Component\Routing\RouterInterface;
+use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
+use WBW\Bundle\CommonBundle\Tests\Fixtures\Routing\TestRouterTrait;
 
 /**
  * Router trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Tests\Symfony\Routing
+ * @package WBW\Bundle\CommonBundle\Tests\Routing
  */
 class RouterTraitTest extends AbstractTestCase {
 
@@ -29,9 +30,12 @@ class RouterTraitTest extends AbstractTestCase {
      */
     public function testSetRouter(): void {
 
+        // Set a Router mock.
+        $router = $this->getMockBuilder(RouterInterface::class)->getMock();
+
         $obj = new TestRouterTrait();
 
-        $obj->setRouter($this->router);
-        $this->assertSame($this->router, $obj->getRouter());
+        $obj->setRouter($router);
+        $this->assertSame($router, $obj->getRouter());
     }
 }
