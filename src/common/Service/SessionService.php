@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\CommonBundle\Service;
 
-use Psr\Container\ContainerInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpKernel\Kernel;
 use WBW\Bundle\CommonBundle\DependencyInjection\Container\ContainerTrait;

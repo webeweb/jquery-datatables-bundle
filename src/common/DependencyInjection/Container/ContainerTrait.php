@@ -11,7 +11,9 @@
 
 namespace WBW\Bundle\CommonBundle\DependencyInjection\Container;
 
-use Psr\Container\ContainerInterface;
+
+
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Container trait.

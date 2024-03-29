@@ -11,7 +11,8 @@
 
 namespace WBW\Bundle\CommonBundle\Tests\DependencyInjection\Container;
 
-use Psr\Container\ContainerInterface;
+
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 use WBW\Bundle\CommonBundle\Tests\Fixtures\DependencyInjection\Container\TestContainerTrait;
 
