@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\DataTablesBundle\Tests\Helper;
 
+use InvalidArgumentException;
 use Symfony\Component\Serializer\SerializerInterface;
 use Throwable;
 use WBW\Bundle\DataTablesBundle\Entity\DataTablesEntityInterface;
@@ -62,6 +63,7 @@ class DataTablesEntityHelperTest extends AbstractTestCase {
      * Test isCompatible()
      *
      * @return void
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testIsCompatible(): void {
 
@@ -71,6 +73,50 @@ class DataTablesEntityHelperTest extends AbstractTestCase {
         $this->assertTrue(DataTablesEntityHelper::isCompatible($dtEntity));
         $this->assertTrue(DataTablesEntityHelper::isCompatible(new Employee()));
         $this->assertFalse(DataTablesEntityHelper::isCompatible($this));
+    }
+
+    /**
+     * Test isCompatible()
+     *
+     * @return void
+     * @throws Throwable Throws an exception if an error occurs.
+     */
+    public function testIsCompatibleWithThrowException(): void {
+
+        try {
+
+            DataTablesEntityHelper::isCompatible($this, true);
+        } catch (Throwable $ex) {
+
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
+            $this->assertEquals("The entity must implements DataTablesEntityInterface or declare a getId() method", $ex->getMessage());
+        }
+    }
+
+    /**
+     * Test jsonSerialize()
+     *
+     * @return void
+     */
+    public function testJsonSerialize(): void {
+
+        $exp = '{"age":null,"name":null,"office":null,"position":null,"salary":null,"startDate":null,"id":null}';
+
+        $res = DataTablesEntityHelper::jsonSerialize(new Employee());
+
+        $this->assertEquals($exp, $res);
+    }
+
+    /**
+     * Test jsonSerialize()
+     *
+     * @return void
+     */
+    public function testJsonSerializeWithNull(): void {
+
+        $res = DataTablesEntityHelper::jsonSerialize(null);
+
+        $this->assertEquals("[]", $res);
     }
 
     /**
