@@ -16,21 +16,21 @@ namespace WBW\Bundle\DataTablesBundle\Factory;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\User\UserInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesOptionsInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesOrderInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesRequestInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesSearchInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesWrapperInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesColumn;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesEnumerator;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesOptions;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesOptionsInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesOrder;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesOrderInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesRequest;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesRequestInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesResponse;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesResponseInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesSearch;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesSearchInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapper;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Library\Types\Helper\ArrayHelper;
 use WBW\Library\Types\Helper\BooleanHelper;
@@ -192,7 +192,7 @@ class DataTablesFactory {
      */
     protected static function parseColumn(array $rawColumn, DataTablesWrapperInterface $wrapper): ?DataTablesColumnInterface {
 
-        if (false === DataTablesFactory::isValidRawColumn($rawColumn)) {
+        if (false === static::isValidRawColumn($rawColumn)) {
             return null;
         }
 
@@ -203,12 +203,12 @@ class DataTablesFactory {
         if ($dtColumn->getName() !== $rawColumn[DataTablesColumnInterface::DATATABLES_PARAMETER_NAME]) {
             return null;
         }
-        if (false === $dtColumn->getSearchable()) {
-            $dtColumn->setSearch(DataTablesFactory::parseSearch([])); // Set a default search.
+        if (true !== $dtColumn->getSearchable()) {
+            $dtColumn->setSearch(static::parseSearch([])); // Set a default search.
             return $dtColumn;
         }
 
-        $dtColumn->setSearch(DataTablesFactory::parseSearch($rawColumn[DataTablesColumnInterface::DATATABLES_PARAMETER_SEARCH]));
+        $dtColumn->setSearch(static::parseSearch($rawColumn[DataTablesColumnInterface::DATATABLES_PARAMETER_SEARCH]));
 
         return $dtColumn;
     }
@@ -226,7 +226,7 @@ class DataTablesFactory {
 
         foreach ($rawColumns as $current) {
 
-            $dtColumn = DataTablesFactory::parseColumn($current, $wrapper);
+            $dtColumn = static::parseColumn($current, $wrapper);
             if (null === $dtColumn) {
                 continue;
             }
@@ -247,7 +247,7 @@ class DataTablesFactory {
 
         $dtOrder = new DataTablesOrder();
 
-        if (false === DataTablesFactory::isValidRawOrder($rawOrder)) {
+        if (false === static::isValidRawOrder($rawOrder)) {
             return $dtOrder;
         }
 
@@ -268,7 +268,7 @@ class DataTablesFactory {
         $dtOrders = [];
 
         foreach ($rawOrders as $current) {
-            $dtOrders[] = DataTablesFactory::parseOrder($current);
+            $dtOrders[] = static::parseOrder($current);
         }
 
         return $dtOrders;
@@ -285,8 +285,8 @@ class DataTablesFactory {
 
         $dtRequest = new DataTablesRequest();
 
-        DataTablesFactory::copyParameterBag($request->query, $dtRequest->getQuery());
-        DataTablesFactory::copyParameterBag($request->request, $dtRequest->getRequest());
+        static::copyParameterBag($request->query, $dtRequest->getQuery());
+        static::copyParameterBag($request->request, $dtRequest->getRequest());
 
         if ("GET" === $request->getMethod()) {
             $parameterBag = $request->query;
@@ -300,11 +300,11 @@ class DataTablesFactory {
         $search  = ArrayHelper::get($parameterBag->all(), DataTablesRequestInterface::DATATABLES_PARAMETER_SEARCH, []);
 
         // Set the request.
-        $dtRequest->setColumns(DataTablesFactory::parseColumns($columns, $wrapper));
+        $dtRequest->setColumns(static::parseColumns($columns, $wrapper));
         $dtRequest->setDraw($parameterBag->getInt(DataTablesRequestInterface::DATATABLES_PARAMETER_DRAW));
         $dtRequest->setLength($parameterBag->getInt(DataTablesRequestInterface::DATATABLES_PARAMETER_LENGTH));
-        $dtRequest->setOrder(DataTablesFactory::parseOrders($orders));
-        $dtRequest->setSearch(DataTablesFactory::parseSearch($search));
+        $dtRequest->setOrder(static::parseOrders($orders));
+        $dtRequest->setSearch(static::parseSearch($search));
         $dtRequest->setStart($parameterBag->getInt(DataTablesRequestInterface::DATATABLES_PARAMETER_START));
         $dtRequest->setWrapper($wrapper);
 
@@ -321,7 +321,7 @@ class DataTablesFactory {
 
         $dtSearch = new DataTablesSearch();
 
-        if (false === DataTablesFactory::isValidRawSearch($rawSearch)) {
+        if (false === static::isValidRawSearch($rawSearch)) {
             return $dtSearch;
         }
 
@@ -339,7 +339,7 @@ class DataTablesFactory {
      * @return void
      */
     public static function parseWrapper(DataTablesWrapperInterface $wrapper, Request $request): void {
-        $wrapper->setRequest(DataTablesFactory::parseRequest($wrapper, $request));
-        $wrapper->setResponse(DataTablesFactory::newResponse($wrapper));
+        $wrapper->setRequest(static::parseRequest($wrapper, $request));
+        $wrapper->setResponse(static::newResponse($wrapper));
     }
 }

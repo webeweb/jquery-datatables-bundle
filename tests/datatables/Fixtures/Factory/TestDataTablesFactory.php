@@ -12,13 +12,13 @@
 namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Factory;
 
 use Symfony\Component\HttpFoundation\Request;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesOrderInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesRequestInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesSearchInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesWrapperInterface;
 use WBW\Bundle\DataTablesBundle\Factory\DataTablesFactory;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesOrderInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesRequestInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesResponseInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesSearchInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperInterface;
 
 /**
  * Test DataTables factory.
