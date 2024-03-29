@@ -21,7 +21,7 @@ use WBW\Library\Symfony\Provider\ProviderInterface;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Provider
  */
-interface DataTablesCSVExporterInterface extends ProviderInterface {
+interface DataTablesCsvExporterInterface extends ProviderInterface {
 
     /**
      * Export a columns.
