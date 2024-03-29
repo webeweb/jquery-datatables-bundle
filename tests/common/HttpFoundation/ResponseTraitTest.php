@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Tests\Symfony\HttpFoundation;
+namespace WBW\Bundle\CommonBundle\Tests\HttpFoundation;
 
 use Symfony\Component\HttpFoundation\Response;
-use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Symfony\HttpFoundation\TestResponseTrait;
+use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
+use WBW\Bundle\CommonBundle\Tests\Fixtures\HttpFoundation\TestResponseTrait;
 
 /**
  * Response trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Tests\Symfony\HttpFoundation
+ * @package WBW\Bundle\CommonBundle\Tests\HttpFoundation
  */
 class ResponseTraitTest extends AbstractTestCase {
 
