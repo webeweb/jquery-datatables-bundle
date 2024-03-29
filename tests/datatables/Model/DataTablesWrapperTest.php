@@ -14,6 +14,8 @@ namespace WBW\Bundle\DataTablesBundle\Tests\Model;
 use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
 use WBW\Bundle\DataTablesBundle\Api\DataTablesMappingInterface;
 use WBW\Bundle\DataTablesBundle\Api\DataTablesOptionsInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesRequestInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapper;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
@@ -27,29 +29,29 @@ use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesWrapperTest extends AbstractTestCase {
 
     /**
-     * Test addColumn()
+     * Test removeColumn()
      *
      * @return void
      */
     public function testAddColumn(): void {
 
         // Set a DataTables mapping mock.
-        $map = $this->getMockBuilder(DataTablesMappingInterface::class)->getMock();
+        $mapping = $this->getMockBuilder(DataTablesMappingInterface::class)->getMock();
 
         // Set a DataTables column mock.
-        $col = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
-        $col->expects($this->any())->method("getData")->willReturn("col");
-        $col->expects($this->any())->method("getMapping")->willReturn($map);
+        $column = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
+        $column->expects($this->any())->method("getData")->willReturn("data");
+        $column->expects($this->any())->method("getMapping")->willReturn($mapping);
 
         $obj = new DataTablesWrapper();
 
-        $this->assertSame($obj, $obj->addColumn($this->dtColumn));
+        $this->assertSame($obj, $obj->addColumn($column));
         $this->assertCount(1, $obj->getColumns());
-        $this->assertSame($this->dtColumn, $obj->getColumns()["data"]);
+        $this->assertSame($column, $obj->getColumns()["data"]);
 
-        $this->assertSame($obj, $obj->addColumn($col));
-        $this->assertCount(2, $obj->getColumns());
-        $this->assertSame($col, $obj->getColumns()["col"]);
+        $this->assertSame($obj, $obj->addColumn($column));
+        $this->assertCount(1, $obj->getColumns());
+        $this->assertSame($column, $obj->getColumns()["data"]);
     }
 
     /**
@@ -59,12 +61,15 @@ class DataTablesWrapperTest extends AbstractTestCase {
      */
     public function testGetColumn(): void {
 
+        // Set a DataTables column mock.
+        $column = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
+        $column->expects($this->any())->method("getData")->willReturn("data");
+
         $obj = new DataTablesWrapper();
+        $obj->addColumn($column);
 
-        $this->assertNull($obj->getColumn("data"));
-
-        $this->assertSame($obj, $obj->addColumn($this->dtColumn));
-        $this->assertSame($this->dtColumn, $obj->getColumn("data"));
+        $this->assertSame($column, $obj->getColumn("data"));
+        $this->assertNull($obj->getColumn("col"));
     }
 
     /**
@@ -74,21 +79,20 @@ class DataTablesWrapperTest extends AbstractTestCase {
      */
     public function testRemoveColumn(): void {
 
-        // Set a DataTables column mock.
-        $col = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
-        $col->expects($this->any())->method("getData")->willReturn("col");
-        $col->expects($this->any())->method("getMapping")->willReturn($this->dtMapping);
+        // Set the DataTables column mocks.
+        $one = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
+        $one->expects($this->any())->method("getData")->willReturn("one");
+
+        $two = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
+        $two->expects($this->any())->method("getData")->willReturn("two");
 
         $obj = new DataTablesWrapper();
+        $obj->addColumn($one);
 
-        $this->assertSame($obj, $obj->addColumn($this->dtColumn));
-        $this->assertSame($obj, $obj->addColumn($col));
-        $this->assertCount(2, $obj->getColumns());
-
-        $this->assertSame($obj, $obj->removeColumn($col));
+        $this->assertSame($obj, $obj->removeColumn($two));
         $this->assertCount(1, $obj->getColumns());
 
-        $this->assertSame($obj, $obj->removeColumn($this->dtColumn));
+        $this->assertSame($obj, $obj->removeColumn($one));
         $this->assertCount(0, $obj->getColumns());
     }
 
@@ -116,12 +120,12 @@ class DataTablesWrapperTest extends AbstractTestCase {
     public function testSetOptions(): void {
 
         // Set a DataTables options mock.
-        $arg = $this->getMockBuilder(DataTablesOptionsInterface::class)->getMock();
+        $options = $this->getMockBuilder(DataTablesOptionsInterface::class)->getMock();
 
         $obj = new DataTablesWrapper();
 
-        $obj->setOptions($arg);
-        $this->assertSame($arg, $obj->getOptions());
+        $obj->setOptions($options);
+        $this->assertSame($options, $obj->getOptions());
     }
 
     /**
@@ -148,13 +152,12 @@ class DataTablesWrapperTest extends AbstractTestCase {
     public function testSetProvider(): void {
 
         // Set a DataTables provider mock.
-        $arg = $this->getMockBuilder(DataTablesProviderInterface::class)->getMock();
-        $arg->expects($this->any())->method("getName")->willReturn("name");
+        $provider = $this->getMockBuilder(DataTablesProviderInterface::class)->getMock();
 
         $obj = new DataTablesWrapper();
 
-        $obj->setProvider($arg);
-        $this->assertSame($arg, $obj->getProvider());
+        $obj->setProvider($provider);
+        $this->assertSame($provider, $obj->getProvider());
     }
 
     /**
@@ -164,10 +167,13 @@ class DataTablesWrapperTest extends AbstractTestCase {
      */
     public function testSetRequest(): void {
 
+        // Set a DataTables request mock.
+        $request = $this->getMockBuilder(DataTablesRequestInterface::class)->getMock();
+
         $obj = new DataTablesWrapper();
 
-        $obj->setRequest($this->dtRequest);
-        $this->assertSame($this->dtRequest, $obj->getRequest());
+        $obj->setRequest($request);
+        $this->assertSame($request, $obj->getRequest());
     }
 
     /**
@@ -177,10 +183,13 @@ class DataTablesWrapperTest extends AbstractTestCase {
      */
     public function testSetResponse(): void {
 
+        // Set a DataTables response mock.
+        $response = $this->getMockBuilder(DataTablesResponseInterface::class)->getMock();
+
         $obj = new DataTablesWrapper();
 
-        $obj->setResponse($this->dtResponse);
-        $this->assertSame($this->dtResponse, $obj->getResponse());
+        $obj->setResponse($response);
+        $this->assertSame($response, $obj->getResponse());
     }
 
     /**

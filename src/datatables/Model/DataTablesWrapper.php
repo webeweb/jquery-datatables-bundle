@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Model;
 
-use WBW\Bundle\CoreBundle\Security\Core\User\UserTrait;
+use WBW\Bundle\CommonBundle\Security\Core\User\UserTrait;
 use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
 use WBW\Bundle\DataTablesBundle\Api\DataTablesMappingInterface;
 use WBW\Bundle\DataTablesBundle\Api\DataTablesOptionsInterface;
