@@ -13,8 +13,8 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Helper;
 
-use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesMappingInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesMappingInterface;
 
 /**
  * DataTables mapping helper.
