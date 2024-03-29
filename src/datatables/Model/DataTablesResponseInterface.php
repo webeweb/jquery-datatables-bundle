@@ -14,7 +14,6 @@ declare(strict_types = 1);
 namespace WBW\Bundle\DataTablesBundle\Model;
 
 use JsonSerializable;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesWrapperInterface;
 
 /**
  * DataTables response interface.

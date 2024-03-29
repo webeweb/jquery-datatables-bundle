@@ -14,7 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\DataTablesBundle\Repository;
 
 use Doctrine\ORM\QueryBuilder;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesWrapperInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperInterface;
 
 /**
  * DataTables repository interface.

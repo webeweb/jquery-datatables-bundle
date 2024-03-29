@@ -11,14 +11,9 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Api;
+namespace WBW\Bundle\DataTablesBundle\Model;
 
 use Symfony\Component\Security\Core\User\UserInterface;
-use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
-use WBW\Bundle\DataTablesBundle\Model\DataTablesMappingInterface;
-use WBW\Bundle\DataTablesBundle\Model\DataTablesOptionsInterface;
-use WBW\Bundle\DataTablesBundle\Model\DataTablesRequestInterface;
-use WBW\Bundle\DataTablesBundle\Model\DataTablesResponseInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 
 /**
