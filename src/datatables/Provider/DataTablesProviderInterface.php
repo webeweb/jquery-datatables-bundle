@@ -34,18 +34,18 @@ interface DataTablesProviderInterface extends ProviderInterface {
     public const DATATABLES_TAG_NAME = "wbw.datatables.provider";
 
     /**
-     * Get the CSV exporter.
-     *
-     * @return DataTablesCsvExporterInterface|null Returns the CSV exporter.
-     */
-    public function getCsvExporter(): ?DataTablesCsvExporterInterface;
-
-    /**
      * Get the columns.
      *
      * @return DataTablesColumnInterface[] Returns the columns.
      */
     public function getColumns(): array;
+
+    /**
+     * Get the CSV exporter.
+     *
+     * @return DataTablesCsvExporterInterface|null Returns the CSV exporter.
+     */
+    public function getCsvExporter(): ?DataTablesCsvExporterInterface;
 
     /**
      * Get the editor.
