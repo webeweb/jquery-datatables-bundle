@@ -24,41 +24,35 @@
         "ext-json": "*",
         "doctrine/orm": "^2.5.13",
         "matomo/device-detector": "^3.0|^4.0|^5.0",
-        "psr/log": "^1.0|^2.0|^3.0",
-        "symfony/asset": "^4.4|^5.0|^6.0",
-        "symfony/console": "^4.4|^5.0|^6.0",
-        "symfony/framework-bundle": "^4.4|^5.0|^6.0",
-        "symfony/mailer": "^4.4|^5.0|^6.0",
+        "symfony/dependency-injection": "^4.0|^5.0|^6.0",
+        "symfony/event-dispatcher": "^4.0|^5.0|^6.0",
+        "symfony/http-foundation": "^4.0|^5.0|^6.0",
+        "symfony/http-kernel": "^4.0|^5.0|^6.0",
+        "symfony/mailer": "^4.0|^5.0|^6.0",
+        "symfony/property-access": "^4.0|^5.0|^6.0",
+        "symfony/routing": "^4.0|^5.0|^6.0",
+        "symfony/security-core": "^4.4|^5.0|^6.0",
         "symfony/serializer": "^4.4|^5.0|^6.0",
-        "symfony/translation": "^4.4|^5.0|^6.0",
+        "symfony/translation": "^4.0|^5.0|^6.0",
         "twig/twig": "^2.10|^3.0",
-        "webeweb/bootstrap-bundle": "^4.11",
-        "webeweb/core-bundle": "^3.6",
         "webeweb/core-library": "^8.70"
     },
     "require-dev": {
-        "doctrine/doctrine-bundle": "^1.8.1|^2.0",
-        "masterminds/html5": "^2.6",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan": "^1.4",
         "phpstan/phpstan-phpunit": "^1.0",
-        "phpunit/phpunit": "^7.0|^9.0",
-        "symfony/browser-kit": "^4.4|^5.0|^6.0",
-        "symfony/monolog-bundle": "^3.0",
-        "symfony/security-bundle": "^4.4|^5.0|^6.0",
-        "symfony/twig-bundle": "^4.4|^5.0|^6.0"
+        "phpunit/phpunit": "^7.0|^9.0"
     },
     "autoload": {
         "psr-4": {
-            "WBW\\Bundle\\CommonBundle\\": "src/common"
-        },
-        "exclude-from-classmap": [
-            "/Tests/"
-        ]
+            "WBW\\Bundle\\CommonBundle\\": "src/common",
+            "WBW\\Bundle\\DataTablesBundle\\": "src/datatables"
+        }
     },
     "autoload-dev": {
         "psr-4": {
-            "WBW\\Bundle\\CommonBundle\\Tests\\": "tests/common"
+            "WBW\\Bundle\\CommonBundle\\Tests\\": "tests/common",
+            "WBW\\Bundle\\DataTablesBundle\\Tests\\": "tests/datatables"
         }
     },
     "config": {
