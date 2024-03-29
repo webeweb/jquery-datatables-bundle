@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\CommonBundle\Tests\DependencyInjection\Container;
 
+use Psr\Container\ContainerInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 use WBW\Bundle\CommonBundle\Tests\Fixtures\DependencyInjection\Container\TestContainerTrait;
 
@@ -29,9 +30,12 @@ class ContainerTraitTest extends AbstractTestCase {
      */
     public function testSetContainer(): void {
 
+        // Set a Container mock.
+        $container = $this->getMockBuilder(ContainerInterface::class)->getMock();
+
         $obj = new TestContainerTrait();
 
-        $obj->setContainer($this->containerBuilder);
-        $this->assertSame($this->containerBuilder, $obj->getContainer());
+        $obj->setContainer($container);
+        $this->assertSame($container, $obj->getContainer());
     }
 }
