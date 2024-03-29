@@ -54,12 +54,12 @@ abstract class AbstractTwigExtension extends AbstractExtension {
     /**
      * Display an HTML element.
      *
-     * @param string $element The object.
+     * @param string $element The element.
      * @param string|null $content The content.
-     * @param array $attrs The attributes.
+     * @param array<string,mixed> $attributes The attributes.
      * @return string Returns the HTML element.
      */
-    public static function coreHtmlElement(string $element, ?string $content, array $attrs = []): string {
-        return StringHelper::domNode($element, $content, $attrs);
+    public static function coreHtmlElement(string $element, ?string $content, array $attributes = []): string {
+        return StringHelper::domNode($element, $content, $attributes);
     }
 }
