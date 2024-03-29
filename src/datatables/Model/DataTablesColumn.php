@@ -29,7 +29,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * Cell type.
      *
-     * @var string
+     * @var string|null
      */
     private $cellType;
 
