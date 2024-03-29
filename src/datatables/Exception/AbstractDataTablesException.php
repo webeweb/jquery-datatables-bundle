@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Exception;
 
-use Exception;
+use WBW\Bundle\CommonBundle\Exception\AbstractException as BaseException;
 
 /**
  * Abstract DataTables exception.
@@ -22,7 +22,7 @@ use Exception;
  * @package WBW\Bundle\DataTablesBundle\Exception
  * @abstract
  */
-abstract class AbstractDataTablesException extends Exception {
+abstract class AbstractDataTablesException extends BaseException {
 
     /**
      * Constructor.
