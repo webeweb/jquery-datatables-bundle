@@ -9,16 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Tests\Doctrine\ORM;
+namespace WBW\Bundle\CommonBundle\Tests\Doctrine\ORM;
 
-use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Doctrine\ORM\TestEntityManagerTrait;
+use Doctrine\ORM\EntityManagerInterface;
+use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
+use WBW\Bundle\CommonBundle\Tests\Fixtures\Doctrine\ORM\TestEntityManagerTrait;
 
 /**
  * Entity manager trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Tests\Doctrine\ORM
+ * @package WBW\Bundle\CommonBundle\Tests\Doctrine\ORM
  */
 class EntityManagerTraitTest extends AbstractTestCase {
 
@@ -29,9 +30,12 @@ class EntityManagerTraitTest extends AbstractTestCase {
      */
     public function testSetEntityManager(): void {
 
+        // Set an Entity manager mock.
+        $entityManager = $this->getMockBuilder(EntityManagerInterface::class)->getMock();
+
         $obj = new TestEntityManagerTrait();
 
-        $obj->setEntityManager($this->entityManager);
-        $this->assertSame($this->entityManager, $obj->getEntityManager());
+        $obj->setEntityManager($entityManager);
+        $this->assertSame($entityManager, $obj->getEntityManager());
     }
 }

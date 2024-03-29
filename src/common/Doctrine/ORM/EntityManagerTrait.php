@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Doctrine\ORM;
+namespace WBW\Bundle\CommonBundle\Doctrine\ORM;
 
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -17,7 +17,7 @@ use Doctrine\ORM\EntityManagerInterface;
  * Entity manager trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Doctrine\ORM
+ * @package WBW\Bundle\CommonBundle\Doctrine\ORM
  */
 trait EntityManagerTrait {
 
