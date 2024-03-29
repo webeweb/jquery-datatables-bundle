@@ -14,6 +14,7 @@ namespace WBW\Bundle\DataTablesBundle\Tests\Model;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
 use WBW\Bundle\DataTablesBundle\Api\DataTablesOrderInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesSearchInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesRequest;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 
@@ -32,12 +33,16 @@ class DataTablesRequestTest extends AbstractTestCase {
      */
     public function testGetColumn(): void {
 
+        // Set a DataTables column mock.
+        $column = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
+        $column->expects($this->any())->method("getData")->willReturn("data");
+
         $obj = new DataTablesRequest();
 
         $this->assertNull($obj->getColumn("data"));
 
-        $obj->setColumns([$this->dtColumn]);
-        $this->assertSame($this->dtColumn, $obj->getColumn("data"));
+        $obj->setColumns([$column]);
+        $this->assertSame($column, $obj->getColumn("data"));
     }
 
     /**
@@ -48,12 +53,12 @@ class DataTablesRequestTest extends AbstractTestCase {
     public function testSetColumns(): void {
 
         // Set a DataTables column mock.
-        $dtColumn = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
+        $column = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
 
         $obj = new DataTablesRequest();
 
-        $obj->setColumns([$dtColumn]);
-        $this->assertEquals([$dtColumn], $obj->getColumns());
+        $obj->setColumns([$column]);
+        $this->assertEquals([$column], $obj->getColumns());
     }
 
     /**
@@ -90,12 +95,12 @@ class DataTablesRequestTest extends AbstractTestCase {
     public function testSetOrder(): void {
 
         // Set a DataTables column mock.
-        $dtOrder = $this->getMockBuilder(DataTablesOrderInterface::class)->getMock();
+        $order = $this->getMockBuilder(DataTablesOrderInterface::class)->getMock();
 
         $obj = new DataTablesRequest();
 
-        $obj->setOrder([$dtOrder]);
-        $this->assertEquals([$dtOrder], $obj->getOrder());
+        $obj->setOrder([$order]);
+        $this->assertEquals([$order], $obj->getOrder());
     }
 
     /**
@@ -105,10 +110,13 @@ class DataTablesRequestTest extends AbstractTestCase {
      */
     public function testSetSearch(): void {
 
+        // Set a DataTables search mock.
+        $search = $this->getMockBuilder(DataTablesSearchInterface::class)->getMock();
+
         $obj = new DataTablesRequest();
 
-        $obj->setSearch($this->dtSearch);
-        $this->assertSame($this->dtSearch, $obj->getSearch());
+        $obj->setSearch($search);
+        $this->assertSame($search, $obj->getSearch());
     }
 
     /**
