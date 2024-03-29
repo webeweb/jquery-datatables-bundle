@@ -57,7 +57,7 @@ class SyntaxHighlighterDefaults {
     /**
      * Highlight.
      *
-     * @var array
+     * @var int[]|null
      */
     private $highlight;
 
@@ -153,7 +153,7 @@ class SyntaxHighlighterDefaults {
     /**
      * Get the highlight.
      *
-     * @return array Returns the highlight.
+     * @return int[] Returns the highlight.
      */
     public function getHighlight(): array {
         return $this->highlight;
@@ -253,7 +253,7 @@ class SyntaxHighlighterDefaults {
     /**
      * Set the highlight.
      *
-     * @param array $highlight The highlight.
+     * @param int[] $highlight The highlight.
      * @return SyntaxHighlighterDefaults Returns this defaults.
      */
     public function setHighlight(array $highlight): SyntaxHighlighterDefaults {
@@ -300,7 +300,7 @@ class SyntaxHighlighterDefaults {
      * @param bool|null $toolbar The toolbar.
      * @return SyntaxHighlighterDefaults Returns this defaults.
      */
-    public function setToolbar(bool $toolbar): SyntaxHighlighterDefaults {
+    public function setToolbar(?bool $toolbar): SyntaxHighlighterDefaults {
         $this->toolbar = $toolbar;
         return $this;
     }
