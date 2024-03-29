@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Event;
 
-use WBW\Bundle\CoreBundle\Event\AbstractEvent;
+use WBW\Bundle\CommonBundle\Event\AbstractEvent;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderTrait;
 use WBW\Bundle\DataTablesBundle\Traits\Arrays\ArrayEntitiesTrait;
