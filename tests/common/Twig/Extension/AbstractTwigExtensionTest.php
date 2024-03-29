@@ -27,21 +27,6 @@ use WBW\Library\Symfony\Assets\NavigationNodeInterface;
 class AbstractTwigExtensionTest extends AbstractTestCase {
 
     /**
-     * Test h()
-     *
-     * @return void
-     */
-    public function testH(): void {
-
-        $arg = [
-            "type" => "text/javascript",
-        ];
-        $exp = file_get_contents(__DIR__ . "/../../Fixtures/Twig/Extension/AbstractTwigExtensionTest.testCoreHtmlElement.html.txt");
-
-        $this->assertEquals($exp, AbstractTwigExtension::h("script", "\n    $(document).ready(function() {});\n", $arg) . "\n");
-    }
-
-    /**
      * Test getFilters()
      *
      * @return void
@@ -55,6 +40,21 @@ class AbstractTwigExtensionTest extends AbstractTestCase {
 
         $res = $obj->getFilters();
         $this->assertCount(0, $res);
+    }
+
+    /**
+     * Test h()
+     *
+     * @return void
+     */
+    public function testH(): void {
+
+        $arg = [
+            "type" => "text/javascript",
+        ];
+        $exp = file_get_contents(__DIR__ . "/../../Fixtures/Twig/Extension/AbstractTwigExtensionTest.testCoreHtmlElement.html.txt");
+
+        $this->assertEquals($exp, AbstractTwigExtension::h("script", "\n    $(document).ready(function() {});\n", $arg) . "\n");
     }
 
     /**

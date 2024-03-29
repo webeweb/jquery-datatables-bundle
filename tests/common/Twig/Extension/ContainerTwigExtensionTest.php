@@ -11,7 +11,6 @@
 
 namespace WBW\Bundle\CommonBundle\Tests\Twig\Extension;
 
-use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Twig\Environment;
 use Twig\Extension\ExtensionInterface;

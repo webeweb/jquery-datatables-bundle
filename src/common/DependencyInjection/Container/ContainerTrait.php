@@ -11,8 +11,6 @@
 
 namespace WBW\Bundle\CommonBundle\DependencyInjection\Container;
 
-
-
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
