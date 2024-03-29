@@ -16,6 +16,7 @@ namespace WBW\Bundle\DataTablesBundle\Api;
 use Symfony\Component\Security\Core\User\UserInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesMappingInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesOptionsInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 
 /**

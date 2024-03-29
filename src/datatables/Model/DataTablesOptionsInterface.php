@@ -11,7 +11,7 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Api;
+namespace WBW\Bundle\DataTablesBundle\Model;
 
 use WBW\Library\Types\Exception\StringArgumentException;
 

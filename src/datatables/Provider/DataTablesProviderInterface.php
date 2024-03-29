@@ -14,8 +14,8 @@ declare(strict_types = 1);
 namespace WBW\Bundle\DataTablesBundle\Provider;
 
 use Throwable;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesOptionsInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesOptionsInterface;
 use WBW\Library\Symfony\Provider\ProviderInterface;
 
 /**
