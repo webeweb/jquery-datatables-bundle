@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\DataTablesBundle\Tests\Normalizer;
 
-use WBW\Bundle\DataTablesBundle\Model\DataTablesColumn;
-use WBW\Bundle\DataTablesBundle\Model\DataTablesResponse;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
 use WBW\Bundle\DataTablesBundle\Normalizer\DataTablesNormalizer;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 
@@ -32,21 +32,22 @@ class DataTablesNormalizerTest extends AbstractTestCase {
     public function testNormalizeColumn(): void {
 
         // Set a DataTables column mock.
-        $arg = new DataTablesColumn();
+        $arg = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
 
-        $arg->setClassname("classname");
-        $arg->setContentPadding("contentPadding");
-        $arg->setData("data");
-        $arg->setDefaultContent("defaultContent");
-        $arg->setName("name");
-        $arg->setOrderData([1]);
-        $arg->setOrderDataType("orderDataType");
-        $arg->setOrderSequence("asc");
-        $arg->setOrderable(false);
-        $arg->setSearchable(false);
-        $arg->setType("string");
-        $arg->setVisible(false);
-        $arg->setWidth("width");
+        $arg->expects($this->any())->method("getCellType")->willReturn("td");
+        $arg->expects($this->any())->method("getClassname")->willReturn("classname");
+        $arg->expects($this->any())->method("getContentPadding")->willReturn("contentPadding");
+        $arg->expects($this->any())->method("getData")->willReturn("data");
+        $arg->expects($this->any())->method("getDefaultContent")->willReturn("defaultContent");
+        $arg->expects($this->any())->method("getName")->willReturn("name");
+        $arg->expects($this->any())->method("getOrderData")->willReturn([1]);
+        $arg->expects($this->any())->method("getOrderDataType")->willReturn("orderDataType");
+        $arg->expects($this->any())->method("getOrderSequence")->willReturn("asc");
+        $arg->expects($this->any())->method("getOrderable")->willReturn(false);
+        $arg->expects($this->any())->method("getSearchable")->willReturn(false);
+        $arg->expects($this->any())->method("getType")->willReturn("string");
+        $arg->expects($this->any())->method("getVisible")->willReturn(false);
+        $arg->expects($this->any())->method("getWidth")->willReturn("width");
 
         $res = [
             "cellType"       => "td",
@@ -75,7 +76,12 @@ class DataTablesNormalizerTest extends AbstractTestCase {
     public function testNormalizeColumnWithoutArguments(): void {
 
         // Set a DataTables column mock.
-        $arg = new DataTablesColumn();
+        $arg = $this->getMockBuilder(DataTablesColumnInterface::class)->getMock();
+
+        $arg->expects($this->any())->method("getCellType")->willReturn("td");
+        $arg->expects($this->any())->method("getOrderable")->willReturn(true);
+        $arg->expects($this->any())->method("getSearchable")->willReturn(true);
+        $arg->expects($this->any())->method("getVisible")->willReturn(true);
 
         $res = ["cellType" => "td"];
         $this->assertEquals($res, DataTablesNormalizer::normalizeColumn($arg));
@@ -89,11 +95,11 @@ class DataTablesNormalizerTest extends AbstractTestCase {
     public function testNormalizeResponse(): void {
 
         // Set a DataTables response mock.
-        $arg = new DataTablesResponse();
+        $arg = $this->getMockBuilder(DataTablesResponseInterface::class)->getMock();
 
-        $arg->setError("error");
-        $arg->setRecordsFiltered(1);
-        $arg->setRecordsTotal(2);
+        $arg->expects($this->any())->method("getError")->willReturn("error");
+        $arg->expects($this->any())->method("getRecordsFiltered")->willReturn(1);
+        $arg->expects($this->any())->method("getRecordsTotal")->willReturn(2);
 
         $res = [
             "data"            => [],
