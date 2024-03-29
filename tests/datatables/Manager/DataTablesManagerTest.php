@@ -31,7 +31,7 @@ class DataTablesManagerTest extends AbstractTestCase {
     /**
      * DataTables provider.
      *
-     * @var DataTablesProviderInterface
+     * @var DataTablesProviderInterface|null
      */
     private $dataTablesProvider;
 
