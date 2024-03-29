@@ -29,8 +29,8 @@ class UnregisteredDataTablesProviderExceptionTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $obj = new UnregisteredDataTablesProviderException("exception");
+        $obj = new UnregisteredDataTablesProviderException("test");
 
-        $this->assertEquals('None DataTables provider registered with name "exception"', $obj->getMessage());
+        $this->assertEquals('None DataTables provider registered with name "test"', $obj->getMessage());
     }
 }
