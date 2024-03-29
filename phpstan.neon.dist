@@ -7,6 +7,7 @@ parameters:
         - tests/fixtures/app/var
     ignoreErrors:
         -
-            message: '#Comparison operation "[<=>]+" between [0-9]+ and [0-9]+ is always false#'
+            message: '#Comparison operation "[<=>]+" between [0-9]+ and [0-9]+ is always "true||false"#'
             paths:
-                - Tests/Fixtures/app/TestKernel.php
+                - src/common/Service/SessionService.php
+                - tests/common/Service/SessionServiceTest.php
