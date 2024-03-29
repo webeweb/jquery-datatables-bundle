@@ -13,8 +13,8 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Normalizer;
 
-use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesResponseInterface;
 use WBW\Library\Types\Helper\ArrayHelper;
 
 /**

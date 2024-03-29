@@ -11,11 +11,11 @@
 
 namespace WBW\Bundle\DataTablesBundle\Tests\Model;
 
-use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesEnumerator;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesOrderInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesRequestInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesResponseInterface;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 
 /**

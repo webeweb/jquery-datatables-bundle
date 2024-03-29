@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\DataTablesBundle\Tests\Normalizer;
 
-use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesResponseInterface;
 use WBW\Bundle\DataTablesBundle\Normalizer\DataTablesNormalizer;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 

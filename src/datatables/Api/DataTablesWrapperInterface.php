@@ -18,6 +18,7 @@ use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesMappingInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesOptionsInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesRequestInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesResponseInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 
 /**

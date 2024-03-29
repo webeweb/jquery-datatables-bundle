@@ -11,9 +11,10 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Api;
+namespace WBW\Bundle\DataTablesBundle\Model;
 
 use JsonSerializable;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesWrapperInterface;
 
 /**
  * DataTables response interface.
