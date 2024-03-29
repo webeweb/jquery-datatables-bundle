@@ -14,7 +14,6 @@ declare(strict_types = 1);
 namespace WBW\Bundle\DataTablesBundle\Model;
 
 use InvalidArgumentException;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesMappingInterface;
 use WBW\Bundle\DataTablesBundle\Api\DataTablesSearchInterface;
 
 /**

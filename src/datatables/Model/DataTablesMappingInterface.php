@@ -11,9 +11,7 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Api;
-
-use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
+namespace WBW\Bundle\DataTablesBundle\Model;
 
 /**
  * DataTables mapping interface.
