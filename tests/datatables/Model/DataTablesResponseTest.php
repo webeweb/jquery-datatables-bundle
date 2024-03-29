@@ -11,6 +11,8 @@
 
 namespace WBW\Bundle\DataTablesBundle\Tests\Model;
 
+use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesWrapperInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesResponse;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 
@@ -29,8 +31,11 @@ class DataTablesResponseTest extends AbstractTestCase {
      */
     public function testAddRow(): void {
 
+        // Set a DataTables wrapper mock.
+        $wrapper = $this->getMockBuilder(DataTablesWrapperInterface::class)->getMock();
+
         $obj = new DataTablesResponse();
-        $obj->setWrapper($this->dtWrapper);
+        $obj->setWrapper($wrapper);
 
         $this->assertCount(0, $obj->getData());
         $this->assertSame($obj, $obj->addRow());
@@ -96,8 +101,31 @@ class DataTablesResponseTest extends AbstractTestCase {
      */
     public function testSetRow(): void {
 
+        // Set the DataTables column mocks.
+        $columns = [
+            $this->getMockBuilder(DataTablesColumnInterface::class)->getMock(),
+            $this->getMockBuilder(DataTablesColumnInterface::class)->getMock(),
+            $this->getMockBuilder(DataTablesColumnInterface::class)->getMock(),
+            $this->getMockBuilder(DataTablesColumnInterface::class)->getMock(),
+            $this->getMockBuilder(DataTablesColumnInterface::class)->getMock(),
+            $this->getMockBuilder(DataTablesColumnInterface::class)->getMock(),
+            $this->getMockBuilder(DataTablesColumnInterface::class)->getMock(),
+        ];
+
+        $columns[0]->expects($this->any())->method("getData")->willReturn("name");
+        $columns[1]->expects($this->any())->method("getData")->willReturn("position");
+        $columns[2]->expects($this->any())->method("getData")->willReturn("office");
+        $columns[3]->expects($this->any())->method("getData")->willReturn("age");
+        $columns[4]->expects($this->any())->method("getData")->willReturn("startDate");
+        $columns[5]->expects($this->any())->method("getData")->willReturn("salary");
+        $columns[6]->expects($this->any())->method("getData")->willReturn("actions");
+
+        // Set a DataTables wrapper mock.
+        $wrapper = $this->getMockBuilder(DataTablesWrapperInterface::class)->getMock();
+        $wrapper->expects($this->any())->method("getColumns")->willReturn($columns);
+
         $obj = new DataTablesResponse();
-        $obj->setWrapper($this->dtWrapper)->addRow();
+        $obj->setWrapper($wrapper)->addRow();
 
         $obj->setRow("name", "GitHub");
         $res = ["name" => "GitHub", "position" => null, "office" => null, "age" => null, "startDate" => null, "salary" => null, "actions" => null];
