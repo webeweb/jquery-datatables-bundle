@@ -36,9 +36,9 @@ interface DataTablesProviderInterface extends ProviderInterface {
     /**
      * Get the CSV exporter.
      *
-     * @return DataTablesCSVExporterInterface|null Returns the CSV exporter.
+     * @return DataTablesCsvExporterInterface|null Returns the CSV exporter.
      */
-    public function getCSVExporter(): ?DataTablesCSVExporterInterface;
+    public function getCsvExporter(): ?DataTablesCsvExporterInterface;
 
     /**
      * Get the columns.
