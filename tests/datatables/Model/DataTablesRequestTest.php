@@ -12,9 +12,9 @@
 namespace WBW\Bundle\DataTablesBundle\Tests\Model;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesOrderInterface;
 use WBW\Bundle\DataTablesBundle\Api\DataTablesSearchInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesOrderInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesRequest;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 

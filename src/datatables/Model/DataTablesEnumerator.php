@@ -13,7 +13,6 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Model;
 
-use WBW\Bundle\DataTablesBundle\Api\DataTablesOrderInterface;
 use WBW\Bundle\DataTablesBundle\Api\DataTablesRequestInterface;
 use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
 

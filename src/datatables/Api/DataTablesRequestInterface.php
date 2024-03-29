@@ -15,6 +15,7 @@ namespace WBW\Bundle\DataTablesBundle\Api;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesOrderInterface;
 
 /**
  * DataTables request interface.
