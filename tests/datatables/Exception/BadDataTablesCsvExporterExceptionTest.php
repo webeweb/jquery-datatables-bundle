@@ -12,8 +12,8 @@
 namespace WBW\Bundle\DataTablesBundle\Tests\Exception;
 
 use Exception;
-use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
-use WBW\Bundle\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
+use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesCsvExporterException;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesCsvExporterInterface;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
@@ -22,7 +22,7 @@ use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Tests\Exception
  */
-class BadDataTablesCSVExporterExceptionTest extends AbstractTestCase {
+class BadDataTablesCsvExporterExceptionTest extends AbstractTestCase {
 
     /**
      * Test __construct()
@@ -31,9 +31,9 @@ class BadDataTablesCSVExporterExceptionTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $obj = new BadDataTablesCSVExporterException(new Exception());
+        $obj = new BadDataTablesCsvExporterException(new Exception());
 
-        $this->assertEquals('The DataTables CSV exporter "Exception" must implement ' . DataTablesCSVExporterInterface::class, $obj->getMessage());
+        $this->assertEquals('The DataTables CSV exporter "Exception" must implement ' . DataTablesCsvExporterInterface::class, $obj->getMessage());
     }
 
     /**
@@ -43,7 +43,7 @@ class BadDataTablesCSVExporterExceptionTest extends AbstractTestCase {
      */
     public function test__constructWithNull(): void {
 
-        $obj = new BadDataTablesCSVExporterException(null);
+        $obj = new BadDataTablesCsvExporterException(null);
 
         $this->assertEquals("The DataTables CSV exporter is null", $obj->getMessage());
     }

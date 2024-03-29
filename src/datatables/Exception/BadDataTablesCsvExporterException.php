@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Exception;
 
-use WBW\Bundle\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesCsvExporterInterface;
 
 /**
  * Bad DataTables CSV exporter exception.
@@ -21,7 +21,7 @@ use WBW\Bundle\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Exception
  */
-class BadDataTablesCSVExporterException extends AbstractDataTablesException {
+class BadDataTablesCsvExporterException extends AbstractDataTablesException {
 
     /**
      * Constructor.
@@ -33,7 +33,7 @@ class BadDataTablesCSVExporterException extends AbstractDataTablesException {
         $message = "The DataTables CSV exporter is null";
 
         if (null !== $object) {
-            $format  = 'The DataTables CSV exporter "%s" must implement ' . DataTablesCSVExporterInterface::class;
+            $format  = 'The DataTables CSV exporter "%s" must implement ' . DataTablesCsvExporterInterface::class;
             $message = sprintf($format, get_class($object));
         }
 
