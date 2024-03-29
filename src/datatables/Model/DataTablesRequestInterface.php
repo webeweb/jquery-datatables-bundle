@@ -11,11 +11,11 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Api;
+namespace WBW\Bundle\DataTablesBundle\Model;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
-use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
-use WBW\Bundle\DataTablesBundle\Model\DataTablesOrderInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesSearchInterface;
+use WBW\Bundle\DataTablesBundle\Api\DataTablesWrapperInterface;
 
 /**
  * DataTables request interface.
