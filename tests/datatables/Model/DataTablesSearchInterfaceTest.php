@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Tests\Api;
+namespace WBW\Bundle\DataTablesBundle\Tests\Model;
 
-use WBW\Bundle\DataTablesBundle\Api\DataTablesSearchInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesSearchInterface;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 
 /**
