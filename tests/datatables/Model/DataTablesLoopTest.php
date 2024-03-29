@@ -30,6 +30,9 @@ class DataTablesLoopTest extends AbstractTestCase {
      */
     private $entities;
 
+    /**
+     * {@inheritDoc}
+     */
     protected function setUp(): void {
         parent::setUp();
 
