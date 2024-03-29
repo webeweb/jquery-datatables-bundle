@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Symfony\EventDispatcher;
+namespace WBW\Bundle\CommonBundle\Tests\Fixtures\EventDispatcher;
 
-use WBW\Bundle\DataTablesBundle\Symfony\EventDispatcher\EventDispatcherTrait;
+use WBW\Bundle\CommonBundle\EventDispatcher\EventDispatcherTrait;
 
 /**
  * Test event dispatcher trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\Symfony\EventDispatcher
+ * @package WBW\Bundle\CommonBundle\Tests\Fixtures\EventDispatcher
  */
 class TestEventDispatcherTrait {
 
