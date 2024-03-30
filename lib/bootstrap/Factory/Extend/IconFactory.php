@@ -81,7 +81,7 @@ class IconFactory {
         $icon->setName(ArrayHelper::get($args, "name", "home"));
         $icon->setStyle(ArrayHelper::get($args, "style"));
 
-        $icon->setBorder(ArrayHelper::get($args, "border", false));
+        $icon->setBorder(ArrayHelper::get($args, "border"));
         $icon->setFixedWidth(ArrayHelper::get($args, "fixedWidth", false));
         $icon->setFlip(ArrayHelper::get($args, "flip"));
         $icon->setPull(ArrayHelper::get($args, "pull"));
