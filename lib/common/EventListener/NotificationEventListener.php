@@ -11,6 +11,8 @@
 
 namespace WBW\Bundle\CommonBundle\EventListener;
 
+use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpFoundation\Session\SessionBagInterface;
 use Throwable;
 use WBW\Bundle\CommonBundle\Event\NotificationEvent;
 use WBW\Bundle\CommonBundle\Service\SessionServiceInterface;
@@ -50,7 +52,11 @@ class NotificationEventListener {
      * @throws Throwable Throws an exception if an error occurs.
      */
     public function onNotify(NotificationEvent $event): NotificationEvent {
-        $this->getSessionService()->getSession()->getFlashBag()->add($event->getNotification()->getType(), $event->getNotification()->getContent());
+
+        /** @var Session $session */
+        $session = $this->getSessionService()->getSession();
+        $session->getFlashBag()->add($event->getNotification()->getType(), $event->getNotification()->getContent());
+
         return $event;
     }
 }
