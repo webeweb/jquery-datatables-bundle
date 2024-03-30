@@ -37,7 +37,7 @@ class AlertTwigExtension extends AbstractAlertTwigExtension {
     /**
      * Display a Bootstrap alert "danger".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap alert "danger".
      */
     public function bootstrapAlertDangerFunction(array $args = []): string {
@@ -47,7 +47,7 @@ class AlertTwigExtension extends AbstractAlertTwigExtension {
     /**
      * Display a Bootstrap alert "dark".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap alert "dark".
      */
     public function bootstrapAlertDarkFunction(array $args = []): string {
@@ -57,7 +57,7 @@ class AlertTwigExtension extends AbstractAlertTwigExtension {
     /**
      * Display a Bootstrap alert "info".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap alert "info".
      */
     public function bootstrapAlertInfoFunction(array $args = []): string {
@@ -67,7 +67,7 @@ class AlertTwigExtension extends AbstractAlertTwigExtension {
     /**
      * Display a Bootstrap alert "light".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap alert "light".
      */
     public function bootstrapAlertLightFunction(array $args = []): string {
@@ -77,7 +77,7 @@ class AlertTwigExtension extends AbstractAlertTwigExtension {
     /**
      * Display a Bootstrap alert "link".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap alert "link".
      */
     public function bootstrapAlertLinkFunction(array $args = []): string {
@@ -94,7 +94,7 @@ class AlertTwigExtension extends AbstractAlertTwigExtension {
     /**
      * Display a Bootstrap alert "secondary".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap alert "secondary".
      */
     public function bootstrapAlertSecondaryFunction(array $args = []): string {
@@ -104,7 +104,7 @@ class AlertTwigExtension extends AbstractAlertTwigExtension {
     /**
      * Display a Bootstrap alert "success".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap alert "success".
      */
     public function bootstrapAlertSuccessFunction(array $args = []): string {
@@ -114,7 +114,7 @@ class AlertTwigExtension extends AbstractAlertTwigExtension {
     /**
      * Display a Bootstrap alert "warning".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap alert "warning".
      */
     public function bootstrapAlertWarningFunction(array $args = []): string {
