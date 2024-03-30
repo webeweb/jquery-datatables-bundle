@@ -19,19 +19,19 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Throwable;
 use WBW\Bundle\BootstrapBundle\Controller\AbstractController as BaseController;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesWrapperInterface;
 use WBW\Bundle\DataTablesBundle\Event\DataTablesEvent;
 use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesColumnException;
-use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
+use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesCsvExporterException;
 use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesEditorException;
 use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesRepositoryException;
 use WBW\Bundle\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\DataTablesBundle\Helper\DataTablesExportHelper;
 use WBW\Bundle\DataTablesBundle\Manager\DataTablesManagerTrait;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapper;
-use WBW\Bundle\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperInterface;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesCsvExporterInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesRouterInterface;
@@ -109,12 +109,12 @@ abstract class AbstractController extends BaseController {
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @param DataTablesRepositoryInterface $repository The repository.
-     * @param DataTablesCSVExporterInterface $dtExporter The exporter.
+     * @param DataTablesCsvExporterInterface $dtExporter The exporter.
      * @param bool $windows Windows ?
      * @return void
      * @throws Throwable Throws an exception if an error occurs.
      */
-    protected function exportDataTablesCallback(DataTablesWrapperInterface $dtWrapper, DataTablesRepositoryInterface $repository, DataTablesCSVExporterInterface $dtExporter, bool $windows): void {
+    protected function exportDataTablesCallback(DataTablesWrapperInterface $dtWrapper, DataTablesRepositoryInterface $repository, DataTablesCsvExporterInterface $dtExporter, bool $windows): void {
 
         $stream = fopen("php://output", "w+");
         fputcsv($stream, DataTablesExportHelper::convert($dtExporter->exportColumns(), $windows), ";");
@@ -156,11 +156,11 @@ abstract class AbstractController extends BaseController {
      * Get a CSV exporter.
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
-     * @return DataTablesCSVExporterInterface Returns the CSV exporter.
-     * @throws BadDataTablesCSVExporterException Throws a bad CSV exporter exception.
+     * @return DataTablesCsvExporterInterface Returns the CSV exporter.
+     * @throws BadDataTablesCsvExporterException Throws a bad CSV exporter exception.
      * @throws Throwable Throws an exception if an error occurs.
      */
-    protected function getDataTablesCSVExporter(DataTablesProviderInterface $dtProvider): DataTablesCSVExporterInterface {
+    protected function getDataTablesCSVExporter(DataTablesProviderInterface $dtProvider): DataTablesCsvExporterInterface {
 
         $context = [
             "_controller" => get_class($this),
@@ -170,8 +170,8 @@ abstract class AbstractController extends BaseController {
         $this->logInfo(sprintf('DataTables controller search for a CSV exporter with name "%s"', $dtProvider->getName()), $context);
 
         $dtExporter = $dtProvider->getCSVExporter();
-        if (false === ($dtExporter instanceof DataTablesCSVExporterInterface)) {
-            throw new BadDataTablesCSVExporterException($dtExporter);
+        if (false === ($dtExporter instanceof DataTablesCsvExporterInterface)) {
+            throw new BadDataTablesCsvExporterException($dtExporter);
         }
 
         $context["_exporter"] = get_class($dtExporter);
