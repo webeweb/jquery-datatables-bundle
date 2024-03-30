@@ -1224,7 +1224,7 @@ class GridTwigExtensionTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw.bootstrap.twig.extension.css.grid", GridTwigExtension::SERVICE_NAME);
+        $this->assertEquals("wbw.bootstrap.twig.extension.layout.grid", GridTwigExtension::SERVICE_NAME);
 
         $obj = new GridTwigExtension($this->twigEnvironment);
 
