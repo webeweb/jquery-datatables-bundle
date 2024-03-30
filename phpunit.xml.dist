@@ -8,6 +8,7 @@
         <whitelist>
             <directory>./</directory>
             <exclude>
+                <directory>lib/common/Tests</directory>
                 <directory>tests</directory>
                 <directory>Resources</directory>
                 <directory>Tests</directory>
@@ -16,7 +17,8 @@
         </whitelist>
     </filter>
     <testsuites>
-        <testsuite name="webeweb/common-bundle">
+        <testsuite name="webeweb/datatables-bundle">
+            <directory>./lib/common/Tests</directory>
             <directory>./tests</directory>
         </testsuite>
     </testsuites>
