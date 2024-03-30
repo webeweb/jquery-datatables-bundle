@@ -47,7 +47,7 @@ class ProgressBarTwigExtension extends AbstractProgressBarTwigExtension {
     /**
      * Display a Bootstrap progress bar "basic".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap progress bar "basic".
      */
     public function bootstrapProgressBarBasicFunction(array $args = []): string {
@@ -57,7 +57,7 @@ class ProgressBarTwigExtension extends AbstractProgressBarTwigExtension {
     /**
      * Display a Bootstrap progress bar "danger".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap progress bar "danger".
      */
     public function bootstrapProgressBarDangerFunction(array $args = []): string {
@@ -67,7 +67,7 @@ class ProgressBarTwigExtension extends AbstractProgressBarTwigExtension {
     /**
      * Display a Bootstrap progress bar "info".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap progress bar "info".
      */
     public function bootstrapProgressBarInfoFunction(array $args = []): string {
@@ -77,7 +77,7 @@ class ProgressBarTwigExtension extends AbstractProgressBarTwigExtension {
     /**
      * Display a Bootstrap progress bar "success".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap progress bar "success".
      */
     public function bootstrapProgressBarSuccessFunction(array $args = []): string {
@@ -87,7 +87,7 @@ class ProgressBarTwigExtension extends AbstractProgressBarTwigExtension {
     /**
      * Display a Bootstrap progress bar "warning".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap progress bar "warning".
      */
     public function bootstrapProgressBarWarningFunction(array $args = []): string {
