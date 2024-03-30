@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\BootstrapBundle\Tests\Renderer;
+namespace WBW\Bundle\BootstrapBundle\Tests\Renderer\Component;
 
 use WBW\Bundle\BootstrapBundle\Component\ButtonInterface;
 use WBW\Bundle\BootstrapBundle\Factory\Component\ButtonFactory;
-use WBW\Bundle\BootstrapBundle\Renderer\ButtonRenderer;
+use WBW\Bundle\BootstrapBundle\Renderer\Component\ButtonRenderer;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 
 /**
  * Button renderer test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\BootstrapBundle\Tests\Renderer
+ * @package WBW\Bundle\BootstrapBundle\Tests\Renderer\Component
  */
 class ButtonRendererTest extends AbstractTestCase {
 

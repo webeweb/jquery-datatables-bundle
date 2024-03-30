@@ -11,7 +11,7 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\BootstrapBundle\Renderer;
+namespace WBW\Bundle\BootstrapBundle\Renderer\Component;
 
 use WBW\Bundle\BootstrapBundle\Component\ButtonInterface;
 
@@ -19,7 +19,7 @@ use WBW\Bundle\BootstrapBundle\Component\ButtonInterface;
  * Button renderer.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\BootstrapBundle\Renderer
+ * @package WBW\Bundle\BootstrapBundle\Renderer\Component
  */
 class ButtonRenderer {
 
