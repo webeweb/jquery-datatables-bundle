@@ -15,7 +15,7 @@ objects to do the heavy lifting. The bundle include the excellent JS library
 
 Dry out your DataTables code by writing it all in PHP !
 
-<img src="https://raw.githubusercontent.com/webeweb/jquery-datatables-bundle/master/Resources/doc/screenshot_readme.png" alt="DataTables bundle" align="right" height="456"/>
+<img src="https://raw.githubusercontent.com/webeweb/jquery-datatables-bundle/master/doc/readme_380x550.png" alt="DataTables bundle" align="right" height="456"/>
 
 Includes :
 
@@ -130,7 +130,7 @@ wbw_datatables:
 
 ## Usage
 
-Read the [documentation](Resources/doc/index.md).
+Read the [documentation](doc/index.md).
 
 The following commands are available:
 

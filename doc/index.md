@@ -334,7 +334,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     /**
      * {@inheritDoc}
      */
-    public function getCSVExporter() {
+    public function getCsvExporter() {
         return $this;
     }
 
@@ -393,7 +393,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     public function getView() {
         return null;
 
-        // Custom template can be use with the following code :
+        // Custom template can be used with the following code :
         // return "@App/Employee/index.html.twig";
     }
 
@@ -633,11 +633,9 @@ class EmployeeRepository extends DefaultDataTablesRepository {
      */
     public function dataTablesCountFiltered(DataTablesWrapperInterface $dtWrapper) {
 
-        // Create a query builder.
         $qb = $this->buildDataTablesCountFiltered($dtWrapper);
         $qb->leftJoin("e.office", "o");
 
-        // Return the result.
         return intval($qb->getQuery()->getSingleScalarResult());
     }
 
@@ -646,11 +644,9 @@ class EmployeeRepository extends DefaultDataTablesRepository {
      */
     public function dataTablesCountTotal(DataTablesWrapperInterface $dtWrapper) {
 
-        // Create a query builder.
         $qb = $this->buildDataTablesCountTotal($dtWrapper);
         $qb->leftJoin("e.office", "o");
 
-        // Return the result.
         return intval($qb->getQuery()->getSingleScalarResult());
     }
 
@@ -659,12 +655,10 @@ class EmployeeRepository extends DefaultDataTablesRepository {
      */
     public function dataTablesFindAll(DataTablesWrapperInterface $dtWrapper) {
 
-        // Create a query builder.
         $qb = $this->buildDataTablesFindAll($dtWrapper);
         $qb->leftJoin("e.office", "o")
             ->addSelect("o");
 
-        // Return the result.
         return $qb->getQuery()->getResult();
     }
 }
@@ -678,7 +672,6 @@ Modify the provider in the `src/AppBundle/Provider/EmployeeDataTablesProvider.ph
      */
     public function getColumns() {
 
-        // Initialize the columns.
         $dtColumns = [];
 
         // ...
@@ -687,7 +680,6 @@ Modify the provider in the `src/AppBundle/Provider/EmployeeDataTablesProvider.ph
             ->setColumn("name")
             ->setPrefix("o");
 
-        // Returns the columns.
         return $dtColumns;
     }
 
@@ -698,10 +690,8 @@ Modify the provider in the `src/AppBundle/Provider/EmployeeDataTablesProvider.ph
      */
     public function renderColumn(DataTablesColumnInterface $dtColumn, $entity) {
 
-        // Initialize the output.
         $output = null;
 
-        // Switch into column data.
         switch ($dtColumn->getData()) {
 
             // ...
@@ -714,7 +704,6 @@ Modify the provider in the `src/AppBundle/Provider/EmployeeDataTablesProvider.ph
 
         }
 
-        // Return the output.
         return $output;
     }
 ```
