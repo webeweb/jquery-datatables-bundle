@@ -12,7 +12,6 @@
 namespace WBW\Bundle\CommonBundle\EventListener;
 
 use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\HttpFoundation\Session\SessionBagInterface;
 use Throwable;
 use WBW\Bundle\CommonBundle\Event\NotificationEvent;
 use WBW\Bundle\CommonBundle\Service\SessionServiceInterface;
