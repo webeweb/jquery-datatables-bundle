@@ -45,14 +45,17 @@
     },
     "autoload": {
         "psr-4": {
-            "WBW\\Bundle\\CommonBundle\\": "src/common",
-            "WBW\\Bundle\\DataTablesBundle\\": "src/datatables"
-        }
+            "WBW\\Bundle\\CommonBundle\\": "lib/common",
+            "WBW\\Bundle\\DataTablesBundle\\": "src"
+        },
+        "exclude-from-classmap": [
+            "/lib/common/Tests/"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
-            "WBW\\Bundle\\CommonBundle\\Tests\\": "tests/common",
-            "WBW\\Bundle\\DataTablesBundle\\Tests\\": "tests/datatables"
+            "WBW\\Bundle\\CommonBundle\\Tests\\": "lib/common/Tests",
+            "WBW\\Bundle\\DataTablesBundle\\Tests\\": "tests"
         }
     },
     "config": {
