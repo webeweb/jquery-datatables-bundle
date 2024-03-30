@@ -11,11 +11,11 @@
 
 namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Provider;
 
-use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesOptionsInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
 use WBW\Bundle\DataTablesBundle\Factory\DataTablesFactory;
-use WBW\Bundle\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesOptionsInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesResponseInterface;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesCsvExporterInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesRouterInterface;
@@ -32,7 +32,7 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTable
     /**
      * {@inheritDoc}
      */
-    public function getCSVExporter(): ?DataTablesCSVExporterInterface {
+    public function getCsvExporter(): ?DataTablesCsvExporterInterface {
         return null;
     }
 
