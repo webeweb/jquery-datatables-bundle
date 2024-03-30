@@ -32,13 +32,6 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTable
     /**
      * {@inheritDoc}
      */
-    public function getCsvExporter(): ?DataTablesCsvExporterInterface {
-        return null;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function getColumns(): array {
 
         $dtColumns = [];
@@ -47,6 +40,13 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTable
         $dtColumns[] = DataTablesFactory::newColumn("actions", "Actions")->setOrderable(false)->setSearchable(false);
 
         return $dtColumns;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCsvExporter(): ?DataTablesCsvExporterInterface {
+        return null;
     }
 
     /**

@@ -101,13 +101,6 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     /**
      * {@inheritDoc}
      */
-    public function getCsvExporter(): ?DataTablesCsvExporterInterface {
-        return $this;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function getColumns(): array {
 
         $dtColumns = [];
@@ -123,6 +116,13 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
             ->setSearchable(false);
 
         return $dtColumns;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCsvExporter(): ?DataTablesCsvExporterInterface {
+        return $this;
     }
 
     /**
