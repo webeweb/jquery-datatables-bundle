@@ -112,6 +112,20 @@ class IconTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
+     * Test renderIcon()
+     *
+     * @return void
+     */
+    public function testRenderIcon(): void {
+
+        $obj = new IconTwigExtension($this->twigEnvironment);
+
+        $res = '<i class="bi bi-asterisk" style="display: none;"></i>';
+
+        $this->assertEquals($res, $obj->renderIcon("asterisk", "display: none;"));
+    }
+
+    /**
      * Test __construct()
      *
      * @return void

@@ -37,8 +37,8 @@ abstract class AbstractIconTwigExtension extends AbstractTwigExtension {
             "class" => [
                 "bi",
                 null !== $name ? "bi-" . $name : null,
-                null !== $style ? $style : null,
             ],
+            "style" => $style,
         ];
 
         return static::h("i", null, $attributes);
