@@ -38,4 +38,24 @@ class TranslatorTraitTest extends AbstractTestCase {
         $obj->setTranslator($translator);
         $this->assertSame($translator, $obj->getTranslator());
     }
+
+    /**
+     * Test translate()
+     *
+     * @return void
+     */
+    public function testTranslate(): void {
+
+        // Set a Translator mock.
+        $translator = $this->getMockBuilder(TranslatorInterface::class)->getMock();
+        $translator->expects($this->any())->method("trans")->willReturn("#");
+
+        $obj = new TestTranslatorTrait();
+
+        $obj->setTranslator($translator);
+        $this->assertEquals("#", $obj->translate("id"));
+
+        $obj->setTranslator(null);
+        $this->assertEquals("id", $obj->translate("id"));
+    }
 }

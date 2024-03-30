@@ -23,5 +23,6 @@ class TestTranslatorTrait {
 
     use TranslatorTrait {
         setTranslator as public;
+        translate as public;
     }
 }
