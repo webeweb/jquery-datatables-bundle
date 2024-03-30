@@ -11,6 +11,10 @@
 
 namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures;
 
+use WBW\Bundle\DataTablesBundle\Factory\DataTablesFactory;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperInterface;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider;
+
 /**
  * Test fixtures.
  *
@@ -100,5 +104,25 @@ class TestFixtures {
         $fixtures["start"] = "0";
 
         return $fixtures;
+    }
+
+    /**
+     * Get a wrapper.
+     *
+     * @return DataTablesWrapperInterface Returns the wrapper.
+     */
+    public static function getWrapper(): DataTablesWrapperInterface {
+
+        $fixture = DataTablesFactory::newWrapper("/datatables/employee/index", new EmployeeDataTablesProvider());
+
+        $fixture->addColumn(DataTablesFactory::newColumn("name", "Name"));
+        $fixture->addColumn(DataTablesFactory::newColumn("position", "Position"));
+        $fixture->addColumn(DataTablesFactory::newColumn("office", "Office"));
+        $fixture->addColumn(DataTablesFactory::newColumn("age", "Age"));
+        $fixture->addColumn(DataTablesFactory::newColumn("startDate", "Start date"));
+        $fixture->addColumn(DataTablesFactory::newColumn("salary", "Salary"));
+        $fixture->addColumn(DataTablesFactory::newColumn("actions", "Actions")->setOrderable(false)->setSearchable(false));
+
+        return $fixture;
     }
 }

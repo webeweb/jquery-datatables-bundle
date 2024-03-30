@@ -13,6 +13,7 @@ namespace WBW\Bundle\DataTablesBundle\Tests\Helper;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\QueryBuilder;
+use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\DataTablesBundle\Helper\DataTablesRepositoryHelper;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
@@ -27,11 +28,25 @@ use WBW\Bundle\DataTablesBundle\Tests\Fixtures\TestFixtures;
 class DataTablesRepositoryHelperTest extends AbstractTestCase {
 
     /**
+     * Entity manager.
+     *
+     * @var EntityManagerInterface|null
+     */
+    private $entityManager;
+
+    /**
      * Query builder.
      *
-     * @var QueryBuilder
+     * @var QueryBuilder|null
      */
     private $queryBuilder;
+
+    /**
+     * Request.
+     *
+     * @var Request|null
+     */
+    private $request;
 
     /**
      * {@inheritDoc}
@@ -39,11 +54,19 @@ class DataTablesRepositoryHelperTest extends AbstractTestCase {
     protected function setUp(): void {
         parent::setUp();
 
+        // Set the POST data.
+        $post = TestFixtures::getPostData();
+
+        $post["search"]["value"] = "test";
+
         // Set an Entity manager mock.
         $this->entityManager = $this->getMockBuilder(EntityManagerInterface::class)->getMock();
 
         // Set a Query builder mock.
         $this->queryBuilder = new QueryBuilder($this->entityManager);
+
+        // Set a DataTables request mock.
+        $this->request = new Request([], $post, [], [], [], ["REQUEST_METHOD" => "POST"]);
     }
 
     /**
