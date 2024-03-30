@@ -26,33 +26,6 @@ use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 class DataTablesProviderCompilerPassTest extends AbstractTestCase {
 
     /**
-     * DataTables manager.
-     *
-     * @var string|null
-     */
-    private $dataTablesManager;
-
-    /**
-     * DataTables provider.
-     *
-     * @var string|null
-     */
-    private $dataTablesProvider;
-
-    /**
-     * {@inheritDoc}
-     */
-    protected function setUp(): void {
-        parent::setUp();
-
-        // Set a DataTables manager mock.
-        $this->dataTablesManager = DataTablesManager::class;
-
-        // Set a DataTables provider mock.
-        $this->dataTablesProvider = DataTablesProviderInterface::class;
-    }
-
-    /**
      * Test process()
      *
      * @return void
@@ -67,12 +40,12 @@ class DataTablesProviderCompilerPassTest extends AbstractTestCase {
         $obj->process($containerBuilder);
         $this->assertFalse($containerBuilder->hasDefinition(DataTablesManager::SERVICE_NAME));
 
-        $containerBuilder->register(DataTablesManager::SERVICE_NAME, $this->dataTablesManager);
+        $containerBuilder->register(DataTablesManager::SERVICE_NAME, DataTablesManager::class);
         $obj->process($containerBuilder);
         $this->assertTrue($containerBuilder->hasDefinition(DataTablesManager::SERVICE_NAME));
         $this->assertFalse($containerBuilder->getDefinition(DataTablesManager::SERVICE_NAME)->hasMethodCall("addProvider"));
 
-        $containerBuilder->register("datatables.provider.test", $this->dataTablesProvider)->addTag(DataTablesProviderInterface::DATATABLES_TAG_NAME);
+        $containerBuilder->register("datatables.provider.test", DataTablesProviderInterface::class)->addTag(DataTablesProviderInterface::DATATABLES_TAG_NAME);
         $this->assertTrue($containerBuilder->hasDefinition(DataTablesManager::SERVICE_NAME));
         $this->assertFalse($containerBuilder->getDefinition(DataTablesManager::SERVICE_NAME)->hasMethodCall("addProvider"));
         $this->assertTrue($containerBuilder->hasDefinition("datatables.provider.test"));

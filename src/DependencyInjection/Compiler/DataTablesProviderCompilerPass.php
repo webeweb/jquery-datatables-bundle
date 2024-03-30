@@ -13,9 +13,8 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\DependencyInjection\Compiler;
 
-use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Reference;
+use WBW\Bundle\CommonBundle\DependencyInjection\Compiler\AbstractProviderCompilerPass;
 use WBW\Bundle\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 
@@ -25,22 +24,12 @@ use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\DependencyInjection\Compiler
  */
-class DataTablesProviderCompilerPass implements CompilerPassInterface {
+class DataTablesProviderCompilerPass extends AbstractProviderCompilerPass {
 
     /**
      * {@inheritDoc}
      */
     public function process(ContainerBuilder $container): void {
-
-        if (false === $container->has(DataTablesManager::SERVICE_NAME)) {
-            return;
-        }
-
-        $manager = $container->findDefinition(DataTablesManager::SERVICE_NAME);
-
-        $providers = $container->findTaggedServiceIds(DataTablesProviderInterface::DATATABLES_TAG_NAME);
-        foreach ($providers as $id => $tag) {
-            $manager->addMethodCall("addProvider", [new Reference($id)]);
-        }
+        $this->processing($container, DataTablesManager::SERVICE_NAME, DataTablesProviderInterface::DATATABLES_TAG_NAME);
     }
 }
