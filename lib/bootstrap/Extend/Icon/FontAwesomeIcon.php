@@ -11,7 +11,7 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\BootstrapBundle\Extend;
+namespace WBW\Bundle\BootstrapBundle\Extend\Icon;
 
 use WBW\Library\Symfony\Assets\AbstractIcon;
 
