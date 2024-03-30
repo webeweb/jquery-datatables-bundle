@@ -13,10 +13,10 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Factory\Extend;
 
-use WBW\Bundle\BootstrapBundle\Extend\Icon\FontAwesomeIcon;
-use WBW\Bundle\BootstrapBundle\Extend\Icon\FontAwesomeIconInterface;
-use WBW\Bundle\BootstrapBundle\Extend\Icon\MaterialDesignIconicFontIcon;
-use WBW\Bundle\BootstrapBundle\Extend\Icon\MaterialDesignIconicFontIconInterface;
+use WBW\Bundle\BootstrapBundle\Extend\FontAwesomeIcon;
+use WBW\Bundle\BootstrapBundle\Extend\FontAwesomeIconInterface;
+use WBW\Bundle\BootstrapBundle\Extend\MaterialDesignIconicFontIcon;
+use WBW\Bundle\BootstrapBundle\Extend\MaterialDesignIconicFontIconInterface;
 use WBW\Library\Types\Helper\ArrayHelper;
 
 /**

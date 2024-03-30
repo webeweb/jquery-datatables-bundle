@@ -11,7 +11,7 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\BootstrapBundle\Extend\Icon;
+namespace WBW\Bundle\BootstrapBundle\Extend;
 
 use WBW\Library\Symfony\Assets\IconInterface;
 
@@ -19,7 +19,7 @@ use WBW\Library\Symfony\Assets\IconInterface;
  * Material Design Iconic Font icon interface.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\BootstrapBundle\Assets\Icon
+ * @package WBW\Bundle\BootstrapBundle\Extend
  */
 interface MaterialDesignIconicFontIconInterface extends IconInterface {
 

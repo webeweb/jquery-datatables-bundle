@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the core-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2019 WEBEWEB
  *
@@ -11,16 +11,16 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\BootstrapBundle\Renderer\Extend\Icon;
+namespace WBW\Bundle\BootstrapBundle\Renderer\Extend;
 
-use WBW\Bundle\BootstrapBundle\Extend\Icon\MaterialDesignIconicFontIconInterface;
+use WBW\Bundle\BootstrapBundle\Extend\MaterialDesignIconicFontIconInterface;
 use WBW\Library\Symfony\Renderer\Assets\IconRenderer;
 
 /**
  * Material Design Iconic Font icon renderer.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\BootstrapBundle\Renderer\Extend\Icon
+ * @package WBW\Bundle\BootstrapBundle\Renderer\Extend
  */
 class MaterialDesignIconicFontIconRenderer extends IconRenderer {
 

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the core-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2019 WEBEWEB
  *
@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\BootstrapBundle\Tests\Renderer\Extend\Icon;
+namespace WBW\Bundle\BootstrapBundle\Tests\Renderer\Extend;
 
-use WBW\Bundle\BootstrapBundle\Extend\Icon\FontAwesomeIconInterface;
+use WBW\Bundle\BootstrapBundle\Extend\FontAwesomeIconInterface;
 use WBW\Bundle\BootstrapBundle\Factory\Extend\IconFactory;
-use WBW\Bundle\BootstrapBundle\Renderer\Extend\Icon\FontAwesomeIconRenderer;
+use WBW\Bundle\BootstrapBundle\Renderer\Extend\FontAwesomeIconRenderer;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 
 /**
  * Font Awesome icon renderer test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\BootstrapBundle\Tests\Renderer\Extend\Icon
+ * @package WBW\Bundle\BootstrapBundle\Tests\Renderer\Extend
  */
 class FontAwesomeIconRendererTest extends AbstractTestCase {
 

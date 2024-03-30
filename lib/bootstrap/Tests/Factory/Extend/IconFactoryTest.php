@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\BootstrapBundle\Tests\Factory\Extend;
 
-use WBW\Bundle\BootstrapBundle\Extend\Icon\FontAwesomeIconInterface;
-use WBW\Bundle\BootstrapBundle\Extend\Icon\MaterialDesignIconicFontIconInterface;
+use WBW\Bundle\BootstrapBundle\Extend\FontAwesomeIconInterface;
+use WBW\Bundle\BootstrapBundle\Extend\MaterialDesignIconicFontIconInterface;
 use WBW\Bundle\BootstrapBundle\Factory\Extend\IconFactory;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 
