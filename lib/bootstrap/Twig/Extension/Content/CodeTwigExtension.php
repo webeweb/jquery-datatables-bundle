@@ -30,7 +30,7 @@ class CodeTwigExtension extends AbstractCodeTwigExtension {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.bootstrap.twig.extension.css.code";
+    const SERVICE_NAME = "wbw.bootstrap.twig.extension.content.code";
 
     /**
      * Display a Bootstrap basic block.
