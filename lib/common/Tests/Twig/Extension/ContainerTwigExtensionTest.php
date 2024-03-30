@@ -105,7 +105,7 @@ class ContainerTwigExtensionTest extends AbstractTestCase {
         $this->assertEquals(null, $obj->phpNativeMethodFunction(null, ["exception"]));
         $this->assertEquals(null, $obj->phpNativeMethodFunction("exception", [null]));
 
-        $this->assertEquals(false, $obj->phpNativeMethodFunction("is_array", ["isWindows"]));
+        $this->assertFalse($obj->phpNativeMethodFunction("is_array", ["isWindows"]));
         $this->assertEquals("'isWindows'", $obj->phpNativeMethodFunction("var_export", ["isWindows", true]));
     }
 

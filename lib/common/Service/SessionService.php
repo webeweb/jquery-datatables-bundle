@@ -51,6 +51,8 @@ class SessionService implements SessionServiceInterface {
 
         // TODO: Remove when dropping support for Symfony 5.3
         if (Kernel::VERSION_ID < 50300) {
+
+            /** @var SessionInterface */
             return $this->getContainer()->get("session");
         }
 

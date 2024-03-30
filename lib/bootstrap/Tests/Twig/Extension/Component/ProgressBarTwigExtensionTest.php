@@ -54,8 +54,8 @@ class ProgressBarTwigExtensionTest extends AbstractTestCase {
         $obj = new ProgressBarTwigExtension($this->twigEnvironment);
 
         $arg = [
-            $obj->bootstrapProgressBarBasicFunction([]),
-            $obj->bootstrapProgressBarBasicFunction([]),
+            $obj->bootstrapProgressBarBasicFunction(),
+            $obj->bootstrapProgressBarBasicFunction(),
         ];
         $res = '<div class="progress"><div class="progress-bar" style="width: 50%;" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">50%</span></div><div class="progress-bar" style="width: 50%;" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">50%</span></div></div>';
 
