@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\CommonBundle\EventListener;
 
+use Symfony\Component\HttpFoundation\Session\Session;
 use Throwable;
 use WBW\Bundle\CommonBundle\Event\ToastEvent;
 use WBW\Bundle\CommonBundle\Service\SessionServiceInterface;
@@ -50,7 +51,11 @@ class ToastEventListener {
      * @throws Throwable Throws an exception if an error occurs.
      */
     public function onToast(ToastEvent $event): ToastEvent {
-        $this->getSessionService()->getSession()->getFlashBag()->add($event->getToast()->getType(), $event->getToast()->getContent());
+
+        /** @var Session $session */
+        $session = $this->getSessionService()->getSession();
+        $session->getFlashBag()->add($event->getToast()->getType(), $event->getToast()->getContent());
+
         return $event;
     }
 }
