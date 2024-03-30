@@ -11,15 +11,15 @@
 
 namespace WBW\Bundle\BootstrapBundle\Factory;
 
-use WBW\Bundle\BootstrapBundle\Model\Alert\DangerAlert;
-use WBW\Bundle\BootstrapBundle\Model\Alert\DarkAlert;
-use WBW\Bundle\BootstrapBundle\Model\Alert\InfoAlert;
-use WBW\Bundle\BootstrapBundle\Model\Alert\LightAlert;
-use WBW\Bundle\BootstrapBundle\Model\Alert\PrimaryAlert;
-use WBW\Bundle\BootstrapBundle\Model\Alert\SecondaryAlert;
-use WBW\Bundle\BootstrapBundle\Model\Alert\SuccessAlert;
-use WBW\Bundle\BootstrapBundle\Model\Alert\WarningAlert;
-use WBW\Bundle\BootstrapBundle\Model\AlertInterface;
+use WBW\Bundle\BootstrapBundle\Component\Alert\DangerAlert;
+use WBW\Bundle\BootstrapBundle\Component\Alert\DarkAlert;
+use WBW\Bundle\BootstrapBundle\Component\Alert\InfoAlert;
+use WBW\Bundle\BootstrapBundle\Component\Alert\LightAlert;
+use WBW\Bundle\BootstrapBundle\Component\Alert\PrimaryAlert;
+use WBW\Bundle\BootstrapBundle\Component\Alert\SecondaryAlert;
+use WBW\Bundle\BootstrapBundle\Component\Alert\SuccessAlert;
+use WBW\Bundle\BootstrapBundle\Component\Alert\WarningAlert;
+use WBW\Bundle\BootstrapBundle\Component\AlertInterface;
 use WBW\Library\Types\Helper\ArrayHelper;
 
 /**

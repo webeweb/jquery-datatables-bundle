@@ -11,10 +11,10 @@
 
 namespace WBW\Bundle\BootstrapBundle\Serializer;
 
-use WBW\Bundle\BootstrapBundle\Model\AlertInterface;
-use WBW\Bundle\BootstrapBundle\Model\BadgeInterface;
-use WBW\Bundle\BootstrapBundle\Model\ButtonInterface;
-use WBW\Bundle\BootstrapBundle\Model\ProgressBarInterface;
+use WBW\Bundle\BootstrapBundle\Component\AlertInterface;
+use WBW\Bundle\BootstrapBundle\Component\BadgeInterface;
+use WBW\Bundle\BootstrapBundle\Component\ButtonInterface;
+use WBW\Bundle\BootstrapBundle\Component\ProgressBarInterface;
 use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
 
 /**

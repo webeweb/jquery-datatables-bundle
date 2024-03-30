@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\BootstrapBundle\Renderer;
 
-use WBW\Bundle\BootstrapBundle\Model\BadgeInterface;
+use WBW\Bundle\BootstrapBundle\Component\BadgeInterface;
 
 /**
  * Badge renderer.

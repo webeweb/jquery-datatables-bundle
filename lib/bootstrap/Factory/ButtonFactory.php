@@ -11,17 +11,17 @@
 
 namespace WBW\Bundle\BootstrapBundle\Factory;
 
-use WBW\Bundle\BootstrapBundle\Model\Button\DangerButton;
-use WBW\Bundle\BootstrapBundle\Model\Button\DarkButton;
-use WBW\Bundle\BootstrapBundle\Model\Button\DefaultButton;
-use WBW\Bundle\BootstrapBundle\Model\Button\InfoButton;
-use WBW\Bundle\BootstrapBundle\Model\Button\LightButton;
-use WBW\Bundle\BootstrapBundle\Model\Button\LinkButton;
-use WBW\Bundle\BootstrapBundle\Model\Button\PrimaryButton;
-use WBW\Bundle\BootstrapBundle\Model\Button\SecondaryButton;
-use WBW\Bundle\BootstrapBundle\Model\Button\SuccessButton;
-use WBW\Bundle\BootstrapBundle\Model\Button\WarningButton;
-use WBW\Bundle\BootstrapBundle\Model\ButtonInterface;
+use WBW\Bundle\BootstrapBundle\Component\Button\DangerButton;
+use WBW\Bundle\BootstrapBundle\Component\Button\DarkButton;
+use WBW\Bundle\BootstrapBundle\Component\Button\DefaultButton;
+use WBW\Bundle\BootstrapBundle\Component\Button\InfoButton;
+use WBW\Bundle\BootstrapBundle\Component\Button\LightButton;
+use WBW\Bundle\BootstrapBundle\Component\Button\LinkButton;
+use WBW\Bundle\BootstrapBundle\Component\Button\PrimaryButton;
+use WBW\Bundle\BootstrapBundle\Component\Button\SecondaryButton;
+use WBW\Bundle\BootstrapBundle\Component\Button\SuccessButton;
+use WBW\Bundle\BootstrapBundle\Component\Button\WarningButton;
+use WBW\Bundle\BootstrapBundle\Component\ButtonInterface;
 use WBW\Library\Types\Helper\ArrayHelper;
 
 /**

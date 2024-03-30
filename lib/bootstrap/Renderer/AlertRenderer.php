@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\BootstrapBundle\Renderer;
 
-use WBW\Bundle\BootstrapBundle\Model\AlertInterface;
+use WBW\Bundle\BootstrapBundle\Component\AlertInterface;
 
 /**
  * Alert renderer.

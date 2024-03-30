@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\BootstrapBundle\Renderer;
 
-use WBW\Bundle\BootstrapBundle\Model\ProgressBarInterface;
+use WBW\Bundle\BootstrapBundle\Component\ProgressBarInterface;
 
 /**
  * Progress bar renderer.

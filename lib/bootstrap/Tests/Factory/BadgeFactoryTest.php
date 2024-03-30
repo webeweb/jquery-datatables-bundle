@@ -11,17 +11,17 @@
 
 namespace WBW\Bundle\BootstrapBundle\Tests\Factory;
 
+use WBW\Bundle\BootstrapBundle\Component\Badge\DangerBadge;
+use WBW\Bundle\BootstrapBundle\Component\Badge\DarkBadge;
+use WBW\Bundle\BootstrapBundle\Component\Badge\DefaultBadge;
+use WBW\Bundle\BootstrapBundle\Component\Badge\InfoBadge;
+use WBW\Bundle\BootstrapBundle\Component\Badge\LightBadge;
+use WBW\Bundle\BootstrapBundle\Component\Badge\PrimaryBadge;
+use WBW\Bundle\BootstrapBundle\Component\Badge\SecondaryBadge;
+use WBW\Bundle\BootstrapBundle\Component\Badge\SuccessBadge;
+use WBW\Bundle\BootstrapBundle\Component\Badge\WarningBadge;
+use WBW\Bundle\BootstrapBundle\Component\BadgeInterface;
 use WBW\Bundle\BootstrapBundle\Factory\BadgeFactory;
-use WBW\Bundle\BootstrapBundle\Model\Badge\DangerBadge;
-use WBW\Bundle\BootstrapBundle\Model\Badge\DarkBadge;
-use WBW\Bundle\BootstrapBundle\Model\Badge\DefaultBadge;
-use WBW\Bundle\BootstrapBundle\Model\Badge\InfoBadge;
-use WBW\Bundle\BootstrapBundle\Model\Badge\LightBadge;
-use WBW\Bundle\BootstrapBundle\Model\Badge\PrimaryBadge;
-use WBW\Bundle\BootstrapBundle\Model\Badge\SecondaryBadge;
-use WBW\Bundle\BootstrapBundle\Model\Badge\SuccessBadge;
-use WBW\Bundle\BootstrapBundle\Model\Badge\WarningBadge;
-use WBW\Bundle\BootstrapBundle\Model\BadgeInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Library\Symfony\Assets\BadgeInterface as BaseBadgeInterface;
 

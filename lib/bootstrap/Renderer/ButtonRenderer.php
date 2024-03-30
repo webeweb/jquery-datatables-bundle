@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\BootstrapBundle\Renderer;
 
-use WBW\Bundle\BootstrapBundle\Model\ButtonInterface;
+use WBW\Bundle\BootstrapBundle\Component\ButtonInterface;
 
 /**
  * Button renderer.

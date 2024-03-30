@@ -11,12 +11,12 @@
 
 namespace WBW\Bundle\BootstrapBundle\Factory;
 
-use WBW\Bundle\BootstrapBundle\Model\ProgressBar\BasicProgressBar;
-use WBW\Bundle\BootstrapBundle\Model\ProgressBar\DangerProgressBar;
-use WBW\Bundle\BootstrapBundle\Model\ProgressBar\InfoProgressBar;
-use WBW\Bundle\BootstrapBundle\Model\ProgressBar\SuccessProgressBar;
-use WBW\Bundle\BootstrapBundle\Model\ProgressBar\WarningProgressBar;
-use WBW\Bundle\BootstrapBundle\Model\ProgressBarInterface;
+use WBW\Bundle\BootstrapBundle\Component\ProgressBar\BasicProgressBar;
+use WBW\Bundle\BootstrapBundle\Component\ProgressBar\DangerProgressBar;
+use WBW\Bundle\BootstrapBundle\Component\ProgressBar\InfoProgressBar;
+use WBW\Bundle\BootstrapBundle\Component\ProgressBar\SuccessProgressBar;
+use WBW\Bundle\BootstrapBundle\Component\ProgressBar\WarningProgressBar;
+use WBW\Bundle\BootstrapBundle\Component\ProgressBarInterface;
 use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
