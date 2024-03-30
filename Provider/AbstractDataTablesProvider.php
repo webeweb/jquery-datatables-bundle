@@ -28,10 +28,10 @@ use WBW\Bundle\BootstrapBundle\Renderer\Strings\RightAlignedTextRendererTrait;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtension;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtensionTrait;
 use WBW\Bundle\CoreBundle\Routing\RouterTrait;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesOptionsInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
 use WBW\Bundle\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\DataTablesBundle\Helper\DataTablesEntityHelper;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesOptionsInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesResponseInterface;
 use WBW\Bundle\DataTablesBundle\Renderer\ColumnWidthInterface;
 use WBW\Bundle\DataTablesBundle\Renderer\Floats\FloatRendererTrait;
 use WBW\Bundle\DataTablesBundle\Symfony\Translation\TranslatorTrait;
@@ -83,7 +83,7 @@ abstract class AbstractDataTablesProvider implements DataTablesProviderInterface
     /**
      * {@inheritDoc}
      */
-    public function getCSVExporter(): ?DataTablesCSVExporterInterface {
+    public function getCSVExporter(): ?DataTablesCsvExporterInterface {
         return null;
     }
 

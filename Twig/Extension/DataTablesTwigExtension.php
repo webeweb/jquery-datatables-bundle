@@ -16,8 +16,8 @@ namespace WBW\Bundle\DataTablesBundle\Twig\Extension;
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesWrapperInterface;
 use WBW\Bundle\DataTablesBundle\Helper\DataTablesWrapperHelper;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperInterface;
 use WBW\Library\Types\Helper\ArrayHelper;
 
 /**

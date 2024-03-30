@@ -14,7 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\DataTablesBundle\Helper;
 
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesWrapperInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperInterface;
 use WBW\Bundle\DataTablesBundle\Normalizer\DataTablesNormalizer;
 use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
 

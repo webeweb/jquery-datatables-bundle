@@ -13,14 +13,14 @@ namespace WBW\Bundle\DataTablesBundle\Tests;
 
 use Symfony\Component\HttpFoundation\Request;
 use WBW\Bundle\CoreBundle\Tests\AbstractTestCase as TestCase;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesMappingInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesOptionsInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesOrderInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesRequestInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesSearchInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesWrapperInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesMappingInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesOptionsInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesOrderInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesRequestInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesResponseInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesSearchInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\DataTablesBundle\Tests\Fixtures\TestFixtures;
 

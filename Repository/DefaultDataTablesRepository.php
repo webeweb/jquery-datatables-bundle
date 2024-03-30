@@ -16,8 +16,8 @@ namespace WBW\Bundle\DataTablesBundle\Repository;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\QueryBuilder;
 use Throwable;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesWrapperInterface;
 use WBW\Bundle\DataTablesBundle\Helper\DataTablesRepositoryHelper;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperInterface;
 
 /**
  * Default DataTables repository.
