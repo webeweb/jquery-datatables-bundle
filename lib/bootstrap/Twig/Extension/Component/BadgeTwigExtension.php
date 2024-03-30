@@ -37,7 +37,7 @@ class BadgeTwigExtension extends AbstractBadgeTwigExtension {
     /**
      * Display a Bootstrap badge "danger".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap badge "danger".
      */
     public function bootstrapBadgeDangerFunction(array $args = []): string {
@@ -47,7 +47,7 @@ class BadgeTwigExtension extends AbstractBadgeTwigExtension {
     /**
      * Display a Bootstrap badge "dark".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap badge "dark".
      */
     public function bootstrapBadgeDarkFunction(array $args = []): string {
@@ -57,7 +57,7 @@ class BadgeTwigExtension extends AbstractBadgeTwigExtension {
     /**
      * Display a Bootstrap badge.
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap badge.
      */
     public function bootstrapBadgeFunction(array $args = []): string {
@@ -67,7 +67,7 @@ class BadgeTwigExtension extends AbstractBadgeTwigExtension {
     /**
      * Display a Bootstrap badge "info".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap badge "info".
      */
     public function bootstrapBadgeInfoFunction(array $args = []): string {
@@ -77,7 +77,7 @@ class BadgeTwigExtension extends AbstractBadgeTwigExtension {
     /**
      * Display a Bootstrap badge "light".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap badge "light".
      */
     public function bootstrapBadgeLightFunction(array $args = []): string {
@@ -103,7 +103,7 @@ class BadgeTwigExtension extends AbstractBadgeTwigExtension {
     /**
      * Display a Bootstrap badge "primary".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap badge "primary".
      */
     public function bootstrapBadgePrimaryFunction(array $args = []): string {
@@ -113,7 +113,7 @@ class BadgeTwigExtension extends AbstractBadgeTwigExtension {
     /**
      * Display a Bootstrap badge "secondary".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap badge "secondary".
      */
     public function bootstrapBadgeSecondaryFunction(array $args = []): string {
@@ -123,7 +123,7 @@ class BadgeTwigExtension extends AbstractBadgeTwigExtension {
     /**
      * Display a Bootstrap badge "success".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap badge "success".
      */
     public function bootstrapBadgeSuccessFunction(array $args = []): string {
@@ -133,7 +133,7 @@ class BadgeTwigExtension extends AbstractBadgeTwigExtension {
     /**
      * Display a Bootstrap badge "warning".
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap badge "warning".
      */
     public function bootstrapBadgeWarningFunction(array $args = []): string {
