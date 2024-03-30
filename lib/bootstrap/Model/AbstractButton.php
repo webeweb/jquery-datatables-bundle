@@ -40,7 +40,7 @@ abstract class AbstractButton extends BaseButton implements ButtonInterface {
     /**
      * Data.
      *
-     * @var array
+     * @var array<string,mixed>
      */
     private $data;
 

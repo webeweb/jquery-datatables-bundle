@@ -102,7 +102,7 @@ interface ButtonInterface extends BaseButtonInterface {
     /**
      * Get the data.
      *
-     * @return array<string,string> Returns the data.
+     * @return array<string,mixed> Returns the data.
      */
     public function getData(): array;
 
@@ -160,7 +160,7 @@ interface ButtonInterface extends BaseButtonInterface {
     /**
      * Set the data.
      *
-     * @param array<string,string> $data The data.
+     * @param array<string,mixed> $data The data.
      * @return ButtonInterface Returns this button.
      */
     public function setData(array $data): ButtonInterface;
