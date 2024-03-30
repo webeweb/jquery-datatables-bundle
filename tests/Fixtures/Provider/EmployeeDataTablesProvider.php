@@ -12,11 +12,11 @@
 namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Provider;
 
 use DateTime;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesOptionsInterface;
-use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
 use WBW\Bundle\DataTablesBundle\Factory\DataTablesFactory;
-use WBW\Bundle\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesOptionsInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesResponseInterface;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesCsvExporterInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Entity\Employee;
@@ -28,7 +28,7 @@ use WBW\Library\Types\Exception\IntegerArgumentException;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\Entity
  */
-class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTablesCSVExporterInterface, DataTablesEditorInterface {
+class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTablesCsvExporterInterface, DataTablesEditorInterface {
 
     /**
      * {@inheritDoc}
@@ -101,7 +101,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     /**
      * {@inheritDoc}
      */
-    public function getCSVExporter(): ?DataTablesCSVExporterInterface {
+    public function getCsvExporter(): ?DataTablesCsvExporterInterface {
         return $this;
     }
 
