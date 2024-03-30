@@ -1,13 +1,14 @@
 parameters:
     level: 6
     paths:
-        - src/common
-        - tests/common
+        - lib
+        - src
+        - tests
     excludePaths:
-        - tests/fixtures/app/var
+        - tests/Fixtures/app/var
     ignoreErrors:
         -
             message: '#Comparison operation "[<=>]+" between [0-9]+ and [0-9]+ is always "true||false"#'
             paths:
-                - src/common/Service/SessionService.php
-                - tests/common/Service/SessionServiceTest.php
+                - lib/common/Service/SessionService.php
+                - lib/common/Tests/Service/SessionServiceTest.php
