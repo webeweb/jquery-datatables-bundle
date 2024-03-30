@@ -110,6 +110,25 @@ class GlyphiconTwigExtensionTest extends AbstractTestCase {
         $this->assertEquals("bsGlyphicon", $res[$i]->getName());
         $this->assertEquals([$obj, "bootstrapGlyphiconFunction"], $res[$i]->getCallable());
         $this->assertEquals(["html"], $res[$i]->getSafe(new Node()));
+
+        $obj->setVersion(4);
+
+        $res = $obj->getFunctions();
+        $this->assertCount(0, $res);
+    }
+
+    /**
+     * Test renderIcon()
+     *
+     * @return void
+     */
+    public function testRenderIcon(): void {
+
+        $obj = new GlyphiconTwigExtension($this->twigEnvironment);
+
+        $res = '<span class="glyphicon glyphicon-asterisk" aria-hidden="true" style="display: none;"></span>';
+
+        $this->assertEquals($res, $obj->renderIcon("asterisk", "display: none;"));
     }
 
     /**
