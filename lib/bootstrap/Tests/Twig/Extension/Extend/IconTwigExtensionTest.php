@@ -118,7 +118,7 @@ class IconTwigExtensionTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw.bootstrap.twig.extension.component.icon", IconTwigExtension::SERVICE_NAME);
+        $this->assertEquals("wbw.bootstrap.twig.extension.extend.icon", IconTwigExtension::SERVICE_NAME);
 
         $obj = new IconTwigExtension($this->twigEnvironment);
 
