@@ -12,9 +12,9 @@
 namespace WBW\Bundle\BootstrapBundle\Tests\Twig\Extension\Component;
 
 use Twig\Environment;
+use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\BootstrapBundle\Tests\Fixtures\Twig\Extension\Component\TestProgressBarTwigExtensionTrait;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\ProgressBarTwigExtension;
-use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 
 /**
  * Progress bar Twig extension trait test.

@@ -12,9 +12,9 @@
 namespace WBW\Bundle\BootstrapBundle\Tests\Twig\Extension\Content;
 
 use Twig\Environment;
+use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\BootstrapBundle\Tests\Fixtures\Twig\Extension\Content\TestTypographyTwigExtensionTrait;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Content\TypographyTwigExtension;
-use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 
 /**
  * Typography Twig extension trait test.

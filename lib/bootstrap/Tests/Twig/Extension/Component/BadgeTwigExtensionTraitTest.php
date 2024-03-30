@@ -12,9 +12,9 @@
 namespace WBW\Bundle\BootstrapBundle\Tests\Twig\Extension\Component;
 
 use Twig\Environment;
+use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\BootstrapBundle\Tests\Fixtures\Twig\Extension\Component\TestBadgeTwigExtensionTrait;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\BadgeTwigExtension;
-use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 
 /**
  * Badge Twig extension trait test.
