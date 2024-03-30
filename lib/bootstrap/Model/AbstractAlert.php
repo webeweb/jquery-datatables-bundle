@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the bootstrap-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2019 WEBEWEB
  *
@@ -18,7 +18,7 @@ use WBW\Library\Symfony\Assets\AbstractAlert as BaseAlert;
  * Abstract alert.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\BootstrapBundle\Assets
+ * @package WBW\Bundle\BootstrapBundle\Model
  * @abstract
  */
 abstract class AbstractAlert extends BaseAlert implements AlertInterface {

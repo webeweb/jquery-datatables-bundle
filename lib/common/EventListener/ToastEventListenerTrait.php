@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of datatables core-bundle package.
+ * This file is part of datatables datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
