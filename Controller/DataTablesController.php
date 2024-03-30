@@ -22,7 +22,7 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 use Throwable;
 use WBW\Bundle\DataTablesBundle\Event\DataTablesEvent;
 use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesColumnException;
-use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesCSVExporterException;
+use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesCsvExporterException;
 use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesEditorException;
 use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesRepositoryException;
 use WBW\Bundle\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
@@ -138,7 +138,7 @@ class DataTablesController extends AbstractController {
      * @param string $name The provider name.
      * @return Response Returns the response.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
-     * @throws BadDataTablesCSVExporterException Throws a bad CSV exporter exception.
+     * @throws BadDataTablesCsvExporterException Throws a bad CSV exporter exception.
      * @throws BadDataTablesRepositoryException Throws a bad repository exception.
      * @throws Throwable Throws an exception if an error occurs.
      */
