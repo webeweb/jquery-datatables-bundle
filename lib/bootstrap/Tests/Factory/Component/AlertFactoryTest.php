@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\BootstrapBundle\Tests\Factory;
+namespace WBW\Bundle\BootstrapBundle\Tests\Factory\Component;
 
 use WBW\Bundle\BootstrapBundle\Component\Alert\DangerAlert;
 use WBW\Bundle\BootstrapBundle\Component\Alert\DarkAlert;
@@ -20,7 +20,7 @@ use WBW\Bundle\BootstrapBundle\Component\Alert\SecondaryAlert;
 use WBW\Bundle\BootstrapBundle\Component\Alert\SuccessAlert;
 use WBW\Bundle\BootstrapBundle\Component\Alert\WarningAlert;
 use WBW\Bundle\BootstrapBundle\Component\AlertInterface;
-use WBW\Bundle\BootstrapBundle\Factory\AlertFactory;
+use WBW\Bundle\BootstrapBundle\Factory\Component\AlertFactory;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Library\Symfony\Assets\AlertInterface as BaseAlertInterface;
 
@@ -28,7 +28,7 @@ use WBW\Library\Symfony\Assets\AlertInterface as BaseAlertInterface;
  * Alert factory test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\BootstrapBundle\Tests\Factory
+ * @package WBW\Bundle\BootstrapBundle\Tests\Factory\Component
  */
 class AlertFactoryTest extends AbstractTestCase {
 

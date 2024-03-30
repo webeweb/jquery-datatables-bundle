@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\BootstrapBundle\Tests\Factory;
+namespace WBW\Bundle\BootstrapBundle\Tests\Factory\Component;
 
 use WBW\Bundle\BootstrapBundle\Component\Badge\DangerBadge;
 use WBW\Bundle\BootstrapBundle\Component\Badge\DarkBadge;
@@ -21,7 +21,7 @@ use WBW\Bundle\BootstrapBundle\Component\Badge\SecondaryBadge;
 use WBW\Bundle\BootstrapBundle\Component\Badge\SuccessBadge;
 use WBW\Bundle\BootstrapBundle\Component\Badge\WarningBadge;
 use WBW\Bundle\BootstrapBundle\Component\BadgeInterface;
-use WBW\Bundle\BootstrapBundle\Factory\BadgeFactory;
+use WBW\Bundle\BootstrapBundle\Factory\Component\BadgeFactory;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Library\Symfony\Assets\BadgeInterface as BaseBadgeInterface;
 
@@ -29,7 +29,7 @@ use WBW\Library\Symfony\Assets\BadgeInterface as BaseBadgeInterface;
  * Badge factory test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\BootstrapBundle\Tests\Factory
+ * @package WBW\Bundle\BootstrapBundle\Tests\Factory\Component
  */
 class BadgeFactoryTest extends AbstractTestCase {
 

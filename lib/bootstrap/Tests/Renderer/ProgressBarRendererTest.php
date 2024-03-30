@@ -12,7 +12,7 @@
 namespace WBW\Bundle\BootstrapBundle\Tests\Renderer;
 
 use WBW\Bundle\BootstrapBundle\Component\ProgressBarInterface;
-use WBW\Bundle\BootstrapBundle\Factory\ProgressBarFactory;
+use WBW\Bundle\BootstrapBundle\Factory\Component\ProgressBarFactory;
 use WBW\Bundle\BootstrapBundle\Renderer\ProgressBarRenderer;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 

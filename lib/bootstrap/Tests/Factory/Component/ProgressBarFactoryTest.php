@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\BootstrapBundle\Tests\Factory;
+namespace WBW\Bundle\BootstrapBundle\Tests\Factory\Component;
 
 use WBW\Bundle\BootstrapBundle\Component\ProgressBar\BasicProgressBar;
 use WBW\Bundle\BootstrapBundle\Component\ProgressBar\DangerProgressBar;
 use WBW\Bundle\BootstrapBundle\Component\ProgressBar\InfoProgressBar;
 use WBW\Bundle\BootstrapBundle\Component\ProgressBar\SuccessProgressBar;
 use WBW\Bundle\BootstrapBundle\Component\ProgressBar\WarningProgressBar;
-use WBW\Bundle\BootstrapBundle\Factory\ProgressBarFactory;
+use WBW\Bundle\BootstrapBundle\Factory\Component\ProgressBarFactory;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Library\Symfony\Assets\ProgressBarInterface as BaseProgressBarInterface;
 
@@ -24,7 +24,7 @@ use WBW\Library\Symfony\Assets\ProgressBarInterface as BaseProgressBarInterface;
  * Progress bar factory test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\BootstrapBundle\Tests\Factory
+ * @package WBW\Bundle\BootstrapBundle\Tests\Factory\Component
  */
 class ProgressBarFactoryTest extends AbstractTestCase {
 

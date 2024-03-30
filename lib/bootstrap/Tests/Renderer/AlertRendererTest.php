@@ -12,7 +12,7 @@
 namespace WBW\Bundle\BootstrapBundle\Tests\Renderer;
 
 use WBW\Bundle\BootstrapBundle\Component\AlertInterface;
-use WBW\Bundle\BootstrapBundle\Factory\AlertFactory;
+use WBW\Bundle\BootstrapBundle\Factory\Component\AlertFactory;
 use WBW\Bundle\BootstrapBundle\Renderer\AlertRenderer;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 

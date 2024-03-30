@@ -11,7 +11,7 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\BootstrapBundle\Factory;
+namespace WBW\Bundle\BootstrapBundle\Factory\Component;
 
 use WBW\Bundle\BootstrapBundle\Component\Badge\DangerBadge;
 use WBW\Bundle\BootstrapBundle\Component\Badge\DarkBadge;
@@ -29,7 +29,7 @@ use WBW\Library\Types\Helper\ArrayHelper;
  * Badge factory.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\BootstrapBundle\Factory
+ * @package WBW\Bundle\BootstrapBundle\Factory\Component
  */
 class BadgeFactory {
 

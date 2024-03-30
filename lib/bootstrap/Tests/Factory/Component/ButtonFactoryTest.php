@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\BootstrapBundle\Tests\Factory;
+namespace WBW\Bundle\BootstrapBundle\Tests\Factory\Component;
 
 use WBW\Bundle\BootstrapBundle\Component\Button\DangerButton;
 use WBW\Bundle\BootstrapBundle\Component\Button\DarkButton;
@@ -22,7 +22,7 @@ use WBW\Bundle\BootstrapBundle\Component\Button\SecondaryButton;
 use WBW\Bundle\BootstrapBundle\Component\Button\SuccessButton;
 use WBW\Bundle\BootstrapBundle\Component\Button\WarningButton;
 use WBW\Bundle\BootstrapBundle\Component\ButtonInterface;
-use WBW\Bundle\BootstrapBundle\Factory\ButtonFactory;
+use WBW\Bundle\BootstrapBundle\Factory\Component\ButtonFactory;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Library\Symfony\Assets\ButtonInterface as BaseButtonInterface;
 
@@ -30,7 +30,7 @@ use WBW\Library\Symfony\Assets\ButtonInterface as BaseButtonInterface;
  * Button factory test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\BootstrapBundle\Tests\Factory
+ * @package WBW\Bundle\BootstrapBundle\Tests\Factory\Component
  */
 class ButtonFactoryTest extends AbstractTestCase {
 

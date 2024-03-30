@@ -12,7 +12,7 @@
 namespace WBW\Bundle\BootstrapBundle\Tests\Renderer;
 
 use WBW\Bundle\BootstrapBundle\Component\BadgeInterface;
-use WBW\Bundle\BootstrapBundle\Factory\BadgeFactory;
+use WBW\Bundle\BootstrapBundle\Factory\Component\BadgeFactory;
 use WBW\Bundle\BootstrapBundle\Renderer\BadgeRenderer;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 

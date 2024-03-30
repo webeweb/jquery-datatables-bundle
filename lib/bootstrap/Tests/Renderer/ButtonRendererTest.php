@@ -12,7 +12,7 @@
 namespace WBW\Bundle\BootstrapBundle\Tests\Renderer;
 
 use WBW\Bundle\BootstrapBundle\Component\ButtonInterface;
-use WBW\Bundle\BootstrapBundle\Factory\ButtonFactory;
+use WBW\Bundle\BootstrapBundle\Factory\Component\ButtonFactory;
 use WBW\Bundle\BootstrapBundle\Renderer\ButtonRenderer;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 
