@@ -54,7 +54,7 @@ class AbstractBadgeTest extends AbstractTestCase {
     public function testJsonSerialize(): void {
 
         // Set the expected data.
-        $data = file_get_contents(__DIR__ . "/AbstractBadgeTest.testJsonSerialize.json");
+        $data = file_get_contents(__DIR__ . "/../Fixtures/Model/AbstractBadgeTest.testJsonSerialize.json");
         $json = json_decode($data, true);
 
         $obj = new TestBadge("test");
