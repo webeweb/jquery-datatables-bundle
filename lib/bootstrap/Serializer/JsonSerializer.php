@@ -29,7 +29,7 @@ class JsonSerializer {
      * Serialize an alert.
      *
      * @param AlertInterface $model The model.
-     * @return array Returns the serialized model.
+     * @return array<string,mixed> Returns the serialized model.
      */
     public static function serializeAlert(AlertInterface $model): array {
 
@@ -45,7 +45,7 @@ class JsonSerializer {
      * Serialize a badge.
      *
      * @param BadgeInterface $model The model.
-     * @return array Returns the serialized model.
+     * @return array<string,mixed> Returns the serialized model.
      */
     public static function serializeBadge(BadgeInterface $model): array {
 
@@ -61,7 +61,7 @@ class JsonSerializer {
      * Serialize a button.
      *
      * @param ButtonInterface $model The model.
-     * @return array Returns the serialized model.
+     * @return array<string,mixed> Returns the serialized model.
      */
     public static function serializeButton(ButtonInterface $model): array {
 
@@ -83,7 +83,7 @@ class JsonSerializer {
      * Serialize a progress bar.
      *
      * @param ProgressBarInterface $model The model.
-     * @return array Returns the serialized model.
+     * @return array<string,mixed> Returns the serialized model.
      */
     public static function serializeProgressBar(ProgressBarInterface $model): array {
 
