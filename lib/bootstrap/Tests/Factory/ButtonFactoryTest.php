@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\BootstrapBundle\Tests\Factory;
 
+use WBW\Bundle\BootstrapBundle\Factory\ButtonFactory;
 use WBW\Bundle\BootstrapBundle\Model\Button\DangerButton;
 use WBW\Bundle\BootstrapBundle\Model\Button\DarkButton;
 use WBW\Bundle\BootstrapBundle\Model\Button\DefaultButton;
@@ -22,7 +23,6 @@ use WBW\Bundle\BootstrapBundle\Model\Button\SecondaryButton;
 use WBW\Bundle\BootstrapBundle\Model\Button\SuccessButton;
 use WBW\Bundle\BootstrapBundle\Model\Button\WarningButton;
 use WBW\Bundle\BootstrapBundle\Model\ButtonInterface;
-use WBW\Bundle\BootstrapBundle\Factory\ButtonFactory;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Library\Symfony\Assets\ButtonInterface as BaseButtonInterface;
 

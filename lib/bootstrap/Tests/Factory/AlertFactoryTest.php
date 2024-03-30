@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\BootstrapBundle\Tests\Factory;
 
+use WBW\Bundle\BootstrapBundle\Factory\AlertFactory;
 use WBW\Bundle\BootstrapBundle\Model\Alert\DangerAlert;
 use WBW\Bundle\BootstrapBundle\Model\Alert\DarkAlert;
 use WBW\Bundle\BootstrapBundle\Model\Alert\InfoAlert;
@@ -20,7 +21,6 @@ use WBW\Bundle\BootstrapBundle\Model\Alert\SecondaryAlert;
 use WBW\Bundle\BootstrapBundle\Model\Alert\SuccessAlert;
 use WBW\Bundle\BootstrapBundle\Model\Alert\WarningAlert;
 use WBW\Bundle\BootstrapBundle\Model\AlertInterface;
-use WBW\Bundle\BootstrapBundle\Factory\AlertFactory;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Library\Symfony\Assets\AlertInterface as BaseAlertInterface;
 
