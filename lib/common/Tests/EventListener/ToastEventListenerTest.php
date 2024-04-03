@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\CommonBundle\Tests\EventListener;
 
+use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBag;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Throwable;
@@ -31,7 +32,7 @@ class ToastEventListenerTest extends AbstractTestCase {
     /**
      * Session service.
      *
-     * @var SessionServiceInterface|null
+     * @var MockObject|SessionServiceInterface|null
      */
     private $sessionService;
 
