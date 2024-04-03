@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\DataTablesBundle\Tests\Factory;
 
+use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -38,7 +39,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     /**
      * DataTables column.
      *
-     * @var DataTablesColumnInterface|null
+     * @var MockObject|DataTablesColumnInterface|null
      */
     private $column;
 
@@ -52,7 +53,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     /**
      * DataTables wrapper.
      *
-     * @var DataTablesWrapperInterface|null
+     * @var MockObject|DataTablesWrapperInterface|null
      */
     private $wrapper;
 
@@ -62,7 +63,7 @@ class DataTablesFactoryTest extends AbstractTestCase {
     protected function setUp(): void {
         parent::setUp();
 
-        // Set a DataTables search mock.
+        /** @var DataTablesSearchInterface|null $search */
         $search = null;
 
         // Set a getSearch() and setSearch mocks.
