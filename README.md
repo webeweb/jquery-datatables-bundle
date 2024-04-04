@@ -17,7 +17,7 @@ Dry out your DataTables code by writing it all in PHP !
 
 <img src="https://raw.githubusercontent.com/webeweb/jquery-datatables-bundle/master/doc/readme_380x550.png" alt="DataTables bundle" align="right" height="456"/>
 
-Includes :
+Includes:
 
 - [DataTables 1.13.8](https://datatables.net/)
 - [DataTables AutoFill 2.6.0](https://datatables.net/extensions/autofill/) (DataTables plugin)
@@ -39,7 +39,7 @@ Includes :
 - [DataTables StateRestore 1.3.0](https://datatables.net/extensions/staterestore/) (DataTables plugin)
 - [editableTable](https://github.com/mindmup/editable-table/)
 
-Provides :
+Provides:
 
 - a "wbw_datatables_delete" route to delete a managed entity by a DataTable
 - a "wbw_datatables_edit" route to edit all columns provided by a DataTable
