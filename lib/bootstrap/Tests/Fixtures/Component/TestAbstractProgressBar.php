@@ -21,7 +21,7 @@ use WBW\Bundle\BootstrapBundle\Component\AbstractProgressBar;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\BootstrapBundle\Tests\Fixtures\Component
  */
-class TestProgressBar extends AbstractProgressBar {
+class TestAbstractProgressBar extends AbstractProgressBar {
 
     /**
      * Constructor.
