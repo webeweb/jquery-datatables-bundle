@@ -16,12 +16,12 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Fixtures\Component;
 use WBW\Bundle\BootstrapBundle\Component\AbstractAlert;
 
 /**
- * Test alert.
+ * Test abstract alert.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\BootstrapBundle\Tests\Fixtures\Component
  */
-class TestAlert extends AbstractAlert {
+class TestAbstractAlert extends AbstractAlert {
 
     /**
      * Constructor.

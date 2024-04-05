@@ -16,7 +16,7 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Component;
 use WBW\Bundle\BootstrapBundle\Component\AbstractAlert;
 use WBW\Bundle\BootstrapBundle\Component\AlertInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\BootstrapBundle\Tests\Fixtures\Component\TestAlert;
+use WBW\Bundle\BootstrapBundle\Tests\Fixtures\Component\TestAbstractAlert;
 use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
 use WBW\Library\Symfony\Assets\AlertInterface as BaseAlertInterface;
 
@@ -59,7 +59,7 @@ class AbstractAlertTest extends AbstractTestCase {
         $data = file_get_contents(__DIR__ . "/../Fixtures/Component/AbstractAlertTest.testJsonSerialize.json");
         $json = json_decode($data, true);
 
-        $obj = new TestAlert("test");
+        $obj = new TestAbstractAlert("test");
         $obj->setContent(BaseSerializerKeys::CONTENT);
         $obj->setDismissible(true);
 
@@ -76,7 +76,7 @@ class AbstractAlertTest extends AbstractTestCase {
      */
     public function testSetDismissible(): void {
 
-        $obj = new TestAlert("test");
+        $obj = new TestAbstractAlert("test");
 
         $obj->setDismissible(true);
         $this->assertTrue($obj->getDismissible());
@@ -89,7 +89,7 @@ class AbstractAlertTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $obj = new TestAlert("test");
+        $obj = new TestAbstractAlert("test");
 
         $this->assertInstanceOf(AlertInterface::class, $obj);
 
