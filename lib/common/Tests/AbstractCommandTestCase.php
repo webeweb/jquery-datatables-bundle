@@ -23,7 +23,7 @@ use Symfony\Component\Console\Style\StyleInterface;
  * Abstract command test case.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\CoreBundle\Tests
+ * @package WBW\Bundle\CommonBundle\Tests
  * @abstract
  */
 abstract class AbstractCommandTestCase extends AbstractTestCase {
