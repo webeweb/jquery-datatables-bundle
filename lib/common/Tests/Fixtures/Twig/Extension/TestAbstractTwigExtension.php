@@ -17,12 +17,12 @@ use Twig\Environment;
 use WBW\Bundle\CommonBundle\Twig\Extension\AbstractTwigExtension;
 
 /**
- * Test Twig extension.
+ * Test abstract Twig extension.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Tests\Fixtures\Twi\Extension
  */
-class TestTwigExtension extends AbstractTwigExtension {
+class TestAbstractTwigExtension extends AbstractTwigExtension {
 
     /**
      * Constructor.

@@ -16,7 +16,7 @@ namespace WBW\Bundle\CommonBundle\Tests\Twig\Extension;
 use Twig\Environment;
 use Twig\Extension\ExtensionInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
-use WBW\Bundle\CommonBundle\Tests\Fixtures\Twig\Extension\TestTwigExtension;
+use WBW\Bundle\CommonBundle\Tests\Fixtures\Twig\Extension\TestAbstractTwigExtension;
 use WBW\Bundle\CommonBundle\Twig\Extension\AbstractTwigExtension;
 use WBW\Library\Symfony\Assets\NavigationNodeInterface;
 
@@ -38,7 +38,7 @@ class AbstractTwigExtensionTest extends AbstractTestCase {
         // Set a Twig environment mock.
         $twigEnvironment = $this->getMockBuilder(Environment::class)->disableOriginalConstructor()->getMock();
 
-        $obj = new TestTwigExtension($twigEnvironment);
+        $obj = new TestAbstractTwigExtension($twigEnvironment);
 
         $res = $obj->getFilters();
         $this->assertCount(0, $res);
@@ -72,7 +72,7 @@ class AbstractTwigExtensionTest extends AbstractTestCase {
         // Set a Twig environment mock.
         $twigEnvironment = $this->getMockBuilder(Environment::class)->disableOriginalConstructor()->getMock();
 
-        $obj = new TestTwigExtension($twigEnvironment);
+        $obj = new TestAbstractTwigExtension($twigEnvironment);
 
         $this->assertInstanceOf(ExtensionInterface::class, $obj);
 
