@@ -28,6 +28,17 @@ use WBW\Library\System\Helper\SystemHelper;
 class CommandHelper {
 
     /**
+     * Template "help"
+     */
+    protected const TEMPLATE_HELP = <<< EOT
+The <info>%command.name%</info> command {{ content }}.
+
+    <info>php %command.full_name%</info>
+
+
+EOT;
+
+    /**
      * Format a checkbox.
      *
      * @param bool|null $checked Checked ?
@@ -49,16 +60,7 @@ class CommandHelper {
      * @return string
      */
     public static function formatHelp(string $content): string {
-
-        $template = <<< EOT
-The <info>%command.name%</info> command {{ content }}.
-
-    <info>php %command.full_name%</info>
-
-
-EOT;
-
-        return str_replace("{{ content }}", $content, $template);
+        return str_replace("{{ content }}", $content, self::TEMPLATE_HELP);
     }
 
     /**
