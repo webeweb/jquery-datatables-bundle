@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 /*
- * This file is part of the core-bundle package.
+ * This file is part of the datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
