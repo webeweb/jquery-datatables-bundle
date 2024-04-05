@@ -16,12 +16,12 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Fixtures\Component;
 use WBW\Bundle\BootstrapBundle\Component\AbstractBadge;
 
 /**
- * Test badge.
+ * Test abstract badge.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\BootstrapBundle\Tests\Fixtures\Component
  */
-class TestBadge extends AbstractBadge {
+class TestAbstractBadge extends AbstractBadge {
 
     /**
      * Constructor.

@@ -16,7 +16,7 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Component;
 use WBW\Bundle\BootstrapBundle\Component\AbstractBadge;
 use WBW\Bundle\BootstrapBundle\Component\BadgeInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\BootstrapBundle\Tests\Fixtures\Component\TestBadge;
+use WBW\Bundle\BootstrapBundle\Tests\Fixtures\Component\TestAbstractBadge;
 use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
 use WBW\Library\Symfony\Assets\BadgeInterface as BaseBadgeInterface;
 
@@ -59,7 +59,7 @@ class AbstractBadgeTest extends AbstractTestCase {
         $data = file_get_contents(__DIR__ . "/../Fixtures/Component/AbstractBadgeTest.testJsonSerialize.json");
         $json = json_decode($data, true);
 
-        $obj = new TestBadge("test");
+        $obj = new TestAbstractBadge("test");
         $obj->setContent(BaseSerializerKeys::CONTENT);
         $obj->setPill(true);
 
@@ -76,7 +76,7 @@ class AbstractBadgeTest extends AbstractTestCase {
      */
     public function testSetPill(): void {
 
-        $obj = new TestBadge("test");
+        $obj = new TestAbstractBadge("test");
 
         $obj->setPill(true);
         $this->assertTrue($obj->getPill());
@@ -89,7 +89,7 @@ class AbstractBadgeTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $obj = new TestBadge("test");
+        $obj = new TestAbstractBadge("test");
 
         $this->assertInstanceOf(BadgeInterface::class, $obj);
 
