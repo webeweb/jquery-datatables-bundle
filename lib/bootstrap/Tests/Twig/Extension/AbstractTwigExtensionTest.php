@@ -15,7 +15,7 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Twig\Extension;
 
 use Twig\Environment;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\BootstrapBundle\Tests\Fixtures\Twig\Extension\TestTwigExtension;
+use WBW\Bundle\BootstrapBundle\Tests\Fixtures\Twig\Extension\TestAbstractTwigExtension;
 
 /**
  * Abstract Twig extension test.
@@ -35,7 +35,7 @@ class AbstractTwigExtensionTest extends AbstractTestCase {
         // Set a Twig environment mock.
         $twigEnvironment = $this->getMockBuilder(Environment::class)->disableOriginalConstructor()->getMock();
 
-        $obj = new TestTwigExtension($twigEnvironment);
+        $obj = new TestAbstractTwigExtension($twigEnvironment);
         $obj->setVersion(3);
 
         $this->assertSame($twigEnvironment, $obj->getTwigEnvironment());

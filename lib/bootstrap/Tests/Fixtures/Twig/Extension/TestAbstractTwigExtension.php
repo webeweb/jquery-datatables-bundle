@@ -16,11 +16,11 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Fixtures\Twig\Extension;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\AbstractTwigExtension;
 
 /**
- * Test Twig extension.
+ * Test abstract Twig extension.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\BootstrapBundle\Tests\Fixtures\Twig\Extension
  */
-class TestTwigExtension extends AbstractTwigExtension {
+class TestAbstractTwigExtension extends AbstractTwigExtension {
 
 }
