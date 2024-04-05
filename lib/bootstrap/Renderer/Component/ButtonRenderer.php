@@ -50,7 +50,7 @@ class ButtonRenderer {
      * @return string Returns the rendered block.
      */
     public static function renderContent(ButtonInterface $button): ?string {
-        return null !== $button->getContent() ? $button->getContent() : "";
+        return $button->getContent();
     }
 
     /**
