@@ -33,7 +33,7 @@ class SessionService implements SessionServiceInterface {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.common.service.session";
+    public const SERVICE_NAME = "wbw.common.service.session";
 
     /**
      * Constructor.
