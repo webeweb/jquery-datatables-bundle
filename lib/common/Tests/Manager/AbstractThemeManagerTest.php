@@ -17,7 +17,7 @@ use Psr\Log\LoggerInterface;
 use Throwable;
 use Twig\Environment;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
-use WBW\Bundle\CommonBundle\Tests\Fixtures\Manager\TestThemeManager;
+use WBW\Bundle\CommonBundle\Tests\Fixtures\Manager\TestAbstractThemeManager;
 use WBW\Library\Symfony\Provider\ThemeProviderInterface;
 
 /**
@@ -81,7 +81,7 @@ class AbstractThemeManagerTest extends AbstractTestCase {
         // Set a Theme provider mock.
         $provider = $this->getMockBuilder(ThemeProviderInterface::class)->getMock();
 
-        $obj = new TestThemeManager($this->logger, $this->twigEnvironment);
+        $obj = new TestAbstractThemeManager($this->logger, $this->twigEnvironment);
         $obj->setProvider(ThemeProviderInterface::class, $provider);
 
         $obj->addGlobal();
@@ -100,7 +100,7 @@ class AbstractThemeManagerTest extends AbstractTestCase {
      */
     public function testAddGlobalWithNull(): void {
 
-        $obj = new TestThemeManager($this->logger, $this->twigEnvironment);
+        $obj = new TestAbstractThemeManager($this->logger, $this->twigEnvironment);
 
         $obj->addGlobal();
 
@@ -119,7 +119,7 @@ class AbstractThemeManagerTest extends AbstractTestCase {
         // Set a Theme provider mock.
         $provider = $this->getMockBuilder(ThemeProviderInterface::class)->getMock();
 
-        $obj = new TestThemeManager($this->logger, $this->twigEnvironment);
+        $obj = new TestAbstractThemeManager($this->logger, $this->twigEnvironment);
 
         $obj->setProvider(ThemeProviderInterface::class, $provider);
         $this->assertSame($provider, $obj->getProvider(ThemeProviderInterface::class));
@@ -137,7 +137,7 @@ class AbstractThemeManagerTest extends AbstractTestCase {
         $provider1 = $this->getMockBuilder(ThemeProviderInterface::class)->getMock();
         $provider2 = $this->getMockBuilder(ThemeProviderInterface::class)->getMock();
 
-        $obj = new TestThemeManager($this->logger, $this->twigEnvironment);
+        $obj = new TestAbstractThemeManager($this->logger, $this->twigEnvironment);
 
         $obj->setProvider(ThemeProviderInterface::class, $provider1);
         $this->assertSame($provider1, $obj->getProvider(ThemeProviderInterface::class));
@@ -154,7 +154,7 @@ class AbstractThemeManagerTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $obj = new TestThemeManager($this->logger, $this->twigEnvironment);
+        $obj = new TestAbstractThemeManager($this->logger, $this->twigEnvironment);
 
         $this->assertSame($this->logger, $obj->getLogger());
         $this->assertNull($obj->getProvider(ThemeProviderInterface::class));

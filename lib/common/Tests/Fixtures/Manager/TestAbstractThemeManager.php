@@ -20,12 +20,12 @@ use WBW\Library\Symfony\Manager\ManagerInterface;
 use WBW\Library\Symfony\Provider\ThemeProviderInterface;
 
 /**
- * Test theme manager.
+ * Test abstract theme manager.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Tests\Fixtures\Manager
  */
-class TestThemeManager extends AbstractThemeManager {
+class TestAbstractThemeManager extends AbstractThemeManager {
 
     /**
      * {@inheritDoc}.
