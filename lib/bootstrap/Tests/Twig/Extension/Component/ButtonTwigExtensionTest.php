@@ -609,7 +609,7 @@ class ButtonTwigExtensionTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw.bootstrap.twig.extension.css.button", ButtonTwigExtension::SERVICE_NAME);
+        $this->assertEquals("wbw.bootstrap.twig.extension.component.button", ButtonTwigExtension::SERVICE_NAME);
 
         $obj = new ButtonTwigExtension($this->twigEnvironment);
 

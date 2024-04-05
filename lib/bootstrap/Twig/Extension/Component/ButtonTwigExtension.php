@@ -33,7 +33,7 @@ class ButtonTwigExtension extends AbstractButtonTwigExtension {
      *
      * @var string
      */
-    public const SERVICE_NAME = "wbw.bootstrap.twig.extension.css.button";
+    public const SERVICE_NAME = "wbw.bootstrap.twig.extension.component.button";
 
     /**
      * Display a Bootstrap button "danger".
