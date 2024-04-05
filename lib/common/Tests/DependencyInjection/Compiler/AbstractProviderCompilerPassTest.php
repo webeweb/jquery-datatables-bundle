@@ -15,7 +15,7 @@ namespace WBW\Bundle\CommonBundle\Tests\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
-use WBW\Bundle\CommonBundle\Tests\Fixtures\DependencyInjection\Compiler\TestProviderCompilerPass;
+use WBW\Bundle\CommonBundle\Tests\Fixtures\DependencyInjection\Compiler\TestAbstractProviderCompilerPass;
 use WBW\Library\Symfony\Manager\ManagerInterface;
 use WBW\Library\Symfony\Provider\ProviderInterface;
 
@@ -37,7 +37,7 @@ class AbstractProviderCompilerPassTest extends AbstractTestCase {
         // Set a Container builder mock.
         $containerBuilder = new ContainerBuilder();
 
-        $obj = new TestProviderCompilerPass();
+        $obj = new TestAbstractProviderCompilerPass();
 
         $obj->process($containerBuilder);
         $this->assertFalse($containerBuilder->hasDefinition("wbw.common.manager.test"));

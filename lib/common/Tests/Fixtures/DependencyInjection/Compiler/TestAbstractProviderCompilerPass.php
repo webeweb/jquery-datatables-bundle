@@ -17,12 +17,12 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use WBW\Bundle\CommonBundle\DependencyInjection\Compiler\AbstractProviderCompilerPass;
 
 /**
- * Test provider compiler pass.
+ * Test abstract provider compiler pass.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Tests\Fixtures\DependencyInjection\Compiler
  */
-class TestProviderCompilerPass extends AbstractProviderCompilerPass {
+class TestAbstractProviderCompilerPass extends AbstractProviderCompilerPass {
 
     /**
      *{@inheritDoc}
