@@ -16,12 +16,12 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Fixtures\Component;
 use WBW\Bundle\BootstrapBundle\Component\AbstractButton;
 
 /**
- * Test button.
+ * Test abstract button.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\BootstrapBundle\Tests\Fixtures\Component
  */
-class TestButton extends AbstractButton {
+class TestAbstractButton extends AbstractButton {
 
     /**
      * Constructor.

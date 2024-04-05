@@ -16,7 +16,7 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Component;
 use WBW\Bundle\BootstrapBundle\Component\AbstractButton;
 use WBW\Bundle\BootstrapBundle\Component\ButtonInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\BootstrapBundle\Tests\Fixtures\Component\TestButton;
+use WBW\Bundle\BootstrapBundle\Tests\Fixtures\Component\TestAbstractButton;
 use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
 use WBW\Library\Symfony\Assets\ButtonInterface as BaseButtonInterface;
 
@@ -76,7 +76,7 @@ class AbstractButtonTest extends AbstractTestCase {
         $data = file_get_contents(__DIR__ . "/../Fixtures/Component/AbstractButtonTest.testJsonSerialize.json");
         $json = json_decode($data, true);
 
-        $obj = new TestButton("test");
+        $obj = new TestAbstractButton("test");
         $obj->setActive(true);
         $obj->setBlock(true);
         $obj->setContent(BaseSerializerKeys::CONTENT);
@@ -98,7 +98,7 @@ class AbstractButtonTest extends AbstractTestCase {
      */
     public function testSetBlock(): void {
 
-        $obj = new TestButton("test");
+        $obj = new TestAbstractButton("test");
 
         $obj->setBlock(true);
         $this->assertTrue($obj->getBlock());
@@ -111,7 +111,7 @@ class AbstractButtonTest extends AbstractTestCase {
      */
     public function testSetData(): void {
 
-        $obj = new TestButton("test");
+        $obj = new TestAbstractButton("test");
 
         $obj->setData(["id" => 1]);
         $this->assertEquals(["id" => 1], $obj->getData());
@@ -124,7 +124,7 @@ class AbstractButtonTest extends AbstractTestCase {
      */
     public function testSetDisabled(): void {
 
-        $obj = new TestButton("test");
+        $obj = new TestAbstractButton("test");
 
         $obj->setDisabled(true);
         $this->assertTrue($obj->getDisabled());
@@ -137,7 +137,7 @@ class AbstractButtonTest extends AbstractTestCase {
      */
     public function testSetOutline(): void {
 
-        $obj = new TestButton("test");
+        $obj = new TestAbstractButton("test");
 
         $obj->setOutline(true);
         $this->assertTrue($obj->getOutline());
@@ -150,7 +150,7 @@ class AbstractButtonTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $obj = new TestButton("test");
+        $obj = new TestAbstractButton("test");
 
         $this->assertInstanceOf(ButtonInterface::class, $obj);
 
