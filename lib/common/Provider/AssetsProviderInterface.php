@@ -29,7 +29,7 @@ interface AssetsProviderInterface extends ProviderInterface, BundleInterface {
      *
      * @var string
      */
-    const ASSETS_RELATIVE_DIRECTORY = "/Resources/assets";
+    public const ASSETS_RELATIVE_DIRECTORY = "/Resources/assets";
 
     /**
      * Get the assets relative directory.
