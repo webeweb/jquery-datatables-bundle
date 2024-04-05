@@ -14,8 +14,8 @@ declare(strict_types = 1);
 namespace WBW\Bundle\DataTablesBundle\Command;
 
 use Symfony\Component\Console\Style\StyleInterface;
-use WBW\Bundle\CoreBundle\Command\AbstractCommand as BaseCommand;
-use WBW\Bundle\DataTablesBundle\Symfony\Translation\TranslatorTrait;
+use WBW\Bundle\CommonBundle\Command\AbstractCommand as BaseCommand;
+use WBW\Bundle\CommonBundle\Translation\TranslatorTrait;
 use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
 
 /**
