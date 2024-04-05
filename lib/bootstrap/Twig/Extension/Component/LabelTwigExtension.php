@@ -13,8 +13,11 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Twig\Extension\Component;
 
+use Symfony\Component\Security\Core\Role\Role;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Twig\TwigFunction;
 use WBW\Bundle\BootstrapBundle\WBWBootstrapBundle;
+use WBW\Bundle\CommonBundle\Translation\TranslatorTrait;
 use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
@@ -25,6 +28,10 @@ use WBW\Library\Types\Helper\ArrayHelper;
  * @link https://getbootstrap.com/docs/3.3/components/#labels
  */
 class LabelTwigExtension extends AbstractLabelTwigExtension {
+
+    use TranslatorTrait {
+        setTranslator as public;
+    }
 
     /**
      * Service name.
@@ -71,6 +78,44 @@ class LabelTwigExtension extends AbstractLabelTwigExtension {
      */
     public function bootstrapLabelPrimaryFunction(array $args = []): string {
         return $this->bootstrapLabel(ArrayHelper::get($args, "content"), "label-" . WBWBootstrapBundle::BOOTSTRAP_TYPE_PRIMARY);
+    }
+
+    /**
+     * Display a Bootstrap label "roles".
+     *
+     * @param UserInterface|null $user The user.
+     * @param array<string,string> $roleChoices The role choices.
+     * @param array<string,string> $roleColors The role colors.
+     * @param string|null $domain The translation domain.
+     * @return string|null Returns the Bootstrap role label.
+     */
+    public function bootstrapLabelRolesFunction(?UserInterface $user, array $roleChoices = [], array $roleColors = [], string $domain = null): ?string {
+
+        if (null === $user) {
+            return null;
+        }
+
+        $output = [];
+
+        /** @var Role|string $current */
+        foreach ($user->getRoles() as $current) {
+
+            $role = true === $current instanceof Role ? $current->getRole() : $current;
+
+            $trans = $role;
+            if (true === array_key_exists($role, $roleChoices)) {
+                $trans = $this->translate($roleChoices[$role], [], $domain);
+            }
+
+            $label = $this->bootstrapLabelDefaultFunction(["content" => $trans]);
+            if (true === array_key_exists($role, $roleColors)) {
+                $label = $this->setBackgroundColor($label, $trans, $roleColors[$role]);
+            }
+
+            $output[] = $label;
+        }
+
+        return implode(" ", $output);
     }
 
     /**
@@ -132,6 +177,25 @@ class LabelTwigExtension extends AbstractLabelTwigExtension {
 
             new TwigFunction("bootstrapLabelWarning", [$this, "bootstrapLabelWarningFunction"], ["is_safe" => ["html"]]),
             new TwigFunction("bsLabelWarning", [$this, "bootstrapLabelWarningFunction"], ["is_safe" => ["html"]]),
+
+            new TwigFunction("bootstrapLabelRoles", [$this, "bootstrapLabelRolesFunction"], ["is_safe" => ["html"]]),
+            new TwigFunction("bsLabelRoles", [$this, "bootstrapLabelRolesFunction"], ["is_safe" => ["html"]]),
         ];
+    }
+
+    /**
+     * Set a background color.
+     *
+     * @param string $label The label.
+     * @param string $content The content.
+     * @param string $color The color.
+     * @return string Returns the label with applied color.
+     */
+    private function setBackgroundColor(string $label, string $content, string $color): string {
+
+        $searches = ">" . $content;
+        $replaces = ' style="background-color: ' . $color . ';"' . $searches;
+
+        return str_replace([$searches], [$replaces], $label);
     }
 }
