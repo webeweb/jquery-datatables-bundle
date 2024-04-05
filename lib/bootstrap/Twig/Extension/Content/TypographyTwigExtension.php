@@ -30,7 +30,7 @@ class TypographyTwigExtension extends AbstractTypographyTwigExtension {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.bootstrap.twig.extension.content.typography";
+    public const SERVICE_NAME = "wbw.bootstrap.twig.extension.content.typography";
 
     /**
      * Display a Bootstrap bold text.

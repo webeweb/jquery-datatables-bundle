@@ -33,7 +33,7 @@ class ContainerTwigExtension extends AbstractTwigExtension {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.common.twig.extension.container";
+    public const SERVICE_NAME = "wbw.common.twig.extension.container";
 
     /**
      * Constructor.

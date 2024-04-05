@@ -30,7 +30,7 @@ class GridTwigExtension extends AbstractGridTwigExtension {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.bootstrap.twig.extension.layout.grid";
+    public const SERVICE_NAME = "wbw.bootstrap.twig.extension.layout.grid";
 
     /**
      * Display a Bootstrap grid.

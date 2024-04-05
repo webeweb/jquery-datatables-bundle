@@ -35,14 +35,14 @@ abstract class AbstractTwigExtension extends AbstractExtension {
      *
      * @var string
      */
-    const DEFAULT_CONTENT = "&nbsp;";
+    public const DEFAULT_CONTENT = "&nbsp;";
 
     /**
      * Default href.
      *
      * @var string
      */
-    const DEFAULT_HREF = NavigationNodeInterface::DEFAULT_HREF;
+    public const DEFAULT_HREF = NavigationNodeInterface::DEFAULT_HREF;
 
     /**
      * Constructor.

@@ -32,7 +32,7 @@ class AlertTwigExtension extends AbstractAlertTwigExtension {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.bootstrap.twig.extension.component.alert";
+    public const SERVICE_NAME = "wbw.bootstrap.twig.extension.component.alert";
 
     /**
      * Display a Bootstrap alert "danger".

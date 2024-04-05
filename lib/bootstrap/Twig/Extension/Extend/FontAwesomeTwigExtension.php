@@ -31,7 +31,7 @@ class FontAwesomeTwigExtension extends AbstractFontAwesomeTwigExtension implemen
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.bootstrap.twig.extension.extend.font_awesome";
+    public const SERVICE_NAME = "wbw.bootstrap.twig.extension.extend.font_awesome";
 
     /**
      * Display a Font Awesome icon.

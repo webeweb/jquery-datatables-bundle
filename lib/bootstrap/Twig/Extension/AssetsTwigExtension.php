@@ -35,7 +35,7 @@ class AssetsTwigExtension extends AbstractTwigExtension {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.bootstrap.twig.extension.assets";
+    public const SERVICE_NAME = "wbw.bootstrap.twig.extension.assets";
 
     /**
      * Display an icon.

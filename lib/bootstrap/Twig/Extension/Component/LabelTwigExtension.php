@@ -31,7 +31,7 @@ class LabelTwigExtension extends AbstractLabelTwigExtension {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.bootstrap.twig.extension.component.label";
+    public const SERVICE_NAME = "wbw.bootstrap.twig.extension.component.label";
 
     /**
      * Display a Bootstrap label "danger".
