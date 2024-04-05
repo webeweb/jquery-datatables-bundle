@@ -16,12 +16,12 @@ namespace WBW\Bundle\CommonBundle\Tests\Fixtures\Event;
 use WBW\Bundle\CommonBundle\Event\AbstractEvent;
 
 /**
- * Test event.
+ * Test abstract event.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Tests\Fixtures\Event
  */
-class TestEvent extends AbstractEvent {
+class TestAbstractEvent extends AbstractEvent {
 
     /**
      * Constructor.

@@ -14,7 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\CommonBundle\Tests\Event;
 
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
-use WBW\Bundle\CommonBundle\Tests\Fixtures\Event\TestEvent;
+use WBW\Bundle\CommonBundle\Tests\Fixtures\Event\TestAbstractEvent;
 
 /**
  * Abstract event test.
@@ -31,7 +31,7 @@ class AbstractEventTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $obj = new TestEvent("eventName");
+        $obj = new TestAbstractEvent("eventName");
 
         $this->assertEquals("eventName", $obj->getEventName());
     }
