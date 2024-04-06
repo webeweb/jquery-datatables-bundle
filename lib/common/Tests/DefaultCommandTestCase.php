@@ -20,13 +20,13 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\StyleInterface;
 
 /**
- * Abstract command test case.
+ * Default command test case.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Tests
  * @abstract
  */
-abstract class AbstractCommandTestCase extends AbstractTestCase {
+abstract class DefaultCommandTestCase extends AbstractTestCase {
 
     /**
      * Input.

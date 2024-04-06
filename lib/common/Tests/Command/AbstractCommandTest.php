@@ -17,7 +17,7 @@ use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Helper\HelperSet;
 use Symfony\Component\Console\Style\StyleInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
-use WBW\Bundle\CommonBundle\Tests\AbstractCommandTestCase;
+use WBW\Bundle\CommonBundle\Tests\DefaultCommandTestCase;
 use WBW\Bundle\CommonBundle\Tests\Fixtures\Command\TestAbstractCommand;
 
 /**
@@ -26,7 +26,7 @@ use WBW\Bundle\CommonBundle\Tests\Fixtures\Command\TestAbstractCommand;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Tests\Command
  */
-class AbstractCommandTest extends AbstractCommandTestCase {
+class AbstractCommandTest extends DefaultCommandTestCase {
 
     /**
      * Test displayHeader()
