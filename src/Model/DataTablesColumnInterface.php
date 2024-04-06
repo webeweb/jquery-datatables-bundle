@@ -115,6 +115,62 @@ interface DataTablesColumnInterface {
     public const DATATABLES_TYPE_STRING = "string";
 
     /**
+     * Width "L".
+     *
+     * @var string
+     */
+    public const DATATABLES_WIDTH_L = "160px";
+
+    /**
+     * Width "M".
+     *
+     * @var string
+     */
+    public const DATATABLES_WIDTH_M = "120px";
+
+    /**
+     * Width "S".
+     *
+     * @var string
+     */
+    public const DATATABLES_WIDTH_S = "80px";
+
+    /**
+     * Width "XL".
+     *
+     * @var string
+     */
+    public const DATATABLES_WIDTH_XL = "200px";
+
+    /**
+     * Width "XS".
+     *
+     * @var string
+     */
+    public const DATATABLES_WIDTH_XS = "40px";
+
+    /**
+     * Width "XXL".
+     *
+     * @var string
+     */
+    public const DATATABLES_WIDTH_XXL = "240px";
+
+    /**
+     * Width "XXS".
+     *
+     * @var string
+     */
+    public const DATATABLES_WIDTH_XXS = "20px";
+
+    /**
+     * Width "XXXL".
+     *
+     * @var string
+     */
+    public const DATATABLES_WIDTH_XXXL = "280px";
+
+    /**
      * Get the cell type.
      *
      * @return string Returns the cell type.

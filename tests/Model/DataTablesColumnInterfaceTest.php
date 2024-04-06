@@ -47,5 +47,14 @@ class DataTablesColumnInterfaceTest extends AbstractTestCase {
         $this->assertEquals("num", DataTablesColumnInterface::DATATABLES_TYPE_NUM);
         $this->assertEquals("num-fmt", DataTablesColumnInterface::DATATABLES_TYPE_NUM_FMT);
         $this->assertEquals("string", DataTablesColumnInterface::DATATABLES_TYPE_STRING);
+
+        $this->assertEquals("20px", DataTablesColumnInterface::DATATABLES_WIDTH_XXS);
+        $this->assertEquals("40px", DataTablesColumnInterface::DATATABLES_WIDTH_XS);
+        $this->assertEquals("80px", DataTablesColumnInterface::DATATABLES_WIDTH_S);
+        $this->assertEquals("120px", DataTablesColumnInterface::DATATABLES_WIDTH_M);
+        $this->assertEquals("160px", DataTablesColumnInterface::DATATABLES_WIDTH_L);
+        $this->assertEquals("200px", DataTablesColumnInterface::DATATABLES_WIDTH_XL);
+        $this->assertEquals("240px", DataTablesColumnInterface::DATATABLES_WIDTH_XXL);
+        $this->assertEquals("280px", DataTablesColumnInterface::DATATABLES_WIDTH_XXXL);
     }
 }
