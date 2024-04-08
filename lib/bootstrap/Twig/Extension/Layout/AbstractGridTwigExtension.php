@@ -26,7 +26,7 @@ use WBW\Bundle\BootstrapBundle\Twig\Extension\AbstractTwigExtension;
 abstract class AbstractGridTwigExtension extends AbstractTwigExtension {
 
     /**
-     * Display a Bootstrap grid.
+     * Render a Bootstrap grid.
      *
      * @param int|null $lg The large column size.
      * @param int|null $md The medium column size.
