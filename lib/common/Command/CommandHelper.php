@@ -57,7 +57,7 @@ EOT;
      * Format a help.
      *
      * @param string $content The content
-     * @return string
+     * @return string Returns the help.
      */
     public static function formatHelp(string $content): string {
         return str_replace("{{ content }}", $content, self::TEMPLATE_HELP);
