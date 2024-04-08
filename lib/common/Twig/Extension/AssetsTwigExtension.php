@@ -69,7 +69,7 @@ class AssetsTwigExtension extends AbstractTwigExtension {
      *
      * @param string $type The type.
      * @param string $name The name.
-     * @param array $query The query.
+     * @param array<string,mixed> $query The query.
      * @return string|null Returns the common resource path.
      */
     public function commonResourcePath(string $type, string $name, array $query = []): ?string {
@@ -88,7 +88,7 @@ class AssetsTwigExtension extends AbstractTwigExtension {
      * Render a common resource "javascript".
      *
      * @param string $name The name.
-     * @param array $query The query.
+     * @param array<string,mixed> $query The query.
      * @return string Returns the common resource "javascript".
      */
     public function commonResourceScriptFunction(string $name, array $query = []): string {
@@ -105,7 +105,7 @@ class AssetsTwigExtension extends AbstractTwigExtension {
      * Render a common resource "stylesheet".
      *
      * @param string $name The name.
-     * @param array $query The query.
+     * @param array<string,mixed> $query The query.
      * @return string Returns the common resource "stylesheet".
      */
     public function commonResourceStyleFunction(string $name, array $query = []): string {
@@ -213,7 +213,7 @@ class AssetsTwigExtension extends AbstractTwigExtension {
     /**
      * Render an image.
      *
-     * @param array $args The arguments.
+     * @param array<string,mixed> $args The arguments.
      * @return string Returns the image.
      */
     public function hImageFunction(array $args = []): string {
