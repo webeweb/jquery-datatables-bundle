@@ -57,9 +57,9 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
         $obj->setVersion(4);
 
         $arg = ["content" => "content", "pill" => true];
-        $res = '<span class="badge badge-danger badge-pill">content</span>';
+        $exp = '<span class="badge badge-danger badge-pill">content</span>';
 
-        $this->assertEquals($res, $obj->bootstrapBadgeDangerFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapBadgeDangerFunction($arg));
     }
 
     /**
@@ -73,9 +73,9 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
         $obj->setVersion(4);
 
         $arg = ["content" => "content", "pill" => true];
-        $res = '<span class="badge badge-dark badge-pill">content</span>';
+        $exp = '<span class="badge badge-dark badge-pill">content</span>';
 
-        $this->assertEquals($res, $obj->bootstrapBadgeDarkFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapBadgeDarkFunction($arg));
     }
 
     /**
@@ -89,9 +89,9 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
         $obj->setVersion(4);
 
         $arg = ["content" => "content", "pill" => true];
-        $res = '<span class="badge badge-pill">content</span>';
+        $exp = '<span class="badge badge-pill">content</span>';
 
-        $this->assertEquals($res, $obj->bootstrapBadgeFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapBadgeFunction($arg));
     }
 
     /**
@@ -105,9 +105,9 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
         $obj->setVersion(4);
 
         $arg = [];
-        $res = '<span class="badge"></span>';
+        $exp = '<span class="badge"></span>';
 
-        $this->assertEquals($res, $obj->bootstrapBadgeFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapBadgeFunction($arg));
     }
 
     /**
@@ -121,9 +121,9 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
         $obj->setVersion(4);
 
         $arg = ["content" => "content", "pill" => true];
-        $res = '<span class="badge badge-info badge-pill">content</span>';
+        $exp = '<span class="badge badge-info badge-pill">content</span>';
 
-        $this->assertEquals($res, $obj->bootstrapBadgeInfoFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapBadgeInfoFunction($arg));
     }
 
     /**
@@ -137,9 +137,9 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
         $obj->setVersion(4);
 
         $arg = ["content" => "content", "pill" => true];
-        $res = '<span class="badge badge-light badge-pill">content</span>';
+        $exp = '<span class="badge badge-light badge-pill">content</span>';
 
-        $this->assertEquals($res, $obj->bootstrapBadgeLightFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapBadgeLightFunction($arg));
     }
 
     /**
@@ -153,9 +153,9 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
         $obj->setVersion(4);
 
         $arg = [];
-        $res = '<a href="https://github.com/" target="_blank" class="badge badge-danger"></a>';
+        $exp = '<a href="https://github.com/" target="_blank" class="badge badge-danger"></a>';
 
-        $this->assertEquals($res, $obj->bootstrapBadgeLinkFilter($obj->bootstrapBadgeDangerFunction($arg), "https://github.com/", "_blank"));
+        $this->assertEquals($exp, $obj->bootstrapBadgeLinkFilter($obj->bootstrapBadgeDangerFunction($arg), "https://github.com/", "_blank"));
     }
 
     /**
@@ -169,9 +169,9 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
         $obj->setVersion(4);
 
         $arg = ["content" => "content", "pill" => true];
-        $res = '<span class="badge badge-primary badge-pill">content</span>';
+        $exp = '<span class="badge badge-primary badge-pill">content</span>';
 
-        $this->assertEquals($res, $obj->bootstrapBadgePrimaryFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapBadgePrimaryFunction($arg));
     }
 
     /**
@@ -185,9 +185,9 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
         $obj->setVersion(4);
 
         $arg = ["content" => "content", "pill" => true];
-        $res = '<span class="badge badge-secondary badge-pill">content</span>';
+        $exp = '<span class="badge badge-secondary badge-pill">content</span>';
 
-        $this->assertEquals($res, $obj->bootstrapBadgeSecondaryFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapBadgeSecondaryFunction($arg));
     }
 
     /**
@@ -201,9 +201,9 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
         $obj->setVersion(4);
 
         $arg = ["content" => "content", "pill" => true];
-        $res = '<span class="badge badge-success badge-pill">content</span>';
+        $exp = '<span class="badge badge-success badge-pill">content</span>';
 
-        $this->assertEquals($res, $obj->bootstrapBadgeSuccessFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapBadgeSuccessFunction($arg));
     }
 
     /**
@@ -217,9 +217,9 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
         $obj->setVersion(4);
 
         $arg = ["content" => "content", "pill" => true];
-        $res = '<span class="badge badge-warning badge-pill">content</span>';
+        $exp = '<span class="badge badge-warning badge-pill">content</span>';
 
-        $this->assertEquals($res, $obj->bootstrapBadgeWarningFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapBadgeWarningFunction($arg));
     }
 
     /**
