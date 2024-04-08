@@ -34,7 +34,7 @@ class ProgressBarTwigExtension extends AbstractProgressBarTwigExtension {
     public const SERVICE_NAME = "wbw.bootstrap.twig.extension.component.progress_bar";
 
     /**
-     * Display a Bootstrap multiple bars.
+     * Render a Bootstrap multiple bars.
      *
      * @param string[] $progressBars The progress bars.
      * @return string Returns the Bootstrap multiple bars.
@@ -45,7 +45,7 @@ class ProgressBarTwigExtension extends AbstractProgressBarTwigExtension {
     }
 
     /**
-     * Display a Bootstrap progress bar "basic".
+     * Render a Bootstrap progress bar "basic".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap progress bar "basic".
@@ -55,7 +55,7 @@ class ProgressBarTwigExtension extends AbstractProgressBarTwigExtension {
     }
 
     /**
-     * Display a Bootstrap progress bar "danger".
+     * Render a Bootstrap progress bar "danger".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap progress bar "danger".
@@ -65,7 +65,7 @@ class ProgressBarTwigExtension extends AbstractProgressBarTwigExtension {
     }
 
     /**
-     * Display a Bootstrap progress bar "info".
+     * Render a Bootstrap progress bar "info".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap progress bar "info".
@@ -75,7 +75,7 @@ class ProgressBarTwigExtension extends AbstractProgressBarTwigExtension {
     }
 
     /**
-     * Display a Bootstrap progress bar "success".
+     * Render a Bootstrap progress bar "success".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap progress bar "success".
@@ -85,7 +85,7 @@ class ProgressBarTwigExtension extends AbstractProgressBarTwigExtension {
     }
 
     /**
-     * Display a Bootstrap progress bar "warning".
+     * Render a Bootstrap progress bar "warning".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap progress bar "warning".
