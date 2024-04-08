@@ -25,7 +25,7 @@ use WBW\Bundle\BootstrapBundle\Twig\Extension\AbstractTwigExtension;
 abstract class AbstractLabelTwigExtension extends AbstractTwigExtension {
 
     /**
-     * Display a Bootstrap label.
+     * Render a Bootstrap label.
      *
      * @param string|null $content The content.
      * @param string|null $class The class.
