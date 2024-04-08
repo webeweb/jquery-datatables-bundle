@@ -231,14 +231,14 @@ use DateTime;
 use WBW\Bundle\DataTablesBundle\Api\DataTablesColumnInterface;
 use WBW\Bundle\DataTablesBundle\Api\DataTablesResponseInterface;
 use WBW\Bundle\DataTablesBundle\Factory\DataTablesFactory;
-use WBW\Bundle\DataTablesBundle\Provider\DataTablesCSVExporterInterface;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesCsvExporterInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 
 /**
  * Employee DataTables provider.
  */
-class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTablesCSVExporterInterface, DataTablesEditorInterface {
+class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTablesCsvExporterInterface, DataTablesEditorInterface {
 
     /**
      * {@inheritDoc}
