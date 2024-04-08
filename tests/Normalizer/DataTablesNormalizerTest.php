@@ -51,7 +51,7 @@ class DataTablesNormalizerTest extends AbstractTestCase {
         $arg->expects($this->any())->method("getVisible")->willReturn(false);
         $arg->expects($this->any())->method("getWidth")->willReturn("width");
 
-        $res = [
+        $exp = [
             "cellType"       => "td",
             "classname"      => "classname",
             "contentPadding" => "contentPadding",
@@ -67,7 +67,8 @@ class DataTablesNormalizerTest extends AbstractTestCase {
             "visible"        => false,
             "width"          => "width",
         ];
-        $this->assertEquals($res, DataTablesNormalizer::normalizeColumn($arg));
+
+        $this->assertEquals($exp, DataTablesNormalizer::normalizeColumn($arg));
     }
 
     /**
@@ -85,8 +86,9 @@ class DataTablesNormalizerTest extends AbstractTestCase {
         $arg->expects($this->any())->method("getSearchable")->willReturn(true);
         $arg->expects($this->any())->method("getVisible")->willReturn(true);
 
-        $res = ["cellType" => "td"];
-        $this->assertEquals($res, DataTablesNormalizer::normalizeColumn($arg));
+        $exp = ["cellType" => "td"];
+
+        $this->assertEquals($exp, DataTablesNormalizer::normalizeColumn($arg));
     }
 
     /**
@@ -103,12 +105,13 @@ class DataTablesNormalizerTest extends AbstractTestCase {
         $arg->expects($this->any())->method("getRecordsFiltered")->willReturn(1);
         $arg->expects($this->any())->method("getRecordsTotal")->willReturn(2);
 
-        $res = [
+        $exp = [
             "data"            => [],
             "draw"            => 0,
             "recordsFiltered" => 1,
             "recordsTotal"    => 2,
         ];
-        $this->assertEquals($res, DataTablesNormalizer::normalizeResponse($arg));
+
+        $this->assertEquals($exp, DataTablesNormalizer::normalizeResponse($arg));
     }
 }
