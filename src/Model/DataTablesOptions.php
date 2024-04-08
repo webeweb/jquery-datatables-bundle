@@ -24,7 +24,7 @@ class DataTablesOptions implements DataTablesOptionsInterface {
     /**
      * Options.
      *
-     * @var array<string,mixed>
+     * @var array<string,mixed>|null
      */
     private $options;
 
