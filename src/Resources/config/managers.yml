@@ -1,4 +1,4 @@
-# Resources/config/managers.yml
+# src/Resources/config/managers.yml
 services:
 
     wbw.datatables.manager:
