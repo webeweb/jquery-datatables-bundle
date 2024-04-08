@@ -35,7 +35,7 @@ class AbstractBadgeTest extends AbstractTestCase {
      */
     public function testEnumTypes(): void {
 
-        $res = [
+        $exp = [
             BaseBadgeInterface::BADGE_TYPE_DANGER,
             BadgeInterface::BADGE_TYPE_DARK,
             BaseBadgeInterface::BADGE_TYPE_INFO,
@@ -45,7 +45,8 @@ class AbstractBadgeTest extends AbstractTestCase {
             BaseBadgeInterface::BADGE_TYPE_SUCCESS,
             BaseBadgeInterface::BADGE_TYPE_WARNING,
         ];
-        $this->assertEquals($res, AbstractBadge::enumTypes());
+
+        $this->assertEquals($exp, AbstractBadge::enumTypes());
     }
 
     /**
