@@ -1,4 +1,4 @@
-# Resources/config/commands.yml
+# src/Resources/config/commands.yml
 services:
 
     wbw.datatables.command.list_provider:
