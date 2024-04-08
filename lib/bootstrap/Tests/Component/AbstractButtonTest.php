@@ -35,12 +35,13 @@ class AbstractButtonTest extends AbstractTestCase {
      */
     public function testEnumSizes(): void {
 
-        $res = [
+        $exp = [
             ButtonInterface::BUTTON_SIZE_LG,
             ButtonInterface::BUTTON_SIZE_SM,
             ButtonInterface::BUTTON_SIZE_XS,
         ];
-        $this->assertEquals($res, AbstractButton::enumSizes());
+
+        $this->assertEquals($exp, AbstractButton::enumSizes());
     }
 
     /**
@@ -50,7 +51,7 @@ class AbstractButtonTest extends AbstractTestCase {
      */
     public function testEnumTypes(): void {
 
-        $res = [
+        $exp = [
             BaseButtonInterface::BUTTON_TYPE_DANGER,
             ButtonInterface::BUTTON_TYPE_DARK,
             ButtonInterface::BUTTON_TYPE_DEFAULT,
@@ -62,7 +63,8 @@ class AbstractButtonTest extends AbstractTestCase {
             BaseButtonInterface::BUTTON_TYPE_SUCCESS,
             BaseButtonInterface::BUTTON_TYPE_WARNING,
         ];
-        $this->assertEquals($res, AbstractButton::enumTypes());
+
+        $this->assertEquals($exp, AbstractButton::enumTypes());
     }
 
     /**
