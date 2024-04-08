@@ -28,7 +28,7 @@ class DataTablesLoop implements DataTablesLoopInterface {
     /**
      * Index.
      *
-     * @var int
+     * @var int|null
      */
     private $index;
 
