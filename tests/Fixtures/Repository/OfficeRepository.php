@@ -14,12 +14,14 @@ declare(strict_types = 1);
 namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Entity\Office;
 
 /**
  * Office repository.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\Repository
+ * @extends EntityRepository<Office>
  */
 class OfficeRepository extends EntityRepository {
 
