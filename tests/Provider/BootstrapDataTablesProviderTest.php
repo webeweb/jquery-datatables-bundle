@@ -43,7 +43,7 @@ class BootstrapDataTablesProviderTest extends AbstractTestCase {
     /**
      * DataTable provider.
      *
-     * @var TestBootstrapDataTablesProvider
+     * @var TestBootstrapDataTablesProvider|null
      */
     private $dataTablesProvider;
 

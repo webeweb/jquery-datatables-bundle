@@ -32,7 +32,7 @@ class DefaultDataTablesProviderTest extends AbstractTestCase {
     /**
      * DataTable provider.
      *
-     * @var TestDefaultDataTablesProvider
+     * @var TestDefaultDataTablesProvider|null
      */
     private $dataTablesProvider;
 
