@@ -33,7 +33,7 @@ class TypographyTwigExtension extends AbstractTypographyTwigExtension {
     public const SERVICE_NAME = "wbw.bootstrap.twig.extension.content.typography";
 
     /**
-     * Display a Bootstrap bold text.
+     * Render a Bootstrap bold text.
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap bold text.
@@ -43,7 +43,7 @@ class TypographyTwigExtension extends AbstractTypographyTwigExtension {
     }
 
     /**
-     * Display a Bootstrap deleted text.
+     * Render a Bootstrap deleted text.
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap deleted text.
@@ -53,7 +53,7 @@ class TypographyTwigExtension extends AbstractTypographyTwigExtension {
     }
 
     /**
-     * Display a Boostrap heading 1.
+     * Render a Boostrap heading 1.
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap heading 1.
@@ -63,7 +63,7 @@ class TypographyTwigExtension extends AbstractTypographyTwigExtension {
     }
 
     /**
-     * Display a Bootstrap heading 2.
+     * Render a Bootstrap heading 2.
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap heading 2.
@@ -73,7 +73,7 @@ class TypographyTwigExtension extends AbstractTypographyTwigExtension {
     }
 
     /**
-     * Display a Bootstrap heading 3.
+     * Render a Bootstrap heading 3.
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap heading 3.
@@ -83,7 +83,7 @@ class TypographyTwigExtension extends AbstractTypographyTwigExtension {
     }
 
     /**
-     * Display a Bootstrap heading 4.
+     * Render a Bootstrap heading 4.
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap heading 4.
@@ -93,7 +93,7 @@ class TypographyTwigExtension extends AbstractTypographyTwigExtension {
     }
 
     /**
-     * Display a  heading 5.
+     * Render a Bootstrap heading 5.
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap heading 5.
@@ -103,7 +103,7 @@ class TypographyTwigExtension extends AbstractTypographyTwigExtension {
     }
 
     /**
-     * Display a Bootstrap heading 6.
+     * Render a Bootstrap heading 6.
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap heading 6.
@@ -113,7 +113,7 @@ class TypographyTwigExtension extends AbstractTypographyTwigExtension {
     }
 
     /**
-     * Display a Bootstrap inserted text.
+     * Render a Bootstrap inserted text.
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap inserted text.
@@ -123,7 +123,7 @@ class TypographyTwigExtension extends AbstractTypographyTwigExtension {
     }
 
     /**
-     * Display a Bootstrap italic text.
+     * Render a Bootstrap italic text.
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap italic text.
@@ -133,7 +133,7 @@ class TypographyTwigExtension extends AbstractTypographyTwigExtension {
     }
 
     /**
-     * Display a Bootstrap marked text.
+     * Render a Bootstrap marked text.
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap marked text.
@@ -143,7 +143,7 @@ class TypographyTwigExtension extends AbstractTypographyTwigExtension {
     }
 
     /**
-     * Display a Bootstrap small text.
+     * Render a Bootstrap small text.
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap small text.
@@ -153,7 +153,7 @@ class TypographyTwigExtension extends AbstractTypographyTwigExtension {
     }
 
     /**
-     * Display a Bootstrap strike through text.
+     * Render a Bootstrap strike through text.
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap strike through text.
@@ -163,7 +163,7 @@ class TypographyTwigExtension extends AbstractTypographyTwigExtension {
     }
 
     /**
-     * Display a Bootstrap underlined text.
+     * Render a Bootstrap underlined text.
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap underlined text.
