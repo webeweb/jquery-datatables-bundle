@@ -27,7 +27,7 @@ use WBW\Bundle\BootstrapBundle\Twig\Extension\AbstractTwigExtension;
 abstract class AbstractBadgeTwigExtension extends AbstractTwigExtension {
 
     /**
-     * Display a Bootstrap badge.
+     * Render a Bootstrap badge.
      *
      * @param BadgeInterface $badge The badge.
      * @return string Returns the Bootstrap badge.
