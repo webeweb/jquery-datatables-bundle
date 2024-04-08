@@ -25,7 +25,7 @@ use WBW\Bundle\BootstrapBundle\Twig\Extension\AbstractTwigExtension;
 abstract class AbstractGlyphiconTwigExtension extends AbstractTwigExtension {
 
     /**
-     * Display a Bootstrap glyphicon.
+     * Render a Bootstrap glyphicon.
      *
      * @param string|null $name The name.
      * @param string|null $style The style.
