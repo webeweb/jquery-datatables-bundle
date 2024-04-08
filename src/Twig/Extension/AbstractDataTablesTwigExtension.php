@@ -15,9 +15,9 @@ namespace WBW\Bundle\DataTablesBundle\Twig\Extension;
 
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 use Twig\Environment;
-use WBW\Bundle\CoreBundle\Twig\Extension\AbstractTwigExtension;
-use WBW\Bundle\CoreBundle\Twig\Extension\AssetsTwigExtension;
-use WBW\Bundle\CoreBundle\Twig\Extension\AssetsTwigExtensionTrait;
+use WBW\Bundle\CommonBundle\Twig\Extension\AssetsTwigExtension;
+use WBW\Bundle\CommonBundle\Twig\Extension\AssetsTwigExtensionTrait;
+use WBW\Bundle\CommonBundle\Twig\Extension\AbstractTwigExtension;
 use WBW\Bundle\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperInterface;
@@ -90,7 +90,7 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
 
         $inner = "\n{$thead}{$tfoot}";
 
-        return static::coreHtmlElement("table", $inner, $attributes);
+        return static::h("table", $inner, $attributes);
     }
 
     /**
@@ -108,7 +108,7 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
             "width" => $dtColumn->getWidth(),
         ];
 
-        return static::coreHtmlElement("th", $dtColumn->getTitle(), $attributes);
+        return static::h("th", $dtColumn->getTitle(), $attributes);
     }
 
     /**
@@ -131,9 +131,9 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
             $row .= $col . "\n";
         }
 
-        $tr = static::coreHtmlElement("tr", "\n$row");
+        $tr = static::h("tr", "\n$row");
 
-        return static::coreHtmlElement($wrapper, "\n$tr\n");
+        return static::h($wrapper, "\n$tr\n");
     }
 
     /**
@@ -157,11 +157,11 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
 
         $searches = ["%var%", "%selector%", "%options%"];
         $replaces = [$var, null === $selector ? "#$var" : $selector, $this->encodeOptions($options)];
-        $template = file_get_contents(__DIR__ . "/AbstractDataTablesTwigExtension.jDataTables.js.txt");
+        $template = file_get_contents(__DIR__ . "/AbstractDataTablesTwigExtension/jDataTables.js.txt");
 
         $javascript = str_replace($searches, $replaces, $template);
 
-        return $this->getAssetsTwigExtension()->coreScriptFilter($javascript);
+        return $this->getAssetsTwigExtension()->hScriptFilter($javascript);
     }
 
     /**
@@ -181,10 +181,10 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
 
         $searches = ["%selector%", "%options%"];
         $replaces = [$selector, $this->encodeOptions($options)];
-        $template = file_get_contents(__DIR__ . "/AbstractDataTablesTwigExtension.jDataTablesStandalone.js.txt");
+        $template = file_get_contents(__DIR__ . "/AbstractDataTablesTwigExtension/jDataTablesStandalone.js.txt");
 
         $javascript = str_replace($searches, $replaces, $template);
 
-        return $this->getAssetsTwigExtension()->coreScriptFilter($javascript);
+        return $this->getAssetsTwigExtension()->hScriptFilter($javascript);
     }
 }
