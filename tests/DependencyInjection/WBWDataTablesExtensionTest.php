@@ -15,9 +15,11 @@ namespace WBW\Bundle\DataTablesBundle\Tests\DependencyInjection;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Contracts\Translation\TranslatorInterface;
 use Throwable;
 use Twig\Environment;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\AssetsTwigExtension;
+use WBW\Bundle\DataTablesBundle\Command\ListDataTablesProviderCommand;
 use WBW\Bundle\DataTablesBundle\DependencyInjection\Configuration;
 use WBW\Bundle\DataTablesBundle\DependencyInjection\WBWDataTablesExtension;
 use WBW\Bundle\DataTablesBundle\Manager\DataTablesManager;
@@ -59,6 +61,9 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
         // Set a Logger mock.
         $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
 
+        // Set a Translator mock.
+        $translator = $this->getMockBuilder(TranslatorInterface::class)->getMock();
+
         // Set a Twig environment mock.
         $wigEnvironment = $this->getMockBuilder(Environment::class)->disableOriginalConstructor()->getMock();
 
@@ -68,6 +73,7 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
         // Set a Bootstrap renderer Twig extension mock
         $this->containerBuilder->set(AssetsTwigExtension::SERVICE_NAME, new AssetsTwigExtension($wigEnvironment));
         $this->containerBuilder->set("logger", $logger);
+        $this->containerBuilder->set("translator", $translator);
     }
 
     /**
@@ -107,7 +113,7 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
         $obj->load($this->configs, $this->containerBuilder);
 
         // Commands
-        //$this->assertInstanceOf(ListDataTablesProviderCommand::class, $this->containerBuilder->get(ListDataTablesProviderCommand::SERVICE_NAME));
+        $this->assertInstanceOf(ListDataTablesProviderCommand::class, $this->containerBuilder->get(ListDataTablesProviderCommand::SERVICE_NAME));
 
         // Controllers
         //$this->assertInstanceOf(DataTablesController::class, $this->containerBuilder->get(DataTablesController::SERVICE_NAME));
