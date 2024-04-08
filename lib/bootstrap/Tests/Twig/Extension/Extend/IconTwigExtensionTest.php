@@ -55,9 +55,9 @@ class IconTwigExtensionTest extends AbstractTestCase {
         $obj = new IconTwigExtension($this->twigEnvironment);
 
         $arg = ["name" => "asterisk"];
-        $res = '<i class="bi bi-asterisk"></i>';
+        $exp = '<i class="bi bi-asterisk"></i>';
 
-        $this->assertEquals($res, $obj->bootstrapIconFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapIconFunction($arg));
     }
 
     /**
@@ -70,9 +70,9 @@ class IconTwigExtensionTest extends AbstractTestCase {
         $obj = new IconTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = '<i class="bi bi-house"></i>';
+        $exp = '<i class="bi bi-house"></i>';
 
-        $this->assertEquals($res, $obj->bootstrapIconFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapIconFunction($arg));
     }
 
     /**
@@ -122,9 +122,9 @@ class IconTwigExtensionTest extends AbstractTestCase {
 
         $obj = new IconTwigExtension($this->twigEnvironment);
 
-        $res = '<i class="bi bi-asterisk" style="display: none;"></i>';
+        $exp = '<i class="bi bi-asterisk" style="display: none;"></i>';
 
-        $this->assertEquals($res, $obj->renderIcon("asterisk", "display: none;"));
+        $this->assertEquals($exp, $obj->renderIcon("asterisk", "display: none;"));
     }
 
     /**
