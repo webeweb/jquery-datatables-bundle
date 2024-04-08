@@ -35,7 +35,7 @@ class AbstractAlertTest extends AbstractTestCase {
      */
     public function testEnumTypes(): void {
 
-        $res = [
+        $exp = [
             BaseAlertInterface::ALERT_TYPE_DANGER,
             AlertInterface::ALERT_TYPE_DARK,
             BaseAlertInterface::ALERT_TYPE_INFO,
@@ -45,7 +45,8 @@ class AbstractAlertTest extends AbstractTestCase {
             BaseAlertInterface::ALERT_TYPE_SUCCESS,
             BaseAlertInterface::ALERT_TYPE_WARNING,
         ];
-        $this->assertEquals($res, AbstractAlert::enumTypes());
+
+        $this->assertEquals($exp, AbstractAlert::enumTypes());
     }
 
     /**
