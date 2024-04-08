@@ -15,7 +15,7 @@ namespace WBW\Bundle\DataTablesBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
-use WBW\Bundle\CoreBundle\Config\ConfigurationHelper;
+use WBW\Bundle\CommonBundle\DependencyInjection\WBWCommonExtension;
 
 /**
  * Configuration.
@@ -36,13 +36,13 @@ class Configuration implements ConfigurationInterface {
      */
     public function getConfigTreeBuilder(): TreeBuilder {
 
-        $assets  = ConfigurationHelper::loadYamlConfig(__DIR__, "assets");
-        $plugins = $assets["assets"]["wbw.datatables.asset.datatables"]["plugins"];
-        $themes  = $assets["assets"]["wbw.datatables.asset.datatables"]["themes"];
+        $assets  = WBWCommonExtension::loadYamlConfig(__DIR__ . "/../Resources/config", "assets");
+        $plugins = $assets["assets"]["wbw.datatables.assets"]["plugins"];
+        $themes  = $assets["assets"]["wbw.datatables.assets"]["themes"];
 
         $treeBuilder = new TreeBuilder(WBWDataTablesExtension::EXTENSION_ALIAS);
 
-        $rootNode = ConfigurationHelper::getRootNode($treeBuilder, WBWDataTablesExtension::EXTENSION_ALIAS);
+        $rootNode = $treeBuilder->getRootNode();
         $rootNode
             ->children()
                 ->variableNode("theme")->defaultValue("bootstrap")->info("DataTables theme")
