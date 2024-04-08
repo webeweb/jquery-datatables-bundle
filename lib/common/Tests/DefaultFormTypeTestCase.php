@@ -42,7 +42,7 @@ abstract class DefaultFormTypeTestCase extends AbstractTestCase {
     protected $defaults = [];
 
     /**
-     * Form
+     * Form.
      *
      * @var MockObject|FormInterface|null
      */
