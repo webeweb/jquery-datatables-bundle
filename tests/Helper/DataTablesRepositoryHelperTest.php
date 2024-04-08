@@ -30,13 +30,6 @@ use WBW\Bundle\DataTablesBundle\Tests\Fixtures\TestFixtures;
 class DataTablesRepositoryHelperTest extends AbstractTestCase {
 
     /**
-     * Entity manager.
-     *
-     * @var EntityManagerInterface|null
-     */
-    private $entityManager;
-
-    /**
      * Query builder.
      *
      * @var QueryBuilder|null
@@ -62,10 +55,10 @@ class DataTablesRepositoryHelperTest extends AbstractTestCase {
         $post["search"]["value"] = "test";
 
         // Set an Entity manager mock.
-        $this->entityManager = $this->getMockBuilder(EntityManagerInterface::class)->getMock();
+        $entityManager = $this->getMockBuilder(EntityManagerInterface::class)->getMock();
 
         // Set a Query builder mock.
-        $this->queryBuilder = new QueryBuilder($this->entityManager);
+        $this->queryBuilder = new QueryBuilder($entityManager);
 
         // Set a DataTables request mock.
         $this->request = new Request([], $post, [], [], [], ["REQUEST_METHOD" => "POST"]);
