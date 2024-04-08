@@ -13,28 +13,12 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Provider;
 
-use WBW\Library\Symfony\Provider\ProviderInterface;
-
 /**
  * DataTables CSV exporter interface.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Provider
  */
-interface DataTablesCsvExporterInterface extends ProviderInterface {
+interface DataTablesCsvExporterInterface extends DataTablesExporterInterface {
 
-    /**
-     * Export a columns.
-     *
-     * @return string[] Returns an array representing the columns.
-     */
-    public function exportColumns(): array;
-
-    /**
-     * Export a row.
-     *
-     * @param object $entity The entity.
-     * @return mixed[] Returns an array representing this row.
-     */
-    public function exportRow($entity): array;
 }
