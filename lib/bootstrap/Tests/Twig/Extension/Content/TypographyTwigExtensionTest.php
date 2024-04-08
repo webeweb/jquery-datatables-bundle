@@ -55,9 +55,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = "<strong>content</strong>";
+        $exp = "<strong>content</strong>";
 
-        $this->assertEquals($res, $obj->bootstrapBoldFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapBoldFunction($arg));
     }
 
     /**
@@ -70,9 +70,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = "<strong></strong>";
+        $exp = "<strong></strong>";
 
-        $this->assertEquals($res, $obj->bootstrapBoldFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapBoldFunction($arg));
     }
 
     /**
@@ -85,9 +85,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = "<del>content</del>";
+        $exp = "<del>content</del>";
 
-        $this->assertEquals($res, $obj->bootstrapDeletedFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapDeletedFunction($arg));
     }
 
     /**
@@ -100,9 +100,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = "<del></del>";
+        $exp = "<del></del>";
 
-        $this->assertEquals($res, $obj->bootstrapDeletedFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapDeletedFunction($arg));
     }
 
     /**
@@ -115,9 +115,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = "<em>content</em>";
+        $exp = "<em>content</em>";
 
-        $this->assertEquals($res, $obj->bootstrapItalicFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapItalicFunction($arg));
     }
 
     /**
@@ -130,9 +130,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = "<em></em>";
+        $exp = "<em></em>";
 
-        $this->assertEquals($res, $obj->bootstrapItalicFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapItalicFunction($arg));
     }
 
     /**
@@ -145,9 +145,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content", "description" => "description", "class" => "class"];
-        $res = '<h1 class="class">content <small>description</small></h1>';
+        $exp = '<h1 class="class">content <small>description</small></h1>';
 
-        $this->assertEquals($res, $obj->bootstrapHeading1Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading1Function($arg));
     }
 
     /**
@@ -160,9 +160,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["class" => "class"];
-        $res = '<h1 class="class"></h1>';
+        $exp = '<h1 class="class"></h1>';
 
-        $this->assertEquals($res, $obj->bootstrapHeading1Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading1Function($arg));
     }
 
     /**
@@ -175,9 +175,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = "<h1>content</h1>";
+        $exp = "<h1>content</h1>";
 
-        $this->assertEquals($res, $obj->bootstrapHeading1Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading1Function($arg));
     }
 
     /**
@@ -190,9 +190,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["description" => "description"];
-        $res = "<h1><small>description</small></h1>";
+        $exp = "<h1><small>description</small></h1>";
 
-        $this->assertEquals($res, $obj->bootstrapHeading1Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading1Function($arg));
     }
 
     /**
@@ -205,9 +205,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = "<h1></h1>";
+        $exp = "<h1></h1>";
 
-        $this->assertEquals($res, $obj->bootstrapHeading1Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading1Function($arg));
     }
 
     /**
@@ -220,9 +220,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content", "description" => "description", "class" => "class"];
-        $res = '<h2 class="class">content <small>description</small></h2>';
+        $exp = '<h2 class="class">content <small>description</small></h2>';
 
-        $this->assertEquals($res, $obj->bootstrapHeading2Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading2Function($arg));
     }
 
     /**
@@ -235,9 +235,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["class" => "class"];
-        $res = '<h2 class="class"></h2>';
+        $exp = '<h2 class="class"></h2>';
 
-        $this->assertEquals($res, $obj->bootstrapHeading2Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading2Function($arg));
     }
 
     /**
@@ -250,9 +250,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = "<h2>content</h2>";
+        $exp = "<h2>content</h2>";
 
-        $this->assertEquals($res, $obj->bootstrapHeading2Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading2Function($arg));
     }
 
     /**
@@ -265,9 +265,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["description" => "description"];
-        $res = "<h2><small>description</small></h2>";
+        $exp = "<h2><small>description</small></h2>";
 
-        $this->assertEquals($res, $obj->bootstrapHeading2Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading2Function($arg));
     }
 
     /**
@@ -280,9 +280,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = "<h2></h2>";
+        $exp = "<h2></h2>";
 
-        $this->assertEquals($res, $obj->bootstrapHeading2Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading2Function($arg));
     }
 
     /**
@@ -295,9 +295,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content", "description" => "description", "class" => "class"];
-        $res = '<h3 class="class">content <small>description</small></h3>';
+        $exp = '<h3 class="class">content <small>description</small></h3>';
 
-        $this->assertEquals($res, $obj->bootstrapHeading3Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading3Function($arg));
     }
 
     /**
@@ -310,9 +310,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["class" => "class"];
-        $res = '<h3 class="class"></h3>';
+        $exp = '<h3 class="class"></h3>';
 
-        $this->assertEquals($res, $obj->bootstrapHeading3Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading3Function($arg));
     }
 
     /**
@@ -325,9 +325,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = "<h3>content</h3>";
+        $exp = "<h3>content</h3>";
 
-        $this->assertEquals($res, $obj->bootstrapHeading3Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading3Function($arg));
     }
 
     /**
@@ -340,9 +340,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["description" => "description"];
-        $res = "<h3><small>description</small></h3>";
+        $exp = "<h3><small>description</small></h3>";
 
-        $this->assertEquals($res, $obj->bootstrapHeading3Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading3Function($arg));
     }
 
     /**
@@ -355,9 +355,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = "<h3></h3>";
+        $exp = "<h3></h3>";
 
-        $this->assertEquals($res, $obj->bootstrapHeading3Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading3Function($arg));
     }
 
     /**
@@ -370,9 +370,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content", "description" => "description", "class" => "class"];
-        $res = '<h4 class="class">content <small>description</small></h4>';
+        $exp = '<h4 class="class">content <small>description</small></h4>';
 
-        $this->assertEquals($res, $obj->bootstrapHeading4Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading4Function($arg));
     }
 
     /**
@@ -385,9 +385,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["class" => "class"];
-        $res = '<h4 class="class"></h4>';
+        $exp = '<h4 class="class"></h4>';
 
-        $this->assertEquals($res, $obj->bootstrapHeading4Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading4Function($arg));
     }
 
     /**
@@ -400,9 +400,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = "<h4>content</h4>";
+        $exp = "<h4>content</h4>";
 
-        $this->assertEquals($res, $obj->bootstrapHeading4Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading4Function($arg));
     }
 
     /**
@@ -415,9 +415,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["description" => "description"];
-        $res = "<h4><small>description</small></h4>";
+        $exp = "<h4><small>description</small></h4>";
 
-        $this->assertEquals($res, $obj->bootstrapHeading4Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading4Function($arg));
     }
 
     /**
@@ -430,9 +430,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = "<h4></h4>";
+        $exp = "<h4></h4>";
 
-        $this->assertEquals($res, $obj->bootstrapHeading4Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading4Function($arg));
     }
 
     /**
@@ -445,9 +445,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content", "description" => "description", "class" => "class"];
-        $res = '<h5 class="class">content <small>description</small></h5>';
+        $exp = '<h5 class="class">content <small>description</small></h5>';
 
-        $this->assertEquals($res, $obj->bootstrapHeading5Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading5Function($arg));
     }
 
     /**
@@ -460,9 +460,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["class" => "class"];
-        $res = '<h5 class="class"></h5>';
+        $exp = '<h5 class="class"></h5>';
 
-        $this->assertEquals($res, $obj->bootstrapHeading5Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading5Function($arg));
     }
 
     /**
@@ -475,9 +475,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = "<h5>content</h5>";
+        $exp = "<h5>content</h5>";
 
-        $this->assertEquals($res, $obj->bootstrapHeading5Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading5Function($arg));
     }
 
     /**
@@ -490,9 +490,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["description" => "description"];
-        $res = "<h5><small>description</small></h5>";
+        $exp = "<h5><small>description</small></h5>";
 
-        $this->assertEquals($res, $obj->bootstrapHeading5Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading5Function($arg));
     }
 
     /**
@@ -505,9 +505,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = "<h5></h5>";
+        $exp = "<h5></h5>";
 
-        $this->assertEquals($res, $obj->bootstrapHeading5Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading5Function($arg));
     }
 
     /**
@@ -520,9 +520,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content", "description" => "description", "class" => "class"];
-        $res = '<h6 class="class">content <small>description</small></h6>';
+        $exp = '<h6 class="class">content <small>description</small></h6>';
 
-        $this->assertEquals($res, $obj->bootstrapHeading6Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading6Function($arg));
     }
 
     /**
@@ -535,9 +535,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["class" => "class"];
-        $res = '<h6 class="class"></h6>';
+        $exp = '<h6 class="class"></h6>';
 
-        $this->assertEquals($res, $obj->bootstrapHeading6Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading6Function($arg));
     }
 
     /**
@@ -550,9 +550,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = "<h6>content</h6>";
+        $exp = "<h6>content</h6>";
 
-        $this->assertEquals($res, $obj->bootstrapHeading6Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading6Function($arg));
     }
 
     /**
@@ -565,9 +565,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["description" => "description"];
-        $res = "<h6><small>description</small></h6>";
+        $exp = "<h6><small>description</small></h6>";
 
-        $this->assertEquals($res, $obj->bootstrapHeading6Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading6Function($arg));
     }
 
     /**
@@ -580,9 +580,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = "<h6></h6>";
+        $exp = "<h6></h6>";
 
-        $this->assertEquals($res, $obj->bootstrapHeading6Function($arg));
+        $this->assertEquals($exp, $obj->bootstrapHeading6Function($arg));
     }
 
     /**
@@ -595,9 +595,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = "<ins>content</ins>";
+        $exp = "<ins>content</ins>";
 
-        $this->assertEquals($res, $obj->bootstrapInsertedFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapInsertedFunction($arg));
     }
 
     /**
@@ -610,9 +610,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = "<ins></ins>";
+        $exp = "<ins></ins>";
 
-        $this->assertEquals($res, $obj->bootstrapInsertedFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapInsertedFunction($arg));
     }
 
     /**
@@ -625,9 +625,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = "<mark>content</mark>";
+        $exp = "<mark>content</mark>";
 
-        $this->assertEquals($res, $obj->bootstrapMarkedFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapMarkedFunction($arg));
     }
 
     /**
@@ -640,9 +640,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = "<mark></mark>";
+        $exp = "<mark></mark>";
 
-        $this->assertEquals($res, $obj->bootstrapMarkedFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapMarkedFunction($arg));
     }
 
     /**
@@ -655,9 +655,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = "<small>content</small>";
+        $exp = "<small>content</small>";
 
-        $this->assertEquals($res, $obj->bootstrapSmallFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapSmallFunction($arg));
     }
 
     /**
@@ -670,9 +670,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = "<small></small>";
+        $exp = "<small></small>";
 
-        $this->assertEquals($res, $obj->bootstrapSmallFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapSmallFunction($arg));
     }
 
     /**
@@ -685,9 +685,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = "<s>content</s>";
+        $exp = "<s>content</s>";
 
-        $this->assertEquals($res, $obj->bootstrapStrikethroughFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapStrikethroughFunction($arg));
     }
 
     /**
@@ -700,9 +700,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = "<s></s>";
+        $exp = "<s></s>";
 
-        $this->assertEquals($res, $obj->bootstrapStrikethroughFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapStrikethroughFunction($arg));
     }
 
     /**
@@ -715,9 +715,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = "<u>content</u>";
+        $exp = "<u>content</u>";
 
-        $this->assertEquals($res, $obj->bootstrapUnderlinedFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapUnderlinedFunction($arg));
     }
 
     /**
@@ -730,9 +730,9 @@ class TypographyTwigExtensionTest extends AbstractTestCase {
         $obj = new TypographyTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = "<u></u>";
+        $exp = "<u></u>";
 
-        $this->assertEquals($res, $obj->bootstrapUnderlinedFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapUnderlinedFunction($arg));
     }
 
     /**
