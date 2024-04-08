@@ -15,7 +15,6 @@ namespace WBW\Bundle\DataTablesBundle\Command;
 
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use WBW\Bundle\CoreBundle\Console\ConsoleHelper;
 use WBW\Bundle\DataTablesBundle\Manager\DataTablesManagerTrait;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesCsvExporterInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
@@ -52,7 +51,7 @@ class ListDataTablesProviderCommand extends AbstractCommand {
     protected function configure(): void {
         $this
             ->setDescription("List the DataTables providers")
-            ->setHelp(ConsoleHelper::formatCommandHelp("list the DatTables providers"))
+            ->setHelp(static::formatHelp("list the DatTables providers"))
             ->setName(self::COMMAND_NAME);
     }
 
@@ -116,7 +115,7 @@ class ListDataTablesProviderCommand extends AbstractCommand {
             sprintf($format, count($provider->getColumns())),
             $provider->getPrefix(),
             $provider->getView(),
-            $this->getCheckbox($provider instanceof DataTablesCsvExporterInterface),
+            static::formatCheckbox($provider instanceof DataTablesCsvExporterInterface),
         ];
     }
 
