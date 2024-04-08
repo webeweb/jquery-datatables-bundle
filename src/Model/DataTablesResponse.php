@@ -30,14 +30,14 @@ class DataTablesResponse implements DataTablesResponseInterface {
     /**
      * Data.
      *
-     * @var array<string,mixed>[]
+     * @var array<string,mixed>[]|null
      */
     private $data;
 
     /**
      * Draw.
      *
-     * @var int
+     * @var int|null
      */
     private $draw;
 
@@ -51,14 +51,14 @@ class DataTablesResponse implements DataTablesResponseInterface {
     /**
      * Records filtered.
      *
-     * @var int
+     * @var int|null
      */
     private $recordsFiltered;
 
     /**
      * Records total.
      *
-     * @var int
+     * @var int|null
      */
     private $recordsTotal;
 
