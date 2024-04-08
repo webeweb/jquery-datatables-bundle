@@ -44,7 +44,7 @@ abstract class DefaultFormTypeTestCase extends AbstractTestCase {
     /**
      * Form.
      *
-     * @var MockObject|FormInterface|null
+     * @var MockObject|FormInterface<FormInterface>|null
      */
     protected $form;
 
