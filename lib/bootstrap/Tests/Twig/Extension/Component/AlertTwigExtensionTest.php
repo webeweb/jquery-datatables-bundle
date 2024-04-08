@@ -55,9 +55,9 @@ class AlertTwigExtensionTest extends AbstractTestCase {
         $obj = new AlertTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = '<div class="alert alert-danger" role="alert">content</div>';
+        $exp = '<div class="alert alert-danger" role="alert">content</div>';
 
-        $this->assertEquals($res, $obj->bootstrapAlertDangerFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapAlertDangerFunction($arg));
     }
 
     /**
@@ -70,9 +70,9 @@ class AlertTwigExtensionTest extends AbstractTestCase {
         $obj = new AlertTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = '<div class="alert alert-danger" role="alert"></div>';
+        $exp = '<div class="alert alert-danger" role="alert"></div>';
 
-        $this->assertEquals($res, $obj->bootstrapAlertDangerFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapAlertDangerFunction($arg));
     }
 
     /**
@@ -85,9 +85,9 @@ class AlertTwigExtensionTest extends AbstractTestCase {
         $obj = new AlertTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = '<div class="alert alert-dark" role="alert">content</div>';
+        $exp = '<div class="alert alert-dark" role="alert">content</div>';
 
-        $this->assertEquals($res, $obj->bootstrapAlertDarkFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapAlertDarkFunction($arg));
     }
 
     /**
@@ -100,9 +100,9 @@ class AlertTwigExtensionTest extends AbstractTestCase {
         $obj = new AlertTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = '<div class="alert alert-dark" role="alert"></div>';
+        $exp = '<div class="alert alert-dark" role="alert"></div>';
 
-        $this->assertEquals($res, $obj->bootstrapAlertDarkFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapAlertDarkFunction($arg));
     }
 
     /**
@@ -115,9 +115,9 @@ class AlertTwigExtensionTest extends AbstractTestCase {
         $obj = new AlertTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = '<div class="alert alert-info" role="alert">content</div>';
+        $exp = '<div class="alert alert-info" role="alert">content</div>';
 
-        $this->assertEquals($res, $obj->bootstrapAlertInfoFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapAlertInfoFunction($arg));
     }
 
     /**
@@ -130,9 +130,9 @@ class AlertTwigExtensionTest extends AbstractTestCase {
         $obj = new AlertTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = '<div class="alert alert-info" role="alert"></div>';
+        $exp = '<div class="alert alert-info" role="alert"></div>';
 
-        $this->assertEquals($res, $obj->bootstrapAlertInfoFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapAlertInfoFunction($arg));
     }
 
     /**
@@ -145,9 +145,9 @@ class AlertTwigExtensionTest extends AbstractTestCase {
         $obj = new AlertTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = '<div class="alert alert-light" role="alert">content</div>';
+        $exp = '<div class="alert alert-light" role="alert">content</div>';
 
-        $this->assertEquals($res, $obj->bootstrapAlertLightFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapAlertLightFunction($arg));
     }
 
     /**
@@ -160,9 +160,9 @@ class AlertTwigExtensionTest extends AbstractTestCase {
         $obj = new AlertTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = '<div class="alert alert-light" role="alert"></div>';
+        $exp = '<div class="alert alert-light" role="alert"></div>';
 
-        $this->assertEquals($res, $obj->bootstrapAlertLightFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapAlertLightFunction($arg));
     }
 
     /**
@@ -175,9 +175,9 @@ class AlertTwigExtensionTest extends AbstractTestCase {
         $obj = new AlertTwigExtension($this->twigEnvironment);
 
         $arg = ["href" => "https://github.com/", "content" => "content"];
-        $res = '<a href="https://github.com/">content</a>';
+        $exp = '<a href="https://github.com/">content</a>';
 
-        $this->assertEquals($res, $obj->bootstrapAlertLinkFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapAlertLinkFunction($arg));
     }
 
     /**
@@ -190,9 +190,9 @@ class AlertTwigExtensionTest extends AbstractTestCase {
         $obj = new AlertTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = '<a href="javascript: void(0);">content</a>';
+        $exp = '<a href="javascript: void(0);">content</a>';
 
-        $this->assertEquals($res, $obj->bootstrapAlertLinkFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapAlertLinkFunction($arg));
     }
 
     /**
@@ -205,9 +205,9 @@ class AlertTwigExtensionTest extends AbstractTestCase {
         $obj = new AlertTwigExtension($this->twigEnvironment);
 
         $arg = ["href" => "https://github.com/"];
-        $res = '<a href="https://github.com/"></a>';
+        $exp = '<a href="https://github.com/"></a>';
 
-        $this->assertEquals($res, $obj->bootstrapAlertLinkFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapAlertLinkFunction($arg));
     }
 
     /**
@@ -220,9 +220,9 @@ class AlertTwigExtensionTest extends AbstractTestCase {
         $obj = new AlertTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = '<a href="javascript: void(0);"></a>';
+        $exp = '<a href="javascript: void(0);"></a>';
 
-        $this->assertEquals($res, $obj->bootstrapAlertLinkFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapAlertLinkFunction($arg));
     }
 
     /**
@@ -235,9 +235,9 @@ class AlertTwigExtensionTest extends AbstractTestCase {
         $obj = new AlertTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = '<div class="alert alert-secondary" role="alert">content</div>';
+        $exp = '<div class="alert alert-secondary" role="alert">content</div>';
 
-        $this->assertEquals($res, $obj->bootstrapAlertSecondaryFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapAlertSecondaryFunction($arg));
     }
 
     /**
@@ -250,9 +250,9 @@ class AlertTwigExtensionTest extends AbstractTestCase {
         $obj = new AlertTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = '<div class="alert alert-secondary" role="alert"></div>';
+        $exp = '<div class="alert alert-secondary" role="alert"></div>';
 
-        $this->assertEquals($res, $obj->bootstrapAlertSecondaryFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapAlertSecondaryFunction($arg));
     }
 
     /**
@@ -265,9 +265,9 @@ class AlertTwigExtensionTest extends AbstractTestCase {
         $obj = new AlertTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = '<div class="alert alert-success" role="alert">content</div>';
+        $exp = '<div class="alert alert-success" role="alert">content</div>';
 
-        $this->assertEquals($res, $obj->bootstrapAlertSuccessFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapAlertSuccessFunction($arg));
     }
 
     /**
@@ -280,9 +280,9 @@ class AlertTwigExtensionTest extends AbstractTestCase {
         $obj = new AlertTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = '<div class="alert alert-success" role="alert"></div>';
+        $exp = '<div class="alert alert-success" role="alert"></div>';
 
-        $this->assertEquals($res, $obj->bootstrapAlertSuccessFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapAlertSuccessFunction($arg));
     }
 
     /**
@@ -295,9 +295,9 @@ class AlertTwigExtensionTest extends AbstractTestCase {
         $obj = new AlertTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = '<div class="alert alert-warning" role="alert">content</div>';
+        $exp = '<div class="alert alert-warning" role="alert">content</div>';
 
-        $this->assertEquals($res, $obj->bootstrapAlertWarningFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapAlertWarningFunction($arg));
     }
 
     /**
@@ -310,9 +310,9 @@ class AlertTwigExtensionTest extends AbstractTestCase {
         $obj = new AlertTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = '<div class="alert alert-warning" role="alert"></div>';
+        $exp = '<div class="alert alert-warning" role="alert"></div>';
 
-        $this->assertEquals($res, $obj->bootstrapAlertWarningFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapAlertWarningFunction($arg));
     }
 
     /**
