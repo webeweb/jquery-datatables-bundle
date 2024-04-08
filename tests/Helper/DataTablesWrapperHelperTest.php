@@ -14,9 +14,11 @@ declare(strict_types = 1);
 namespace WBW\Bundle\DataTablesBundle\Tests\Helper;
 
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
+use Symfony\Component\HttpFoundation\Request;
 use Throwable;
 use WBW\Bundle\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\DataTablesBundle\Helper\DataTablesWrapperHelper;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
@@ -36,8 +38,9 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
      */
     public function testGetLanguageUrl(): void {
 
-        $res = "/bundles/wbwdatatables/datatables-i18n/French.json";
-        $this->assertEquals($res, DataTablesWrapperHelper::getLanguageUrl("French"));
+        $exp = "/bundles/wbwdatatables/datatables-i18n/French.json";
+
+        $this->assertEquals($exp, DataTablesWrapperHelper::getLanguageUrl("French"));
     }
 
     /**
@@ -64,14 +67,17 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
      */
     public function testGetName(): void {
 
-        $this->dtProvider->expects($this->any())->method("getName")->willReturn("employee");
-        $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(DataTablesFactory::newWrapper("url", $this->dtProvider)));
+        // Set a DataTables provider mock.
+        $dtProvider = $this->getMockBuilder(DataTablesProviderInterface::class)->getMock();
 
-        $this->dtProvider->expects($this->any())->method("getName")->willReturn("employee_");
-        $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(DataTablesFactory::newWrapper("url", $this->dtProvider)));
+        $dtProvider->expects($this->any())->method("getName")->willReturn("employee");
+        $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(DataTablesFactory::newWrapper("url", $dtProvider)));
 
-        $this->dtProvider->expects($this->any())->method("getName")->willReturn("employee-");
-        $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(DataTablesFactory::newWrapper("url", $this->dtProvider)));
+        $dtProvider->expects($this->any())->method("getName")->willReturn("employee_");
+        $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(DataTablesFactory::newWrapper("url", $dtProvider)));
+
+        $dtProvider->expects($this->any())->method("getName")->willReturn("employee-");
+        $this->assertEquals("dtemployee", DataTablesWrapperHelper::getName(DataTablesFactory::newWrapper("url", $dtProvider)));
     }
 
     /**
@@ -110,8 +116,11 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
      */
     public function testHasSearch(): void {
 
+        // Set a request mock.
+        $request = new Request([], TestFixtures::getPostData(), [], [], [], ["REQUEST_METHOD" => "POST"]);
+
         $obj = TestFixtures::getWrapper();
-        DataTablesFactory::parseWrapper($obj, $this->request);
+        DataTablesFactory::parseWrapper($obj, $request);
 
         $this->assertFalse(DataTablesWrapperHelper::hasSearch($obj));
     }
