@@ -11,19 +11,19 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Renderer\Assets;
+namespace WBW\Bundle\DataTablesBundle\Renderer;
 
 use Symfony\Contracts\Translation\TranslatorInterface;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\BadgeTwigExtension;
 use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
 
 /**
- * Enabled badge renderer trait.
+ * Bootstrap badge renderer trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Renderer\Assets
+ * @package WBW\Bundle\DataTablesBundle\Renderer
  */
-trait EnabledBadgeRendererTrait {
+trait BootstrapBadgeRendererTrait {
 
     /**
      * Get the badge Twig extension.
@@ -40,12 +40,12 @@ trait EnabledBadgeRendererTrait {
     abstract public function getTranslator(): ?TranslatorInterface;
 
     /**
-     * Render an enabled badge.
+     * Render a badge "enabled".
      *
      * @param bool|null $enabled Enabled ?
      * @return string|null Returns the rendered enabled badge.
      */
-    protected function renderEnabledBadge(?bool $enabled): ?string {
+    protected function renderBadgeEnabled(?bool $enabled): ?string {
 
         if (null === $this->getTranslator() || null === $this->getBadgeTwigExtension()) {
             return null;
