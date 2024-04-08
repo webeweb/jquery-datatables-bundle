@@ -62,8 +62,9 @@ class GridRendererTest extends AbstractTestCase {
      */
     public function testRenderClassnameWithSizeLg(): void {
 
-        $res = "col-lg-6";
-        $this->assertEquals($res, GridRenderer::renderClassname("lg", 6, ""));
+        $exp = "col-lg-6";
+
+        $this->assertEquals($exp, GridRenderer::renderClassname("lg", 6, ""));
     }
 
     /**
@@ -73,8 +74,9 @@ class GridRendererTest extends AbstractTestCase {
      */
     public function testRenderClassnameWithSizeMd(): void {
 
-        $res = "col-md-6";
-        $this->assertEquals($res, GridRenderer::renderClassname("md", 6, ""));
+        $exp = "col-md-6";
+
+        $this->assertEquals($exp, GridRenderer::renderClassname("md", 6, ""));
     }
 
     /**
@@ -84,8 +86,9 @@ class GridRendererTest extends AbstractTestCase {
      */
     public function testRenderClassnameWithSizeSm(): void {
 
-        $res = "col-sm-6";
-        $this->assertEquals($res, GridRenderer::renderClassname("sm", 6, ""));
+        $exp = "col-sm-6";
+
+        $this->assertEquals($exp, GridRenderer::renderClassname("sm", 6, ""));
     }
 
     /**
@@ -95,8 +98,9 @@ class GridRendererTest extends AbstractTestCase {
      */
     public function testRenderClassnameWithSizeXs(): void {
 
-        $res = "col-xs-6";
-        $this->assertEquals($res, GridRenderer::renderClassname("xs", 6, ""));
+        $exp = "col-xs-6";
+
+        $this->assertEquals($exp, GridRenderer::renderClassname("xs", 6, ""));
     }
 
     /**
@@ -106,8 +110,9 @@ class GridRendererTest extends AbstractTestCase {
      */
     public function testRenderClassnameWithSuffixOffset(): void {
 
-        $res = "col-lg-offset-6";
-        $this->assertEquals($res, GridRenderer::renderClassname("lg", 6, "offset"));
+        $exp = "col-lg-offset-6";
+
+        $this->assertEquals($exp, GridRenderer::renderClassname("lg", 6, "offset"));
     }
 
     /**
@@ -117,8 +122,9 @@ class GridRendererTest extends AbstractTestCase {
      */
     public function testRenderClassnameWithSuffixPull(): void {
 
-        $res = "col-lg-pull-6";
-        $this->assertEquals($res, GridRenderer::renderClassname("lg", 6, "pull"));
+        $epx = "col-lg-pull-6";
+
+        $this->assertEquals($epx, GridRenderer::renderClassname("lg", 6, "pull"));
     }
 
     /**
@@ -128,7 +134,8 @@ class GridRendererTest extends AbstractTestCase {
      */
     public function testRenderClassnameWithSuffixPush(): void {
 
-        $res = "col-lg-push-6";
-        $this->assertEquals($res, GridRenderer::renderClassname("lg", 6, "push"));
+        $exp = "col-lg-push-6";
+
+        $this->assertEquals($exp, GridRenderer::renderClassname("lg", 6, "push"));
     }
 }
