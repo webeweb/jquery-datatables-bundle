@@ -282,12 +282,9 @@ abstract class DefaultTestCase extends TestCase {
         // Set a Session bag mock.
         $this->sessionBag = $this->getMockBuilder(SessionBagInterface::class)->getMock();
 
-        // Set a trans() callback.
-        $trans = TestCaseHelper::getTranslatorTransFunction();
-
         // Set a Translator mock.
         $this->translator = $this->getMockBuilder(TranslatorInterface::class)->getMock();
-        $this->translator->expects($this->any())->method("trans")->willReturnCallback($trans);
+        $this->translator->expects($this->any())->method("trans")->willReturnCallback(static::getTranslatorTransFunction());
 
         // Set getUser() callback.
         $getUser = function(): ?UserInterface {
