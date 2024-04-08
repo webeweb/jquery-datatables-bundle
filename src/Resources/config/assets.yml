@@ -1,7 +1,7 @@
 # Resources/config/assets.yml
 assets:
 
-    wbw.datatables.asset.datatables:
+    wbw.datatables.assets:
         version: "1.13.8"
         themes:
             - "datatables"
