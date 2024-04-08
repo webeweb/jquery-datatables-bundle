@@ -55,9 +55,9 @@ class CodeTwigExtensionTest extends AbstractTestCase {
         $obj = new CodeTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = "<pre>content</pre>";
+        $exp = "<pre>content</pre>";
 
-        $this->assertEquals($res, $obj->bootstrapBasicBlockFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapBasicBlockFunction($arg));
     }
 
     /**
@@ -70,9 +70,9 @@ class CodeTwigExtensionTest extends AbstractTestCase {
         $obj = new CodeTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = "<pre></pre>";
+        $exp = "<pre></pre>";
 
-        $this->assertEquals($res, $obj->bootstrapBasicBlockFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapBasicBlockFunction($arg));
     }
 
     /**
@@ -85,9 +85,9 @@ class CodeTwigExtensionTest extends AbstractTestCase {
         $obj = new CodeTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = "<code>content</code>";
+        $exp = "<code>content</code>";
 
-        $this->assertEquals($res, $obj->bootstrapInlineFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapInlineFunction($arg));
     }
 
     /**
@@ -100,9 +100,9 @@ class CodeTwigExtensionTest extends AbstractTestCase {
         $obj = new CodeTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = "<code></code>";
+        $exp = "<code></code>";
 
-        $this->assertEquals($res, $obj->bootstrapInlineFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapInlineFunction($arg));
     }
 
     /**
@@ -115,9 +115,9 @@ class CodeTwigExtensionTest extends AbstractTestCase {
         $obj = new CodeTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = "<samp>content</samp>";
+        $exp = "<samp>content</samp>";
 
-        $this->assertEquals($res, $obj->bootstrapSampleOutputFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapSampleOutputFunction($arg));
     }
 
     /**
@@ -130,9 +130,9 @@ class CodeTwigExtensionTest extends AbstractTestCase {
         $obj = new CodeTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = "<samp></samp>";
+        $exp = "<samp></samp>";
 
-        $this->assertEquals($res, $obj->bootstrapSampleOutputFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapSampleOutputFunction($arg));
     }
 
     /**
@@ -145,9 +145,9 @@ class CodeTwigExtensionTest extends AbstractTestCase {
         $obj = new CodeTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = "<kbd>content</kbd>";
+        $exp = "<kbd>content</kbd>";
 
-        $this->assertEquals($res, $obj->bootstrapUserInputFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapUserInputFunction($arg));
     }
 
     /**
@@ -160,9 +160,9 @@ class CodeTwigExtensionTest extends AbstractTestCase {
         $obj = new CodeTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = "<kbd></kbd>";
+        $exp = "<kbd></kbd>";
 
-        $this->assertEquals($res, $obj->bootstrapUserInputFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapUserInputFunction($arg));
     }
 
     /**
@@ -175,9 +175,9 @@ class CodeTwigExtensionTest extends AbstractTestCase {
         $obj = new CodeTwigExtension($this->twigEnvironment);
 
         $arg = ["content" => "content"];
-        $res = "<var>content</var>";
+        $exp = "<var>content</var>";
 
-        $this->assertEquals($res, $obj->bootstrapVariableFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapVariableFunction($arg));
     }
 
     /**
@@ -190,9 +190,9 @@ class CodeTwigExtensionTest extends AbstractTestCase {
         $obj = new CodeTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = "<var></var>";
+        $exp = "<var></var>";
 
-        $this->assertEquals($res, $obj->bootstrapVariableFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapVariableFunction($arg));
     }
 
     /**
