@@ -70,6 +70,24 @@ class AbstractCommandTest extends DefaultCommandTestCase {
     }
 
     /**
+     * Test formatHelp()
+     *
+     * @return void
+     */
+    public function testFormatHelp(): void {
+
+        $exp = <<< EOT
+The <info>%command.name%</info> command .
+
+    <info>php %command.full_name%</info>
+
+
+EOT;
+
+        $this->assertEquals($exp, TestAbstractCommand::formatHelp(""));
+    }
+
+    /**
      * Test getKernel()
      *
      * @return void

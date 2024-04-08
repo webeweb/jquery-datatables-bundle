@@ -58,6 +58,13 @@ class TestAbstractCommand extends AbstractCommand {
     /**
      * {@inheritDoc}
      */
+    public static function formatHelp(string $content): string {
+        return parent::formatHelp($content);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getKernel(): ?KernelInterface {
         return parent::getKernel();
     }

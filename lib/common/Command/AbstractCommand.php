@@ -63,6 +63,16 @@ abstract class AbstractCommand extends Command {
     }
 
     /**
+     * Format a help.
+     *
+     * @param string $content The content.
+     * @return string Returns the help.
+     */
+    protected static function formatHelp(string $content): string {
+        return CommandHelper::formatHelp($content);
+    }
+
+    /**
      * Get the kernel.
      *
      * @return KernelInterface|null Returns the kernel in case of success, null otherwise.
