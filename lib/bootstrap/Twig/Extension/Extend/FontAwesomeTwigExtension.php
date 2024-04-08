@@ -34,7 +34,7 @@ class FontAwesomeTwigExtension extends AbstractFontAwesomeTwigExtension implemen
     public const SERVICE_NAME = "wbw.bootstrap.twig.extension.extend.font_awesome";
 
     /**
-     * Display a Font Awesome icon.
+     * Render a Font Awesome icon.
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Font Awesome icon.
@@ -44,7 +44,7 @@ class FontAwesomeTwigExtension extends AbstractFontAwesomeTwigExtension implemen
     }
 
     /**
-     * Display a Font Awesome list.
+     * Render a Font Awesome list.
      *
      * @param string[]|string $items The items.
      * @return string Returns the Font Awesome list.
@@ -54,7 +54,7 @@ class FontAwesomeTwigExtension extends AbstractFontAwesomeTwigExtension implemen
     }
 
     /**
-     * Display a Font Awesome list icon.
+     * Render a Font Awesome list icon.
      *
      * @param string $icon The icon.
      * @param string|null $content The content.
