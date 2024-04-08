@@ -25,7 +25,7 @@ use WBW\Bundle\BootstrapBundle\Twig\Extension\AbstractTwigExtension;
 abstract class AbstractMeteoconsTwigExtension extends AbstractTwigExtension {
 
     /**
-     * Display a Meteocons icon.
+     * Render a Meteocons icon.
      *
      * @param string $name The name.
      * @param string|null $style The style.
