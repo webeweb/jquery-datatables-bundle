@@ -16,6 +16,7 @@ namespace WBW\Bundle\DataTablesBundle\Repository;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\QueryBuilder;
 use Throwable;
+use WBW\Bundle\DataTablesBundle\Entity\DataTablesEntityInterface;
 use WBW\Bundle\DataTablesBundle\Helper\DataTablesRepositoryHelper;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperInterface;
 
@@ -25,6 +26,7 @@ use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperInterface;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Repository
  * @abstract
+ * @extends EntityRepository<DataTablesEntityInterface>
  */
 abstract class DefaultDataTablesRepository extends EntityRepository implements DataTablesRepositoryInterface {
 
