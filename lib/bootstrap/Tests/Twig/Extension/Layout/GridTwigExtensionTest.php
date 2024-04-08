@@ -274,12 +274,12 @@ class GridTwigExtensionTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testBootstrapGridOffsetFunctionWithXsOffsetAndRecopy(): void {
+    public function testBootstrapGridOffsetFunctionWithXsOffset(): void {
 
         $obj = new GridTwigExtension($this->twigEnvironment);
 
-        $arg = ["xsOffset" => 2, "recopyOffset" => true];
-        $exp = "col-xs-offset-2";
+        $arg = ["xsOffset" => 4];
+        $exp = "col-xs-offset-4";
 
         $this->assertEquals($exp, $obj->bootstrapGridOffsetFunction($arg));
     }
@@ -289,12 +289,12 @@ class GridTwigExtensionTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testBootstrapGridOffsetFunctionWithXsOffset(): void {
+    public function testBootstrapGridOffsetFunctionWithXsOffsetAndRecopy(): void {
 
         $obj = new GridTwigExtension($this->twigEnvironment);
 
-        $arg = ["xsOffset" => 4];
-        $exp = "col-xs-offset-4";
+        $arg = ["xsOffset" => 2, "recopyOffset" => true];
+        $exp = "col-xs-offset-2";
 
         $this->assertEquals($exp, $obj->bootstrapGridOffsetFunction($arg));
     }
