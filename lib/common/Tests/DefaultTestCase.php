@@ -44,7 +44,7 @@ use Twig\Loader\LoaderInterface;
  * Default test case.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\CoreBundle\Tests
+ * @package WBW\Bundle\CommonBundle\Tests
  * @abstract
  */
 abstract class DefaultTestCase extends TestCase {
