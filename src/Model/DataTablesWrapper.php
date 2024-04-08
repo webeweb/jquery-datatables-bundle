@@ -31,21 +31,21 @@ class DataTablesWrapper implements DataTablesWrapperInterface {
     /**
      * Columns.
      *
-     * @var DataTablesColumnInterface[]
+     * @var DataTablesColumnInterface[]|null
      */
     private $columns;
 
     /**
      * Mapping.
      *
-     * @var DataTablesMappingInterface
+     * @var DataTablesMappingInterface|null
      */
     private $mapping;
 
     /**
      * Method.
      *
-     * @var string
+     * @var string|null
      */
     private $method;
 
