@@ -16,6 +16,7 @@ namespace WBW\Bundle\DataTablesBundle\Tests\Provider;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesOptionsInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesResponseInterface;
+use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Entity\Employee;
 use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Provider\TestDefaultDataTablesProvider;
@@ -33,7 +34,14 @@ class DefaultDataTablesProviderTest extends AbstractTestCase {
      *
      * @var TestDefaultDataTablesProvider
      */
-    private $dtProvider;
+    private $dataTablesProvider;
+
+    /**
+     * Translator.
+     *
+     * @var TranslatorInterface|null
+     */
+    private $translator;
 
     /**
      * {@inheritDoc}
@@ -42,10 +50,10 @@ class DefaultDataTablesProviderTest extends AbstractTestCase {
         parent::setUp();
 
         // Set a Translator mock.
-        $translator = $this->getMockBuilder(TranslatorInterface::class)->getMock();
+        $this->translator = $this->getMockBuilder(TranslatorInterface::class)->getMock();
 
         // Set a DataTables provider mock.
-        $this->dtProvider = new TestDefaultDataTablesProvider($translator);
+        $this->dataTablesProvider = new TestDefaultDataTablesProvider($this->translator);
     }
 
     /**
@@ -55,7 +63,7 @@ class DefaultDataTablesProviderTest extends AbstractTestCase {
      */
     public function testGetCsvExporter(): void {
 
-        $obj = $this->dtProvider;
+        $obj = $this->dataTablesProvider;
 
         $this->assertNull($obj->getCsvExporter());
     }
@@ -67,7 +75,7 @@ class DefaultDataTablesProviderTest extends AbstractTestCase {
      */
     public function testGetEditor(): void {
 
-        $obj = $this->dtProvider;
+        $obj = $this->dataTablesProvider;
 
         $this->assertNull($obj->getEditor());
     }
@@ -79,7 +87,7 @@ class DefaultDataTablesProviderTest extends AbstractTestCase {
      */
     public function testGetMethod(): void {
 
-        $obj = $this->dtProvider;
+        $obj = $this->dataTablesProvider;
 
         $this->assertNull($obj->getMethod());
     }
@@ -91,7 +99,7 @@ class DefaultDataTablesProviderTest extends AbstractTestCase {
      */
     public function testGetOptions(): void {
 
-        $obj = $this->dtProvider;
+        $obj = $this->dataTablesProvider;
 
         $res = $obj->getOptions();
         $this->assertInstanceOf(DataTablesOptionsInterface::class, $res);
@@ -116,7 +124,7 @@ class DefaultDataTablesProviderTest extends AbstractTestCase {
         $entity = $this->getMockBuilder(Employee::class)->getMock();
         $entity->expects($this->any())->method("getId")->willReturn(1);
 
-        $obj = $this->dtProvider;
+        $obj = $this->dataTablesProvider;
 
         $this->assertNull($obj->renderRow(DataTablesResponseInterface::DATATABLES_ROW_ATTR, $entity, 0));
         $this->assertNull($obj->renderRow(DataTablesResponseInterface::DATATABLES_ROW_CLASS, $entity, 0));
@@ -124,4 +132,17 @@ class DefaultDataTablesProviderTest extends AbstractTestCase {
         $this->assertEquals("test_1", $obj->renderRow(DataTablesResponseInterface::DATATABLES_ROW_ID, $entity, 0));
     }
 
+    /**
+     * Test __construct()
+     *
+     * @return void
+     */
+    public function test__construct(): void {
+
+        $obj = $this->dataTablesProvider;
+
+        $this->assertInstanceOf(DataTablesProviderInterface::class, $obj);
+
+        $this->assertSame($this->translator, $obj->getTranslator());
+    }
 }
