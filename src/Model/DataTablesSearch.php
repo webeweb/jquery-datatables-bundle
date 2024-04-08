@@ -24,14 +24,14 @@ class DataTablesSearch implements DataTablesSearchInterface {
     /**
      * Regex.
      *
-     * @var bool
+     * @var bool|null
      */
     private $regex;
 
     /**
      * Value.
      *
-     * @var string
+     * @var string|null
      */
     private $value;
 
