@@ -35,7 +35,7 @@ class AlertTwigExtension extends AbstractAlertTwigExtension {
     public const SERVICE_NAME = "wbw.bootstrap.twig.extension.component.alert";
 
     /**
-     * Display a Bootstrap alert "danger".
+     * Render a Bootstrap alert "danger".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap alert "danger".
@@ -45,7 +45,7 @@ class AlertTwigExtension extends AbstractAlertTwigExtension {
     }
 
     /**
-     * Display a Bootstrap alert "dark".
+     * Render a Bootstrap alert "dark".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap alert "dark".
@@ -55,7 +55,7 @@ class AlertTwigExtension extends AbstractAlertTwigExtension {
     }
 
     /**
-     * Display a Bootstrap alert "info".
+     * Render a Bootstrap alert "info".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap alert "info".
@@ -65,7 +65,7 @@ class AlertTwigExtension extends AbstractAlertTwigExtension {
     }
 
     /**
-     * Display a Bootstrap alert "light".
+     * Render a Bootstrap alert "light".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap alert "light".
@@ -75,7 +75,7 @@ class AlertTwigExtension extends AbstractAlertTwigExtension {
     }
 
     /**
-     * Display a Bootstrap alert "link".
+     * Render a Bootstrap alert "link".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap alert "link".
@@ -92,7 +92,7 @@ class AlertTwigExtension extends AbstractAlertTwigExtension {
     }
 
     /**
-     * Display a Bootstrap alert "secondary".
+     * Render a Bootstrap alert "secondary".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap alert "secondary".
@@ -102,7 +102,7 @@ class AlertTwigExtension extends AbstractAlertTwigExtension {
     }
 
     /**
-     * Display a Bootstrap alert "success".
+     * Render a Bootstrap alert "success".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap alert "success".
@@ -112,7 +112,7 @@ class AlertTwigExtension extends AbstractAlertTwigExtension {
     }
 
     /**
-     * Display a Bootstrap alert "warning".
+     * Render a Bootstrap alert "warning".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap alert "warning".
