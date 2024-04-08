@@ -11,26 +11,26 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Provider;
+namespace WBW\Bundle\DataTablesBundle\Renderer;
 
 use InvalidArgumentException;
 use Symfony\Component\Routing\Exception\InvalidParameterException;
 use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
 use Symfony\Component\Routing\RouterInterface;
-use WBW\Bundle\BootstrapBundle\Twig\Extension\CSS\ButtonTwigExtension;
+use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\ButtonTwigExtension;
 use WBW\Bundle\DataTablesBundle\Helper\DataTablesEntityHelper;
 use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
 use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
- * DataTables buttons renderer trait.
+ * Bootstrap buttons renderer trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Provider
+ * @package WBW\Bundle\DataTablesBundle\Renderer
  * @internal
  */
-trait DataTablesButtonsRendererTrait {
+trait BootstrapButtonsRendererTrait {
 
     /**
      * Get the button Twig extension.
