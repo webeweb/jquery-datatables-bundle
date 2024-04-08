@@ -55,9 +55,9 @@ class GlyphiconTwigExtensionTest extends AbstractTestCase {
         $obj = new GlyphiconTwigExtension($this->twigEnvironment);
 
         $arg = ["name" => "asterisk"];
-        $res = '<span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>';
+        $exp = '<span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>';
 
-        $this->assertEquals($res, $obj->bootstrapGlyphiconFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapGlyphiconFunction($arg));
     }
 
     /**
@@ -70,9 +70,9 @@ class GlyphiconTwigExtensionTest extends AbstractTestCase {
         $obj = new GlyphiconTwigExtension($this->twigEnvironment);
 
         $arg = [];
-        $res = '<span class="glyphicon glyphicon-home" aria-hidden="true"></span>';
+        $exp = '<span class="glyphicon glyphicon-home" aria-hidden="true"></span>';
 
-        $this->assertEquals($res, $obj->bootstrapGlyphiconFunction($arg));
+        $this->assertEquals($exp, $obj->bootstrapGlyphiconFunction($arg));
     }
 
     /**
@@ -128,9 +128,9 @@ class GlyphiconTwigExtensionTest extends AbstractTestCase {
 
         $obj = new GlyphiconTwigExtension($this->twigEnvironment);
 
-        $res = '<span class="glyphicon glyphicon-asterisk" aria-hidden="true" style="display: none;"></span>';
+        $exp = '<span class="glyphicon glyphicon-asterisk" aria-hidden="true" style="display: none;"></span>';
 
-        $this->assertEquals($res, $obj->renderIcon("asterisk", "display: none;"));
+        $this->assertEquals($exp, $obj->renderIcon("asterisk", "display: none;"));
     }
 
     /**
