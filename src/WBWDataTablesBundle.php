@@ -16,7 +16,7 @@ namespace WBW\Bundle\DataTablesBundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use WBW\Bundle\CoreBundle\Provider\AssetsProviderInterface;
+use WBW\Bundle\CommonBundle\Provider\AssetsProviderInterface;
 use WBW\Bundle\DataTablesBundle\DependencyInjection\Compiler\DataTablesProviderCompilerPass;
 use WBW\Bundle\DataTablesBundle\DependencyInjection\WBWDataTablesExtension;
 

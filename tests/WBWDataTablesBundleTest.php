@@ -13,9 +13,10 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Tests;
 
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Throwable;
-use WBW\Bundle\CoreBundle\Config\ConfigurationHelper;
-use WBW\Bundle\CoreBundle\Provider\AssetsProviderInterface;
+use WBW\Bundle\CommonBundle\DependencyInjection\WBWCommonExtension;
+use WBW\Bundle\CommonBundle\Provider\AssetsProviderInterface;
 use WBW\Bundle\DataTablesBundle\DependencyInjection\WBWDataTablesExtension;
 use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
 use WBW\Library\Symfony\Helper\AssetsHelper;
@@ -35,9 +36,12 @@ class WBWDataTablesBundleTest extends AbstractTestCase {
      */
     public function testBuild(): void {
 
+        // Set a Container builder mock.
+        $containerBuilder = new ContainerBuilder();
+
         $obj = new WBWDataTablesBundle();
 
-        $obj->build($this->containerBuilder);
+        $obj->build($containerBuilder);
         $this->assertNull(null);
     }
 
@@ -83,14 +87,14 @@ class WBWDataTablesBundleTest extends AbstractTestCase {
      */
     public function testListAssets(): void {
 
-        $config = realpath(__DIR__ . "/../DependencyInjection");
-        $assets = realpath(__DIR__ . "/../Resources/assets");
+        $config = realpath(__DIR__ . "/../src/Resources/config");
+        $assets = realpath(__DIR__ . "/../src/Resources/assets");
 
         // Load the YAML configuration.
-        $config   = ConfigurationHelper::loadYamlConfig($config, "assets");
-        $version  = $config["assets"]["wbw.datatables.asset.datatables"]["version"];
-        $requires = $config["assets"]["wbw.datatables.asset.datatables"]["requires"];
-        $plugins  = $config["assets"]["wbw.datatables.asset.datatables"]["plugins"];
+        $config   = WBWCommonExtension::loadYamlConfig($config, "assets");
+        $version  = $config["assets"]["wbw.datatables.assets"]["version"];
+        $requires = $config["assets"]["wbw.datatables.assets"]["requires"];
+        $plugins  = $config["assets"]["wbw.datatables.assets"]["plugins"];
 
         $res = AssetsHelper::listAssets($assets);
         $this->assertCount(19, $res);
