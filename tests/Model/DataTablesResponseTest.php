@@ -53,8 +53,9 @@ class DataTablesResponseTest extends AbstractTestCase {
 
         $obj = new DataTablesResponse();
 
-        $res = ["data" => [], "draw" => null, "recordsFiltered" => null, "recordsTotal" => null];
-        $this->assertEquals($res, $obj->jsonSerialize());
+        $exp = ["data" => [], "draw" => null, "recordsFiltered" => null, "recordsTotal" => null];
+
+        $this->assertEquals($exp, $obj->jsonSerialize());
     }
 
     /**
@@ -129,10 +130,11 @@ class DataTablesResponseTest extends AbstractTestCase {
         $obj = new DataTablesResponse();
         $obj->setWrapper($wrapper)->addRow();
 
+        $exp = ["name" => "GitHub", "position" => null, "office" => null, "age" => null, "startDate" => null, "salary" => null, "actions" => null];
+
         $obj->setRow("name", "GitHub");
-        $res = ["name" => "GitHub", "position" => null, "office" => null, "age" => null, "startDate" => null, "salary" => null, "actions" => null];
         $this->assertCount(1, $obj->getData());
-        $this->assertEquals($res, $obj->getData()[0]);
+        $this->assertEquals($exp, $obj->getData()[0]);
     }
 
     /**
