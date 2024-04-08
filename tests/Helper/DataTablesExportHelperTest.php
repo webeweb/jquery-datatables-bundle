@@ -34,8 +34,9 @@ class DataTablesExportHelperTest extends AbstractTestCase {
     public function testConvert(): void {
 
         $arg = ["é"];
-        $res = ["é"];
-        $this->assertEquals($res, DataTablesExportHelper::convert($arg));
+        $exp = ["é"];
+
+        $this->assertEquals($exp, DataTablesExportHelper::convert($arg));
     }
 
     /**
@@ -46,8 +47,9 @@ class DataTablesExportHelperTest extends AbstractTestCase {
     public function testConvertWithWindows(): void {
 
         $arg = ["é"];
-        $res = ["\xe9"];
-        $this->assertEquals($res, DataTablesExportHelper::convert($arg, true));
+        $exp = ["\xe9"];
+
+        $this->assertEquals($exp, DataTablesExportHelper::convert($arg, true));
     }
 
     /**
