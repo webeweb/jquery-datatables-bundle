@@ -89,7 +89,7 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
 
         $obj = TestFixtures::getWrapper();
 
-        $res = [
+        $exp = [
             "ajax"       => [
                 "type" => "POST",
                 "url"  => "/datatables/employee/index",
@@ -106,7 +106,8 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
             "processing" => true,
             "serverSide" => true,
         ];
-        $this->assertEquals($res, DataTablesWrapperHelper::getOptions($obj));
+
+        $this->assertEquals($exp, DataTablesWrapperHelper::getOptions($obj));
     }
 
     /**
