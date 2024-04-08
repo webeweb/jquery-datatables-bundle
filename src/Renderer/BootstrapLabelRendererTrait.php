@@ -11,19 +11,19 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Renderer\Assets;
+namespace WBW\Bundle\DataTablesBundle\Renderer;
 
 use Symfony\Contracts\Translation\TranslatorInterface;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\LabelTwigExtension;
 use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
 
 /**
- * Enabled label renderer trait.
+ * Bootstrap label renderer trait.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Renderer\Assets
+ * @package WBW\Bundle\DataTablesBundle\Renderer
  */
-trait EnabledLabelRendererTrait {
+trait BootstrapLabelRendererTrait {
 
     /**
      * Get the label Twig extension.
@@ -40,12 +40,12 @@ trait EnabledLabelRendererTrait {
     abstract public function getTranslator(): ?TranslatorInterface;
 
     /**
-     * Render an enabled label.
+     * Render a label "enabled".
      *
      * @param bool|null $enabled Enabled ?
      * @return string|null Returns the rendered enabled label.
      */
-    protected function renderEnabledLabel(?bool $enabled): ?string {
+    protected function renderLabelEnabled(?bool $enabled): ?string {
 
         if (null === $this->getTranslator() || null === $this->getLabelTwigExtension()) {
             return null;
