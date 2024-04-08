@@ -13,8 +13,9 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Tests\Twig\Extension;
 
-use WBW\Bundle\CoreBundle\Tests\AbstractTestCase;
-use WBW\Bundle\CoreBundle\Twig\Extension\AssetsTwigExtension;
+use Twig\Environment;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\CommonBundle\Twig\Extension\AssetsTwigExtension;
 use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Twig\Extension\TestDataTablesTwigExtensionTrait;
 use WBW\Bundle\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 
@@ -33,8 +34,11 @@ class DataTablesTwigExtensionTraitTest extends AbstractTestCase {
      */
     public function testSetDataTablesTwigExtension(): void {
 
+        // Set a Twig environment mock.
+        $twigEnvironment = $this->getMockBuilder(Environment::class)->disableOriginalConstructor()->getMock();
+
         // Set a DataTables Twig extension mock.
-        $dataTablesTwigExtension = new DataTablesTwigExtension($this->twigEnvironment, new AssetsTwigExtension($this->twigEnvironment), "test");
+        $dataTablesTwigExtension = new DataTablesTwigExtension($twigEnvironment, new AssetsTwigExtension($twigEnvironment), "test");
 
         $obj = new TestDataTablesTwigExtensionTrait();
 
