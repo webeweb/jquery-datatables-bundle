@@ -1,4 +1,4 @@
-# Resources/config/assets.yml
+# src/Resources/config/assets.yml
 assets:
 
     wbw.datatables.assets:
