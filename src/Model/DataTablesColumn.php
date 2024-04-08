@@ -96,7 +96,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * Orderable.
      *
-     * @var bool
+     * @var bool|null
      */
     private $orderable;
 
@@ -110,7 +110,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * Searchable.
      *
-     * @var bool
+     * @var bool|null
      */
     private $searchable;
 
@@ -131,7 +131,7 @@ class DataTablesColumn implements DataTablesColumnInterface {
     /**
      * Visible.
      *
-     * @var bool
+     * @var bool|null
      */
     private $visible;
 
