@@ -35,11 +35,12 @@ class DataTablesEnumeratorTest extends AbstractTestCase {
      */
     public function testEnumCellTypes(): void {
 
-        $res = [
+        $exp = [
             DataTablesColumnInterface::DATATABLES_CELL_TYPE_TD,
             DataTablesColumnInterface::DATATABLES_CELL_TYPE_TH,
         ];
-        $this->assertEquals($res, DataTablesEnumerator::enumCellTypes());
+
+        $this->assertEquals($exp, DataTablesEnumerator::enumCellTypes());
     }
 
     /**
@@ -49,11 +50,12 @@ class DataTablesEnumeratorTest extends AbstractTestCase {
      */
     public function testEnumDirs(): void {
 
-        $res = [
+        $exp = [
             DataTablesOrderInterface::DATATABLES_DIR_ASC,
             DataTablesOrderInterface::DATATABLES_DIR_DESC,
         ];
-        $this->assertEquals($res, DataTablesEnumerator::enumDirs());
+
+        $this->assertEquals($exp, DataTablesEnumerator::enumDirs());
     }
 
     /**
@@ -63,11 +65,12 @@ class DataTablesEnumeratorTest extends AbstractTestCase {
      */
     public function testEnumOrderSequences(): void {
 
-        $res = [
+        $exp = [
             DataTablesColumnInterface::DATATABLES_ORDER_SEQUENCE_ASC,
             DataTablesColumnInterface::DATATABLES_ORDER_SEQUENCE_DESC,
         ];
-        $this->assertEquals($res, DataTablesEnumerator::enumOrderSequences());
+
+        $this->assertEquals($exp, DataTablesEnumerator::enumOrderSequences());
     }
 
     /**
@@ -77,7 +80,7 @@ class DataTablesEnumeratorTest extends AbstractTestCase {
      */
     public function testEnumParameters(): void {
 
-        $res = [
+        $exp = [
             DataTablesRequestInterface::DATATABLES_PARAMETER_COLUMNS,
             DataTablesRequestInterface::DATATABLES_PARAMETER_DRAW,
             DataTablesRequestInterface::DATATABLES_PARAMETER_LENGTH,
@@ -85,7 +88,8 @@ class DataTablesEnumeratorTest extends AbstractTestCase {
             DataTablesRequestInterface::DATATABLES_PARAMETER_SEARCH,
             DataTablesRequestInterface::DATATABLES_PARAMETER_START,
         ];
-        $this->assertEquals($res, DataTablesEnumerator::enumParameters());
+
+        $this->assertEquals($exp, DataTablesEnumerator::enumParameters());
     }
 
     /**
@@ -95,13 +99,14 @@ class DataTablesEnumeratorTest extends AbstractTestCase {
      */
     public function testEnumRows(): void {
 
-        $res = [
+        $exp = [
             DataTablesResponseInterface::DATATABLES_ROW_ATTR,
             DataTablesResponseInterface::DATATABLES_ROW_CLASS,
             DataTablesResponseInterface::DATATABLES_ROW_DATA,
             DataTablesResponseInterface::DATATABLES_ROW_ID,
         ];
-        $this->assertEquals($res, DataTablesEnumerator::enumRows());
+
+        $this->assertEquals($exp, DataTablesEnumerator::enumRows());
     }
 
     /**
@@ -111,7 +116,7 @@ class DataTablesEnumeratorTest extends AbstractTestCase {
      */
     public function testEnumTypes(): void {
 
-        $res = [
+        $exp = [
             DataTablesColumnInterface::DATATABLES_TYPE_DATE,
             DataTablesColumnInterface::DATATABLES_TYPE_HTML,
             DataTablesColumnInterface::DATATABLES_TYPE_HTML_NUM,
@@ -119,6 +124,7 @@ class DataTablesEnumeratorTest extends AbstractTestCase {
             DataTablesColumnInterface::DATATABLES_TYPE_NUM_FMT,
             DataTablesColumnInterface::DATATABLES_TYPE_STRING,
         ];
-        $this->assertEquals($res, DataTablesEnumerator::enumTypes());
+
+        $this->assertEquals($exp, DataTablesEnumerator::enumTypes());
     }
 }
