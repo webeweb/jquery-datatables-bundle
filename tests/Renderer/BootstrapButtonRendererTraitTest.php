@@ -20,20 +20,20 @@ use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\ButtonTwigExtension;
 use WBW\Bundle\CommonBundle\Tests\DefaultTestCase;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Entity\Employee;
-use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Renderer\TestBootstrapButtonsRendererTrait;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Renderer\TestBootstrapButtonRendererTrait;
 
 /**
- * Bootstrap buttons renderer trait test.
+ * Bootstrap button renderer trait test.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Tests\Renderer
  */
-class BootstrapButtonsRendererTraitTest extends AbstractTestCase {
+class BootstrapButtonRendererTraitTest extends AbstractTestCase {
 
     /**
      * Bootstrap buttons renderer.
      *
-     * @var TestBootstrapButtonsRendererTrait|null
+     * @var TestBootstrapButtonRendererTrait|null
      */
     private $bootstrapButtonsRenderer;
 
@@ -58,7 +58,7 @@ class BootstrapButtonsRendererTraitTest extends AbstractTestCase {
         $buttonTwigExtension = new ButtonTwigExtension($twigEnvironment);
 
         // Set a Bootstrap buttons renderer.
-        $this->bootstrapButtonsRenderer = new TestBootstrapButtonsRendererTrait();
+        $this->bootstrapButtonsRenderer = new TestBootstrapButtonRendererTrait();
         $this->bootstrapButtonsRenderer->setButtonTwigExtension($buttonTwigExtension);
         $this->bootstrapButtonsRenderer->setRouter($router);
         $this->bootstrapButtonsRenderer->setTranslator($translator);
@@ -71,7 +71,7 @@ class BootstrapButtonsRendererTraitTest extends AbstractTestCase {
      */
     public function testRenderActionButtonCommentWithComment(): void {
 
-        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonsRendererTraitTest.testRenderActionButtonCommentWithComment.html.txt");
+        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonRendererTraitTest.testRenderActionButtonCommentWithComment.html.txt");
 
         $obj = $this->bootstrapButtonsRenderer;
         $this->assertEquals($exp, $obj->renderActionButtonComment(new Employee(), "commentRoute", "comment"));
@@ -84,7 +84,7 @@ class BootstrapButtonsRendererTraitTest extends AbstractTestCase {
      */
     public function testRenderActionButtonCommentWithoutComment(): void {
 
-        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonsRendererTraitTest.testRenderActionButtonCommentWithoutComment.html.txt");
+        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonRendererTraitTest.testRenderActionButtonCommentWithoutComment.html.txt");
 
         $obj = $this->bootstrapButtonsRenderer;
         $this->assertEquals($exp, $obj->renderActionButtonComment(new Employee(), "commentRoute", null));
@@ -97,7 +97,7 @@ class BootstrapButtonsRendererTraitTest extends AbstractTestCase {
      */
     public function testRenderActionButtonDelete(): void {
 
-        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonsRendererTraitTest.testRenderActionButtonDelete.html.txt");
+        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonRendererTraitTest.testRenderActionButtonDelete.html.txt");
 
         $obj = $this->bootstrapButtonsRenderer;
         $this->assertEquals($exp, $obj->renderActionButtonDelete(new Employee(), "deleteRoute"));
@@ -110,7 +110,7 @@ class BootstrapButtonsRendererTraitTest extends AbstractTestCase {
      */
     public function testRenderActionButtonDuplicate(): void {
 
-        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonsRendererTraitTest.testRenderActionButtonDuplicate.html.txt");
+        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonRendererTraitTest.testRenderActionButtonDuplicate.html.txt");
 
         $obj = $this->bootstrapButtonsRenderer;
         $this->assertEquals($exp, $obj->renderActionButtonDuplicate(new Employee(), "duplicateRoute"));
@@ -123,7 +123,7 @@ class BootstrapButtonsRendererTraitTest extends AbstractTestCase {
      */
     public function testRenderActionButtonEdit(): void {
 
-        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonsRendererTraitTest.testRenderActionButtonEdit.html.txt");
+        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonRendererTraitTest.testRenderActionButtonEdit.html.txt");
 
         $obj = $this->bootstrapButtonsRenderer;
         $this->assertEquals($exp, $obj->renderActionButtonEdit(new Employee(), "editRoute"));
@@ -136,7 +136,7 @@ class BootstrapButtonsRendererTraitTest extends AbstractTestCase {
      */
     public function testRenderActionButtonNew(): void {
 
-        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonsRendererTraitTest.testRenderActionButtonNew.html.txt");
+        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonRendererTraitTest.testRenderActionButtonNew.html.txt");
 
         $obj = $this->bootstrapButtonsRenderer;
         $this->assertEquals($exp, $obj->renderActionButtonNew(new Employee(), "newRoute"));
@@ -149,7 +149,7 @@ class BootstrapButtonsRendererTraitTest extends AbstractTestCase {
      */
     public function testRenderActionButtonNewWithNullEntity(): void {
 
-        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonsRendererTraitTest.testRenderActionButtonNew.html.txt");
+        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonRendererTraitTest.testRenderActionButtonNew.html.txt");
 
         $obj = $this->bootstrapButtonsRenderer;
         $this->assertEquals($exp, $obj->renderActionButtonNew(null, "newRoute"));
@@ -162,7 +162,7 @@ class BootstrapButtonsRendererTraitTest extends AbstractTestCase {
      */
     public function testRenderActionButtonPdf(): void {
 
-        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonsRendererTraitTest.testRenderActionButtonPdf.html.txt");
+        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonRendererTraitTest.testRenderActionButtonPdf.html.txt");
 
         $obj = $this->bootstrapButtonsRenderer;
         $this->assertEquals($exp, $obj->renderActionButtonPdf(new Employee(), "pdfRoute"));
@@ -175,7 +175,7 @@ class BootstrapButtonsRendererTraitTest extends AbstractTestCase {
      */
     public function testRenderActionButtonShow(): void {
 
-        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonsRendererTraitTest.testRenderActionButtonShow.html.txt");
+        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonRendererTraitTest.testRenderActionButtonShow.html.txt");
 
         $obj = $this->bootstrapButtonsRenderer;
         $this->assertEquals($exp, $obj->renderActionButtonShow(new Employee(), "showRoute"));
@@ -188,7 +188,7 @@ class BootstrapButtonsRendererTraitTest extends AbstractTestCase {
      */
     public function testRenderActionButtonSwitchWithFalse(): void {
 
-        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonsRendererTraitTest.testRenderActionButtonSwitchWithFalse.html.txt");
+        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonRendererTraitTest.testRenderActionButtonSwitchWithFalse.html.txt");
 
         $obj = $this->bootstrapButtonsRenderer;
         $this->assertEquals($exp, $obj->renderActionButtonSwitch(new Employee(), "switchRoute", false));
@@ -201,7 +201,7 @@ class BootstrapButtonsRendererTraitTest extends AbstractTestCase {
      */
     public function testRenderActionButtonSwitchWithTrue(): void {
 
-        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonsRendererTraitTest.testRenderActionButtonSwitchWithTrue.html.txt");
+        $exp = file_get_contents(__DIR__ . "/../Fixtures/Renderer/BootstrapButtonRendererTraitTest.testRenderActionButtonSwitchWithTrue.html.txt");
 
         $obj = $this->bootstrapButtonsRenderer;
         $this->assertEquals($exp, $obj->renderActionButtonSwitch(new Employee(), "switchRoute", true));

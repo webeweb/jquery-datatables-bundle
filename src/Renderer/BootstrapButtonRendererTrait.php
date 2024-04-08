@@ -30,7 +30,7 @@ use WBW\Library\Types\Helper\ArrayHelper;
  * @package WBW\Bundle\DataTablesBundle\Renderer
  * @internal
  */
-trait BootstrapButtonsRendererTrait {
+trait BootstrapButtonRendererTrait {
 
     /**
      * Get the button Twig extension.

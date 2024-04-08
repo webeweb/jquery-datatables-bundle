@@ -26,7 +26,7 @@ class WBWCommonExtension {
      *
      * @param string $path The path.
      * @param string $file The file.
-     * @return array Returns the YAML configuration.
+     * @return array<string,mixed> Returns the YAML configuration.
      */
     public static function loadYamlConfig(string $path, string $file): array {
 

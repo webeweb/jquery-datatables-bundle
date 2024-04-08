@@ -14,17 +14,17 @@ namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Renderer;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\ButtonTwigExtensionTrait;
 use WBW\Bundle\CommonBundle\Routing\RouterTrait;
 use WBW\Bundle\CommonBundle\Translation\TranslatorTrait;
-use WBW\Bundle\DataTablesBundle\Renderer\BootstrapButtonsRendererTrait;
+use WBW\Bundle\DataTablesBundle\Renderer\BootstrapButtonRendererTrait;
 
 /**
- * Test Bootstrap buttons tenderer trait.
+ * Test Bootstrap button tenderer trait.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\Renderer
  */
-class TestBootstrapButtonsRendererTrait {
+class TestBootstrapButtonRendererTrait {
 
-    use BootstrapButtonsRendererTrait {
+    use BootstrapButtonRendererTrait {
         renderActionButtonComment as public;
         renderActionButtonDelete as public;
         renderActionButtonDuplicate as public;
