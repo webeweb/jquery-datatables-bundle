@@ -36,7 +36,7 @@ class ButtonTwigExtension extends AbstractButtonTwigExtension {
     public const SERVICE_NAME = "wbw.bootstrap.twig.extension.component.button";
 
     /**
-     * Display a Bootstrap button "danger".
+     * Render a Bootstrap button "danger".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap button "danger".
@@ -46,7 +46,7 @@ class ButtonTwigExtension extends AbstractButtonTwigExtension {
     }
 
     /**
-     * Display a Bootstrap button "dark".
+     * Render a Bootstrap button "dark".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap button "dark".
@@ -56,7 +56,7 @@ class ButtonTwigExtension extends AbstractButtonTwigExtension {
     }
 
     /**
-     * Display a Bootstrap button "default".
+     * Render a Bootstrap button "default".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap button "default".
@@ -66,7 +66,7 @@ class ButtonTwigExtension extends AbstractButtonTwigExtension {
     }
 
     /**
-     * Display a Bootstrap button "info".
+     * Render a Bootstrap button "info".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap button "info".
@@ -76,7 +76,7 @@ class ButtonTwigExtension extends AbstractButtonTwigExtension {
     }
 
     /**
-     * Display a Bootstrap button "light".
+     * Render a Bootstrap button "light".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap button "light".
@@ -110,7 +110,7 @@ class ButtonTwigExtension extends AbstractButtonTwigExtension {
     }
 
     /**
-     * Display a Bootstrap button "link".
+     * Render a Bootstrap button "link".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap button "link".
@@ -120,7 +120,7 @@ class ButtonTwigExtension extends AbstractButtonTwigExtension {
     }
 
     /**
-     * Display a Bootstrap button "primary".
+     * Render a Bootstrap button "primary".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap button "primary".
@@ -130,7 +130,7 @@ class ButtonTwigExtension extends AbstractButtonTwigExtension {
     }
 
     /**
-     * Display a Bootstrap button "secondary".
+     * Render a Bootstrap button "secondary".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap button "secondary".
@@ -150,7 +150,7 @@ class ButtonTwigExtension extends AbstractButtonTwigExtension {
     }
 
     /**
-     * Display a Bootstrap button "success".
+     * Render a Bootstrap button "success".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap button "success".
@@ -160,7 +160,7 @@ class ButtonTwigExtension extends AbstractButtonTwigExtension {
     }
 
     /**
-     * Display a Bootstrap button "warning".
+     * Render a Bootstrap button "warning".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap button "warning".
