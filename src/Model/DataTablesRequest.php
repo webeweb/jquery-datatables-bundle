@@ -30,42 +30,42 @@ class DataTablesRequest implements DataTablesRequestInterface {
     /**
      * Columns.
      *
-     * @var DataTablesColumnInterface[]
+     * @var DataTablesColumnInterface[]|null
      */
     private $columns;
 
     /**
      * Draw.
      *
-     * @var int
+     * @var int|null
      */
     private $draw;
 
     /**
      * Length.
      *
-     * @var int
+     * @var int|null
      */
     private $length;
 
     /**
      * Order.
      *
-     * @var DataTablesOrderInterface[]
+     * @var DataTablesOrderInterface[]|null
      */
     private $order;
 
     /**
      * Query.
      *
-     * @var ParameterBag
+     * @var ParameterBag|null
      */
     private $query;
 
     /**
      * Request.
      *
-     * @var ParameterBag
+     * @var ParameterBag|null
      */
     private $request;
 
@@ -79,7 +79,7 @@ class DataTablesRequest implements DataTablesRequestInterface {
     /**
      * Start.
      *
-     * @var int
+     * @var int|null
      */
     private $start;
 
