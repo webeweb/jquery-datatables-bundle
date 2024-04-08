@@ -25,7 +25,7 @@ use WBW\Bundle\BootstrapBundle\Twig\Extension\AbstractTwigExtension;
 abstract class AbstractCodeTwigExtension extends AbstractTwigExtension {
 
     /**
-     * Display a Bootstrap basic block.
+     * Render a Bootstrap basic block.
      *
      * @param string|null $content The content.
      * @return string  Returns the Bootstrap basic block.
@@ -35,7 +35,7 @@ abstract class AbstractCodeTwigExtension extends AbstractTwigExtension {
     }
 
     /**
-     * Display a Bootstrap inline.
+     * Render a Bootstrap inline.
      *
      * @param string|null $content The inline content.
      * @return string  Returns the Bootstrap inline.
@@ -45,7 +45,7 @@ abstract class AbstractCodeTwigExtension extends AbstractTwigExtension {
     }
 
     /**
-     * Display a Bootstrap sample output.
+     * Render a Bootstrap sample output.
      *
      * @param string|null $content The content.
      * @return string  Returns the Bootstrap sample output.
@@ -55,7 +55,7 @@ abstract class AbstractCodeTwigExtension extends AbstractTwigExtension {
     }
 
     /**
-     * Display a Bootstrap user input.
+     * Render a Bootstrap user input.
      *
      * @param string|null $content The content.
      * @return string  Returns the Bootstrap user input.
@@ -65,7 +65,7 @@ abstract class AbstractCodeTwigExtension extends AbstractTwigExtension {
     }
 
     /**
-     * Display a Bootstrap variable.
+     * Render a Bootstrap variable.
      *
      * @param string|null $content The content.
      * @return string  Returns the Bootstrap variable.
