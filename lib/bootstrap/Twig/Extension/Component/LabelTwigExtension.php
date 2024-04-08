@@ -41,7 +41,7 @@ class LabelTwigExtension extends AbstractLabelTwigExtension {
     public const SERVICE_NAME = "wbw.bootstrap.twig.extension.component.label";
 
     /**
-     * Display a Bootstrap label "danger".
+     * Render a Bootstrap label "danger".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap label "danger".
@@ -51,7 +51,7 @@ class LabelTwigExtension extends AbstractLabelTwigExtension {
     }
 
     /**
-     * Display a Bootstrap label "default".
+     * Render a Bootstrap label "default".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap label "default".
@@ -61,7 +61,7 @@ class LabelTwigExtension extends AbstractLabelTwigExtension {
     }
 
     /**
-     * Display a Bootstrap label "info".
+     * Render a Bootstrap label "info".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap label "info".
@@ -71,7 +71,7 @@ class LabelTwigExtension extends AbstractLabelTwigExtension {
     }
 
     /**
-     * Display a Bootstrap label "primary".
+     * Render a Bootstrap label "primary".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap label "primary".
@@ -81,7 +81,7 @@ class LabelTwigExtension extends AbstractLabelTwigExtension {
     }
 
     /**
-     * Display a Bootstrap label "roles".
+     * Render a Bootstrap label "roles".
      *
      * @param UserInterface|null $user The user.
      * @param array<string,string> $roleChoices The role choices.
@@ -119,7 +119,7 @@ class LabelTwigExtension extends AbstractLabelTwigExtension {
     }
 
     /**
-     * Display a Bootstrap label "success".
+     * Render a Bootstrap label "success".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap label "success".
@@ -129,7 +129,7 @@ class LabelTwigExtension extends AbstractLabelTwigExtension {
     }
 
     /**
-     * Display a Bootstrap label "warning".
+     * Render a Bootstrap label "warning".
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns the Bootstrap label "warning".
