@@ -15,15 +15,15 @@ namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Provider;
 
 use DateTime;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
-use WBW\Bundle\DataTablesBundle\Provider\AbstractDataTablesProvider;
+use WBW\Bundle\DataTablesBundle\Provider\BootstrapDataTablesProvider;
 
 /**
- * Test DataTables provider.
+ * Test Bootstrap DataTables provider.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\Provider
  */
-class TestDataTablesProvider extends AbstractDataTablesProvider {
+class TestBootstrapDataTablesProvider extends BootstrapDataTablesProvider {
 
     /**
      *{@inheritDoc}
@@ -119,13 +119,6 @@ class TestDataTablesProvider extends AbstractDataTablesProvider {
     /**
      *{@inheritDoc}
      */
-    public function renderButtons($entity, string $editRoute, string $deleteRoute = null, bool $enableDelete = true): string {
-        return parent::renderButtons($entity, $editRoute, $deleteRoute, $enableDelete);
-    }
-
-    /**
-     *{@inheritDoc}
-     */
     public function renderColumn(DataTablesColumnInterface $dtColumn, $entity): ?string {
         return null;
     }
@@ -168,21 +161,7 @@ class TestDataTablesProvider extends AbstractDataTablesProvider {
     /**
      *{@inheritDoc}
      */
-    public function renderRow(string $dtRow, $entity, int $rowNumber) {
-        return parent::renderRow($dtRow, $entity, $rowNumber);
-    }
-
-    /**
-     *{@inheritDoc}
-     */
-    public function renderRowButtons($entity, string $editRoute = null, string $deleteRoute = null, string $showRoute = null): string {
-        return parent::renderRowButtons($entity, $editRoute, $deleteRoute, $showRoute);
-    }
-
-    /**
-     *{@inheritDoc}
-     */
-    public function wrapContent(?string $prefix, string $content, ?string $suffix): string {
-        return parent::wrapContent($prefix, $content, $suffix);
+    public function renderRowButtons($entity, string $showRoute = null, string $editRoute = null, string $deleteRoute = null): string {
+        return parent::renderRowButtons($entity, $showRoute, $editRoute, $deleteRoute);
     }
 }
