@@ -27,7 +27,7 @@ use WBW\Bundle\BootstrapBundle\Twig\Extension\AbstractTwigExtension;
 abstract class AbstractProgressBarTwigExtension extends AbstractTwigExtension {
 
     /**
-     * Display a Bootstrap progress bar.
+     * Render a Bootstrap progress bar.
      *
      * @param ProgressBarInterface $progressBar The progress bar.
      * @return string Returns the Bootstrap progress bar.
