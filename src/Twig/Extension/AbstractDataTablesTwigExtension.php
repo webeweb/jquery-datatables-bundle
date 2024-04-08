@@ -15,9 +15,9 @@ namespace WBW\Bundle\DataTablesBundle\Twig\Extension;
 
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 use Twig\Environment;
+use WBW\Bundle\CommonBundle\Twig\Extension\AbstractTwigExtension;
 use WBW\Bundle\CommonBundle\Twig\Extension\AssetsTwigExtension;
 use WBW\Bundle\CommonBundle\Twig\Extension\AssetsTwigExtensionTrait;
-use WBW\Bundle\CommonBundle\Twig\Extension\AbstractTwigExtension;
 use WBW\Bundle\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperInterface;

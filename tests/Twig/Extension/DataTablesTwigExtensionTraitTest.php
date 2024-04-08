@@ -14,8 +14,8 @@ declare(strict_types = 1);
 namespace WBW\Bundle\DataTablesBundle\Tests\Twig\Extension;
 
 use Twig\Environment;
-use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\CommonBundle\Twig\Extension\AssetsTwigExtension;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Twig\Extension\TestDataTablesTwigExtensionTrait;
 use WBW\Bundle\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 
