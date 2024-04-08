@@ -45,7 +45,7 @@ class MeteoconsTwigExtension extends AbstractMeteoconsTwigExtension implements I
     }
 
     /**
-     * Display a Meteocons icon.
+     * Render a Meteocons icon.
      *
      * @param array<string,mixed> $args The arguments.
      * @return string Returns a Meteocons icon.
