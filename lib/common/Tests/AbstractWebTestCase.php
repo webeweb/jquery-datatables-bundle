@@ -29,9 +29,6 @@ class AbstractWebTestCase extends WebTestCase {
         parent::setUp();
 
         static::ensureKernelShutdown();
-
-        // Set a Client mock.
-        $this->client = static::createClient();
     }
 
     /**
