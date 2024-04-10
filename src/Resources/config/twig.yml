@@ -1,0 +1,112 @@
+# src/Resources/config/twig.yml
+services:
+
+    wbw.bootstrap.twig.extension.assets:
+        class:  WBW\Bundle\BootstrapBundle\Twig\Extension\AssetsTwigExtension
+        public: false
+        arguments: [ "@twig" ]
+        tags:
+            - { name: "twig.extension" }
+
+    wbw.bootstrap.twig.extension.component.alert:
+        class:  WBW\Bundle\BootstrapBundle\Twig\Extension\Component\AlertTwigExtension
+        public: false
+        arguments: [ "@twig" ]
+        calls:
+            - [ "setVersion", [ "%wbw_bootstrap.version%" ] ]
+        tags:
+            - { name: "twig.extension" }
+
+    wbw.bootstrap.twig.extension.component.badge:
+        class:  WBW\Bundle\BootstrapBundle\Twig\Extension\Component\BadgeTwigExtension
+        public: false
+        arguments: [ "@twig" ]
+        calls:
+            - [ "setVersion", [ "%wbw_bootstrap.version%" ] ]
+        tags:
+            - { name: "twig.extension" }
+
+    wbw.bootstrap.twig.extension.component.button:
+        class:  WBW\Bundle\BootstrapBundle\Twig\Extension\Component\ButtonTwigExtension
+        public: false
+        arguments: [ "@twig" ]
+        calls:
+            - [ "setVersion", [ "%wbw_bootstrap.version%" ] ]
+        tags:
+            - { name: "twig.extension" }
+
+    wbw.bootstrap.twig.extension.component.label:
+        class:  WBW\Bundle\BootstrapBundle\Twig\Extension\Component\LabelTwigExtension
+        public: false
+        arguments: [ "@twig" ]
+        calls:
+            - [ "setVersion", [ "%wbw_bootstrap.version%" ] ]
+        tags:
+            - { name: "twig.extension" }
+
+    wbw.bootstrap.twig.extension.component.progress_bar:
+        class:  WBW\Bundle\BootstrapBundle\Twig\Extension\Component\ProgressBarTwigExtension
+        public: false
+        arguments: [ "@twig" ]
+        calls:
+            - [ "setVersion", [ "%wbw_bootstrap.version%" ] ]
+        tags:
+            - { name: "twig.extension" }
+
+    wbw.bootstrap.twig.extension.content.code:
+        class:  WBW\Bundle\BootstrapBundle\Twig\Extension\Content\CodeTwigExtension
+        public: false
+        arguments: [ "@twig" ]
+        tags:
+            - { name: "twig.extension" }
+
+    wbw.bootstrap.twig.extension.content.typography:
+        class:  WBW\Bundle\BootstrapBundle\Twig\Extension\Content\TypographyTwigExtension
+        public: false
+        arguments: [ "@twig" ]
+        tags:
+            - { name: "twig.extension" }
+
+    wbw.bootstrap.twig.extension.extend.font_awesome:
+        class:  WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\FontAwesomeTwigExtension
+        public: false
+        arguments: [ "@twig" ]
+        tags:
+            - { name: "twig.extension" }
+
+    wbw.bootstrap.twig.extension.extend.glyphicon:
+        class:  WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\GlyphiconTwigExtension
+        public: false
+        arguments: [ "@twig" ]
+        calls:
+            - [ "setVersion", [ "%wbw_bootstrap.version%" ] ]
+        tags:
+            - { name: "twig.extension" }
+
+    wbw.bootstrap.twig.extension.extend.icon:
+        class:  WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\IconTwigExtension
+        public: false
+        arguments: [ "@twig" ]
+        tags:
+            - { name: "twig.extension" }
+
+    wbw.bootstrap.twig.extension.extend.material_design_iconic_font:
+        class:  WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\MaterialDesignIconicFontTwigExtension
+        public: false
+        arguments: [ "@twig" ]
+        tags:
+            - { name: "twig.extension" }
+
+    wbw.bootstrap.twig.extension.extend.meteocons:
+        class:  WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\MeteoconsTwigExtension
+        public: false
+        arguments: [ "@twig" ]
+        tags:
+            - { name: "twig.extension" }
+
+    wbw.bootstrap.twig.extension.layout.grid:
+        class:  WBW\Bundle\BootstrapBundle\Twig\Extension\Layout\GridTwigExtension
+        public: false
+        arguments: [ "@twig" ]
+        tags:
+            - { name: "twig.extension" }
