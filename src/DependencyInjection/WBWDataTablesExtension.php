@@ -59,15 +59,15 @@ class WBWDataTablesExtension extends Extension {
         $serviceLoader->load("commands.yml");
         //$serviceLoader->load("controllers.yml");
         $serviceLoader->load("managers.yml");
-        //$serviceLoader->load("twig.yml");
+        $serviceLoader->load("twig.yml");
 
         /** @var ConfigurationInterface $configuration */
         $configuration = $this->getConfiguration($configs, $container);
 
         $config = $this->processConfiguration($configuration, $configs);
 
-        ContainerHelper::setParameter($container, $config, $this->getAlias(), "theme");
-        ContainerHelper::setParameter($container, $config, $this->getAlias(), "plugins");
+        ContainerHelper::setParameter($container, $config, $this->getAlias() . "datatables", "theme");
+        ContainerHelper::setParameter($container, $config, $this->getAlias() . "datatables", "plugins");
 
         $assets = WBWCommonExtension::loadYamlConfig($path, "assets");
         ContainerHelper::setParameters($container, $assets["assets"]);

@@ -19,6 +19,19 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 use Throwable;
 use Twig\Environment;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\AssetsTwigExtension;
+use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\AlertTwigExtension;
+use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\BadgeTwigExtension;
+use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\ButtonTwigExtension;
+use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\LabelTwigExtension;
+use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\ProgressBarTwigExtension;
+use WBW\Bundle\BootstrapBundle\Twig\Extension\Content\CodeTwigExtension;
+use WBW\Bundle\BootstrapBundle\Twig\Extension\Content\TypographyTwigExtension;
+use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\FontAwesomeTwigExtension;
+use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\GlyphiconTwigExtension;
+use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\IconTwigExtension;
+use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\MaterialDesignIconicFontTwigExtension;
+use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\MeteoconsTwigExtension;
+use WBW\Bundle\BootstrapBundle\Twig\Extension\Layout\GridTwigExtension;
 use WBW\Bundle\DataTablesBundle\Command\ListDataTablesProviderCommand;
 use WBW\Bundle\DataTablesBundle\DependencyInjection\Configuration;
 use WBW\Bundle\DataTablesBundle\DependencyInjection\WBWDataTablesExtension;
@@ -65,15 +78,15 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
         $translator = $this->getMockBuilder(TranslatorInterface::class)->getMock();
 
         // Set a Twig environment mock.
-        $wigEnvironment = $this->getMockBuilder(Environment::class)->disableOriginalConstructor()->getMock();
+        $twigEnvironment = $this->getMockBuilder(Environment::class)->disableOriginalConstructor()->getMock();
 
         // Set a Container builder mock.
         $this->containerBuilder = new ContainerBuilder();
+        $this->containerBuilder->setParameter("wbw_bootstrap.version", 3);
 
-        // Set a Bootstrap renderer Twig extension mock
-        $this->containerBuilder->set(AssetsTwigExtension::SERVICE_NAME, new AssetsTwigExtension($wigEnvironment));
         $this->containerBuilder->set("logger", $logger);
         $this->containerBuilder->set("translator", $translator);
+        $this->containerBuilder->set("twig", $twigEnvironment);
     }
 
     /**
@@ -123,6 +136,40 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
 
         // Twig extensions.
         //$this->assertInstanceOf(DataTablesTwigExtension::class, $this->containerBuilder->get(DataTablesTwigExtension::SERVICE_NAME));
+
+    }
+
+    /**
+     * Test load()
+     *
+     * @return void
+     * @throws Throwable Throws an exception if an error occurs.
+     */
+    public function testLoadBootstrap(): void {
+
+        $obj = new WBWDataTablesExtension();
+
+        $obj->load($this->configs, $this->containerBuilder);
+
+        // Twig extensions.
+        $this->assertInstanceOf(AssetsTwigExtension::class, $this->containerBuilder->get(AssetsTwigExtension::SERVICE_NAME));
+
+        $this->assertInstanceOf(AlertTwigExtension::class, $this->containerBuilder->get(AlertTwigExtension::SERVICE_NAME));
+        $this->assertInstanceOf(BadgeTwigExtension::class, $this->containerBuilder->get(BadgeTwigExtension::SERVICE_NAME));
+        $this->assertInstanceOf(ButtonTwigExtension::class, $this->containerBuilder->get(ButtonTwigExtension::SERVICE_NAME));
+        $this->assertInstanceOf(LabelTwigExtension::class, $this->containerBuilder->get(LabelTwigExtension::SERVICE_NAME));
+        $this->assertInstanceOf(ProgressBarTwigExtension::class, $this->containerBuilder->get(ProgressBarTwigExtension::SERVICE_NAME));
+
+        $this->assertInstanceOf(CodeTwigExtension::class, $this->containerBuilder->get(CodeTwigExtension::SERVICE_NAME));
+        $this->assertInstanceOf(TypographyTwigExtension::class, $this->containerBuilder->get(TypographyTwigExtension::SERVICE_NAME));
+
+        $this->assertInstanceOf(FontAwesomeTwigExtension::class, $this->containerBuilder->get(FontAwesomeTwigExtension::SERVICE_NAME));
+        $this->assertInstanceOf(GlyphiconTwigExtension::class, $this->containerBuilder->get(GlyphiconTwigExtension::SERVICE_NAME));
+        $this->assertInstanceOf(IconTwigExtension::class, $this->containerBuilder->get(IconTwigExtension::SERVICE_NAME));
+        $this->assertInstanceOf(MaterialDesignIconicFontTwigExtension::class, $this->containerBuilder->get(MaterialDesignIconicFontTwigExtension::SERVICE_NAME));
+        $this->assertInstanceOf(MeteoconsTwigExtension::class, $this->containerBuilder->get(MeteoconsTwigExtension::SERVICE_NAME));
+
+        $this->assertInstanceOf(GridTwigExtension::class, $this->containerBuilder->get(GridTwigExtension::SERVICE_NAME));
     }
 
     /**
