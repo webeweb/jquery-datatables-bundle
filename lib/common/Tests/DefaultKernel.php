@@ -30,21 +30,21 @@ abstract class DefaultKernel extends Kernel {
      * {@inheritDoc}
      */
     public function getCacheDir(): string {
-        return getcwd() . "/Tests/Fixtures/app/var/cache";
+        return getcwd() . "/var/cache";
     }
 
     /**
      * {@inheritDoc}
      */
     public function getLogDir(): string {
-        return getcwd() . "/Tests/Fixtures/app/var/logs";
+        return getcwd() . "/var/log";
     }
 
     /**
      * {@inheritDoc}
      */
     public function getProjectDir(): string {
-        return getcwd() . "/Tests/Fixtures/app";
+        return getcwd() . "/tests/Fixtures/app";
     }
 
     /**
@@ -52,6 +52,6 @@ abstract class DefaultKernel extends Kernel {
      * @throws Throwable Throws an exception if an error occurs.
      */
     public function registerContainerConfiguration(LoaderInterface $loader): void {
-        $loader->load(getcwd() . "/Tests/Fixtures/app/config/config_test.yml");
+        $loader->load($this->getProjectDir() . "/config/config_test.yml");
     }
 }
