@@ -53,6 +53,8 @@ class AbstractControllerTest extends AbstractWebTestCase {
     protected function setUp(): void {
         parent::setUp();
 
+        static::createClient();
+
         // Set a controller mock.
         $this->controller = static::$kernel->getContainer()->get(TestAbstractController::class);
     }
@@ -168,6 +170,7 @@ class AbstractControllerTest extends AbstractWebTestCase {
     public function testGetSubscribedServices(): void {
 
         $res = AbstractController::getSubscribedServices();
+        $this->assertGreaterThan(6, count($res));
 
         $this->assertArrayHasKey("doctrine.orm.entity_manager", $res);
         $this->assertArrayHasKey("event_dispatcher", $res);
