@@ -57,9 +57,9 @@ interface DataTablesProviderInterface extends ProviderInterface {
     /**
      * Get the entity.
      *
-     * @return mixed Returns the entity (Entity::class for example).
+     * @return string Returns the entity (Entity::class for example).
      */
-    public function getEntity();
+    public function getEntity(): string;
 
     /**
      * Get the HTTP method.

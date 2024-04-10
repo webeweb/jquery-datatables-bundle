@@ -34,8 +34,8 @@ class TestDefaultDataTablesProvider extends DefaultDataTablesProvider {
     /**
      *{@inheritDoc}
      */
-    public function getEntity() {
-        return null;
+    public function getEntity(): string {
+        return "test";
     }
 
     /**

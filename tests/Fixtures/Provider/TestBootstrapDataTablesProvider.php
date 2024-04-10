@@ -35,8 +35,8 @@ class TestBootstrapDataTablesProvider extends BootstrapDataTablesProvider {
     /**
      *{@inheritDoc}
      */
-    public function getEntity() {
-        return null;
+    public function getEntity(): string {
+        return "test";
     }
 
     /**
