@@ -14,11 +14,13 @@ declare(strict_types = 1);
 namespace WBW\Bundle\DataTablesBundle\Controller;
 
 use Doctrine\ORM\EntityNotFoundException;
+use Doctrine\ORM\EntityRepository;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Throwable;
 use WBW\Bundle\BootstrapBundle\Controller\AbstractController as BaseController;
+use WBW\Bundle\DataTablesBundle\Entity\DataTablesEntityInterface;
 use WBW\Bundle\DataTablesBundle\Event\DataTablesEvent;
 use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesColumnException;
 use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesCsvExporterException;
@@ -90,16 +92,16 @@ abstract class AbstractController extends BaseController {
     /**
      * Dispatch an event.
      *
-     * @param string $eventName The event name.
      * @param object[] $entities The entities.
+     * @param string $eventName The event name.
      * @param DataTablesProviderInterface|null $provider The provider.
      * @return DataTablesEvent Returns the event.
      * @throws Throwable Throws an exception if an error occurs.
      */
-    protected function dispatchDataTablesEvent(string $eventName, array $entities, ?DataTablesProviderInterface $provider = null): DataTablesEvent {
+    protected function dispatchDataTablesEvent(array $entities, string $eventName, ?DataTablesProviderInterface $provider = null): DataTablesEvent {
 
-        $event = new DataTablesEvent($eventName, $entities, $provider);
-        $this->dispatchEvent($eventName, $event);
+        $event = new DataTablesEvent($entities, $eventName, $provider);
+        $this->dispatchEvent($event, $eventName);
 
         return $event;
     }
@@ -139,11 +141,11 @@ abstract class AbstractController extends BaseController {
 
             while (false !== ($row = $result->next())) {
 
-                $this->dispatchDataTablesEvent(DataTablesEvent::PRE_EXPORT, [$row[0]], $dtWrapper->getProvider());
+                $this->dispatchDataTablesEvent([$row[0]], DataTablesEvent::PRE_EXPORT, $dtWrapper->getProvider());
 
                 fputcsv($stream, DataTablesExportHelper::convert($dtExporter->exportRow($row[0]), $windows), ";");
 
-                $this->dispatchDataTablesEvent(DataTablesEvent::POST_EXPORT, [$row[0]], $dtWrapper->getProvider());
+                $this->dispatchDataTablesEvent([$row[0]], DataTablesEvent::POST_EXPORT, $dtWrapper->getProvider());
             }
 
             $em->clear(); // Detach the entity to avoid memory consumption.
@@ -255,6 +257,7 @@ abstract class AbstractController extends BaseController {
      */
     protected function getDataTablesEntityById(DataTablesProviderInterface $dtProvider, string $id) {
 
+        /** @var EntityRepository<DataTablesEntityInterface> $repository */
         $repository = $this->getDataTablesRepository($dtProvider);
 
         $context = [
@@ -325,6 +328,7 @@ abstract class AbstractController extends BaseController {
 
         $this->logInfo(sprintf('DataTables controller search for a repository with name "%s"', $dtProvider->getName()), $context);
 
+        /** @var EntityRepository<DataTablesEntityInterface> $repository */
         $repository = $em->getRepository($dtProvider->getEntity());
         if (false === ($repository instanceof DataTablesRepositoryInterface)) {
             throw new BadDataTablesRepositoryException($repository);
@@ -377,7 +381,7 @@ abstract class AbstractController extends BaseController {
     protected function getDataTablesWrapper(DataTablesProviderInterface $dtProvider): DataTablesWrapperInterface {
 
         /** @var DataTablesWrapper $dtWrapper */
-        $dtWrapper = DataTablesFactory::newWrapper($this->getDataTablesUrl($dtProvider), $dtProvider, $this->getKernelEventListener()->getUser());
+        $dtWrapper = DataTablesFactory::newWrapper($this->getDataTablesUrl($dtProvider), $dtProvider, $this->getUser());
 
         $context = [
             "_controller" => get_class($this),
