@@ -30,7 +30,7 @@ class ConfigurationTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetConfigTree(): void {
+    public function testGetConfigTreeBuilder(): void {
 
         $obj = new Configuration();
 
