@@ -1,4 +1,4 @@
-# Resources/config/routing.yml
+# src/Resources/config/routing.yml
 wbw_datatables:
     prefix:   "/"
     resource: "@WBWDataTablesBundle/Resources/config/routing/datatables.yml"
