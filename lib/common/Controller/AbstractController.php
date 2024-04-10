@@ -45,7 +45,7 @@ abstract class AbstractController extends BaseController {
      *
      * @param string $eventName The event name.
      * @param Event $event The event.
-     * @return Event|null Returns the event.
+     * @return Event Returns the event.
      * @throws Throwable Throws an exception if an error occurs.
      */
     protected function dispatchEvent(string $eventName, Event $event): Event {
@@ -152,7 +152,7 @@ abstract class AbstractController extends BaseController {
      * @return TranslatorInterface|null Returns the translator.
      * @throws Throwable Throws an exception if an error occurs.
      */
-    protected function getTranslator(): TranslatorInterface {
+    protected function getTranslator(): ?TranslatorInterface {
         return $this->container->get("translator");
     }
 
@@ -202,7 +202,7 @@ abstract class AbstractController extends BaseController {
      * Translate.
      *
      * @param string $id The id.
-     * @param array $parameters The parameters.
+     * @param array<string,mixed> $parameters The parameters.
      * @param string|null $domain The domain.
      * @param string|null $locale The locale.
      * @return string Returns the translation in case of success, $id otherwise.
