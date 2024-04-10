@@ -46,7 +46,7 @@ class DataTablesEventTest extends AbstractTestCase {
         // Set a DataTables provider mock.
         $provider = $this->getMockBuilder(DataTablesProviderInterface::class)->getMock();
 
-        $obj = new DataTablesEvent("test", [], $provider);
+        $obj = new DataTablesEvent([], "test", $provider);
 
         $this->assertEquals("test", $obj->getEventName());
         $this->assertEquals([], $obj->getEntities());

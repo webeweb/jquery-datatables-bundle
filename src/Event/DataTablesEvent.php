@@ -102,11 +102,11 @@ class DataTablesEvent extends AbstractEvent {
     /**
      * Constructor.
      *
-     * @param string $eventName The name.
      * @param object[] $entities The entities.
+     * @param string $eventName The name.
      * @param DataTablesProviderInterface|null $provider The provider.
      */
-    public function __construct(string $eventName, array $entities, ?DataTablesProviderInterface $provider = null) {
+    public function __construct(array $entities, string $eventName, ?DataTablesProviderInterface $provider = null) {
         parent::__construct($eventName);
 
         $this->setEntities($entities);
