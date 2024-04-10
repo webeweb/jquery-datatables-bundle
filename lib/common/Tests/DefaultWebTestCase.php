@@ -19,18 +19,16 @@ use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\BrowserKit\Cookie;
-use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\User\UserInterface;
-use TestKernel;
 use Throwable;
 
 /**
  * Default web test case.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\CoreBundle\Tests
+ * @package WBW\Bundle\CommonBundle\Tests
  * @abstract
  */
 abstract class DefaultWebTestCase extends WebTestCase {
@@ -45,43 +43,18 @@ abstract class DefaultWebTestCase extends WebTestCase {
     /**
      * {@inheritDoc}
      */
-    protected static function getKernelClass(): string {
-        require_once realpath(getcwd() . "/Tests/Fixtures/app/TestKernel.php");
-        return TestKernel::class;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     protected function setUp(): void {
         parent::setUp();
-
-        static::ensureKernelShutdown();
 
         // Set a Client mock.
         $this->client = static::createClient();
     }
 
     /**
-     * {@inheritDoc}
-     */
-    public static function setUpBeforeClass(): void {
-        parent::setUpBeforeClass();
-
-        static::$kernel = static::createKernel();
-
-        // Clean the cache to avoid issues due to cache files.
-        $filesystem = new Filesystem();
-        $filesystem->remove(static::$kernel->getCacheDir());
-
-        static::$kernel->boot();
-    }
-
-    /**
      * Set up a cookie.
      *
      * @param UserInterface|string $user The user.
-     * @param array $userRoles The user roles.
+     * @param string[] $userRoles The user roles.
      * @param string $firewallName The firewall name.
      * @param string $firewallContext The firewall context.
      * @return Cookie Returns the cookie.
@@ -114,12 +87,5 @@ abstract class DefaultWebTestCase extends WebTestCase {
         $schemaTool = new SchemaTool($em);
         $schemaTool->dropDatabase();
         $schemaTool->createSchema($entities);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected function tearDown(): void {
-        static::$kernel->shutdown();
     }
 }
