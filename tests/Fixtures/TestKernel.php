@@ -12,6 +12,7 @@
 namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures;
 
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 use Symfony\Component\HttpKernel\Kernel;
 use WBW\Bundle\CommonBundle\Tests\DefaultKernel;
 
@@ -25,6 +26,7 @@ class TestKernel extends DefaultKernel {
 
     /**
      * {@inheritDoc}
+     * @return BundleInterface[] Returns the registered bundles.
      */
     public function registerBundles(): array {
 
