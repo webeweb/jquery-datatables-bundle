@@ -14,3 +14,4 @@ parameters:
                 - lib/common/Service/SessionService.php
                 - lib/common/Tests/Service/SessionServiceTest.php
                 - lib/common/Tests/DefaultTestCase.php
+                - tests/Fixtures/TestKernel.php
