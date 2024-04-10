@@ -102,15 +102,15 @@ class TestAbstractController extends AbstractController {
     /**
      * {@inheritDoc}
      */
-    public function notify(string $eventName, NotificationInterface $notification): ?NotificationEvent {
-        return parent::notify($eventName, $notification);
+    public function notify(NotificationInterface $notification, string $eventName): NotificationEvent {
+        return parent::notify($notification, $eventName);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function toast(string $eventName, ToastInterface $toast): ?ToastEvent {
-        return parent::toast($eventName, $toast);
+    public function toast(ToastInterface $toast, string $eventName): ToastEvent {
+        return parent::toast($toast, $eventName);
     }
 
     /**

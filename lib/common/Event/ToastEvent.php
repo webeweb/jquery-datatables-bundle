@@ -57,10 +57,10 @@ class ToastEvent extends AbstractEvent {
     /**
      * Constructor.
      *
-     * @param string $eventName The event name.
      * @param ToastInterface $toast The toast.
+     * @param string $eventName The event name.
      */
-    public function __construct(string $eventName, ToastInterface $toast) {
+    public function __construct(ToastInterface $toast, string $eventName) {
         parent::__construct($eventName);
 
         $this->setToast($toast);

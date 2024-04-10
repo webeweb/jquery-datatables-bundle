@@ -43,12 +43,12 @@ abstract class AbstractController extends BaseController {
     /**
      * Dispatch an event.
      *
-     * @param string $eventName The event name.
      * @param Event $event The event.
+     * @param string $eventName The event name.
      * @return Event Returns the event.
      * @throws Throwable Throws an exception if an error occurs.
      */
-    protected function dispatchEvent(string $eventName, Event $event): Event {
+    protected function dispatchEvent(Event $event, string $eventName): Event {
 
         $this->getLogger()->debug(sprintf('A controller dispatch an event with name "%s"', $eventName), [
             "_controller" => get_class($this),
@@ -169,15 +169,15 @@ abstract class AbstractController extends BaseController {
     /**
      * Notify.
      *
-     * @param string $eventName The event name.
      * @param NotificationInterface $notification The notification.
-     * @return NotificationEvent|null Returns the event.
+     * @param string $eventName The event name.
+     * @return NotificationEvent Returns the event.
      * @throws Throwable Throws an exception if an error occurs.
      */
-    protected function notify(string $eventName, NotificationInterface $notification): ?NotificationEvent {
+    protected function notify(NotificationInterface $notification, string $eventName): NotificationEvent {
 
-        $event = new NotificationEvent($eventName, $notification);
-        $this->dispatchEvent($eventName, $event);
+        $event = new NotificationEvent($notification, $eventName);
+        $this->dispatchEvent($event, $eventName);
 
         return $event;
     }
@@ -185,15 +185,15 @@ abstract class AbstractController extends BaseController {
     /**
      * Toast.
      *
-     * @param string $eventName The event name.
      * @param ToastInterface $toast The toast.
-     * @return ToastEvent|null Returns the event.
+     * @param string $eventName The event name.
+     * @return ToastEvent Returns the event.
      * @throws Throwable Throws an exception if an error occurs.
      */
-    protected function toast(string $eventName, ToastInterface $toast): ?ToastEvent {
+    protected function toast(ToastInterface $toast, string $eventName): ToastEvent {
 
-        $event = new ToastEvent($eventName, $toast);
-        $this->dispatchEvent($eventName, $event);
+        $event = new ToastEvent($toast, $eventName);
+        $this->dispatchEvent($event, $eventName);
 
         return $event;
     }

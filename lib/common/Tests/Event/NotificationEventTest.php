@@ -40,9 +40,9 @@ class NotificationEventTest extends AbstractTestCase {
         // Set a Notification mock.
         $notification = $this->getMockBuilder(NotificationInterface::class)->getMock();
 
-        $obj = new NotificationEvent("eventName", $notification);
+        $obj = new NotificationEvent($notification, "test");
 
-        $this->assertEquals("eventName", $obj->getEventName());
+        $this->assertEquals("test", $obj->getEventName());
         $this->assertSame($notification, $obj->getNotification());
     }
 }

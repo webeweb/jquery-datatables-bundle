@@ -40,9 +40,9 @@ class ToastEventTest extends AbstractTestCase {
         // Set a Toast mock.
         $toast = $this->getMockBuilder(ToastInterface::class)->getMock();
 
-        $obj = new ToastEvent("eventName", $toast);
+        $obj = new ToastEvent($toast, "test");
 
-        $this->assertEquals("eventName", $obj->getEventName());
+        $this->assertEquals("test", $obj->getEventName());
         $this->assertSame($toast, $obj->getToast());
     }
 }
