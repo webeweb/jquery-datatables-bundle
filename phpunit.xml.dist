@@ -4,6 +4,9 @@
          xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
          bootstrap="tests/bootstrap.php"
          colors="true">
+    <php>
+        <env name="KERNEL_CLASS" value="WBW\Bundle\DataTablesBundle\Tests\Fixtures\TestKernel" />
+    </php>
     <filter>
         <whitelist>
             <directory>./</directory>
