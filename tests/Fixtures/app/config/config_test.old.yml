@@ -25,7 +25,7 @@ framework:
 doctrine:
     dbal:
         driver: "pdo_sqlite"
-        path:   "%kernel.project_dir%/var/test.sqlite"
+        path:   "%kernel.project_dir%/../var/test.sqlite"
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping:                true
@@ -33,7 +33,7 @@ doctrine:
         mappings:
             WBWDataTablesBundle:
                 type:   "xml"
-                dir:    "Tests/Fixtures/app/config/doctrine"
+                dir:    "tests/Fixtures/app/config/doctrine"
                 prefix: "WBW\\Bundle\\DataTablesBundle\\Tests\\Fixtures\\Entity"
 
 # Monolog configuration
@@ -50,8 +50,8 @@ twig:
     strict_variables: "%kernel.debug%"
 
 # Bootstrap configuration
-wbw_bootstrap:
-    version: 3
+#wbw_bootstrap:
+#    version: 3
 
 # DataTables configuration
 wbw_datatables:
