@@ -43,7 +43,7 @@ class AbstractControllerTest extends AbstractWebTestCase {
     /**
      * Controller.
      *
-     * @var AbstractController
+     * @var TestAbstractController|null
      */
     private $controller;
 
