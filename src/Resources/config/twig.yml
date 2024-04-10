@@ -13,7 +13,7 @@ services:
         public: false
         arguments: [ "@twig" ]
         calls:
-            - [ "setVersion", [ "%wbw_bootstrap.version%" ] ]
+            - [ "setVersion", [ "%wbw_datatables.bootstrap.version%" ] ]
         tags:
             - { name: "twig.extension" }
 
@@ -22,7 +22,7 @@ services:
         public: false
         arguments: [ "@twig" ]
         calls:
-            - [ "setVersion", [ "%wbw_bootstrap.version%" ] ]
+            - [ "setVersion", [ "%wbw_datatables.bootstrap.version%" ] ]
         tags:
             - { name: "twig.extension" }
 
@@ -31,7 +31,7 @@ services:
         public: false
         arguments: [ "@twig" ]
         calls:
-            - [ "setVersion", [ "%wbw_bootstrap.version%" ] ]
+            - [ "setVersion", [ "%wbw_datatables.bootstrap.version%" ] ]
         tags:
             - { name: "twig.extension" }
 
@@ -40,7 +40,7 @@ services:
         public: false
         arguments: [ "@twig" ]
         calls:
-            - [ "setVersion", [ "%wbw_bootstrap.version%" ] ]
+            - [ "setVersion", [ "%wbw_datatables.bootstrap.version%" ] ]
         tags:
             - { name: "twig.extension" }
 
@@ -49,7 +49,7 @@ services:
         public: false
         arguments: [ "@twig" ]
         calls:
-            - [ "setVersion", [ "%wbw_bootstrap.version%" ] ]
+            - [ "setVersion", [ "%wbw_datatables.bootstrap.version%" ] ]
         tags:
             - { name: "twig.extension" }
 
@@ -79,7 +79,7 @@ services:
         public: false
         arguments: [ "@twig" ]
         calls:
-            - [ "setVersion", [ "%wbw_bootstrap.version%" ] ]
+            - [ "setVersion", [ "%wbw_datatables.bootstrap.version%" ] ]
         tags:
             - { name: "twig.extension" }
 

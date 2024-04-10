@@ -82,7 +82,6 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
 
         // Set a Container builder mock.
         $this->containerBuilder = new ContainerBuilder();
-        $this->containerBuilder->setParameter("wbw_bootstrap.version", 3);
 
         $this->containerBuilder->set("logger", $logger);
         $this->containerBuilder->set("translator", $translator);
@@ -137,20 +136,7 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
         // Twig extensions.
         //$this->assertInstanceOf(DataTablesTwigExtension::class, $this->containerBuilder->get(DataTablesTwigExtension::SERVICE_NAME));
 
-    }
-
-    /**
-     * Test load()
-     *
-     * @return void
-     * @throws Throwable Throws an exception if an error occurs.
-     */
-    public function testLoadBootstrap(): void {
-
-        $obj = new WBWDataTablesExtension();
-
-        $obj->load($this->configs, $this->containerBuilder);
-
+        // === Bootstrap bundle ===============================================
         // Twig extensions.
         $this->assertInstanceOf(AssetsTwigExtension::class, $this->containerBuilder->get(AssetsTwigExtension::SERVICE_NAME));
 
