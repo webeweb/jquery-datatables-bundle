@@ -1,6 +1,17 @@
 # Tests/Fixtures/app/config/services_test.yml
 services:
 
+    logger:
+        alias:  "monolog.logger"
+        public: true
+
+    WBW\Bundle\CommonBundle\Tests\Fixtures\Controller\TestAbstractController:
+        public: true
+        calls:
+            - [ "setContainer", [ "@Psr\\Container\\ContainerInterface" ] ]
+        tags:
+            - { name: "container.service_subscriber" }
+
     WBW\Bundle\DataTablesBundle\Tests\Fixtures\Controller\TestViewsController:
         public: true
         calls:
