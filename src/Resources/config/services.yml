@@ -1,0 +1,15 @@
+# src/Resources/config/services.yml
+services:
+
+    logger:
+        alias:  "monolog.logger"
+        public: true
+
+    WBW\Bundle\CommonBundle\Service\SymfonyBCService:
+        alias:  "wbw.common.service.session"
+        public: false
+
+    wbw.common.service.session:
+        class:  WBW\Bundle\CommonBundle\Service\SessionService
+        public: true
+        arguments: [ "@service_container" ]
