@@ -5,7 +5,7 @@
          bootstrap="tests/bootstrap.php"
          colors="true">
     <php>
-        <env name="KERNEL_CLASS" value="WBW\Bundle\DataTablesBundle\Tests\Fixtures\TestKernel" />
+        <env name="KERNEL_CLASS" value="WBW\Bundle\DataTablesBundle\Tests\Fixtures\TestKernel"/>
     </php>
     <filter>
         <whitelist>
