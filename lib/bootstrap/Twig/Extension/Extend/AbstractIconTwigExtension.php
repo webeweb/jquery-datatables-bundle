@@ -43,5 +43,4 @@ abstract class AbstractIconTwigExtension extends AbstractTwigExtension {
 
         return static::h("i", null, $attributes);
     }
-
 }
