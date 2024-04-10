@@ -5,13 +5,6 @@ services:
         alias:  "monolog.logger"
         public: true
 
-    WBW\Bundle\CommonBundle\Tests\Fixtures\Controller\TestAbstractController:
-        public: true
-        calls:
-            - [ "setContainer", [ "@Psr\\Container\\ContainerInterface" ] ]
-        tags:
-            - { name: "container.service_subscriber" }
-
     WBW\Bundle\DataTablesBundle\Tests\Fixtures\Controller\TestViewsController:
         public: true
         calls:
@@ -48,3 +41,17 @@ services:
     wbw.datatables.manager.alias:
         alias:  "wbw.datatables.manager"
         public: true
+
+    WBW\Bundle\BootstrapBundle\Tests\Fixtures\Controller\TestAbstractController:
+        public: true
+        calls:
+            - [ "setContainer", [ "@Psr\\Container\\ContainerInterface" ] ]
+        tags:
+            - { name: "container.service_subscriber" }
+
+    WBW\Bundle\CommonBundle\Tests\Fixtures\Controller\TestAbstractController:
+        public: true
+        calls:
+            - [ "setContainer", [ "@Psr\\Container\\ContainerInterface" ] ]
+        tags:
+            - { name: "container.service_subscriber" }
