@@ -41,20 +41,25 @@ use WBW\Library\Symfony\Renderer\StringsRendererTrait;
  */
 abstract class BootstrapDataTablesProvider extends DefaultDataTablesProvider {
 
-    use ButtonTwigExtensionTrait;
     use RouterTrait;
 
-    use BootstrapButtonRendererTrait;
-
-    use DateTimesRendererTrait;
-    use FloatRendererTrait;
-    use StringsRendererTrait;
-    use StringWrapperTrait;
-
+    // Bootstrap renderers
     use CenterAlignedTextRendererTrait;
     use JustifiedAlignedTextRendererTrait;
     use LeftAlignedTextRendererTrait;
     use RightAlignedTextRendererTrait;
+
+    // Bootstrap Twig extension
+    use ButtonTwigExtensionTrait;
+
+    // DataTables renderer
+    use BootstrapButtonRendererTrait;
+
+    // Common renderers
+    use DateTimesRendererTrait;
+    use FloatRendererTrait;
+    use StringsRendererTrait;
+    use StringWrapperTrait;
 
     /**
      * Constructor.
