@@ -67,13 +67,13 @@ class DataTablesController extends AbstractController {
 
             $entity = $this->getDataTablesEntityById($dtProvider, $id);
 
-            $this->dispatchDataTablesEvent(DataTablesEvent::PRE_DELETE, [$entity], $dtProvider);
+            $this->dispatchDataTablesEvent([$entity], DataTablesEvent::PRE_DELETE, $dtProvider);
 
             $em = $this->getEntityManager();
             $em->remove($entity);
             $em->flush();
 
-            $this->dispatchDataTablesEvent(DataTablesEvent::POST_DELETE, [$entity], $dtProvider);
+            $this->dispatchDataTablesEvent([$entity], DataTablesEvent::POST_DELETE, $dtProvider);
 
             $output = $this->prepareActionResponse(200, "controller.datatables.delete.success");
         } catch (Throwable $ex) {
@@ -112,7 +112,7 @@ class DataTablesController extends AbstractController {
                 $value = $request->request->get("value");
             }
 
-            $this->dispatchDataTablesEvent(DataTablesEvent::PRE_EDIT, [$entity], $dtProvider);
+            $this->dispatchDataTablesEvent([$entity], DataTablesEvent::PRE_EDIT, $dtProvider);
 
             $dtEditor->editColumn($dtColumn, $entity, $value);
 
@@ -120,7 +120,7 @@ class DataTablesController extends AbstractController {
             $em->persist($entity);
             $em->flush();
 
-            $this->dispatchDataTablesEvent(DataTablesEvent::POST_EDIT, [$entity], $dtProvider);
+            $this->dispatchDataTablesEvent([$entity], DataTablesEvent::POST_EDIT, $dtProvider);
 
             $output = $this->prepareActionResponse(200, "controller.datatables.edit.success");
         } catch (Throwable $ex) {
@@ -200,7 +200,7 @@ class DataTablesController extends AbstractController {
 
         $entities = $repository->dataTablesFindAll($dtWrapper);
 
-        $this->dispatchDataTablesEvent(DataTablesEvent::PRE_INDEX, $entities, $dtProvider);
+        $this->dispatchDataTablesEvent($entities, DataTablesEvent::PRE_INDEX, $dtProvider);
 
         $dtLoop = new DataTablesLoop($entities);
 
@@ -221,7 +221,7 @@ class DataTablesController extends AbstractController {
             $dtLoop->next();
         }
 
-        $this->dispatchDataTablesEvent(DataTablesEvent::POST_INDEX, $entities, $dtProvider);
+        $this->dispatchDataTablesEvent($entities, DataTablesEvent::POST_INDEX, $dtProvider);
 
         return new JsonResponse($dtWrapper->getResponse());
     }
@@ -290,7 +290,7 @@ class DataTablesController extends AbstractController {
 
             $entity = $this->getDataTablesEntityById($dtProvider, $id);
 
-            $this->dispatchDataTablesEvent(DataTablesEvent::PRE_SERIALIZE, [$entity], $dtProvider);
+            $this->dispatchDataTablesEvent([$entity], DataTablesEvent::PRE_SERIALIZE, $dtProvider);
         } catch (EntityNotFoundException $ex) {
             $this->logInfo($ex->getMessage());
         }
