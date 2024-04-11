@@ -12,8 +12,3 @@ wbw_datatables_assets_stylesheets:
     path: "/assets/stylesheets"
     defaults: { _controller: "WBW\\Bundle\\DataTablesBundle\\Tests\\Fixtures\\Controller\\TestViewsController::assetsStylesheetsAction" }
     methods: [ "GET" ]
-
-wbw_datatables_deprecated_show:
-    path: "/datatables/{name}/deprecated-show/{id}"
-    defaults: { _controller: "WBW\\Bundle\\DataTablesBundle\\Controller\\DataTablesController::showAction" }
-    methods: [ "GET" ]
