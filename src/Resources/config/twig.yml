@@ -19,6 +19,13 @@ services:
         tags:
             - { name: "twig.extension" }
 
+    wbw.common.twig.extension.container:
+        class:  WBW\Bundle\CommonBundle\Twig\Extension\ContainerTwigExtension
+        public: false
+        arguments: [ "@twig", "@service_container" ]
+        tags:
+            - { name: "twig.extension" }
+
     # === Bootstrap bundle ====================================================
     wbw.bootstrap.twig.extension.assets:
         class:  WBW\Bundle\BootstrapBundle\Twig\Extension\AssetsTwigExtension

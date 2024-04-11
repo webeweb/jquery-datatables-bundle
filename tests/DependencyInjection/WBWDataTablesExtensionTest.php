@@ -36,6 +36,7 @@ use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\MeteoconsTwigExtension;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Layout\GridTwigExtension;
 use WBW\Bundle\CommonBundle\Service\SessionService;
 use WBW\Bundle\CommonBundle\Twig\Extension\AssetsTwigExtension as CommonAssetsTwigExtension;
+use WBW\Bundle\CommonBundle\Twig\Extension\ContainerTwigExtension;
 use WBW\Bundle\DataTablesBundle\Command\ListDataTablesProviderCommand;
 use WBW\Bundle\DataTablesBundle\Controller\DataTablesController;
 use WBW\Bundle\DataTablesBundle\DependencyInjection\Configuration;
@@ -179,6 +180,7 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
 
         // Twig extensions
         $this->assertInstanceOf(CommonAssetsTwigExtension::class, $this->containerBuilder->get(CommonAssetsTwigExtension::SERVICE_NAME));
+        $this->assertInstanceOf(ContainerTwigExtension::class, $this->containerBuilder->get(ContainerTwigExtension::SERVICE_NAME));
     }
 
     /**
