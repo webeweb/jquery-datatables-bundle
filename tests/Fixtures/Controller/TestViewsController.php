@@ -14,7 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
-use WBW\Bundle\CoreBundle\Controller\AbstractController;
+use WBW\Bundle\CommonBundle\Controller\AbstractController;
 
 /**
  * Test views controller.
