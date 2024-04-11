@@ -37,6 +37,7 @@ use WBW\Bundle\BootstrapBundle\Twig\Extension\Layout\GridTwigExtension;
 use WBW\Bundle\CommonBundle\Service\SessionService;
 use WBW\Bundle\CommonBundle\Twig\Extension\AssetsTwigExtension as CommonAssetsTwigExtension;
 use WBW\Bundle\DataTablesBundle\Command\ListDataTablesProviderCommand;
+use WBW\Bundle\DataTablesBundle\Controller\DataTablesController;
 use WBW\Bundle\DataTablesBundle\DependencyInjection\Configuration;
 use WBW\Bundle\DataTablesBundle\DependencyInjection\WBWDataTablesExtension;
 use WBW\Bundle\DataTablesBundle\Manager\DataTablesManager;
@@ -143,7 +144,7 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
         $this->assertInstanceOf(ListDataTablesProviderCommand::class, $this->containerBuilder->get(ListDataTablesProviderCommand::SERVICE_NAME));
 
         // Controllers
-        //$this->assertInstanceOf(DataTablesController::class, $this->containerBuilder->get(DataTablesController::SERVICE_NAME));
+        $this->assertInstanceOf(DataTablesController::class, $this->containerBuilder->get(DataTablesController::SERVICE_NAME));
 
         // Managers
         $this->assertInstanceOf(DataTablesManager::class, $this->containerBuilder->get(DataTablesManager::SERVICE_NAME));

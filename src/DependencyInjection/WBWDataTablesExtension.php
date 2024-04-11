@@ -57,7 +57,7 @@ class WBWDataTablesExtension extends Extension {
 
         $serviceLoader = new YamlFileLoader($container, $fileLocator);
         $serviceLoader->load("commands.yml");
-        //$serviceLoader->load("controllers.yml");
+        $serviceLoader->load("controllers.yml");
         $serviceLoader->load("managers.yml");
         $serviceLoader->load("services.yml");
         $serviceLoader->load("twig.yml");
