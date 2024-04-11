@@ -15,10 +15,12 @@ namespace WBW\Bundle\DataTablesBundle\Tests\DependencyInjection;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
+use Symfony\Component\Routing\RouterInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Throwable;
 use Twig\Environment;
-use WBW\Bundle\BootstrapBundle\Twig\Extension\AssetsTwigExtension;
+use WBW\Bundle\BootstrapBundle\Twig\Extension\AssetsTwigExtension as BootstrapAssetsTwigExtension;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\AlertTwigExtension;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\BadgeTwigExtension;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\ButtonTwigExtension;
@@ -33,11 +35,13 @@ use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\MaterialDesignIconicFontTwi
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\MeteoconsTwigExtension;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Layout\GridTwigExtension;
 use WBW\Bundle\CommonBundle\Service\SessionService;
+use WBW\Bundle\CommonBundle\Twig\Extension\AssetsTwigExtension as CommonAssetsTwigExtension;
 use WBW\Bundle\DataTablesBundle\Command\ListDataTablesProviderCommand;
 use WBW\Bundle\DataTablesBundle\DependencyInjection\Configuration;
 use WBW\Bundle\DataTablesBundle\DependencyInjection\WBWDataTablesExtension;
 use WBW\Bundle\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
+use WBW\Bundle\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 
 /**
  * DataTables extension test.
@@ -75,16 +79,26 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
         // Set a Logger mock.
         $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
 
+        // Set a Router mock.
+        $router = $this->getMockBuilder(RouterInterface::class)->getMock();
+
         // Set a Translator mock.
         $translator = $this->getMockBuilder(TranslatorInterface::class)->getMock();
 
         // Set a Twig environment mock.
         $twigEnvironment = $this->getMockBuilder(Environment::class)->disableOriginalConstructor()->getMock();
 
+        // Set a Parameter bag mock.
+        $parameterBag = new ParameterBag([
+            "kernel.environment" => "test",
+            "kernel.project_dir" => realpath(__DIR__ . "/../Fixtures/app"),
+        ]);
+
         // Set a Container builder mock.
-        $this->containerBuilder = new ContainerBuilder();
+        $this->containerBuilder = new ContainerBuilder($parameterBag);
 
         $this->containerBuilder->set("logger", $logger);
+        $this->containerBuilder->set("router", $router);
         $this->containerBuilder->set("translator", $translator);
         $this->containerBuilder->set("twig", $twigEnvironment);
     }
@@ -134,12 +148,12 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
         // Managers
         $this->assertInstanceOf(DataTablesManager::class, $this->containerBuilder->get(DataTablesManager::SERVICE_NAME));
 
-        // Twig extensions.
-        //$this->assertInstanceOf(DataTablesTwigExtension::class, $this->containerBuilder->get(DataTablesTwigExtension::SERVICE_NAME));
+        // Twig extensions
+        $this->assertInstanceOf(DataTablesTwigExtension::class, $this->containerBuilder->get(DataTablesTwigExtension::SERVICE_NAME));
 
         // === Bootstrap bundle ===============================================
-        // Twig extensions.
-        $this->assertInstanceOf(AssetsTwigExtension::class, $this->containerBuilder->get(AssetsTwigExtension::SERVICE_NAME));
+        // Twig extensions
+        $this->assertInstanceOf(BootstrapAssetsTwigExtension::class, $this->containerBuilder->get(BootstrapAssetsTwigExtension::SERVICE_NAME));
 
         $this->assertInstanceOf(AlertTwigExtension::class, $this->containerBuilder->get(AlertTwigExtension::SERVICE_NAME));
         $this->assertInstanceOf(BadgeTwigExtension::class, $this->containerBuilder->get(BadgeTwigExtension::SERVICE_NAME));
@@ -159,7 +173,11 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
         $this->assertInstanceOf(GridTwigExtension::class, $this->containerBuilder->get(GridTwigExtension::SERVICE_NAME));
 
         // === Common bundle ==================================================
+        // Services
         $this->assertInstanceOf(SessionService::class, $this->containerBuilder->get(SessionService::SERVICE_NAME));
+
+        // Twig extensions
+        $this->assertInstanceOf(CommonAssetsTwigExtension::class, $this->containerBuilder->get(CommonAssetsTwigExtension::SERVICE_NAME));
     }
 
     /**
