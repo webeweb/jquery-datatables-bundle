@@ -1,9 +1,9 @@
-{# Resources/views/assets/_javascripts.html.twig #}
+{# src/Resources/views/assets/_javascripts.html.twig #}
 {% set _webPath    = "bundles/wbwdatatables" %}
-{% set _version    = getContainerParameter("wbw.datatables.asset.datatables").version %}
-{% set _plugins    = getContainerParameter("wbw.datatables.asset.datatables").plugins %}
-{% set _appTheme   = getContainerParameter("wbw_datatables.theme") %}
-{% set _appPlugins = getContainerParameter("wbw_datatables.plugins") %}
+{% set _version    = getContainerParameter("wbw.datatables.assets").version %}
+{% set _plugins    = getContainerParameter("wbw.datatables.assets").plugins %}
+{% set _appTheme   = getContainerParameter("wbw_datatables.datatables.theme") %}
+{% set _appPlugins = getContainerParameter("wbw_datatables.datatables.plugins") %}
 
 {% if ("prod" != app.environment) %}<!-- DataTables -->{% endif %}
 <script type="text/javascript" src="{{ asset(_webPath ~ "/datatables-" ~ _version ~ "/js/jquery.dataTables.min.js") }}"></script>
@@ -12,7 +12,7 @@
 
     {% if ("buttons" == _appPlugin) %}
 
-        {% set _requires = getContainerParameter("wbw.datatables.asset.datatables").requires %}
+        {% set _requires = getContainerParameter("wbw.datatables.assets").requires %}
         <script type="text/javascript" src="{{ asset((_webPath ~ _requires["jszip"].javascripts[0])|replace({"{{ version }}": _requires["jszip"].version})) }}"></script>
         <script type="text/javascript" src="{{ asset((_webPath ~ _requires["pdfmake"].javascripts[0])|replace({"{{ version }}": _requires["pdfmake"].version})) }}"></script>
         <script type="text/javascript" src="{{ asset((_webPath ~ _requires["pdfmake"].javascripts[1])|replace({"{{ version }}": _requires["pdfmake"].version})) }}"></script>
