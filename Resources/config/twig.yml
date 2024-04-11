@@ -1,9 +1,0 @@
-# Resources/config/services.yml
-services:
-
-    wbw.datatables.twig.extension:
-        class:  WBW\Bundle\DataTablesBundle\Twig\Extension\DataTablesTwigExtension
-        arguments: [ "@twig", "@wbw.core.twig.extension.assets", "%kernel.environment%" ]
-        public: false
-        tags:
-            - { name: "twig.extension" }

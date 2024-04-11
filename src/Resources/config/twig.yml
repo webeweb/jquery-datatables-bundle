@@ -1,6 +1,25 @@
 # src/Resources/config/twig.yml
 services:
 
+    wbw.datatables.twig.extension:
+        class:  WBW\Bundle\DataTablesBundle\Twig\Extension\DataTablesTwigExtension
+        arguments: [ "@twig", "@wbw.common.twig.extension.assets", "%kernel.environment%" ]
+        public: false
+        tags:
+            - { name: "twig.extension" }
+
+    # === Common bundle =======================================================
+    wbw.common.twig.extension.assets:
+        class:  WBW\Bundle\CommonBundle\Twig\Extension\AssetsTwigExtension
+        public: false
+        arguments: [ "@twig" ]
+        calls:
+            - [ "setPublicDirectory", [ "%kernel.project_dir%/public" ] ]
+            - [ "setRouter",          [ "@router" ] ]
+        tags:
+            - { name: "twig.extension" }
+
+    # === Bootstrap bundle ====================================================
     wbw.bootstrap.twig.extension.assets:
         class:  WBW\Bundle\BootstrapBundle\Twig\Extension\AssetsTwigExtension
         public: false
