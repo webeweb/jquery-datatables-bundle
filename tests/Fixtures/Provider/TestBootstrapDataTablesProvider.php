@@ -119,7 +119,7 @@ class TestBootstrapDataTablesProvider extends BootstrapDataTablesProvider {
     /**
      *{@inheritDoc}
      */
-    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity): ?string {
+    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity) {
         return null;
     }
 

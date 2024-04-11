@@ -110,7 +110,7 @@ class OfficeDataTablesProvider implements DataTablesProviderInterface, DataTable
     /**
      * {@inheritDoc}
      */
-    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity): ?string {
+    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity) {
 
         $output = null;
 

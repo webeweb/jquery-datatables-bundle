@@ -62,7 +62,7 @@ class TestDefaultDataTablesProvider extends DefaultDataTablesProvider {
     /**
      * {@inheritDoc}
      */
-    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity): ?string {
+    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity) {
         return null;
     }
 }

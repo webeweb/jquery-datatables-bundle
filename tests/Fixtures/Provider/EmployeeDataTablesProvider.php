@@ -179,7 +179,7 @@ class EmployeeDataTablesProvider implements DataTablesProviderInterface, DataTab
     /**
      * {@inheritDoc}
      */
-    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity): ?string {
+    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity) {
 
         $output = null;
 

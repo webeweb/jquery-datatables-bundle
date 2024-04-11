@@ -101,10 +101,10 @@ interface DataTablesProviderInterface extends ProviderInterface {
      *
      * @param DataTablesColumnInterface $dtColumn The column.
      * @param object $entity The entity.
-     * @return string|null Returns the rendered column.
+     * @return mixed|null Returns the rendered column.
      * @throws Throwable Throws an exception if an error occurs.
      */
-    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity): ?string;
+    public function renderColumn(DataTablesColumnInterface $dtColumn, $entity);
 
     /**
      * Render a row.
