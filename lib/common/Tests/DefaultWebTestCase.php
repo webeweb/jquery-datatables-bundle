@@ -17,7 +17,6 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Tools\SchemaTool;
 use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\BrowserKit\Cookie;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
@@ -31,7 +30,7 @@ use Throwable;
  * @package WBW\Bundle\CommonBundle\Tests
  * @abstract
  */
-abstract class DefaultWebTestCase extends WebTestCase {
+abstract class DefaultWebTestCase extends AbstractWebTestCase {
 
     /**
      * Client.
