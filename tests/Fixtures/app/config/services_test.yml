@@ -1,10 +1,6 @@
 # Tests/Fixtures/app/config/services_test.yml
 services:
 
-    logger:
-        alias:  "monolog.logger"
-        public: true
-
     WBW\Bundle\DataTablesBundle\Tests\Fixtures\Controller\TestViewsController:
         public: true
         calls:
