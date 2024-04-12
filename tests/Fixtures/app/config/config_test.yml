@@ -28,7 +28,7 @@ framework:
 doctrine:
     dbal:
         driver: "pdo_sqlite"
-        path:   "%kernel.project_dir%/var/test.sqlite"
+        path:   "%kernel.project_dir%/../../../var/test.sqlite"
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping:                true
@@ -36,7 +36,7 @@ doctrine:
         mappings:
             WBWDataTablesBundle:
                 type:   "xml"
-                dir:    "Tests/Fixtures/app/config/doctrine"
+                dir:    "tests/Fixtures/app/config/doctrine"
                 prefix: "WBW\\Bundle\\DataTablesBundle\\Tests\\Fixtures\\Entity"
 
 # Monolog configuration
@@ -51,28 +51,48 @@ monolog:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
-
-# Bootstrap configuration
-wbw_bootstrap:
-    version: 3
+    paths:
+        "%kernel.project_dir%/../../../lib/bootstrap/Resources/views": "WBWBootstrap"
 
 # DataTables configuration
 wbw_datatables:
-    theme: "bootstrap"
-    plugins:
-        - "autofill"
-        - "buttons"
-        - "colreorder"
-        - "datetime"
-        - "fixedcolumns"
-        - "fixedheader"
-        - "keytable"
-        - "responsive"
-        - "rowgroup"
-        - "rowreorder"
-        - "scroller"
-        - "searchbuilder"
-        - "searchpanes"
-        - "select"
-        - "staterestore"
-        - "editabletable"
+    datatables:
+        theme: "bootstrap"
+        plugins:
+            - "autofill"
+            - "buttons"
+            - "colreorder"
+            - "datetime"
+            - "fixedcolumns"
+            - "fixedheader"
+            - "keytable"
+            - "responsive"
+            - "rowgroup"
+            - "rowreorder"
+            - "scroller"
+            - "searchbuilder"
+            - "searchpanes"
+            - "select"
+            - "staterestore"
+            - "editabletable"
+    bootstrap:
+        version: 3
+        plugins:
+            - "bootstrap_colorpicker"
+            - "bootstrap_datepicker"
+            - "bootstrap_daterangepicker"
+            - "bootstrap_markdown"
+            - "bootstrap_notify"
+            - "bootstrap_select"
+            - "bootstrap_slider"
+            - "bootstrap_social"
+            - "bootstrap_tagsinput"
+            - "bootstrap_timepicker"
+            - "bootstrap_wysiwyg"
+            - "summernote"
+        locales:
+            bootstrap_datepicker: "fr"
+            bootstrap_markdown:   "fr"
+            bootstrap_select:     "fr_FR"
+            bootstrap_wysiwyg:    "fr-FR"
+            summernote:           "fr-FR"
