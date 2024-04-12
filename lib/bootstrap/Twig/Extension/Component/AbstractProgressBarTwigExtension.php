@@ -37,7 +37,7 @@ abstract class AbstractProgressBarTwigExtension extends AbstractTwigExtension {
         $span = static::h("span", $progressBar->getValue() . "%", ["class" => "sr-only"]);
 
         $type = ProgressBarRenderer::renderType($progressBar);
-        if (3 !== $this->getVersion()) {
+        if (null !== $type && 3 !== $this->getVersion()) {
             $type = preg_replace("/progress-bar-(danger|info|success|warning)/", "bg-$1", $type);
         }
 
