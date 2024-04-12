@@ -105,6 +105,8 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
         $this->containerBuilder->set("router", $router);
         $this->containerBuilder->set("translator", $translator);
         $this->containerBuilder->set("twig", $twigEnvironment);
+
+        $this->containerBuilder->set("Psr\\Container\\ContainerInterface", $this->containerBuilder);
     }
 
     /**
