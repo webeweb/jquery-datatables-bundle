@@ -12,6 +12,7 @@ controller:
 
 label:
     cancel:    "Cancel"
+    close:     "Close"
     comment:   "Comment"
     delete:    "Delete"
     disable:   "Disable"
