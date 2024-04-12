@@ -13,8 +13,10 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Tests\Controller;
 
+use Doctrine\ORM\EntityManagerInterface;
+use Throwable;
+use WBW\Bundle\CommonBundle\Tests\DefaultWebTestCase;
 use WBW\Bundle\DataTablesBundle\Controller\DataTablesController;
-use WBW\Bundle\DataTablesBundle\Tests\AbstractWebTestCase;
 use WBW\Bundle\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
 /**
@@ -23,15 +25,38 @@ use WBW\Bundle\DataTablesBundle\Tests\Fixtures\TestFixtures;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Tests\Controller
  */
-class DataTablesControllerTest extends AbstractWebTestCase {
+class DataTablesControllerTest extends DefaultWebTestCase {
 
     /**
      * {@inheritDoc}
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public static function setUpBeforeClass(): void {
         parent::setUpBeforeClass();
+        parent::setUpSchemaTool();
 
-        parent::setUpEmployeeFixtures();
+        static::setUpEmployeeEntities();
+
+        // Set a default timezone.
+        date_default_timezone_set("UTC");
+    }
+
+    /**
+     * Set up the employee entities.
+     *
+     * @return void
+     * @throws Throwable Throws an exception if an error occurs.
+     */
+    protected static function setUpEmployeeEntities(): void {
+
+        /** @var EntityManagerInterface $em */
+        $em = static::$kernel->getContainer()->get("doctrine.orm.entity_manager");
+
+        foreach (TestFixtures::getEmployees() as $entity) {
+            $em->persist($entity);
+        }
+
+        $em->flush();
     }
 
     /**
@@ -690,13 +715,13 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         // Get the response content.
         $content = $client->getResponse()->getContent();
 
-        // Check the CSS.
-        foreach (static::listCSSAssets() as $current) {
+        // Check the stylesheet.
+        foreach (TestFixtures::listStylesheetAssets() as $current) {
             $this->assertRegExp("/" . preg_quote($current, "/") . "/", $content);
         }
 
-        // Check the Javascript.
-        foreach (static::listJavascriptAssets() as $current) {
+        // Check the javascript.
+        foreach (TestFixtures::listJavascriptAssets() as $current) {
             $this->assertRegExp("/" . preg_quote($current, "/") . "/", $content);
         }
     }
@@ -717,13 +742,13 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         // Get the response content.
         $content = $client->getResponse()->getContent();
 
-        // Check the CSS.
-        foreach (static::listCSSAssets() as $current) {
+        // Check the stylesheet.
+        foreach (TestFixtures::listStylesheetAssets() as $current) {
             $this->assertNotRegExp("/" . preg_quote($current, "/") . "/", $content);
         }
 
-        // Check the Javascript.
-        foreach (static::listJavascriptAssets() as $current) {
+        // Check the javascript.
+        foreach (TestFixtures::listJavascriptAssets() as $current) {
             $this->assertNotRegExp("/" . preg_quote($current, "/") . "/", $content);
         }
     }
