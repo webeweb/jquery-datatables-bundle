@@ -72,7 +72,7 @@ wbw_datatables:
             - "staterestore"
             - "editabletable"
     bootstrap:
-        version: 3
+        version: 4
         plugins:
             - "bootstrap_colorpicker"
             - "bootstrap_datepicker"
