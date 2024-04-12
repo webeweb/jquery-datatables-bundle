@@ -13,8 +13,12 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Tests\Controller;
 
+use Psr\Log\LoggerInterface;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Throwable;
-use WBW\Bundle\BootstrapBundle\Tests\AbstractWebTestCase;
+use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\BootstrapBundle\Tests\Fixtures\Controller\TestAbstractController;
 use WBW\Bundle\CommonBundle\Event\NotificationEvent;
 use WBW\Bundle\CommonBundle\Event\ToastEvent;
@@ -27,7 +31,33 @@ use WBW\Library\Symfony\Assets\ToastInterface;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\BootstrapBundle\Tests\Controller
  */
-class AbstractControllerTest extends AbstractWebTestCase {
+class AbstractControllerTest extends AbstractTestCase {
+
+    /**
+     * Container.
+     *
+     * @var ContainerInterface|null
+     */
+    private $container;
+
+    /**
+     * {@inheritDoc}
+     */
+    protected function setUp(): void {
+        parent::setUp();
+
+        // Set an Event dispatcher mock.
+        $eventDispatcher = $this->getMockBuilder(EventDispatcherInterface::class)->getMock();
+        $eventDispatcher->expects($this->any())->method("dispatch")->willReturnArgument(0);
+
+        // Set a Logger mock.
+        $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
+
+        // Set a Container mock.
+        $this->container = new ContainerBuilder();
+        $this->container->set("event_dispatcher", $eventDispatcher);
+        $this->container->set("logger", $logger);
+    }
 
     /**
      * Test notifyDanger()
@@ -38,13 +68,13 @@ class AbstractControllerTest extends AbstractWebTestCase {
     public function testNotifyDanger(): void {
 
         $obj = new TestAbstractController();
-        $obj->setContainer(static::$kernel->getContainer());
+        $obj->setContainer($this->container);
 
         $res = $obj->notifyDanger("danger");
-        $this->assertNotNull($res);
-
         $this->assertInstanceOf(NotificationEvent::class, $res);
+
         $this->assertEquals(NotificationEvent::DANGER, $res->getEventName());
+        $this->assertInstanceOf(NotificationInterface::class, $res->getNotification());
 
         $this->assertEquals("danger", $res->getNotification()->getContent());
         $this->assertEquals(NotificationInterface::NOTIFICATION_TYPE_DANGER, $res->getNotification()->getType());
@@ -59,13 +89,13 @@ class AbstractControllerTest extends AbstractWebTestCase {
     public function testNotifyInfo(): void {
 
         $obj = new TestAbstractController();
-        $obj->setContainer(static::$kernel->getContainer());
+        $obj->setContainer($this->container);
 
         $res = $obj->notifyInfo("info");
-        $this->assertNotNull($res);
-
         $this->assertInstanceOf(NotificationEvent::class, $res);
+
         $this->assertEquals(NotificationEvent::INFO, $res->getEventName());
+        $this->assertInstanceOf(NotificationInterface::class, $res->getNotification());
 
         $this->assertEquals("info", $res->getNotification()->getContent());
         $this->assertEquals(NotificationInterface::NOTIFICATION_TYPE_INFO, $res->getNotification()->getType());
@@ -80,13 +110,13 @@ class AbstractControllerTest extends AbstractWebTestCase {
     public function testNotifySuccess(): void {
 
         $obj = new TestAbstractController();
-        $obj->setContainer(static::$kernel->getContainer());
+        $obj->setContainer($this->container);
 
         $res = $obj->notifySuccess("success");
-        $this->assertNotNull($res);
-
         $this->assertInstanceOf(NotificationEvent::class, $res);
+
         $this->assertEquals(NotificationEvent::SUCCESS, $res->getEventName());
+        $this->assertInstanceOf(NotificationInterface::class, $res->getNotification());
 
         $this->assertEquals("success", $res->getNotification()->getContent());
         $this->assertEquals(NotificationInterface::NOTIFICATION_TYPE_SUCCESS, $res->getNotification()->getType());
@@ -101,13 +131,13 @@ class AbstractControllerTest extends AbstractWebTestCase {
     public function testNotifyWarning(): void {
 
         $obj = new TestAbstractController();
-        $obj->setContainer(static::$kernel->getContainer());
+        $obj->setContainer($this->container);
 
         $res = $obj->notifyWarning("warning");
-        $this->assertNotNull($res);
-
         $this->assertInstanceOf(NotificationEvent::class, $res);
+
         $this->assertEquals(NotificationEvent::WARNING, $res->getEventName());
+        $this->assertInstanceOf(NotificationInterface::class, $res->getNotification());
 
         $this->assertEquals("warning", $res->getNotification()->getContent());
         $this->assertEquals(NotificationInterface::NOTIFICATION_TYPE_WARNING, $res->getNotification()->getType());
@@ -122,13 +152,13 @@ class AbstractControllerTest extends AbstractWebTestCase {
     public function testToastDanger(): void {
 
         $obj = new TestAbstractController();
-        $obj->setContainer(static::$kernel->getContainer());
+        $obj->setContainer($this->container);
 
         $res = $obj->toastDanger("danger");
-        $this->assertNotNull($res);
-
         $this->assertInstanceOf(ToastEvent::class, $res);
+
         $this->assertEquals(ToastEvent::DANGER, $res->getEventName());
+        $this->assertInstanceOf(ToastInterface::class, $res->getToast());
 
         $this->assertEquals("danger", $res->getToast()->getContent());
         $this->assertEquals(ToastInterface::TOAST_TYPE_DANGER, $res->getToast()->getType());
@@ -143,13 +173,13 @@ class AbstractControllerTest extends AbstractWebTestCase {
     public function testToastInfo(): void {
 
         $obj = new TestAbstractController();
-        $obj->setContainer(static::$kernel->getContainer());
+        $obj->setContainer($this->container);
 
         $res = $obj->toastInfo("info");
-        $this->assertNotNull($res);
-
         $this->assertInstanceOf(ToastEvent::class, $res);
+
         $this->assertEquals(ToastEvent::INFO, $res->getEventName());
+        $this->assertInstanceOf(ToastInterface::class, $res->getToast());
 
         $this->assertEquals("info", $res->getToast()->getContent());
         $this->assertEquals(ToastInterface::TOAST_TYPE_INFO, $res->getToast()->getType());
@@ -164,13 +194,13 @@ class AbstractControllerTest extends AbstractWebTestCase {
     public function testToastSuccess(): void {
 
         $obj = new TestAbstractController();
-        $obj->setContainer(static::$kernel->getContainer());
+        $obj->setContainer($this->container);
 
         $res = $obj->toastSuccess("success");
-        $this->assertNotNull($res);
-
         $this->assertInstanceOf(ToastEvent::class, $res);
+
         $this->assertEquals(ToastEvent::SUCCESS, $res->getEventName());
+        $this->assertInstanceOf(ToastInterface::class, $res->getToast());
 
         $this->assertEquals("success", $res->getToast()->getContent());
         $this->assertEquals(ToastInterface::TOAST_TYPE_SUCCESS, $res->getToast()->getType());
@@ -185,13 +215,13 @@ class AbstractControllerTest extends AbstractWebTestCase {
     public function testToastWarning(): void {
 
         $obj = new TestAbstractController();
-        $obj->setContainer(static::$kernel->getContainer());
+        $obj->setContainer($this->container);
 
         $res = $obj->toastWarning("warning");
-        $this->assertNotNull($res);
-
         $this->assertInstanceOf(ToastEvent::class, $res);
+
         $this->assertEquals(ToastEvent::WARNING, $res->getEventName());
+        $this->assertInstanceOf(ToastInterface::class, $res->getToast());
 
         $this->assertEquals("warning", $res->getToast()->getContent());
         $this->assertEquals(ToastInterface::TOAST_TYPE_WARNING, $res->getToast()->getType());
