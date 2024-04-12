@@ -25,7 +25,7 @@ framework:
 doctrine:
     dbal:
         driver: "pdo_sqlite"
-        path:   "%kernel.project_dir%/../var/test.sqlite"
+        path:   "%kernel.project_dir%/../../../var/test.sqlite"
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping:                true
@@ -48,6 +48,8 @@ monolog:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    paths:
+        "%kernel.project_dir%/../../../lib/bootstrap/Resources/views": "WBWBootstrap"
 
 wbw_datatables:
     datatables:
