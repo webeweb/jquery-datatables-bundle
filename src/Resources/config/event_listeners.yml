@@ -1,0 +1,22 @@
+# src/Resources/config/event_listeners.yml
+services:
+
+    wbw.common.event_listener.notification:
+        class:  WBW\Bundle\CommonBundle\EventListener\NotificationEventListener
+        public: false
+        arguments: [ "@wbw.common.service.session" ]
+        tags:
+            - { name: "kernel.event_listener", event: "wbw.common.event.notification.danger",  method: "onNotify" }
+            - { name: "kernel.event_listener", event: "wbw.common.event.notification.info",    method: "onNotify" }
+            - { name: "kernel.event_listener", event: "wbw.common.event.notification.success", method: "onNotify" }
+            - { name: "kernel.event_listener", event: "wbw.common.event.notification.warning", method: "onNotify" }
+
+    wbw.common.event_listener.toast:
+        class:  WBW\Bundle\CommonBundle\EventListener\ToastEventListener
+        public: false
+        arguments: [ "@wbw.common.service.session" ]
+        tags:
+            - { name: "kernel.event_listener", event: "wbw.common.event.toast.danger",  method: "onToast" }
+            - { name: "kernel.event_listener", event: "wbw.common.event.toast.info",    method: "onToast" }
+            - { name: "kernel.event_listener", event: "wbw.common.event.toast.success", method: "onToast" }
+            - { name: "kernel.event_listener", event: "wbw.common.event.toast.warning", method: "onToast" }
