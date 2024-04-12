@@ -34,6 +34,8 @@ use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\IconTwigExtension;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\MaterialDesignIconicFontTwigExtension;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\MeteoconsTwigExtension;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Layout\GridTwigExtension;
+use WBW\Bundle\CommonBundle\EventListener\NotificationEventListener;
+use WBW\Bundle\CommonBundle\EventListener\ToastEventListener;
 use WBW\Bundle\CommonBundle\Service\SessionService;
 use WBW\Bundle\CommonBundle\Twig\Extension\AssetsTwigExtension as CommonAssetsTwigExtension;
 use WBW\Bundle\CommonBundle\Twig\Extension\ContainerTwigExtension;
@@ -175,6 +177,10 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
         $this->assertInstanceOf(GridTwigExtension::class, $this->containerBuilder->get(GridTwigExtension::SERVICE_NAME));
 
         // === Common bundle ==================================================
+        // Event listeners
+        $this->assertInstanceOf(NotificationEventListener::class, $this->containerBuilder->get(NotificationEventListener::SERVICE_NAME));
+        $this->assertInstanceOf(ToastEventListener::class, $this->containerBuilder->get(ToastEventListener::SERVICE_NAME));
+
         // Services
         $this->assertInstanceOf(SessionService::class, $this->containerBuilder->get(SessionService::SERVICE_NAME));
 
