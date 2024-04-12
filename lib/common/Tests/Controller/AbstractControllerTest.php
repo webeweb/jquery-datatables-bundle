@@ -223,9 +223,8 @@ class AbstractControllerTest extends AbstractWebTestCase {
         $obj->setContainer(static::$kernel->getContainer());
 
         $res = $obj->notify($notification, "test");
-        $this->assertNotNull($res);
-
         $this->assertInstanceOf(NotificationEvent::class, $res);
+
         $this->assertEquals("test", $res->getEventName());
         $this->assertSame($notification, $res->getNotification());
     }
@@ -245,9 +244,8 @@ class AbstractControllerTest extends AbstractWebTestCase {
         $obj->setContainer(static::$kernel->getContainer());
 
         $res = $obj->toast($toast, "test");
-        $this->assertNotNull($res);
-
         $this->assertInstanceOf(ToastEvent::class, $res);
+
         $this->assertEquals("test", $res->getEventName());
         $this->assertSame($toast, $res->getToast());
     }
