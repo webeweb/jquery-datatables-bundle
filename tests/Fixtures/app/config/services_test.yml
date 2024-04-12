@@ -22,6 +22,10 @@ services:
             - { name: "kernel.event_listener", event: "wbw.datatables.event.post_export", method: "onPostExport" }
             - { name: "kernel.event_listener", event: "wbw.datatables.event.post_index",  method: "onPostIndex" }
 
+    wbw.datatables.manager.alias:
+        alias:  "wbw.datatables.manager"
+        public: true
+
     wbw.datatables.provider.employee:
         class:  WBW\Bundle\DataTablesBundle\Tests\Fixtures\Provider\EmployeeDataTablesProvider
         public: true
@@ -33,10 +37,6 @@ services:
         public: true
         tags:
             - { name: "wbw.datatables.provider" }
-
-    wbw.datatables.manager.alias:
-        alias:  "wbw.datatables.manager"
-        public: true
 
     # === Common bundle =======================================================
     WBW\Bundle\CommonBundle\Tests\Fixtures\Controller\TestAbstractController:
