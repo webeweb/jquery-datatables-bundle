@@ -68,8 +68,11 @@ class WBWDataTablesExtension extends Extension {
 
         $config = $this->processConfiguration($configuration, $configs);
 
-        ContainerHelper::setParameter($container, $config, $this->getAlias(), "datatables", false);
-        ContainerHelper::setParameter($container, $config, $this->getAlias(), "bootstrap", false);
+        ContainerHelper::setParameter($container, $config["datatables"], "{$this->getAlias()}.datatables", "theme");
+        ContainerHelper::setParameter($container, $config["datatables"], "{$this->getAlias()}.datatables", "plugins");
+        ContainerHelper::setParameter($container, $config["bootstrap"], "{$this->getAlias()}.bootstrap", "version");
+        ContainerHelper::setParameter($container, $config["bootstrap"], "{$this->getAlias()}.bootstrap", "plugins");
+        ContainerHelper::setParameter($container, $config["bootstrap"], "{$this->getAlias()}.bootstrap", "locales");
 
         $assets = WBWCommonExtension::loadYamlConfig($path, "assets");
         ContainerHelper::setParameters($container, $assets["assets"]);
