@@ -5,7 +5,7 @@ services:
         alias:  "monolog.logger"
         public: true
 
-    WBW\Bundle\CommonBundle\Service\SymfonyBCService:
+    WBW\Bundle\CommonBundle\Service\SessionService:
         alias:  "wbw.common.service.session"
         public: false
 
