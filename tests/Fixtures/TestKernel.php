@@ -38,6 +38,7 @@ class TestKernel extends DefaultKernel {
             new \Symfony\Bundle\MonologBundle\MonologBundle(),
             new \Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new \Symfony\Bundle\TwigBundle\TwigBundle(),
+            new \WBW\Bundle\CommonBundle\WBWCommonBundle(),
             new \WBW\Bundle\BootstrapBundle\WBWBootstrapBundle(),
             new \WBW\Bundle\DataTablesBundle\WBWDataTablesBundle(),
         ];
