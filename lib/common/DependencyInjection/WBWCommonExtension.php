@@ -19,6 +19,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\Yaml\Yaml;
+use Throwable;
 use WBW\Bundle\CommonBundle\DependencyInjection\Container\ContainerHelper;
 
 /**
@@ -38,6 +39,10 @@ class WBWCommonExtension extends Extension {
 
     /**
      * {@inheritDoc}
+     * @param array<string,mixed> $configs The configurations.
+     * @param ContainerBuilder $container The container.
+     * @return void
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function load(array $configs, ContainerBuilder $container): void {
 
