@@ -33,7 +33,7 @@ class DataTablesTwigExtension extends AbstractDataTablesTwigExtension {
      *
      * @var string
      */
-    public const SERVICE_NAME = "wbw.datatables.twig.extension";
+    public const SERVICE_NAME = "wbw.datatables.twig.extension.datatables";
 
     /**
      * Display a DataTables name.

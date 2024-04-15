@@ -402,7 +402,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw.datatables.twig.extension", DataTablesTwigExtension::SERVICE_NAME);
+        $this->assertEquals("wbw.datatables.twig.extension.datatables", DataTablesTwigExtension::SERVICE_NAME);
 
         $obj = new DataTablesTwigExtension($this->twigEnvironment, "test");
 
