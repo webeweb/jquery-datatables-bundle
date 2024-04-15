@@ -35,7 +35,7 @@ use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\MeteoconsTwigExtension;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Layout\GridTwigExtension;
 
 /**
- * WBW Bootstrap extension test.
+ * Bootstrap extension test.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\BootstrapBundle\Tests\DependencyInjection
