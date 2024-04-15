@@ -133,19 +133,18 @@ abstract class AbstractController extends BaseController {
             [$offset, $limit] = PaginateHelper::getPageOffsetAndLimit($i, DataTablesRepositoryInterface::REPOSITORY_LIMIT, $total);
 
             // Get the export query with offset and limit.
-            $result = $repository->dataTablesExportAll($dtWrapper)
+            $query = $repository->dataTablesExportAll($dtWrapper)
                 ->setFirstResult($offset)
                 ->setMaxResults($limit)
-                ->getQuery()
-                ->iterate();
+                ->getQuery();
 
-            while (false !== ($row = $result->next())) {
+            foreach($query->toIterable() as $entity) {
 
-                $this->dispatchDataTablesEvent([$row[0]], DataTablesEvent::PRE_EXPORT, $dtWrapper->getProvider());
+                $this->dispatchDataTablesEvent([$entity], DataTablesEvent::PRE_EXPORT, $dtWrapper->getProvider());
 
-                fputcsv($stream, DataTablesExportHelper::convert($dtExporter->exportRow($row[0]), $windows), ";");
+                fputcsv($stream, DataTablesExportHelper::convert($dtExporter->exportRow($entity), $windows), ";");
 
-                $this->dispatchDataTablesEvent([$row[0]], DataTablesEvent::POST_EXPORT, $dtWrapper->getProvider());
+                $this->dispatchDataTablesEvent([$entity], DataTablesEvent::POST_EXPORT, $dtWrapper->getProvider());
             }
 
             $em->clear(); // Detach the entity to avoid memory consumption.
@@ -249,13 +248,13 @@ abstract class AbstractController extends BaseController {
      * Get an entity by id.
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
-     * @param string $id The entity id.
+     * @param mixed $id The entity id.
      * @return object Returns the entity.
      * @throws BadDataTablesRepositoryException Throws a bad repository exception.
      * @throws EntityNotFoundException Throws an Entity not found exception.
      * @throws Throwable Throws an exception if an error occurs.
      */
-    protected function getDataTablesEntityById(DataTablesProviderInterface $dtProvider, string $id) {
+    protected function getDataTablesEntityById(DataTablesProviderInterface $dtProvider, $id) {
 
         /** @var EntityRepository<DataTablesEntityInterface> $repository */
         $repository = $this->getDataTablesRepository($dtProvider);
