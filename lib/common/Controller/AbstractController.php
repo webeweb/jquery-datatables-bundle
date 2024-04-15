@@ -125,7 +125,7 @@ abstract class AbstractController extends BaseController {
      */
     protected function getSession(): ?SessionInterface {
 
-        /** @var SessionService $service */
+        /** @var SessionService|null $service */
         $service = $this->container->get(SessionService::SERVICE_NAME);
 
         return null === $service ? null : $service->getSession();
