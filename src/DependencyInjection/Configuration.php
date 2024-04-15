@@ -81,6 +81,7 @@ class Configuration implements ConfigurationInterface {
 
         $treeBuilder = new TreeBuilder(WBWDataTablesExtension::EXTENSION_ALIAS);
 
+        /** @var ArrayNodeDefinition $rootNode */
         $rootNode = $treeBuilder->getRootNode();
 
         $this->addSectionTheme($rootNode, $assets["assets"]["wbw.datatables.assets"]);

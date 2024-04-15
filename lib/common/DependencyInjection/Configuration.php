@@ -136,6 +136,7 @@ class Configuration implements ConfigurationInterface {
 
         $treeBuilder = new TreeBuilder(WBWCommonExtension::EXTENSION_ALIAS);
 
+        /** @var ArrayNodeDefinition $rootNode */
         $rootNode = $treeBuilder->getRootNode();
 
         $this->addSectionPlugins($rootNode, $assets["assets"]["wbw.common.assets"]["plugins"]);

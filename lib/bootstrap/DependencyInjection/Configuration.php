@@ -119,6 +119,7 @@ class Configuration implements ConfigurationInterface {
 
         $treeBuilder = new TreeBuilder(WBWBootstrapExtension::EXTENSION_ALIAS);
 
+        /** @var ArrayNodeDefinition $rootNode */
         $rootNode = $treeBuilder->getRootNode();
 
         $this->addSectionVersion($rootNode);
