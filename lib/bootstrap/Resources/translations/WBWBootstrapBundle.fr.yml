@@ -15,14 +15,13 @@ label:
 
 navigation:
     node:
-        action:
-            edit:   "Editer"
-            export: "Exporter"
-            import: "Importer"
-            index:  "Lister"
-            new:    "Nouveau"
         dashboard:   "Tableau de bord"
+        edit:        "Editer"
         events:      "Evènements"
+        export:      "Exporter"
+        import:      "Importer"
+        index:       "Lister"
+        new:         "Nouveau"
         parameters:  "Paramètres"
         settings:    "Réglages"
         users:       "Utilisateurs"

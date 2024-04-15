@@ -14,15 +14,14 @@ label:
     work_in_progress:   "Work in progress !"
 
 navigation:
-    node:
-        action:
-            edit:   "Edit"
-            export: "Export"
-            import: "Import"
-            index:  "Index"
-            new:    "New"
+    item:
         dashboard:   "Dashboard"
+        edit:        "Edit"
         events:      "Events"
+        export:      "Export"
+        import:      "Import"
+        index:       "Index"
+        new:         "New"
         parameters:  "Parameters"
         settings:    "Settings"
         users:       "Users"
