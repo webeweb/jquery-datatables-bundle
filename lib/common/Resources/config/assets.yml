@@ -8,11 +8,11 @@ assets:
                 description: "Animate.css"
                 stylesheets:
                     - "/animate.css-{{ version }}/animate.min.css"
-                javascripts: []
+                javascripts: [ ]
             chart_js:
                 version:     "4.2.1"
                 description: "Chart.js"
-                stylesheets: []
+                stylesheets: [ ]
                 javascripts:
                     - "/chart.js-{{ version }}/chart.umd.js"
             clippy_js:
@@ -118,7 +118,7 @@ assets:
             jquery:
                 version:     "3.6.2"
                 description: "jQuery"
-                stylesheets: []
+                stylesheets: [ ]
                 javascripts:
                     - "/jquery-{{ version }}/jquery-3.6.2.min.js"
             jquery_context_menu:
@@ -147,7 +147,7 @@ assets:
             jquery_input_mask:
                 version:     "3.3.11"
                 description: "jQuery InputMask"
-                stylesheets: []
+                stylesheets: [ ]
                 javascripts:
                     - "/jquery-inputmask-{{ version }}/min/jquery.inputmask.bundle.min.js"
             jquery_select2:
@@ -223,7 +223,7 @@ assets:
             leaflet_color_markers:
                 version:     "1.0.0"
                 description: "Leaflet Color Markers"
-                stylesheets: []
+                stylesheets: [ ]
                 javascripts:
                     - "/leaflet-color-markers-{{ version }}/leaflet-color-markers.js"
             leaflet_marker_cluster:
@@ -259,7 +259,7 @@ assets:
                 description: "Material Design Color Palette"
                 stylesheets:
                     - "/material-design-color-palette-{{ version }}/material-design-color-palette.min.css"
-                javascripts: []
+                javascripts: [ ]
             material_design_hierarchical_display:
                 version:     "1.0.1"
                 description: "Material Design Hierarchical Display"
@@ -272,14 +272,14 @@ assets:
                 description: "Material Design Iconic Font"
                 stylesheets:
                     - "/material-design-iconic-font-{{ version }}/css/material-design-iconic-font.min.css"
-                javascripts: []
+                javascripts: [ ]
             meteocons:
                 version:
                 description: "Meteocons"
                 stylesheets:
                     - "/meteocons/stylesheet.css"
                     - "/css/meteocons.css"
-                javascripts: []
+                javascripts: [ ]
             simplemde_markdown_editor:
                 version:     "1.11.2"
                 description: "SimpleMDE Markdown Editor"
@@ -290,7 +290,7 @@ assets:
             sweet_alert:
                 version:     "2.1.2"
                 description: "SweetAlert"
-                stylesheets: []
+                stylesheets: [ ]
                 javascripts:
                     - "/sweetalert-{{ version }}/sweetalert.min.js"
             sweet_alert2:
@@ -349,13 +349,13 @@ assets:
             twemoji:
                 version:     "14.0.2"
                 description: "Twemoji"
-                stylesheets: []
+                stylesheets: [ ]
                 javascripts:
                     - "/twemoji-{{ version }}/twemoji.min.js"
             typed_js:
                 version:     "2.0.12"
                 description: "typed.js"
-                stylesheets: []
+                stylesheets: [ ]
                 javascripts:
                     - "/typed.js-{{ version }}/typed.min.js"
             wait_me:

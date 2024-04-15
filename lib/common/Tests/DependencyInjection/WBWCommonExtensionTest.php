@@ -13,11 +13,9 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\CommonBundle\Tests\DependencyInjection;
 
-use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\Routing\RouterInterface;
-use Symfony\Contracts\Translation\TranslatorInterface;
 use Throwable;
 use Twig\Environment;
 use WBW\Bundle\CommonBundle\DependencyInjection\WBWCommonExtension;

@@ -16,7 +16,6 @@ namespace WBW\Bundle\CommonBundle\DependencyInjection;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
-use WBW\Bundle\CommonBundle\DependencyInjection\WBWCommonExtension;
 
 /**
  * Configuration.
@@ -133,7 +132,7 @@ class Configuration implements ConfigurationInterface {
      */
     public function getConfigTreeBuilder(): TreeBuilder {
 
-        $assets  = WBWCommonExtension::loadYamlConfig(__DIR__ . "/../Resources/config", "assets");
+        $assets = WBWCommonExtension::loadYamlConfig(__DIR__ . "/../Resources/config", "assets");
 
         $treeBuilder = new TreeBuilder(WBWCommonExtension::EXTENSION_ALIAS);
 

@@ -19,7 +19,6 @@ use Twig\Extension\ExtensionInterface;
 use Twig\Node\Node;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
-use WBW\Bundle\CommonBundle\Twig\Extension\AssetsTwigExtension;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperInterface;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\DataTablesBundle\Tests\Fixtures\TestFixtures;

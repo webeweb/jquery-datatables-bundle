@@ -27,7 +27,7 @@ use WBW\Bundle\CommonBundle\DependencyInjection\Container\ContainerHelper;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\DependencyInjection
  */
-class WBWCommonExtension extends Extension{
+class WBWCommonExtension extends Extension {
 
     /**
      * Extension alias.
@@ -68,6 +68,7 @@ class WBWCommonExtension extends Extension{
         $assets = static::loadYamlConfig($path, "assets");
         ContainerHelper::setParameters($container, $assets["assets"]);
     }
+
     /**
      * Load a YAML configuration.
      *
