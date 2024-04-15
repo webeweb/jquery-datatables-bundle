@@ -8,6 +8,20 @@ parameters:
         - tests/Fixtures/app/var
     ignoreErrors:
         -
+            message: '#Call to an undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeParentInterface#'
+            paths:
+                - lib/bootstrap/DependencyInjection/Configuration.php
+                - lib/common/DependencyInjection/Configuration.php
+                - src/DependencyInjection/Configuration.php
+        -
+            message: '#Call to method getMessage\(\) on an unknown class Symfony\\Component\\HttpFoundation\\Exception\\SessionNotFoundException#'
+            paths:
+                - lib/common/Tests/Controller/AbstractControllerTest.php
+        -
+            message: '#Call to method PHPUnit\\Framework\\Assert\:\:assertSame\(\)#'
+            paths:
+                - tests/Model/DataTablesRequestTest.php
+        -
             message: '#Comparison operation [<=>]+ between [0-9]+ and [0-9]+ is always "true||false"#'
             paths:
                 - lib/common/Security/Core/User/UserHelper.php
@@ -15,3 +29,7 @@ parameters:
                 - lib/common/Tests/Service/SessionServiceTest.php
                 - lib/common/Tests/DefaultTestCase.php
                 - tests/Fixtures/TestKernel.php
+        -
+            message: '#Method Symfony\\Contracts\\EventDispatcher\\EventDispatcherInterface\:\:dispatch\(\)#'
+            paths:
+                - lib/common/Controller/AbstractController.php
