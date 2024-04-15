@@ -2,8 +2,8 @@
 {% set _webPath    = "bundles/wbwdatatables" %}
 {% set _version    = getContainerParameter("wbw.datatables.assets").version %}
 {% set _plugins    = getContainerParameter("wbw.datatables.assets").plugins %}
-{% set _appTheme   = getContainerParameter("wbw_datatables.datatables.theme") %}
-{% set _appPlugins = getContainerParameter("wbw_datatables.datatables.plugins") %}
+{% set _appTheme   = getContainerParameter("wbw_datatables.theme") %}
+{% set _appPlugins = getContainerParameter("wbw_datatables.plugins") %}
 
 {% if ("prod" != app.environment) %}<!-- DataTables -->{% endif %}
 <link type="text/css" rel="stylesheet" href="{{ asset(_webPath ~ "/datatables-" ~ _version ~ "/css/dataTables." ~ _appTheme ~ ".min.css") }}">
