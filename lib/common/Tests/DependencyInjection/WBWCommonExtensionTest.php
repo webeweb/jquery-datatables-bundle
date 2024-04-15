@@ -51,4 +51,14 @@ class WBWCommonExtensionTest extends AbstractTestCase {
         $res = WBWCommonExtension::loadYamlConfig($path, "error");
         $this->assertEquals([], $res);
     }
+
+    /**
+     * Test __construct()
+     *
+     * @return void
+     */
+    public function test__construct(): void {
+
+        $this->assertEquals("wbw_common", WBWCommonExtension::EXTENSION_ALIAS);
+    }
 }

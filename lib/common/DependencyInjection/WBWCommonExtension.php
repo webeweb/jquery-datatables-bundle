@@ -24,6 +24,13 @@ use Symfony\Component\Yaml\Yaml;
 class WBWCommonExtension {
 
     /**
+     * Extension alias.
+     *
+     * @var string
+     */
+    public const EXTENSION_ALIAS = "wbw_common";
+
+    /**
      * Load a YAML configuration.
      *
      * @param string $path The path.
