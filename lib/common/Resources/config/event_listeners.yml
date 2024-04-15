@@ -1,4 +1,4 @@
-# src/Resources/config/event_listeners.yml
+# lib/common/Resources/config/event_listeners.yml
 services:
 
     wbw.common.event_listener.notification:
