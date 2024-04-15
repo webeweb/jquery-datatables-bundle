@@ -1,10 +1,10 @@
 {# lib/bootstrap/Resources/views/assets/_javascripts.html.twig #}
-{% set _rootPath   = "bundles/wbwdatatables" %}
+{% set _rootPath   = "bundles/wbwbootstrap" %}
 {% set _versions   = getContainerParameter("wbw.bootstrap.assets").versions %}
 {% set _plugins    = getContainerParameter("wbw.bootstrap.assets").plugins %}
-{% set _appVersion = getContainerParameter("wbw_datatables.bootstrap.version") %}
-{% set _appPlugins = getContainerParameter("wbw_datatables.bootstrap.plugins") %}
-{% set _appLocales = getContainerParameter("wbw_datatables.bootstrap.locales") %}
+{% set _appVersion = getContainerParameter("wbw_bootstrap.version") %}
+{% set _appPlugins = getContainerParameter("wbw_bootstrap.plugins") %}
+{% set _appLocales = getContainerParameter("wbw_bootstrap.locales") %}
 
 {% if ("prod" != app.environment) %}<!-- Bootstrap -->{% endif %}
 <script type="text/javascript" src="{{ asset(_rootPath ~ "/popper.js-1.15.0/umd/popper.min.js") }}"></script>

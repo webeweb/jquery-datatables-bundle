@@ -1,9 +1,9 @@
 {# lib/bootstrap/Resources/views/assets/_stylesheets.html.twig #}
-{% set _rootPath   = "bundles/wbwdatatables" %}
+{% set _rootPath   = "bundles/wbwbootstrap" %}
 {% set _versions   = getContainerParameter("wbw.bootstrap.assets").versions %}
 {% set _plugins    = getContainerParameter("wbw.bootstrap.assets").plugins %}
-{% set _appVersion = getContainerParameter("wbw_datatables.bootstrap.version") %}
-{% set _appPlugins = getContainerParameter("wbw_datatables.bootstrap.plugins") %}
+{% set _appVersion = getContainerParameter("wbw_bootstrap.version") %}
+{% set _appPlugins = getContainerParameter("wbw_bootstrap.plugins") %}
 
 {% if ("prod" != app.environment) %}<!-- Bootstrap -->{% endif %}
 <link type="text/css" rel="stylesheet" href="{{ asset(_rootPath ~ "/bootstrap-{{ version }}/css/bootstrap.min.css"|replace({"{{ version }}": _versions[_appVersion]})) }}">
