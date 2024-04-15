@@ -30,7 +30,7 @@ class Configuration implements ConfigurationInterface {
      * Add a section "locales".
      *
      * @param ArrayNodeDefinition $node The node.
-     * @param array<string,string> $locales The locales.
+     * @param array<string,mixed> $locales The locales.
      * @return void
      */
     private function addSectionLocales(ArrayNodeDefinition $node, array $locales): void {
