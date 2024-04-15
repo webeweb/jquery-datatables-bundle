@@ -37,16 +37,13 @@ class WBWDataTablesBundleTest extends AbstractTestCase {
      */
     public function testAssets(): void {
 
-        $config = realpath(__DIR__ . "/../src/Resources/config");
-        $assets = realpath(__DIR__ . "/../src/Resources/assets");
-
         // Load the YAML configuration.
-        $config   = WBWCommonExtension::loadYamlConfig($config, "assets");
-        $version  = $config["assets"]["wbw.datatables.assets"]["version"];
-        $requires = $config["assets"]["wbw.datatables.assets"]["requires"];
-        $plugins  = $config["assets"]["wbw.datatables.assets"]["plugins"];
+        $assets   = WBWCommonExtension::loadYamlConfig(__DIR__ . "/../src/Resources/config", "assets");
+        $version  = $assets["assets"]["wbw.datatables.assets"]["version"];
+        $plugins  = $assets["assets"]["wbw.datatables.assets"]["plugins"];
+        $requires = $assets["assets"]["wbw.datatables.assets"]["requires"];
 
-        $res = AssetsHelper::listAssets($assets);
+        $res = AssetsHelper::listAssets(__DIR__ . "/../src/Resources/assets");
         $this->assertCount(19, $res);
 
         $i = -1;
