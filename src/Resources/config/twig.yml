@@ -25,5 +25,3 @@ services:
         arguments: [ "@twig", "@service_container" ]
         tags:
             - { name: "twig.extension" }
-
-    # === Bootstrap bundle ====================================================
