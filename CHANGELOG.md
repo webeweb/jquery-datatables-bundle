@@ -9,18 +9,10 @@ CHANGELOG
 - Add PHP 8.3 support
 - Add declare(strict_types = 1)
 - Add PHPStan
-- Copy Container trait (from [core-bundle](https://github.com/webeweb/core-bundle))
-- Copy Entity manager trait (from [core-bundle](https://github.com/webeweb/core-bundle))
-- Copy Event dispatcher trait (from [core-bundle](https://github.com/webeweb/core-bundle))
-- Copy Mailer trait (from [core-bundle](https://github.com/webeweb/core-bundle))
-- Copy Request stack trait (from [core-bundle](https://github.com/webeweb/core-bundle))
-- Copy Request trait (from [core-bundle](https://github.com/webeweb/core-bundle))
-- Copy Response trait (from [core-bundle](https://github.com/webeweb/core-bundle))
-- Copy Router trait (from [core-bundle](https://github.com/webeweb/core-bundle))
-- Copy Session trait (from [core-bundle](https://github.com/webeweb/core-bundle))
-- Copy Translator trait (from [core-bundle](https://github.com/webeweb/core-bundle))
 - Improve code quality
 - Improve PHPDoc
+- Merge Bootstrap bundle (from [bootstrap-bundle](https://github.com/webeweb/bootstrap-bundle))
+- Merge Common bundle (from [core-bundle](https://github.com/webeweb/core-bundle))
 - Update dependencies
 
 ### [4.0.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v4.0.1) (2024-03-07)
