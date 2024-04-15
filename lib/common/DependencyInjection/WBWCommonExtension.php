@@ -13,7 +13,13 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\CommonBundle\DependencyInjection;
 
+use Symfony\Component\Config\Definition\ConfigurationInterface;
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\Extension;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\Yaml\Yaml;
+use WBW\Bundle\CommonBundle\DependencyInjection\Container\ContainerHelper;
 
 /**
  * Common extension.
@@ -21,7 +27,7 @@ use Symfony\Component\Yaml\Yaml;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\DependencyInjection
  */
-class WBWCommonExtension {
+class WBWCommonExtension extends Extension{
 
     /**
      * Extension alias.
@@ -30,6 +36,38 @@ class WBWCommonExtension {
      */
     public const EXTENSION_ALIAS = "wbw_common";
 
+    /**
+     * {@inheritDoc}
+     */
+    public function load(array $configs, ContainerBuilder $container): void {
+
+        $path = __DIR__ . "/../Resources/config";
+
+        $fileLocator = new FileLocator($path);
+
+        $serviceLoader = new YamlFileLoader($container, $fileLocator);
+        //$serviceLoader->load("colors.yml");
+        //$serviceLoader->load("commands.yml");
+        //$serviceLoader->load("controllers.yml");
+        $serviceLoader->load("event_listeners.yml");
+        //$serviceLoader->load("managers.yml");
+        //$serviceLoader->load("providers.yml");
+        $serviceLoader->load("services.yml");
+        $serviceLoader->load("twig.yml");
+
+        /** @var ConfigurationInterface $configuration */
+        $configuration = $this->getConfiguration($configs, $container);
+
+        $config = $this->processConfiguration($configuration, $configs);
+
+        ContainerHelper::setParameter($container, $config, $this->getAlias(), "plugins");
+        ContainerHelper::setParameter($container, $config, $this->getAlias(), "locales");
+        ContainerHelper::setParameter($container, $config, $this->getAlias(), "themes");
+        ContainerHelper::setParameter($container, $config, $this->getAlias(), "brushes");
+
+        $assets = static::loadYamlConfig($path, "assets");
+        ContainerHelper::setParameters($container, $assets["assets"]);
+    }
     /**
      * Load a YAML configuration.
      *
