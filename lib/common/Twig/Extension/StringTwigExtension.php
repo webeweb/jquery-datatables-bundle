@@ -134,7 +134,7 @@ class StringTwigExtension extends AbstractTwigExtension {
      * Decode a JSON string.
      *
      * @param string|null $string The string.
-     * @return array|null Returns the decoded JSON string.
+     * @return array<string,mixed>|null Returns the decoded JSON string.
      */
     public function jsonDecode(?string $string): ?array {
 
