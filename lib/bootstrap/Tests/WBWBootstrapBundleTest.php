@@ -13,9 +13,11 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Tests;
 
+use Throwable;
 use WBW\Bundle\BootstrapBundle\DependencyInjection\WBWBootstrapExtension;
 use WBW\Bundle\BootstrapBundle\WBWBootstrapBundle;
 use WBW\Bundle\CommonBundle\Provider\AssetsProviderInterface;
+use WBW\Library\Symfony\Helper\AssetsHelper;
 
 /**
  * Bootstrap bundle test.
@@ -24,6 +26,43 @@ use WBW\Bundle\CommonBundle\Provider\AssetsProviderInterface;
  * @package WBW\Bundle\BootstrapBundle\Tests
  */
 class WBWBootstrapBundleTest extends AbstractTestCase {
+
+    /**
+     * Test assets
+     *
+     * @return void
+     * @throws Throwable Throws an exception if an error occurs.
+     */
+    public function testAssets(): void {
+
+        $assets = realpath(__DIR__ . "/../Resources/assets");
+
+        $res = AssetsHelper::listAssets($assets);
+        $this->assertCount(21, $res);
+
+        $i = -1;
+        $this->assertRegExp("/bootstrap-" . preg_quote(WBWBootstrapBundle::BOOTSTRAP_VERSION_3, ".") . "\.zip$/", $res[++$i]);
+        $this->assertRegExp("/bootstrap-" . preg_quote(WBWBootstrapBundle::BOOTSTRAP_VERSION_4, ".") . "\.zip$/", $res[++$i]);
+        $this->assertRegExp("/bootstrap-" . preg_quote(WBWBootstrapBundle::BOOTSTRAP_VERSION_5, ".") . "\.zip$/", $res[++$i]);
+        $this->assertRegExp("/bootstrap-colorpicker-.*\.zip$/", $res[++$i]);
+        $this->assertRegExp("/bootstrap-datepicker-.*\.zip$/", $res[++$i]);
+        $this->assertRegExp("/bootstrap-daterangepicker-.*\.zip$/", $res[++$i]);
+        $this->assertRegExp("/bootstrap-icons-.*\.zip$/", $res[++$i]);
+        $this->assertRegExp("/bootstrap-markdown-.*\.zip$/", $res[++$i]);
+        $this->assertRegExp("/bootstrap-notify-.*\.zip$/", $res[++$i]);
+        $this->assertRegExp("/bootstrap-select-.*\.zip$/", $res[++$i]);
+        $this->assertRegExp("/bootstrap-slider-.*\.zip$/", $res[++$i]);
+        $this->assertRegExp("/bootstrap-social-.*\.zip$/", $res[++$i]);
+        $this->assertRegExp("/bootstrap-tagsinput-.*\.zip$/", $res[++$i]);
+        $this->assertRegExp("/bootstrap-timepicker-.*\.zip$/", $res[++$i]);
+        $this->assertRegExp("/bootstrap-wysiwyg-.*\.zip$/", $res[++$i]);
+        $this->assertRegExp("/favicons\.zip$/", $res[++$i]);
+        $this->assertRegExp("/handlebars-.*\.zip$/", $res[++$i]);
+        $this->assertRegExp("/moment-.*\.zip$/", $res[++$i]);
+        $this->assertRegExp("/popper\.js-.*\.zip$/", $res[++$i]);
+        $this->assertRegExp("/summernote-.*\.zip$/", $res[++$i]);
+        $this->assertRegExp("/wysihtml-.*\.zip$/", $res[++$i]);
+    }
 
     /**
      * Test getAssetsRelativeDirectory()
