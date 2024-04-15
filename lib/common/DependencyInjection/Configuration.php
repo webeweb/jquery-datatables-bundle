@@ -55,7 +55,7 @@ class Configuration implements ConfigurationInterface {
      * Add a section "locales".
      *
      * @param ArrayNodeDefinition $node The node.
-     * @param array<string,string> $locales The locales.
+     * @param array<string,mixed> $locales The locales.
      * @return void
      */
     private function addSectionLocales(ArrayNodeDefinition $node, array $locales): void {
@@ -107,7 +107,7 @@ class Configuration implements ConfigurationInterface {
      * Add a section "themes".
      *
      * @param ArrayNodeDefinition $node The node.
-     * @param array<string,string> $themes The themes.
+     * @param array<string,mixed> $themes The themes.
      * @return void
      */
     private function addSectionThemes(ArrayNodeDefinition $node, array $themes): void {
