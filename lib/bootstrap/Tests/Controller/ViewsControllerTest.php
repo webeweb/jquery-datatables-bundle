@@ -29,8 +29,6 @@ class ViewsControllerTest extends DefaultWebTestCase {
      */
     public static function setUpBeforeClass(): void {
         parent::setUpBeforeClass();
-
-        static::$kernel->getContainer()->set("swiftmailer.mailer", null);
     }
 
     /**
