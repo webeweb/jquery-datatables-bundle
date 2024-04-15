@@ -1,6 +1,10 @@
 # src/Resources/config/managers.yml
 services:
 
+    logger:
+        alias:  "monolog.logger"
+        public: true
+
     wbw.datatables.manager:
         class:  WBW\Bundle\DataTablesBundle\Manager\DataTablesManager
         public: false
