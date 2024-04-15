@@ -65,8 +65,7 @@ class UserHelper {
             $buffer = in_array($role, $user->getRoles());
 
             if (true === $buffer && true === $or) {
-                $result = $buffer;
-                break;
+                return true;
             }
 
             $result = $result && $buffer;
