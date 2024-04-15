@@ -28,7 +28,7 @@ use WBW\Library\Symfony\Helper\AssetsHelper;
 class WBWBootstrapBundleTest extends AbstractTestCase {
 
     /**
-     * Test assets
+     * Test assets.
      *
      * @return void
      * @throws Throwable Throws an exception if an error occurs.

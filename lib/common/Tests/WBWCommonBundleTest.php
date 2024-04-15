@@ -14,9 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\CommonBundle\Tests;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use WBW\Bundle\CommonBundle\Config\ConfigurationHelper;
 use WBW\Bundle\CommonBundle\DependencyInjection\WBWCommonExtension;
-use WBW\Bundle\CommonBundle\DependencyInjection\WBWCoreExtension;
 use WBW\Bundle\CommonBundle\Provider\AssetsProviderInterface;
 use WBW\Bundle\CommonBundle\WBWCommonBundle;
 
