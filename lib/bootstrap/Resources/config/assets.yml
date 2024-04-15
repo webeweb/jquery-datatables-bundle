@@ -259,6 +259,26 @@ assets:
                     - "ua-UA"
                     - "zh-CN"
                     - "zh-TW"
+            font_awesome:
+                version:     "5.15.2"
+                description: "Font Awesome"
+                stylesheets:
+                    - "/fontawesome-{{ version }}/css/all.min.css"
+                javascripts:
+                    - "/fontawesome-{{ version }}/js/all.min.js"
+            material_design_iconic_font:
+                version:     "2.2.0"
+                description: "Material Design Iconic Font"
+                stylesheets:
+                    - "/material-design-iconic-font-{{ version }}/css/material-design-iconic-font.min.css"
+                javascripts: []
+            meteocons:
+                version:
+                description: "Meteocons"
+                stylesheets:
+                    - "/meteocons/stylesheet.css"
+                    - "/css/meteocons.css"
+                javascripts: []
             summernote:
                 version:     "0.8.20"
                 description: "Summernote"

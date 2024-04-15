@@ -16,6 +16,7 @@ namespace WBW\Bundle\BootstrapBundle\Tests;
 use Throwable;
 use WBW\Bundle\BootstrapBundle\DependencyInjection\WBWBootstrapExtension;
 use WBW\Bundle\BootstrapBundle\WBWBootstrapBundle;
+use WBW\Bundle\CommonBundle\DependencyInjection\WBWCommonExtension;
 use WBW\Bundle\CommonBundle\Provider\AssetsProviderInterface;
 use WBW\Library\Symfony\Helper\AssetsHelper;
 
@@ -35,10 +36,12 @@ class WBWBootstrapBundleTest extends AbstractTestCase {
      */
     public function testAssets(): void {
 
-        $assets = realpath(__DIR__ . "/../Resources/assets");
+        // Load the YAML configuration.
+        $assets  = WBWCommonExtension::loadYamlConfig(__DIR__ . "/../Resources/config", "assets");
+        $plugins = $assets["assets"]["wbw.bootstrap.assets"]["plugins"];
 
-        $res = AssetsHelper::listAssets($assets);
-        $this->assertCount(21, $res);
+        $res = AssetsHelper::listAssets(__DIR__ . "/../Resources/assets");
+        $this->assertCount(25, $res);
 
         $i = -1;
         $this->assertRegExp("/bootstrap-" . preg_quote(WBWBootstrapBundle::BOOTSTRAP_VERSION_3, ".") . "\.zip$/", $res[++$i]);
@@ -57,7 +60,11 @@ class WBWBootstrapBundleTest extends AbstractTestCase {
         $this->assertRegExp("/bootstrap-timepicker-.*\.zip$/", $res[++$i]);
         $this->assertRegExp("/bootstrap-wysiwyg-.*\.zip$/", $res[++$i]);
         $this->assertRegExp("/favicons\.zip$/", $res[++$i]);
+        $this->assertRegExp("/fontawesome-" . preg_quote($plugins["font_awesome"]["version"]) . "\.zip$/", $res[++$i]);
+        $this->assertRegExp("/fontawesome-6\.2\.0\.zip$/", $res[++$i]);
         $this->assertRegExp("/handlebars-.*\.zip$/", $res[++$i]);
+        $this->assertRegExp("/material-design-iconic-font-" . preg_quote($plugins["material_design_iconic_font"]["version"]) . "\.zip$/", $res[++$i]);
+        $this->assertRegExp("/meteocons\.zip$/", $res[++$i]);
         $this->assertRegExp("/moment-.*\.zip$/", $res[++$i]);
         $this->assertRegExp("/popper\.js-.*\.zip$/", $res[++$i]);
         $this->assertRegExp("/summernote-.*\.zip$/", $res[++$i]);
