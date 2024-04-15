@@ -25,6 +25,20 @@ use WBW\Library\Symfony\Assets\NavigationNodeInterface;
 class BreadcrumbFactory {
 
     /**
+     * Create the breadcrumb items "FOSUser" with Font Awesome.
+     *
+     * @return BreadcrumbNode[] Returns the breadcrumb items.
+     */
+    public static function newBreadcrumbItemsFOSUserWithFontAwesome(): array {
+
+        return [
+            new BreadcrumbNode("label.edit_profile", "fa:user", "fos_user_profile_edit", NavigationNodeInterface::MATCHER_ROUTER),
+            new BreadcrumbNode("label.show_profile", "fa:user", "fos_user_profile_show", NavigationNodeInterface::MATCHER_ROUTER),
+            new BreadcrumbNode("label.change_password", "fa:lock", "fos_user_change_password", NavigationNodeInterface::MATCHER_ROUTER),
+        ];
+    }
+
+    /**
      * Create the breadcrumb items "FOSUser" with Glyphicon.
      *
      * @return BreadcrumbNode[] Returns the breadcrumb items.
@@ -35,6 +49,20 @@ class BreadcrumbFactory {
             new BreadcrumbNode("label.edit_profile", "g:user", "fos_user_profile_edit", NavigationNodeInterface::MATCHER_ROUTER),
             new BreadcrumbNode("label.show_profile", "g:user", "fos_user_profile_show", NavigationNodeInterface::MATCHER_ROUTER),
             new BreadcrumbNode("label.change_password", "g:lock", "fos_user_change_password", NavigationNodeInterface::MATCHER_ROUTER),
+        ];
+    }
+
+    /**
+     * Create the breadcrumb items "FOSUser" with Material Design Iconic font.
+     *
+     * @return BreadcrumbNode[] Returns the breadcrumb items.
+     */
+    public static function newBreadcrumbItemsFOSUserWithMaterialDesignIconicFont(): array {
+
+        return [
+            new BreadcrumbNode("label.edit_profile", "zmdi:account", "fos_user_profile_edit", NavigationNodeInterface::MATCHER_ROUTER),
+            new BreadcrumbNode("label.show_profile", "zmdi:account", "fos_user_profile_show", NavigationNodeInterface::MATCHER_ROUTER),
+            new BreadcrumbNode("label.change_password", "zmdi:lock", "fos_user_change_password", NavigationNodeInterface::MATCHER_ROUTER),
         ];
     }
 }
