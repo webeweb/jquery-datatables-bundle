@@ -48,47 +48,47 @@ monolog:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
-    paths:
-        "%kernel.project_dir%/../../../lib/bootstrap/Resources/views": "WBWBootstrap"
 
+# Bootstrap bundle
+wbw_bootstrap:
+    version: 4
+    plugins:
+        - "bootstrap_colorpicker"
+        - "bootstrap_datepicker"
+        - "bootstrap_daterangepicker"
+        - "bootstrap_markdown"
+        - "bootstrap_notify"
+        - "bootstrap_select"
+        - "bootstrap_slider"
+        - "bootstrap_social"
+        - "bootstrap_tagsinput"
+        - "bootstrap_timepicker"
+        - "bootstrap_wysiwyg"
+        - "summernote"
+    locales:
+        bootstrap_datepicker: "fr"
+        bootstrap_markdown:   "fr"
+        bootstrap_select:     "fr_FR"
+        bootstrap_wysiwyg:    "fr-FR"
+        summernote:           "fr-FR"
+
+# DataTables bundle
 wbw_datatables:
-    datatables:
-        theme: "bootstrap"
-        plugins:
-            - "autofill"
-            - "buttons"
-            - "colreorder"
-            - "datetime"
-            - "fixedcolumns"
-            - "fixedheader"
-            - "keytable"
-            - "responsive"
-            - "rowgroup"
-            - "rowreorder"
-            - "scroller"
-            - "searchbuilder"
-            - "searchpanes"
-            - "select"
-            - "staterestore"
-            - "editabletable"
-    bootstrap:
-        version: 4
-        plugins:
-            - "bootstrap_colorpicker"
-            - "bootstrap_datepicker"
-            - "bootstrap_daterangepicker"
-            - "bootstrap_markdown"
-            - "bootstrap_notify"
-            - "bootstrap_select"
-            - "bootstrap_slider"
-            - "bootstrap_social"
-            - "bootstrap_tagsinput"
-            - "bootstrap_timepicker"
-            - "bootstrap_wysiwyg"
-            - "summernote"
-        locales:
-            bootstrap_datepicker: "fr"
-            bootstrap_markdown:   "fr"
-            bootstrap_select:     "fr_FR"
-            bootstrap_wysiwyg:    "fr-FR"
-            summernote:           "fr-FR"
+    theme: "bootstrap"
+    plugins:
+        - "autofill"
+        - "buttons"
+        - "colreorder"
+        - "datetime"
+        - "fixedcolumns"
+        - "fixedheader"
+        - "keytable"
+        - "responsive"
+        - "rowgroup"
+        - "rowreorder"
+        - "scroller"
+        - "searchbuilder"
+        - "searchpanes"
+        - "select"
+        - "staterestore"
+        - "editabletable"
