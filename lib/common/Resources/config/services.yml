@@ -1,9 +1,5 @@
-# src/Resources/config/services.yml
+# lib/common/Resources/config/services.yml
 services:
-
-    logger:
-        alias:  "monolog.logger"
-        public: true
 
     WBW\Bundle\CommonBundle\Service\SessionService:
         alias:  "wbw.common.service.session"
