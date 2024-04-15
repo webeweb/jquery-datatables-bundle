@@ -30,12 +30,10 @@ class Configuration implements ConfigurationInterface {
      * Add a section "locales".
      *
      * @param ArrayNodeDefinition $node The node.
-     * @param array<string,mixed> $assets The assets.
+     * @param array<string,string> $locales The locales.
      * @return void
      */
-    private function addSectionLocales(ArrayNodeDefinition $node, array $assets): void {
-
-        $plugins = $assets["plugins"];
+    private function addSectionLocales(ArrayNodeDefinition $node, array $locales): void {
 
         $node
             ->children()
@@ -43,32 +41,32 @@ class Configuration implements ConfigurationInterface {
                     ->children()
                         ->variableNode("bootstrap_datepicker")->defaultValue("en-GB")->info("Bootstrap Datepicker locale")
                             ->validate()
-                                ->ifNotInArray($plugins["bootstrap_datepicker"]["locales"])
-                                ->thenInvalid("The Bootstrap Datepicker locale %s is not supported. Please choose one of " . json_encode($plugins["bootstrap_datepicker"]["locales"]))
+                                ->ifNotInArray($locales["bootstrap_datepicker"]["locales"])
+                                ->thenInvalid("The Bootstrap Datepicker locale %s is not supported. Please choose one of " . json_encode($locales["bootstrap_datepicker"]["locales"]))
                             ->end()
                         ->end()
                         ->variableNode("bootstrap_markdown")->info("Bootstrap Markdown locale")
                             ->validate()
-                                ->ifNotInArray($plugins["bootstrap_markdown"]["locales"])
-                                ->thenInvalid("The Bootstrap Markdown locale %s is not supported. Please choose one of " . json_encode($plugins["bootstrap_markdown"]["locales"]))
+                                ->ifNotInArray($locales["bootstrap_markdown"]["locales"])
+                                ->thenInvalid("The Bootstrap Markdown locale %s is not supported. Please choose one of " . json_encode($locales["bootstrap_markdown"]["locales"]))
                             ->end()
                         ->end()
                         ->variableNode("bootstrap_select")->defaultValue("en_US")->info("Bootstrap Select locale")
                             ->validate()
-                                ->ifNotInArray($plugins["bootstrap_select"]["locales"])
-                                ->thenInvalid("The Bootstrap Select locale %s is not supported. Please choose one of " . json_encode($plugins["bootstrap_select"]["locales"]))
+                                ->ifNotInArray($locales["bootstrap_select"]["locales"])
+                                ->thenInvalid("The Bootstrap Select locale %s is not supported. Please choose one of " . json_encode($locales["bootstrap_select"]["locales"]))
                             ->end()
                         ->end()
                         ->variableNode("bootstrap_wysiwyg")->defaultValue("en-US")->info("Bootstrap WYSIWYG locale")
                             ->validate()
-                                ->ifNotInArray($plugins["bootstrap_wysiwyg"]["locales"])
-                                ->thenInvalid("The Bootstrap WYSIWYG locale %s is not supported. Please choose one of " . json_encode($plugins["bootstrap_wysiwyg"]["locales"]))
+                                ->ifNotInArray($locales["bootstrap_wysiwyg"]["locales"])
+                                ->thenInvalid("The Bootstrap WYSIWYG locale %s is not supported. Please choose one of " . json_encode($locales["bootstrap_wysiwyg"]["locales"]))
                             ->end()
                         ->end()
                         ->variableNode("summernote")->info("Summernote locale")
                             ->validate()
-                                ->ifNotInArray($plugins["summernote"]["locales"])
-                                ->thenInvalid("The Summernote locale %s is not supported. Please choose one of " . json_encode($plugins["summernote"]["locales"]))
+                                ->ifNotInArray($locales["summernote"]["locales"])
+                                ->thenInvalid("The Summernote locale %s is not supported. Please choose one of " . json_encode($locales["summernote"]["locales"]))
                             ->end()
                         ->end()
                     ->end()
@@ -80,12 +78,10 @@ class Configuration implements ConfigurationInterface {
      * Add a section "plugins".
      *
      * @param ArrayNodeDefinition $node The node.
-     * @param array<string,mixed> $assets The assets.
+     * @param string[] $plugins The plugins.
      * @return void
      */
-    private function addSectionPlugins(ArrayNodeDefinition $node, array $assets): void {
-
-        $plugins = $assets["plugins"];
+    private function addSectionPlugins(ArrayNodeDefinition $node, array $plugins): void {
 
         $node
             ->children()
@@ -126,8 +122,8 @@ class Configuration implements ConfigurationInterface {
         $rootNode = $treeBuilder->getRootNode();
 
         $this->addSectionVersion($rootNode);
-        $this->addSectionPlugins($rootNode, $assets["assets"]["wbw.bootstrap.assets"]);
-        $this->addSectionLocales($rootNode, $assets["assets"]["wbw.bootstrap.assets"]);
+        $this->addSectionPlugins($rootNode, $assets["assets"]["wbw.bootstrap.assets"]["plugins"]);
+        $this->addSectionLocales($rootNode, $assets["assets"]["wbw.bootstrap.assets"]["plugins"]);
 
         return $treeBuilder;
     }
