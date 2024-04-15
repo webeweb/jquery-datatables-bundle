@@ -18,6 +18,7 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use Throwable;
 use WBW\Bundle\CommonBundle\DependencyInjection\Container\ContainerHelper;
 use WBW\Bundle\CommonBundle\DependencyInjection\WBWCommonExtension;
 
@@ -38,6 +39,10 @@ class WBWBootstrapExtension extends Extension {
 
     /**
      * {@inheritDoc}
+     * @param array<string,mixed> $configs The configurations.
+     * @param ContainerBuilder $container The container.
+     * @return void
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function load(array $configs, ContainerBuilder $container): void {
 
