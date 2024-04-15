@@ -271,14 +271,14 @@ assets:
                 description: "Material Design Iconic Font"
                 stylesheets:
                     - "/material-design-iconic-font-{{ version }}/css/material-design-iconic-font.min.css"
-                javascripts: []
+                javascripts: [ ]
             meteocons:
                 version:
                 description: "Meteocons"
                 stylesheets:
                     - "/meteocons/stylesheet.css"
                     - "/css/meteocons.css"
-                javascripts: []
+                javascripts: [ ]
             summernote:
                 version:     "0.8.20"
                 description: "Summernote"
