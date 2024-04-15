@@ -139,5 +139,4 @@ class WBWBootstrapBundle extends Bundle implements AssetsProviderInterface {
     public static function getTranslationDomain(): string {
         return self::TRANSLATION_DOMAIN;
     }
-
 }
