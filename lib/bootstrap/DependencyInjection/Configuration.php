@@ -119,7 +119,7 @@ class Configuration implements ConfigurationInterface {
      */
     public function getConfigTreeBuilder(): TreeBuilder {
 
-        $assets  = WBWCommonExtension::loadYamlConfig(__DIR__ . "/../Resources/config", "assets");
+        $assets = WBWCommonExtension::loadYamlConfig(__DIR__ . "/../Resources/config", "assets");
 
         $treeBuilder = new TreeBuilder(WBWBootstrapExtension::EXTENSION_ALIAS);
 
