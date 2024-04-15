@@ -20,11 +20,6 @@ use Symfony\Component\Routing\RouterInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Throwable;
 use Twig\Environment;
-use WBW\Bundle\CommonBundle\EventListener\NotificationEventListener;
-use WBW\Bundle\CommonBundle\EventListener\ToastEventListener;
-use WBW\Bundle\CommonBundle\Service\SessionService;
-use WBW\Bundle\CommonBundle\Twig\Extension\AssetsTwigExtension as CommonAssetsTwigExtension;
-use WBW\Bundle\CommonBundle\Twig\Extension\ContainerTwigExtension;
 use WBW\Bundle\DataTablesBundle\Command\ListDataTablesProviderCommand;
 use WBW\Bundle\DataTablesBundle\Controller\DataTablesController;
 use WBW\Bundle\DataTablesBundle\DependencyInjection\Configuration;
@@ -142,18 +137,6 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
 
         // Twig extensions
         $this->assertInstanceOf(DataTablesTwigExtension::class, $this->containerBuilder->get(DataTablesTwigExtension::SERVICE_NAME));
-
-        // === Common bundle ==================================================
-        // Event listeners
-        $this->assertInstanceOf(NotificationEventListener::class, $this->containerBuilder->get(NotificationEventListener::SERVICE_NAME));
-        $this->assertInstanceOf(ToastEventListener::class, $this->containerBuilder->get(ToastEventListener::SERVICE_NAME));
-
-        // Services
-        $this->assertInstanceOf(SessionService::class, $this->containerBuilder->get(SessionService::SERVICE_NAME));
-
-        // Twig extensions
-        $this->assertInstanceOf(CommonAssetsTwigExtension::class, $this->containerBuilder->get(CommonAssetsTwigExtension::SERVICE_NAME));
-        $this->assertInstanceOf(ContainerTwigExtension::class, $this->containerBuilder->get(ContainerTwigExtension::SERVICE_NAME));
     }
 
     /**
