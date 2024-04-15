@@ -22,7 +22,7 @@
     "require": {
         "php": "^7.1|^8.0",
         "ext-json": "*",
-        "doctrine/orm": "^2.5.13",
+        "doctrine/orm": "^2.5.13|^3.0",
         "matomo/device-detector": "^3.0|^4.0|^5.0",
         "psr/log": "^1.0|^2.0|^3.0",
         "symfony/dependency-injection": "^4.4|^5.0|^6.0",
