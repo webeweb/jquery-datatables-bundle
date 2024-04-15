@@ -38,7 +38,7 @@ class DataTablesTwigExtensionTraitTest extends AbstractTestCase {
         $twigEnvironment = $this->getMockBuilder(Environment::class)->disableOriginalConstructor()->getMock();
 
         // Set a DataTables Twig extension mock.
-        $dataTablesTwigExtension = new DataTablesTwigExtension($twigEnvironment, new AssetsTwigExtension($twigEnvironment), "test");
+        $dataTablesTwigExtension = new DataTablesTwigExtension($twigEnvironment, "test");
 
         $obj = new TestDataTablesTwigExtensionTrait();
 

@@ -34,13 +34,6 @@ use WBW\Bundle\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 class DataTablesTwigExtensionTest extends AbstractTestCase {
 
     /**
-     * Asset Twig extension.
-     *
-     * @var AssetsTwigExtension|null
-     */
-    private $assetsTwigExtension;
-
-    /**
      * DataTables wrapper.
      *
      * @var DataTablesWrapperInterface|null
@@ -63,9 +56,6 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
         // Set a Twig environment mock.
         $this->twigEnvironment = $this->getMockBuilder(Environment::class)->disableOriginalConstructor()->getMock();
 
-        // Set an Assets Twig extension mock.
-        $this->assetsTwigExtension = new AssetsTwigExtension($this->twigEnvironment);
-
         // Set a DataTables wrapper mock.
         $this->dtWrapper = TestFixtures::getWrapper();
     }
@@ -77,7 +67,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testDataTablesNameFunction(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, "test");
 
         $this->assertSame("dtemployee", $obj->dataTablesNameFunction($this->dtWrapper));
     }
@@ -89,7 +79,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testDataTablesOptionsFunction(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, "test");
 
         $exp = [
             "ajax"       => [
@@ -149,7 +139,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testGetFilters(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, "test");
 
         $res = $obj->getFilters();
         $this->assertCount(2, $res);
@@ -174,7 +164,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testGetFunctions(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, "test");
 
         $res = $obj->getFunctions();
         $this->assertCount(10, $res);
@@ -239,7 +229,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testHDataTablesFunction(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, "test");
 
         $i = 0;
         foreach ($this->dtWrapper->getColumns() as $dtColumn) {
@@ -260,7 +250,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testHDataTablesFunctionWithClass(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, "test");
 
         $arg = ["class" => "class"];
         $exp = file_get_contents(__DIR__ . "/../../Fixtures/Twig/Extension/DataTablesTwigExtensionTest.testHDataTablesFunctionWithClass.html.txt");
@@ -275,7 +265,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testHDataTablesFunctionWithTFoot(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, "test");
 
         $arg = ["tfoot" => false];
         $exp = file_get_contents(__DIR__ . "/../../Fixtures/Twig/Extension/DataTablesTwigExtensionTest.testHDataTablesFunctionWithTFoot.html.txt");
@@ -290,7 +280,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testHDataTablesFunctionWithTHead(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, "test");
 
         $arg = ["thead" => false];
         $exp = file_get_contents(__DIR__ . "/../../Fixtures/Twig/Extension/DataTablesTwigExtensionTest.testHDataTablesFunctionWithTHead.html.txt");
@@ -305,7 +295,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testHDataTablesFunctionWithoutArguments(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, "test");
 
         $arg = [];
         $exp = file_get_contents(__DIR__ . "/../../Fixtures/Twig/Extension/DataTablesTwigExtensionTest.testHDataTablesFunctionWithoutArguments.html.txt");
@@ -349,7 +339,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testJDataTablesFunction(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, "test");
 
         $arg = [
             "selector" => "#selector",
@@ -368,7 +358,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testJDataTablesFunctionWithoutArguments(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, "test");
 
         $arg = [];
         $exp = file_get_contents(__DIR__ . "/../../Fixtures/Twig/Extension/DataTablesTwigExtensionTest.testJDataTablesFunctionWithoutArguments.html.txt");
@@ -384,7 +374,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testJDataTablesStandaloneFunction(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, "test");
 
         $arg = ["selector" => "#selector", "language" => "French", "options" => ["columnDefs" => [["orderable" => false, "targets" => -1]]]];
         $exp = file_get_contents(__DIR__ . "/../../Fixtures/Twig/Extension/DataTablesTwigExtensionTest.testJDataTablesStandaloneFunction.html.txt");
@@ -400,7 +390,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
      */
     public function testJDataTablesStandaloneFunctionWithoutArguments(): void {
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, "test");
 
         $exp = file_get_contents(__DIR__ . "/../../Fixtures/Twig/Extension/DataTablesTwigExtensionTest.testJDataTablesStandaloneFunctionWithoutArguments.html.txt");
         $this->assertEquals($exp, $obj->jDataTablesStandaloneFunction() . "\n");
@@ -415,7 +405,7 @@ class DataTablesTwigExtensionTest extends AbstractTestCase {
 
         $this->assertEquals("wbw.datatables.twig.extension", DataTablesTwigExtension::SERVICE_NAME);
 
-        $obj = new DataTablesTwigExtension($this->twigEnvironment, $this->assetsTwigExtension, "test");
+        $obj = new DataTablesTwigExtension($this->twigEnvironment, "test");
 
         $this->assertInstanceOf(ExtensionInterface::class, $obj);
 

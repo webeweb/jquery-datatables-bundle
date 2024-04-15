@@ -39,14 +39,13 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
      * Constructor.
      *
      * @param Environment $twigEnvironment The Twig environment.
-     * @param AssetsTwigExtension $assetsTwigExtension The assets Twig extension.
      * @param string $environment The environment
      */
-    public function __construct(Environment $twigEnvironment, AssetsTwigExtension $assetsTwigExtension, string $environment) {
+    public function __construct(Environment $twigEnvironment, string $environment) {
         parent::__construct($twigEnvironment);
 
         $this->setEnvironment($environment);
-        $this->setAssetsTwigExtension($assetsTwigExtension);
+        $this->setAssetsTwigExtension(new AssetsTwigExtension($twigEnvironment));
     }
 
     /**
