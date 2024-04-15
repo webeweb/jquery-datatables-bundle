@@ -1,0 +1,367 @@
+# lib/common/Resources/config/assets.yml
+assets:
+
+    wbw.common.assets:
+        plugins:
+            animate_css:
+                version:     "3.7.0"
+                description: "Animate.css"
+                stylesheets:
+                    - "/animate.css-{{ version }}/animate.min.css"
+                javascripts: []
+            chart_js:
+                version:     "4.2.1"
+                description: "Chart.js"
+                stylesheets: []
+                javascripts:
+                    - "/chart.js-{{ version }}/chart.umd.js"
+            clippy_js:
+                version:
+                description: "Clippy.js"
+                stylesheets:
+                    - "/clippy.js/clippy.css"
+                javascripts:
+                    - "/clippy.js/clippy.min.js"
+            font_awesome:
+                version:     "5.15.2"
+                description: "Font Awesome"
+                stylesheets:
+                    - "/fontawesome-{{ version }}/css/all.min.css"
+                javascripts:
+                    - "/fontawesome-{{ version }}/js/all.min.js"
+            full_calendar:
+                version:     "5.9.0"
+                description: "FullCalendar"
+                stylesheets:
+                    - "/fullcalendar-{{ version }}/lib/main.min.css"
+                javascripts:
+                    - "/fullcalendar-{{ version }}/lib/main.min.js"
+                    - "/fullcalendar-{{ version }}/lib/locales/{{ locale }}.js"
+                locales:
+                    - "af"
+                    - "ar-dz"
+                    - "ar"
+                    - "ar-kw"
+                    - "ar-ly"
+                    - "ar-ma"
+                    - "ar-sa"
+                    - "ar-tn"
+                    - "az"
+                    - "bg"
+                    - "bn"
+                    - "bs"
+                    - "ca"
+                    - "cs"
+                    - "cy"
+                    - "da"
+                    - "de-at"
+                    - "de"
+                    - "el"
+                    - "en-au"
+                    - "en-gb"
+                    - "en-nz"
+                    - "eo"
+                    - "es"
+                    - "es-us"
+                    - "et"
+                    - "eu"
+                    - "fa"
+                    - "fi"
+                    - "fr-ca"
+                    - "fr-ch"
+                    - "fr"
+                    - "gl"
+                    - "he"
+                    - "hi"
+                    - "hr"
+                    - "hu"
+                    - "hy-am"
+                    - "id"
+                    - "is"
+                    - "it"
+                    - "ja"
+                    - "ka"
+                    - "kk"
+                    - "km"
+                    - "ko"
+                    - "ku"
+                    - "lb"
+                    - "lt"
+                    - "lv"
+                    - "mk"
+                    - "ms"
+                    - "nb"
+                    - "ne"
+                    - "nl"
+                    - "nn"
+                    - "pl"
+                    - "pt-br"
+                    - "pt"
+                    - "ro"
+                    - "ru"
+                    - "sk"
+                    - "sl"
+                    - "sm"
+                    - "sq"
+                    - "sr-cyrl"
+                    - "sr"
+                    - "sv"
+                    - "ta-in"
+                    - "th"
+                    - "tr"
+                    - "ug"
+                    - "uk"
+                    - "uz"
+                    - "vi"
+                    - "zh-cn"
+                    - "zh-tw"
+            jquery:
+                version:     "3.6.2"
+                description: "jQuery"
+                stylesheets: []
+                javascripts:
+                    - "/jquery-{{ version }}/jquery-3.6.2.min.js"
+            jquery_context_menu:
+                version:     "2.9.2"
+                description: "jQuery contextMenu"
+                stylesheets:
+                    - "/jquery-contextmenu-{{ version }}/jquery.contextMenu.min.css"
+                javascripts:
+                    - "/jquery-contextmenu-{{ version }}/jquery.ui.position.min.js"
+                    - "/jquery-contextmenu-{{ version }}/jquery.contextMenu.min.js"
+            jquery_easy_autocomplete:
+                version:     "1.3.5"
+                description: "jQuery EasyAutoComplete"
+                stylesheets:
+                    - "/jquery-easyautocomplete-{{ version }}/easy-autocomplete.min.css"
+                    - "/jquery-easyautocomplete-{{ version }}/easy-autocomplete.themes.min.css"
+                javascripts:
+                    - "/jquery-easyautocomplete-{{ version }}/jquery.easy-autocomplete.min.js"
+            jquery_fancy_box:
+                version:     "3.5.7"
+                description: "jQuery FancyBox"
+                stylesheets:
+                    - "/jquery-fancybox-{{ version }}/jquery.fancybox.min.css"
+                javascripts:
+                    - "/jquery-fancybox-{{ version }}/jquery.fancybox.min.js"
+            jquery_input_mask:
+                version:     "3.3.11"
+                description: "jQuery InputMask"
+                stylesheets: []
+                javascripts:
+                    - "/jquery-inputmask-{{ version }}/min/jquery.inputmask.bundle.min.js"
+            jquery_select2:
+                version:     "4.0.13"
+                description: "jQuery Select2"
+                stylesheets:
+                    - "/jquery-select2-{{ version }}/css/select2.min.css"
+                javascripts:
+                    - "/jquery-select2-{{ version }}/js/select2.min.js"
+                    - "/jquery-select2-{{ version }}/js/i18n/{{ locale }}.js"
+                locales:
+                    - "af"
+                    - "ar"
+                    - "az"
+                    - "bg"
+                    - "bs"
+                    - "ca"
+                    - "cs"
+                    - "da"
+                    - "de"
+                    - "dsb"
+                    - "el"
+                    - "en"
+                    - "es"
+                    - "et"
+                    - "eu"
+                    - "fa"
+                    - "fi"
+                    - "fr"
+                    - "gl"
+                    - "he"
+                    - "hi"
+                    - "hr"
+                    - "hsb"
+                    - "hu"
+                    - "hy"
+                    - "id"
+                    - "is"
+                    - "it"
+                    - "ja"
+                    - "km"
+                    - "ko"
+                    - "lt"
+                    - "lv"
+                    - "mk"
+                    - "ms"
+                    - "nb"
+                    - "nl"
+                    - "pl"
+                    - "ps"
+                    - "pt-BR"
+                    - "pt"
+                    - "ro"
+                    - "ru"
+                    - "sk"
+                    - "sl"
+                    - "sr-Cyrl"
+                    - "sr"
+                    - "sv"
+                    - "th"
+                    - "tr"
+                    - "uk"
+                    - "vi"
+                    - "zh-CN"
+                    - "zh-TW"
+            leaflet:
+                version:     "1.7.1"
+                description: "Leaflet"
+                stylesheets:
+                    - "/leaflet-{{ version }}/leaflet.css"
+                javascripts:
+                    - "/leaflet-{{ version }}/leaflet.js"
+            leaflet_color_markers:
+                version:     "1.0.0"
+                description: "Leaflet Color Markers"
+                stylesheets: []
+                javascripts:
+                    - "/leaflet-color-markers-{{ version }}/leaflet-color-markers.js"
+            leaflet_marker_cluster:
+                version:     "1.4.1"
+                description: "Leaflet Marker Cluster"
+                stylesheets:
+                    - "/leaflet-markercluster-{{ version }}/MarkerCluster.Default.css"
+                javascripts:
+                    - "/leaflet-markercluster-{{ version }}/leaflet.markercluster.js"
+            light_gallery:
+                version:     "2.7.0"
+                description: "lightGallery"
+                stylesheets:
+                    - "/lightgallery-{{ version }}/css/lightgallery.css"
+                javascripts:
+                    - "/lightgallery-{{ version }}/lightgallery.min.js"
+                plugins:
+                    - "autoplay"
+                    - "comment"
+                    - "fullscreen"
+                    - "hash"
+                    - "mediumZoom"
+                    - "pager"
+                    - "relativeCaption"
+                    - "rotate"
+                    - "share"
+                    - "thumbnail"
+                    - "video"
+                    - "videoThumbnail"
+                    - "zoom"
+            material_design_color_palette:
+                version:     "1.1.0"
+                description: "Material Design Color Palette"
+                stylesheets:
+                    - "/material-design-color-palette-{{ version }}/material-design-color-palette.min.css"
+                javascripts: []
+            material_design_hierarchical_display:
+                version:     "1.0.1"
+                description: "Material Design Hierarchical Display"
+                stylesheets:
+                    - "/material-design-hierarchical-display-{{ version }}/zmd.hierarchical-display.min.css"
+                javascripts:
+                    - "/material-design-hierarchical-display-{{ version }}/jquery.zmd.hierarchical-display.min.js"
+            material_design_iconic_font:
+                version:     "2.2.0"
+                description: "Material Design Iconic Font"
+                stylesheets:
+                    - "/material-design-iconic-font-{{ version }}/css/material-design-iconic-font.min.css"
+                javascripts: []
+            meteocons:
+                version:
+                description: "Meteocons"
+                stylesheets:
+                    - "/meteocons/stylesheet.css"
+                    - "/css/meteocons.css"
+                javascripts: []
+            simplemde_markdown_editor:
+                version:     "1.11.2"
+                description: "SimpleMDE Markdown Editor"
+                stylesheets:
+                    - "/simplemde-markdown-editor-{{ version }}/simplemde.min.css"
+                javascripts:
+                    - "/simplemde-markdown-editor-{{ version }}/simplemde.min.js"
+            sweet_alert:
+                version:     "2.1.2"
+                description: "SweetAlert"
+                stylesheets: []
+                javascripts:
+                    - "/sweetalert-{{ version }}/sweetalert.min.js"
+            sweet_alert2:
+                version:     "11.3.1"
+                description: "SweetAlert2"
+                stylesheets:
+                    - "/sweetalert2-{{ version }}/sweetalert2.min.css"
+                javascripts:
+                    - "/sweetalert2-{{ version }}/sweetalert2.min.js"
+            syntax_highlighter:
+                version:     "3.0.83"
+                description: "SyntaxHighlighter"
+                stylesheets:
+                    - "/syntaxhighlighter-{{ version }}/styles/shCore.css"
+                    - "/syntaxhighlighter-{{ version }}/styles/shTheme{{ theme }}.css"
+                javascripts:
+                    - "/syntaxhighlighter-{{ version }}/scripts/XRegExp.js"
+                    - "/syntaxhighlighter-{{ version }}/scripts/shCore.js"
+                    - "/syntaxhighlighter-{{ version }}/scripts/shAutoloader.js"
+                    - "/syntaxhighlighter-{{ version }}/scripts/shLegacy.js"
+                brushes:
+                    - "AppleScript"
+                    - "AS3"
+                    - "Bash"
+                    - "ColdFusion"
+                    - "Cpp"
+                    - "CSharp"
+                    - "Css"
+                    - "Delphi"
+                    - "Diff"
+                    - "Erlang"
+                    - "Groovy"
+                    - "Java"
+                    - "JavaFX"
+                    - "JScript"
+                    - "Perl"
+                    - "Php"
+                    - "Plain"
+                    - "PowerShell"
+                    - "Python"
+                    - "Ruby"
+                    - "Sass"
+                    - "Scala"
+                    - "Sql"
+                    - "Vb"
+                    - "Xml"
+                themes:
+                    - "Default"
+                    - "Django"
+                    - "Eclipse"
+                    - "Emacs"
+                    - "FadeToGrey"
+                    - "MDUltra"
+                    - "Midnight"
+                    - "RDark"
+            twemoji:
+                version:     "14.0.2"
+                description: "Twemoji"
+                stylesheets: []
+                javascripts:
+                    - "/twemoji-{{ version }}/twemoji.min.js"
+            typed_js:
+                version:     "2.0.12"
+                description: "typed.js"
+                stylesheets: []
+                javascripts:
+                    - "/typed.js-{{ version }}/typed.min.js"
+            wait_me:
+                version:     "1.19"
+                description: "waitMe"
+                stylesheets:
+                    - "/waitme-{{ version }}/waitMe.min.css"
+                javascripts:
+                    - "/waitme-{{ version }}/waitMe.min.js"
