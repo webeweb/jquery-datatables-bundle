@@ -1,0 +1,19 @@
+# lib/common/Resources/config/twig.yml
+services:
+
+    wbw.common.twig.extension.assets:
+        class:  WBW\Bundle\CommonBundle\Twig\Extension\AssetsTwigExtension
+        public: false
+        arguments: [ "@twig" ]
+        calls:
+            - [ "setPublicDirectory", [ "%kernel.project_dir%/public" ] ]
+            - [ "setRouter",          [ "@router" ] ]
+        tags:
+            - { name: "twig.extension" }
+
+    wbw.common.twig.extension.container:
+        class:  WBW\Bundle\CommonBundle\Twig\Extension\ContainerTwigExtension
+        public: false
+        arguments: [ "@twig", "@service_container" ]
+        tags:
+            - { name: "twig.extension" }
