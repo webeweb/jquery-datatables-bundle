@@ -13,7 +13,9 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Tests;
 
+use WBW\Bundle\BootstrapBundle\DependencyInjection\WBWBootstrapExtension;
 use WBW\Bundle\BootstrapBundle\WBWBootstrapBundle;
+use WBW\Bundle\CommonBundle\Provider\AssetsProviderInterface;
 
 /**
  * Bootstrap bundle test.
@@ -22,6 +24,40 @@ use WBW\Bundle\BootstrapBundle\WBWBootstrapBundle;
  * @package WBW\Bundle\BootstrapBundle\Tests
  */
 class WBWBootstrapBundleTest extends AbstractTestCase {
+
+    /**
+     * Test getAssetsRelativeDirectory()
+     *
+     * @return void
+     */
+    public function testGetAssetsRelativeDirectory(): void {
+
+        $obj = new WBWBootstrapBundle();
+
+        $this->assertEquals(AssetsProviderInterface::ASSETS_RELATIVE_DIRECTORY, $obj->getAssetsRelativeDirectory());
+    }
+
+    /**
+     * Test getContainerExtension()
+     *
+     * @return void
+     */
+    public function testGetContainerExtension(): void {
+
+        $obj = new WBWBootstrapBundle();
+
+        $this->assertInstanceOf(WBWBootstrapExtension::class, $obj->getContainerExtension());
+    }
+
+    /**
+     * Test getTranslationDomain()
+     *
+     * @return void
+     */
+    public function testGetTranslationDomain(): void {
+
+        $this->assertEquals(WBWBootstrapBundle::TRANSLATION_DOMAIN, WBWBootstrapBundle::getTranslationDomain());
+    }
 
     /**
      * Test __construct()
@@ -43,5 +79,7 @@ class WBWBootstrapBundleTest extends AbstractTestCase {
         $this->assertEquals("3.4.1", WBWBootstrapBundle::BOOTSTRAP_VERSION_3);
         $this->assertEquals("4.6.2", WBWBootstrapBundle::BOOTSTRAP_VERSION_4);
         $this->assertEquals("5.3.2", WBWBootstrapBundle::BOOTSTRAP_VERSION_5);
+
+        $this->assertEquals("WBWBootstrapBundle", WBWBootstrapBundle::TRANSLATION_DOMAIN);
     }
 }

@@ -13,13 +13,18 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle;
 
+use Symfony\Component\DependencyInjection\Extension\Extension;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
+use WBW\Bundle\BootstrapBundle\DependencyInjection\WBWBootstrapExtension;
+use WBW\Bundle\CommonBundle\Provider\AssetsProviderInterface;
+
 /**
  * Bootstrap bundle.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\BootstrapBundle
  */
-interface WBWBootstrapBundle {
+class WBWBootstrapBundle extends Bundle implements AssetsProviderInterface {
 
     /**
      * Bootstrap type "danger".
@@ -104,4 +109,35 @@ interface WBWBootstrapBundle {
      * @var string
      */
     public const BOOTSTRAP_VERSION_5 = "5.3.2";
+
+    /**
+     * Translation domain.
+     *
+     * @var string
+     */
+    const TRANSLATION_DOMAIN = "WBWBootstrapBundle";
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAssetsRelativeDirectory(): string {
+        return self::ASSETS_RELATIVE_DIRECTORY;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getContainerExtension(): Extension {
+        return new WBWBootstrapExtension();
+    }
+
+    /**
+     * Get the translation domain.
+     *
+     * @return string Returns the translation domain.
+     */
+    public static function getTranslationDomain(): string {
+        return self::TRANSLATION_DOMAIN;
+    }
+
 }
