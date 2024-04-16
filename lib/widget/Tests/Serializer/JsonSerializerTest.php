@@ -14,17 +14,17 @@ declare(strict_types = 1);
 namespace WBW\Bundle\WidgetBundle\Tests\Serializer;
 
 use DateTime;
-use WBW\Bundle\WidgetBundle\Alert\AlertInterface;
-use WBW\Bundle\WidgetBundle\Badge\BadgeInterface;
-use WBW\Bundle\WidgetBundle\Button\ButtonInterface;
 use WBW\Bundle\WidgetBundle\Calendar\FullCalendarEventInterface;
-use WBW\Bundle\WidgetBundle\Icon\IconInterface;
-use WBW\Bundle\WidgetBundle\Label\LabelInterface;
-use WBW\Bundle\WidgetBundle\Notification\NotificationInterface;
-use WBW\Bundle\WidgetBundle\ProgressBar\ProgressBarInterface;
+use WBW\Bundle\WidgetBundle\Component\AlertInterface;
+use WBW\Bundle\WidgetBundle\Component\BadgeInterface;
+use WBW\Bundle\WidgetBundle\Component\ButtonInterface;
+use WBW\Bundle\WidgetBundle\Component\IconInterface;
+use WBW\Bundle\WidgetBundle\Component\LabelInterface;
+use WBW\Bundle\WidgetBundle\Component\NotificationInterface;
+use WBW\Bundle\WidgetBundle\Component\ProgressBarInterface;
+use WBW\Bundle\WidgetBundle\Component\ToastInterface;
 use WBW\Bundle\WidgetBundle\Serializer\JsonSerializer;
 use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Toast\ToastInterface;
 use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
 
 /**
