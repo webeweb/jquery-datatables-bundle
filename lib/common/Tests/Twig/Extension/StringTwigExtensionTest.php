@@ -388,5 +388,4 @@ class StringTwigExtensionTest extends AbstractTestCase {
 
         $this->assertSame($this->twigEnvironment, $obj->getTwigEnvironment());
     }
-
 }
