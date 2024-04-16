@@ -9,3 +9,8 @@ services:
         class:  WBW\Bundle\CommonBundle\Service\SessionService
         public: true
         arguments: [ "@service_container" ]
+
+    wbw.common.service.statement:
+        class:  WBW\Bundle\CommonBundle\Service\StatementService
+        public: false
+        arguments: [ "@doctrine.orm.entity_manager" ]

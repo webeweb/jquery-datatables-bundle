@@ -13,6 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\CommonBundle\Tests\DependencyInjection;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\Routing\RouterInterface;
@@ -22,6 +23,7 @@ use WBW\Bundle\CommonBundle\DependencyInjection\WBWCommonExtension;
 use WBW\Bundle\CommonBundle\EventListener\NotificationEventListener;
 use WBW\Bundle\CommonBundle\EventListener\ToastEventListener;
 use WBW\Bundle\CommonBundle\Service\SessionService;
+use WBW\Bundle\CommonBundle\Service\StatementService;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 use WBW\Bundle\CommonBundle\Twig\Extension\AssetsTwigExtension;
 use WBW\Bundle\CommonBundle\Twig\Extension\ContainerTwigExtension;
@@ -59,6 +61,9 @@ class WBWCommonExtensionTest extends AbstractTestCase {
             WBWCommonExtension::EXTENSION_ALIAS => [],
         ];
 
+        // Set an Entity manager mock.
+        $entityManager = $this->getMockBuilder(EntityManagerInterface::class)->getMock();
+
         // Set a Router mock.
         $router = $this->getMockBuilder(RouterInterface::class)->getMock();
 
@@ -74,6 +79,7 @@ class WBWCommonExtensionTest extends AbstractTestCase {
         // Set a Container builder mock.
         $this->containerBuilder = new ContainerBuilder($parameterBag);
 
+        $this->containerBuilder->set("doctrine.orm.entity_manager", $entityManager);
         $this->containerBuilder->set("router", $router);
         $this->containerBuilder->set("twig", $twigEnvironment);
     }
@@ -96,6 +102,7 @@ class WBWCommonExtensionTest extends AbstractTestCase {
 
         // Services
         $this->assertInstanceOf(SessionService::class, $this->containerBuilder->get(SessionService::SERVICE_NAME));
+        $this->assertInstanceOf(StatementService::class, $this->containerBuilder->get(StatementService::SERVICE_NAME));
 
         // Twig extensions
         $this->assertInstanceOf(AssetsTwigExtension::class, $this->containerBuilder->get(AssetsTwigExtension::SERVICE_NAME));
