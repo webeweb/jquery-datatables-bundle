@@ -59,18 +59,21 @@
         "psr-4": {
             "WBW\\Bundle\\DataTablesBundle\\": "src",
             "WBW\\Bundle\\BootstrapBundle\\": "lib/bootstrap",
-            "WBW\\Bundle\\CommonBundle\\": "lib/common"
+            "WBW\\Bundle\\CommonBundle\\": "lib/common",
+            "WBW\\Bundle\\WidgetBundle\\": "lib/widget"
         },
         "exclude-from-classmap": [
             "/lib/bootstrap/Tests/",
-            "/lib/common/Tests/"
+            "/lib/common/Tests/",
+            "/lib/widget/Tests/"
         ]
     },
     "autoload-dev": {
         "psr-4": {
             "WBW\\Bundle\\DataTablesBundle\\Tests\\": "tests",
             "WBW\\Bundle\\BootstrapBundle\\Tests\\": "lib/bootstrap/Tests",
-            "WBW\\Bundle\\CommonBundle\\Tests\\": "lib/common/Tests"
+            "WBW\\Bundle\\CommonBundle\\Tests\\": "lib/common/Tests",
+            "WBW\\Bundle\\WidgetBundle\\Tests\\": "lib/widget/Tests"
         }
     },
     "config": {
