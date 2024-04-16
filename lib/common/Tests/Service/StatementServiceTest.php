@@ -14,11 +14,11 @@ declare(strict_types = 1);
 namespace WBW\Bundle\CommonBundle\Tests\Service;
 
 use DateTime;
+use Doctrine\DBAL\ParameterType;
 use Doctrine\DBAL\Result;
 use Doctrine\DBAL\Statement;
 use Doctrine\ORM\EntityManagerInterface;
 use InvalidArgumentException;
-use PDO;
 use Throwable;
 use WBW\Bundle\CommonBundle\Service\StatementService;
 use WBW\Bundle\CommonBundle\Service\StatementServiceInterface;
@@ -69,7 +69,7 @@ class StatementServiceTest extends DefaultWebTestCase {
         $filename = __DIR__ . "/../Fixtures/Service/StatementServiceTest.testExecuteQueriesFile.sql";
 
         $values  = array_pad([], 2, [
-            ":date" => [(new DateTime())->format("Y-m-d"), PDO::PARAM_STR],
+            ":date" => [(new DateTime())->format("Y-m-d"), ParameterType::STRING],
         ]);
         $queries = $this->statementService->readStatementFile($filename);
 
@@ -93,7 +93,7 @@ class StatementServiceTest extends DefaultWebTestCase {
         $filename = __DIR__ . "/../Fixtures/Service/StatementServiceTest.testExecuteQueriesFile.sql";
 
         $values = array_pad([], 2, [
-            ":date" => [(new DateTime())->format("Y-m-d"), PDO::PARAM_STR],
+            ":date" => [(new DateTime())->format("Y-m-d"), ParameterType::STRING],
         ]);
 
         $obj = $this->statementService;
@@ -116,7 +116,7 @@ class StatementServiceTest extends DefaultWebTestCase {
         $filename = __DIR__ . "/../Fixtures/Service/StatementServiceTest.testExecuteQueryFile.sql";
 
         $values = [
-            ":date" => [(new DateTime())->format("Y-m-d"), PDO::PARAM_STR],
+            ":date" => [(new DateTime())->format("Y-m-d"), ParameterType::STRING],
         ];
         $query  = $this->statementService->readStatementFile($filename);
 
@@ -137,7 +137,7 @@ class StatementServiceTest extends DefaultWebTestCase {
         $filename = __DIR__ . "/../Fixtures/Service/StatementServiceTest.testExecuteQueryFile.sql";
 
         $values = [
-            ":date" => [(new DateTime())->format("Y-m-d"), PDO::PARAM_STR],
+            ":date" => [(new DateTime())->format("Y-m-d"), ParameterType::STRING],
         ];
 
         $obj = $this->statementService;
@@ -157,7 +157,7 @@ class StatementServiceTest extends DefaultWebTestCase {
         $filename = __DIR__ . "/../Fixtures/Service/StatementServiceTest.testExecuteStatementFile.sql";
 
         $values = [
-            ":id" => [1, PDO::PARAM_INT],
+            ":id" => [1, ParameterType::INTEGER],
         ];
         $query  = $this->statementService->readStatementFile($filename);
 
@@ -178,7 +178,7 @@ class StatementServiceTest extends DefaultWebTestCase {
         $filename = __DIR__ . "/../Fixtures/Service/StatementServiceTest.testExecuteStatementFile.sql";
 
         $values = [
-            ":id" => [1, PDO::PARAM_INT],
+            ":id" => [1, ParameterType::INTEGER],
         ];
 
         $obj = $this->statementService;
@@ -198,7 +198,7 @@ class StatementServiceTest extends DefaultWebTestCase {
         $filename = __DIR__ . "/../Fixtures/Service/StatementServiceTest.testExecuteStatementsFile.sql";
 
         $values  = array_pad([], 2, [
-            ":id" => [1, PDO::PARAM_INT],
+            ":id" => [1, ParameterType::INTEGER],
         ]);
         $queries = $this->statementService->readStatementFile($filename);
 
@@ -222,7 +222,7 @@ class StatementServiceTest extends DefaultWebTestCase {
         $filename = __DIR__ . "/../Fixtures/Service/StatementServiceTest.testExecuteStatementsFile.sql";
 
         $values = array_pad([], 2, [
-            ":id" => [1, PDO::PARAM_INT],
+            ":id" => [1, ParameterType::INTEGER],
         ]);
 
         $obj = $this->statementService;
@@ -243,7 +243,7 @@ class StatementServiceTest extends DefaultWebTestCase {
     public function testPrepareStatement(): void {
 
         $values = [
-            ":date" => [(new DateTime())->format("Y-m-d"), PDO::PARAM_STR],
+            ":date" => [(new DateTime())->format("Y-m-d"), ParameterType::STRING],
         ];
         $query  = "SELECT :date";
 
