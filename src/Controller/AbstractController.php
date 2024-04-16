@@ -138,7 +138,7 @@ abstract class AbstractController extends BaseController {
                 ->setMaxResults($limit)
                 ->getQuery();
 
-            foreach($query->toIterable() as $entity) {
+            foreach ($query->toIterable() as $entity) {
 
                 $this->dispatchDataTablesEvent([$entity], DataTablesEvent::PRE_EXPORT, $dtWrapper->getProvider());
 
