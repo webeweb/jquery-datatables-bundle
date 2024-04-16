@@ -46,6 +46,10 @@ services:
         tags:
             - { name: "container.service_subscriber" }
 
+    wbw.common.service.statement.alias:
+        alias:  "wbw.common.service.statement"
+        public: true
+
     # === Bootstrap bundle ====================================================
     WBW\Bundle\BootstrapBundle\Tests\Fixtures\Controller\TestAbstractController:
         public: true
