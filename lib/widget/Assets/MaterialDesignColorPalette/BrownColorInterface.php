@@ -24,72 +24,72 @@ use WBW\Bundle\WidgetBundle\Component\Color\BrownColorInterface as BaseBrownColo
 interface BrownColorInterface extends BaseBrownColorInterface {
 
     /**
-     * Brown color "100"
+     * Brown color value "100"
      *
      * @var string
      */
-    public const BROWN_COLOR_100 = "#D7CCC8";
+    public const BROWN_COLOR_VALUE_100 = "#D7CCC8";
 
     /**
-     * Brown color "200"
+     * Brown color value "200"
      *
      * @var string
      */
-    public const BROWN_COLOR_200 = "#BCAAA4";
+    public const BROWN_COLOR_VALUE_200 = "#BCAAA4";
 
     /**
-     * Brown color "300"
+     * Brown color value "300"
      *
      * @var string
      */
-    public const BROWN_COLOR_300 = "#A1887F";
+    public const BROWN_COLOR_VALUE_300 = "#A1887F";
 
     /**
-     * Brown color "400"
+     * Brown color value "400"
      *
      * @var string
      */
-    public const BROWN_COLOR_400 = "#8D6E63";
+    public const BROWN_COLOR_VALUE_400 = "#8D6E63";
 
     /**
-     * Brown color "50"
+     * Brown color value "50"
      *
      * @var string
      */
-    public const BROWN_COLOR_50 = "#EFEBE9";
+    public const BROWN_COLOR_VALUE_50 = "#EFEBE9";
 
     /**
-     * Brown color "500"
+     * Brown color value "500"
      *
      * @var string
      */
-    public const BROWN_COLOR_500 = "#795548";
+    public const BROWN_COLOR_VALUE_500 = "#795548";
 
     /**
-     * Brown color "600"
+     * Brown color value "600"
      *
      * @var string
      */
-    public const BROWN_COLOR_600 = "#6D4C41";
+    public const BROWN_COLOR_VALUE_600 = "#6D4C41";
 
     /**
-     * Brown color "700"
+     * Brown color value "700"
      *
      * @var string
      */
-    public const BROWN_COLOR_700 = "#5D4037";
+    public const BROWN_COLOR_VALUE_700 = "#5D4037";
 
     /**
-     * Brown color "800"
+     * Brown color value "800"
      *
      * @var string
      */
-    public const BROWN_COLOR_800 = "#4E342E";
+    public const BROWN_COLOR_VALUE_800 = "#4E342E";
 
     /**
-     * Brown color "900"
+     * Brown color value "900"
      *
      * @var string
      */
-    public const BROWN_COLOR_900 = "#3E2723";
+    public const BROWN_COLOR_VALUE_900 = "#3E2723";
 }
