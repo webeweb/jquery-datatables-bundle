@@ -22,13 +22,6 @@ assets:
                     - "/clippy.js/clippy.css"
                 javascripts:
                     - "/clippy.js/clippy.min.js"
-            font_awesome:
-                version:     "5.15.2"
-                description: "Font Awesome"
-                stylesheets:
-                    - "/fontawesome-{{ version }}/css/all.min.css"
-                javascripts:
-                    - "/fontawesome-{{ version }}/js/all.min.js"
             full_calendar:
                 version:     "5.9.0"
                 description: "FullCalendar"
@@ -267,19 +260,6 @@ assets:
                     - "/material-design-hierarchical-display-{{ version }}/zmd.hierarchical-display.min.css"
                 javascripts:
                     - "/material-design-hierarchical-display-{{ version }}/jquery.zmd.hierarchical-display.min.js"
-            material_design_iconic_font:
-                version:     "2.2.0"
-                description: "Material Design Iconic Font"
-                stylesheets:
-                    - "/material-design-iconic-font-{{ version }}/css/material-design-iconic-font.min.css"
-                javascripts: [ ]
-            meteocons:
-                version:
-                description: "Meteocons"
-                stylesheets:
-                    - "/meteocons/stylesheet.css"
-                    - "/css/meteocons.css"
-                javascripts: [ ]
             simplemde_markdown_editor:
                 version:     "1.11.2"
                 description: "SimpleMDE Markdown Editor"
