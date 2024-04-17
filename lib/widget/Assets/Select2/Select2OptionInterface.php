@@ -17,7 +17,7 @@ namespace WBW\Bundle\WidgetBundle\Assets\Select2;
  * Select2 option interface.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Symfony\Assets
+ * @package WBW\Bundle\WidgetBundle\Assets\Select2
  */
 interface Select2OptionInterface {
 
