@@ -33,7 +33,7 @@ class AbstractButtonTest extends AbstractTestCase {
      */
     public function testJsonSerialize(): void {
 
-        $obj = new TestButton("type");
+        $obj = new TestButton("test");
 
         $this->assertIsArray($obj->jsonSerialize());
     }
@@ -45,12 +45,12 @@ class AbstractButtonTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $obj = new TestButton("danger");
+        $obj = new TestButton("test");
 
         $this->assertInstanceOf(JsonSerializable::class, $obj);
         $this->assertInstanceOf(ButtonInterface::class, $obj);
 
         $this->assertNull($obj->getContent());
-        $this->assertEquals("danger", $obj->getType());
+        $this->assertEquals("test", $obj->getType());
     }
 }
