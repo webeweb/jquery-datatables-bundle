@@ -31,15 +31,15 @@ class GreyColorInterfaceTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("#FAFAFA", GreyColorInterface::GREY_COLOR_50);
-        $this->assertEquals("#F5F5F5", GreyColorInterface::GREY_COLOR_100);
-        $this->assertEquals("#EEEEEE", GreyColorInterface::GREY_COLOR_200);
-        $this->assertEquals("#E0E0E0", GreyColorInterface::GREY_COLOR_300);
-        $this->assertEquals("#BDBDBD", GreyColorInterface::GREY_COLOR_400);
-        $this->assertEquals("#9E9E9E", GreyColorInterface::GREY_COLOR_500);
-        $this->assertEquals("#757575", GreyColorInterface::GREY_COLOR_600);
-        $this->assertEquals("#616161", GreyColorInterface::GREY_COLOR_700);
-        $this->assertEquals("#424242", GreyColorInterface::GREY_COLOR_800);
-        $this->assertEquals("#212121", GreyColorInterface::GREY_COLOR_900);
+        $this->assertEquals("#FAFAFA", GreyColorInterface::GREY_COLOR_VALUE_50);
+        $this->assertEquals("#F5F5F5", GreyColorInterface::GREY_COLOR_VALUE_100);
+        $this->assertEquals("#EEEEEE", GreyColorInterface::GREY_COLOR_VALUE_200);
+        $this->assertEquals("#E0E0E0", GreyColorInterface::GREY_COLOR_VALUE_300);
+        $this->assertEquals("#BDBDBD", GreyColorInterface::GREY_COLOR_VALUE_400);
+        $this->assertEquals("#9E9E9E", GreyColorInterface::GREY_COLOR_VALUE_500);
+        $this->assertEquals("#757575", GreyColorInterface::GREY_COLOR_VALUE_600);
+        $this->assertEquals("#616161", GreyColorInterface::GREY_COLOR_VALUE_700);
+        $this->assertEquals("#424242", GreyColorInterface::GREY_COLOR_VALUE_800);
+        $this->assertEquals("#212121", GreyColorInterface::GREY_COLOR_VALUE_900);
     }
 }

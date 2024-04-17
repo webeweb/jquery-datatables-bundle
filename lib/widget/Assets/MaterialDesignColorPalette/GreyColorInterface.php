@@ -24,72 +24,72 @@ use WBW\Bundle\WidgetBundle\Component\Color\GreyColorInterface as BaseGreyColorI
 interface GreyColorInterface extends BaseGreyColorInterface {
 
     /**
-     * Grey color "100"
+     * Grey color value "100"
      *
      * @var string
      */
-    public const GREY_COLOR_100 = "#F5F5F5";
+    public const GREY_COLOR_VALUE_100 = "#F5F5F5";
 
     /**
-     * Grey color "200"
+     * Grey color value "200"
      *
      * @var string
      */
-    public const GREY_COLOR_200 = "#EEEEEE";
+    public const GREY_COLOR_VALUE_200 = "#EEEEEE";
 
     /**
-     * Grey color "300"
+     * Grey color value "300"
      *
      * @var string
      */
-    public const GREY_COLOR_300 = "#E0E0E0";
+    public const GREY_COLOR_VALUE_300 = "#E0E0E0";
 
     /**
-     * Grey color "400"
+     * Grey color value "400"
      *
      * @var string
      */
-    public const GREY_COLOR_400 = "#BDBDBD";
+    public const GREY_COLOR_VALUE_400 = "#BDBDBD";
 
     /**
-     * Grey color "50"
+     * Grey color value "50"
      *
      * @var string
      */
-    public const GREY_COLOR_50 = "#FAFAFA";
+    public const GREY_COLOR_VALUE_50 = "#FAFAFA";
 
     /**
-     * Grey color "500"
+     * Grey color value "500"
      *
      * @var string
      */
-    public const GREY_COLOR_500 = "#9E9E9E";
+    public const GREY_COLOR_VALUE_500 = "#9E9E9E";
 
     /**
-     * Grey color "600"
+     * Grey color value "600"
      *
      * @var string
      */
-    public const GREY_COLOR_600 = "#757575";
+    public const GREY_COLOR_VALUE_600 = "#757575";
 
     /**
-     * Grey color "700"
+     * Grey color value "700"
      *
      * @var string
      */
-    public const GREY_COLOR_700 = "#616161";
+    public const GREY_COLOR_VALUE_700 = "#616161";
 
     /**
-     * Grey color "800"
+     * Grey color value "800"
      *
      * @var string
      */
-    public const GREY_COLOR_800 = "#424242";
+    public const GREY_COLOR_VALUE_800 = "#424242";
 
     /**
-     * Grey color "900"
+     * Grey color value "900"
      *
      * @var string
      */
-    public const GREY_COLOR_900 = "#212121";
+    public const GREY_COLOR_VALUE_900 = "#212121";
 }
