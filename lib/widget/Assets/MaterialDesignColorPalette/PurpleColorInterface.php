@@ -24,100 +24,100 @@ use WBW\Bundle\WidgetBundle\Component\Color\PurpleColorInterface as BasePurpleCo
 interface PurpleColorInterface extends BasePurpleColorInterface {
 
     /**
-     * Purple color "100"
+     * Purple color value "100"
      *
      * @var string
      */
-    public const PURPLE_COLOR_100 = "#E1BEE7";
+    public const PURPLE_COLOR_VALUE_100 = "#E1BEE7";
 
     /**
-     * Purple color "200"
+     * Purple color value "200"
      *
      * @var string
      */
-    public const PURPLE_COLOR_200 = "#CE93D8";
+    public const PURPLE_COLOR_VALUE_200 = "#CE93D8";
 
     /**
-     * Purple color "300"
+     * Purple color value "300"
      *
      * @var string
      */
-    public const PURPLE_COLOR_300 = "#BA68C8";
+    public const PURPLE_COLOR_VALUE_300 = "#BA68C8";
 
     /**
-     * Purple color "400"
+     * Purple color value "400"
      *
      * @var string
      */
-    public const PURPLE_COLOR_400 = "#AB47BC";
+    public const PURPLE_COLOR_VALUE_400 = "#AB47BC";
 
     /**
-     * Purple color "50"
+     * Purple color value "50"
      *
      * @var string
      */
-    public const PURPLE_COLOR_50 = "#F3E5F5";
+    public const PURPLE_COLOR_VALUE_50 = "#F3E5F5";
 
     /**
-     * Purple color "500"
+     * Purple color value "500"
      *
      * @var string
      */
-    public const PURPLE_COLOR_500 = "#9C27B0";
+    public const PURPLE_COLOR_VALUE_500 = "#9C27B0";
 
     /**
-     * Purple color "600"
+     * Purple color value "600"
      *
      * @var string
      */
-    public const PURPLE_COLOR_600 = "#8E24AA";
+    public const PURPLE_COLOR_VALUE_600 = "#8E24AA";
 
     /**
-     * Purple color "700"
+     * Purple color value "700"
      *
      * @var string
      */
-    public const PURPLE_COLOR_700 = "#7B1FA2";
+    public const PURPLE_COLOR_VALUE_700 = "#7B1FA2";
 
     /**
-     * Purple color "800"
+     * Purple color value "800"
      *
      * @var string
      */
-    public const PURPLE_COLOR_800 = "#6A1B9A";
+    public const PURPLE_COLOR_VALUE_800 = "#6A1B9A";
 
     /**
-     * Purple color "900"
+     * Purple color value "900"
      *
      * @var string
      */
-    public const PURPLE_COLOR_900 = "#4A148C";
+    public const PURPLE_COLOR_VALUE_900 = "#4A148C";
 
     /**
-     * Purple color "A100"
+     * Purple color value "A100"
      *
      * @var string
      */
-    public const PURPLE_COLOR_A100 = "#EA80FC";
+    public const PURPLE_COLOR_VALUE_A100 = "#EA80FC";
 
     /**
-     * Purple color "A200"
+     * Purple color value "A200"
      *
      * @var string
      */
-    public const PURPLE_COLOR_A200 = "#E040FB";
+    public const PURPLE_COLOR_VALUE_A200 = "#E040FB";
 
     /**
-     * Purple color "A400"
+     * Purple color value "A400"
      *
      * @var string
      */
-    public const PURPLE_COLOR_A400 = "#D500F9";
+    public const PURPLE_COLOR_VALUE_A400 = "#D500F9";
 
     /**
-     * Purple color "A700"
+     * Purple color value "A700"
      *
      * @var string
      */
-    public const PURPLE_COLOR_A700 = "#AA00FF";
+    public const PURPLE_COLOR_VALUE_A700 = "#AA00FF";
 }
