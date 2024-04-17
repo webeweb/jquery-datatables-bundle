@@ -115,7 +115,7 @@ class WBWBootstrapBundle extends Bundle implements AssetsProviderInterface {
      *
      * @var string
      */
-    const TRANSLATION_DOMAIN = "WBWBootstrapBundle";
+    public const TRANSLATION_DOMAIN = "WBWBootstrapBundle";
 
     /**
      * {@inheritDoc}
