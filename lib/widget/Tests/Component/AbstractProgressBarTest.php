@@ -33,7 +33,7 @@ class AbstractProgressBarTest extends AbstractTestCase {
      */
     public function testJsonSerialize(): void {
 
-        $obj = new TestProgressBar("type");
+        $obj = new TestProgressBar("test");
 
         $this->assertIsArray($obj->jsonSerialize());
     }
@@ -45,12 +45,12 @@ class AbstractProgressBarTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $obj = new TestProgressBar("danger");
+        $obj = new TestProgressBar("test");
 
         $this->assertInstanceOf(JsonSerializable::class, $obj);
         $this->assertInstanceOf(ProgressBarInterface::class, $obj);
 
         $this->assertNull($obj->getContent());
-        $this->assertEquals("danger", $obj->getType());
+        $this->assertEquals("test", $obj->getType());
     }
 }
