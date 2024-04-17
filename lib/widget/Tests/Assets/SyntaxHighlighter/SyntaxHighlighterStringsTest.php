@@ -13,8 +13,8 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\WidgetBundle\Tests\Assets\SyntaxHighlighter;
 
-use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
 use WBW\Bundle\WidgetBundle\Assets\SyntaxHighlighter\SyntaxHighlighterStrings;
+use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
 
 /**
  * SyntaxHightlighter strings test.
