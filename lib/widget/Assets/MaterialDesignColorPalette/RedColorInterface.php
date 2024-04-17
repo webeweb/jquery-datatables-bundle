@@ -24,100 +24,100 @@ use WBW\Bundle\WidgetBundle\Component\Color\RedColorInterface as BaseRedColorInt
 interface RedColorInterface extends BaseRedColorInterface {
 
     /**
-     * Red color "100"
+     * Red color value "100"
      *
      * @var string
      */
-    public const RED_COLOR_100 = "#FFCDD2";
+    public const RED_COLOR_VALUE_100 = "#FFCDD2";
 
     /**
-     * Red color "200"
+     * Red color value "200"
      *
      * @var string
      */
-    public const RED_COLOR_200 = "#EF9A9A";
+    public const RED_COLOR_VALUE_200 = "#EF9A9A";
 
     /**
-     * Red color "300"
+     * Red color value "300"
      *
      * @var string
      */
-    public const RED_COLOR_300 = "#E57373";
+    public const RED_COLOR_VALUE_300 = "#E57373";
 
     /**
-     * Red color "400"
+     * Red color value "400"
      *
      * @var string
      */
-    public const RED_COLOR_400 = "#EF5350";
+    public const RED_COLOR_VALUE_400 = "#EF5350";
 
     /**
-     * Red color "50"
+     * Red color value "50"
      *
      * @var string
      */
-    public const RED_COLOR_50 = "#FFEBEE";
+    public const RED_COLOR_VALUE_50 = "#FFEBEE";
 
     /**
-     * Red color "500"
+     * Red color value "500"
      *
      * @var string
      */
-    public const RED_COLOR_500 = "#F44336";
+    public const RED_COLOR_VALUE_500 = "#F44336";
 
     /**
-     * Red color "600"
+     * Red color value "600"
      *
      * @var string
      */
-    public const RED_COLOR_600 = "#E53935";
+    public const RED_COLOR_VALUE_600 = "#E53935";
 
     /**
-     * Red color "700"
+     * Red color value "700"
      *
      * @var string
      */
-    public const RED_COLOR_700 = "#D32F2F";
+    public const RED_COLOR_VALUE_700 = "#D32F2F";
 
     /**
-     * Red color "800"
+     * Red color value "800"
      *
      * @var string
      */
-    public const RED_COLOR_800 = "#C62828";
+    public const RED_COLOR_VALUE_800 = "#C62828";
 
     /**
-     * Red color "900"
+     * Red color value "900"
      *
      * @var string
      */
-    public const RED_COLOR_900 = "#B71C1C";
+    public const RED_COLOR_VALUE_900 = "#B71C1C";
 
     /**
-     * Red color "A100"
+     * Red color value "A100"
      *
      * @var string
      */
-    public const RED_COLOR_A100 = "#FF8A80";
+    public const RED_COLOR_VALUE_A100 = "#FF8A80";
 
     /**
-     * Red color "A200"
+     * Red color value "A200"
      *
      * @var string
      */
-    public const RED_COLOR_A200 = "#FF5252";
+    public const RED_COLOR_VALUE_A200 = "#FF5252";
 
     /**
-     * Red color "A400"
+     * Red color value "A400"
      *
      * @var string
      */
-    public const RED_COLOR_A400 = "#FF1744";
+    public const RED_COLOR_VALUE_A400 = "#FF1744";
 
     /**
-     * Red color "A700"
+     * Red color value "A700"
      *
      * @var string
      */
-    public const RED_COLOR_A700 = "#D50000";
+    public const RED_COLOR_VALUE_A700 = "#D50000";
 }
