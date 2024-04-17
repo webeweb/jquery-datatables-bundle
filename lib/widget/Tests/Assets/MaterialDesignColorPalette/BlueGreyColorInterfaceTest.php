@@ -31,15 +31,15 @@ class BlueGreyColorInterfaceTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("#ECEFF1", BlueGreyColorInterface::BLUE_GREY_COLOR_50);
-        $this->assertEquals("#CFD8DC", BlueGreyColorInterface::BLUE_GREY_COLOR_100);
-        $this->assertEquals("#B0BEC5", BlueGreyColorInterface::BLUE_GREY_COLOR_200);
-        $this->assertEquals("#90A4AE", BlueGreyColorInterface::BLUE_GREY_COLOR_300);
-        $this->assertEquals("#78909C", BlueGreyColorInterface::BLUE_GREY_COLOR_400);
-        $this->assertEquals("#607D8B", BlueGreyColorInterface::BLUE_GREY_COLOR_500);
-        $this->assertEquals("#546E7A", BlueGreyColorInterface::BLUE_GREY_COLOR_600);
-        $this->assertEquals("#455A64", BlueGreyColorInterface::BLUE_GREY_COLOR_700);
-        $this->assertEquals("#37474F", BlueGreyColorInterface::BLUE_GREY_COLOR_800);
-        $this->assertEquals("#263238", BlueGreyColorInterface::BLUE_GREY_COLOR_900);
+        $this->assertEquals("#ECEFF1", BlueGreyColorInterface::BLUE_GREY_COLOR_VALUE_50);
+        $this->assertEquals("#CFD8DC", BlueGreyColorInterface::BLUE_GREY_COLOR_VALUE_100);
+        $this->assertEquals("#B0BEC5", BlueGreyColorInterface::BLUE_GREY_COLOR_VALUE_200);
+        $this->assertEquals("#90A4AE", BlueGreyColorInterface::BLUE_GREY_COLOR_VALUE_300);
+        $this->assertEquals("#78909C", BlueGreyColorInterface::BLUE_GREY_COLOR_VALUE_400);
+        $this->assertEquals("#607D8B", BlueGreyColorInterface::BLUE_GREY_COLOR_VALUE_500);
+        $this->assertEquals("#546E7A", BlueGreyColorInterface::BLUE_GREY_COLOR_VALUE_600);
+        $this->assertEquals("#455A64", BlueGreyColorInterface::BLUE_GREY_COLOR_VALUE_700);
+        $this->assertEquals("#37474F", BlueGreyColorInterface::BLUE_GREY_COLOR_VALUE_800);
+        $this->assertEquals("#263238", BlueGreyColorInterface::BLUE_GREY_COLOR_VALUE_900);
     }
 }
