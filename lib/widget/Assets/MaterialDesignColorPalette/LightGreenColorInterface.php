@@ -24,100 +24,100 @@ use WBW\Bundle\WidgetBundle\Component\Color\LightGreenColorInterface as BaseLigh
 interface LightGreenColorInterface extends BaseLightGreenColorInterface {
 
     /**
-     * Light green color "100"
+     * Light green color value "100"
      *
      * @var string
      */
-    public const LIGHT_GREEN_COLOR_100 = "#DCEDC8";
+    public const LIGHT_GREEN_COLOR_VALUE_100 = "#DCEDC8";
 
     /**
-     * Light green color "200"
+     * Light green color value "200"
      *
      * @var string
      */
-    public const LIGHT_GREEN_COLOR_200 = "#C5E1A5";
+    public const LIGHT_GREEN_COLOR_VALUE_200 = "#C5E1A5";
 
     /**
-     * Light green color "300"
+     * Light green color value "300"
      *
      * @var string
      */
-    public const LIGHT_GREEN_COLOR_300 = "#AED581";
+    public const LIGHT_GREEN_COLOR_VALUE_300 = "#AED581";
 
     /**
-     * Light green color "400"
+     * Light green color value "400"
      *
      * @var string
      */
-    public const LIGHT_GREEN_COLOR_400 = "#9CCC65";
+    public const LIGHT_GREEN_COLOR_VALUE_400 = "#9CCC65";
 
     /**
-     * Light green color "50"
+     * Light green color value "50"
      *
      * @var string
      */
-    public const LIGHT_GREEN_COLOR_50 = "#F1F8E9";
+    public const LIGHT_GREEN_COLOR_VALUE_50 = "#F1F8E9";
 
     /**
-     * Light green color "500"
+     * Light green color value "500"
      *
      * @var string
      */
-    public const LIGHT_GREEN_COLOR_500 = "#8BC34A";
+    public const LIGHT_GREEN_COLOR_VALUE_500 = "#8BC34A";
 
     /**
-     * Light green color "600"
+     * Light green color value "600"
      *
      * @var string
      */
-    public const LIGHT_GREEN_COLOR_600 = "#7CB342";
+    public const LIGHT_GREEN_COLOR_VALUE_600 = "#7CB342";
 
     /**
-     * Light green color "700"
+     * Light green color value "700"
      *
      * @var string
      */
-    public const LIGHT_GREEN_COLOR_700 = "#689F38";
+    public const LIGHT_GREEN_COLOR_VALUE_700 = "#689F38";
 
     /**
-     * Light green color "800"
+     * Light green color value "800"
      *
      * @var string
      */
-    public const LIGHT_GREEN_COLOR_800 = "#558B2F";
+    public const LIGHT_GREEN_COLOR_VALUE_800 = "#558B2F";
 
     /**
-     * Light green color "900"
+     * Light green color value "900"
      *
      * @var string
      */
-    public const LIGHT_GREEN_COLOR_900 = "#33691E";
+    public const LIGHT_GREEN_COLOR_VALUE_900 = "#33691E";
 
     /**
-     * Light green color "A100"
+     * Light green color value "A100"
      *
      * @var string
      */
-    public const LIGHT_GREEN_COLOR_A100 = "#CCFF90";
+    public const LIGHT_GREEN_COLOR_VALUE_A100 = "#CCFF90";
 
     /**
-     * Light green color "A200"
+     * Light green color value "A200"
      *
      * @var string
      */
-    public const LIGHT_GREEN_COLOR_A200 = "#B2FF59";
+    public const LIGHT_GREEN_COLOR_VALUE_A200 = "#B2FF59";
 
     /**
-     * Light green color "A400"
+     * Light green color value "A400"
      *
      * @var string
      */
-    public const LIGHT_GREEN_COLOR_A400 = "#76FF03";
+    public const LIGHT_GREEN_COLOR_VALUE_A400 = "#76FF03";
 
     /**
-     * Light green color "A700"
+     * Light green color value "A700"
      *
      * @var string
      */
-    public const LIGHT_GREEN_COLOR_A700 = "#64DD17";
+    public const LIGHT_GREEN_COLOR_VALUE_A700 = "#64DD17";
 }
