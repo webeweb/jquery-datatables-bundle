@@ -32,7 +32,7 @@ class WBWCommonBundle extends Bundle implements AssetsProviderInterface {
      *
      * @var string
      */
-    const TRANSLATION_DOMAIN = "WBWCommonBundle";
+    public const TRANSLATION_DOMAIN = "WBWCommonBundle";
 
     /**
      * {@inheritDoc}
