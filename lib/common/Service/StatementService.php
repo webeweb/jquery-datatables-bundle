@@ -34,7 +34,7 @@ class StatementService implements StatementServiceInterface {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.common.service.statement";
+    public const SERVICE_NAME = "wbw.common.service.statement";
 
     /**
      * Constructor.
