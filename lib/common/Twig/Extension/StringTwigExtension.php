@@ -34,7 +34,7 @@ class StringTwigExtension extends AbstractTwigExtension {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.common.twig.extension.string";
+    public const SERVICE_NAME = "wbw.common.twig.extension.string";
 
     /**
      * Format a date/time.
