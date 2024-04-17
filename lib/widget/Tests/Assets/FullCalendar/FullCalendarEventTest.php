@@ -11,19 +11,19 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\WidgetBundle\Tests\Calendar;
+namespace WBW\Bundle\WidgetBundle\Tests\Assets\FullCalendar;
 
 use DateTime;
 use JsonSerializable;
-use WBW\Bundle\WidgetBundle\Calendar\FullCalendarEvent;
-use WBW\Bundle\WidgetBundle\Calendar\FullCalendarEventInterface;
+use WBW\Bundle\WidgetBundle\Assets\FullCalendar\FullCalendarEvent;
+use WBW\Bundle\WidgetBundle\Assets\FullCalendar\FullCalendarEventInterface;
 use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
 
 /**
  * Full Calendar event test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\WidgetBundle\Tests\Calendar
+ * @package WBW\Bundle\WidgetBundle\Tests\Assets/FullCalendar
  */
 class FullCalendarEventTest extends AbstractTestCase {
 

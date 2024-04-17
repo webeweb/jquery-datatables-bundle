@@ -11,7 +11,7 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\WidgetBundle\Calendar;
+namespace WBW\Bundle\WidgetBundle\Assets\FullCalendar;
 
 use DateTime;
 use JsonSerializable;
@@ -20,7 +20,7 @@ use JsonSerializable;
  * Full calendar event.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\WidgetBundle\Calendar
+ * @package WBW\Bundle\WidgetBundle\Assets\FullCalendar
  */
 interface FullCalendarEventInterface extends JsonSerializable {
 

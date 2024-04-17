@@ -11,10 +11,10 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\WidgetBundle\Calendar;
+namespace WBW\Bundle\WidgetBundle\Assets\FullCalendar;
 
 use DateTime;
-use WBW\Bundle\WidgetBundle\Serializer\JsonSerializer;
+use WBW\Bundle\WidgetBundle\Serializer\ComponentSerializer;
 use WBW\Library\Traits\Strings\StringIdTrait;
 use WBW\Library\Traits\Strings\StringTitleTrait;
 use WBW\Library\Traits\Strings\StringUrlTrait;
@@ -23,7 +23,7 @@ use WBW\Library\Traits\Strings\StringUrlTrait;
  * Full Calendar event.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\WidgetBundle\Calendar
+ * @package WBW\Bundle\WidgetBundle\Assets\FullCalendar
  */
 class FullCalendarEvent implements FullCalendarEventInterface {
 
@@ -268,7 +268,7 @@ class FullCalendarEvent implements FullCalendarEventInterface {
      * @return array<string,mixed> Returns this serialized instance.
      */
     public function jsonSerialize(): array {
-        return JsonSerializer::serializeFullCalendarEvent($this);
+        return ComponentSerializer::serializeFullCalendarEvent($this);
     }
 
     /**
