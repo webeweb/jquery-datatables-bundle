@@ -16,6 +16,7 @@ namespace WBW\Bundle\WidgetBundle\Tests\Serializer;
 use WBW\Bundle\WidgetBundle\Component\AlertInterface;
 use WBW\Bundle\WidgetBundle\Component\BadgeInterface;
 use WBW\Bundle\WidgetBundle\Component\ButtonInterface;
+use WBW\Bundle\WidgetBundle\Component\ColorInterface;
 use WBW\Bundle\WidgetBundle\Component\IconInterface;
 use WBW\Bundle\WidgetBundle\Component\LabelInterface;
 use WBW\Bundle\WidgetBundle\Component\NotificationInterface;
@@ -88,6 +89,25 @@ class ComponentSerializerTest extends AbstractTestCase {
 
         $this->assertEquals($model->getContent(), $res[BaseSerializerKeys::CONTENT]);
         $this->assertEquals($model->getType(), $res[BaseSerializerKeys::TYPE]);
+    }
+
+    /**
+     * Test serializeColor()
+     *
+     * @return void
+     */
+    public function testSerializeColor(): void {
+
+        // Set a Color mock.
+        $model = $this->getMockBuilder(ColorInterface::class)->getMock();
+        $model->expects($this->any())->method("getName")->willReturn(BaseSerializerKeys::NAME);
+        $model->expects($this->any())->method("getValues")->willReturn([]);
+
+        $res = ComponentSerializer::serializeColor($model);
+        $this->assertCount(2, $res);
+
+        $this->assertEquals($model->getName(), $res[BaseSerializerKeys::NAME]);
+        $this->assertEquals($model->getValues(), $res["values"]);
     }
 
     /**

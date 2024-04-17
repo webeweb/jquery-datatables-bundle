@@ -16,6 +16,7 @@ namespace WBW\Bundle\WidgetBundle\Serializer;
 use WBW\Bundle\WidgetBundle\Component\AlertInterface;
 use WBW\Bundle\WidgetBundle\Component\BadgeInterface;
 use WBW\Bundle\WidgetBundle\Component\ButtonInterface;
+use WBW\Bundle\WidgetBundle\Component\ColorInterface;
 use WBW\Bundle\WidgetBundle\Component\IconInterface;
 use WBW\Bundle\WidgetBundle\Component\LabelInterface;
 use WBW\Bundle\WidgetBundle\Component\NotificationInterface;
@@ -70,6 +71,20 @@ class ComponentSerializer {
         return [
             BaseSerializerKeys::CONTENT => $model->getContent(),
             BaseSerializerKeys::TYPE    => $model->getType(),
+        ];
+    }
+
+    /**
+     * Serialize a color.
+     *
+     * @param ColorInterface $model The model.
+     * @return array<string,mixed> Returns the serialized model.
+     */
+    public static function serializeColor(ColorInterface $model): array {
+
+        return [
+            BaseSerializerKeys::NAME => $model->getName(),
+            "values"                 => $model->getValues(),
         ];
     }
 
