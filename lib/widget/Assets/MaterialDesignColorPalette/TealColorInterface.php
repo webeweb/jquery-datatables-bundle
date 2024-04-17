@@ -24,100 +24,100 @@ use WBW\Bundle\WidgetBundle\Component\Color\TealColorInterface as BaseTealColorI
 interface TealColorInterface extends BaseTealColorInterface {
 
     /**
-     * Teal color "100"
+     * Teal color value "100"
      *
      * @var string
      */
-    public const TEAL_COLOR_100 = "#B2DFDB";
+    public const TEAL_COLOR_VALUE_100 = "#B2DFDB";
 
     /**
-     * Teal color "200"
+     * Teal color value "200"
      *
      * @var string
      */
-    public const TEAL_COLOR_200 = "#80CBC4";
+    public const TEAL_COLOR_VALUE_200 = "#80CBC4";
 
     /**
-     * Teal color "300"
+     * Teal color value "300"
      *
      * @var string
      */
-    public const TEAL_COLOR_300 = "#4DB6AC";
+    public const TEAL_COLOR_VALUE_300 = "#4DB6AC";
 
     /**
-     * Teal color "400"
+     * Teal color value "400"
      *
      * @var string
      */
-    public const TEAL_COLOR_400 = "#26A69A";
+    public const TEAL_COLOR_VALUE_400 = "#26A69A";
 
     /**
-     * Teal color "50"
+     * Teal color value "50"
      *
      * @var string
      */
-    public const TEAL_COLOR_50 = "#E0F2F1";
+    public const TEAL_COLOR_VALUE_50 = "#E0F2F1";
 
     /**
-     * Teal color "500"
+     * Teal color value "500"
      *
      * @var string
      */
-    public const TEAL_COLOR_500 = "#009688";
+    public const TEAL_COLOR_VALUE_500 = "#009688";
 
     /**
-     * Teal color "600"
+     * Teal color value "600"
      *
      * @var string
      */
-    public const TEAL_COLOR_600 = "#00897B";
+    public const TEAL_COLOR_VALUE_600 = "#00897B";
 
     /**
-     * Teal color "700"
+     * Teal color value "700"
      *
      * @var string
      */
-    public const TEAL_COLOR_700 = "#00796B";
+    public const TEAL_COLOR_VALUE_700 = "#00796B";
 
     /**
-     * Teal color "800"
+     * Teal color value "800"
      *
      * @var string
      */
-    public const TEAL_COLOR_800 = "#00695C";
+    public const TEAL_COLOR_VALUE_800 = "#00695C";
 
     /**
-     * Teal color "900"
+     * Teal color value "900"
      *
      * @var string
      */
-    public const TEAL_COLOR_900 = "#004D40";
+    public const TEAL_COLOR_VALUE_900 = "#004D40";
 
     /**
-     * Teal color "A100"
+     * Teal color value "A100"
      *
      * @var string
      */
-    public const TEAL_COLOR_A100 = "#A7FFEB";
+    public const TEAL_COLOR_VALUE_A100 = "#A7FFEB";
 
     /**
-     * Teal color "A200"
+     * Teal color value "A200"
      *
      * @var string
      */
-    public const TEAL_COLOR_A200 = "#64FFDA";
+    public const TEAL_COLOR_VALUE_A200 = "#64FFDA";
 
     /**
-     * Teal color "A400"
+     * Teal color value "A400"
      *
      * @var string
      */
-    public const TEAL_COLOR_A400 = "#1DE9B6";
+    public const TEAL_COLOR_VALUE_A400 = "#1DE9B6";
 
     /**
-     * Teal color "A700"
+     * Teal color value "A700"
      *
      * @var string
      */
-    public const TEAL_COLOR_A700 = "#00BFA5";
+    public const TEAL_COLOR_VALUE_A700 = "#00BFA5";
 }
