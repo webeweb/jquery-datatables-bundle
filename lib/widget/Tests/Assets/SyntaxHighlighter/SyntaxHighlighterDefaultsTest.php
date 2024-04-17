@@ -11,16 +11,16 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\CommonBundle\Tests\Assets\SyntaxHighlighter;
+namespace WBW\Bundle\WidgetBundle\Tests\Assets\SyntaxHighlighter;
 
-use WBW\Bundle\CommonBundle\Assets\SyntaxHighlighter\SyntaxHighlighterDefaults;
-use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
+use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
+use WBW\Bundle\WidgetBundle\Assets\SyntaxHighlighter\SyntaxHighlighterDefaults;
 
 /**
  * SyntaxHighlighter defaults test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\CommonBundle\Tests\Assets\SyntaxHighlighter
+ * @package WBW\Bundle\WidgetBundle\Tests\Assets\SyntaxHighlighter
  */
 class SyntaxHighlighterDefaultsTest extends AbstractTestCase {
 
