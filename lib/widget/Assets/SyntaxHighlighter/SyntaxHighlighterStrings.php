@@ -11,13 +11,13 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\CommonBundle\Assets\SyntaxHighlighter;
+namespace WBW\Bundle\WidgetBundle\Assets\SyntaxHighlighter;
 
 /**
  * SyntaxHighlighter strings.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\CommonBundle\Assets\SyntaxHighlighter
+ * @package WBW\Bundle\WidgetBundle\Assets\SyntaxHighlighter
  */
 class SyntaxHighlighterStrings {
 
