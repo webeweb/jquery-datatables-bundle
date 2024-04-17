@@ -93,12 +93,12 @@ class AssetsSerializerTest extends AbstractTestCase {
         // Set a Select2 option mock.
         $model = $this->getMockBuilder(Select2OptionInterface::class)->getMock();
         $model->expects($this->any())->method("getSelect2OptionId")->willReturn(BaseSerializerKeys::ID);
-        $model->expects($this->any())->method("getSelect2OptionText")->willReturn(BaseSerializerKeys::KEY);
+        $model->expects($this->any())->method("getSelect2OptionText")->willReturn(BaseSerializerKeys::TEXT);
 
         $res = AssetsSerializer::serializeSelect2Option($model);
         $this->assertCount(2, $res);
 
         $this->assertEquals($model->getSelect2OptionId(), $res[BaseSerializerKeys::ID]);
-        $this->assertEquals($model->getSelect2OptionText(), $res[BaseSerializerKeys::KEY]);
+        $this->assertEquals($model->getSelect2OptionText(), $res[BaseSerializerKeys::TEXT]);
     }
 }
