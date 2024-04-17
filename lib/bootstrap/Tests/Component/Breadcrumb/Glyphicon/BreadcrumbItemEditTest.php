@@ -15,7 +15,7 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Component\Breadcrumb\Glyphicon;
 
 use WBW\Bundle\BootstrapBundle\Component\Breadcrumb\Glyphicon\BreadcrumbItemEdit;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Library\Symfony\Assets\NavigationNodeInterface;
+use WBW\Bundle\WidgetBundle\Component\NavigationNodeInterface;
 
 /**
  * Breadcrumb item "edit" test.

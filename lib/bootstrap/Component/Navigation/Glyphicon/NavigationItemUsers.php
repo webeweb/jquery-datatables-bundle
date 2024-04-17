@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Component\Navigation\Glyphicon;
 
-use WBW\Library\Symfony\Assets\Navigation\NavigationNode;
+use WBW\Bundle\WidgetBundle\Component\Navigation\NavigationNode;
 
 /**
  * Navigation item "users"

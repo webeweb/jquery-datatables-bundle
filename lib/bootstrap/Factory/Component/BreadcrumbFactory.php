@@ -13,8 +13,8 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Factory\Component;
 
-use WBW\Library\Symfony\Assets\Navigation\BreadcrumbNode;
-use WBW\Library\Symfony\Assets\NavigationNodeInterface;
+use WBW\Bundle\WidgetBundle\Component\Navigation\BreadcrumbNode;
+use WBW\Bundle\WidgetBundle\Component\NavigationNodeInterface;
 
 /**
  * Breadcrumb factory.

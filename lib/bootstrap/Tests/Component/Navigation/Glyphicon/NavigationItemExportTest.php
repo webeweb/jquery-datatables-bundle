@@ -15,7 +15,7 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Component\Navigation\Glyphicon;
 
 use WBW\Bundle\BootstrapBundle\Component\Navigation\Glyphicon\NavigationItemExport;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Library\Symfony\Assets\NavigationNodeInterface;
+use WBW\Bundle\WidgetBundle\Component\NavigationNodeInterface;
 
 /**
  * Navigation item "export" test.

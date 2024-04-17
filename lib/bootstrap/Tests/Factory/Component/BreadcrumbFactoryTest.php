@@ -15,8 +15,8 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Factory\Component;
 
 use WBW\Bundle\BootstrapBundle\Factory\Component\BreadcrumbFactory;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Library\Symfony\Assets\Navigation\BreadcrumbNode;
-use WBW\Library\Symfony\Assets\NavigationNodeInterface;
+use WBW\Bundle\WidgetBundle\Component\Navigation\BreadcrumbNode;
+use WBW\Bundle\WidgetBundle\Component\NavigationNodeInterface;
 
 /**
  * Breadcrumb factory test.

@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Component\Breadcrumb\Glyphicon;
 
-use WBW\Library\Symfony\Assets\Navigation\BreadcrumbNode;
+use WBW\Bundle\WidgetBundle\Component\Navigation\BreadcrumbNode;
 
 /**
  * Breadcrumb item "index".
