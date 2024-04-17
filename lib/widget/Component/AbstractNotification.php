@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\WidgetBundle\Component;
 
-use WBW\Bundle\WidgetBundle\Serializer\JsonSerializer;
+use WBW\Bundle\WidgetBundle\Serializer\ComponentSerializer;
 
 /**
  * Abstract notification.
@@ -68,7 +68,7 @@ abstract class AbstractNotification implements NotificationInterface {
      * @return array<string,mixed> Returns this serialized instance.
      */
     public function jsonSerialize(): array {
-        return JsonSerializer::serializeNotification($this);
+        return ComponentSerializer::serializeNotification($this);
     }
 
     /**

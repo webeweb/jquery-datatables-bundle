@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\WidgetBundle\Serializer;
 
-use WBW\Bundle\WidgetBundle\Calendar\FullCalendarEventInterface;
+use WBW\Bundle\WidgetBundle\Assets\FullCalendar\FullCalendarEventInterface;
 use WBW\Bundle\WidgetBundle\Component\AlertInterface;
 use WBW\Bundle\WidgetBundle\Component\BadgeInterface;
 use WBW\Bundle\WidgetBundle\Component\ButtonInterface;
@@ -26,12 +26,12 @@ use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
 use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
- * JSON serializer.
+ * Component serializer.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\WidgetBundle\Serializer
  */
-class JsonSerializer {
+class ComponentSerializer {
 
     /**
      * Serialize an alert.
