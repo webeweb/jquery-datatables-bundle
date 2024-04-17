@@ -24,100 +24,100 @@ use WBW\Bundle\WidgetBundle\Component\Color\CyanColorInterface as BaseCyanColorI
 interface CyanColorInterface extends BaseCyanColorInterface {
 
     /**
-     * Cyan color "100"
+     * Cyan color value "100"
      *
      * @var string
      */
-    public const CYAN_COLOR_100 = "#B2EBF2";
+    public const CYAN_COLOR_VALUE_100 = "#B2EBF2";
 
     /**
-     * Cyan color "200"
+     * Cyan color value "200"
      *
      * @var string
      */
-    public const CYAN_COLOR_200 = "#80DEEA";
+    public const CYAN_COLOR_VALUE_200 = "#80DEEA";
 
     /**
-     * Cyan color "300"
+     * Cyan color value "300"
      *
      * @var string
      */
-    public const CYAN_COLOR_300 = "#4DD0E1";
+    public const CYAN_COLOR_VALUE_300 = "#4DD0E1";
 
     /**
-     * Cyan color "400"
+     * Cyan color value "400"
      *
      * @var string
      */
-    public const CYAN_COLOR_400 = "#26C6DA";
+    public const CYAN_COLOR_VALUE_400 = "#26C6DA";
 
     /**
-     * Cyan color "50"
+     * Cyan color value "50"
      *
      * @var string
      */
-    public const CYAN_COLOR_50 = "#E0F7FA";
+    public const CYAN_COLOR_VALUE_50 = "#E0F7FA";
 
     /**
-     * Cyan color "500"
+     * Cyan color value "500"
      *
      * @var string
      */
-    public const CYAN_COLOR_500 = "#00BCD4";
+    public const CYAN_COLOR_VALUE_500 = "#00BCD4";
 
     /**
-     * Cyan color "600"
+     * Cyan color value "600"
      *
      * @var string
      */
-    public const CYAN_COLOR_600 = "#00ACC1";
+    public const CYAN_COLOR_VALUE_600 = "#00ACC1";
 
     /**
-     * Cyan color "700"
+     * Cyan color value "700"
      *
      * @var string
      */
-    public const CYAN_COLOR_700 = "#0097A7";
+    public const CYAN_COLOR_VALUE_700 = "#0097A7";
 
     /**
-     * Cyan color "800"
+     * Cyan color value "800"
      *
      * @var string
      */
-    public const CYAN_COLOR_800 = "#00838F";
+    public const CYAN_COLOR_VALUE_800 = "#00838F";
 
     /**
-     * Cyan color "900"
+     * Cyan color value "900"
      *
      * @var string
      */
-    public const CYAN_COLOR_900 = "#006064";
+    public const CYAN_COLOR_VALUE_900 = "#006064";
 
     /**
-     * Cyan color "A100"
+     * Cyan color value "A100"
      *
      * @var string
      */
-    public const CYAN_COLOR_A100 = "#84FFFF";
+    public const CYAN_COLOR_VALUE_A100 = "#84FFFF";
 
     /**
-     * Cyan color "A200"
+     * Cyan color value "A200"
      *
      * @var string
      */
-    public const CYAN_COLOR_A200 = "#18FFFF";
+    public const CYAN_COLOR_VALUE_A200 = "#18FFFF";
 
     /**
-     * Cyan color "A400"
+     * Cyan color value "A400"
      *
      * @var string
      */
-    public const CYAN_COLOR_A400 = "#00E5FF";
+    public const CYAN_COLOR_VALUE_A400 = "#00E5FF";
 
     /**
-     * Cyan color "A700"
+     * Cyan color value "A700"
      *
      * @var string
      */
-    public const CYAN_COLOR_A700 = "#00B8D4";
+    public const CYAN_COLOR_VALUE_A700 = "#00B8D4";
 }
