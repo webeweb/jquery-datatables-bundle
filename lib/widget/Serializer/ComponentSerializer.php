@@ -19,9 +19,11 @@ use WBW\Bundle\WidgetBundle\Component\ButtonInterface;
 use WBW\Bundle\WidgetBundle\Component\ColorInterface;
 use WBW\Bundle\WidgetBundle\Component\IconInterface;
 use WBW\Bundle\WidgetBundle\Component\LabelInterface;
+use WBW\Bundle\WidgetBundle\Component\NavigationNodeInterface;
 use WBW\Bundle\WidgetBundle\Component\NotificationInterface;
 use WBW\Bundle\WidgetBundle\Component\ProgressBarInterface;
 use WBW\Bundle\WidgetBundle\Component\ToastInterface;
+use WBW\Library\Serializer\Helper\JsonSerializerHelper;
 use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
 
 /**
@@ -113,6 +115,28 @@ class ComponentSerializer {
         return [
             BaseSerializerKeys::CONTENT => $model->getContent(),
             BaseSerializerKeys::TYPE    => $model->getType(),
+        ];
+    }
+
+    /**
+     * Serialize a navigation node.
+     *
+     * @param NavigationNodeInterface $model The model.
+     * @return array<string,mixed> Returns the serialized model.
+     */
+    public static function serializeNavigationNode(NavigationNodeInterface $model): array {
+
+        return [
+            BaseSerializerKeys::ID      => $model->getId(),
+            BaseSerializerKeys::ACTIVE  => $model->getActive(),
+            BaseSerializerKeys::ENABLE  => $model->getEnable(),
+            BaseSerializerKeys::ICON    => $model->getIcon(),
+            BaseSerializerKeys::LABEL   => $model->getLabel(),
+            SerializerKeys::MATCHER     => $model->getMatcher(),
+            BaseSerializerKeys::PARENT  => JsonSerializerHelper::jsonSerializeModel($model->getParent()),
+            BaseSerializerKeys::TARGET  => $model->getTarget(),
+            BaseSerializerKeys::URI     => $model->getUri(),
+            BaseSerializerKeys::VISIBLE => $model->getVisible(),
         ];
     }
 

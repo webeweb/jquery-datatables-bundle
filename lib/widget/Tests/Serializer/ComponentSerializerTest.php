@@ -19,10 +19,12 @@ use WBW\Bundle\WidgetBundle\Component\ButtonInterface;
 use WBW\Bundle\WidgetBundle\Component\ColorInterface;
 use WBW\Bundle\WidgetBundle\Component\IconInterface;
 use WBW\Bundle\WidgetBundle\Component\LabelInterface;
+use WBW\Bundle\WidgetBundle\Component\NavigationNodeInterface;
 use WBW\Bundle\WidgetBundle\Component\NotificationInterface;
 use WBW\Bundle\WidgetBundle\Component\ProgressBarInterface;
 use WBW\Bundle\WidgetBundle\Component\ToastInterface;
 use WBW\Bundle\WidgetBundle\Serializer\ComponentSerializer;
+use WBW\Bundle\WidgetBundle\Serializer\SerializerKeys;
 use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
 use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
 
@@ -146,6 +148,45 @@ class ComponentSerializerTest extends AbstractTestCase {
 
         $this->assertEquals($model->getContent(), $res[BaseSerializerKeys::CONTENT]);
         $this->assertEquals($model->getType(), $res[BaseSerializerKeys::TYPE]);
+    }
+
+    /**
+     * Test serializeNavigationNode()
+     *
+     * @return void
+     */
+    public function testSerializeNavigationNode(): void {
+
+        // Set a parent mock.
+        $parent = $this->getMockBuilder(NavigationNodeInterface::class)->getMock();
+        $parent->expects($this->any())->method("jsonSerialize")->willReturn(ComponentSerializer::serializeNavigationNode($parent));
+
+        // Set a NavigationNode mock.
+        $model = $this->getMockBuilder(NavigationNodeInterface::class)->getMock();
+        $model->expects($this->any())->method("getId")->willReturn(BaseSerializerKeys::ID);
+        $model->expects($this->any())->method("getActive")->willReturn(true);
+        $model->expects($this->any())->method("getEnable")->willReturn(false);
+        $model->expects($this->any())->method("getIcon")->willReturn(BaseSerializerKeys::ICON);
+        $model->expects($this->any())->method("getLabel")->willReturn(BaseSerializerKeys::LABEL);
+        $model->expects($this->any())->method("getMatcher")->willReturn(SerializerKeys::MATCHER);
+        $model->expects($this->any())->method("getParent")->willReturn($parent);
+        $model->expects($this->any())->method("getTarget")->willReturn(BaseSerializerKeys::TARGET);
+        $model->expects($this->any())->method("getUri")->willReturn(BaseSerializerKeys::URI);
+        $model->expects($this->any())->method("getVisible")->willReturn(null);
+
+        $res = ComponentSerializer::serializeNavigationNode($model);
+        $this->assertCount(10, $res);
+
+        $this->assertEquals($model->getId(), $res[BaseSerializerKeys::ID]);
+        $this->assertEquals($model->getActive(), $res[BaseSerializerKeys::ACTIVE]);
+        $this->assertEquals($model->getEnable(), $res[BaseSerializerKeys::ENABLE]);
+        $this->assertEquals($model->getIcon(), $res[BaseSerializerKeys::ICON]);
+        $this->assertEquals($model->getLabel(), $res[BaseSerializerKeys::LABEL]);
+        $this->assertEquals($model->getMatcher(), $res[SerializerKeys::MATCHER]);
+        $this->assertIsArray($res[BaseSerializerKeys::PARENT]);
+        $this->assertEquals($model->getTarget(), $res[BaseSerializerKeys::TARGET]);
+        $this->assertEquals($model->getUri(), $res[BaseSerializerKeys::URI]);
+        $this->assertEquals($model->getVisible(), $res[BaseSerializerKeys::VISIBLE]);
     }
 
     /**
