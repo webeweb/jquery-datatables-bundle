@@ -40,7 +40,7 @@ class AssetsTwigExtension extends AbstractTwigExtension {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.common.twig.extension.assets";
+    public const SERVICE_NAME = "wbw.common.twig.extension.assets";
 
     /**
      * Public directory.
