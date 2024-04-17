@@ -41,7 +41,7 @@ use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
  * Color factory test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Symfony\Tests\Factory
+ * @package WBW\Bundle\WidgetBundle\Tests\Factory
  */
 class ColorFactoryTest extends AbstractTestCase {
 
