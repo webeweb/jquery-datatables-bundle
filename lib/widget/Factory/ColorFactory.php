@@ -40,7 +40,7 @@ use WBW\Bundle\WidgetBundle\Component\ColorInterface;
  * Color factory.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Symfony\Factory
+ * @package WBW\Bundle\WidgetBundle\Factory
  */
 class ColorFactory {
 
