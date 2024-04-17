@@ -123,7 +123,7 @@ class AbstractNavigationNodeTest extends AbstractTestCase {
      */
     public function testGetNodeById(): void {
 
-        // Set the Navigation mocks.
+        // Set the Navigation node mocks.
         $node1 = new TestNavigationNode("id1");
         $node2 = new TestNavigationNode("id2");
 
