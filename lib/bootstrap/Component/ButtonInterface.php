@@ -14,7 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\BootstrapBundle\Component;
 
 use WBW\Bundle\BootstrapBundle\WBWBootstrapBundle;
-use WBW\Library\Symfony\Assets\ButtonInterface as BaseButtonInterface;
+use WBW\Bundle\WidgetBundle\Component\ButtonInterface as BaseButtonInterface;
 
 /**
  * Button interface.

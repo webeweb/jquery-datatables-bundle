@@ -22,8 +22,8 @@ use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\BootstrapBundle\Tests\Fixtures\Controller\TestAbstractController;
 use WBW\Bundle\CommonBundle\Event\NotificationEvent;
 use WBW\Bundle\CommonBundle\Event\ToastEvent;
-use WBW\Library\Symfony\Assets\NotificationInterface;
-use WBW\Library\Symfony\Assets\ToastInterface;
+use WBW\Bundle\WidgetBundle\Component\NotificationInterface;
+use WBW\Bundle\WidgetBundle\Component\ToastInterface;
 
 /**
  * Abstract controller test.

@@ -16,7 +16,7 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Component;
 use WBW\Bundle\BootstrapBundle\Component\ButtonInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\BootstrapBundle\WBWBootstrapBundle;
-use WBW\Library\Symfony\Assets\ButtonInterface as BaseButtonInterface;
+use WBW\Bundle\WidgetBundle\Component\ButtonInterface as BaseButtonInterface;
 
 /**
  * Button interface test.

@@ -21,7 +21,7 @@ use WBW\Bundle\CommonBundle\Event\NotificationEvent;
 use WBW\Bundle\CommonBundle\EventListener\NotificationEventListener;
 use WBW\Bundle\CommonBundle\Service\SessionServiceInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
-use WBW\Library\Symfony\Assets\NotificationInterface;
+use WBW\Bundle\WidgetBundle\Component\NotificationInterface;
 
 /**
  * Notification event listener.

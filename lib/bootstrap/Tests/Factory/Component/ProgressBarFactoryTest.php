@@ -20,7 +20,7 @@ use WBW\Bundle\BootstrapBundle\Component\ProgressBar\SuccessProgressBar;
 use WBW\Bundle\BootstrapBundle\Component\ProgressBar\WarningProgressBar;
 use WBW\Bundle\BootstrapBundle\Factory\Component\ProgressBarFactory;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Library\Symfony\Assets\ProgressBarInterface as BaseProgressBarInterface;
+use WBW\Bundle\WidgetBundle\Component\ProgressBarInterface as BaseProgressBarInterface;
 
 /**
  * Progress bar factory test.

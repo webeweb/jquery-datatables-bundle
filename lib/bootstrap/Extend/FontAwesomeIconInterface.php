@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Extend;
 
-use WBW\Library\Symfony\Assets\IconInterface;
+use WBW\Bundle\WidgetBundle\Component\IconInterface;
 
 /**
  * Font Awesome icon interface.

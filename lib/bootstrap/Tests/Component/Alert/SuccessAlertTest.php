@@ -15,7 +15,7 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Component\Alert;
 
 use WBW\Bundle\BootstrapBundle\Component\Alert\SuccessAlert;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Library\Symfony\Assets\AlertInterface as BaseAlertInterface;
+use WBW\Bundle\WidgetBundle\Component\AlertInterface as BaseAlertInterface;
 
 /**
  * Success alert test.

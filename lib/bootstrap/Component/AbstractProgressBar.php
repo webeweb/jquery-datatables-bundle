@@ -14,7 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\BootstrapBundle\Component;
 
 use WBW\Bundle\BootstrapBundle\Serializer\JsonSerializer;
-use WBW\Library\Symfony\Assets\AbstractProgressBar as BaseProgressBar;
+use WBW\Bundle\WidgetBundle\Component\AbstractProgressBar as BaseProgressBar;
 use WBW\Library\Traits\Integers\IntegerHeightTrait;
 use WBW\Library\Traits\Integers\IntegerMaxTrait;
 use WBW\Library\Traits\Integers\IntegerMinTrait;

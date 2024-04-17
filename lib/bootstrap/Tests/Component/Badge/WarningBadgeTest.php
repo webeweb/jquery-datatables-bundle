@@ -15,7 +15,7 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Component\Badge;
 
 use WBW\Bundle\BootstrapBundle\Component\Badge\WarningBadge;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Library\Symfony\Assets\BadgeInterface as BaseBadgeInterface;
+use WBW\Bundle\WidgetBundle\Component\BadgeInterface as BaseBadgeInterface;
 
 /**
  * Warning badge test.

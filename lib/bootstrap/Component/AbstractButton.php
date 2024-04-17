@@ -14,7 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\BootstrapBundle\Component;
 
 use WBW\Bundle\BootstrapBundle\Serializer\JsonSerializer;
-use WBW\Library\Symfony\Assets\AbstractButton as BaseButton;
+use WBW\Bundle\WidgetBundle\Component\AbstractButton as BaseButton;
 use WBW\Library\Traits\Booleans\BooleanActiveTrait;
 use WBW\Library\Traits\Strings\StringSizeTrait;
 use WBW\Library\Traits\Strings\StringTitleTrait;

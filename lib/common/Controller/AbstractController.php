@@ -28,8 +28,8 @@ use Twig\Environment;
 use WBW\Bundle\CommonBundle\Event\NotificationEvent;
 use WBW\Bundle\CommonBundle\Event\ToastEvent;
 use WBW\Bundle\CommonBundle\Service\SessionService;
-use WBW\Library\Symfony\Assets\NotificationInterface;
-use WBW\Library\Symfony\Assets\ToastInterface;
+use WBW\Bundle\WidgetBundle\Component\NotificationInterface;
+use WBW\Bundle\WidgetBundle\Component\ToastInterface;
 
 /**
  * Abstract controller.

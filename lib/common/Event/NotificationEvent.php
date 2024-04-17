@@ -13,8 +13,8 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\CommonBundle\Event;
 
-use WBW\Library\Symfony\Assets\NotificationInterface;
-use WBW\Library\Symfony\Assets\NotificationTrait;
+use WBW\Bundle\WidgetBundle\Component\NotificationInterface;
+use WBW\Bundle\WidgetBundle\Component\NotificationTrait;
 
 /**
  * Notification event.

@@ -15,7 +15,7 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Component\Button;
 
 use WBW\Bundle\BootstrapBundle\Component\Button\DangerButton;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Library\Symfony\Assets\ButtonInterface as BaseButtonInterface;
+use WBW\Bundle\WidgetBundle\Component\ButtonInterface as BaseButtonInterface;
 
 /**
  * Danger button test.

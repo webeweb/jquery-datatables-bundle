@@ -14,7 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\BootstrapBundle\Component;
 
 use WBW\Bundle\BootstrapBundle\WBWBootstrapBundle;
-use WBW\Library\Symfony\Assets\BadgeInterface as BaseBadgeInterface;
+use WBW\Bundle\WidgetBundle\Component\BadgeInterface as BaseBadgeInterface;
 
 /**
  * Badge interface.

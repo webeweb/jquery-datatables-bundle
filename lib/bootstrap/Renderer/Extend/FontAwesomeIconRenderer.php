@@ -14,7 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\BootstrapBundle\Renderer\Extend;
 
 use WBW\Bundle\BootstrapBundle\Extend\FontAwesomeIconInterface;
-use WBW\Library\Symfony\Renderer\Assets\IconRenderer;
+use WBW\Bundle\WidgetBundle\Renderer\Component\IconRenderer;
 
 /**
  * Font Awesome icon renderer.

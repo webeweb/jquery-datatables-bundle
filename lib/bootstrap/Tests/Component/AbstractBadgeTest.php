@@ -17,8 +17,8 @@ use WBW\Bundle\BootstrapBundle\Component\AbstractBadge;
 use WBW\Bundle\BootstrapBundle\Component\BadgeInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\BootstrapBundle\Tests\Fixtures\Component\TestAbstractBadge;
+use WBW\Bundle\WidgetBundle\Component\BadgeInterface as BaseBadgeInterface;
 use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
-use WBW\Library\Symfony\Assets\BadgeInterface as BaseBadgeInterface;
 
 /**
  * Abstract badge test.

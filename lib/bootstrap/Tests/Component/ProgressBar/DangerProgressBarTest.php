@@ -15,7 +15,7 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Component\ProgressBar;
 
 use WBW\Bundle\BootstrapBundle\Component\ProgressBar\DangerProgressBar;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Library\Symfony\Assets\ProgressBarInterface as BaseProgressBarInterface;
+use WBW\Bundle\WidgetBundle\Component\ProgressBarInterface as BaseProgressBarInterface;
 
 /**
  * Danger progress bar test.

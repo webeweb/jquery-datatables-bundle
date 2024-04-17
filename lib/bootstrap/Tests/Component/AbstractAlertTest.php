@@ -17,8 +17,8 @@ use WBW\Bundle\BootstrapBundle\Component\AbstractAlert;
 use WBW\Bundle\BootstrapBundle\Component\AlertInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\BootstrapBundle\Tests\Fixtures\Component\TestAbstractAlert;
+use WBW\Bundle\WidgetBundle\Component\AlertInterface as BaseAlertInterface;
 use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
-use WBW\Library\Symfony\Assets\AlertInterface as BaseAlertInterface;
 
 /**
  * Abstract alert test.

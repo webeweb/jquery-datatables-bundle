@@ -14,7 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\BootstrapBundle\Component;
 
 use WBW\Bundle\BootstrapBundle\Serializer\JsonSerializer;
-use WBW\Library\Symfony\Assets\AbstractAlert as BaseAlert;
+use WBW\Bundle\WidgetBundle\Component\AbstractAlert as BaseAlert;
 
 /**
  * Abstract alert.
