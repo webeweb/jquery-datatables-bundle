@@ -24,100 +24,100 @@ use WBW\Bundle\WidgetBundle\Component\Color\OrangeColorInterface as BaseOrangeCo
 interface OrangeColorInterface extends BaseOrangeColorInterface {
 
     /**
-     * Orange color "100"
+     * Orange color value "100"
      *
      * @var string
      */
-    public const ORANGE_COLOR_100 = "#FFE0B2";
+    public const ORANGE_COLOR_VALUE_100 = "#FFE0B2";
 
     /**
-     * Orange color "200"
+     * Orange color value "200"
      *
      * @var string
      */
-    public const ORANGE_COLOR_200 = "#FFCC80";
+    public const ORANGE_COLOR_VALUE_200 = "#FFCC80";
 
     /**
-     * Orange color "300"
+     * Orange color value "300"
      *
      * @var string
      */
-    public const ORANGE_COLOR_300 = "#FFB74D";
+    public const ORANGE_COLOR_VALUE_300 = "#FFB74D";
 
     /**
-     * Orange color "400"
+     * Orange color value "400"
      *
      * @var string
      */
-    public const ORANGE_COLOR_400 = "#FFA726";
+    public const ORANGE_COLOR_VALUE_400 = "#FFA726";
 
     /**
-     * Orange color "50"
+     * Orange color value "50"
      *
      * @var string
      */
-    public const ORANGE_COLOR_50 = "#FFF3E0";
+    public const ORANGE_COLOR_VALUE_50 = "#FFF3E0";
 
     /**
-     * Orange color "500"
+     * Orange color value "500"
      *
      * @var string
      */
-    public const ORANGE_COLOR_500 = "#FF9800";
+    public const ORANGE_COLOR_VALUE_500 = "#FF9800";
 
     /**
-     * Orange color "600"
+     * Orange color value "600"
      *
      * @var string
      */
-    public const ORANGE_COLOR_600 = "#FB8C00";
+    public const ORANGE_COLOR_VALUE_600 = "#FB8C00";
 
     /**
-     * Orange color "700"
+     * Orange color value "700"
      *
      * @var string
      */
-    public const ORANGE_COLOR_700 = "#F57C00";
+    public const ORANGE_COLOR_VALUE_700 = "#F57C00";
 
     /**
-     * Orange color "800"
+     * Orange color value "800"
      *
      * @var string
      */
-    public const ORANGE_COLOR_800 = "#EF6C00";
+    public const ORANGE_COLOR_VALUE_800 = "#EF6C00";
 
     /**
-     * Orange color "900"
+     * Orange color value "900"
      *
      * @var string
      */
-    public const ORANGE_COLOR_900 = "#E65100";
+    public const ORANGE_COLOR_VALUE_900 = "#E65100";
 
     /**
-     * Orange color "A100"
+     * Orange color value "A100"
      *
      * @var string
      */
-    public const ORANGE_COLOR_A100 = "#FFD180";
+    public const ORANGE_COLOR_VALUE_A100 = "#FFD180";
 
     /**
-     * Orange color "A200"
+     * Orange color value "A200"
      *
      * @var string
      */
-    public const ORANGE_COLOR_A200 = "#FFAB40";
+    public const ORANGE_COLOR_VALUE_A200 = "#FFAB40";
 
     /**
-     * Orange color "A400"
+     * Orange color value "A400"
      *
      * @var string
      */
-    public const ORANGE_COLOR_A400 = "#FF9100";
+    public const ORANGE_COLOR_VALUE_A400 = "#FF9100";
 
     /**
-     * Orange color "A700"
+     * Orange color value "A700"
      *
      * @var string
      */
-    public const ORANGE_COLOR_A700 = "#FF6D00";
+    public const ORANGE_COLOR_VALUE_A700 = "#FF6D00";
 }
