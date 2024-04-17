@@ -31,4 +31,11 @@ class TestColor extends AbstractColor {
     public function __construct(string $name) {
         parent::__construct($name);
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getValues(): array {
+        return [];
+    }
 }

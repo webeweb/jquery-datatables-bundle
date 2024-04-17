@@ -26,6 +26,18 @@ use WBW\Bundle\WidgetBundle\Tests\Fixtures\Component\TestColor;
 class AbstractColorTest extends AbstractTestCase {
 
     /**
+     * Test jsonSerialize()
+     *
+     * @return void
+     */
+    public function testJsonSerialize(): void {
+
+        $obj = new TestColor("test");
+
+        $this->assertIsArray($obj->jsonSerialize());
+    }
+
+    /**
      * Test __construct()
      *
      * @return void
