@@ -83,8 +83,8 @@ class ComponentSerializer {
     public static function serializeColor(ColorInterface $model): array {
 
         return [
-            BaseSerializerKeys::NAME => $model->getName(),
-            "values"                 => $model->getValues(),
+            BaseSerializerKeys::NAME        => $model->getName(),
+            BaseSerializerKeys::VALUE . "s" => $model->getValues(),
         ];
     }
 

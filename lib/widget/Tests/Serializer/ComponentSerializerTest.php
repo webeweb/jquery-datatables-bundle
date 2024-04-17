@@ -107,7 +107,7 @@ class ComponentSerializerTest extends AbstractTestCase {
         $this->assertCount(2, $res);
 
         $this->assertEquals($model->getName(), $res[BaseSerializerKeys::NAME]);
-        $this->assertEquals($model->getValues(), $res["values"]);
+        $this->assertEquals($model->getValues(), $res[BaseSerializerKeys::VALUE . "s"]);
     }
 
     /**
