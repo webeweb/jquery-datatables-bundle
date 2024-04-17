@@ -32,7 +32,7 @@ interface StatementServiceInterface {
      *
      * @var string
      */
-    const QUERY_SEPARATOR = '/\n\-{2}\ =+\n/';
+    public const QUERY_SEPARATOR = '/\n\-{2}\ =+\n/';
 
     /**
      * Execute the queries.
