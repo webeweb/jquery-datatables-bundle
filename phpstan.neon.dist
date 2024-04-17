@@ -20,6 +20,7 @@ parameters:
         -
             message: '#Call to method PHPUnit\\Framework\\Assert\:\:assertSame\(\)#'
             paths:
+                - lib/widget/Tests/Component/AbstractNavigationNodeTest.php
                 - tests/Model/DataTablesRequestTest.php
         -
             message: '#Comparison operation [<=>]+ between [0-9]+ and [0-9]+ is always "true||false"#'
