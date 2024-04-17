@@ -35,7 +35,7 @@ class WBWBootstrapExtension extends Extension {
      *
      * @var string
      */
-    const EXTENSION_ALIAS = "wbw_bootstrap";
+    public const EXTENSION_ALIAS = "wbw_bootstrap";
 
     /**
      * {@inheritDoc}
