@@ -31,6 +31,6 @@ class BlackColorInterfaceTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("#000000", BlackColorInterface::BLACK_COLOR_500);
+        $this->assertEquals("#000000", BlackColorInterface::BLACK_COLOR_VALUE_500);
     }
 }

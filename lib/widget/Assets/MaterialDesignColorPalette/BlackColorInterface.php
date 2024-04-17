@@ -24,9 +24,9 @@ use WBW\Bundle\WidgetBundle\Component\Color\BlackColorInterface as BaseBlackColo
 interface BlackColorInterface extends BaseBlackColorInterface {
 
     /**
-     * Black color "500"
+     * Black color value "500"
      *
      * @var string
      */
-    public const BLACK_COLOR_500 = "#000000";
+    public const BLACK_COLOR_VALUE_500 = "#000000";
 }
