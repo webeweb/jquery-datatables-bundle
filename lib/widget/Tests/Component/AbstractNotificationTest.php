@@ -76,7 +76,7 @@ class AbstractNotificationTest extends AbstractTestCase {
         $this->assertInstanceOf(JsonSerializable::class, $obj);
         $this->assertInstanceOf(NotificationInterface::class, $obj);
 
-        $this->assertEquals("t", $obj->getType());
-        $this->assertEquals("c", $obj->getContent());
+        $this->assertEquals("type", $obj->getType());
+        $this->assertEquals("content", $obj->getContent());
     }
 }

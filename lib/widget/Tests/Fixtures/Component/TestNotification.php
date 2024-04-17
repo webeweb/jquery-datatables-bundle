@@ -28,7 +28,7 @@ class TestNotification extends AbstractNotification {
      * Constructor.
      */
     public function __construct() {
-        parent::__construct("t", "c");
+        parent::__construct("type", "content");
     }
 
     /**
