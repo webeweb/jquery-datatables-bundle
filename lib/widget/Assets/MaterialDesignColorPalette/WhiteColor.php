@@ -36,7 +36,7 @@ class WhiteColor extends AbstractColor implements WhiteColorInterface {
     public function getValues(): array {
 
         return [
-            self::COLOR_VALUE_500  => self::WHITE_COLOR_VALUE_500,
+            self::COLOR_VALUE_500 => self::WHITE_COLOR_VALUE_500,
         ];
     }
 }

@@ -36,7 +36,7 @@ class BlackColor extends AbstractColor implements BlackColorInterface {
     public function getValues(): array {
 
         return [
-            self::COLOR_VALUE_500  => self::BLACK_COLOR_VALUE_500,
+            self::COLOR_VALUE_500 => self::BLACK_COLOR_VALUE_500,
         ];
     }
 }
