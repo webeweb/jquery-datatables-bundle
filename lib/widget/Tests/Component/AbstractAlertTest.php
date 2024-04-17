@@ -33,7 +33,7 @@ class AbstractAlertTest extends AbstractTestCase {
      */
     public function testJsonSerialize(): void {
 
-        $obj = new TestAlert("type");
+        $obj = new TestAlert("test");
 
         $this->assertIsArray($obj->jsonSerialize());
     }
@@ -45,12 +45,12 @@ class AbstractAlertTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $obj = new TestAlert("danger");
+        $obj = new TestAlert("test");
 
         $this->assertInstanceOf(JsonSerializable::class, $obj);
         $this->assertInstanceOf(AlertInterface::class, $obj);
 
         $this->assertNull($obj->getContent());
-        $this->assertEquals("danger", $obj->getType());
+        $this->assertEquals("test", $obj->getType());
     }
 }
