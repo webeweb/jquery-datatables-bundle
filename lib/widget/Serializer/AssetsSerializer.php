@@ -14,6 +14,8 @@ declare(strict_types = 1);
 namespace WBW\Bundle\WidgetBundle\Serializer;
 
 use WBW\Bundle\WidgetBundle\Assets\FullCalendar\FullCalendarEventInterface;
+use WBW\Bundle\WidgetBundle\Assets\Select2\Select2OptionInterface;
+use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
 use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
@@ -62,5 +64,19 @@ class AssetsSerializer {
         ArrayHelper::set($output, "extraParams", $model->getExtraParams());
 
         return $output;
+    }
+
+    /**
+     * Serialize a Select2 option.
+     *
+     * @param Select2OptionInterface $model The model.
+     * @return array<string,mixed> Returns the serialized model.
+     */
+    public static function serializeSelect2Option(Select2OptionInterface $model): array {
+
+        return [
+            BaseSerializerKeys::ID   => $model->getSelect2OptionId(),
+            BaseSerializerKeys::TEXT => $model->getSelect2OptionText(),
+        ];
     }
 }
