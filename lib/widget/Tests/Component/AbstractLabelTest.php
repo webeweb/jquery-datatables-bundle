@@ -33,7 +33,7 @@ class AbstractLabelTest extends AbstractTestCase {
      */
     public function testJsonSerialize(): void {
 
-        $obj = new TestLabel("type");
+        $obj = new TestLabel("test");
 
         $this->assertIsArray($obj->jsonSerialize());
     }
@@ -45,12 +45,12 @@ class AbstractLabelTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $obj = new TestLabel("danger");
+        $obj = new TestLabel("test");
 
         $this->assertInstanceOf(JsonSerializable::class, $obj);
         $this->assertInstanceOf(LabelInterface::class, $obj);
 
         $this->assertNull($obj->getContent());
-        $this->assertEquals("danger", $obj->getType());
+        $this->assertEquals("test", $obj->getType());
     }
 }
