@@ -24,100 +24,100 @@ use WBW\Bundle\WidgetBundle\Component\Color\YellowColorInterface as BaseYellowCo
 interface YellowColorInterface extends BaseYellowColorInterface {
 
     /**
-     * Yellow color "100"
+     * Yellow color value "100"
      *
      * @var string
      */
-    public const YELLOW_COLOR_100 = "#FFF9C4";
+    public const YELLOW_COLOR_VALUE_100 = "#FFF9C4";
 
     /**
-     * Yellow color "200"
+     * Yellow color value "200"
      *
      * @var string
      */
-    public const YELLOW_COLOR_200 = "#FFF59D";
+    public const YELLOW_COLOR_VALUE_200 = "#FFF59D";
 
     /**
-     * Yellow color "300"
+     * Yellow color value "300"
      *
      * @var string
      */
-    public const YELLOW_COLOR_300 = "#FFF176";
+    public const YELLOW_COLOR_VALUE_300 = "#FFF176";
 
     /**
-     * Yellow color "400"
+     * Yellow color value "400"
      *
      * @var string
      */
-    public const YELLOW_COLOR_400 = "#FFEE58";
+    public const YELLOW_COLOR_VALUE_400 = "#FFEE58";
 
     /**
-     * Yellow color "50"
+     * Yellow color value "50"
      *
      * @var string
      */
-    public const YELLOW_COLOR_50 = "#FFFDE7";
+    public const YELLOW_COLOR_VALUE_50 = "#FFFDE7";
 
     /**
-     * Yellow color "500"
+     * Yellow color value "500"
      *
      * @var string
      */
-    public const YELLOW_COLOR_500 = "#FFEB3B";
+    public const YELLOW_COLOR_VALUE_500 = "#FFEB3B";
 
     /**
-     * Yellow color "600"
+     * Yellow color value "600"
      *
      * @var string
      */
-    public const YELLOW_COLOR_600 = "#FDD835";
+    public const YELLOW_COLOR_VALUE_600 = "#FDD835";
 
     /**
-     * Yellow color "700"
+     * Yellow color value "700"
      *
      * @var string
      */
-    public const YELLOW_COLOR_700 = "#FBC02D";
+    public const YELLOW_COLOR_VALUE_700 = "#FBC02D";
 
     /**
-     * Yellow color "800"
+     * Yellow color value "800"
      *
      * @var string
      */
-    public const YELLOW_COLOR_800 = "#F9A825";
+    public const YELLOW_COLOR_VALUE_800 = "#F9A825";
 
     /**
-     * Yellow color "900"
+     * Yellow color value "900"
      *
      * @var string
      */
-    public const YELLOW_COLOR_900 = "#F57F17";
+    public const YELLOW_COLOR_VALUE_900 = "#F57F17";
 
     /**
-     * Yellow color "A100"
+     * Yellow color value "A100"
      *
      * @var string
      */
-    public const YELLOW_COLOR_A100 = "#FFFF8D";
+    public const YELLOW_COLOR_VALUE_A100 = "#FFFF8D";
 
     /**
-     * Yellow color "A200"
+     * Yellow color value "A200"
      *
      * @var string
      */
-    public const YELLOW_COLOR_A200 = "#FFFF00";
+    public const YELLOW_COLOR_VALUE_A200 = "#FFFF00";
 
     /**
-     * Yellow color "A400"
+     * Yellow color value "A400"
      *
      * @var string
      */
-    public const YELLOW_COLOR_A400 = "#FFEA00";
+    public const YELLOW_COLOR_VALUE_A400 = "#FFEA00";
 
     /**
-     * Yellow color "A700"
+     * Yellow color value "A700"
      *
      * @var string
      */
-    public const YELLOW_COLOR_A700 = "#FFD600";
+    public const YELLOW_COLOR_VALUE_A700 = "#FFD600";
 }
