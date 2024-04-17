@@ -33,7 +33,7 @@ class AbstractBadgeTest extends AbstractTestCase {
      */
     public function testJsonSerialize(): void {
 
-        $obj = new TestBadge("type");
+        $obj = new TestBadge("test");
 
         $this->assertIsArray($obj->jsonSerialize());
     }
@@ -45,12 +45,12 @@ class AbstractBadgeTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $obj = new TestBadge("danger");
+        $obj = new TestBadge("test");
 
         $this->assertInstanceOf(JsonSerializable::class, $obj);
         $this->assertInstanceOf(BadgeInterface::class, $obj);
 
         $this->assertNull($obj->getContent());
-        $this->assertEquals("danger", $obj->getType());
+        $this->assertEquals("test", $obj->getType());
     }
 }
