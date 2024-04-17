@@ -24,9 +24,9 @@ use WBW\Bundle\WidgetBundle\Component\Color\WhiteColorInterface as BaseWhiteColo
 interface WhiteColorInterface extends BaseWhiteColorInterface {
 
     /**
-     * White color "500"
+     * White color value "500"
      *
      * @var string
      */
-    public const WHITE_COLOR_500 = "#FFFFFF";
+    public const WHITE_COLOR_VALUE_500 = "#FFFFFF";
 }

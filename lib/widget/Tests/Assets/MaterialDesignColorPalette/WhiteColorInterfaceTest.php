@@ -31,6 +31,6 @@ class WhiteColorInterfaceTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("#FFFFFF", WhiteColorInterface::WHITE_COLOR_500);
+        $this->assertEquals("#FFFFFF", WhiteColorInterface::WHITE_COLOR_VALUE_500);
     }
 }
