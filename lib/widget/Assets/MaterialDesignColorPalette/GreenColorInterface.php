@@ -24,100 +24,100 @@ use WBW\Bundle\WidgetBundle\Component\Color\GreenColorInterface as BaseGreenColo
 interface GreenColorInterface extends BaseGreenColorInterface {
 
     /**
-     * Green color "100"
+     * Green color value "100"
      *
      * @var string
      */
-    public const GREEN_COLOR_100 = "#C8E6C9";
+    public const GREEN_COLOR_VALUE_100 = "#C8E6C9";
 
     /**
-     * Green color "200"
+     * Green color value "200"
      *
      * @var string
      */
-    public const GREEN_COLOR_200 = "#A5D6A7";
+    public const GREEN_COLOR_VALUE_200 = "#A5D6A7";
 
     /**
-     * Green color "300"
+     * Green color value "300"
      *
      * @var string
      */
-    public const GREEN_COLOR_300 = "#81C784";
+    public const GREEN_COLOR_VALUE_300 = "#81C784";
 
     /**
-     * Green color "400"
+     * Green color value "400"
      *
      * @var string
      */
-    public const GREEN_COLOR_400 = "#66BB6A";
+    public const GREEN_COLOR_VALUE_400 = "#66BB6A";
 
     /**
-     * Green color "50"
+     * Green color value "50"
      *
      * @var string
      */
-    public const GREEN_COLOR_50 = "#E8F5E9";
+    public const GREEN_COLOR_VALUE_50 = "#E8F5E9";
 
     /**
-     * Green color "500"
+     * Green color value "500"
      *
      * @var string
      */
-    public const GREEN_COLOR_500 = "#4CAF50";
+    public const GREEN_COLOR_VALUE_500 = "#4CAF50";
 
     /**
-     * Green color "600"
+     * Green color value "600"
      *
      * @var string
      */
-    public const GREEN_COLOR_600 = "#43A047";
+    public const GREEN_COLOR_VALUE_600 = "#43A047";
 
     /**
-     * Green color "700"
+     * Green color value "700"
      *
      * @var string
      */
-    public const GREEN_COLOR_700 = "#388E3C";
+    public const GREEN_COLOR_VALUE_700 = "#388E3C";
 
     /**
-     * Green color "800"
+     * Green color value "800"
      *
      * @var string
      */
-    public const GREEN_COLOR_800 = "#2E7D32";
+    public const GREEN_COLOR_VALUE_800 = "#2E7D32";
 
     /**
-     * Green color "900"
+     * Green color value "900"
      *
      * @var string
      */
-    public const GREEN_COLOR_900 = "#1B5E20";
+    public const GREEN_COLOR_VALUE_900 = "#1B5E20";
 
     /**
-     * Green color "A100"
+     * Green color value "A100"
      *
      * @var string
      */
-    public const GREEN_COLOR_A100 = "#B9F6CA";
+    public const GREEN_COLOR_VALUE_A100 = "#B9F6CA";
 
     /**
-     * Green color "A200"
+     * Green color value "A200"
      *
      * @var string
      */
-    public const GREEN_COLOR_A200 = "#69F0AE";
+    public const GREEN_COLOR_VALUE_A200 = "#69F0AE";
 
     /**
-     * Green color "A400"
+     * Green color value "A400"
      *
      * @var string
      */
-    public const GREEN_COLOR_A400 = "#00E676";
+    public const GREEN_COLOR_VALUE_A400 = "#00E676";
 
     /**
-     * Green color "A700"
+     * Green color value "A700"
      *
      * @var string
      */
-    public const GREEN_COLOR_A700 = "#00C853";
+    public const GREEN_COLOR_VALUE_A700 = "#00C853";
 }
