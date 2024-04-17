@@ -21,7 +21,7 @@ use JsonSerializable;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\WidgetBundle\Component
  */
-interface ColorInterface  extends JsonSerializable{
+interface ColorInterface extends JsonSerializable {
 
     /**
      * Color value "100".
@@ -117,7 +117,7 @@ interface ColorInterface  extends JsonSerializable{
     /**
      * Get the values.
      *
-     * @return array<string,string> Returns the values.
+     * @return array<mixed,string> Returns the values.
      */
     public function getValues(): array;
 }
