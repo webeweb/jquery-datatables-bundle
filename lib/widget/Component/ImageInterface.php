@@ -48,4 +48,130 @@ interface ImageInterface {
      * @var string
      */
     public const ORIENTATION_VERTICAL = "vertical";
+
+    /**
+     * Get the dimensions.
+     *
+     * @return int[] Returns the dimensions.
+     */
+    public function getDimensions(): array;
+
+    /**
+     * Get the directory.
+     *
+     * @return string|null Returns the directory.
+     */
+    public function getDirectory(): ?string;
+
+    /**
+     * Get the extension.
+     *
+     * @return string|null Returns the extension.
+     */
+    public function getExtension(): ?string;
+
+    /**
+     * Get the filename.
+     *
+     * @return string|null Returns the filename.
+     */
+    public function getFilename(): ?string;
+
+    /**
+     * Get the height.
+     *
+     * @return int|null Returns the height.
+     */
+    public function getHeight(): ?int;
+
+    /**
+     * Get the mime type.
+     *
+     * @return string|null Returns the mime type.
+     */
+    public function getMimeType(): ?string;
+
+    /**
+     * Get the orientation.
+     *
+     * @return string|null Returns the orientation, null if width and height are equals.
+     */
+    public function getOrientation(): ?string;
+
+    /**
+     * Get the pathname.
+     *
+     * @return string|null Returns the pathname.
+     */
+    public function getPathname(): ?string;
+
+    /**
+     * Get the size.
+     *
+     * @return int|null Returns the size.
+     */
+    public function getSize(): ?int;
+
+    /**
+     * Get the width.
+     *
+     * @return int|null Returns the width.
+     */
+    public function getWidth(): ?int;
+
+    /**
+     * Set the directory.
+     *
+     * @param string|null $directory The directory.
+     * @return ImageInterface Returns this image
+     */
+    public function setDirectory(?string $directory);
+
+    /**
+     * Set the extension.
+     *
+     * @param string|null $extension The extension.
+     * @return ImageInterface Returns this image
+     */
+    public function setExtension(?string $extension);
+
+    /**
+     * Set the filename.
+     *
+     * @param string|null $filename The filename.
+     * @return ImageInterface Returns this image
+     */
+    public function setFilename(?string $filename);
+
+    /**
+     * Set the height.
+     *
+     * @param int|null $height The height.
+     * @return ImageInterface Returns this image
+     */
+    public function setHeight(?int $height);
+
+    /**
+     * Set the mime type.
+     *
+     * @param string|null $mimeType The mime type.
+     * @return ImageInterface Returns this image
+     */
+    public function setMimeType(?string $mimeType);
+
+    /**
+     * Set the size.
+     *
+     * @param int|null $size The size.
+     * @return ImageInterface Returns this image
+     */
+    public function setSize(?int $size);
+
+    /**
+     * Set the width.
+     *
+     * @param int|null $width The width.
+     * @return ImageInterface Returns this image
+     */
+    public function setWidth(?int $width);
 }
