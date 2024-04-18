@@ -24,7 +24,7 @@ use WBW\Bundle\WidgetBundle\Component\ColorInterface;
 interface DeepPurpleColorInterface extends ColorInterface {
 
     /**
-     * Deep purpple color name.
+     * Deep purple color name.
      *
      * @var string
      */
