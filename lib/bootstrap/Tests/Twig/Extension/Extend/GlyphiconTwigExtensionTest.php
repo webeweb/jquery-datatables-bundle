@@ -19,6 +19,7 @@ use Twig\Node\Node;
 use Twig\TwigFunction;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\GlyphiconTwigExtension;
+use WBW\Bundle\WidgetBundle\Renderer\Component\IconRendererInterface;
 
 /**
  * Glyphicon Twig extension test.
@@ -145,6 +146,7 @@ class GlyphiconTwigExtensionTest extends AbstractTestCase {
         $obj = new GlyphiconTwigExtension($this->twigEnvironment);
 
         $this->assertInstanceOf(ExtensionInterface::class, $obj);
+        $this->assertInstanceOf(IconRendererInterface::class, $obj);
 
         $this->assertSame($this->twigEnvironment, $obj->getTwigEnvironment());
     }
