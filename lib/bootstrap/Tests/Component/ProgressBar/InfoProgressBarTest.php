@@ -13,7 +13,9 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Tests\Component\ProgressBar;
 
+use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Component\ProgressBar\InfoProgressBar;
+use WBW\Bundle\BootstrapBundle\Component\ProgressBarInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\WidgetBundle\Component\ProgressBarInterface as BaseProgressBarInterface;
 
@@ -33,6 +35,9 @@ class InfoProgressBarTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new InfoProgressBar();
+
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
+        $this->assertInstanceOf(ProgressBarInterface::class, $obj);
 
         $this->assertEquals(BaseProgressBarInterface::PROGRESS_BAR_TYPE_INFO, $obj->getType());
     }
