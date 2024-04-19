@@ -13,6 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\WidgetBundle\Tests\Component\Toast;
 
+use JsonSerializable;
 use WBW\Bundle\WidgetBundle\Component\Toast\SuccessToast;
 use WBW\Bundle\WidgetBundle\Component\ToastInterface;
 use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
@@ -33,6 +34,9 @@ class SuccessToastTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new SuccessToast("success");
+
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
+        $this->assertInstanceOf(ToastInterface::class, $obj);
 
         $this->assertEquals(ToastInterface::TOAST_TYPE_SUCCESS, $obj->getType());
         $this->assertEquals("success", $obj->getContent());
