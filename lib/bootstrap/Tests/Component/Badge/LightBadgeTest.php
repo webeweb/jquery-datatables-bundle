@@ -13,6 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Tests\Component\Badge;
 
+use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Component\Badge\LightBadge;
 use WBW\Bundle\BootstrapBundle\Component\BadgeInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
@@ -33,6 +34,9 @@ class LightBadgeTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new LightBadge();
+
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
+        $this->assertInstanceOf(BadgeInterface::class, $obj);
 
         $this->assertEquals(BadgeInterface::BADGE_TYPE_LIGHT, $obj->getType());
     }
