@@ -13,6 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Tests\Component\Alert;
 
+use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Component\Alert\SecondaryAlert;
 use WBW\Bundle\BootstrapBundle\Component\AlertInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
@@ -33,6 +34,9 @@ class SecondaryAlertTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new SecondaryAlert();
+
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
+        $this->assertInstanceOf(AlertInterface::class, $obj);
 
         $this->assertEquals(AlertInterface::ALERT_TYPE_SECONDARY, $obj->getType());
     }
