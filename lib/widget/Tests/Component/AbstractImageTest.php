@@ -40,15 +40,17 @@ class AbstractImageTest extends AbstractTestCase {
 
         $this->assertEquals($pathname, $obj->getPathname());
 
-        $this->assertEquals([null, null], $obj->getDimensions());
         $this->assertNull($obj->getDirectory());
         $this->assertNull($obj->getExtension());
         $this->assertNull($obj->getFilename());
         $this->assertNull($obj->getMimeType());
-        $this->assertNull($obj->getOrientation());
         $this->assertNull($obj->getHeight());
         $this->assertNull($obj->getSize());
         $this->assertNull($obj->getWidth());
+
+        $this->assertEquals([null, null], $obj->getDimensions());
+        $this->assertNull($obj->getOrientation());
+        $this->assertNull($obj->getRatio());
     }
 
     /**
