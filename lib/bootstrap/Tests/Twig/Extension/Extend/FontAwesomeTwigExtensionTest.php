@@ -20,6 +20,7 @@ use Twig\TwigFilter;
 use Twig\TwigFunction;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\FontAwesomeTwigExtension;
+use WBW\Bundle\WidgetBundle\Renderer\Component\IconRendererInterface;
 
 /**
  * Font Awesome Twig extension test.
@@ -216,6 +217,7 @@ class FontAwesomeTwigExtensionTest extends AbstractTestCase {
         $obj = new FontAwesomeTwigExtension($this->twigEnvironment);
 
         $this->assertInstanceOf(ExtensionInterface::class, $obj);
+        $this->assertInstanceOf(IconRendererInterface::class, $obj);
 
         $this->assertSame($this->twigEnvironment, $obj->getTwigEnvironment());
     }
