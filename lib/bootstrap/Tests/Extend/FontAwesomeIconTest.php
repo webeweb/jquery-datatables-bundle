@@ -13,9 +13,11 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Tests\Extend;
 
+use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Extend\FontAwesomeIcon;
 use WBW\Bundle\BootstrapBundle\Extend\FontAwesomeIconInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
+use WBW\Bundle\WidgetBundle\Component\IconInterface;
 
 /**
  * Font Awesome icon test.
@@ -237,6 +239,10 @@ class FontAwesomeIconTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new FontAwesomeIcon();
+
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
+        $this->assertInstanceOf(IconInterface::class, $obj);
+        $this->assertInstanceOf(FontAwesomeIconInterface::class, $obj);
 
         $this->assertNull($obj->getAnimation());
         $this->assertFalse($obj->getBordered());
