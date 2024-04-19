@@ -13,7 +13,9 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Tests\Component\Button;
 
+use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Component\Button\DangerButton;
+use WBW\Bundle\BootstrapBundle\Component\ButtonInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\WidgetBundle\Component\ButtonInterface as BaseButtonInterface;
 
@@ -33,6 +35,9 @@ class DangerButtonTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new DangerButton();
+
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
+        $this->assertInstanceOf(ButtonInterface::class, $obj);
 
         $this->assertEquals(BaseButtonInterface::BUTTON_TYPE_DANGER, $obj->getType());
     }
