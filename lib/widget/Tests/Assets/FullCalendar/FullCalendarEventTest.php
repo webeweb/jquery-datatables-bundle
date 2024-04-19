@@ -140,7 +140,7 @@ class FullCalendarEventTest extends AbstractTestCase {
      */
     public function testSetEnd(): void {
 
-        // Set a end mock.
+        // Set an end mock.
         $end = new DateTime();
 
         $obj = new FullCalendarEvent();

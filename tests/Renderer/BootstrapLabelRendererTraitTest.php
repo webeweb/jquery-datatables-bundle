@@ -18,7 +18,6 @@ use Twig\Environment;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\LabelTwigExtension;
 use WBW\Bundle\CommonBundle\Tests\DefaultTestCase;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Renderer\Assets\TestEnabledLabelRendererTrait;
 use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Renderer\TestBootstrapLabelRendererTrait;
 
 /**
@@ -64,8 +63,6 @@ class BootstrapLabelRendererTraitTest extends AbstractTestCase {
      * @return void
      */
     public function testRenderLabelEnabled(): void {
-
-        $bak = null;
 
         $obj = $this->bootstrapLabelRenderer;
 

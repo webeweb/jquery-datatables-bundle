@@ -31,6 +31,7 @@ class AbstractDateTimeDataTransformerTest extends AbstractTestCase {
      * Test newDateTimeZone()
      *
      * @return void
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testNewDateTimeZone(): void {
 
@@ -44,6 +45,7 @@ class AbstractDateTimeDataTransformerTest extends AbstractTestCase {
      * Test newDateTimeZone()
      *
      * @return void
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function testNewDateTimeZoneWithoutTimeZone(): void {
 

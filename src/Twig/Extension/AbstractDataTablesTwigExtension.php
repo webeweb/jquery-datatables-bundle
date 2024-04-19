@@ -87,7 +87,7 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
         $thead = true === $includeTHead ? $this->hDataTablesRow($dtWrapper, "thead") . "\n" : "";
         $tfoot = true === $includeTFoot ? $this->hDataTablesRow($dtWrapper, "tfoot") . "\n" : "";
 
-        $inner = "\n{$thead}{$tfoot}";
+        $inner = "\n$thead$tfoot";
 
         return static::h("table", $inner, $attributes);
     }
@@ -111,7 +111,7 @@ abstract class AbstractDataTablesTwigExtension extends AbstractTwigExtension {
     }
 
     /**
-     * Render a HTML DataTables row.
+     * Render an HTML DataTables row.
      *
      * @param DataTablesWrapperInterface $dtWrapper The wrapper.
      * @param string $wrapper The wrapper (thead or tfoot)

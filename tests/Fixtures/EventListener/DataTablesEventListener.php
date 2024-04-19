@@ -104,7 +104,7 @@ class DataTablesEventListener {
     }
 
     /**
-     * On pre show.
+     * On pre-show.
      *
      * @param DataTablesEvent $event The event.
      * @return DataTablesEvent Returns the event.

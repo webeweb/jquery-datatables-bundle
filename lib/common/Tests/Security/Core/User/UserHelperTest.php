@@ -16,7 +16,6 @@ namespace WBW\Bundle\CommonBundle\Tests\Security\Core\User;
 use WBW\Bundle\CommonBundle\Model\User;
 use WBW\Bundle\CommonBundle\Security\Core\User\UserHelper;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
-use WBW\Bundle\CommonBundle\Tests\Fixtures\Model\TestUser;
 
 /**
  * User helper test.

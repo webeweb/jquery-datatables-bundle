@@ -28,7 +28,6 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
@@ -203,7 +202,7 @@ abstract class DefaultTestCase extends TestCase {
      */
     public static function getEventDispatcherDispatchFunction(): callable {
 
-        return function(Event $event, string $eventName = null): Event {
+        return function(Event $event): Event {
             return $event;
         };
     }
@@ -215,7 +214,7 @@ abstract class DefaultTestCase extends TestCase {
      */
     public static function getRouterGenerateFunction(): callable {
 
-        return function($name, array $parameters = [], int $referenceType = UrlGeneratorInterface::ABSOLUTE_PATH) {
+        return function($name) {
             return $name;
         };
     }
@@ -227,7 +226,7 @@ abstract class DefaultTestCase extends TestCase {
      */
     public static function getTranslatorTransFunction(): callable {
 
-        return function($id, array $parameters = [], string $domain = null, string $locale = null): ?string {
+        return function($id): ?string {
             return $id;
         };
     }

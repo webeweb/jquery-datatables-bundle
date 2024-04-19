@@ -93,7 +93,7 @@ class DataTablesEvent extends AbstractEvent {
     public const PRE_SERIALIZE = "wbw.datatables.event.pre_serialize";
 
     /**
-     * Event "pre show".
+     * Event "pre-show".
      *
      * @var string
      */

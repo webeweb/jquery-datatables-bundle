@@ -119,7 +119,7 @@ class ComponentSerializerTest extends AbstractTestCase {
      */
     public function testSerializeIcon(): void {
 
-        // Set a Icon mock.
+        // Set an Icon mock.
         $model = $this->getMockBuilder(IconInterface::class)->getMock();
         $model->expects($this->any())->method("getName")->willReturn(BaseSerializerKeys::NAME);
         $model->expects($this->any())->method("getStyle")->willReturn(BaseSerializerKeys::STYLE);

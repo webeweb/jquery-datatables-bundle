@@ -27,7 +27,7 @@ trait FloatRendererTrait {
      * @param float|null $number The number.
      * @param int $decimals The decimals.
      * @param string $decPoint The decimal point.
-     * @param string $thousandsSep The thousands separator.
+     * @param string $thousandsSep The thousand's separator.
      * @return string|null Returns the rendered number.
      */
     protected function renderFloat(?float $number, int $decimals = 2, string $decPoint = ".", string $thousandsSep = ","): ?string {

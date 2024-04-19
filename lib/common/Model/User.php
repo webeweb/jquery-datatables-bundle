@@ -55,7 +55,9 @@ class User implements UserInterface {
     }
 
     /**
-     * {@inheritDoc}
+     * Get the user identifier.
+     *
+     * @return string Returns the user identifier.
      */
     public function getUserIdentifier(): string {
         return $this->username;

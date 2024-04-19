@@ -16,6 +16,7 @@ namespace WBW\Bundle\CommonBundle\Form\DataTransformer;
 use DateTime;
 use DateTimeZone;
 use Symfony\Component\Form\DataTransformerInterface;
+use Throwable;
 
 /**
  * Abstract date time data transformer.
@@ -73,6 +74,7 @@ abstract class AbstractDateTimeDataTransformer implements DataTransformerInterfa
      * Create the date/timezone.
      *
      * @return DateTimeZone|null Returns the date/timezone.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     protected function newDateTimeZone(): ?DateTimeZone {
 
@@ -85,6 +87,7 @@ abstract class AbstractDateTimeDataTransformer implements DataTransformerInterfa
 
     /**
      * {@inheritDoc}
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function reverseTransform($value) {
 
@@ -126,6 +129,7 @@ abstract class AbstractDateTimeDataTransformer implements DataTransformerInterfa
 
     /**
      * {@inheritDoc}
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function transform($value) {
 

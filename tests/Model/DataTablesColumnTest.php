@@ -16,6 +16,7 @@ namespace WBW\Bundle\DataTablesBundle\Tests\Model;
 use InvalidArgumentException;
 use Throwable;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesColumn;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesSearch;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 
@@ -292,7 +293,7 @@ class DataTablesColumnTest extends AbstractTestCase {
 
         $obj = new DataTablesColumn();
 
-        $this->assertEquals(DataTablesColumn::DATATABLES_CELL_TYPE_TD, $obj->getCellType());
+        $this->assertEquals(DataTablesColumnInterface::DATATABLES_CELL_TYPE_TD, $obj->getCellType());
         $this->assertNull($obj->getClassname());
         $this->assertNull($obj->getContentPadding());
         $this->assertNull($obj->getData());

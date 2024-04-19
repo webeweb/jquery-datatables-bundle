@@ -64,8 +64,6 @@ class BootstrapBadgeRendererTraitTest extends AbstractTestCase {
      */
     public function testRenderBadgeEnabled(): void {
 
-        $bak = null;
-
         $obj = $this->bootstrapBadgeRenderer;
 
         $bak = $obj->getBadgeTwigExtension();
