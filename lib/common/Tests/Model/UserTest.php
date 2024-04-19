@@ -25,6 +25,19 @@ use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 class UserTest extends AbstractTestCase {
 
     /**
+     * Test eraseCredentials()
+     *
+     * @return void
+     */
+    public function testEraseCredentials(): void {
+
+        $obj = new User();
+
+        $obj->eraseCredentials();
+        $this->assertNull(null);
+    }
+
+    /**
      * Test __construct()
      *
      * @return void
