@@ -77,7 +77,7 @@ class UploadedFileServiceTest extends AbstractTestCase {
      */
     public function testSave(): void {
 
-        // Set the directory mock.
+        // Set a directory mock.
         $dir = $this->directory . "/uploads/subdirectory";
 
         if (true === file_exists("$dir/basename.bak")) {
