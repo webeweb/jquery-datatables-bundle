@@ -24,7 +24,7 @@ use WBW\Library\Sorter\Model\AlphabeticalTreeNodeInterface;
  * Abstract navigation node test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Symfony\Tests\Assets
+ * @package WBW\Bundle\WidgetBundle\Tests\Component
  */
 class AbstractNavigationNodeTest extends AbstractTestCase {
 
