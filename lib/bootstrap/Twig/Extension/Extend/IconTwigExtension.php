@@ -18,7 +18,7 @@ use WBW\Bundle\WidgetBundle\Renderer\Component\IconRendererInterface;
 use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
- * Icon Twig extension.
+ * Bootstrap icon Twig extension.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\BootstrapBundle\Twig\Extension\Extend

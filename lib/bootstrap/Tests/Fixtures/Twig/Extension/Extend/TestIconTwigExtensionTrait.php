@@ -16,7 +16,7 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Fixtures\Twig\Extension\Extend;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\IconTwigExtensionTrait;
 
 /**
- * Test icon Twig extension trait.
+ * Test Bootstrap icon Twig extension trait.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\BootstrapBundle\Tests\Fixtures\Twig\Extension\Extend

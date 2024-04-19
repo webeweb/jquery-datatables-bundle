@@ -19,7 +19,7 @@ use WBW\Bundle\BootstrapBundle\Tests\Fixtures\Twig\Extension\Extend\TestIconTwig
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\IconTwigExtension;
 
 /**
- * Icon Twig extension trait test.
+ * Bootstrap icon Twig extension trait test.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\BootstrapBundle\Tests\Twig\Extension\Extend
@@ -36,7 +36,7 @@ class IconTwigExtensionTraitTest extends AbstractTestCase {
         // Set a Twig environment mock.
         $twigEnvironment = $this->getMockBuilder(Environment::class)->disableOriginalConstructor()->getMock();
 
-        // Set an Icon Twig extension mock.
+        // Set a Bootstrap icon Twig extension mock.
         $iconTwigExtension = new IconTwigExtension($twigEnvironment);
 
         $obj = new TestIconTwigExtensionTrait();

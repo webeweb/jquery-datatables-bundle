@@ -14,7 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\BootstrapBundle\Twig\Extension\Extend;
 
 /**
- * Icon Twig extension trait.
+ * Bootstrap icon Twig extension trait.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\BootstrapBundle\Twig\Extension\Extend
@@ -22,25 +22,25 @@ namespace WBW\Bundle\BootstrapBundle\Twig\Extension\Extend;
 trait IconTwigExtensionTrait {
 
     /**
-     * Icon Twig extension.
+     * Bootstrap icon Twig extension.
      *
      * @var IconTwigExtension|null
      */
     private $iconTwigExtension;
 
     /**
-     * Get the icon Twig extension.
+     * Get the Bootstrap icon Twig extension.
      *
-     * @return IconTwigExtension Returns the icon Twig extension.
+     * @return IconTwigExtension Returns the Bootstrap icon Twig extension.
      */
     public function getIconTwigExtension(): ?IconTwigExtension {
         return $this->iconTwigExtension;
     }
 
     /**
-     * Set the icon Twig extension.
+     * Set the Bootstrap icon Twig extension.
      *
-     * @param IconTwigExtension|null $iconTwigExtension The icon Twig extension.
+     * @param IconTwigExtension|null $iconTwigExtension The Bootstrap icon Twig extension.
      * @return self Returns this instance.
      */
     protected function setIconTwigExtension(?IconTwigExtension $iconTwigExtension): self {

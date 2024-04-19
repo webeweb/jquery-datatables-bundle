@@ -22,7 +22,7 @@ use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\IconTwigExtension;
 use WBW\Bundle\WidgetBundle\Renderer\Component\IconRendererInterface;
 
 /**
- * Bootstrap con Twig extension test.
+ * Bootstrap icon Twig extension test.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\BootstrapBundle\Tests\Twig\Extension\Extend
