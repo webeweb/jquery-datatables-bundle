@@ -13,6 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Tests\Component\Button;
 
+use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Component\Button\PrimaryButton;
 use WBW\Bundle\BootstrapBundle\Component\ButtonInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
@@ -33,6 +34,9 @@ class PrimaryButtonTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new PrimaryButton();
+
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
+        $this->assertInstanceOf(ButtonInterface::class, $obj);
 
         $this->assertEquals(ButtonInterface::BUTTON_TYPE_PRIMARY, $obj->getType());
     }
