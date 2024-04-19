@@ -40,6 +40,8 @@ class DefaultImageTest extends AbstractTestCase {
 
         $obj = new DefaultImage($pathname);
 
+        $this->assertInstanceOf(ImageInterface::class, $obj);
+
         $this->assertEquals($pathname, $obj->getPathname());
 
         $this->assertEquals($directory, $obj->getDirectory());
