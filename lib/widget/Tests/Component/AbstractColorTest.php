@@ -13,6 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\WidgetBundle\Tests\Component;
 
+use JsonSerializable;
 use WBW\Bundle\WidgetBundle\Component\ColorInterface;
 use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
 use WBW\Bundle\WidgetBundle\Tests\Fixtures\Component\TestColor;
@@ -46,6 +47,7 @@ class AbstractColorTest extends AbstractTestCase {
 
         $obj = new TestColor("test");
 
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
         $this->assertInstanceOf(ColorInterface::class, $obj);
 
         $this->assertEquals("test", $obj->getName());
