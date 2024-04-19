@@ -13,7 +13,9 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\WidgetBundle\Tests\Component\Notification;
 
+use JsonSerializable;
 use WBW\Bundle\WidgetBundle\Component\Notification\DefaultNotification;
+use WBW\Bundle\WidgetBundle\Component\NotificationInterface;
 use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
 
 /**
@@ -32,6 +34,9 @@ class DefaultNotificationTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new DefaultNotification("type", "default");
+
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
+        $this->assertInstanceOf(NotificationInterface::class, $obj);
 
         $this->assertEquals("type", $obj->getType());
         $this->assertEquals("default", $obj->getContent());
