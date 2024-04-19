@@ -101,7 +101,7 @@ interface ImageInterface {
     /**
      * Get the orientation.
      *
-     * @return string|null Returns the orientation, null if width and height are equals.
+     * @return string|null Returns the orientation.
      */
     public function getOrientation(): ?string;
 
@@ -111,6 +111,13 @@ interface ImageInterface {
      * @return string|null Returns the pathname.
      */
     public function getPathname(): ?string;
+
+    /**
+     * Get the ratio.
+     *
+     * @return float|null Returns the ratio.
+     */
+    public function getRatio(): ?float;
 
     /**
      * Get the size.
