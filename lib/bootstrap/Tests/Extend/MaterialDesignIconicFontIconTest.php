@@ -13,9 +13,11 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Tests\Extend;
 
+use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Extend\MaterialDesignIconicFontIcon;
 use WBW\Bundle\BootstrapBundle\Extend\MaterialDesignIconicFontIconInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
+use WBW\Bundle\WidgetBundle\Component\IconInterface;
 
 /**
  * Material Design Iconic Font icon test.
@@ -296,6 +298,10 @@ class MaterialDesignIconicFontIconTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new MaterialDesignIconicFontIcon();
+
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
+        $this->assertInstanceOf(IconInterface::class, $obj);
+        $this->assertInstanceOf(MaterialDesignIconicFontIconInterface::class, $obj);
 
         $this->assertNull($obj->getBorder());
         $this->assertFalse($obj->getFixedWidth());
