@@ -116,7 +116,7 @@ wbw_datatables:
 ```
 
 > IMPORTANT NOTICE: For use with Bootstrap 4 or 5, replace '3' by version number
-> into wbw_bootstrap.version and append the number number at 'bootstrap' into
+> into wbw_bootstrap.version and append the version number at 'bootstrap' into
 > wbw_datatables theme.
 
 Add the bundle routing in the `app/config/routing.yml` file of your project:
