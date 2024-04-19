@@ -55,7 +55,7 @@ abstract class BootstrapDataTablesProvider extends DefaultDataTablesProvider {
     // DataTables renderer
     use BootstrapButtonRendererTrait;
 
-    // Common renderers
+    // Widget renderers
     use DateTimesRendererTrait;
     use FloatRendererTrait;
     use StringsRendererTrait;
