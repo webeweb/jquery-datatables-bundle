@@ -122,6 +122,18 @@ class MaterialDesignIconicFontIconTest extends AbstractTestCase {
     }
 
     /**
+     * Test jsonSerialize()
+     *
+     * @return void
+     */
+    public function testJsonSerialize(): void {
+
+        $obj = new MaterialDesignIconicFontIcon();
+
+        $this->assertIsArray($obj->jsonSerialize());
+    }
+
+    /**
      * Test setBorder()
      *
      * @return void
