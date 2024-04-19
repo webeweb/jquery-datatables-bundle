@@ -19,9 +19,10 @@ use Twig\Node\Node;
 use Twig\TwigFunction;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\IconTwigExtension;
+use WBW\Bundle\WidgetBundle\Renderer\Component\IconRendererInterface;
 
 /**
- * Icon Twig extension test.
+ * Bootstrap con Twig extension test.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\BootstrapBundle\Tests\Twig\Extension\Extend
@@ -139,6 +140,7 @@ class IconTwigExtensionTest extends AbstractTestCase {
         $obj = new IconTwigExtension($this->twigEnvironment);
 
         $this->assertInstanceOf(ExtensionInterface::class, $obj);
+        $this->assertInstanceOf(IconRendererInterface::class, $obj);
 
         $this->assertSame($this->twigEnvironment, $obj->getTwigEnvironment());
     }
