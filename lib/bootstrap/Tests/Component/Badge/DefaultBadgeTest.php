@@ -13,7 +13,9 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Tests\Component\Badge;
 
+use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Component\Badge\DefaultBadge;
+use WBW\Bundle\BootstrapBundle\Component\BadgeInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 
 /**
@@ -32,6 +34,9 @@ class DefaultBadgeTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new DefaultBadge();
+
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
+        $this->assertInstanceOf(BadgeInterface::class, $obj);
 
         $this->assertNull($obj->getType());
     }
