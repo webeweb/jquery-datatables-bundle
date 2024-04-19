@@ -14,6 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\WidgetBundle\Component;
 
 use InvalidArgumentException;
+use WBW\Bundle\WidgetBundle\Helper\ImageHelper;
 use WBW\Library\Traits\Integers\IntegerHeightTrait;
 use WBW\Library\Traits\Integers\IntegerSizeTrait;
 use WBW\Library\Traits\Integers\IntegerWidthTrait;
@@ -62,26 +63,44 @@ abstract class AbstractImage implements ImageInterface {
      * {@inheritDoc}
      */
     public function getDimensions(): array {
-
-        return [
-            $this->getWidth(),
-            $this->getHeight(),
-        ];
+        return ImageHelper::getDimensions($this);
     }
 
     /**
      * {@inheritDoc}
      */
     public function getOrientation(): ?string {
+        return ImageHelper::getOrientation($this->getWidth(), $this->getHeight());
+    }
 
-        if ($this->getHeight() < $this->getWidth()) {
-            return self::ORIENTATION_HORIZONTAL;
-        }
+    /**
+     * {@inheritDoc}
+     */
+    public function getRatio(): ?float {
+        return ImageHelper::getRatio($this->getWidth(), $this->getHeight());
+    }
 
-        if ($this->getWidth() < $this->getHeight()) {
-            return self::ORIENTATION_VERTICAL;
-        }
+    /**
+     * Load.
+     *
+     * @return ImageInterface Returns this image.
+     */
+    protected function load(): ImageInterface {
 
-        return null;
+        $this->setDirectory(dirname($this->getPathname()));
+        $this->setFilename(basename($this->getPathname()));
+
+        $parts = explode(".", $this->getFilename());
+        $this->setExtension(end($parts));
+
+        $this->setMimeType(mime_content_type($this->getPathname()));
+
+        [$width, $height] = getimagesize($this->getPathname());
+        $this->setWidth($width);
+        $this->setHeight($height);
+
+        $this->setSize(filesize($this->getPathname()));
+
+        return $this;
     }
 }
