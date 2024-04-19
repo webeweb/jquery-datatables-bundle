@@ -102,6 +102,18 @@ class FontAwesomeIconTest extends AbstractTestCase {
     }
 
     /**
+     * Test jsonSerialize()
+     *
+     * @return void
+     */
+    public function testJsonSerialize(): void {
+
+        $obj = new FontAwesomeIcon();
+
+        $this->assertIsArray($obj->jsonSerialize());
+    }
+
+    /**
      * Test setAnimation()
      *
      * @return void
