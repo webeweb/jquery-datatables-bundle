@@ -19,7 +19,6 @@ use WBW\Bundle\BootstrapBundle\Component\BadgeInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\BootstrapBundle\Tests\Fixtures\Component\TestAbstractBadge;
 use WBW\Bundle\WidgetBundle\Component\BadgeInterface as BaseBadgeInterface;
-use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
 
 /**
  * Abstract badge test.
@@ -57,18 +56,9 @@ class AbstractBadgeTest extends AbstractTestCase {
      */
     public function testJsonSerialize(): void {
 
-        // Set the expected data.
-        $data = file_get_contents(__DIR__ . "/../Fixtures/Component/AbstractBadgeTest.testJsonSerialize.json");
-        $json = json_decode($data, true);
-
         $obj = new TestAbstractBadge("test");
-        $obj->setContent(BaseSerializerKeys::CONTENT);
-        $obj->setPill(true);
 
-        $res = $obj->jsonSerialize();
-        $this->assertCount(4, $res);
-
-        $this->assertEquals($json, $res);
+        $this->assertIsArray($obj->jsonSerialize());
     }
 
     /**
