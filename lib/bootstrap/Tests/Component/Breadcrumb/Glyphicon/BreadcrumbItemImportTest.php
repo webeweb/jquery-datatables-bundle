@@ -13,6 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Tests\Component\Breadcrumb\Glyphicon;
 
+use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Component\Breadcrumb\Glyphicon\BreadcrumbItemImport;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\WidgetBundle\Component\NavigationNodeInterface;
@@ -33,6 +34,9 @@ class BreadcrumbItemImportTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new BreadcrumbItemImport("route");
+
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
+        $this->assertInstanceOf(NavigationNodeInterface::class, $obj);
 
         $this->assertEquals("navigation.item.import", $obj->getLabel());
         $this->assertEquals("g:save", $obj->getIcon());
