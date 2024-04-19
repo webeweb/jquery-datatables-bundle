@@ -15,6 +15,7 @@ namespace WBW\Bundle\WidgetBundle\Tests\Component;
 
 use InvalidArgumentException;
 use Throwable;
+use WBW\Bundle\WidgetBundle\Component\ImageInterface;
 use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
 use WBW\Bundle\WidgetBundle\Tests\Fixtures\Component\TestImage;
 
@@ -37,6 +38,8 @@ class AbstractImageTest extends AbstractTestCase {
         $pathname = realpath(__DIR__ . "/../Fixtures/Component/Image/DefaultImage_1920x1037.jpg");
 
         $obj = new TestImage($pathname);
+
+        $this->assertInstanceOf(ImageInterface::class, $obj);
 
         $this->assertEquals($pathname, $obj->getPathname());
 
