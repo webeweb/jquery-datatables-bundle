@@ -13,6 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Tests\Component\Breadcrumb\Glyphicon;
 
+use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Component\Breadcrumb\Glyphicon\BreadcrumbItemIndex;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\WidgetBundle\Component\NavigationNodeInterface;
@@ -33,6 +34,9 @@ class BreadcrumbItemIndexTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new BreadcrumbItemIndex("route");
+
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
+        $this->assertInstanceOf(NavigationNodeInterface::class, $obj);
 
         $this->assertEquals("navigation.item.index", $obj->getLabel());
         $this->assertEquals("g:list", $obj->getIcon());
