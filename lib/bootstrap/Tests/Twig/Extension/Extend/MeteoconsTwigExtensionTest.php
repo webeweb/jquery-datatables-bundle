@@ -19,6 +19,7 @@ use Twig\Node\Node;
 use Twig\TwigFunction;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\MeteoconsTwigExtension;
+use WBW\Bundle\WidgetBundle\Renderer\Component\IconRendererInterface;
 
 /**
  * Meteocons Twig extension test.
@@ -171,6 +172,7 @@ class MeteoconsTwigExtensionTest extends AbstractTestCase {
         $obj = new MeteoconsTwigExtension($this->twigEnvironment);
 
         $this->assertInstanceOf(ExtensionInterface::class, $obj);
+        $this->assertInstanceOf(IconRendererInterface::class, $obj);
 
         $this->assertSame($this->twigEnvironment, $obj->getTwigEnvironment());
     }
