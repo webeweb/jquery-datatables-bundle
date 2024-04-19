@@ -13,6 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Tests\Component\Navigation\Glyphicon;
 
+use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Component\Navigation\Glyphicon\NavigationItemEvents;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\WidgetBundle\Component\NavigationNodeInterface;
@@ -33,6 +34,9 @@ class NavigationItemEventsTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new NavigationItemEvents("route");
+
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
+        $this->assertInstanceOf(NavigationNodeInterface::class, $obj);
 
         $this->assertEquals("navigation.item.events", $obj->getLabel());
         $this->assertEquals("g:calendar", $obj->getIcon());
