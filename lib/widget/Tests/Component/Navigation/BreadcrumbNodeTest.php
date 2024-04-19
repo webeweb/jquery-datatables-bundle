@@ -13,6 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\WidgetBundle\Tests\Component\Navigation;
 
+use JsonSerializable;
 use WBW\Bundle\WidgetBundle\Component\Navigation\BreadcrumbNode;
 use WBW\Bundle\WidgetBundle\Component\NavigationNodeInterface;
 use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
@@ -33,6 +34,9 @@ class BreadcrumbNodeTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new BreadcrumbNode("id");
+
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
+        $this->assertInstanceOf(NavigationNodeInterface::class, $obj);
 
         $this->assertFalse($obj->getActive());
         $this->assertFalse($obj->getEnable());
