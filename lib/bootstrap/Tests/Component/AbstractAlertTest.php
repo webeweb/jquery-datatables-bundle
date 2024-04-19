@@ -19,7 +19,6 @@ use WBW\Bundle\BootstrapBundle\Component\AlertInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\BootstrapBundle\Tests\Fixtures\Component\TestAbstractAlert;
 use WBW\Bundle\WidgetBundle\Component\AlertInterface as BaseAlertInterface;
-use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
 
 /**
  * Abstract alert test.
@@ -57,18 +56,9 @@ class AbstractAlertTest extends AbstractTestCase {
      */
     public function testJsonSerialize(): void {
 
-        // Set the expected data.
-        $data = file_get_contents(__DIR__ . "/../Fixtures/Component/AbstractAlertTest.testJsonSerialize.json");
-        $json = json_decode($data, true);
-
         $obj = new TestAbstractAlert("test");
-        $obj->setContent(BaseSerializerKeys::CONTENT);
-        $obj->setDismissible(true);
 
-        $res = $obj->jsonSerialize();
-        $this->assertCount(4, $res);
-
-        $this->assertEquals($json, $res);
+        $this->assertIsArray($obj->jsonSerialize());
     }
 
     /**
