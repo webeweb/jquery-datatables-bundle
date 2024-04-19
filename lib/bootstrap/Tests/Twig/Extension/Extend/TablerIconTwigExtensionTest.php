@@ -47,21 +47,6 @@ class TablerIconTwigExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Test tablerIconFunction()
-     *
-     * @return void
-     */
-    public function testTablerIconFunction(): void {
-
-        $obj = new TablerIconTwigExtension($this->twigEnvironment);
-
-        $arg = ["name" => "asterisk"];
-        $exp = '';
-
-        $this->assertEquals($exp, $obj->tablerIconFunction($arg));
-    }
-
-    /**
      * Test getFilters()
      *
      * @return void
@@ -111,6 +96,21 @@ class TablerIconTwigExtensionTest extends AbstractTestCase {
         $exp = '';
 
         $this->assertEquals($exp, $obj->renderIcon("asterisk", "display: none;"));
+    }
+
+    /**
+     * Test tablerIconFunction()
+     *
+     * @return void
+     */
+    public function testTablerIconFunction(): void {
+
+        $obj = new TablerIconTwigExtension($this->twigEnvironment);
+
+        $arg = ["name" => "asterisk"];
+        $exp = '';
+
+        $this->assertEquals($exp, $obj->tablerIconFunction($arg));
     }
 
     /**

@@ -33,16 +33,6 @@ class TablerIconTwigExtension extends AbstractTablerIconTwigExtension implements
     public const SERVICE_NAME = "wbw.bootstrap.twig.extension.extend.tabler";
 
     /**
-     * Render a Tabler icon.
-     *
-     * @param array<string,mixed> $args The arguments.
-     * @return string Returns the Tabler icon.
-     */
-    public function tablerIconFunction(array $args = []): string {
-        return $this->tablerIcon(ArrayHelper::get($args, "name", "house"), ArrayHelper::get($args, "style"));
-    }
-
-    /**
      * Get the Twig functions.
      *
      * @return TwigFunction[] Returns the Twig functions.
@@ -60,5 +50,15 @@ class TablerIconTwigExtension extends AbstractTablerIconTwigExtension implements
      */
     public function renderIcon(?string $name, ?string $style): string {
         return $this->tablerIconFunction(["name" => $name, "style" => $style]);
+    }
+
+    /**
+     * Render a Tabler icon.
+     *
+     * @param array<string,mixed> $args The arguments.
+     * @return string Returns the Tabler icon.
+     */
+    public function tablerIconFunction(array $args = []): string {
+        return $this->tablerIcon(ArrayHelper::get($args, "name", "house"), ArrayHelper::get($args, "style"));
     }
 }
