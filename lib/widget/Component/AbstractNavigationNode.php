@@ -28,7 +28,7 @@ use WBW\Library\Traits\Strings\StringUriTrait;
  * Abstract navigation node.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Symfony\Assets
+ * @package WBW\Bundle\WidgetBundle\Component
  * @abstract
  */
 abstract class AbstractNavigationNode implements NavigationNodeInterface {
