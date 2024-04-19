@@ -13,6 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Tests\Component\Navigation\Glyphicon;
 
+use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Component\Navigation\Glyphicon\NavigationItemParameters;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\WidgetBundle\Component\NavigationNodeInterface;
@@ -33,6 +34,9 @@ class NavigationItemParametersTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new NavigationItemParameters("route");
+
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
+        $this->assertInstanceOf(NavigationNodeInterface::class, $obj);
 
         $this->assertEquals("navigation.item.parameters", $obj->getLabel());
         $this->assertEquals("g:wrench", $obj->getIcon());
