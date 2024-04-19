@@ -13,6 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\WidgetBundle\Tests\Component\Navigation;
 
+use JsonSerializable;
 use WBW\Bundle\WidgetBundle\Component\Navigation\DividerNode;
 use WBW\Bundle\WidgetBundle\Component\NavigationNodeInterface;
 use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
@@ -52,6 +53,9 @@ class DividerNodeTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new DividerNode("id");
+
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
+        $this->assertInstanceOf(NavigationNodeInterface::class, $obj);
 
         $this->assertFalse($obj->getActive());
         $this->assertTrue($obj->getEnable());
