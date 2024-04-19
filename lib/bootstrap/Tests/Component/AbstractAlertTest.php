@@ -13,6 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Tests\Component;
 
+use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Component\AbstractAlert;
 use WBW\Bundle\BootstrapBundle\Component\AlertInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
@@ -92,6 +93,7 @@ class AbstractAlertTest extends AbstractTestCase {
 
         $obj = new TestAbstractAlert("test");
 
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
         $this->assertInstanceOf(AlertInterface::class, $obj);
 
         $this->assertNull($obj->getContent());
