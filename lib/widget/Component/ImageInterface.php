@@ -36,18 +36,25 @@ interface ImageInterface {
     public const MIME_TYPE_PNG = "image/png";
 
     /**
-     * Orientation "horizontal".
+     * Orientation "landscape".
      *
      * @var string
      */
-    public const ORIENTATION_HORIZONTAL = "horizontal";
+    public const ORIENTATION_LANDSCAPE = "landscape";
 
     /**
-     * Orientation "vertical".
+     * Orientation "portrait".
      *
      * @var string
      */
-    public const ORIENTATION_VERTICAL = "vertical";
+    public const ORIENTATION_PORTRAIT = "portrait";
+
+    /**
+     * Orientation "squarish".
+     *
+     * @var string
+     */
+    public const ORIENTATION_SQUARISH = "squarish";
 
     /**
      * Get the dimensions.

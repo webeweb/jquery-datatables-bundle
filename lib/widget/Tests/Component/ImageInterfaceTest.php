@@ -34,7 +34,8 @@ class ImageInterfaceTest extends AbstractTestCase {
         $this->assertEquals("image/jpeg", ImageInterface::MIME_TYPE_JPEG);
         $this->assertEquals("image/png", ImageInterface::MIME_TYPE_PNG);
 
-        $this->assertEquals("horizontal", ImageInterface::ORIENTATION_HORIZONTAL);
-        $this->assertEquals("vertical", ImageInterface::ORIENTATION_VERTICAL);
+        $this->assertEquals("landscape", ImageInterface::ORIENTATION_LANDSCAPE);
+        $this->assertEquals("portrait", ImageInterface::ORIENTATION_PORTRAIT);
+        $this->assertEquals("squarish", ImageInterface::ORIENTATION_SQUARISH);
     }
 }
