@@ -13,6 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\WidgetBundle\Tests\Component\Notification;
 
+use JsonSerializable;
 use WBW\Bundle\WidgetBundle\Component\Notification\DangerNotification;
 use WBW\Bundle\WidgetBundle\Component\NotificationInterface;
 use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
@@ -33,6 +34,9 @@ class DangerNotificationTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new DangerNotification("danger");
+
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
+        $this->assertInstanceOf(NotificationInterface::class, $obj);
 
         $this->assertEquals(NotificationInterface::NOTIFICATION_TYPE_DANGER, $obj->getType());
         $this->assertEquals("danger", $obj->getContent());
