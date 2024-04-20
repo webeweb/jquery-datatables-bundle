@@ -53,6 +53,65 @@ twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
 
+# Common configuration
+wbw_common:
+    plugins:
+        - "animate_css"
+        - "chart_js"
+        - "clippy_js"
+        - "full_calendar"
+        - "jquery"
+        - "jquery_context_menu"
+        - "jquery_easy_autocomplete"
+        - "jquery_fancy_box"
+        - "jquery_input_mask"
+        - "jquery_select2"
+        - "leaflet"
+        - "leaflet_color_markers"
+        - "leaflet_marker_cluster"
+        - "light_gallery"
+        - "material_design_color_palette"
+        - "material_design_hierarchical_display"
+        - "simplemde_markdown_editor"
+        - "sweet_alert"
+        - "sweet_alert2"
+        - "syntax_highlighter"
+        - "twemoji"
+        - "typed_js"
+        - "wait_me"
+    locales:
+        full_calendar:  "fr"
+        jquery_select2: "fr"
+    themes:
+        syntax_highlighter: "Default"
+    brushes:
+        syntax_highlighter:
+            - "AppleScript"
+            - "AS3"
+            - "Bash"
+            - "ColdFusion"
+            - "Cpp"
+            - "CSharp"
+            - "Css"
+            - "Delphi"
+            - "Diff"
+            - "Erlang"
+            - "Groovy"
+            - "Java"
+            - "JavaFX"
+            - "JScript"
+            - "Perl"
+            - "Php"
+            - "Plain"
+            - "PowerShell"
+            - "Python"
+            - "Ruby"
+            - "Sass"
+            - "Scala"
+            - "Sql"
+            - "Vb"
+            - "Xml"
+
 # Bootstrap bundle
 wbw_bootstrap:
     version: 4
