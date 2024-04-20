@@ -142,7 +142,7 @@ class Configuration implements ConfigurationInterface {
         $this->addSectionPlugins($rootNode, $assets["assets"]["wbw.common.assets"]["plugins"]);
         $this->addSectionLocales($rootNode, $assets["assets"]["wbw.common.assets"]["plugins"]);
         $this->addSectionThemes($rootNode, $assets["assets"]["wbw.common.assets"]["plugins"]);
-        $this->addSectionBrushes($rootNode, $assets["assets"]["wbw.common.assets"]["plugins"]);
+        $this->addSectionBrushes($rootNode, $assets["assets"]["wbw.common.assets"]["plugins"]["syntax_highlighter"]["brushes"]);
 
         return $treeBuilder;
     }
