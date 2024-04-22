@@ -1,0 +1,33 @@
+{# lib/common/Resources/views/assets/_javascripts.html.twig #}
+{% set _webPath    = "bundles/wbwcommon" %}
+{% set _plugins    = getContainerParameter("wbw.common.assets").plugins %}
+{% set _appLocales = getContainerParameter("wbw_common.locales") %}
+{% set _appPlugins = getContainerParameter("wbw_common.plugins") %}
+
+{% for _appPlugin in _appPlugins %}
+
+    {% set _replaces = {
+        "{{ version }}": _plugins[_appPlugin].version,
+        "{{ locale }}" : _appLocales[_appPlugin]|default(""),
+    } %}
+
+    {% for _javascript in _plugins[_appPlugin].javascripts %}
+
+        {% if ("prod" != app.environment and true == loop.first) %}<!-- {{ _plugins[_appPlugin].description }} -->{% endif %}
+
+        {% set _path = (_webPath ~ _javascript)|replace(_replaces) %}
+        <script type="text/javascript" src="{{ asset(_path) }}"></script>
+    {% endfor %}
+{% endfor %}
+
+{% set _appBrushes = getContainerParameter("wbw_common.brushes").syntax_highlighter %}
+{% for _appBrush in _appBrushes %}
+
+    {% set _replaces = {
+        "{{ version }}": _plugins["syntax_highlighter"].version,
+        "{{ brush }}"  : _appBrush,
+    } %}
+
+    {% set _path = (_webPath ~ "/syntaxhighlighter-{{ version }}/scripts/shBrush{{ brush }}.js")|replace(_replaces) %}
+    <script type="text/javascript" src="{{ asset(_path) }}"></script>
+{% endfor %}
