@@ -24,7 +24,7 @@ use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 interface AssetsProviderInterface extends ProviderInterface, BundleInterface {
 
     /**
-     * Asset relative directory.
+     * Assets relative directory.
      *
      * @var string
      */
