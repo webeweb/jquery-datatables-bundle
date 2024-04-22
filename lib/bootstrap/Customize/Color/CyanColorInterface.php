@@ -24,63 +24,63 @@ use WBW\Bundle\WidgetBundle\Component\Color\CyanColorInterface as BaseCyanColorI
 interface CyanColorInterface extends BaseCyanColorInterface {
 
     /**
-     * Cyan color "100".
+     * Cyan color value "100".
      *
      * @var string
      */
     public const CYAN_COLOR_VALUE_100 = "#cff4fc";
 
     /**
-     * Cyan color "200".
+     * Cyan color value "200".
      *
      * @var string
      */
     public const CYAN_COLOR_VALUE_200 = "#9eeaf9";
 
     /**
-     * Cyan color "300".
+     * Cyan color value "300".
      *
      * @var string
      */
     public const CYAN_COLOR_VALUE_300 = "#6edff6";
 
     /**
-     * Cyan color "400".
+     * Cyan color value "400".
      *
      * @var string
      */
     public const CYAN_COLOR_VALUE_400 = "#3dd5f3";
 
     /**
-     * Cyan color "500".
+     * Cyan color value "500".
      *
      * @var string
      */
     public const CYAN_COLOR_VALUE_500 = "#0dcaf0";
 
     /**
-     * Cyan color "600".
+     * Cyan color value "600".
      *
      * @var string
      */
     public const CYAN_COLOR_VALUE_600 = "#0aa2c0";
 
     /**
-     * Cyan color "700".
+     * Cyan color value "700".
      *
      * @var string
      */
     public const CYAN_COLOR_VALUE_700 = "#087990";
 
     /**
-     * Cyan color "800".
+     * Cyan color value "800".
      *
      * @var string
      */
     public const CYAN_COLOR_VALUE_800 = "#055160";
 
     /**
-     * Cyan color "900".
+     * Cyan color value "900".
      *
      * @var string
      */

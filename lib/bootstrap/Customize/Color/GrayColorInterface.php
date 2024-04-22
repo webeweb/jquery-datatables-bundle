@@ -24,63 +24,63 @@ use WBW\Bundle\WidgetBundle\Component\Color\GreyColorInterface as BaseGrayColorI
 interface GrayColorInterface extends BaseGrayColorInterface {
 
     /**
-     * Gray color "100".
+     * Gray color value "100".
      *
      * @var string
      */
     public const GRAY_COLOR_VALUE_100 = "#f8f9fa";
 
     /**
-     * Gray color "200".
+     * Gray color value "200".
      *
      * @var string
      */
     public const GRAY_COLOR_VALUE_200 = "#e9ecef";
 
     /**
-     * Gray color "300".
+     * Gray color value "300".
      *
      * @var string
      */
     public const GRAY_COLOR_VALUE_300 = "#dee2e6";
 
     /**
-     * Gray color "400".
+     * Gray color value "400".
      *
      * @var string
      */
     public const GRAY_COLOR_VALUE_400 = "#ced4da";
 
     /**
-     * Gray color "500".
+     * Gray color value "500".
      *
      * @var string
      */
     public const GRAY_COLOR_VALUE_500 = "#adb5bd";
 
     /**
-     * Gray color "600".
+     * Gray color value "600".
      *
      * @var string
      */
     public const GRAY_COLOR_VALUE_600 = "#6c757d";
 
     /**
-     * Gray color "700".
+     * Gray color value "700".
      *
      * @var string
      */
     public const GRAY_COLOR_VALUE_700 = "#495057";
 
     /**
-     * Gray color "800".
+     * Gray color value "800".
      *
      * @var string
      */
     public const GRAY_COLOR_VALUE_800 = "#343a40";
 
     /**
-     * Gray color "900".
+     * Gray color value "900".
      *
      * @var string
      */

@@ -24,63 +24,63 @@ use WBW\Bundle\WidgetBundle\Component\Color\PinkColorInterface as BasePinkColorI
 interface PinkColorInterface extends BasePinkColorInterface {
 
     /**
-     * Pink color "100".
+     * Pink color value "100".
      *
      * @var string
      */
     public const PINK_COLOR_VALUE_100 = "#f7d6e6";
 
     /**
-     * Pink color "200".
+     * Pink color value "200".
      *
      * @var string
      */
     public const PINK_COLOR_VALUE_200 = "#efadce";
 
     /**
-     * Pink color "300".
+     * Pink color value "300".
      *
      * @var string
      */
     public const PINK_COLOR_VALUE_300 = "#e685b5";
 
     /**
-     * Pink color "400".
+     * Pink color value "400".
      *
      * @var string
      */
     public const PINK_COLOR_VALUE_400 = "#de5c9d";
 
     /**
-     * Pink color "500".
+     * Pink color value "500".
      *
      * @var string
      */
     public const PINK_COLOR_VALUE_500 = "#d63384";
 
     /**
-     * Pink color "600".
+     * Pink color value "600".
      *
      * @var string
      */
     public const PINK_COLOR_VALUE_600 = "#ab296a";
 
     /**
-     * Pink color "700".
+     * Pink color value "700".
      *
      * @var string
      */
     public const PINK_COLOR_VALUE_700 = "#801f4f";
 
     /**
-     * Pink color "800".
+     * Pink color value "800".
      *
      * @var string
      */
     public const PINK_COLOR_VALUE_800 = "#561435";
 
     /**
-     * Pink color "900".
+     * Pink color value "900".
      *
      * @var string
      */

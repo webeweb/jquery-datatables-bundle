@@ -24,63 +24,63 @@ use WBW\Bundle\WidgetBundle\Component\Color\BlueColorInterface as BaseBlueColorI
 interface BlueColorInterface extends BaseBlueColorInterface {
 
     /**
-     * Blue color "100".
+     * Blue color value "100".
      *
      * @var string
      */
     public const BLUE_COLOR_VALUE_100 = "#cfe2ff";
 
     /**
-     * Blue color "200".
+     * Blue color value "200".
      *
      * @var string
      */
     public const BLUE_COLOR_VALUE_200 = "#9ec5fe";
 
     /**
-     * Blue color "300".
+     * Blue color value "300".
      *
      * @var string
      */
     public const BLUE_COLOR_VALUE_300 = "#6ea8fe";
 
     /**
-     * Blue color "400".
+     * Blue color value "400".
      *
      * @var string
      */
     public const BLUE_COLOR_VALUE_400 = "#3d8bfd";
 
     /**
-     * Blue color "500".
+     * Blue color value "500".
      *
      * @var string
      */
     public const BLUE_COLOR_VALUE_500 = "#0d6efd";
 
     /**
-     * Blue color "600".
+     * Blue color value "600".
      *
      * @var string
      */
     public const BLUE_COLOR_VALUE_600 = "#0a58ca";
 
     /**
-     * Blue color "700".
+     * Blue color value "700".
      *
      * @var string
      */
     public const BLUE_COLOR_VALUE_700 = "#084298";
 
     /**
-     * Blue color "800".
+     * Blue color value "800".
      *
      * @var string
      */
     public const BLUE_COLOR_VALUE_800 = "#052c65";
 
     /**
-     * Blue color "900".
+     * Blue color value "900".
      *
      * @var string
      */

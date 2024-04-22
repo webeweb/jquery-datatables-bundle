@@ -24,63 +24,63 @@ use WBW\Bundle\WidgetBundle\Component\Color\RedColorInterface as BaseRedColorInt
 interface RedColorInterface extends BaseRedColorInterface {
 
     /**
-     * Red color "100".
+     * Red color value "100".
      *
      * @var string
      */
     public const RED_COLOR_VALUE_100 = "#f8d7da";
 
     /**
-     * Red color "200".
+     * Red color value "200".
      *
      * @var string
      */
     public const RED_COLOR_VALUE_200 = "#f1aeb5";
 
     /**
-     * Red color "300".
+     * Red color value "300".
      *
      * @var string
      */
     public const RED_COLOR_VALUE_300 = "#ea868f";
 
     /**
-     * Red color "400".
+     * Red color value "400".
      *
      * @var string
      */
     public const RED_COLOR_VALUE_400 = "#e35d6a";
 
     /**
-     * Red color "500".
+     * Red color value "500".
      *
      * @var string
      */
     public const RED_COLOR_VALUE_500 = "#dc3545";
 
     /**
-     * Red color "600".
+     * Red color value "600".
      *
      * @var string
      */
     public const RED_COLOR_VALUE_600 = "#b02a37";
 
     /**
-     * Red color "700".
+     * Red color value "700".
      *
      * @var string
      */
     public const RED_COLOR_VALUE_700 = "#842029";
 
     /**
-     * Red color "800".
+     * Red color value "800".
      *
      * @var string
      */
     public const RED_COLOR_VALUE_800 = "#58151c";
 
     /**
-     * Red color "900".
+     * Red color value "900".
      *
      * @var string
      */

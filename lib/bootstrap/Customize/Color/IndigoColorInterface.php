@@ -24,63 +24,63 @@ use WBW\Bundle\WidgetBundle\Component\Color\IndigoColorInterface as BaseIndigoCo
 interface IndigoColorInterface extends BaseIndigoColorInterface {
 
     /**
-     * Indigo color "100".
+     * Indigo color value "100".
      *
      * @var string
      */
     public const INDIGO_COLOR_VALUE_100 = "#e0cffc";
 
     /**
-     * Indigo color "200".
+     * Indigo color value "200".
      *
      * @var string
      */
     public const INDIGO_COLOR_VALUE_200 = "#c29ffa";
 
     /**
-     * Indigo color "300".
+     * Indigo color value "300".
      *
      * @var string
      */
     public const INDIGO_COLOR_VALUE_300 = "#a370f7";
 
     /**
-     * Indigo color "400".
+     * Indigo color value "400".
      *
      * @var string
      */
     public const INDIGO_COLOR_VALUE_400 = "#8540f5";
 
     /**
-     * Indigo color "500".
+     * Indigo color value "500".
      *
      * @var string
      */
     public const INDIGO_COLOR_VALUE_500 = "#6610f2";
 
     /**
-     * Indigo color "600".
+     * Indigo color value "600".
      *
      * @var string
      */
     public const INDIGO_COLOR_VALUE_600 = "#520dc2";
 
     /**
-     * Indigo color "700".
+     * Indigo color value "700".
      *
      * @var string
      */
     public const INDIGO_COLOR_VALUE_700 = "#3d0a91";
 
     /**
-     * Indigo color "800".
+     * Indigo color value "800".
      *
      * @var string
      */
     public const INDIGO_COLOR_VALUE_800 = "#290661";
 
     /**
-     * Indigo color "900".
+     * Indigo color value "900".
      *
      * @var string
      */

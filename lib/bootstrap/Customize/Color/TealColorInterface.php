@@ -24,63 +24,63 @@ use WBW\Bundle\WidgetBundle\Component\Color\TealColorInterface as BaseTealColorI
 interface TealColorInterface extends BaseTealColorInterface {
 
     /**
-     * Teal color "100".
+     * Teal color value "100".
      *
      * @var string
      */
     public const TEAL_COLOR_VALUE_100 = "#d2f4ea";
 
     /**
-     * Teal color "200".
+     * Teal color value "200".
      *
      * @var string
      */
     public const TEAL_COLOR_VALUE_200 = "#a6e9d5";
 
     /**
-     * Teal color "300".
+     * Teal color value "300".
      *
      * @var string
      */
     public const TEAL_COLOR_VALUE_300 = "#79dfc1";
 
     /**
-     * Teal color "400".
+     * Teal color value "400".
      *
      * @var string
      */
     public const TEAL_COLOR_VALUE_400 = "#4dd4ac";
 
     /**
-     * Teal color "500".
+     * Teal color value "500".
      *
      * @var string
      */
     public const TEAL_COLOR_VALUE_500 = "#20c997";
 
     /**
-     * Teal color "600".
+     * Teal color value "600".
      *
      * @var string
      */
     public const TEAL_COLOR_VALUE_600 = "#1aa179";
 
     /**
-     * Teal color "700".
+     * Teal color value "700".
      *
      * @var string
      */
     public const TEAL_COLOR_VALUE_700 = "#13795b";
 
     /**
-     * Teal color "800".
+     * Teal color value "800".
      *
      * @var string
      */
     public const TEAL_COLOR_VALUE_800 = "#0d503c";
 
     /**
-     * Teal color "900".
+     * Teal color value "900".
      *
      * @var string
      */

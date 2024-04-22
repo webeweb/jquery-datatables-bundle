@@ -24,63 +24,63 @@ use WBW\Bundle\WidgetBundle\Component\Color\OrangeColorInterface as BaseOrangeCo
 interface OrangeColorInterface extends BaseOrangeColorInterface {
 
     /**
-     * Orange color "100".
+     * Orange color value "100".
      *
      * @var string
      */
     public const ORANGE_COLOR_VALUE_100 = "#ffe5d0";
 
     /**
-     * Orange color "200".
+     * Orange color value "200".
      *
      * @var string
      */
     public const ORANGE_COLOR_VALUE_200 = "#fecba1";
 
     /**
-     * Orange color "300".
+     * Orange color value "300".
      *
      * @var string
      */
     public const ORANGE_COLOR_VALUE_300 = "#feb272";
 
     /**
-     * Orange color "400".
+     * Orange color value "400".
      *
      * @var string
      */
     public const ORANGE_COLOR_VALUE_400 = "#fd9843";
 
     /**
-     * Orange color "500".
+     * Orange color value "500".
      *
      * @var string
      */
     public const ORANGE_COLOR_VALUE_500 = "#fd7e14";
 
     /**
-     * Orange color "600".
+     * Orange color value "600".
      *
      * @var string
      */
     public const ORANGE_COLOR_VALUE_600 = "#ca6510";
 
     /**
-     * Orange color "700".
+     * Orange color value "700".
      *
      * @var string
      */
     public const ORANGE_COLOR_VALUE_700 = "#984c0c";
 
     /**
-     * Orange color "800".
+     * Orange color value "800".
      *
      * @var string
      */
     public const ORANGE_COLOR_VALUE_800 = "#653208";
 
     /**
-     * Orange color "900".
+     * Orange color value "900".
      *
      * @var string
      */
