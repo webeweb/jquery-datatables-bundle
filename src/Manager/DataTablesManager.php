@@ -15,12 +15,12 @@ namespace WBW\Bundle\DataTablesBundle\Manager;
 
 use InvalidArgumentException;
 use Throwable;
+use WBW\Bundle\CommonBundle\Manager\AbstractManager;
+use WBW\Bundle\CommonBundle\Manager\ManagerInterface;
+use WBW\Bundle\CommonBundle\Provider\ProviderInterface;
 use WBW\Bundle\DataTablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
 use WBW\Bundle\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Library\Symfony\Manager\AbstractManager;
-use WBW\Library\Symfony\Manager\ManagerInterface;
-use WBW\Library\Symfony\Provider\ProviderInterface;
 
 /**
  * DataTables manager.
@@ -66,6 +66,7 @@ class DataTablesManager extends AbstractManager {
 
         /** @var DataTablesProviderInterface $current */
         foreach ($this->getProviders() as $current) {
+
             if ($name === $current->getName()) {
                 return $current;
             }
