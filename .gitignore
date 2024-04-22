@@ -2,5 +2,9 @@
 /.phpunit.result.cache
 /vendor/*
 
+/lib/*/Resources/public/*
+!/lib/bootstrap/Resources/public/css
+/src/Resources/public/*
+
 /var/*
 !/var/.gitkeep
