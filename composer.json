@@ -45,6 +45,7 @@
     },
     "require-dev": {
         "doctrine/doctrine-bundle": "^1.8.1|^2.0",
+        "masterminds/html5": "^2.6",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan": "^1.4",
         "phpstan/phpstan-phpunit": "^1.0",
