@@ -46,6 +46,13 @@ services:
         tags:
             - { name: "container.service_subscriber" }
 
+    WBW\Bundle\CommonBundle\Tests\Fixtures\Controller\TestViewsController:
+        public: true
+        calls:
+            - [ "setContainer", [ "@Psr\\Container\\ContainerInterface" ] ]
+        tags:
+            - { name: "container.service_subscriber" }
+
     wbw.common.service.statement.alias:
         alias:  "wbw.common.service.statement"
         public: true
