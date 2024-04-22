@@ -272,7 +272,7 @@ class DataTablesControllerTest extends DefaultWebTestCase {
         $this->assertEquals(500, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
 
-        $this->assertStringContainsString("BadDataTablesCSVExporterException", $client->getResponse()->getContent());
+        $this->assertStringContainsString("BadDataTablesCsvExporterException", $client->getResponse()->getContent());
     }
 
     /**

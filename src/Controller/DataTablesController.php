@@ -147,7 +147,7 @@ class DataTablesController extends AbstractController {
         $windows = DataTablesExportHelper::isWindows($request);
 
         $dtProvider = $this->getDataTablesProvider($name);
-        $dtExporter = $this->getDataTablesCSVExporter($dtProvider);
+        $dtExporter = $this->getDataTablesCsvExporter($dtProvider);
         $repository = $this->getDataTablesRepository($dtProvider);
 
         $dtWrapper = $this->getDataTablesWrapper($dtProvider);

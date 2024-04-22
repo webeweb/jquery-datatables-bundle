@@ -161,7 +161,7 @@ abstract class AbstractController extends BaseController {
      * @throws BadDataTablesCsvExporterException Throws a bad CSV exporter exception.
      * @throws Throwable Throws an exception if an error occurs.
      */
-    protected function getDataTablesCSVExporter(DataTablesProviderInterface $dtProvider): DataTablesCsvExporterInterface {
+    protected function getDataTablesCsvExporter(DataTablesProviderInterface $dtProvider): DataTablesCsvExporterInterface {
 
         $context = [
             "_controller" => get_class($this),
@@ -170,7 +170,7 @@ abstract class AbstractController extends BaseController {
 
         $this->logInfo(sprintf('DataTables controller search for a CSV exporter with name "%s"', $dtProvider->getName()), $context);
 
-        $dtExporter = $dtProvider->getCSVExporter();
+        $dtExporter = $dtProvider->getCsvExporter();
         if (false === ($dtExporter instanceof DataTablesCsvExporterInterface)) {
             throw new BadDataTablesCsvExporterException($dtExporter);
         }
