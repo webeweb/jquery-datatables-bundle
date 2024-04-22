@@ -31,6 +31,6 @@ class DataTablesProviderInterfaceTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw.datatables.provider", DataTablesProviderInterface::DATATABLES_TAG_NAME);
+        $this->assertEquals("wbw.datatables.provider", DataTablesProviderInterface::DATATABLES_PROVIDER_TAG_NAME);
     }
 }

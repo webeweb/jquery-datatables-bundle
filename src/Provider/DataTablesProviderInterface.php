@@ -31,7 +31,7 @@ interface DataTablesProviderInterface extends ProviderInterface {
      *
      * @var string
      */
-    public const DATATABLES_TAG_NAME = "wbw.datatables.provider";
+    public const DATATABLES_PROVIDER_TAG_NAME = "wbw.datatables.provider";
 
     /**
      * Get the columns.

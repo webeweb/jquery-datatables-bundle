@@ -30,6 +30,6 @@ class DataTablesProviderCompilerPass extends AbstractProviderCompilerPass {
      * {@inheritDoc}
      */
     public function process(ContainerBuilder $container): void {
-        $this->processing($container, DataTablesManager::SERVICE_NAME, DataTablesProviderInterface::DATATABLES_TAG_NAME);
+        $this->processing($container, DataTablesManager::SERVICE_NAME, DataTablesProviderInterface::DATATABLES_PROVIDER_TAG_NAME);
     }
 }

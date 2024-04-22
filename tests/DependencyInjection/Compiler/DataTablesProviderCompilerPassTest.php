@@ -47,16 +47,16 @@ class DataTablesProviderCompilerPassTest extends AbstractTestCase {
         $this->assertTrue($containerBuilder->hasDefinition(DataTablesManager::SERVICE_NAME));
         $this->assertFalse($containerBuilder->getDefinition(DataTablesManager::SERVICE_NAME)->hasMethodCall("addProvider"));
 
-        $containerBuilder->register("datatables.provider.test", DataTablesProviderInterface::class)->addTag(DataTablesProviderInterface::DATATABLES_TAG_NAME);
+        $containerBuilder->register("wbw.datatables.provider.test", DataTablesProviderInterface::class)->addTag(DataTablesProviderInterface::DATATABLES_PROVIDER_TAG_NAME);
         $this->assertTrue($containerBuilder->hasDefinition(DataTablesManager::SERVICE_NAME));
         $this->assertFalse($containerBuilder->getDefinition(DataTablesManager::SERVICE_NAME)->hasMethodCall("addProvider"));
-        $this->assertTrue($containerBuilder->hasDefinition("datatables.provider.test"));
-        $this->assertTrue($containerBuilder->getDefinition("datatables.provider.test")->hasTag(DataTablesProviderInterface::DATATABLES_TAG_NAME));
+        $this->assertTrue($containerBuilder->hasDefinition("wbw.datatables.provider.test"));
+        $this->assertTrue($containerBuilder->getDefinition("wbw.datatables.provider.test")->hasTag(DataTablesProviderInterface::DATATABLES_PROVIDER_TAG_NAME));
 
         $obj->process($containerBuilder);
         $this->assertTrue($containerBuilder->hasDefinition(DataTablesManager::SERVICE_NAME));
         $this->assertTrue($containerBuilder->getDefinition(DataTablesManager::SERVICE_NAME)->hasMethodCall("addProvider"));
-        $this->assertTrue($containerBuilder->hasDefinition("datatables.provider.test"));
-        $this->assertTrue($containerBuilder->getDefinition("datatables.provider.test")->hasTag(DataTablesProviderInterface::DATATABLES_TAG_NAME));
+        $this->assertTrue($containerBuilder->hasDefinition("wbw.datatables.provider.test"));
+        $this->assertTrue($containerBuilder->getDefinition("wbw.datatables.provider.test")->hasTag(DataTablesProviderInterface::DATATABLES_PROVIDER_TAG_NAME));
     }
 }
