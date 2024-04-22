@@ -32,7 +32,7 @@ class ViewsControllerTest extends DefaultWebTestCase {
     }
 
     /**
-     * Test Resources/views/layout.html.twig
+     * Test lib/bootstrap/Resources/views/layout.html.twig
      *
      * @return void
      */
@@ -40,7 +40,7 @@ class ViewsControllerTest extends DefaultWebTestCase {
 
         $client = $this->client;
 
-        $client->request("GET", "/layout");
+        $client->request("GET", "/bootstrap/layout");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
 
@@ -49,7 +49,7 @@ class ViewsControllerTest extends DefaultWebTestCase {
     }
 
     /**
-     * Test Resources/views/layout/_flash_bag.html.twig
+     * Test lib/bootstrap/Resources/views/layout/_flash_bag.html.twig
      *
      * @return void
      */
@@ -57,7 +57,7 @@ class ViewsControllerTest extends DefaultWebTestCase {
 
         $client = $this->client;
 
-        $client->request("GET", "/layout/flash-bag");
+        $client->request("GET", "/bootstrap/layout/flash-bag");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
 
@@ -66,7 +66,7 @@ class ViewsControllerTest extends DefaultWebTestCase {
     }
 
     /**
-     * Test Resources/views/layout/_no_data_to_display.html.twig
+     * Test lib/bootstrap/Resources/views/layout/_no_data_to_display.html.twig
      *
      * @return void
      */
@@ -74,13 +74,13 @@ class ViewsControllerTest extends DefaultWebTestCase {
 
         $client = $this->client;
 
-        $client->request("GET", "/layout/no-data-to-display");
+        $client->request("GET", "/bootstrap/layout/no-data-to-display");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
     }
 
     /**
-     * Test Resources/views/layout/_work_in_progress.html.twig
+     * Test lib/bootstrap/Resources/views/layout/_work_in_progress.html.twig
      *
      * @return void
      */
@@ -88,7 +88,7 @@ class ViewsControllerTest extends DefaultWebTestCase {
 
         $client = $this->client;
 
-        $client->request("GET", "/layout/work-in-progress");
+        $client->request("GET", "/bootstrap/layout/work-in-progress");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
     }
