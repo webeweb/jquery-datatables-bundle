@@ -26,7 +26,7 @@ use WBW\Bundle\BootstrapBundle\Controller\AbstractController;
 class TestViewsController extends AbstractController {
 
     /**
-     * Render assets/_javascripts.html.twig
+     * Render lib/bootstrap/Resources/views/assets/_javascripts.html.twig
      *
      * @return Response Returns the response.
      */
@@ -35,7 +35,7 @@ class TestViewsController extends AbstractController {
     }
 
     /**
-     * Render assets/_stylesheets.html.twig
+     * Render lib/bootstrap/Resources/views/assets/_stylesheets.html.twig
      *
      * @return Response Returns the response.
      */
@@ -44,7 +44,7 @@ class TestViewsController extends AbstractController {
     }
 
     /**
-     * Render layout.html.twig
+     * Render lib/bootstrap/Resources/views/layout.html.twig
      *
      * @return Response Returns the response.
      */
@@ -53,7 +53,7 @@ class TestViewsController extends AbstractController {
     }
 
     /**
-     * Render layout/_flash_bag.html.twig
+     * Render lib/bootstrap/Resources/views/layout/_flash_bag.html.twig
      *
      * @return Response Returns the response.
      * @throws Throwable Throws an exception if an error occurs.
@@ -69,7 +69,7 @@ class TestViewsController extends AbstractController {
     }
 
     /**
-     * Render layout/_no_data_to_display.html.twig
+     * Render lib/bootstrap/Resources/views/layout/_no_data_to_display.html.twig
      *
      * @return Response Returns the response.
      */
@@ -78,7 +78,7 @@ class TestViewsController extends AbstractController {
     }
 
     /**
-     * Render layout/_work_in_progress.html.twig
+     * Render lib/bootstrap/Resources/views/layout/_work_in_progress.html.twig
      *
      * @return Response Returns the response.
      */
