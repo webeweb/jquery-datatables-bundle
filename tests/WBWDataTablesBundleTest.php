@@ -19,7 +19,7 @@ use WBW\Bundle\CommonBundle\DependencyInjection\WBWCommonExtension;
 use WBW\Bundle\CommonBundle\Provider\AssetsProviderInterface;
 use WBW\Bundle\DataTablesBundle\DependencyInjection\WBWDataTablesExtension;
 use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
-use WBW\Library\Symfony\Helper\AssetsHelper;
+use WBW\Bundle\WidgetBundle\Helper\AssetsHelper;
 
 /**
  * DataTables bundle test.

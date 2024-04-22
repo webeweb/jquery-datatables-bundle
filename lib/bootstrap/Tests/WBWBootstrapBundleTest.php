@@ -18,7 +18,7 @@ use WBW\Bundle\BootstrapBundle\DependencyInjection\WBWBootstrapExtension;
 use WBW\Bundle\BootstrapBundle\WBWBootstrapBundle;
 use WBW\Bundle\CommonBundle\DependencyInjection\WBWCommonExtension;
 use WBW\Bundle\CommonBundle\Provider\AssetsProviderInterface;
-use WBW\Library\Symfony\Helper\AssetsHelper;
+use WBW\Bundle\WidgetBundle\Helper\AssetsHelper;
 
 /**
  * Bootstrap bundle test.
