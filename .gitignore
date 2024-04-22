@@ -4,6 +4,7 @@
 
 /lib/*/Resources/public/*
 !/lib/bootstrap/Resources/public/css
+!/lib/common/Resources/public/img
 /src/Resources/public/*
 
 /var/*
