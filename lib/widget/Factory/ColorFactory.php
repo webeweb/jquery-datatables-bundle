@@ -14,7 +14,6 @@ declare(strict_types = 1);
 namespace WBW\Bundle\WidgetBundle\Factory;
 
 use WBW\Bundle\WidgetBundle\Assets\MaterialDesignColorPalette\AmberColor;
-use WBW\Bundle\WidgetBundle\Assets\MaterialDesignColorPalette\BlackColor;
 use WBW\Bundle\WidgetBundle\Assets\MaterialDesignColorPalette\BlueColor;
 use WBW\Bundle\WidgetBundle\Assets\MaterialDesignColorPalette\BlueGreyColor;
 use WBW\Bundle\WidgetBundle\Assets\MaterialDesignColorPalette\BrownColor;
@@ -32,8 +31,9 @@ use WBW\Bundle\WidgetBundle\Assets\MaterialDesignColorPalette\PinkColor;
 use WBW\Bundle\WidgetBundle\Assets\MaterialDesignColorPalette\PurpleColor;
 use WBW\Bundle\WidgetBundle\Assets\MaterialDesignColorPalette\RedColor;
 use WBW\Bundle\WidgetBundle\Assets\MaterialDesignColorPalette\TealColor;
-use WBW\Bundle\WidgetBundle\Assets\MaterialDesignColorPalette\WhiteColor;
 use WBW\Bundle\WidgetBundle\Assets\MaterialDesignColorPalette\YellowColor;
+use WBW\Bundle\WidgetBundle\Component\Color\BlackColor;
+use WBW\Bundle\WidgetBundle\Component\Color\WhiteColor;
 use WBW\Bundle\WidgetBundle\Component\ColorInterface;
 
 /**
