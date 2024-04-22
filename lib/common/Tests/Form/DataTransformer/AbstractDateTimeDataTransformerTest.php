@@ -15,6 +15,7 @@ namespace WBW\Bundle\CommonBundle\Tests\Form\DataTransformer;
 
 use DateTime;
 use DateTimeZone;
+use Symfony\Component\Form\DataTransformerInterface;
 use Throwable;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 use WBW\Bundle\CommonBundle\Tests\Fixtures\Form\DataTransformer\TestAbstractDateTimeDataTransformer;
@@ -130,6 +131,8 @@ class AbstractDateTimeDataTransformerTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new TestAbstractDateTimeDataTransformer("Y-m-d H:i:s", "UTC");
+
+        $this->assertInstanceOf(DataTransformerInterface::class, $obj);
 
         $this->assertEquals("Y-m-d H:i:s", $obj->getFormat());
         $this->assertEquals("UTC", $obj->getTimezone());

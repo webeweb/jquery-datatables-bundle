@@ -13,6 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\CommonBundle\Tests\Form\DataTransformer\Timestamp;
 
+use Symfony\Component\Form\DataTransformerInterface;
 use WBW\Bundle\CommonBundle\Form\DataTransformer\Timestamp\TimeTimestampDataTransformer;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 
@@ -32,6 +33,8 @@ class TimeTimestampDataTransformerTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new TimeTimestampDataTransformer();
+
+        $this->assertInstanceOf(DataTransformerInterface::class, $obj);
 
         $this->assertEquals("H:i:s", $obj->getFormat());
         $this->assertEquals("UTC", $obj->getTimezone());
