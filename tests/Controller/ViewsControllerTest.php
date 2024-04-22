@@ -24,7 +24,7 @@ use WBW\Bundle\CommonBundle\Tests\DefaultWebTestCase;
 class ViewsControllerTest extends DefaultWebTestCase {
 
     /**
-     * Test Resources/views/assets/_javascripts.html.twig
+     * Test src/Resources/views/assets/_javascripts.html.twig
      *
      * @return void
      */
@@ -38,7 +38,7 @@ class ViewsControllerTest extends DefaultWebTestCase {
     }
 
     /**
-     * Test Resources/views/assets/_stylesheets.html.twig
+     * Test src/Resources/views/assets/_stylesheets.html.twig
      *
      * @return void
      */
