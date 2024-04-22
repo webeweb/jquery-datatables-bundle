@@ -78,7 +78,7 @@ class UnzipAssetsCommand extends AbstractCommand {
      * Display the result.
      *
      * @param StyleInterface $io The I/O.
-     * @param array $results The results.
+     * @param array<string,mixed> $results The results.
      * @return int Returns the exit code.
      */
     protected function displayResult(StyleInterface $io, array $results): int {
