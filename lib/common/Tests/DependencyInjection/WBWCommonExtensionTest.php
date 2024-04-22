@@ -14,6 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\CommonBundle\Tests\DependencyInjection;
 
 use Doctrine\ORM\EntityManagerInterface;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\Routing\RouterInterface;
@@ -23,6 +24,9 @@ use WBW\Bundle\CommonBundle\Command\UnzipAssetsCommand;
 use WBW\Bundle\CommonBundle\DependencyInjection\WBWCommonExtension;
 use WBW\Bundle\CommonBundle\EventListener\NotificationEventListener;
 use WBW\Bundle\CommonBundle\EventListener\ToastEventListener;
+use WBW\Bundle\CommonBundle\Manager\ColorManager;
+use WBW\Bundle\CommonBundle\Manager\JavascriptManager;
+use WBW\Bundle\CommonBundle\Manager\StylesheetManager;
 use WBW\Bundle\CommonBundle\Service\SessionService;
 use WBW\Bundle\CommonBundle\Service\StatementService;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
@@ -65,6 +69,9 @@ class WBWCommonExtensionTest extends AbstractTestCase {
         // Set an Entity manager mock.
         $entityManager = $this->getMockBuilder(EntityManagerInterface::class)->getMock();
 
+        // Set a Logger mock.
+        $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
+
         // Set a Router mock.
         $router = $this->getMockBuilder(RouterInterface::class)->getMock();
 
@@ -81,6 +88,7 @@ class WBWCommonExtensionTest extends AbstractTestCase {
         $this->containerBuilder = new ContainerBuilder($parameterBag);
 
         $this->containerBuilder->set("doctrine.orm.entity_manager", $entityManager);
+        $this->containerBuilder->set("logger", $logger);
         $this->containerBuilder->set("router", $router);
         $this->containerBuilder->set("twig", $twigEnvironment);
     }
@@ -103,6 +111,11 @@ class WBWCommonExtensionTest extends AbstractTestCase {
         // Event listeners
         $this->assertInstanceOf(NotificationEventListener::class, $this->containerBuilder->get(NotificationEventListener::SERVICE_NAME));
         $this->assertInstanceOf(ToastEventListener::class, $this->containerBuilder->get(ToastEventListener::SERVICE_NAME));
+
+        // Managers
+        $this->assertInstanceOf(ColorManager::class, $this->containerBuilder->get(ColorManager::SERVICE_NAME));
+        $this->assertInstanceOf(JavascriptManager::class, $this->containerBuilder->get(JavascriptManager::SERVICE_NAME));
+        $this->assertInstanceOf(StylesheetManager::class, $this->containerBuilder->get(StylesheetManager::SERVICE_NAME));
 
         // Services
         $this->assertInstanceOf(SessionService::class, $this->containerBuilder->get(SessionService::SERVICE_NAME));
