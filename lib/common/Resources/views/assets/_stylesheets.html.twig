@@ -1,0 +1,21 @@
+{# Resources/views/assets/_stylesheets.html.twig #}
+{% set _webPath    = "bundles/wbwcommon" %}
+{% set _plugins    = getContainerParameter("wbw.common.asset").plugins %}
+{% set _appPlugins = getContainerParameter("wbw_common.plugins") %}
+{% set _appThemes  = getContainerParameter("wbw_common.themes") %}
+
+{% for _appPlugin in _appPlugins %}
+
+    {% set _replaces = {
+        "{{ version }}": _plugins[_appPlugin].version,
+        "{{ theme }}"  : _appThemes[_appPlugin]|default(""),
+    } %}
+
+    {% for _stylesheet in _plugins[_appPlugin].stylesheets %}
+
+        {% if ("prod" != app.environment and true == loop.first) %}<!-- {{ _plugins[_appPlugin].description }} -->{% endif %}
+
+        {% set _path = (_webPath ~ _stylesheet)|replace(_replaces) %}
+        <link type="text/css" rel="stylesheet" href="{{ asset(_path) }}">
+    {% endfor %}
+{% endfor %}
