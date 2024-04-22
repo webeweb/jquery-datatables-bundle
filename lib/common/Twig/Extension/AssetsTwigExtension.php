@@ -16,10 +16,10 @@ namespace WBW\Bundle\CommonBundle\Twig\Extension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\AssetsTwigExtension as BootstrapAssetsTwigExtension;
+use WBW\Bundle\CommonBundle\Provider\JavascriptProviderInterface;
+use WBW\Bundle\CommonBundle\Provider\StylesheetProviderInterface;
 use WBW\Bundle\CommonBundle\Routing\RouterTrait;
-use WBW\Library\Symfony\Helper\ColorHelper;
-use WBW\Library\Symfony\Provider\JavascriptProviderInterface;
-use WBW\Library\Symfony\Provider\StylesheetProviderInterface;
+use WBW\Bundle\WidgetBundle\Helper\ColorHelper;
 use WBW\Library\Types\Helper\ArrayHelper;
 use WBW\Library\Types\Helper\StringHelper;
 
