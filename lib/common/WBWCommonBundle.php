@@ -16,6 +16,9 @@ namespace WBW\Bundle\CommonBundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
+use WBW\Bundle\CommonBundle\DependencyInjection\Compiler\ColorProviderCompilerPass;
+use WBW\Bundle\CommonBundle\DependencyInjection\Compiler\JavascriptProviderCompilerPass;
+use WBW\Bundle\CommonBundle\DependencyInjection\Compiler\StylesheetProviderCompilerPass;
 use WBW\Bundle\CommonBundle\DependencyInjection\WBWCommonExtension;
 use WBW\Bundle\CommonBundle\Provider\AssetsProviderInterface;
 
@@ -38,6 +41,9 @@ class WBWCommonBundle extends Bundle implements AssetsProviderInterface {
      * {@inheritDoc}
      */
     public function build(ContainerBuilder $container): void {
+        $container->addCompilerPass(new ColorProviderCompilerPass());
+        $container->addCompilerPass(new JavascriptProviderCompilerPass());
+        $container->addCompilerPass(new StylesheetProviderCompilerPass());
     }
 
     /**
