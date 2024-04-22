@@ -102,7 +102,7 @@ class AssetsHelperTest extends AbstractTestCase {
         $this->assertCount(1, $res);
 
         foreach ($res as $k => $v) {
-            $this->assertDirectoryExists("{$this->dstDirectory}/assets", $k);
+            $this->assertDirectoryExists("$this->dstDirectory/assets", $k);
             $this->assertTrue($v);
         }
     }

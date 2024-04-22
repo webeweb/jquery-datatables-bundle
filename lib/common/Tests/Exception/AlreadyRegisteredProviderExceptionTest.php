@@ -13,7 +13,6 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\CommonBundle\Tests\Exception;
 
-use WBW\Bundle\CommonBundle\Color\MaterialDesignColorPalette\RedColorProvider;
 use WBW\Bundle\CommonBundle\Exception\AlreadyRegisteredProviderException;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 use WBW\Bundle\CommonBundle\Tests\Fixtures\Provider\TestProvider;
