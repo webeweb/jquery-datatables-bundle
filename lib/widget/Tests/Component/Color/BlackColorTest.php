@@ -11,12 +11,11 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\WidgetBundle\Tests\Assets\MaterialDesignColorPalette;
+namespace WBW\Bundle\WidgetBundle\Tests\Component\Color;
 
 use JsonSerializable;
-use WBW\Bundle\WidgetBundle\Assets\MaterialDesignColorPalette\BlackColor;
-use WBW\Bundle\WidgetBundle\Assets\MaterialDesignColorPalette\BlackColorInterface;
-use WBW\Bundle\WidgetBundle\Component\Color\BlackColorInterface as BaseBlackColorInterface;
+use WBW\Bundle\WidgetBundle\Component\Color\BlackColor;
+use WBW\Bundle\WidgetBundle\Component\Color\BlackColorInterface;
 use WBW\Bundle\WidgetBundle\Component\ColorInterface;
 use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
 
@@ -24,7 +23,7 @@ use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
  * Black color test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package  WBW\Bundle\WidgetBundle\Tests\Assets\MaterialDesignColorPalette
+ * @package WBW\Bundle\WidgetBundle\Tests\Assets\MaterialDesignColorPalette
  */
 class BlackColorTest extends AbstractTestCase {
 
@@ -40,7 +39,7 @@ class BlackColorTest extends AbstractTestCase {
         $res = $obj->getValues();
         $this->assertCount(1, $res);
 
-        $this->assertEquals(BlackColorInterface::BLACK_COLOR_VALUE_500, $res[ColorInterface::COLOR_VALUE_500]);
+        $this->assertEquals(BlackColorInterface::BLACK_COLOR_VALUE, $res[ColorInterface::COLOR_VALUE_DEFAULT]);
     }
 
     /**
@@ -56,6 +55,6 @@ class BlackColorTest extends AbstractTestCase {
         $this->assertInstanceOf(ColorInterface::class, $obj);
         $this->assertInstanceOf(BlackColorInterface::class, $obj);
 
-        $this->assertEquals(BaseBlackColorInterface::BLACK_COLOR_NAME, $obj->getName());
+        $this->assertEquals(BlackColorInterface::BLACK_COLOR_NAME, $obj->getName());
     }
 }
