@@ -15,12 +15,12 @@ namespace WBW\Bundle\DataTablesBundle\Tests\Manager;
 
 use InvalidArgumentException;
 use Throwable;
+use WBW\Bundle\CommonBundle\Provider\ProviderInterface;
 use WBW\Bundle\DataTablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
 use WBW\Bundle\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Library\Symfony\Provider\ProviderInterface;
 
 /**
  * DataTables manager test.
