@@ -19,6 +19,7 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\Routing\RouterInterface;
 use Throwable;
 use Twig\Environment;
+use WBW\Bundle\CommonBundle\Command\UnzipAssetsCommand;
 use WBW\Bundle\CommonBundle\DependencyInjection\WBWCommonExtension;
 use WBW\Bundle\CommonBundle\EventListener\NotificationEventListener;
 use WBW\Bundle\CommonBundle\EventListener\ToastEventListener;
@@ -95,6 +96,9 @@ class WBWCommonExtensionTest extends AbstractTestCase {
         $obj = new WBWCommonExtension();
 
         $obj->load($this->configs, $this->containerBuilder);
+
+        // Commands
+        $this->assertInstanceOf(UnzipAssetsCommand::class, $this->containerBuilder->get(UnzipAssetsCommand::SERVICE_NAME));
 
         // Event listeners
         $this->assertInstanceOf(NotificationEventListener::class, $this->containerBuilder->get(NotificationEventListener::SERVICE_NAME));
