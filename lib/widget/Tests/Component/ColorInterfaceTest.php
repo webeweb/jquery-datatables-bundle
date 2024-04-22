@@ -31,6 +31,8 @@ class ColorInterfaceTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
+        $this->assertEquals("*", ColorInterface::COLOR_VALUE_DEFAULT);
+
         $this->assertEquals("50", ColorInterface::COLOR_VALUE_50);
         $this->assertEquals("100", ColorInterface::COLOR_VALUE_100);
         $this->assertEquals("200", ColorInterface::COLOR_VALUE_200);
@@ -39,6 +41,8 @@ class ColorInterfaceTest extends AbstractTestCase {
         $this->assertEquals("500", ColorInterface::COLOR_VALUE_500);
         $this->assertEquals("600", ColorInterface::COLOR_VALUE_600);
         $this->assertEquals("700", ColorInterface::COLOR_VALUE_700);
+        $this->assertEquals("800", ColorInterface::COLOR_VALUE_800);
+        $this->assertEquals("900", ColorInterface::COLOR_VALUE_900);
 
         $this->assertEquals("A100", ColorInterface::COLOR_VALUE_A100);
         $this->assertEquals("A200", ColorInterface::COLOR_VALUE_A200);

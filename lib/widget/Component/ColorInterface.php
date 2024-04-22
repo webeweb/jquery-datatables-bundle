@@ -80,6 +80,20 @@ interface ColorInterface extends JsonSerializable {
     public const COLOR_VALUE_700 = "700";
 
     /**
+     * Color value "800".
+     *
+     * @var string
+     */
+    public const COLOR_VALUE_800 = "800";
+
+    /**
+     * Color value "900".
+     *
+     * @var string
+     */
+    public const COLOR_VALUE_900 = "900";
+
+    /**
      * Color value "A100".
      *
      * @var string
@@ -106,6 +120,13 @@ interface ColorInterface extends JsonSerializable {
      * @var string
      */
     public const COLOR_VALUE_A700 = "A700";
+
+    /**
+     * Color value "default".
+     *
+     * @var string
+     */
+    public const COLOR_VALUE_DEFAULT = "*";
 
     /**
      * Get the name.
