@@ -28,96 +28,96 @@ interface PurpleColorInterface extends BasePurpleColorInterface {
      *
      * @var string
      */
-    public const PURPLE_COLOR_VALUE_100 = "#E1BEE7";
+    public const PURPLE_COLOR_VALUE_100 = "#e1bee7";
 
     /**
      * Purple color value "200"
      *
      * @var string
      */
-    public const PURPLE_COLOR_VALUE_200 = "#CE93D8";
+    public const PURPLE_COLOR_VALUE_200 = "#ce93d8";
 
     /**
      * Purple color value "300"
      *
      * @var string
      */
-    public const PURPLE_COLOR_VALUE_300 = "#BA68C8";
+    public const PURPLE_COLOR_VALUE_300 = "#ba68c8";
 
     /**
      * Purple color value "400"
      *
      * @var string
      */
-    public const PURPLE_COLOR_VALUE_400 = "#AB47BC";
+    public const PURPLE_COLOR_VALUE_400 = "#ab47bc";
 
     /**
      * Purple color value "50"
      *
      * @var string
      */
-    public const PURPLE_COLOR_VALUE_50 = "#F3E5F5";
+    public const PURPLE_COLOR_VALUE_50 = "#f3e5f5";
 
     /**
      * Purple color value "500"
      *
      * @var string
      */
-    public const PURPLE_COLOR_VALUE_500 = "#9C27B0";
+    public const PURPLE_COLOR_VALUE_500 = "#9c27b0";
 
     /**
      * Purple color value "600"
      *
      * @var string
      */
-    public const PURPLE_COLOR_VALUE_600 = "#8E24AA";
+    public const PURPLE_COLOR_VALUE_600 = "#8e24aa";
 
     /**
      * Purple color value "700"
      *
      * @var string
      */
-    public const PURPLE_COLOR_VALUE_700 = "#7B1FA2";
+    public const PURPLE_COLOR_VALUE_700 = "#7b1fa2";
 
     /**
      * Purple color value "800"
      *
      * @var string
      */
-    public const PURPLE_COLOR_VALUE_800 = "#6A1B9A";
+    public const PURPLE_COLOR_VALUE_800 = "#6a1b9a";
 
     /**
      * Purple color value "900"
      *
      * @var string
      */
-    public const PURPLE_COLOR_VALUE_900 = "#4A148C";
+    public const PURPLE_COLOR_VALUE_900 = "#4a148c";
 
     /**
      * Purple color value "A100"
      *
      * @var string
      */
-    public const PURPLE_COLOR_VALUE_A100 = "#EA80FC";
+    public const PURPLE_COLOR_VALUE_A100 = "#ea80fc";
 
     /**
      * Purple color value "A200"
      *
      * @var string
      */
-    public const PURPLE_COLOR_VALUE_A200 = "#E040FB";
+    public const PURPLE_COLOR_VALUE_A200 = "#e040fb";
 
     /**
      * Purple color value "A400"
      *
      * @var string
      */
-    public const PURPLE_COLOR_VALUE_A400 = "#D500F9";
+    public const PURPLE_COLOR_VALUE_A400 = "#d500f9";
 
     /**
      * Purple color value "A700"
      *
      * @var string
      */
-    public const PURPLE_COLOR_VALUE_A700 = "#AA00FF";
+    public const PURPLE_COLOR_VALUE_A700 = "#aa00ff";
 }

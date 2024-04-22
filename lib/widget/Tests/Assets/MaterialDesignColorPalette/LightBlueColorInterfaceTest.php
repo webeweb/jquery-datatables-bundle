@@ -31,19 +31,19 @@ class LightBlueColorInterfaceTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("#E1F5FE", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_50);
-        $this->assertEquals("#B3E5FC", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_100);
-        $this->assertEquals("#81D4FA", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_200);
-        $this->assertEquals("#4FC3F7", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_300);
-        $this->assertEquals("#29B6F6", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_400);
-        $this->assertEquals("#03A9F4", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_500);
-        $this->assertEquals("#039BE5", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_600);
-        $this->assertEquals("#0288D1", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_700);
-        $this->assertEquals("#0277BD", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_800);
-        $this->assertEquals("#01579B", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_900);
-        $this->assertEquals("#80D8FF", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_A100);
-        $this->assertEquals("#40C4FF", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_A200);
-        $this->assertEquals("#00B0FF", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_A400);
-        $this->assertEquals("#0091EA", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_A700);
+        $this->assertEquals("#e1f5fe", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_50);
+        $this->assertEquals("#b3e5fc", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_100);
+        $this->assertEquals("#81d4fa", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_200);
+        $this->assertEquals("#4fc3f7", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_300);
+        $this->assertEquals("#29b6f6", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_400);
+        $this->assertEquals("#03a9f4", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_500);
+        $this->assertEquals("#039be5", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_600);
+        $this->assertEquals("#0288d1", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_700);
+        $this->assertEquals("#0277bd", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_800);
+        $this->assertEquals("#01579b", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_900);
+        $this->assertEquals("#80d8ff", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_A100);
+        $this->assertEquals("#40c4ff", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_A200);
+        $this->assertEquals("#00b0ff", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_A400);
+        $this->assertEquals("#0091ea", LightBlueColorInterface::LIGHT_BLUE_COLOR_VALUE_A700);
     }
 }

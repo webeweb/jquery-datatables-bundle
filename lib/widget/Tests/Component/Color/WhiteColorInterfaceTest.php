@@ -33,6 +33,6 @@ class WhiteColorInterfaceTest extends AbstractTestCase {
 
         $this->assertEquals("white", WhiteColorInterface::WHITE_COLOR_NAME);
 
-        $this->assertEquals("#FFFFFF", WhiteColorInterface::WHITE_COLOR_VALUE);
+        $this->assertEquals("#ffffff", WhiteColorInterface::WHITE_COLOR_VALUE);
     }
 }

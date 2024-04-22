@@ -28,96 +28,96 @@ interface DeepOrangeColorInterface extends BaseDeepOrangeColorInterface {
      *
      * @var string
      */
-    public const DEEP_ORANGE_COLOR_VALUE_100 = "#FFCCBC";
+    public const DEEP_ORANGE_COLOR_VALUE_100 = "#ffccbc";
 
     /**
      * Deep orange color value "200"
      *
      * @var string
      */
-    public const DEEP_ORANGE_COLOR_VALUE_200 = "#FFAB91";
+    public const DEEP_ORANGE_COLOR_VALUE_200 = "#ffab91";
 
     /**
      * Deep orange color value "300"
      *
      * @var string
      */
-    public const DEEP_ORANGE_COLOR_VALUE_300 = "#FF8A65";
+    public const DEEP_ORANGE_COLOR_VALUE_300 = "#ff8a65";
 
     /**
      * Deep orange color value "400"
      *
      * @var string
      */
-    public const DEEP_ORANGE_COLOR_VALUE_400 = "#FF7043";
+    public const DEEP_ORANGE_COLOR_VALUE_400 = "#ff7043";
 
     /**
      * Deep orange color value "50"
      *
      * @var string
      */
-    public const DEEP_ORANGE_COLOR_VALUE_50 = "#FBE9E7";
+    public const DEEP_ORANGE_COLOR_VALUE_50 = "#fbe9e7";
 
     /**
      * Deep orange color value "500"
      *
      * @var string
      */
-    public const DEEP_ORANGE_COLOR_VALUE_500 = "#FF5722";
+    public const DEEP_ORANGE_COLOR_VALUE_500 = "#ff5722";
 
     /**
      * Deep orange color value "600"
      *
      * @var string
      */
-    public const DEEP_ORANGE_COLOR_VALUE_600 = "#F4511E";
+    public const DEEP_ORANGE_COLOR_VALUE_600 = "#f4511e";
 
     /**
      * Deep orange color value "700"
      *
      * @var string
      */
-    public const DEEP_ORANGE_COLOR_VALUE_700 = "#E64A19";
+    public const DEEP_ORANGE_COLOR_VALUE_700 = "#e64a19";
 
     /**
      * Deep orange color value "800"
      *
      * @var string
      */
-    public const DEEP_ORANGE_COLOR_VALUE_800 = "#D84315";
+    public const DEEP_ORANGE_COLOR_VALUE_800 = "#d84315";
 
     /**
      * Deep orange color value "900"
      *
      * @var string
      */
-    public const DEEP_ORANGE_COLOR_VALUE_900 = "#BF360C";
+    public const DEEP_ORANGE_COLOR_VALUE_900 = "#bf360c";
 
     /**
      * Deep orange color value "A100"
      *
      * @var string
      */
-    public const DEEP_ORANGE_COLOR_VALUE_A100 = "#FF9E80";
+    public const DEEP_ORANGE_COLOR_VALUE_A100 = "#ff9e80";
 
     /**
      * Deep orange color value "A200"
      *
      * @var string
      */
-    public const DEEP_ORANGE_COLOR_VALUE_A200 = "#FF6E40";
+    public const DEEP_ORANGE_COLOR_VALUE_A200 = "#ff6e40";
 
     /**
      * Deep orange color value "A400"
      *
      * @var string
      */
-    public const DEEP_ORANGE_COLOR_VALUE_A400 = "#FF3D00";
+    public const DEEP_ORANGE_COLOR_VALUE_A400 = "#ff3d00";
 
     /**
      * Deep orange color value "A700"
      *
      * @var string
      */
-    public const DEEP_ORANGE_COLOR_VALUE_A700 = "#DD2C00";
+    public const DEEP_ORANGE_COLOR_VALUE_A700 = "#dd2c00";
 }

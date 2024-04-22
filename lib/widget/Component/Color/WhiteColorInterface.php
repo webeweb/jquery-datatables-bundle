@@ -35,5 +35,5 @@ interface WhiteColorInterface extends ColorInterface {
      *
      * @var string
      */
-    public const WHITE_COLOR_VALUE = "#FFFFFF";
+    public const WHITE_COLOR_VALUE = "#ffffff";
 }

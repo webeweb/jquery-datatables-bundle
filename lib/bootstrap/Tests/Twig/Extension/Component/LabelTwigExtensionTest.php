@@ -79,8 +79,8 @@ class LabelTwigExtensionTest extends AbstractTestCase {
             "ROLE_USER"        => "label.role.user",
         ];
         $this->roleColors  = [
-            "ROLE_SUPER_ADMIN" => "#D9534F",
-            "ROLE_ADMIN"       => "#337AB7",
+            "ROLE_SUPER_ADMIN" => "#d9534f",
+            "ROLE_ADMIN"       => "#337ab7",
         ];
     }
 
@@ -214,7 +214,7 @@ class LabelTwigExtensionTest extends AbstractTestCase {
 
         $obj = new LabelTwigExtension($this->twigEnvironment);
 
-        $exp = '<span class="label label-default" style="background-color: #D9534F;">label.role.root</span> <span class="label label-default" style="background-color: #337AB7;">label.role.admin</span> <span class="label label-default">label.role.user</span>';
+        $exp = '<span class="label label-default" style="background-color: #d9534f;">label.role.root</span> <span class="label label-default" style="background-color: #337ab7;">label.role.admin</span> <span class="label label-default">label.role.user</span>';
 
         $this->assertEquals($exp, $obj->bootstrapLabelRolesFunction($this->user, $this->roleChoices, $this->roleColors));
     }

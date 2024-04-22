@@ -28,96 +28,96 @@ interface DeepPurpleColorInterface extends BaseDeepPurpleColorInterface {
      *
      * @var string
      */
-    public const DEEP_PURPLE_COLOR_VALUE_100 = "#D1C4E9";
+    public const DEEP_PURPLE_COLOR_VALUE_100 = "#d1c4e9";
 
     /**
      * Deep purple color value "200"
      *
      * @var string
      */
-    public const DEEP_PURPLE_COLOR_VALUE_200 = "#B39DDB";
+    public const DEEP_PURPLE_COLOR_VALUE_200 = "#b39ddb";
 
     /**
      * Deep purple color value "300"
      *
      * @var string
      */
-    public const DEEP_PURPLE_COLOR_VALUE_300 = "#9575CD";
+    public const DEEP_PURPLE_COLOR_VALUE_300 = "#9575cd";
 
     /**
      * Deep purple color value "400"
      *
      * @var string
      */
-    public const DEEP_PURPLE_COLOR_VALUE_400 = "#7E57C2";
+    public const DEEP_PURPLE_COLOR_VALUE_400 = "#7e57c2";
 
     /**
      * Deep purple color value "50"
      *
      * @var string
      */
-    public const DEEP_PURPLE_COLOR_VALUE_50 = "#EDE7F6";
+    public const DEEP_PURPLE_COLOR_VALUE_50 = "#ede7f6";
 
     /**
      * Deep purple color value "500"
      *
      * @var string
      */
-    public const DEEP_PURPLE_COLOR_VALUE_500 = "#673AB7";
+    public const DEEP_PURPLE_COLOR_VALUE_500 = "#673ab7";
 
     /**
      * Deep purple color value "600"
      *
      * @var string
      */
-    public const DEEP_PURPLE_COLOR_VALUE_600 = "#5E35B1";
+    public const DEEP_PURPLE_COLOR_VALUE_600 = "#5e35b1";
 
     /**
      * Deep purple color value "700"
      *
      * @var string
      */
-    public const DEEP_PURPLE_COLOR_VALUE_700 = "#512DA8";
+    public const DEEP_PURPLE_COLOR_VALUE_700 = "#512da8";
 
     /**
      * Deep purple color value "800"
      *
      * @var string
      */
-    public const DEEP_PURPLE_COLOR_VALUE_800 = "#4527A0";
+    public const DEEP_PURPLE_COLOR_VALUE_800 = "#4527a0";
 
     /**
      * Deep purple color value "900"
      *
      * @var string
      */
-    public const DEEP_PURPLE_COLOR_VALUE_900 = "#311B92";
+    public const DEEP_PURPLE_COLOR_VALUE_900 = "#311b92";
 
     /**
      * Deep purple color value "A100"
      *
      * @var string
      */
-    public const DEEP_PURPLE_COLOR_VALUE_A100 = "#B388FF";
+    public const DEEP_PURPLE_COLOR_VALUE_A100 = "#b388ff";
 
     /**
      * Deep purple color value "A200"
      *
      * @var string
      */
-    public const DEEP_PURPLE_COLOR_VALUE_A200 = "#7C4DFF";
+    public const DEEP_PURPLE_COLOR_VALUE_A200 = "#7c4dff";
 
     /**
      * Deep purple color value "A400"
      *
      * @var string
      */
-    public const DEEP_PURPLE_COLOR_VALUE_A400 = "#651FFF";
+    public const DEEP_PURPLE_COLOR_VALUE_A400 = "#651fff";
 
     /**
      * Deep purple color value "A700"
      *
      * @var string
      */
-    public const DEEP_PURPLE_COLOR_VALUE_A700 = "#6200EA";
+    public const DEEP_PURPLE_COLOR_VALUE_A700 = "#6200ea";
 }

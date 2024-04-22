@@ -118,7 +118,7 @@ class AssetsTwigExtensionTest extends AbstractTestCase {
 
         $this->assertNull($obj->cssRgba(null));
         $this->assertNull($obj->cssRgba(""));
-        $this->assertEquals("rgba(255, 255, 255, 0.00)", $obj->cssRgba("#FFFFFF", 0.00));
+        $this->assertEquals("rgba(255, 255, 255, 0.00)", $obj->cssRgba("#ffffff", 0.00));
     }
 
     /**

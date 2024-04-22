@@ -28,35 +28,35 @@ interface BrownColorInterface extends BaseBrownColorInterface {
      *
      * @var string
      */
-    public const BROWN_COLOR_VALUE_100 = "#D7CCC8";
+    public const BROWN_COLOR_VALUE_100 = "#d7ccc8";
 
     /**
      * Brown color value "200"
      *
      * @var string
      */
-    public const BROWN_COLOR_VALUE_200 = "#BCAAA4";
+    public const BROWN_COLOR_VALUE_200 = "#bcaaa4";
 
     /**
      * Brown color value "300"
      *
      * @var string
      */
-    public const BROWN_COLOR_VALUE_300 = "#A1887F";
+    public const BROWN_COLOR_VALUE_300 = "#a1887f";
 
     /**
      * Brown color value "400"
      *
      * @var string
      */
-    public const BROWN_COLOR_VALUE_400 = "#8D6E63";
+    public const BROWN_COLOR_VALUE_400 = "#8d6e63";
 
     /**
      * Brown color value "50"
      *
      * @var string
      */
-    public const BROWN_COLOR_VALUE_50 = "#EFEBE9";
+    public const BROWN_COLOR_VALUE_50 = "#efebe9";
 
     /**
      * Brown color value "500"
@@ -70,26 +70,26 @@ interface BrownColorInterface extends BaseBrownColorInterface {
      *
      * @var string
      */
-    public const BROWN_COLOR_VALUE_600 = "#6D4C41";
+    public const BROWN_COLOR_VALUE_600 = "#6d4c41";
 
     /**
      * Brown color value "700"
      *
      * @var string
      */
-    public const BROWN_COLOR_VALUE_700 = "#5D4037";
+    public const BROWN_COLOR_VALUE_700 = "#5d4037";
 
     /**
      * Brown color value "800"
      *
      * @var string
      */
-    public const BROWN_COLOR_VALUE_800 = "#4E342E";
+    public const BROWN_COLOR_VALUE_800 = "#4e342e";
 
     /**
      * Brown color value "900"
      *
      * @var string
      */
-    public const BROWN_COLOR_VALUE_900 = "#3E2723";
+    public const BROWN_COLOR_VALUE_900 = "#3e2723";
 }

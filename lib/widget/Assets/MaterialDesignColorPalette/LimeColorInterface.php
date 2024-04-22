@@ -28,63 +28,63 @@ interface LimeColorInterface extends BaseLimeColorInterface {
      *
      * @var string
      */
-    public const LIME_COLOR_VALUE_100 = "#F0F4C3";
+    public const LIME_COLOR_VALUE_100 = "#f0f4c3";
 
     /**
      * Lime color value "200"
      *
      * @var string
      */
-    public const LIME_COLOR_VALUE_200 = "#E6EE9C";
+    public const LIME_COLOR_VALUE_200 = "#e6ee9c";
 
     /**
      * Lime color value "300"
      *
      * @var string
      */
-    public const LIME_COLOR_VALUE_300 = "#DCE775";
+    public const LIME_COLOR_VALUE_300 = "#dce775";
 
     /**
      * Lime color value "400"
      *
      * @var string
      */
-    public const LIME_COLOR_VALUE_400 = "#D4E157";
+    public const LIME_COLOR_VALUE_400 = "#d4e157";
 
     /**
      * Lime color value "50"
      *
      * @var string
      */
-    public const LIME_COLOR_VALUE_50 = "#F9FBE7";
+    public const LIME_COLOR_VALUE_50 = "#f9fbe7";
 
     /**
      * Lime color value "500"
      *
      * @var string
      */
-    public const LIME_COLOR_VALUE_500 = "#CDDC39";
+    public const LIME_COLOR_VALUE_500 = "#cddc39";
 
     /**
      * Lime color value "600"
      *
      * @var string
      */
-    public const LIME_COLOR_VALUE_600 = "#C0CA33";
+    public const LIME_COLOR_VALUE_600 = "#c0ca33";
 
     /**
      * Lime color value "700"
      *
      * @var string
      */
-    public const LIME_COLOR_VALUE_700 = "#AFB42B";
+    public const LIME_COLOR_VALUE_700 = "#afb42b";
 
     /**
      * Lime color value "800"
      *
      * @var string
      */
-    public const LIME_COLOR_VALUE_800 = "#9E9D24";
+    public const LIME_COLOR_VALUE_800 = "#9e9d24";
 
     /**
      * Lime color value "900"
@@ -98,26 +98,26 @@ interface LimeColorInterface extends BaseLimeColorInterface {
      *
      * @var string
      */
-    public const LIME_COLOR_VALUE_A100 = "#F4FF81";
+    public const LIME_COLOR_VALUE_A100 = "#f4ff81";
 
     /**
      * Lime color value "A200"
      *
      * @var string
      */
-    public const LIME_COLOR_VALUE_A200 = "#EEFF41";
+    public const LIME_COLOR_VALUE_A200 = "#eeff41";
 
     /**
      * Lime color value "A400"
      *
      * @var string
      */
-    public const LIME_COLOR_VALUE_A400 = "#C6FF00";
+    public const LIME_COLOR_VALUE_A400 = "#c6ff00";
 
     /**
      * Lime color value "A700"
      *
      * @var string
      */
-    public const LIME_COLOR_VALUE_A700 = "#AEEA00";
+    public const LIME_COLOR_VALUE_A700 = "#aeea00";
 }

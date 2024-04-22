@@ -28,42 +28,42 @@ interface GreyColorInterface extends BaseGreyColorInterface {
      *
      * @var string
      */
-    public const GREY_COLOR_VALUE_100 = "#F5F5F5";
+    public const GREY_COLOR_VALUE_100 = "#f5f5f5";
 
     /**
      * Grey color value "200"
      *
      * @var string
      */
-    public const GREY_COLOR_VALUE_200 = "#EEEEEE";
+    public const GREY_COLOR_VALUE_200 = "#eeeeee";
 
     /**
      * Grey color value "300"
      *
      * @var string
      */
-    public const GREY_COLOR_VALUE_300 = "#E0E0E0";
+    public const GREY_COLOR_VALUE_300 = "#e0e0e0";
 
     /**
      * Grey color value "400"
      *
      * @var string
      */
-    public const GREY_COLOR_VALUE_400 = "#BDBDBD";
+    public const GREY_COLOR_VALUE_400 = "#bdbdbd";
 
     /**
      * Grey color value "50"
      *
      * @var string
      */
-    public const GREY_COLOR_VALUE_50 = "#FAFAFA";
+    public const GREY_COLOR_VALUE_50 = "#fafafa";
 
     /**
      * Grey color value "500"
      *
      * @var string
      */
-    public const GREY_COLOR_VALUE_500 = "#9E9E9E";
+    public const GREY_COLOR_VALUE_500 = "#9e9e9e";
 
     /**
      * Grey color value "600"

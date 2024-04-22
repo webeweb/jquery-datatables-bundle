@@ -28,63 +28,63 @@ interface CyanColorInterface extends BaseCyanColorInterface {
      *
      * @var string
      */
-    public const CYAN_COLOR_VALUE_100 = "#B2EBF2";
+    public const CYAN_COLOR_VALUE_100 = "#b2ebf2";
 
     /**
      * Cyan color value "200"
      *
      * @var string
      */
-    public const CYAN_COLOR_VALUE_200 = "#80DEEA";
+    public const CYAN_COLOR_VALUE_200 = "#80deea";
 
     /**
      * Cyan color value "300"
      *
      * @var string
      */
-    public const CYAN_COLOR_VALUE_300 = "#4DD0E1";
+    public const CYAN_COLOR_VALUE_300 = "#4dd0e1";
 
     /**
      * Cyan color value "400"
      *
      * @var string
      */
-    public const CYAN_COLOR_VALUE_400 = "#26C6DA";
+    public const CYAN_COLOR_VALUE_400 = "#26c6da";
 
     /**
      * Cyan color value "50"
      *
      * @var string
      */
-    public const CYAN_COLOR_VALUE_50 = "#E0F7FA";
+    public const CYAN_COLOR_VALUE_50 = "#e0f7fa";
 
     /**
      * Cyan color value "500"
      *
      * @var string
      */
-    public const CYAN_COLOR_VALUE_500 = "#00BCD4";
+    public const CYAN_COLOR_VALUE_500 = "#00bcd4";
 
     /**
      * Cyan color value "600"
      *
      * @var string
      */
-    public const CYAN_COLOR_VALUE_600 = "#00ACC1";
+    public const CYAN_COLOR_VALUE_600 = "#00acc1";
 
     /**
      * Cyan color value "700"
      *
      * @var string
      */
-    public const CYAN_COLOR_VALUE_700 = "#0097A7";
+    public const CYAN_COLOR_VALUE_700 = "#0097a7";
 
     /**
      * Cyan color value "800"
      *
      * @var string
      */
-    public const CYAN_COLOR_VALUE_800 = "#00838F";
+    public const CYAN_COLOR_VALUE_800 = "#00838f";
 
     /**
      * Cyan color value "900"
@@ -98,26 +98,26 @@ interface CyanColorInterface extends BaseCyanColorInterface {
      *
      * @var string
      */
-    public const CYAN_COLOR_VALUE_A100 = "#84FFFF";
+    public const CYAN_COLOR_VALUE_A100 = "#84ffff";
 
     /**
      * Cyan color value "A200"
      *
      * @var string
      */
-    public const CYAN_COLOR_VALUE_A200 = "#18FFFF";
+    public const CYAN_COLOR_VALUE_A200 = "#18ffff";
 
     /**
      * Cyan color value "A400"
      *
      * @var string
      */
-    public const CYAN_COLOR_VALUE_A400 = "#00E5FF";
+    public const CYAN_COLOR_VALUE_A400 = "#00e5ff";
 
     /**
      * Cyan color value "A700"
      *
      * @var string
      */
-    public const CYAN_COLOR_VALUE_A700 = "#00B8D4";
+    public const CYAN_COLOR_VALUE_A700 = "#00b8d4";
 }

@@ -28,96 +28,96 @@ interface OrangeColorInterface extends BaseOrangeColorInterface {
      *
      * @var string
      */
-    public const ORANGE_COLOR_VALUE_100 = "#FFE0B2";
+    public const ORANGE_COLOR_VALUE_100 = "#ffe0b2";
 
     /**
      * Orange color value "200"
      *
      * @var string
      */
-    public const ORANGE_COLOR_VALUE_200 = "#FFCC80";
+    public const ORANGE_COLOR_VALUE_200 = "#ffcc80";
 
     /**
      * Orange color value "300"
      *
      * @var string
      */
-    public const ORANGE_COLOR_VALUE_300 = "#FFB74D";
+    public const ORANGE_COLOR_VALUE_300 = "#ffb74d";
 
     /**
      * Orange color value "400"
      *
      * @var string
      */
-    public const ORANGE_COLOR_VALUE_400 = "#FFA726";
+    public const ORANGE_COLOR_VALUE_400 = "#ffa726";
 
     /**
      * Orange color value "50"
      *
      * @var string
      */
-    public const ORANGE_COLOR_VALUE_50 = "#FFF3E0";
+    public const ORANGE_COLOR_VALUE_50 = "#fff3e0";
 
     /**
      * Orange color value "500"
      *
      * @var string
      */
-    public const ORANGE_COLOR_VALUE_500 = "#FF9800";
+    public const ORANGE_COLOR_VALUE_500 = "#ff9800";
 
     /**
      * Orange color value "600"
      *
      * @var string
      */
-    public const ORANGE_COLOR_VALUE_600 = "#FB8C00";
+    public const ORANGE_COLOR_VALUE_600 = "#fb8c00";
 
     /**
      * Orange color value "700"
      *
      * @var string
      */
-    public const ORANGE_COLOR_VALUE_700 = "#F57C00";
+    public const ORANGE_COLOR_VALUE_700 = "#f57c00";
 
     /**
      * Orange color value "800"
      *
      * @var string
      */
-    public const ORANGE_COLOR_VALUE_800 = "#EF6C00";
+    public const ORANGE_COLOR_VALUE_800 = "#ef6c00";
 
     /**
      * Orange color value "900"
      *
      * @var string
      */
-    public const ORANGE_COLOR_VALUE_900 = "#E65100";
+    public const ORANGE_COLOR_VALUE_900 = "#e65100";
 
     /**
      * Orange color value "A100"
      *
      * @var string
      */
-    public const ORANGE_COLOR_VALUE_A100 = "#FFD180";
+    public const ORANGE_COLOR_VALUE_A100 = "#ffd180";
 
     /**
      * Orange color value "A200"
      *
      * @var string
      */
-    public const ORANGE_COLOR_VALUE_A200 = "#FFAB40";
+    public const ORANGE_COLOR_VALUE_A200 = "#ffab40";
 
     /**
      * Orange color value "A400"
      *
      * @var string
      */
-    public const ORANGE_COLOR_VALUE_A400 = "#FF9100";
+    public const ORANGE_COLOR_VALUE_A400 = "#ff9100";
 
     /**
      * Orange color value "A700"
      *
      * @var string
      */
-    public const ORANGE_COLOR_VALUE_A700 = "#FF6D00";
+    public const ORANGE_COLOR_VALUE_A700 = "#ff6d00";
 }

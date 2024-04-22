@@ -28,96 +28,96 @@ interface GreenColorInterface extends BaseGreenColorInterface {
      *
      * @var string
      */
-    public const GREEN_COLOR_VALUE_100 = "#C8E6C9";
+    public const GREEN_COLOR_VALUE_100 = "#c8e6c9";
 
     /**
      * Green color value "200"
      *
      * @var string
      */
-    public const GREEN_COLOR_VALUE_200 = "#A5D6A7";
+    public const GREEN_COLOR_VALUE_200 = "#a5d6a7";
 
     /**
      * Green color value "300"
      *
      * @var string
      */
-    public const GREEN_COLOR_VALUE_300 = "#81C784";
+    public const GREEN_COLOR_VALUE_300 = "#81c784";
 
     /**
      * Green color value "400"
      *
      * @var string
      */
-    public const GREEN_COLOR_VALUE_400 = "#66BB6A";
+    public const GREEN_COLOR_VALUE_400 = "#66bb6a";
 
     /**
      * Green color value "50"
      *
      * @var string
      */
-    public const GREEN_COLOR_VALUE_50 = "#E8F5E9";
+    public const GREEN_COLOR_VALUE_50 = "#e8f5e9";
 
     /**
      * Green color value "500"
      *
      * @var string
      */
-    public const GREEN_COLOR_VALUE_500 = "#4CAF50";
+    public const GREEN_COLOR_VALUE_500 = "#4caf50";
 
     /**
      * Green color value "600"
      *
      * @var string
      */
-    public const GREEN_COLOR_VALUE_600 = "#43A047";
+    public const GREEN_COLOR_VALUE_600 = "#43a047";
 
     /**
      * Green color value "700"
      *
      * @var string
      */
-    public const GREEN_COLOR_VALUE_700 = "#388E3C";
+    public const GREEN_COLOR_VALUE_700 = "#388e3c";
 
     /**
      * Green color value "800"
      *
      * @var string
      */
-    public const GREEN_COLOR_VALUE_800 = "#2E7D32";
+    public const GREEN_COLOR_VALUE_800 = "#2e7d32";
 
     /**
      * Green color value "900"
      *
      * @var string
      */
-    public const GREEN_COLOR_VALUE_900 = "#1B5E20";
+    public const GREEN_COLOR_VALUE_900 = "#1b5e20";
 
     /**
      * Green color value "A100"
      *
      * @var string
      */
-    public const GREEN_COLOR_VALUE_A100 = "#B9F6CA";
+    public const GREEN_COLOR_VALUE_A100 = "#b9f6ca";
 
     /**
      * Green color value "A200"
      *
      * @var string
      */
-    public const GREEN_COLOR_VALUE_A200 = "#69F0AE";
+    public const GREEN_COLOR_VALUE_A200 = "#69f0ae";
 
     /**
      * Green color value "A400"
      *
      * @var string
      */
-    public const GREEN_COLOR_VALUE_A400 = "#00E676";
+    public const GREEN_COLOR_VALUE_A400 = "#00e676";
 
     /**
      * Green color value "A700"
      *
      * @var string
      */
-    public const GREEN_COLOR_VALUE_A700 = "#00C853";
+    public const GREEN_COLOR_VALUE_A700 = "#00c853";
 }

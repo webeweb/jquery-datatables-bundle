@@ -31,19 +31,19 @@ class LimeColorInterfaceTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("#F9FBE7", LimeColorInterface::LIME_COLOR_VALUE_50);
-        $this->assertEquals("#F0F4C3", LimeColorInterface::LIME_COLOR_VALUE_100);
-        $this->assertEquals("#E6EE9C", LimeColorInterface::LIME_COLOR_VALUE_200);
-        $this->assertEquals("#DCE775", LimeColorInterface::LIME_COLOR_VALUE_300);
-        $this->assertEquals("#D4E157", LimeColorInterface::LIME_COLOR_VALUE_400);
-        $this->assertEquals("#CDDC39", LimeColorInterface::LIME_COLOR_VALUE_500);
-        $this->assertEquals("#C0CA33", LimeColorInterface::LIME_COLOR_VALUE_600);
-        $this->assertEquals("#AFB42B", LimeColorInterface::LIME_COLOR_VALUE_700);
-        $this->assertEquals("#9E9D24", LimeColorInterface::LIME_COLOR_VALUE_800);
+        $this->assertEquals("#f9fbe7", LimeColorInterface::LIME_COLOR_VALUE_50);
+        $this->assertEquals("#f0f4c3", LimeColorInterface::LIME_COLOR_VALUE_100);
+        $this->assertEquals("#e6ee9c", LimeColorInterface::LIME_COLOR_VALUE_200);
+        $this->assertEquals("#dce775", LimeColorInterface::LIME_COLOR_VALUE_300);
+        $this->assertEquals("#d4e157", LimeColorInterface::LIME_COLOR_VALUE_400);
+        $this->assertEquals("#cddc39", LimeColorInterface::LIME_COLOR_VALUE_500);
+        $this->assertEquals("#c0ca33", LimeColorInterface::LIME_COLOR_VALUE_600);
+        $this->assertEquals("#afb42b", LimeColorInterface::LIME_COLOR_VALUE_700);
+        $this->assertEquals("#9e9d24", LimeColorInterface::LIME_COLOR_VALUE_800);
         $this->assertEquals("#827717", LimeColorInterface::LIME_COLOR_VALUE_900);
-        $this->assertEquals("#F4FF81", LimeColorInterface::LIME_COLOR_VALUE_A100);
-        $this->assertEquals("#EEFF41", LimeColorInterface::LIME_COLOR_VALUE_A200);
-        $this->assertEquals("#C6FF00", LimeColorInterface::LIME_COLOR_VALUE_A400);
-        $this->assertEquals("#AEEA00", LimeColorInterface::LIME_COLOR_VALUE_A700);
+        $this->assertEquals("#f4ff81", LimeColorInterface::LIME_COLOR_VALUE_A100);
+        $this->assertEquals("#eeff41", LimeColorInterface::LIME_COLOR_VALUE_A200);
+        $this->assertEquals("#c6ff00", LimeColorInterface::LIME_COLOR_VALUE_A400);
+        $this->assertEquals("#aeea00", LimeColorInterface::LIME_COLOR_VALUE_A700);
     }
 }

@@ -31,19 +31,19 @@ class PinkColorInterfaceTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("#FCE4EC", PinkColorInterface::PINK_COLOR_VALUE_50);
-        $this->assertEquals("#F8BBD0", PinkColorInterface::PINK_COLOR_VALUE_100);
-        $this->assertEquals("#F48FB1", PinkColorInterface::PINK_COLOR_VALUE_200);
-        $this->assertEquals("#F06292", PinkColorInterface::PINK_COLOR_VALUE_300);
-        $this->assertEquals("#EC407A", PinkColorInterface::PINK_COLOR_VALUE_400);
-        $this->assertEquals("#E91E63", PinkColorInterface::PINK_COLOR_VALUE_500);
-        $this->assertEquals("#D81B60", PinkColorInterface::PINK_COLOR_VALUE_600);
-        $this->assertEquals("#C2185B", PinkColorInterface::PINK_COLOR_VALUE_700);
-        $this->assertEquals("#AD1457", PinkColorInterface::PINK_COLOR_VALUE_800);
-        $this->assertEquals("#880E4F", PinkColorInterface::PINK_COLOR_VALUE_900);
-        $this->assertEquals("#FF80AB", PinkColorInterface::PINK_COLOR_VALUE_A100);
-        $this->assertEquals("#FF4081", PinkColorInterface::PINK_COLOR_VALUE_A200);
-        $this->assertEquals("#F50057", PinkColorInterface::PINK_COLOR_VALUE_A400);
-        $this->assertEquals("#C51162", PinkColorInterface::PINK_COLOR_VALUE_A700);
+        $this->assertEquals("#fce4ec", PinkColorInterface::PINK_COLOR_VALUE_50);
+        $this->assertEquals("#f8bbd0", PinkColorInterface::PINK_COLOR_VALUE_100);
+        $this->assertEquals("#f48fb1", PinkColorInterface::PINK_COLOR_VALUE_200);
+        $this->assertEquals("#f06292", PinkColorInterface::PINK_COLOR_VALUE_300);
+        $this->assertEquals("#ec407a", PinkColorInterface::PINK_COLOR_VALUE_400);
+        $this->assertEquals("#e91e63", PinkColorInterface::PINK_COLOR_VALUE_500);
+        $this->assertEquals("#d81b60", PinkColorInterface::PINK_COLOR_VALUE_600);
+        $this->assertEquals("#c2185b", PinkColorInterface::PINK_COLOR_VALUE_700);
+        $this->assertEquals("#ad1457", PinkColorInterface::PINK_COLOR_VALUE_800);
+        $this->assertEquals("#880e4f", PinkColorInterface::PINK_COLOR_VALUE_900);
+        $this->assertEquals("#ff80ab", PinkColorInterface::PINK_COLOR_VALUE_A100);
+        $this->assertEquals("#ff4081", PinkColorInterface::PINK_COLOR_VALUE_A200);
+        $this->assertEquals("#f50057", PinkColorInterface::PINK_COLOR_VALUE_A400);
+        $this->assertEquals("#c51162", PinkColorInterface::PINK_COLOR_VALUE_A700);
     }
 }

@@ -28,96 +28,96 @@ interface AmberColorInterface extends BaseAmberColorInterface {
      *
      * @var string
      */
-    public const AMBER_COLOR_VALUE_100 = "#FFECB3";
+    public const AMBER_COLOR_VALUE_100 = "#ffecb3";
 
     /**
      * Amber color value "200"
      *
      * @var string
      */
-    public const AMBER_COLOR_VALUE_200 = "#FFE082";
+    public const AMBER_COLOR_VALUE_200 = "#ffe082";
 
     /**
      * Amber color value "300"
      *
      * @var string
      */
-    public const AMBER_COLOR_VALUE_300 = "#FFD54F";
+    public const AMBER_COLOR_VALUE_300 = "#ffd54f";
 
     /**
      * Amber color value "400"
      *
      * @var string
      */
-    public const AMBER_COLOR_VALUE_400 = "#FFCA28";
+    public const AMBER_COLOR_VALUE_400 = "#ffca28";
 
     /**
      * Amber color value "50"
      *
      * @var string
      */
-    public const AMBER_COLOR_VALUE_50 = "#FFF8E1";
+    public const AMBER_COLOR_VALUE_50 = "#fff8e1";
 
     /**
      * Amber color value "500"
      *
      * @var string
      */
-    public const AMBER_COLOR_VALUE_500 = "#FFC107";
+    public const AMBER_COLOR_VALUE_500 = "#ffc107";
 
     /**
      * Amber color value "600"
      *
      * @var string
      */
-    public const AMBER_COLOR_VALUE_600 = "#FFB300";
+    public const AMBER_COLOR_VALUE_600 = "#ffb300";
 
     /**
      * Amber color value "700"
      *
      * @var string
      */
-    public const AMBER_COLOR_VALUE_700 = "#FFA000";
+    public const AMBER_COLOR_VALUE_700 = "#ffa000";
 
     /**
      * Amber color value "800"
      *
      * @var string
      */
-    public const AMBER_COLOR_VALUE_800 = "#FF8F00";
+    public const AMBER_COLOR_VALUE_800 = "#ff8f00";
 
     /**
      * Amber color value "900"
      *
      * @var string
      */
-    public const AMBER_COLOR_VALUE_900 = "#FF6F00";
+    public const AMBER_COLOR_VALUE_900 = "#ff6f00";
 
     /**
      * Amber color value "A100"
      *
      * @var string
      */
-    public const AMBER_COLOR_VALUE_A100 = "#FFE57F";
+    public const AMBER_COLOR_VALUE_A100 = "#ffe57f";
 
     /**
      * Amber color value "A200"
      *
      * @var string
      */
-    public const AMBER_COLOR_VALUE_A200 = "#FFD740";
+    public const AMBER_COLOR_VALUE_A200 = "#ffd740";
 
     /**
      * Amber color value "A400"
      *
      * @var string
      */
-    public const AMBER_COLOR_VALUE_A400 = "#FFC400";
+    public const AMBER_COLOR_VALUE_A400 = "#ffc400";
 
     /**
      * Amber color value "A700"
      *
      * @var string
      */
-    public const AMBER_COLOR_VALUE_A700 = "#FFAB00";
+    public const AMBER_COLOR_VALUE_A700 = "#ffab00";
 }
