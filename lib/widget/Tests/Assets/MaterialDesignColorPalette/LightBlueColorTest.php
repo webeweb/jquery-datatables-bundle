@@ -24,7 +24,7 @@ use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
  * Light blue color test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package  WBW\Bundle\WidgetBundle\Tests\Assets\MaterialDesignColorPalette
+ * @package WBW\Bundle\WidgetBundle\Tests\Assets\MaterialDesignColorPalette
  */
 class LightBlueColorTest extends AbstractTestCase {
 

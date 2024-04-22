@@ -24,7 +24,7 @@ use WBW\Bundle\WidgetBundle\Component\ColorInterface;
  * Orange color test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package  WBW\Bundle\BootstrapBundle\Tests\Customize\Color
+ * @package WBW\Bundle\BootstrapBundle\Tests\Customize\Color
  */
 class OrangeColorTest extends AbstractTestCase {
 

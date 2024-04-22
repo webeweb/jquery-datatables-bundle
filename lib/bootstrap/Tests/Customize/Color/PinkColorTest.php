@@ -24,7 +24,7 @@ use WBW\Bundle\WidgetBundle\Component\ColorInterface;
  * Pink color test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package  WBW\Bundle\BootstrapBundle\Tests\Customize\Color
+ * @package WBW\Bundle\BootstrapBundle\Tests\Customize\Color
  */
 class PinkColorTest extends AbstractTestCase {
 

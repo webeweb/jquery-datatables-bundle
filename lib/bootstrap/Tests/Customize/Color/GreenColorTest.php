@@ -24,7 +24,7 @@ use WBW\Bundle\WidgetBundle\Component\ColorInterface;
  * Green color test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package  WBW\Bundle\BootstrapBundle\Tests\Customize\Color
+ * @package WBW\Bundle\BootstrapBundle\Tests\Customize\Color
  */
 class GreenColorTest extends AbstractTestCase {
 

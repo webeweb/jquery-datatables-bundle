@@ -24,7 +24,7 @@ use WBW\Bundle\WidgetBundle\Component\ColorInterface;
  * Indigo color test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package  WBW\Bundle\BootstrapBundle\Tests\Customize\Color
+ * @package WBW\Bundle\BootstrapBundle\Tests\Customize\Color
  */
 class IndigoColorTest extends AbstractTestCase {
 

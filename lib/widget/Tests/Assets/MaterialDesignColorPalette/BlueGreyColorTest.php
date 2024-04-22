@@ -24,7 +24,7 @@ use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
  * Blue grey color test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package  WBW\Bundle\WidgetBundle\Tests\Assets\MaterialDesignColorPalette
+ * @package WBW\Bundle\WidgetBundle\Tests\Assets\MaterialDesignColorPalette
  */
 class BlueGreyColorTest extends AbstractTestCase {
 
