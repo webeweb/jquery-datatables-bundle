@@ -1,0 +1,21 @@
+# lib/common/Resources/config/managers.yml
+services:
+
+    logger:
+        alias:  "monolog.logger"
+        public: true
+
+    wbw.common.manager.color:
+        class:  WBW\Bundle\CommonBundle\Manager\ColorManager
+        public: false
+        arguments: [ "@logger" ]
+
+    wbw.common.manager.javascript:
+        class:  WBW\Bundle\CommonBundle\Manager\JavascriptManager
+        public: false
+        arguments: [ "@logger" ]
+
+    wbw.common.manager.stylesheet:
+        class:  WBW\Bundle\CommonBundle\Manager\StylesheetManager
+        public: false
+        arguments: [ "@logger" ]
