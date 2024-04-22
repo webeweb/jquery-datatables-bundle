@@ -14,10 +14,10 @@ declare(strict_types = 1);
 namespace WBW\Bundle\CommonBundle\Tests\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use WBW\Bundle\CommonBundle\Manager\ManagerInterface;
+use WBW\Bundle\CommonBundle\Provider\ProviderInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 use WBW\Bundle\CommonBundle\Tests\Fixtures\DependencyInjection\Compiler\TestAbstractProviderCompilerPass;
-use WBW\Library\Symfony\Manager\ManagerInterface;
-use WBW\Library\Symfony\Provider\ProviderInterface;
 
 /**
  * Abstract provider compiler pass test.
