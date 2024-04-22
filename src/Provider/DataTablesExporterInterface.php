@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Provider;
 
-use WBW\Library\Symfony\Provider\ProviderInterface;
+use WBW\Bundle\CommonBundle\Provider\ProviderInterface;
 
 /**
  * DataTables exporter interface.
