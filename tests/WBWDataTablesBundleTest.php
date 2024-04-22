@@ -127,5 +127,9 @@ class WBWDataTablesBundleTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $this->assertEquals("WBWDataTablesBundle", WBWDataTablesBundle::TRANSLATION_DOMAIN);
+
+        $obj = new WBWDataTablesBundle();
+
+        $this->assertInstanceOf(AssetsProviderInterface::class, $obj);
     }
 }
