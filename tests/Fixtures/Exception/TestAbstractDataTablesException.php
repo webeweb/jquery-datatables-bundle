@@ -16,11 +16,11 @@ namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Exception;
 use WBW\Bundle\DataTablesBundle\Exception\AbstractDataTablesException;
 
 /**
- * Test DataTables exception.
+ * Test abstract DataTables exception.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures\Exception
  */
-class TestDataTablesException extends AbstractDataTablesException {
+class TestAbstractDataTablesException extends AbstractDataTablesException {
 
 }

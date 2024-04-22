@@ -14,7 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\DataTablesBundle\Tests\Exception;
 
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Exception\TestDataTablesException;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Exception\TestAbstractDataTablesException;
 
 /**
  * Abstract DataTables exception test.
@@ -31,7 +31,7 @@ class AbstractDataTablesExceptionTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $obj = new TestDataTablesException("test");
+        $obj = new TestAbstractDataTablesException("test");
 
         $this->assertEquals("test", $obj->getMessage());
         $this->assertEquals(500, $obj->getCode());
