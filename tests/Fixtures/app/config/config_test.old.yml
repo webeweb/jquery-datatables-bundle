@@ -10,13 +10,15 @@ framework:
     assets:         true
     default_locale: "%locale%"
     form:           true
+    mailer:
+        dsn: "smtp://localhost:25"
     router:
         resource:            "%kernel.project_dir%/config/routing_test.yml"
         strict_requirements: true
     secret:         "ThisTokenIsNotSoSecretChangeIt"
     session:
         storage_id: "session.storage.mock_file"
-    test:           ~
+    test:           true
     translator: { fallbacks: [ "%locale%" ] }
     validation:
         enabled: false
