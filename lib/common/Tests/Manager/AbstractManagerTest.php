@@ -18,7 +18,7 @@ use Throwable;
 use WBW\Bundle\CommonBundle\Manager\ManagerInterface;
 use WBW\Bundle\CommonBundle\Provider\ProviderInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
-use WBW\Bundle\CommonBundle\Tests\Fixtures\Manager\TestManager;
+use WBW\Bundle\CommonBundle\Tests\Fixtures\Manager\TestAbstractManager;
 
 /**
  * Abstract manager test.
@@ -63,7 +63,7 @@ class AbstractManagerTest extends AbstractTestCase {
      */
     public function testAddProvider(): void {
 
-        $obj = new TestManager($this->logger);
+        $obj = new TestAbstractManager($this->logger);
 
         $obj->addProvider($this->provider);
         $this->assertSame($this->provider, $obj->getProviders()[0]);
@@ -78,7 +78,7 @@ class AbstractManagerTest extends AbstractTestCase {
      */
     public function testContainsProvider(): void {
 
-        $obj = new TestManager($this->logger);
+        $obj = new TestAbstractManager($this->logger);
 
         $this->assertFalse($obj->containsProvider($this->provider));
 
@@ -94,7 +94,7 @@ class AbstractManagerTest extends AbstractTestCase {
      */
     public function testHasProviders(): void {
 
-        $obj = new TestManager($this->logger);
+        $obj = new TestAbstractManager($this->logger);
 
         $this->assertFalse($obj->hasProviders());
 
@@ -113,7 +113,7 @@ class AbstractManagerTest extends AbstractTestCase {
         // Set a Provider mock.
         $provider = $this->getMockBuilder(ProviderInterface::class)->getMock();
 
-        $obj = new TestManager($this->logger);
+        $obj = new TestAbstractManager($this->logger);
 
         $obj->addProvider($provider);
         $this->assertEquals(-1, $obj->indexOfProvider($this->provider));
@@ -129,7 +129,7 @@ class AbstractManagerTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $obj = new TestManager($this->logger);
+        $obj = new TestAbstractManager($this->logger);
 
         $this->assertInstanceOf(ManagerInterface::class, $obj);
 

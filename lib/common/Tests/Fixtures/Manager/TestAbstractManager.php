@@ -16,11 +16,11 @@ namespace WBW\Bundle\CommonBundle\Tests\Fixtures\Manager;
 use WBW\Bundle\CommonBundle\Manager\AbstractManager;
 
 /**
- * Test manager.
+ * Test abstract manager.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Tests\Fixtures\Manager
  */
-class TestManager extends AbstractManager {
+class TestAbstractManager extends AbstractManager {
 
 }
