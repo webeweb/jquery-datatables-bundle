@@ -11,7 +11,7 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\WidgetBundle\Assets\MaterialDesignColorPalette;
+namespace WBW\Bundle\WidgetBundle\Component\Color;
 
 use WBW\Bundle\WidgetBundle\Component\AbstractColor;
 
@@ -19,7 +19,7 @@ use WBW\Bundle\WidgetBundle\Component\AbstractColor;
  * White color.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\WidgetBundle\Assets\MaterialDesignColorPalette
+ * @package WBW\Bundle\WidgetBundle\Component\Color
  */
 class WhiteColor extends AbstractColor implements WhiteColorInterface {
 
@@ -36,7 +36,7 @@ class WhiteColor extends AbstractColor implements WhiteColorInterface {
     public function getValues(): array {
 
         return [
-            self::COLOR_VALUE_500 => self::WHITE_COLOR_VALUE_500,
+            self::COLOR_VALUE_DEFAULT => self::WHITE_COLOR_VALUE,
         ];
     }
 }

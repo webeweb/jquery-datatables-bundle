@@ -11,12 +11,11 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\WidgetBundle\Tests\Assets\MaterialDesignColorPalette;
+namespace WBW\Bundle\WidgetBundle\Tests\Component\Color;
 
 use JsonSerializable;
-use WBW\Bundle\WidgetBundle\Assets\MaterialDesignColorPalette\WhiteColor;
-use WBW\Bundle\WidgetBundle\Assets\MaterialDesignColorPalette\WhiteColorInterface;
-use WBW\Bundle\WidgetBundle\Component\Color\WhiteColorInterface as BaseWhiteColorInterface;
+use WBW\Bundle\WidgetBundle\Component\Color\WhiteColor;
+use WBW\Bundle\WidgetBundle\Component\Color\WhiteColorInterface;
 use WBW\Bundle\WidgetBundle\Component\ColorInterface;
 use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
 
@@ -24,7 +23,7 @@ use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
  * White color test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package  WBW\Bundle\WidgetBundle\Tests\Assets\MaterialDesignColorPalette
+ * @package WBW\Bundle\WidgetBundle\Tests\Component\Color
  */
 class WhiteColorTest extends AbstractTestCase {
 
@@ -40,7 +39,7 @@ class WhiteColorTest extends AbstractTestCase {
         $res = $obj->getValues();
         $this->assertCount(1, $res);
 
-        $this->assertEquals(WhiteColorInterface::WHITE_COLOR_VALUE_500, $res[ColorInterface::COLOR_VALUE_500]);
+        $this->assertEquals(WhiteColorInterface::WHITE_COLOR_VALUE, $res[ColorInterface::COLOR_VALUE_DEFAULT]);
     }
 
     /**
@@ -56,6 +55,6 @@ class WhiteColorTest extends AbstractTestCase {
         $this->assertInstanceOf(ColorInterface::class, $obj);
         $this->assertInstanceOf(WhiteColorInterface::class, $obj);
 
-        $this->assertEquals(BaseWhiteColorInterface::WHITE_COLOR_NAME, $obj->getName());
+        $this->assertEquals(WhiteColorInterface::WHITE_COLOR_NAME, $obj->getName());
     }
 }
