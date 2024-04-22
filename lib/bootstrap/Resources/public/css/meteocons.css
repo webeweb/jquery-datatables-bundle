@@ -1,0 +1,5 @@
+.meteocons:before {
+    content: attr(data-meteocons);
+    font-family: "MeteoconsRegular";
+    font-style: normal;
+}
