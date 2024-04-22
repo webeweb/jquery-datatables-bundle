@@ -28,11 +28,11 @@ use InvalidArgumentException;
 interface StatementServiceInterface {
 
     /**
-     * Query separator.
+     * Statement separator.
      *
      * @var string
      */
-    public const QUERY_SEPARATOR = '/\n\-{2}\ =+\n/';
+    public const STATEMENT_SEPARATOR = '/\n\-{2}\ =+\n/';
 
     /**
      * Execute the queries.
