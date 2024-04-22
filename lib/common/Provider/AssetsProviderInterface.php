@@ -14,7 +14,6 @@ declare(strict_types = 1);
 namespace WBW\Bundle\CommonBundle\Provider;
 
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;
-use WBW\Library\Symfony\Provider\ProviderInterface;
 
 /**
  * Assets provider interface.
