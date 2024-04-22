@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 /*
  * This file is part of the jquery-datatables-bundle package.
@@ -15,9 +15,9 @@ namespace WBW\Bundle\CommonBundle\Tests\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use WBW\Bundle\CommonBundle\DependencyInjection\Compiler\ColorProviderCompilerPass;
-use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 use WBW\Bundle\CommonBundle\Manager\ColorManager;
 use WBW\Bundle\CommonBundle\Provider\ColorProviderInterface;
+use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 
 /**
  * Color provider compiler pass test.
