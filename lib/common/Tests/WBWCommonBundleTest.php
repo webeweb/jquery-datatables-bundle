@@ -128,5 +128,9 @@ class WBWCommonBundleTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $this->assertEquals("WBWCommonBundle", WBWCommonBundle::TRANSLATION_DOMAIN);
+
+        $obj = new WBWCommonBundle();
+
+        $this->assertInstanceOf(AssetsProviderInterface::class, $obj);
     }
 }
