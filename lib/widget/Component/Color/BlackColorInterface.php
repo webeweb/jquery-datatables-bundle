@@ -29,4 +29,11 @@ interface BlackColorInterface extends ColorInterface {
      * @var string
      */
     public const BLACK_COLOR_NAME = "black";
+
+    /**
+     * Black color value.
+     *
+     * @var string
+     */
+    public const BLACK_COLOR_VALUE = "#000000";
 }
