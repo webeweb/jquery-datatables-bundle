@@ -5,7 +5,7 @@ parameters:
         - src
         - tests
     excludePaths:
-        - tests/Fixtures/app/var
+        - lib/common/Resources/public
     ignoreErrors:
         -
             message: '#Call to an undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeParentInterface#'

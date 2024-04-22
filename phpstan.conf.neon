@@ -1,8 +1,9 @@
 parameters:
     level: 0
     paths:
-        - ./
+        - lib
+        - src
     excludePaths:
-        - Resources/
-        - Tests/
-        - vendor/
+        - lib/bootstrap/Tests
+        - lib/common/Tests
+        - lib/common/Resources/public
