@@ -37,9 +37,9 @@ use WBW\Bundle\WidgetBundle\Component\ColorInterface;
 class ColorFactory {
 
     /**
-     * Create a Material Design color palette.
-     * *
-     * * @return ColorInterface[] Returns the colors.
+     * Create a Bootstrap color palette.
+     *
+     * @return ColorInterface[] Returns the colors.
      */
     public static function newBootstrapPalette(): array {
 
