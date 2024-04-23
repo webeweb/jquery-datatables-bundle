@@ -24,7 +24,7 @@ use WBW\Library\Traits\Strings\StringLabelTrait;
  * @package WBW\Bundle\WidgetBundle\Component
  * @abstract
  */
-class AbstractDropdownItem implements DropdownItemInterface {
+abstract class AbstractDropdownItem implements DropdownItemInterface {
 
     use IntegerPositionTrait;
     use StringLabelTrait;
