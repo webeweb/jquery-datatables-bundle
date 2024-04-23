@@ -17,6 +17,7 @@ use WBW\Bundle\WidgetBundle\Component\AlertInterface;
 use WBW\Bundle\WidgetBundle\Component\BadgeInterface;
 use WBW\Bundle\WidgetBundle\Component\ButtonInterface;
 use WBW\Bundle\WidgetBundle\Component\ColorInterface;
+use WBW\Bundle\WidgetBundle\Component\DropdownItemInterface;
 use WBW\Bundle\WidgetBundle\Component\IconInterface;
 use WBW\Bundle\WidgetBundle\Component\LabelInterface;
 use WBW\Bundle\WidgetBundle\Component\NavigationNodeInterface;
@@ -87,6 +88,21 @@ class ComponentSerializer {
         return [
             BaseSerializerKeys::NAME        => $model->getName(),
             BaseSerializerKeys::VALUE . "s" => $model->getValues(),
+        ];
+    }
+
+    /**
+     * Serialize a dropdown item.
+     *
+     * @param DropdownItemInterface $model The model.
+     * @return array<string,mixed> Returns the serialized model.
+     */
+    public static function serializeDropdownItem(DropdownItemInterface $model): array {
+
+        return [
+            SerializerKeys::BY_DEFAULT   => $model->getByDefault(),
+            BaseSerializerKeys::LABEL    => $model->getLabel(),
+            BaseSerializerKeys::POSITION => $model->getPosition(),
         ];
     }
 

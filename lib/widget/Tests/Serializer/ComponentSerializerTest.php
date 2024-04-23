@@ -17,6 +17,7 @@ use WBW\Bundle\WidgetBundle\Component\AlertInterface;
 use WBW\Bundle\WidgetBundle\Component\BadgeInterface;
 use WBW\Bundle\WidgetBundle\Component\ButtonInterface;
 use WBW\Bundle\WidgetBundle\Component\ColorInterface;
+use WBW\Bundle\WidgetBundle\Component\DropdownItemInterface;
 use WBW\Bundle\WidgetBundle\Component\IconInterface;
 use WBW\Bundle\WidgetBundle\Component\LabelInterface;
 use WBW\Bundle\WidgetBundle\Component\NavigationNodeInterface;
@@ -110,6 +111,27 @@ class ComponentSerializerTest extends AbstractTestCase {
 
         $this->assertEquals($model->getName(), $res[BaseSerializerKeys::NAME]);
         $this->assertEquals($model->getValues(), $res[BaseSerializerKeys::VALUE . "s"]);
+    }
+
+    /**
+     * Test serializeDropdownItem()
+     *
+     * @return void
+     */
+    public function testSerializeDropdownItem(): void {
+
+        // Set a Dropdown item mock.
+        $model = $this->getMockBuilder(DropdownItemInterface::class)->getMock();
+        $model->expects($this->any())->method("getByDefault")->willReturn(true);
+        $model->expects($this->any())->method("getLabel")->willReturn(BaseSerializerKeys::LABEL);
+        $model->expects($this->any())->method("getPosition")->willReturn(1);
+
+        $res = ComponentSerializer::serializeDropdownItem($model);
+        $this->assertCount(3, $res);
+
+        $this->assertEquals($model->getByDefault(), $res[SerializerKeys::BY_DEFAULT]);
+        $this->assertEquals($model->getLabel(), $res[BaseSerializerKeys::LABEL]);
+        $this->assertEquals($model->getPosition(), $res[BaseSerializerKeys::POSITION]);
     }
 
     /**
