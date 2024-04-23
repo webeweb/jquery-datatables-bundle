@@ -22,6 +22,13 @@ namespace WBW\Bundle\WidgetBundle\Serializer;
 class SerializerKeys {
 
     /**
+     * Serializer key "by default".
+     *
+     * @var string
+     */
+    public const BY_DEFAULT = "byDefault";
+
+    /**
      * Serializer key "matcher".
      *
      * @var string

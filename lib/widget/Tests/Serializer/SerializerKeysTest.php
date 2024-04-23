@@ -31,6 +31,8 @@ class SerializerKeysTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
+        $this->assertEquals("byDefault", SerializerKeys::BY_DEFAULT);
+
         $this->assertEquals("matcher", SerializerKeys::MATCHER);
     }
 }
