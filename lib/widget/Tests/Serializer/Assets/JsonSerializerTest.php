@@ -11,22 +11,22 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\WidgetBundle\Tests\Serializer;
+namespace WBW\Bundle\WidgetBundle\Tests\Serializer\Assets;
 
 use DateTime;
 use WBW\Bundle\WidgetBundle\Assets\FullCalendar\FullCalendarEventInterface;
 use WBW\Bundle\WidgetBundle\Assets\Select2\Select2OptionInterface;
-use WBW\Bundle\WidgetBundle\Serializer\AssetsSerializer;
+use WBW\Bundle\WidgetBundle\Serializer\Assets\JsonSerializer;
 use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
 use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
 
 /**
- * Assets serializer test.
+ * JSON serializer test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\WidgetBundle\Tests\Serializer
+ * @package WBW\Bundle\WidgetBundle\Tests\Serializer\Assets
  */
-class AssetsSerializerTest extends AbstractTestCase {
+class JsonSerializerTest extends AbstractTestCase {
 
     /**
      * Test serializeFullCalendarEvent()
@@ -60,7 +60,7 @@ class AssetsSerializerTest extends AbstractTestCase {
         $model->expects($this->any())->method("getBorderColor")->willReturn("borderColor");
         $model->expects($this->any())->method("getTextColor")->willReturn("textColor");
 
-        $res = AssetsSerializer::serializeFullCalendarEvent($model);
+        $res = JsonSerializer::serializeFullCalendarEvent($model);
         $this->assertCount(19, $res);
 
         $this->assertEquals($model->getId(), $res["id"]);
@@ -95,7 +95,7 @@ class AssetsSerializerTest extends AbstractTestCase {
         $model->expects($this->any())->method("getSelect2OptionId")->willReturn(BaseSerializerKeys::ID);
         $model->expects($this->any())->method("getSelect2OptionText")->willReturn(BaseSerializerKeys::TEXT);
 
-        $res = AssetsSerializer::serializeSelect2Option($model);
+        $res = JsonSerializer::serializeSelect2Option($model);
         $this->assertCount(2, $res);
 
         $this->assertEquals($model->getSelect2OptionId(), $res[BaseSerializerKeys::ID]);

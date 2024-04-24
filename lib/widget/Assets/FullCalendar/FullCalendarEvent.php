@@ -14,7 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\WidgetBundle\Assets\FullCalendar;
 
 use DateTime;
-use WBW\Bundle\WidgetBundle\Serializer\AssetsSerializer;
+use WBW\Bundle\WidgetBundle\Serializer\Assets\JsonSerializer;
 use WBW\Library\Traits\Strings\StringIdTrait;
 use WBW\Library\Traits\Strings\StringTitleTrait;
 use WBW\Library\Traits\Strings\StringUrlTrait;
@@ -268,7 +268,7 @@ class FullCalendarEvent implements FullCalendarEventInterface {
      * @return array<string,mixed> Returns this serialized instance.
      */
     public function jsonSerialize(): array {
-        return AssetsSerializer::serializeFullCalendarEvent($this);
+        return JsonSerializer::serializeFullCalendarEvent($this);
     }
 
     /**

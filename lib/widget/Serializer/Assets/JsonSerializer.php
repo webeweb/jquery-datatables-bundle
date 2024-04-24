@@ -11,7 +11,7 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\WidgetBundle\Serializer;
+namespace WBW\Bundle\WidgetBundle\Serializer\Assets;
 
 use WBW\Bundle\WidgetBundle\Assets\FullCalendar\FullCalendarEventInterface;
 use WBW\Bundle\WidgetBundle\Assets\Select2\Select2OptionInterface;
@@ -19,12 +19,12 @@ use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
 use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
- * Assets serializer.
+ * JSON serializer.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\WidgetBundle\Serializer
+ * @package WBW\Bundle\WidgetBundle\Serializer\Assets
  */
-class AssetsSerializer {
+class JsonSerializer {
 
     /**
      * Serialize a Full Calendar event.
