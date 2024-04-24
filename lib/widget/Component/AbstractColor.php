@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\WidgetBundle\Component;
 
-use WBW\Bundle\WidgetBundle\Serializer\ComponentSerializer;
+use WBW\Bundle\WidgetBundle\Serializer\Component\JsonSerializer;
 use WBW\Library\Traits\Strings\StringNameTrait;
 
 /**
@@ -41,6 +41,6 @@ abstract class AbstractColor implements ColorInterface {
      * @return array<string,mixed> Returns this serialized instance.
      */
     public function jsonSerialize(): array {
-        return ComponentSerializer::serializeColor($this);
+        return JsonSerializer::serializeColor($this);
     }
 }

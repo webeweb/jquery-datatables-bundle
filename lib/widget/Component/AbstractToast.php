@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\WidgetBundle\Component;
 
-use WBW\Bundle\WidgetBundle\Serializer\ComponentSerializer;
+use WBW\Bundle\WidgetBundle\Serializer\Component\JsonSerializer;
 
 /**
  * Abstract toast.
@@ -68,7 +68,7 @@ abstract class AbstractToast implements ToastInterface {
      * @return array<string,mixed> Returns this serialized instance.
      */
     public function jsonSerialize(): array {
-        return ComponentSerializer::serializeToast($this);
+        return JsonSerializer::serializeToast($this);
     }
 
     /**

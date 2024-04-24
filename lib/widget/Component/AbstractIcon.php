@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\WidgetBundle\Component;
 
-use WBW\Bundle\WidgetBundle\Serializer\ComponentSerializer;
+use WBW\Bundle\WidgetBundle\Serializer\Component\JsonSerializer;
 use WBW\Library\Traits\Strings\StringNameTrait;
 use WBW\Library\Traits\Strings\StringStyleTrait;
 
@@ -41,6 +41,6 @@ abstract class AbstractIcon implements IconInterface {
      * @return array<string,mixed> Returns this serialized instance.
      */
     public function jsonSerialize(): array {
-        return ComponentSerializer::serializeIcon($this);
+        return JsonSerializer::serializeIcon($this);
     }
 }

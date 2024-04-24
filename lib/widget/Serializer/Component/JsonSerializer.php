@@ -11,7 +11,7 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\WidgetBundle\Serializer;
+namespace WBW\Bundle\WidgetBundle\Serializer\Component;
 
 use WBW\Bundle\WidgetBundle\Component\AlertInterface;
 use WBW\Bundle\WidgetBundle\Component\BadgeInterface;
@@ -24,16 +24,17 @@ use WBW\Bundle\WidgetBundle\Component\NavigationNodeInterface;
 use WBW\Bundle\WidgetBundle\Component\NotificationInterface;
 use WBW\Bundle\WidgetBundle\Component\ProgressBarInterface;
 use WBW\Bundle\WidgetBundle\Component\ToastInterface;
+use WBW\Bundle\WidgetBundle\Serializer\SerializerKeys;
 use WBW\Library\Serializer\Helper\JsonSerializerHelper;
 use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
 
 /**
- * Component serializer.
+ * JSON serializer.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\WidgetBundle\Serializer
+ * @package WBW\Bundle\WidgetBundle\Serializer\Component
  */
-class ComponentSerializer {
+class JsonSerializer {
 
     /**
      * Serialize an alert.

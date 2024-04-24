@@ -11,7 +11,7 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\WidgetBundle\Tests\Serializer;
+namespace WBW\Bundle\WidgetBundle\Tests\Serializer\Component;
 
 use WBW\Bundle\WidgetBundle\Component\AlertInterface;
 use WBW\Bundle\WidgetBundle\Component\BadgeInterface;
@@ -24,18 +24,18 @@ use WBW\Bundle\WidgetBundle\Component\NavigationNodeInterface;
 use WBW\Bundle\WidgetBundle\Component\NotificationInterface;
 use WBW\Bundle\WidgetBundle\Component\ProgressBarInterface;
 use WBW\Bundle\WidgetBundle\Component\ToastInterface;
-use WBW\Bundle\WidgetBundle\Serializer\ComponentSerializer;
+use WBW\Bundle\WidgetBundle\Serializer\Component\JsonSerializer;
 use WBW\Bundle\WidgetBundle\Serializer\SerializerKeys;
 use WBW\Bundle\WidgetBundle\Tests\AbstractTestCase;
 use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
 
 /**
- * Component serializer test.
+ * JSON serializer test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\WidgetBundle\Tests\Serializer
+ * @package WBW\Bundle\WidgetBundle\Tests\Serializer\Component
  */
-class ComponentSerializerTest extends AbstractTestCase {
+class JsonSerializerTest extends AbstractTestCase {
 
     /**
      * Test serializeAlert()
@@ -49,7 +49,7 @@ class ComponentSerializerTest extends AbstractTestCase {
         $model->expects($this->any())->method("getContent")->willReturn(BaseSerializerKeys::CONTENT);
         $model->expects($this->any())->method("getType")->willReturn(BaseSerializerKeys::TYPE);
 
-        $res = ComponentSerializer::serializeAlert($model);
+        $res = JsonSerializer::serializeAlert($model);
         $this->assertCount(2, $res);
 
         $this->assertEquals($model->getContent(), $res[BaseSerializerKeys::CONTENT]);
@@ -68,7 +68,7 @@ class ComponentSerializerTest extends AbstractTestCase {
         $model->expects($this->any())->method("getContent")->willReturn(BaseSerializerKeys::CONTENT);
         $model->expects($this->any())->method("getType")->willReturn(BaseSerializerKeys::TYPE);
 
-        $res = ComponentSerializer::serializeBadge($model);
+        $res = JsonSerializer::serializeBadge($model);
         $this->assertCount(2, $res);
 
         $this->assertEquals($model->getContent(), $res[BaseSerializerKeys::CONTENT]);
@@ -87,7 +87,7 @@ class ComponentSerializerTest extends AbstractTestCase {
         $model->expects($this->any())->method("getContent")->willReturn(BaseSerializerKeys::CONTENT);
         $model->expects($this->any())->method("getType")->willReturn(BaseSerializerKeys::TYPE);
 
-        $res = ComponentSerializer::serializeButton($model);
+        $res = JsonSerializer::serializeButton($model);
         $this->assertCount(2, $res);
 
         $this->assertEquals($model->getContent(), $res[BaseSerializerKeys::CONTENT]);
@@ -106,7 +106,7 @@ class ComponentSerializerTest extends AbstractTestCase {
         $model->expects($this->any())->method("getName")->willReturn(BaseSerializerKeys::NAME);
         $model->expects($this->any())->method("getValues")->willReturn([]);
 
-        $res = ComponentSerializer::serializeColor($model);
+        $res = JsonSerializer::serializeColor($model);
         $this->assertCount(2, $res);
 
         $this->assertEquals($model->getName(), $res[BaseSerializerKeys::NAME]);
@@ -126,7 +126,7 @@ class ComponentSerializerTest extends AbstractTestCase {
         $model->expects($this->any())->method("getLabel")->willReturn(BaseSerializerKeys::LABEL);
         $model->expects($this->any())->method("getPosition")->willReturn(1);
 
-        $res = ComponentSerializer::serializeDropdownItem($model);
+        $res = JsonSerializer::serializeDropdownItem($model);
         $this->assertCount(3, $res);
 
         $this->assertEquals($model->getByDefault(), $res[SerializerKeys::BY_DEFAULT]);
@@ -146,7 +146,7 @@ class ComponentSerializerTest extends AbstractTestCase {
         $model->expects($this->any())->method("getName")->willReturn(BaseSerializerKeys::NAME);
         $model->expects($this->any())->method("getStyle")->willReturn(BaseSerializerKeys::STYLE);
 
-        $res = ComponentSerializer::serializeIcon($model);
+        $res = JsonSerializer::serializeIcon($model);
         $this->assertCount(2, $res);
 
         $this->assertEquals($model->getName(), $res[BaseSerializerKeys::NAME]);
@@ -165,7 +165,7 @@ class ComponentSerializerTest extends AbstractTestCase {
         $model->expects($this->any())->method("getContent")->willReturn(BaseSerializerKeys::CONTENT);
         $model->expects($this->any())->method("getType")->willReturn(BaseSerializerKeys::TYPE);
 
-        $res = ComponentSerializer::serializeLabel($model);
+        $res = JsonSerializer::serializeLabel($model);
         $this->assertCount(2, $res);
 
         $this->assertEquals($model->getContent(), $res[BaseSerializerKeys::CONTENT]);
@@ -181,7 +181,7 @@ class ComponentSerializerTest extends AbstractTestCase {
 
         // Set a parent mock.
         $parent = $this->getMockBuilder(NavigationNodeInterface::class)->getMock();
-        $parent->expects($this->any())->method("jsonSerialize")->willReturn(ComponentSerializer::serializeNavigationNode($parent));
+        $parent->expects($this->any())->method("jsonSerialize")->willReturn(JsonSerializer::serializeNavigationNode($parent));
 
         // Set a NavigationNode mock.
         $model = $this->getMockBuilder(NavigationNodeInterface::class)->getMock();
@@ -196,7 +196,7 @@ class ComponentSerializerTest extends AbstractTestCase {
         $model->expects($this->any())->method("getUri")->willReturn(BaseSerializerKeys::URI);
         $model->expects($this->any())->method("getVisible")->willReturn(null);
 
-        $res = ComponentSerializer::serializeNavigationNode($model);
+        $res = JsonSerializer::serializeNavigationNode($model);
         $this->assertCount(10, $res);
 
         $this->assertEquals($model->getId(), $res[BaseSerializerKeys::ID]);
@@ -223,7 +223,7 @@ class ComponentSerializerTest extends AbstractTestCase {
         $model->expects($this->any())->method("getContent")->willReturn(BaseSerializerKeys::CONTENT);
         $model->expects($this->any())->method("getType")->willReturn(BaseSerializerKeys::TYPE);
 
-        $res = ComponentSerializer::serializeNotification($model);
+        $res = JsonSerializer::serializeNotification($model);
         $this->assertCount(2, $res);
 
         $this->assertEquals($model->getContent(), $res[BaseSerializerKeys::CONTENT]);
@@ -242,7 +242,7 @@ class ComponentSerializerTest extends AbstractTestCase {
         $model->expects($this->any())->method("getContent")->willReturn(BaseSerializerKeys::CONTENT);
         $model->expects($this->any())->method("getType")->willReturn(BaseSerializerKeys::TYPE);
 
-        $res = ComponentSerializer::serializeProgressBar($model);
+        $res = JsonSerializer::serializeProgressBar($model);
         $this->assertCount(2, $res);
 
         $this->assertEquals($model->getContent(), $res[BaseSerializerKeys::CONTENT]);
@@ -261,7 +261,7 @@ class ComponentSerializerTest extends AbstractTestCase {
         $model->expects($this->any())->method("getContent")->willReturn(BaseSerializerKeys::CONTENT);
         $model->expects($this->any())->method("getType")->willReturn(BaseSerializerKeys::TYPE);
 
-        $res = ComponentSerializer::serializeToast($model);
+        $res = JsonSerializer::serializeToast($model);
         $this->assertCount(2, $res);
 
         $this->assertEquals($model->getContent(), $res[BaseSerializerKeys::CONTENT]);

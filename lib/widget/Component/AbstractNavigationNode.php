@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\WidgetBundle\Component;
 
-use WBW\Bundle\WidgetBundle\Serializer\ComponentSerializer;
+use WBW\Bundle\WidgetBundle\Serializer\Component\JsonSerializer;
 use WBW\Library\Sorter\Model\AlphabeticalTreeNodeInterface;
 use WBW\Library\Traits\Booleans\BooleanActiveTrait;
 use WBW\Library\Traits\Booleans\BooleanEnableTrait;
@@ -243,7 +243,7 @@ abstract class AbstractNavigationNode implements NavigationNodeInterface {
      * @return array<string,mixed> Returns this serialized instance.
      */
     public function jsonSerialize(): array {
-        return ComponentSerializer::serializeNavigationNode($this);
+        return JsonSerializer::serializeNavigationNode($this);
     }
 
     /**

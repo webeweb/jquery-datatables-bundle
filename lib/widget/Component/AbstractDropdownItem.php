@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\WidgetBundle\Component;
 
-use WBW\Bundle\WidgetBundle\Serializer\ComponentSerializer;
+use WBW\Bundle\WidgetBundle\Serializer\Component\JsonSerializer;
 use WBW\Library\Traits\Integers\IntegerPositionTrait;
 use WBW\Library\Traits\Strings\StringLabelTrait;
 
@@ -55,7 +55,7 @@ abstract class AbstractDropdownItem implements DropdownItemInterface {
      * @return array<string,mixed> Returns this serialized instance.
      */
     public function jsonSerialize(): array {
-        return ComponentSerializer::serializeDropdownItem($this);
+        return JsonSerializer::serializeDropdownItem($this);
     }
 
     /**

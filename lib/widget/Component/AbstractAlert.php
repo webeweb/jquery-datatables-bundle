@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\WidgetBundle\Component;
 
-use WBW\Bundle\WidgetBundle\Serializer\ComponentSerializer;
+use WBW\Bundle\WidgetBundle\Serializer\Component\JsonSerializer;
 use WBW\Library\Traits\Strings\StringContentTrait;
 use WBW\Library\Traits\Strings\StringTypeTrait;
 
@@ -45,6 +45,6 @@ abstract class AbstractAlert implements AlertInterface {
      * @return array<string,mixed> Returns this serialized instance.
      */
     public function jsonSerialize(): array {
-        return ComponentSerializer::serializeAlert($this);
+        return JsonSerializer::serializeAlert($this);
     }
 }
