@@ -17,8 +17,8 @@ use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Customize\Color\IndigoColor;
 use WBW\Bundle\BootstrapBundle\Customize\Color\IndigoColorInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\Color\IndigoColorInterface as BaseIndigoColorInterface;
-use WBW\Bundle\WidgetBundle\Component\ColorInterface;
+use WBW\Library\Widget\Component\Color\IndigoColorInterface as BaseIndigoColorInterface;
+use WBW\Library\Widget\Component\ColorInterface;
 
 /**
  * Indigo color test.
