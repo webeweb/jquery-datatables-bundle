@@ -29,8 +29,8 @@ use WBW\Bundle\CommonBundle\Event\ToastEvent;
 use WBW\Bundle\CommonBundle\Service\SessionService;
 use WBW\Bundle\CommonBundle\Tests\AbstractWebTestCase;
 use WBW\Bundle\CommonBundle\Tests\Fixtures\Controller\TestAbstractController;
-use WBW\Bundle\WidgetBundle\Component\NotificationInterface;
-use WBW\Bundle\WidgetBundle\Component\ToastInterface;
+use WBW\Library\Widget\Component\NotificationInterface;
+use WBW\Library\Widget\Component\ToastInterface;
 
 /**
  * Abstract controller test.
