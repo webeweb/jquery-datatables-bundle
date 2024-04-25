@@ -27,10 +27,10 @@ use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\ButtonTwigExtension;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\ButtonTwigExtensionTrait;
 use WBW\Bundle\CommonBundle\Routing\RouterTrait;
 use WBW\Bundle\DataTablesBundle\Renderer\BootstrapButtonRendererTrait;
-use WBW\Bundle\WidgetBundle\Renderer\DateTimesRendererTrait;
-use WBW\Bundle\WidgetBundle\Renderer\Floats\FloatRendererTrait;
-use WBW\Bundle\WidgetBundle\Renderer\Strings\StringWrapperTrait;
-use WBW\Bundle\WidgetBundle\Renderer\StringsRendererTrait;
+use WBW\Library\Widget\Renderer\DateTimesRendererTrait;
+use WBW\Library\Widget\Renderer\Floats\FloatRendererTrait;
+use WBW\Library\Widget\Renderer\Strings\StringWrapperTrait;
+use WBW\Library\Widget\Renderer\StringsRendererTrait;
 
 /**
  * Bootstrap DataTables provider.
