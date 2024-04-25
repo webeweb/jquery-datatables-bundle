@@ -17,7 +17,7 @@ use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Extend\MaterialDesignIconicFontIcon;
 use WBW\Bundle\BootstrapBundle\Extend\MaterialDesignIconicFontIconInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\IconInterface;
+use WBW\Library\Widget\Component\IconInterface;
 
 /**
  * Material Design Iconic Font icon test.
