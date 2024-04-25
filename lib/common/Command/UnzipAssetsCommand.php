@@ -17,7 +17,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\StyleInterface;
 use WBW\Bundle\CommonBundle\Provider\AssetsProviderInterface;
-use WBW\Bundle\WidgetBundle\Helper\AssetsHelper;
+use WBW\Library\Widget\Helper\AssetsHelper;
 
 /**
  * Unzip assets command.
