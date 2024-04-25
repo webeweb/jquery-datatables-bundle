@@ -19,9 +19,9 @@ use WBW\Bundle\BootstrapBundle\Twig\Extension\AssetsTwigExtension as BootstrapAs
 use WBW\Bundle\CommonBundle\Provider\JavascriptProviderInterface;
 use WBW\Bundle\CommonBundle\Provider\StylesheetProviderInterface;
 use WBW\Bundle\CommonBundle\Routing\RouterTrait;
-use WBW\Bundle\WidgetBundle\Helper\ColorHelper;
-use WBW\Library\Types\Helper\ArrayHelper;
-use WBW\Library\Types\Helper\StringHelper;
+use WBW\Library\Widget\Helper\ColorHelper;
+use WBW\Library\Common\Helper\ArrayHelper;
+use WBW\Library\Common\Helper\StringHelper;
 
 /**
  * Assets Twig extension.
