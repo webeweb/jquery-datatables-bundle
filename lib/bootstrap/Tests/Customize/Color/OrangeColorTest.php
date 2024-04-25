@@ -17,8 +17,8 @@ use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Customize\Color\OrangeColor;
 use WBW\Bundle\BootstrapBundle\Customize\Color\OrangeColorInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\Color\OrangeColorInterface as BaseOrangeColorInterface;
-use WBW\Bundle\WidgetBundle\Component\ColorInterface;
+use WBW\Library\Widget\Component\Color\OrangeColorInterface as BaseOrangeColorInterface;
+use WBW\Library\Widget\Component\ColorInterface;
 
 /**
  * Orange color test.
