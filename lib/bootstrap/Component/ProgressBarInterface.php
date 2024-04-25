@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Component;
 
-use WBW\Bundle\WidgetBundle\Component\ProgressBarInterface as BaseProgressBarInterface;
+use WBW\Library\Widget\Component\ProgressBarInterface as BaseProgressBarInterface;
 
 /**
  * Progress bar interface.
