@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Customize\Color;
 
-use WBW\Bundle\WidgetBundle\Component\Color\BlueColorInterface as BaseBlueColorInterface;
+use WBW\Library\Widget\Component\Color\BlueColorInterface as BaseBlueColorInterface;
 
 /**
  * Blue color interface.
