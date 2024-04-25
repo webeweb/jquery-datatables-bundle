@@ -16,7 +16,7 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Component\Breadcrumb\Glyphicon;
 use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Component\Breadcrumb\Glyphicon\BreadcrumbItemNewUsersGroup;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\NavigationNodeInterface;
+use WBW\Library\Widget\Component\NavigationNodeInterface;
 
 /**
  * Breadcrumb item "new users group" test.
