@@ -17,8 +17,8 @@ use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Customize\Color\PinkColor;
 use WBW\Bundle\BootstrapBundle\Customize\Color\PinkColorInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\Color\PinkColorInterface as BasePinkColorInterface;
-use WBW\Bundle\WidgetBundle\Component\ColorInterface;
+use WBW\Library\Widget\Component\Color\PinkColorInterface as BasePinkColorInterface;
+use WBW\Library\Widget\Component\ColorInterface;
 
 /**
  * Pink color test.
