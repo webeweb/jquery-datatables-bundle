@@ -14,7 +14,6 @@
             <exclude>
                 <directory>lib/bootstrap/Tests</directory>
                 <directory>lib/common/Tests</directory>
-                <directory>lib/widget/Tests</directory>
             </exclude>
         </whitelist>
     </filter>
@@ -22,7 +21,6 @@
         <testsuite name="webeweb/datatables-bundle">
             <directory>./lib/bootstrap/Tests</directory>
             <directory>./lib/common/Tests</directory>
-            <directory>./lib/widget/Tests</directory>
             <directory>./tests</directory>
         </testsuite>
     </testsuites>
