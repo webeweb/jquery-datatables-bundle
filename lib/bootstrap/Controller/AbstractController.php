@@ -17,8 +17,8 @@ use Throwable;
 use WBW\Bundle\CommonBundle\Controller\AbstractController as BaseController;
 use WBW\Bundle\CommonBundle\Event\NotificationEvent;
 use WBW\Bundle\CommonBundle\Event\ToastEvent;
-use WBW\Bundle\WidgetBundle\Factory\NotificationFactory;
-use WBW\Bundle\WidgetBundle\Factory\ToastFactory;
+use WBW\Library\Widget\Factory\NotificationFactory;
+use WBW\Library\Widget\Factory\ToastFactory;
 
 /**
  * Abstract controller.
