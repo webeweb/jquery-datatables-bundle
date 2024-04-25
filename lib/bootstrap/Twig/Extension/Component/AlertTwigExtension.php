@@ -15,8 +15,8 @@ namespace WBW\Bundle\BootstrapBundle\Twig\Extension\Component;
 
 use Twig\TwigFunction;
 use WBW\Bundle\BootstrapBundle\Factory\Component\AlertFactory;
-use WBW\Library\Widget\Component\NavigationNodeInterface;
 use WBW\Library\Common\Helper\ArrayHelper;
+use WBW\Library\Widget\Component\NavigationNodeInterface;
 
 /**
  * Alert Twig extension.

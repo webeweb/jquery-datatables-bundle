@@ -154,35 +154,6 @@ abstract class AbstractController extends BaseController {
     }
 
     /**
-     * Get a CSV exporter.
-     *
-     * @param DataTablesProviderInterface $dtProvider The provider.
-     * @return DataTablesCsvExporterInterface Returns the CSV exporter.
-     * @throws BadDataTablesCsvExporterException Throws a bad CSV exporter exception.
-     * @throws Throwable Throws an exception if an error occurs.
-     */
-    protected function getDataTablesCsvExporter(DataTablesProviderInterface $dtProvider): DataTablesCsvExporterInterface {
-
-        $context = [
-            "_controller" => get_class($this),
-            "_provider"   => get_class($dtProvider),
-        ];
-
-        $this->logInfo(sprintf('DataTables controller search for a CSV exporter with name "%s"', $dtProvider->getName()), $context);
-
-        $dtExporter = $dtProvider->getCsvExporter();
-        if (false === ($dtExporter instanceof DataTablesCsvExporterInterface)) {
-            throw new BadDataTablesCsvExporterException($dtExporter);
-        }
-
-        $context["_exporter"] = get_class($dtExporter);
-
-        $this->logInfo(sprintf('DataTables controller found a CSV exporter with name "%s"', $dtProvider->getName()), $context);
-
-        return $dtExporter;
-    }
-
-    /**
      * Get a column.
      *
      * @param DataTablesProviderInterface $dtProvider The provider.
@@ -213,6 +184,35 @@ abstract class AbstractController extends BaseController {
         $this->logInfo(sprintf('DataTables controller found a column with name "%s"', $data), $context);
 
         return $dtColumn;
+    }
+
+    /**
+     * Get a CSV exporter.
+     *
+     * @param DataTablesProviderInterface $dtProvider The provider.
+     * @return DataTablesCsvExporterInterface Returns the CSV exporter.
+     * @throws BadDataTablesCsvExporterException Throws a bad CSV exporter exception.
+     * @throws Throwable Throws an exception if an error occurs.
+     */
+    protected function getDataTablesCsvExporter(DataTablesProviderInterface $dtProvider): DataTablesCsvExporterInterface {
+
+        $context = [
+            "_controller" => get_class($this),
+            "_provider"   => get_class($dtProvider),
+        ];
+
+        $this->logInfo(sprintf('DataTables controller search for a CSV exporter with name "%s"', $dtProvider->getName()), $context);
+
+        $dtExporter = $dtProvider->getCsvExporter();
+        if (false === ($dtExporter instanceof DataTablesCsvExporterInterface)) {
+            throw new BadDataTablesCsvExporterException($dtExporter);
+        }
+
+        $context["_exporter"] = get_class($dtExporter);
+
+        $this->logInfo(sprintf('DataTables controller found a CSV exporter with name "%s"', $dtProvider->getName()), $context);
+
+        return $dtExporter;
     }
 
     /**

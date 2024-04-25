@@ -14,10 +14,10 @@ declare(strict_types = 1);
 namespace WBW\Bundle\BootstrapBundle\Component;
 
 use WBW\Bundle\BootstrapBundle\Serializer\JsonSerializer;
-use WBW\Library\Widget\Component\AbstractButton as BaseButton;
 use WBW\Library\Common\Traits\Booleans\BooleanActiveTrait;
 use WBW\Library\Common\Traits\Strings\StringSizeTrait;
 use WBW\Library\Common\Traits\Strings\StringTitleTrait;
+use WBW\Library\Widget\Component\AbstractButton as BaseButton;
 
 /**
  * Abstract button.

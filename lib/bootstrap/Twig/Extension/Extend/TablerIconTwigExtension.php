@@ -14,8 +14,8 @@ declare(strict_types = 1);
 namespace WBW\Bundle\BootstrapBundle\Twig\Extension\Extend;
 
 use Twig\TwigFunction;
-use WBW\Library\Widget\Renderer\Component\IconRendererInterface;
 use WBW\Library\Common\Helper\ArrayHelper;
+use WBW\Library\Widget\Renderer\Component\IconRendererInterface;
 
 /**
  * Tabler icon Twig extension.

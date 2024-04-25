@@ -14,11 +14,11 @@ declare(strict_types = 1);
 namespace WBW\Bundle\BootstrapBundle\Component;
 
 use WBW\Bundle\BootstrapBundle\Serializer\JsonSerializer;
-use WBW\Library\Widget\Component\AbstractProgressBar as BaseProgressBar;
 use WBW\Library\Common\Traits\Integers\IntegerHeightTrait;
 use WBW\Library\Common\Traits\Integers\IntegerMaxTrait;
 use WBW\Library\Common\Traits\Integers\IntegerMinTrait;
 use WBW\Library\Common\Traits\Integers\IntegerValueTrait;
+use WBW\Library\Widget\Component\AbstractProgressBar as BaseProgressBar;
 
 /**
  * Abstract progress bar.
