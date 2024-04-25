@@ -15,7 +15,7 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Component;
 
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\BootstrapBundle\WBWBootstrapBundle;
-use WBW\Bundle\WidgetBundle\Component\ProgressBarInterface as BaseProgressBarInterface;
+use WBW\Library\Widget\Component\ProgressBarInterface as BaseProgressBarInterface;
 
 /**
  * Progress bar interface test.
