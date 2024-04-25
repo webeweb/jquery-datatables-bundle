@@ -17,8 +17,8 @@ use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Customize\Color\TealColor;
 use WBW\Bundle\BootstrapBundle\Customize\Color\TealColorInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\Color\TealColorInterface as BaseTealColorInterface;
-use WBW\Bundle\WidgetBundle\Component\ColorInterface;
+use WBW\Library\Widget\Component\Color\TealColorInterface as BaseTealColorInterface;
+use WBW\Library\Widget\Component\ColorInterface;
 
 /**
  * Teal color test.
