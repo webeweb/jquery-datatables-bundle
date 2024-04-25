@@ -24,9 +24,9 @@ use WBW\Bundle\BootstrapBundle\Customize\Color\PurpleColor;
 use WBW\Bundle\BootstrapBundle\Customize\Color\RedColor;
 use WBW\Bundle\BootstrapBundle\Customize\Color\TealColor;
 use WBW\Bundle\BootstrapBundle\Customize\Color\YellowColor;
-use WBW\Bundle\WidgetBundle\Component\Color\BlackColor;
-use WBW\Bundle\WidgetBundle\Component\Color\WhiteColor;
-use WBW\Bundle\WidgetBundle\Component\ColorInterface;
+use WBW\Library\Widget\Component\Color\BlackColor;
+use WBW\Library\Widget\Component\Color\WhiteColor;
+use WBW\Library\Widget\Component\ColorInterface;
 
 /**
  * Color factory.
