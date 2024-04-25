@@ -23,7 +23,7 @@ use WBW\Bundle\BootstrapBundle\Component\Badge\SecondaryBadge;
 use WBW\Bundle\BootstrapBundle\Component\Badge\SuccessBadge;
 use WBW\Bundle\BootstrapBundle\Component\Badge\WarningBadge;
 use WBW\Bundle\BootstrapBundle\Component\BadgeInterface;
-use WBW\Library\Types\Helper\ArrayHelper;
+use WBW\Library\Common\Helper\ArrayHelper;
 
 /**
  * Badge factory.
