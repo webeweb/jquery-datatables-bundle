@@ -17,8 +17,8 @@ use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Customize\Color\GrayColor;
 use WBW\Bundle\BootstrapBundle\Customize\Color\GrayColorInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\Color\GreyColorInterface as BaseGrayColorInterface;
-use WBW\Bundle\WidgetBundle\Component\ColorInterface;
+use WBW\Library\Widget\Component\Color\GreyColorInterface as BaseGrayColorInterface;
+use WBW\Library\Widget\Component\ColorInterface;
 
 /**
  * Gray color test.
