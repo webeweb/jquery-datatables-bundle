@@ -17,7 +17,7 @@ use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Component\ProgressBar\InfoProgressBar;
 use WBW\Bundle\BootstrapBundle\Component\ProgressBarInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\ProgressBarInterface as BaseProgressBarInterface;
+use WBW\Library\Widget\Component\ProgressBarInterface as BaseProgressBarInterface;
 
 /**
  * Info progress bar test.
