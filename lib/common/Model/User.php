@@ -14,11 +14,11 @@ declare(strict_types = 1);
 namespace WBW\Bundle\CommonBundle\Model;
 
 use Symfony\Component\Security\Core\User\UserInterface;
-use WBW\Library\Traits\Integers\IntegerIdTrait;
-use WBW\Library\Traits\Strings\ArrayRolesTrait;
-use WBW\Library\Traits\Strings\StringPasswordTrait;
-use WBW\Library\Traits\Strings\StringSaltTrait;
-use WBW\Library\Traits\Strings\StringUsernameTrait;
+use WBW\Library\Common\Traits\Integers\IntegerIdTrait;
+use WBW\Library\Common\Traits\Strings\ArrayRolesTrait;
+use WBW\Library\Common\Traits\Strings\StringPasswordTrait;
+use WBW\Library\Common\Traits\Strings\StringSaltTrait;
+use WBW\Library\Common\Traits\Strings\StringUsernameTrait;
 
 /**
  * User.
