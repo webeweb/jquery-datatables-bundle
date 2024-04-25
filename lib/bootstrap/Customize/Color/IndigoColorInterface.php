@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Customize\Color;
 
-use WBW\Bundle\WidgetBundle\Component\Color\IndigoColorInterface as BaseIndigoColorInterface;
+use WBW\Library\Widget\Component\Color\IndigoColorInterface as BaseIndigoColorInterface;
 
 /**
  * Indigo color interface.
