@@ -22,7 +22,7 @@ use WBW\Bundle\BootstrapBundle\Component\Alert\SecondaryAlert;
 use WBW\Bundle\BootstrapBundle\Component\Alert\SuccessAlert;
 use WBW\Bundle\BootstrapBundle\Component\Alert\WarningAlert;
 use WBW\Bundle\BootstrapBundle\Component\AlertInterface;
-use WBW\Library\Types\Helper\ArrayHelper;
+use WBW\Library\Common\Helper\ArrayHelper;
 
 /**
  * Alert factory.
