@@ -32,8 +32,8 @@ use WBW\Bundle\DataTablesBundle\Model\DataTablesSearchInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapper;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Library\Types\Helper\ArrayHelper;
-use WBW\Library\Types\Helper\BooleanHelper;
+use WBW\Library\Common\Helper\ArrayHelper;
+use WBW\Library\Common\Helper\BooleanHelper;
 
 /**
  * DataTables factory.
