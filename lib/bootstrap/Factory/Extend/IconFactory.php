@@ -17,7 +17,7 @@ use WBW\Bundle\BootstrapBundle\Extend\FontAwesomeIcon;
 use WBW\Bundle\BootstrapBundle\Extend\FontAwesomeIconInterface;
 use WBW\Bundle\BootstrapBundle\Extend\MaterialDesignIconicFontIcon;
 use WBW\Bundle\BootstrapBundle\Extend\MaterialDesignIconicFontIconInterface;
-use WBW\Library\Types\Helper\ArrayHelper;
+use WBW\Library\Common\Helper\ArrayHelper;
 
 /**
  * Icon factory.
