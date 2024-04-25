@@ -22,7 +22,7 @@ use WBW\Bundle\DataTablesBundle\Provider\DataTablesCsvExporterInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesEditorInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Entity\Employee;
-use WBW\Library\Types\Exception\IntegerArgumentException;
+use WBW\Library\Common\Exception\IntegerArgumentException;
 
 /**
  * Employee DataTables provider.
