@@ -41,7 +41,7 @@
         "symfony/serializer": "^4.4|^5.0|^6.0",
         "symfony/translation": "^4.4|^5.0|^6.0",
         "twig/twig": "^2.10|^3.0",
-        "webeweb/core-library": "^8.70"
+        "webeweb/core-library": "dev-common-library"
     },
     "require-dev": {
         "doctrine/doctrine-bundle": "^1.8.1|^2.0",
@@ -61,21 +61,18 @@
         "psr-4": {
             "WBW\\Bundle\\DataTablesBundle\\": "src",
             "WBW\\Bundle\\BootstrapBundle\\": "lib/bootstrap",
-            "WBW\\Bundle\\CommonBundle\\": "lib/common",
-            "WBW\\Bundle\\WidgetBundle\\": "lib/widget"
+            "WBW\\Bundle\\CommonBundle\\": "lib/common"
         },
         "exclude-from-classmap": [
             "/lib/bootstrap/Tests/",
-            "/lib/common/Tests/",
-            "/lib/widget/Tests/"
+            "/lib/common/Tests/"
         ]
     },
     "autoload-dev": {
         "psr-4": {
             "WBW\\Bundle\\DataTablesBundle\\Tests\\": "tests",
             "WBW\\Bundle\\BootstrapBundle\\Tests\\": "lib/bootstrap/Tests",
-            "WBW\\Bundle\\CommonBundle\\Tests\\": "lib/common/Tests",
-            "WBW\\Bundle\\WidgetBundle\\Tests\\": "lib/widget/Tests"
+            "WBW\\Bundle\\CommonBundle\\Tests\\": "lib/common/Tests"
         }
     },
     "config": {
