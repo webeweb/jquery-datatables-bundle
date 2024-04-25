@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Extend;
 
-use WBW\Bundle\WidgetBundle\Component\IconInterface;
+use WBW\Library\Widget\Component\IconInterface;
 
 /**
  * Material Design Iconic Font icon interface.
