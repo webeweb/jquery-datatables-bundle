@@ -18,7 +18,7 @@ use Throwable;
 use WBW\Bundle\CommonBundle\DependencyInjection\WBWCommonExtension;
 use WBW\Bundle\CommonBundle\Provider\AssetsProviderInterface;
 use WBW\Bundle\CommonBundle\WBWCommonBundle;
-use WBW\Bundle\WidgetBundle\Helper\AssetsHelper;
+use WBW\Library\Widget\Helper\AssetsHelper;
 
 /**
  * Core bundle test.
