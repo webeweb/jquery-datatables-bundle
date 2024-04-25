@@ -14,7 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\BootstrapBundle\Twig\Extension\Content;
 
 use Twig\TwigFunction;
-use WBW\Library\Types\Helper\ArrayHelper;
+use WBW\Library\Common\Helper\ArrayHelper;
 
 /**
  * Code Twig extension.
