@@ -17,7 +17,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\StyleInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
-use WBW\Library\System\Helper\SystemHelper;
+use WBW\Library\Common\Utility\SystemUtility;
 
 /**
  * Command helper.
@@ -47,10 +47,10 @@ EOT;
     public static function formatCheckbox(?bool $checked): string {
 
         if (true === $checked) {
-            return sprintf("<fg=green;options=bold>%s</>", SystemHelper::isWindows() ? "OK" : "\xE2\x9C\x94");
+            return sprintf("<fg=green;options=bold>%s</>", SystemUtility::isWindows() ? "OK" : "\xE2\x9C\x94");
         }
 
-        return sprintf("<fg=yellow;options=bold>%s</>", SystemHelper::isWindows() ? "KO" : "!");
+        return sprintf("<fg=yellow;options=bold>%s</>", SystemUtility::isWindows() ? "KO" : "!");
     }
 
     /**
