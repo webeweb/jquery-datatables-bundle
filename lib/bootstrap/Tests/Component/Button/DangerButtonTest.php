@@ -17,7 +17,7 @@ use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Component\Button\DangerButton;
 use WBW\Bundle\BootstrapBundle\Component\ButtonInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\ButtonInterface as BaseButtonInterface;
+use WBW\Library\Widget\Component\ButtonInterface as BaseButtonInterface;
 
 /**
  * Danger button test.
