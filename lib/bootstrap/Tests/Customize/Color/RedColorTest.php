@@ -17,8 +17,8 @@ use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Customize\Color\RedColor;
 use WBW\Bundle\BootstrapBundle\Customize\Color\RedColorInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\Color\RedColorInterface as BaseRedColorInterface;
-use WBW\Bundle\WidgetBundle\Component\ColorInterface;
+use WBW\Library\Widget\Component\Color\RedColorInterface as BaseRedColorInterface;
+use WBW\Library\Widget\Component\ColorInterface;
 
 /**
  * Red color test.
