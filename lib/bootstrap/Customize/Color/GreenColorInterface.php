@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Customize\Color;
 
-use WBW\Bundle\WidgetBundle\Component\Color\GreenColorInterface as BaseGreenColorInterface;
+use WBW\Library\Widget\Component\Color\GreenColorInterface as BaseGreenColorInterface;
 
 /**
  * Green color interface.
