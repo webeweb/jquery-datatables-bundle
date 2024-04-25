@@ -24,7 +24,7 @@ use WBW\Bundle\BootstrapBundle\Component\Button\SecondaryButton;
 use WBW\Bundle\BootstrapBundle\Component\Button\SuccessButton;
 use WBW\Bundle\BootstrapBundle\Component\Button\WarningButton;
 use WBW\Bundle\BootstrapBundle\Component\ButtonInterface;
-use WBW\Library\Types\Helper\ArrayHelper;
+use WBW\Library\Common\Helper\ArrayHelper;
 
 /**
  * Button factory.
