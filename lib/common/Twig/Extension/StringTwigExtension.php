@@ -18,8 +18,8 @@ use RuntimeException;
 use Throwable;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
-use WBW\Library\Types\Helper\DateTimeHelper;
-use WBW\Library\Types\Helper\StringHelper;
+use WBW\Library\Common\Helper\DateTimeHelper;
+use WBW\Library\Common\Helper\StringHelper;
 
 /**
  * String Twig extension.
