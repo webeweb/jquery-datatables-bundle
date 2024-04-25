@@ -17,8 +17,8 @@ use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Customize\Color\CyanColor;
 use WBW\Bundle\BootstrapBundle\Customize\Color\CyanColorInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\Color\CyanColorInterface as BaseCyanColorInterface;
-use WBW\Bundle\WidgetBundle\Component\ColorInterface;
+use WBW\Library\Widget\Component\Color\CyanColorInterface as BaseCyanColorInterface;
+use WBW\Library\Widget\Component\ColorInterface;
 
 /**
  * Cyan color test.
