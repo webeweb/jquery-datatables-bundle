@@ -26,7 +26,7 @@ use WBW\Bundle\BootstrapBundle\Component\Button\WarningButton;
 use WBW\Bundle\BootstrapBundle\Component\ButtonInterface;
 use WBW\Bundle\BootstrapBundle\Factory\Component\ButtonFactory;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\ButtonInterface as BaseButtonInterface;
+use WBW\Library\Widget\Component\ButtonInterface as BaseButtonInterface;
 
 /**
  * Button factory test.
