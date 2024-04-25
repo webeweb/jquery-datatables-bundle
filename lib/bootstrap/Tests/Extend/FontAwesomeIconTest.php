@@ -17,7 +17,7 @@ use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Extend\FontAwesomeIcon;
 use WBW\Bundle\BootstrapBundle\Extend\FontAwesomeIconInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\IconInterface;
+use WBW\Library\Widget\Component\IconInterface;
 
 /**
  * Font Awesome icon test.
