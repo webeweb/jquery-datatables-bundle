@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Model;
 
-use WBW\Library\Types\Exception\StringArgumentException;
+use WBW\Library\Common\Exception\StringArgumentException;
 
 /**
  * DataTables options interface.
