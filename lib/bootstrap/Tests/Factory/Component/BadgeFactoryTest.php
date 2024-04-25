@@ -25,7 +25,7 @@ use WBW\Bundle\BootstrapBundle\Component\Badge\WarningBadge;
 use WBW\Bundle\BootstrapBundle\Component\BadgeInterface;
 use WBW\Bundle\BootstrapBundle\Factory\Component\BadgeFactory;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\BadgeInterface as BaseBadgeInterface;
+use WBW\Library\Widget\Component\BadgeInterface as BaseBadgeInterface;
 
 /**
  * Badge factory test.
