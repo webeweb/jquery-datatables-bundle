@@ -15,8 +15,8 @@ namespace WBW\Bundle\CommonBundle\Service;
 
 use SplFileInfo;
 use Throwable;
-use WBW\Library\Traits\Strings\StringDirectoryTrait;
-use WBW\Library\Types\Helper\StringHelper;
+use WBW\Library\Common\Traits\Strings\StringDirectoryTrait;
+use WBW\Library\Common\Helper\StringHelper;
 
 /**
  * Uploaded file service.
