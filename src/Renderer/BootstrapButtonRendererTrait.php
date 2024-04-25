@@ -21,7 +21,7 @@ use Symfony\Component\Routing\RouterInterface;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\ButtonTwigExtension;
 use WBW\Bundle\DataTablesBundle\Helper\DataTablesEntityHelper;
 use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
-use WBW\Library\Types\Helper\ArrayHelper;
+use WBW\Library\Common\Helper\ArrayHelper;
 
 /**
  * Bootstrap buttons renderer trait.
