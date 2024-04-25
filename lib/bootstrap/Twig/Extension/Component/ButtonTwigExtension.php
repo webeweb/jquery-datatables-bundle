@@ -16,8 +16,8 @@ namespace WBW\Bundle\BootstrapBundle\Twig\Extension\Component;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
 use WBW\Bundle\BootstrapBundle\Factory\Component\ButtonFactory;
-use WBW\Library\Types\Helper\ArrayHelper;
-use WBW\Library\Types\Helper\StringHelper;
+use WBW\Library\Common\Helper\ArrayHelper;
+use WBW\Library\Common\Helper\StringHelper;
 
 /**
  * Button Twig extension.
