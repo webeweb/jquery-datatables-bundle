@@ -17,7 +17,7 @@ use WBW\Bundle\BootstrapBundle\Component\AlertInterface;
 use WBW\Bundle\BootstrapBundle\Component\BadgeInterface;
 use WBW\Bundle\BootstrapBundle\Component\ButtonInterface;
 use WBW\Bundle\BootstrapBundle\Component\ProgressBarInterface;
-use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
+use WBW\Library\Common\Serializer\SerializerKeys as BaseSerializerKeys;
 
 /**
  * JSON serializer.
