@@ -17,8 +17,8 @@ use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Customize\Color\GreenColor;
 use WBW\Bundle\BootstrapBundle\Customize\Color\GreenColorInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\Color\GreenColorInterface as BaseGreenColorInterface;
-use WBW\Bundle\WidgetBundle\Component\ColorInterface;
+use WBW\Library\Widget\Component\Color\GreenColorInterface as BaseGreenColorInterface;
+use WBW\Library\Widget\Component\ColorInterface;
 
 /**
  * Green color test.
