@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Component\Navigation\Glyphicon;
 
-use WBW\Bundle\WidgetBundle\Component\Navigation\NavigationNode;
+use WBW\Library\Widget\Component\Navigation\NavigationNode;
 
 /**
  * Navigation item "parameters".
