@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Customize\Color;
 
-use WBW\Bundle\WidgetBundle\Component\Color\RedColorInterface as BaseRedColorInterface;
+use WBW\Library\Widget\Component\Color\RedColorInterface as BaseRedColorInterface;
 
 /**
  * Red color interface.
