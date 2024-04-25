@@ -15,19 +15,19 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Factory\Customize;
 
 use WBW\Bundle\BootstrapBundle\Factory\Customize\ColorFactory;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\Color\BlackColorInterface;
-use WBW\Bundle\WidgetBundle\Component\Color\BlueColorInterface;
-use WBW\Bundle\WidgetBundle\Component\Color\CyanColorInterface;
-use WBW\Bundle\WidgetBundle\Component\Color\GreenColorInterface;
-use WBW\Bundle\WidgetBundle\Component\Color\GreyColorInterface;
-use WBW\Bundle\WidgetBundle\Component\Color\IndigoColorInterface;
-use WBW\Bundle\WidgetBundle\Component\Color\OrangeColorInterface;
-use WBW\Bundle\WidgetBundle\Component\Color\PinkColorInterface;
-use WBW\Bundle\WidgetBundle\Component\Color\PurpleColorInterface;
-use WBW\Bundle\WidgetBundle\Component\Color\RedColorInterface;
-use WBW\Bundle\WidgetBundle\Component\Color\TealColorInterface;
-use WBW\Bundle\WidgetBundle\Component\Color\WhiteColorInterface;
-use WBW\Bundle\WidgetBundle\Component\Color\YellowColorInterface;
+use WBW\Library\Widget\Component\Color\BlackColorInterface;
+use WBW\Library\Widget\Component\Color\BlueColorInterface;
+use WBW\Library\Widget\Component\Color\CyanColorInterface;
+use WBW\Library\Widget\Component\Color\GreenColorInterface;
+use WBW\Library\Widget\Component\Color\GreyColorInterface;
+use WBW\Library\Widget\Component\Color\IndigoColorInterface;
+use WBW\Library\Widget\Component\Color\OrangeColorInterface;
+use WBW\Library\Widget\Component\Color\PinkColorInterface;
+use WBW\Library\Widget\Component\Color\PurpleColorInterface;
+use WBW\Library\Widget\Component\Color\RedColorInterface;
+use WBW\Library\Widget\Component\Color\TealColorInterface;
+use WBW\Library\Widget\Component\Color\WhiteColorInterface;
+use WBW\Library\Widget\Component\Color\YellowColorInterface;
 
 /**
  * Color factory test.
