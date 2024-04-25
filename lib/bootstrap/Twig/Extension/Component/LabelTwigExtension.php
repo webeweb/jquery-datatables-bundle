@@ -18,7 +18,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Twig\TwigFunction;
 use WBW\Bundle\BootstrapBundle\WBWBootstrapBundle;
 use WBW\Bundle\CommonBundle\Translation\TranslatorTrait;
-use WBW\Library\Types\Helper\ArrayHelper;
+use WBW\Library\Common\Helper\ArrayHelper;
 
 /**
  * Label Twig extension.
