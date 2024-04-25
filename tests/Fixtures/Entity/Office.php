@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Entity;
 
-use WBW\Library\Traits\Integers\IntegerIdTrait;
+use WBW\Library\Common\Traits\Integers\IntegerIdTrait;
 
 /**
  * Office.
