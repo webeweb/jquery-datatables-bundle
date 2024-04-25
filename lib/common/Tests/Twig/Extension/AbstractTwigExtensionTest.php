@@ -18,7 +18,7 @@ use Twig\Extension\ExtensionInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 use WBW\Bundle\CommonBundle\Tests\Fixtures\Twig\Extension\TestAbstractTwigExtension;
 use WBW\Bundle\CommonBundle\Twig\Extension\AbstractTwigExtension;
-use WBW\Bundle\WidgetBundle\Component\NavigationNodeInterface;
+use WBW\Library\Widget\Component\NavigationNodeInterface;
 
 /**
  * Abstract Twig extension test.
