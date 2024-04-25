@@ -14,7 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\BootstrapBundle\Twig\Extension\Layout;
 
 use Twig\TwigFunction;
-use WBW\Library\Types\Helper\ArrayHelper;
+use WBW\Library\Common\Helper\ArrayHelper;
 
 /**
  * Grid Twig extension.
