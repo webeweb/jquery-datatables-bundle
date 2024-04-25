@@ -17,7 +17,7 @@ use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Component\Alert\WarningAlert;
 use WBW\Bundle\BootstrapBundle\Component\AlertInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\AlertInterface as BaseAlertInterface;
+use WBW\Library\Widget\Component\AlertInterface as BaseAlertInterface;
 
 /**
  * Warning alert test.
