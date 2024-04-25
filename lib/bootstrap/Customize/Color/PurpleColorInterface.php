@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Customize\Color;
 
-use WBW\Bundle\WidgetBundle\Component\Color\PurpleColorInterface as BasePurpleColorInterface;
+use WBW\Library\Widget\Component\Color\PurpleColorInterface as BasePurpleColorInterface;
 
 /**
  * Purple color interface.
