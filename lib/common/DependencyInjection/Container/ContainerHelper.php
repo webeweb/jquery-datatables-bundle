@@ -14,7 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\CommonBundle\DependencyInjection\Container;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use WBW\Library\Types\Helper\ArrayHelper;
+use WBW\Library\Common\Helper\ArrayHelper;
 
 /**
  * Container helper.
