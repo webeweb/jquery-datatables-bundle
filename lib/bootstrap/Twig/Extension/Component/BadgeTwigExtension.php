@@ -16,7 +16,7 @@ namespace WBW\Bundle\BootstrapBundle\Twig\Extension\Component;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
 use WBW\Bundle\BootstrapBundle\Factory\Component\BadgeFactory;
-use WBW\Library\Types\Helper\StringHelper;
+use WBW\Library\Common\Helper\StringHelper;
 
 /**
  * Badge component Twig extension.
