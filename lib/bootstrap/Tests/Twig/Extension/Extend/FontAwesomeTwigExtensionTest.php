@@ -20,7 +20,7 @@ use Twig\TwigFilter;
 use Twig\TwigFunction;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\FontAwesomeTwigExtension;
-use WBW\Bundle\WidgetBundle\Renderer\Component\IconRendererInterface;
+use WBW\Library\Widget\Renderer\Component\IconRendererInterface;
 
 /**
  * Font Awesome Twig extension test.
