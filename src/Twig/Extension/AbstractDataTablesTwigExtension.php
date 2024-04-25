@@ -21,7 +21,7 @@ use WBW\Bundle\CommonBundle\Twig\Extension\AssetsTwigExtensionTrait;
 use WBW\Bundle\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperInterface;
-use WBW\Library\Traits\Strings\StringEnvironmentTrait;
+use WBW\Library\Common\Traits\Strings\StringEnvironmentTrait;
 
 /**
  * Abstract DataTables Twig extension.
