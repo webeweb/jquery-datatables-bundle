@@ -20,7 +20,7 @@ use WBW\Bundle\BootstrapBundle\Component\ProgressBarInterface;
 use WBW\Bundle\BootstrapBundle\Serializer\JsonSerializer;
 use WBW\Bundle\BootstrapBundle\Serializer\SerializerKeys;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Library\Serializer\SerializerKeys as BaseSerializerKeys;
+use WBW\Library\Common\Serializer\SerializerKeys as BaseSerializerKeys;
 
 /**
  * JSON serializer test.
