@@ -19,7 +19,7 @@ use Twig\Node\Node;
 use Twig\TwigFunction;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\MeteoconsTwigExtension;
-use WBW\Bundle\WidgetBundle\Renderer\Component\IconRendererInterface;
+use WBW\Library\Widget\Renderer\Component\IconRendererInterface;
 
 /**
  * Meteocons Twig extension test.
