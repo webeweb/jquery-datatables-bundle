@@ -14,8 +14,8 @@ declare(strict_types = 1);
 namespace WBW\Bundle\BootstrapBundle\Twig\Extension\Extend;
 
 use Twig\TwigFunction;
-use WBW\Bundle\WidgetBundle\Renderer\Component\IconRendererInterface;
-use WBW\Library\Types\Helper\ArrayHelper;
+use WBW\Library\Widget\Renderer\Component\IconRendererInterface;
+use WBW\Library\Common\Helper\ArrayHelper;
 
 /**
  * Glyphicon Twig extension.
