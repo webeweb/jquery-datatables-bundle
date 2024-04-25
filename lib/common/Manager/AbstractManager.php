@@ -15,7 +15,7 @@ namespace WBW\Bundle\CommonBundle\Manager;
 
 use Psr\Log\LoggerInterface;
 use WBW\Bundle\CommonBundle\Provider\ProviderInterface;
-use WBW\Library\Logger\LoggerTrait;
+use WBW\Library\Common\Logger\LoggerTrait;
 
 /**
  * Abstract manager.
