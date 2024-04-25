@@ -16,7 +16,7 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Component\Navigation\Glyphicon;
 use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Component\Navigation\Glyphicon\NavigationItemSettings;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\NavigationNodeInterface;
+use WBW\Library\Widget\Component\NavigationNodeInterface;
 
 /**
  * Navigation item "settings" test.
