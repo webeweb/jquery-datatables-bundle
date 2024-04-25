@@ -21,7 +21,7 @@ use WBW\Bundle\CommonBundle\Event\ToastEvent;
 use WBW\Bundle\CommonBundle\EventListener\ToastEventListener;
 use WBW\Bundle\CommonBundle\Service\SessionServiceInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\ToastInterface;
+use WBW\Library\Widget\Component\ToastInterface;
 
 /**
  * Toast event listener.
