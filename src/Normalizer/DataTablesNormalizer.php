@@ -15,7 +15,7 @@ namespace WBW\Bundle\DataTablesBundle\Normalizer;
 
 use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesResponseInterface;
-use WBW\Library\Types\Helper\ArrayHelper;
+use WBW\Library\Common\Helper\ArrayHelper;
 
 /**
  * DataTables normalizer.
