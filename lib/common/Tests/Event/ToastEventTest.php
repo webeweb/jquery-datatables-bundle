@@ -15,7 +15,7 @@ namespace WBW\Bundle\CommonBundle\Tests\Event;
 
 use WBW\Bundle\CommonBundle\Event\ToastEvent;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\ToastInterface;
+use WBW\Library\Widget\Component\ToastInterface;
 
 /**
  * Toast event test.
