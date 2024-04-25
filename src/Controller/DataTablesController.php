@@ -32,7 +32,7 @@ use WBW\Bundle\DataTablesBundle\Helper\DataTablesExportHelper;
 use WBW\Bundle\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesEnumerator;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesLoop;
-use WBW\Library\Types\Helper\BooleanHelper;
+use WBW\Library\Common\Helper\BooleanHelper;
 
 /**
  * DataTables controller.
