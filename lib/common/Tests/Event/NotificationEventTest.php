@@ -15,7 +15,7 @@ namespace WBW\Bundle\CommonBundle\Tests\Event;
 
 use WBW\Bundle\CommonBundle\Event\NotificationEvent;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\NotificationInterface;
+use WBW\Library\Widget\Component\NotificationInterface;
 
 /**
  * Notification event test.
