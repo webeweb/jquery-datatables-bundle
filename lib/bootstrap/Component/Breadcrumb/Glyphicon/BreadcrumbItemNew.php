@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Component\Breadcrumb\Glyphicon;
 
-use WBW\Bundle\WidgetBundle\Component\Navigation\BreadcrumbNode;
+use WBW\Library\Widget\Component\Navigation\BreadcrumbNode;
 
 /**
  * Breadcrumb item "new".
