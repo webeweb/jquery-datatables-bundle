@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Customize\Color;
 
-use WBW\Bundle\WidgetBundle\Component\Color\CyanColorInterface as BaseCyanColorInterface;
+use WBW\Library\Widget\Component\Color\CyanColorInterface as BaseCyanColorInterface;
 
 /**
  * Cyan color interface.
