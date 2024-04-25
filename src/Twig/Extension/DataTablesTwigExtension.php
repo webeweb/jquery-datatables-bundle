@@ -18,7 +18,7 @@ use Twig\TwigFilter;
 use Twig\TwigFunction;
 use WBW\Bundle\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperInterface;
-use WBW\Library\Types\Helper\ArrayHelper;
+use WBW\Library\Common\Helper\ArrayHelper;
 
 /**
  * DataTables Twig extension.
