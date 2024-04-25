@@ -13,8 +13,8 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\CommonBundle\Event;
 
-use WBW\Bundle\WidgetBundle\Component\ToastInterface;
-use WBW\Bundle\WidgetBundle\Component\ToastTrait;
+use WBW\Library\Widget\Component\ToastInterface;
+use WBW\Library\Widget\Component\ToastTrait;
 
 /**
  * Toast event.
