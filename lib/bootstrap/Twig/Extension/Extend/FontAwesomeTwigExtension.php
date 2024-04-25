@@ -16,7 +16,7 @@ namespace WBW\Bundle\BootstrapBundle\Twig\Extension\Extend;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
 use WBW\Bundle\BootstrapBundle\Factory\Extend\IconFactory;
-use WBW\Bundle\WidgetBundle\Renderer\Component\IconRendererInterface;
+use WBW\Library\Widget\Renderer\Component\IconRendererInterface;
 
 /**
  * Font Awesome Twig extension.
