@@ -14,7 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\BootstrapBundle\Component;
 
 use WBW\Bundle\BootstrapBundle\WBWBootstrapBundle;
-use WBW\Bundle\WidgetBundle\Component\AlertInterface as BaseAlertInterface;
+use WBW\Library\Widget\Component\AlertInterface as BaseAlertInterface;
 
 /**
  * Alert interface.
