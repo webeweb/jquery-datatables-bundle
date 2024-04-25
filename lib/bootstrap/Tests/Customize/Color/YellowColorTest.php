@@ -17,8 +17,8 @@ use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Customize\Color\YellowColor;
 use WBW\Bundle\BootstrapBundle\Customize\Color\YellowColorInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\Color\YellowColorInterface as BaseYellowColorInterface;
-use WBW\Bundle\WidgetBundle\Component\ColorInterface;
+use WBW\Library\Widget\Component\Color\YellowColorInterface as BaseYellowColorInterface;
+use WBW\Library\Widget\Component\ColorInterface;
 
 /**
  * Yellow color test.
