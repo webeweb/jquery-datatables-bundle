@@ -18,7 +18,7 @@ use WBW\Bundle\BootstrapBundle\Component\AbstractButton;
 use WBW\Bundle\BootstrapBundle\Component\ButtonInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\BootstrapBundle\Tests\Fixtures\Component\TestAbstractButton;
-use WBW\Bundle\WidgetBundle\Component\ButtonInterface as BaseButtonInterface;
+use WBW\Library\Widget\Component\ButtonInterface as BaseButtonInterface;
 
 /**
  * Abstract button test.
