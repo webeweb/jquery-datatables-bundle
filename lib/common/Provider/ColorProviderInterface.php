@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\CommonBundle\Provider;
 
-use WBW\Bundle\WidgetBundle\Component\ColorInterface;
+use WBW\Library\Widget\Component\ColorInterface;
 
 /**
  * Color provider interface.
