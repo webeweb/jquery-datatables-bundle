@@ -25,8 +25,8 @@ use Twig\Environment;
 use WBW\Bundle\CommonBundle\Controller\AbstractController;
 use WBW\Bundle\CommonBundle\Event\NotificationEvent;
 use WBW\Bundle\CommonBundle\Event\ToastEvent;
-use WBW\Bundle\WidgetBundle\Component\NotificationInterface;
-use WBW\Bundle\WidgetBundle\Component\ToastInterface;
+use WBW\Library\Widget\Component\NotificationInterface;
+use WBW\Library\Widget\Component\ToastInterface;
 
 /**
  * Test abstract controller.
