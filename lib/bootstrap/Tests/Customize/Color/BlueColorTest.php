@@ -17,8 +17,8 @@ use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Customize\Color\BlueColor;
 use WBW\Bundle\BootstrapBundle\Customize\Color\BlueColorInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\Color\BlueColorInterface as BaseBlueColorInterface;
-use WBW\Bundle\WidgetBundle\Component\ColorInterface;
+use WBW\Library\Widget\Component\Color\BlueColorInterface as BaseBlueColorInterface;
+use WBW\Library\Widget\Component\ColorInterface;
 
 /**
  * Blue color test.
