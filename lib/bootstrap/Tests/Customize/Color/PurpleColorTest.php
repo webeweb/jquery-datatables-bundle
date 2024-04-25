@@ -17,8 +17,8 @@ use JsonSerializable;
 use WBW\Bundle\BootstrapBundle\Customize\Color\PurpleColor;
 use WBW\Bundle\BootstrapBundle\Customize\Color\PurpleColorInterface;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
-use WBW\Bundle\WidgetBundle\Component\Color\PurpleColorInterface as BasePurpleColorInterface;
-use WBW\Bundle\WidgetBundle\Component\ColorInterface;
+use WBW\Library\Widget\Component\Color\PurpleColorInterface as BasePurpleColorInterface;
+use WBW\Library\Widget\Component\ColorInterface;
 
 /**
  * Purple color test.
