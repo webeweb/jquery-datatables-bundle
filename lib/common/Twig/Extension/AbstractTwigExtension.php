@@ -16,8 +16,8 @@ namespace WBW\Bundle\CommonBundle\Twig\Extension;
 use Twig\Environment;
 use Twig\Extension\AbstractExtension;
 use WBW\Bundle\CommonBundle\Twig\Environment\TwigEnvironmentTrait;
-use WBW\Bundle\WidgetBundle\Component\NavigationNodeInterface;
-use WBW\Library\Types\Helper\StringHelper;
+use WBW\Library\Widget\Component\NavigationNodeInterface;
+use WBW\Library\Common\Helper\StringHelper;
 
 /**
  * Abstract Twig extension.
