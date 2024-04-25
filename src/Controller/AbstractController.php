@@ -39,7 +39,7 @@ use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesRouterInterface;
 use WBW\Bundle\DataTablesBundle\Repository\DataTablesRepositoryInterface;
 use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
-use WBW\Library\Database\Helper\PaginateHelper;
+use WBW\Library\Common\Database\Paginator;
 use WBW\Library\Symfony\Response\SimpleJsonResponseData;
 use WBW\Library\Symfony\Response\SimpleJsonResponseDataInterface;
 
@@ -123,14 +123,14 @@ abstract class AbstractController extends BaseController {
 
         // Paginates.
         $total = $repository->dataTablesCountExported($dtWrapper);
-        $pages = PaginateHelper::getPagesCount($total, DataTablesRepositoryInterface::REPOSITORY_LIMIT);
+        $pages = Paginator::countPages($total, DataTablesRepositoryInterface::REPOSITORY_LIMIT);
 
         $em = $this->getEntityManager();
 
         for ($i = 0; $i < $pages; ++$i) {
 
             // Get the offset and limit.
-            [$offset, $limit] = PaginateHelper::getPageOffsetAndLimit($i, DataTablesRepositoryInterface::REPOSITORY_LIMIT, $total);
+            [$offset, $limit] = Paginator::offsetLimit($i, DataTablesRepositoryInterface::REPOSITORY_LIMIT, $total);
 
             // Get the export query with offset and limit.
             $query = $repository->dataTablesExportAll($dtWrapper)
