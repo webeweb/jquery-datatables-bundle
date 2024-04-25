@@ -14,7 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\BootstrapBundle\Renderer\Extend;
 
 use WBW\Bundle\BootstrapBundle\Extend\MaterialDesignIconicFontIconInterface;
-use WBW\Bundle\WidgetBundle\Renderer\Component\IconRenderer;
+use WBW\Library\Widget\Renderer\Component\IconRenderer;
 
 /**
  * Material Design Iconic Font icon renderer.
