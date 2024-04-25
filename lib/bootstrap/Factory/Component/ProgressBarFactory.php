@@ -19,7 +19,7 @@ use WBW\Bundle\BootstrapBundle\Component\ProgressBar\InfoProgressBar;
 use WBW\Bundle\BootstrapBundle\Component\ProgressBar\SuccessProgressBar;
 use WBW\Bundle\BootstrapBundle\Component\ProgressBar\WarningProgressBar;
 use WBW\Bundle\BootstrapBundle\Component\ProgressBarInterface;
-use WBW\Library\Types\Helper\ArrayHelper;
+use WBW\Library\Common\Helper\ArrayHelper;
 
 /**
  * Progress bar factory.
