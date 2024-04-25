@@ -19,7 +19,7 @@ use Twig\Node\Node;
 use Twig\TwigFunction;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Extend\IconTwigExtension;
-use WBW\Bundle\WidgetBundle\Renderer\Component\IconRendererInterface;
+use WBW\Library\Widget\Renderer\Component\IconRendererInterface;
 
 /**
  * Bootstrap icon Twig extension test.
