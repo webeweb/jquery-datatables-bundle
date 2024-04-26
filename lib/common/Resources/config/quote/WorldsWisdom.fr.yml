@@ -1,0 +1,1830 @@
+# src/symfony/Resources/assets/quote/WorldsWisdom.fr.yml
+"01.01":
+    content: "Milles victoires sur milles ennemis ne valent pas une seule victoire sur soi-même."
+    author:  "Bouddha (chef spirituel népalais, VIe-Ve s. av. J.-C.)"
+    saint:   "Jour de l'an"
+
+"01.02":
+    content: "Accomplis chaque acte de ta vie comme si il devait être le dernier."
+    author:  "Marc Aurèle (empereur romain, 121-180)"
+    saint:   "Saint Basile"
+
+"01.03":
+    content: "Nul ne peut atteindre l'aube sans passer par le chemin de la nuit."
+    author:  "Khalil Gibran (poète et peintre libanais, 1883-1931)"
+    saint:   "Sainte Geneviève"
+
+"01.04":
+    content: "Je veux être tout ce que je peux devenir."
+    author:  "Katherine Mansfield (femme de lettres néo-zélandaise, 1888-1923)"
+    saint:   "Saint Odilon"
+
+"01.05":
+    content: "Le courage est la première des qualités humaines car elle garantit toutes les autres."
+    author:  "Aristote (philosophe grec, 384-322 av. J.-C.)"
+    saint:   "Saint Edouard"
+
+"01.06":
+    content: "Le danger, ce n'est pas ce qu'on ignore, c'est ce que l'on tient pour certain et qui ne l'est pas."
+    author:  "Mark Twain (écrivain américain, 1835-1910)"
+    saint:   "Saint Mélaine"
+
+"01.07":
+    content: "Nul ne sait ce qu'il peut faire avant d'avoir essayé."
+    author:  "Pubilius Syrus (poète latin, 85-43 av. J.-C.)"
+    saint:   "Saint Raymond"
+
+"01.08":
+    content: "Etre humain c'est aimer les hommes. Etre sage, c'est les connaître."
+    author:  "Lao-tseu (philosophe chinois, 570-490 av. J.-C.)"
+    saint:   "Saint Lucien"
+
+"01.09":
+    content: "Même si vous n'êtes pas le soleil, ce n'est pas une raison pour être un nuage."
+    author:  "Proverbe arabe"
+    saint:   "Saint Alix"
+
+"01.10":
+    content: "Repose-toi d'avoir bien fait, et laisse les autres dires de toi ce qu'ils veulent."
+    author:  "Pythagore (philosophe et mathématicien grec, v. 570-480 av. J.-C.)"
+    saint:   "Saint Guillaume"
+
+"01.11":
+    content: "Soyez votre propre lampe, votre île, votre refuge. Ne voyez pas de refuge hors de vous-même."
+    author:  "Bouddha (chef spirituel népalais, VIe-Ve s. av. J.-C.)"
+    saint:   "Saint Paulin"
+
+"01.12":
+    content: "Crois en toi, mais ne doute pas toujours des autres."
+    author:  "Joaquim Maria Machado de Asis (écrivain brésilien, 1839-1908)"
+    saint:   "Sainte Tatiana"
+
+"01.13":
+    content: "L'erreur n'annule pas la valeur de l'effort accompli."
+    author:  "Proverbe africain"
+    saint:   "Sainte Yvette"
+
+"01.14":
+    content: "Savoir se contenter de ce que l'on a, c'est être riche."
+    author:  "Lao-tseu (philosophe chinois, VIe-Ve s. av. J.-C.)"
+    saint:   "Sainte Nina"
+
+"01.15":
+    content: "Fiez-vous à vos rêves, car en eux est cachée la porte de l'éternité."
+    author:  "Khalil Gibran (poète et peintre libanais, 1883-1931)"
+    saint:   "Saint Rémi"
+
+"01.16":
+    content: "Rides, des sourires gravés."
+    author:  "Jules Renard (écrivain français, 1864-1910)"
+    saint:   "Saint Marcel"
+
+"01.17":
+    content: "Quand un homme a faim, mieux vaut lui apprendre à pêcher que de lui donner un poisson."
+    author:  "Confucius (philosophe chinois, v. 551-479 av. J.-C.)"
+    saint:   "Sainte Roseline"
+
+"01.18":
+    content: "Maison de paille où l'on rit vaut mieux qu'un palais où l'on pleure."
+    author:  "Proverbe chinois"
+    saint:   "Sainte Prisca"
+
+"01.19":
+    content: "Les folies sont les seules choses que l'on ne regrette jamais."
+    author:  "Oscar Wilde (écrivain irlandais, 1854-1900)"
+    saint:   "Saint Marius"
+
+"01.20":
+    content: "Les enfants n'ont ni passé ni avenir et, ce qui ne nous arrive guère, ils jouissent du présent."
+    author:  "Jean de la Bruyère (écrivain français, 1645-1696)"
+    saint:   "Saint Sébastien"
+
+"01.21":
+    content: "On ne va jamais aussi loin que lorsqu'on ne sait pas où l'on va."
+    author:  "Christophe Colomb (navigateur italien, 1450-1506)"
+    saint:   "Sainte Agnès"
+
+"01.22":
+    content: "Le talent se développe dans la retraite ; le caractère se forme dans le tumulte du monde."
+    author:  "Johann Wolfgang von Goethe (écrivain allemand, 1749-1832)"
+    saint:   "Saint Vincent"
+
+"01.23":
+    content: "Ce qui étonne, étonne une fois, mais ce est admirable est de plus en plus admiré."
+    author:  "Joseph Joubert (moraliste français, 1754-1824)"
+    saint:   "Saint Bernard"
+
+"01.24":
+    content: "L'argent est une richesse morte, les enfants sont une richesse vivante."
+    author:  "Proverbe chinois"
+    saint:   "Saint François de Sales"
+
+"01.25":
+    content: "De petites occasions sont souvent à l'origine de grandes entreprises."
+    author:  "Démosthène (homme politique et orateur athénien, 384-322 av. J.-C.)"
+    saint:   "Conv. de Saint Paul"
+
+"01.26":
+    content: "Il n'y a pas de réussite facile ni d'échecs définitifs."
+    author:  "Marcel Proust (écrivain français, 1871-1922)"
+    saint:   "Sainte Paule"
+
+"01.27":
+    content: "Apprends comme si tu devais vivre pour toujours et vis comme si tu devais mourir ce soir."
+    author:  "Proverbe tibétain"
+    saint:   "Sainte Angèle"
+
+"01.28":
+    content: "L'amitié donne son lustre à la prospérité, et soulage en partageant les fardeaux de l'adversité."
+    author:  "Cicéron (home politique et orateur romain, 106-43 av. J.-C.)"
+    saint:   "Saint Thomas d'Aquin"
+
+"01.29":
+    content: "Les passions sont les vents qui enflent les voiles du navire ; elles le submergent quelquefois, mais sans elles il ne pourrait voguer."
+    author:  "Voltaire (écrivain et philosophe français, 1694-1778)"
+    saint:   "Saint Gildas"
+
+"01.30":
+    content: "Le contentement de ce qu'on a fait partie du bonheur."
+    author:  "Proverbe peul"
+    saint:   "Sainte Martine"
+
+"01.31":
+    content: "Ce n'est pas que nous disposions de très peu de temps, c'est plutôt que nous en perdons beaucoup."
+    author:  "Sénèque (philosophe latin, v. 2 av. J.-C.-65 apr. J.-C.)"
+    saint:   "Sainte Marcelle"
+
+"02.01":
+    content: "Ne demandez jamais quelle est l'origine d'un homme ; interrogez plutôt sa vie et vous saurez ce qu'il est."
+    author:  "Abd el-Kader (homme politique algérien, 1808-1883)"
+    saint:   "Sainte Ella"
+
+"02.02":
+    content: "Ce qu'un homme ne dit pas est le sel de la conversation."
+    author:  "Proverbe japonais"
+    saint:   "Saint Théophane"
+
+"02.03":
+    content: "N'imitez rien ni personne. Un lion qui copie un lion devient un singe."
+    author:  "Victor Hugo (écrivain français, 1802-1885)"
+    saint:   "Saint Blaise"
+
+"02.04":
+    content: "Celui qui regarde longtemps les songes devient semblable à son ombre."
+    author:  "Proverbe indien"
+    saint:   "Saint Véronique"
+
+"02.05":
+    content: "La variété est la véritable épice de la vie, qui lui donne toute sa saveur."
+    author:  "William Cowper (poète britannique, 1731-1800)"
+    saint:   "Sainte Agathe"
+
+"02.06":
+    content: "La tranquilité est la plus grande des révélations."
+    author:  "Lao-tseu (philosophe chinois, VIe-Ve s. av. J.-C.)"
+    saint:   "Saint Gaston"
+
+"02.07":
+    content: "Aime la vérité, mais pardonne à l'erreur."
+    author:  "Voltaire (écrivain et philosophe français, 1694-1778)"
+    saint:   "Sainte Eugénie"
+
+"02.08":
+    content: "La liberté coûte très cher et il faut, ou se réfugier à vivre sans elle, ou se décider à la payer son prix."
+    author:  "José Marti (homme politique et écrivain cubain, 1853-1895)"
+    saint:   "Sainte Jacqueline"
+
+"02.09":
+    content: "Le fond du coeur est plus lointain que le bout du monde."
+    author:  "Proverbe chinois"
+    saint:   "Sainte Apolline"
+
+"02.10":
+    content: "En persévérant on arrive à tout."
+    author:  "Théocrite (poète grec, v. 310-250 av. J.-C.)"
+    saint:   "Saint Arnaud"
+
+"02.11":
+    content: "Ouvre l'oeil et regarde, tu verras ton visage dans tous les visages. Tends l'oreille et écoute, tu entendras ta propre voix dans toutes les voix."
+    author:  "Khalil Gibran (poète et peintre libanais, 1883-1931)"
+    saint:   "N.-D. de Lourdes"
+
+"02.12":
+    content: "Apprends à faire silence. Que ton esprit en paix écoute et absorbe."
+    author:  "Pythagore (philosophe et mathématicien grec, v. 570-480 av. J.-C.)"
+    saint:   "Saint Félix"
+
+"02.13":
+    content: "Dire que l'homme est un composé de force et de faiblesse, de lumière et d'aveuglement, de petitesse et de grandeur, ce n'est pas lui faire son procès, c'est le définir."
+    author:  "Denis Diderot (écrivain et philosophe français, 1713-1784)"
+    saint:   "Sainte Béatrice"
+
+"02.14":
+    content: "Mieux vaut rater sa chance que ne pas pas l'avoir tentée."
+    author:  "Proverbe chinois"
+    saint:   "Saint Valentin"
+
+"02.15":
+    content: "Si vous fermez la porte à toutes les erreurs, la vérité restera dehors."
+    author:  "Rabindranàth Tagore (écrivain indien, 1861-1941)"
+    saint:   "Saint Claude"
+
+"02.16":
+    content: "Dans un grain de sable voir un monde. Dans chaque fleur des champs le Paradis."
+    author:  "William Blake (écrivain et peintre britannique, 1757-1827)"
+    saint:   "Sainte Julienne"
+
+"02.17":
+    content: "Si vous avez confiance en vous-même, vous inspirez confiance aux autres."
+    author:  "Johann Wolfgang von Goethe (écrivain allemand, 1749-1832)"
+    saint:   "Saint Alexis"
+
+"02.18":
+    content: "Il n'y a de vrai et de solide esprit que celui qui prend sa source dans le coeur."
+    author:  "Marquis de Vauvenargues (moraliste français, 1715-1747)"
+    saint:   "Sainte Bernadette"
+
+"02.19":
+    content: "Aimez qu'on vous conseille, et non pas qu'on vous loue."
+    author:  "Nicolas Boileau (écrivain français, 1636-1711)"
+    saint:   "Saint Gabin"
+
+"02.20":
+    content: "Ce n'est pas parce que les choses sont difficiles que nous n'osons pas qu'elles sont difficiles."
+    author:  "Sénèque (philosophe latin, v. 2 av. J.-C.-65 apr. J.-C.)"
+    saint:   "Sainte Aimée"
+
+"02.21":
+    content: "Pas trop d'isolement ; pas trop de relations ; le juste milieu, voilà la sagesse."
+    author:  "Confucius (philosophe chinois, v. 551-479 av. J.-C.)"
+    saint:   "Saint Pierre - Saint Damien"
+
+"02.22":
+    content: "L'amour ne voit pas avec les yeux, mais avec l'âme."
+    author:  "William Shakespeare (poète dramatique anglais, 1564-1616)"
+    saint:   "Sainte Isabelle"
+
+"02.23":
+    content: "L'idéal de la vie n'est pas l'espoir de devenir parfait, c'est la volonté d'être toujours meilleur."
+    author:  "Ralph Waldo Emerson (philosophe et poète américain, 1803-1882)"
+    saint:   "Saint Lazare"
+
+"02.24":
+    content: "Ce ne sont pas ceux qui savent le mieux parler qui ont les meilleures choses à dire."
+    author:  "Proverbe chinois"
+    saint:   "Saint Modeste"
+
+"02.25":
+    content: "Que je mène ma vie et que ce ne soit pas elle qui me mène."
+    author:  "Sénèque (philosophe latin, v. 2 av. J.-C.-65 apr. J.-C.)"
+    saint:   "Saint Roméo"
+
+"02.26":
+    content: "Ne juge pas la journée en fonction de la récolte du soir mais d'après les graines que tu as semées."
+    author:  "Robert Louis Stevenson (écrivain britannique, 1850-1894)"
+    saint:   "Saint Nestor"
+
+"02.27":
+    content: "Quand tu es dans l'illusion et le doute, même un millier de livres ne suffisent pas. Quand tu as compris, un seul mot est de trop."
+    author:  "Fen-yang (philosophe chinois, 974-1024)"
+    saint:   "Sainte Honorine"
+
+"02.28":
+    content: "La solitude est à l'esprit ce que la diète est au corps, mortelle lorsqu'elle est trop longue, quoique nécessaire."
+    author:  "Marquis de Vauvenargues (moraliste français, 1715-1747)"
+    saint:   "Saint Romain"
+
+"02.29":
+    content: "Veux-tu vivre heureux ? Chemine avec deux sacs, l'un pour donner, l'autre pour recevoir."
+    author:  "Johann Wolfgang von Goethe (écrivain allemand, 1749-1832)"
+    saint:   "Saint Auguste"
+
+"03.01":
+    content: "Si tu as de nombreuses richesses, donne ton bien, si tu en possèdes peu, donne ton coeur."
+    author:  "Proverbe africain"
+    saint:   "Saint Aubin"
+
+"03.02":
+    content: "Cultive ton enthousiasme comme une plante merveilleuse."
+    author:  "Léon Daudet (journaliste et écrivain français, 1868-1942)"
+    saint:   "Saint Charles le Bon"
+
+"03.03":
+    content: "Sachons éviter les offenses, puisque nous ne savons pas les supporter."
+    author:  "Sénèque (philosophe latin, v. 2 av. J.-C.-65 apr. J.-C.)"
+    saint:   "Saint Guénolé"
+
+"03.04":
+    content: "Le corps de l'homme est bien petit par rapport à l'esprit qui l'habite."
+    author:  "Proverbe africain"
+    saint:   "Saint Casimir"
+
+"03.05":
+    content: "Le timide a peur avant le danger, le lâche au milieu du danger, le courageux après le danger."
+    author:  "Johann Paul Friedrich Ritcher (écrivain allemand, 1763-1825)"
+    saint:   "Sainte Olive"
+
+"03.06":
+    content: "Le sage s'applique à être lent dans ses paroles et diligent dans ses actes."
+    author:  "Confucius (philosophe chinois, v. 551-479 av. J.-C.)"
+    saint:   "Sainte Colette"
+
+"03.07":
+    content: "Ou bien parais tel que tu es, ou bien soit tel que tu parais."
+    author:  "Djalal al-Din Rumi (poète persan, 1207-1273)"
+    saint:   "Sainte Félicité"
+
+"03.08":
+    content: "Le véritable voyage de découverte ne consiste pas à chercher de nouveaux paysages, mais à avoir de nouveaux yeux."
+    author:  "Marcel Proust (écrivain français, 1871-1922)"
+    saint:   "Saint Jean de Dieu"
+
+"03.09":
+    content: "Jamais la haine ne cesse par la haine."
+    author:  "Bouddha (chef spirituel népalais, VIe-Ve s. av. J.-C.)"
+    saint:   "Sainte Françoise"
+
+"03.10":
+    content: "Un seul doigt ne peut prendre un caillou."
+    author:  "Proverbe malien"
+    saint:   "Saint Vivien"
+
+"03.11":
+    content: "La nature fait les hommes semblables, la vie les rend différents."
+    author:  "Confucius (philosophe chinois, v. 551-479 av. J.-C.)"
+    saint:   "Sainte Rosine"
+
+"03.12":
+    content: "Faites attention à ce que vous voulez, car vous l'aurez."
+    author:  "Proverbe chinois"
+    saint:   "Sainte Justine"
+
+"03.13":
+    content: "Considère celui qui te fait voir tes défauts comme s'il te montrait un trésor. Attache-toi au sage qui réprouve tes fautes."
+    author:  "Bouddha (chef spirituel népalais, VIe-Ve s. av. J.-C.)"
+    saint:   "Saint Rodrigue"
+
+"03.14":
+    content: "Celui qui a un ami véritable n'a pas besoin d'un mirroir."
+    author:  "Proberbe indien"
+    saint:   "Sainte Mathilde"
+
+"03.15":
+    content: "Il ne faut pas compter les paroles, il faut les peser."
+    author:  "Proverbe israélien"
+    saint:   "Sainte Louise"
+
+"03.16":
+    content: "On ne découvre jamais mieux son caractère qu'en parlant de celui d'autrui."
+    author:  "Johann Paul Friedrich Ritcher (écrivain allemand, 1763-1825)"
+    saint:   "Sainte Bénédicte"
+
+"03.17":
+    content: "Il vaut mieux suivre le bon chemin en boitant que le mauvais d'un pas ferme."
+    author:  "Saint Augustin (théologien romain d'Afrique, 354-430)"
+    saint:   "Saint Patrice"
+
+"03.18":
+    content: "L'oreille est le chemin du coeur."
+    author:  "Voltaire (écrivain et philosophe français, 1694-1778)"
+    saint:   "Saint Cyrille"
+
+"03.19":
+    content: "Rien de grand n'a été accompli sans enthousiasme."
+    author:  "Ralph Waldo Emerson (philosophe et poète américain, 1803-1882)"
+    saint:   "Saint Joseph"
+
+"03.20":
+    content: "Si tu donnes, oublie ; si tu prends, souviens-t-en."
+    author:  "Proverbe roumain"
+    saint:   "Saint Herbert"
+
+"03.21":
+    content: "Le plus lent à promettre est toujours le plus fidèle à tenir."
+    author:  "Jean-Jacques Rousseau (écrivain et philosophe français, 1712-1778)"
+    saint:   "Sainte Clémence"
+
+"03.22":
+    content: "Ne craignez pas d'avancer lentement, craignez seulement de rester sur place."
+    author:  "Proverbe chinois"
+    saint:   "Sainte Léa"
+
+"03.23":
+    content: "L'excés de sévérité produit la haine. L'excés d'indulgence affaiblit l'autorité. Sachez gardez le milieu et vous serez exposé ni au mépris ni aux outrages."
+    author:  "Mocharrafoddin Saadi (poète persan, 1213-1292)"
+    saint:   "Saint Victorien"
+
+"03.24":
+    content: "La sagesse, c'est d'avoir des rêves suffisamment grands pour ne pas les perdre de vue lorsqu'on les poursuit."
+    author:  "Oscar Wilde (écrivain irlandais, 1854-1900)"
+    saint:   "Sainte Catherine de Suède"
+
+"03.25":
+    content: "Même un voyage de mille lieues commence par un pas."
+    author:  "Proverbe japonais"
+    saint:   "Saint Humbert"
+
+"03.26":
+    content: "On peut aussi bâtir quelque chose de beau avec les pierres qui entravent le chemin."
+    author:  "Johann Wolfgang von Goethe (écrivain allemand, 1749-1832)"
+    saint:   "Sainte Larissa"
+
+"03.27":
+    content: "Les gens te pèsent ? Ne les porte pas sur tes épaules. Prends-les dans ton coeur."
+    author:  "Proverbe chilien"
+    saint:   "Saint Habib"
+
+"03.28":
+    content: "Tu me dis, j'oublie. Tu m'enseignes, je me souviens. Tu m'impliques, j'apprends."
+    author:  "Benjamin Franklin (homme politique et physicien américain, 1706-1790)"
+    saint:   "Saint Gontran"
+
+"03.29":
+    content: "Le grillon tient dans le creu de la main, mais on l'entend dans toute la prairie."
+    author:  "Proverbe camerounais"
+    saint:   "Sainte Gwladys"
+
+"03.30":
+    content: "Il n'y a peut-être rien qui ennoblit plus un être humain que de savoir garder un secret."
+    author:  "Søren Kierkegaard (penseur et théologien danois, 1813-1855)"
+    saint:   "Sainte Amédée"
+
+"03.31":
+    content: "C'est s'aimer bien peu que de haïr quelqu'un, mais c'est haïr tout le monde que de n'aimer que soi."
+    author:  "Proverbe chinois"
+    saint:   "Saint Benjamin"
+
+"04.01":
+    content: "Celui qui veut tirer des enseignements de ses erreurs doit chaque jour apprendre à surmonter ses craintes."
+    author:  "Ralph Waldo Emerson (philosophe et poète américain, 1803-1882)"
+    saint:   "Saint Hugues"
+
+"04.02":
+    content: " Nos yeux, nos oreilles, notre odorat, notre goût diffèrent, créent autant de vérités qu'il y a d'hommes sur la terre."
+    author:  "Guy de Maupassant (écrivain français, 1850-1893)"
+    saint:   "Saint Sandrine"
+
+"04.03":
+    content: "L'ennui fait le fond de la vie, c'est l'ennui qui a inventé les jeux, les distractions, les romans et l'amour."
+    author:  "Miguel de Unamuno (philosophe, poète et auteur dramatique espagnol, 1864-1936)"
+    saint:   "Saint Richard"
+
+"04.04":
+    content: "Le bonheur n'est pas chose aisée. Il est très difficile de le trouver en soi, il impossible de le trouver ailleurs."
+    author:  "Bouddha (chef spirituel népalais, VIe-Ve s. av. J.-C.)"
+    saint:   "Saint Isidore"
+
+"04.05":
+    content: "Vous donnez peu lorsque vous donnez de vos biens. C'est lorsque vous donnez de vous-même que vous donnez vraiment."
+    author:  "Khalil Gibran (poète et peintre libanais, 1883-1931)"
+    saint:   "Saint Irène"
+
+"04.06":
+    content: "Si tu gagnes de l'argent à parler, tu gagnes de l'or à te taire."
+    author:  "Proverbe grec"
+    saint:   "Saint Marcelin"
+
+"04.07":
+    content: "Deux excés : exclure la raison, n'admettre que la raison."
+    author:  "Blaise Pascal (savant, philosophe et écrivain français, 1623-1662)"
+    saint:   "St J.-B. de la Salle"
+
+"04.08":
+    content: "Il faut juger les sentiments par des actes plus que par des paroles."
+    author:  "George Sand (femme de lettres française, 1804-1876)"
+    saint:   "Sainte Julie"
+
+"04.09":
+    content: "Quand tu arrives en haut de la montagne, continue de grimper."
+    author:  "Proverbe israélien"
+    saint:   "Saint Gautier"
+
+"04.10":
+    content: "Une mauvaise herbe est une plante dont on n'a pas encore trouvé les vertus."
+    author:  "Ralph Waldo Emerson (philosophe et poète américain, 1803-1882)"
+    saint:   "Saint Fulbert"
+
+"04.11":
+    content: "L'ambition de faire le bien est la seule qui compte."
+    author:  "Robert Baden-Powell (général anglais, 1857-1941)"
+    saint:   "Saint Stanislas"
+
+"04.12":
+    content: "L'habitude commence comme un fil de soie et devient vite un câble d'acier."
+    author:  "Proverbe espagnol"
+    saint:   "Saint Jules"
+
+"04.13":
+    content: "Mieux vaut perdre un peu d'argent qu'un peu d'amitié."
+    author:  "Proverbe malais"
+    saint:   "Sainte Ida"
+
+"04.14":
+    content: "Le trop de quelque chose est un manque de quelque chose."
+    author:  "Proverbe arabe"
+    saint:   "Saint Maxime"
+
+"04.15":
+    content: "Ceux qui sont contents de n'être rien de particulier sont des gens nobles. Ne luttez pas. Soyez ordinaires."
+    author:  "Lin-Chi (philosophe chinois, v. le IXè s.)"
+    saint:   "Saint Paterne"
+
+"04.16":
+    content: "Tout le monde veut avoir un ami. Personne ne s'occupe d'en être un."
+    author:  "Alphonse Karr (écrivain français, 1808-1890)"
+    saint:   "Saint Benoît Labre"
+
+"04.17":
+    content: "Ne pas se repentir d'une faute en est une autre."
+    author:  "Proverbe persan"
+    saint:   "Saint Anicet"
+
+"04.18":
+    content: "L'homme est ce qu'il pense."
+    author:  "Proverbe malien"
+    saint:   "Saint Parfait"
+
+"04.19":
+    content: "On a trois ou quatre fois dans sa vie l'occasion d'être brave, et tous les jours celle de ne pas être lâche."
+    author:  "René Bazin (écrivain français, 1853-1932)"
+    saint:   "Sainte Emma"
+
+"04.20":
+    content: "Mieux vaut souffrir d'avoir aimé que de souffrir de n'avoir jamais aimé."
+    author:  "Proverbe britannique"
+    saint:   "Sainte Odette"
+
+"04.21":
+    content: "La petite fourmi ne souffre jamais de la faim. Le lion, malgré ses crocs et ses griffes acérées, ne trouve pas toujours à manger."
+    author:  "Mocharrafoddin Saadi (poète persan, 1213-1292)"
+    saint:   "Sainte Anseline"
+
+"04.22":
+    content: "N'accuse pas le puits d'être trop profond ; c'est ta corde qui est trop courte."
+    author:  "Proverbe indien"
+    saint:   "Saint Alexandre"
+
+"04.23":
+    content: "N'entretiens pas l'espoir de ce qui ne peut-être espéré."
+    author:  "Pythagore (philosophe et mathématicien grec, v. 570-480 av. J.-C.)"
+    saint:   "Saint Georges"
+
+"04.24":
+    content: "Si vous avez construit des châteaux dans les nuages, votre travail n'est pas vain ; c'est là qu'ils doivent être. A présent, donnez-leur des fondations."
+    author:  "Henry Thoreau (écrivain américain, 1817-1862)"
+    saint:   "Saint Fidèle"
+
+"04.25":
+    content: "La plus grande gloire n'est pas de ne jamais tomber, mais de se relever à chaque chute."
+    author:  "Confucius (philosophe chinois, v. 551-479 av. J.-C.)"
+    saint:   "Saint Marc"
+
+"04.26":
+    content: "Jouis du jour présent, sans te fier le moins du monde au lendemain."
+    author:  "Horace (poète latin, 65-8 av. J.-C.)"
+    saint:   "Sainte Alida"
+
+"04.27":
+    content: "Ce qui s'apprend qujourd'hui existe depuis toujours."
+    author:  "Proverbe malien"
+    saint:   "Sainte Zita"
+
+"04.28":
+    content: "Un ami est un homme devant lequel on peut penser à haute voix."
+    author:  "Ralph Waldo Emerson (philosophe et poète américain, 1803-1882)"
+    saint:   "Sainte Valérie"
+
+"04.29":
+    content: "Qui veut faire quelque chose trouve un moyen. Qui ne veut rien faire trouve une excuse."
+    author:  "Proverbe arabe"
+    saint:   "Sainte Catherine de Sienne"
+
+"04.30":
+    content: "Il n'y a jamais de bonne guerre ni de mauvaise paix."
+    author:  "Benjamin Franklin (homme politique et physicien américain, 1706-1790)"
+    saint:   "Saint Robert"
+
+"05.01":
+    content: "Plus le sage donne aux autres, plus il possède."
+    author:  "Lao-tseu (philosophe chinois, 570-490 av. J.-C.)"
+    saint:   "Fête du travail"
+
+"05.02":
+    content: "Par la rue de \"Plus tard\", on arrive à la place \"Jamais\"."
+    author:  "Proverbe espagnol"
+    saint:   "Saint Boris"
+
+"05.03":
+    content: "Ce qui se trouve devant nous et ce qui se trouve derrière nous importent peu comparés à ce qui se trouve en nous."
+    author:  "Ralph Waldo Emerson (philosophe et poète américain, 1803-1882)"
+    saint:   "Saint Jacques, Saint Philippe"
+
+"05.04":
+    content: "Lorsque tu ne sais pas où tu vas, regarde d'où tu viens."
+    author:  "Proverbe africain"
+    saint:   "Saint Sylvain"
+
+"05.05":
+    content: "Le premier devoir, sans doute, est d'être juste ; et le premier des biens est la paix de nos coeurs."
+    author:  "Voltaire (écrivain et philosophe français, 1694-1778)"
+    saint:   "Saint Judith"
+
+"05.06":
+    content: "En buvant l'eau du puits, n'oubliez pas ceux qui l'ont creusé."
+    author:  "Proverbe chinois"
+    saint:   "Sainte Prudence"
+
+"05.07":
+    content: "Quand on ne trouve pas le repos en soi-même, il est inutile de le chercher ailleurs."
+    author:  "François de la Rochefoucaud (écrivain français, 1613-1680)"
+    saint:   "Sainte Gisèle"
+
+"05.08":
+    content: "Imposer sa volonté aux autres, c'est force. Se l'imposer à soi-même, c'est foce supérieure."
+    author:  "Lao-tseu (philosophe chinois, 570-490 av. J.-C.)"
+    saint:   "Victoire de 1945"
+
+"05.09":
+    content: "Les hommes construisent trop de murs et pas assez de ponts."
+    author:  "Sir Isaac Newton (savant anglais, 1642-1727)"
+    saint:   "Saint Pacôme"
+
+"05.10":
+    content: "Il y a une grande beauté à avancer dans la vie sans anxiété ni peur. La moitié de nos peurs sont sans fondement et l'autre moitié peu honorables."
+    author:  "Christian Nevell Bovee (écrivain et avocat américain, 1820-1904)"
+    saint:   "Sainte Solange"
+
+"05.11":
+    content: "Demain est souvent le jour le plus chargé de la semaine."
+    author:  "Proverbe espagnol"
+    saint:   "Sainte Estelle"
+
+"05.12":
+    content: "Saisis l'instant, sachant que chaque jour de ton futur, c'est un jour qui s'en va."
+    author:  "Mocharrafoddin Saadi (poète persan, 1213-1292)"
+    saint:   "Saint Achille"
+
+"05.13":
+    content: "Il n'y a pas de plus grande joie que celle qu'on n'attends pas."
+    author:  "Sophocle (écrivain grec, 495-406 av. J.-C.)"
+    saint:   "Sainte Rolande"
+
+"05.14":
+    content: "Faire quelque chose de remarquable vaut mieux qu'être remarqué."
+    author:  "Confucius (philosophe chinois, v. 551-479 av. J.-C.)"
+    saint:   "Saint Matthias"
+
+"05.15":
+    content: "La vie est un ballet ; on ne le danse qu'une fois."
+    author:  "Proverbe malien"
+    saint:   "Sainte Denise"
+
+"05.16":
+    content: "Toute méchanceté a sa source dans la faiblesse."
+    author:  "Sénèque (philosophe latin, v. 2 av. J.-C.-65 apr. J.-C.)"
+    saint:   "Saint Honoré"
+
+"05.17":
+    content: "Une réputation de mille ans peut-être déterminée par la conduite d'une seule heure."
+    author:  "Proverbe japonais"
+    saint:   "Saint Pascal"
+
+"05.18":
+    content: "Ce qui est visible n'est que le reflet de ce qui est invisible."
+    author:  "Abba Arika (rabbin babylonien, 175-247)"
+    saint:   "Saint Eric"
+
+"05.19":
+    content: "L'ami est pour son ami un bouclier."
+    author:  "Abu Shakour (poète persan, Xe s.)"
+    saint:   "Saint Yves"
+
+"05.20":
+    content: "Un peuple qui ne connaît pas son passé, ses origines et sa culture ressemble à un arbre sans racines."
+    author:  "Marcus Garvey (homme politique jamaïcain, 1887-1940)"
+    saint:   "Saint Bernardin"
+
+"05.21":
+    content: "La mort d'une bonne action, c'est d'en parler."
+    author:  "Proverbe arabe"
+    saint:   "Saint Constantin"
+
+"05.22":
+    content: "Le voyage est un retour vers l'essentiel."
+    author:  "Proverbe tibétain"
+    saint:   "Saint Emile"
+
+"05.23":
+    content: "Ce qui barre la route fait faire du chemin."
+    author:  "Jean de la Bruyère (écrivain français, 1645-1696)"
+    saint:   "Saint Didier"
+
+"05.24":
+    content: "Tous les trésors de la terre ne valent pas le bonheur d'être aimé."
+    author:  "Pedro Calderón de la Barca (poète dramatique espagnol, 1600-1681)"
+    saint:   "Saint Donatien"
+
+"05.25":
+    content: "Vivre paisiblement une journée de loisirs, c'est être immortel une journée durant."
+    author:  "Proverbe chinois"
+    saint:   "Sainte Sophie"
+
+"05.26":
+    content: "Il faut toujours viser la lune, car même en cas d'échec on atterit dans les étoiles."
+    author:  "Oscar Wilde (écrivain irlandais, 1854-1900)"
+    saint:   "Saint Bérenger"
+
+"05.27":
+    content: "Le rire est le sommeil sont les meilleurs remèdes du monde."
+    author:  "Proverbe irlandais"
+    saint:   "Saint Augustin"
+
+"05.28":
+    content: "Appliquez-vous à garder en toute chose le juste milieu."
+    author:  "Confucius (philosophe chinois, v. 551-479 av. J.-C.)"
+    saint:   "Saint Germain"
+
+"05.29":
+    content: "Certains sont jugés grands parce qu'on mesure aussi le piedéstral."
+    author:  "Sénèque (philosophe latin, v. 2 av. J.-C.-65 apr. J.-C.)"
+    saint:   "Saint Aymar"
+
+"05.30":
+    content: "Le fleuve fait des détours parce que personne ne lui montre le chemin."
+    author:  "Proverbe gabonais"
+    saint:   "Saint Ferdinand"
+
+"05.31":
+    content: "Mieux vaut transmettre un art à son fils que de lui léguer mille pièces d'or."
+    author:  "Proverbe chinois"
+    saint:   "Visitation"
+
+"06.01":
+    content: "De tous les maux, les plus douloureux sont ceux que l'on s'est infligés à soi-même."
+    author:  "Sophocle (écrivain grec, 495-406 av. J.-C.)"
+    saint:   "Saint Justin"
+
+"06.02":
+    content: "Votre véritable ami est celui qui ne vous passe rien et qui vous pardonne tout."
+    author:  "Diane de Beausacq (femme de lettres française, 1829-1899)"
+    saint:   "Sainte Blandine"
+
+"06.03":
+    content: "Il est plus facile de connaître dix pays qu'un seul homme."
+    author:  "Proverbe israélien"
+    saint:   "Saint Kévin"
+
+"06.04":
+    content: "La vie ressemble à un conte ; celui qui importe, ce n'est pas sa longueur, mais sa valeur."
+    author:  "Sénèque (philosophe latin, v. 2 av. J.-C.-65 apr. J.-C.)"
+    saint:   "Sainte Clotilde"
+
+"06.05":
+    content: "L'argent ressemble à l'hôte de passage : aujourd'hui il arrive, demain il n'est plus là."
+    author:  "Proverbe malais"
+    saint:   "Saint Igor"
+
+"06.06":
+    content: "Les grandes âmes ont la volonté ; les faibles n'ont que des souhaits."
+    author:  "Proverbe chinois"
+    saint:   "Saint Norbert"
+
+"06.07":
+    content: "Même si la vie n'a pas de sens, qu'est ce qui nous empêche de lui en inventer un ?"
+    author:  "Lewis Carroll (mathématicien et écrivain britannique, 1832-1898)"
+    saint:   "Saint Gilbert"
+
+"06.08":
+    content: "Le mérite appartient à celui qui commence, même si le suivant fait mieux."
+    author:  "Proverbe arabe"
+    saint:   "Saint Médard"
+
+"06.09":
+    content: "A celui qui ne sait pas vers quel port il navigue, nul vent n'est jamais favorable."
+    author:  "Sénèque (philosophe latin, v. 2 av. J.-C.-65 apr. J.-C.)"
+    saint:   "Sainte Diane"
+
+"06.10":
+    content: "Le don de vérité est un don qui surpasse tous les autres."
+    author:  "Bouddha (chef spirituel népalais, VIe-Ve s. av. J.-C.)"
+    saint:   "Saint Landry"
+
+"06.11":
+    content: "La solitude est très belle... qaund on a près de soi quelqu'un à qui le dire."
+    author:  "Gustavo Adolfo Bécquer (poète espagnol, 1836-1870)"
+    saint:   "Saint Barnabé"
+
+"06.12":
+    content: "Il faut savoir que les choses sont sans espoir. Et tout faire pour les changer."
+    author:  "Rainer Maria Rilke (écrivain autrichien, 1875-1926)"
+    saint:   "Saint Guy"
+
+"06.13":
+    content: "Là où on aime il ne fait jamais nuit."
+    author:  "Proverbe vietnamien"
+    saint:   "Saint Antoine"
+
+"06.14":
+    content: "Un homme habile élève des remparts. Une femme habile détruit des remparts."
+    author:  "Confucius (philosophe chinois, v. 551-479 av. J.-C.)"
+    saint:   "Sainte Elisée"
+
+"06.15":
+    content: "L'absence diminue les médiocres pasions et augmente les grandes, comme le vent éteint les bougies et allume le feu."
+    author:  "François de la Rochefoucaud (écrivain français, 1613-1680)"
+    saint:   "Sainte Germaine"
+
+"06.16":
+    content: "On peut faire beaucoup avec la haine, mais encore plus avec l'amour."
+    author:  "William Shakespeare (poète dramatique anglais, 1564-1616)"
+    saint:   "Saint J.-F. Régis"
+
+"06.17":
+    content: "Les égoïstes ne savent pas conserver ; ils ne parlent qu'à eux-mêmes."
+    author:  "Amos Bronson Alcott (écrivain et enseignant américain, 1799-1888)"
+    saint:   "Saint Hervé"
+
+"06.18":
+    content: "Si le problème a une solution, il ne sert à rien de s'inquiéter. Mais si il n'en a pas, alors s'inquiéter ne change rien."
+    author:  "Proverbe tibétain"
+    saint:   "Sainte Léonce"
+
+"06.19":
+    content: "Il faut rire avant d'être heureux de peur de mourrir sans avoir ri."
+    author:  "Jean de la Bruyère (écrivain français, 1645-1696)"
+    saint:   "Saint Romuald"
+
+"06.20":
+    content: "Le silence est un ami qui ne trahit jamais."
+    author:  "Confucius (philosophe chinois, v. 551-479 av. J.-C.)"
+    saint:   "Saint Silvère"
+
+"06.21":
+    content: "On ne doit pas juger du mérite d'un homme par ses grandes qualités, mais par l'usage qu'il en sait faire."
+    author:  "Jean de la Bruyère (écrivain français, 1645-1696)"
+    saint:   "Saint Rodolphe"
+
+"06.22":
+    content: "L'homme crée la fortune, mais la fortune n'a jamais créé l'homme."
+    author:  "Proverbe vietnamien"
+    saint:   "Saint Alban"
+
+"06.23":
+    content: "La satisfaction qu'on tire de la vengeance ne dure qu'un moment : celle que nous donne la clémence est éternelle."
+    author:  "Henri IV (roi de France, 1553-1610)"
+    saint:   "Sainte Audrey"
+
+"06.24":
+    content: "Pour chaque regard que nous jetons en arrière, il nous faut regarder deux fois vers l'avenir."
+    author:  "Proverbe arabe"
+    saint:   "Saint Jean-Baptiste"
+
+"06.25":
+    content: "Il vaut mieux boire de l'eau avec un ami plutôt que de partager le miel d'un ennemi."
+    author:  "Proverbe tibétain"
+    saint:   "Saint Prosper"
+
+"06.26":
+    content: "Les noeuds sacrés de la vraie amitié se forment bien plus facilement sous un humble toit et dans les cabanes des bergers que dans les palais des rois."
+    author:  "l'Arioste (poète italien, 1474-1533)"
+    saint:   "Saint Anthelme"
+
+"06.27":
+    content: "La vie est trop courte pour qu'on soit pressé."
+    author:  "Henry Thoreau (écrivain américain, 1817-1862)"
+    saint:   "Saint Fernand"
+
+"06.28":
+    content: "La gaieté est la moitié de la santé."
+    author:  "Proverbe tchèque"
+    saint:   "Saint Irénée"
+
+"06.29":
+    content: "Le plus grand effort de l'amitié n'est pas de montrer nos défauts à un ami, c'est de lui faire voir les siens."
+    author:  "François de la Rochefoucaud (écrivain français, 1613-1680)"
+    saint:   "Saint Pierre, Saint Paul"
+
+"06.30":
+    content: "Ne s'émerveiller de rien est beaucoup plus bête que s'émerveiller de tout."
+    author:  "Fedor Mikhaïlovitch Dostoïevski (écrivain russe, 1821-1881)"
+    saint:   "Saint Martial"
+
+"07.01":
+    content: "Etre conscient de la difficulté permet de l'éviter."
+    author:  "Lao-tseu (philosophe chinois, 570-490 av. J.-C.)"
+    saint:   "Saint Thierry"
+
+"07.02":
+    content: "Ayant médité la douceur et la compassion, j'ai oublié la différence entre moi et les autres."
+    author:  "Milarepa (ascète tibétain, X-XIe s.)"
+    saint:   "Saint Martinien"
+
+"07.03":
+    content: "La joie est en tout ; il faut savoir l'extraire."
+    author:  "Confucius (philosophe chinois, v. 551-479 av. J.-C.)"
+    saint:   "Saint Thomas"
+
+"07.04":
+    content: "La patience est un arbre dont la racine est amère et les fruits très doux."
+    author:  "Proverbe persan"
+    saint:   "Saint Florent"
+
+"07.05":
+    content: "Le voyage apprend la tolérance."
+    author:  "Benjamin Disraeli (écrivain et homme politique britannique, 1804-1881)"
+    saint:   "Saint Antoine-Marie"
+
+"07.06":
+    content: "La meilleure manière d'atteindre le bonheur est de le donner aux autres."
+    author:  "Robert Baden-Powell (général anglais, 1857-1941)"
+    saint:   "Sainte Mariette"
+
+"07.07":
+    content: "Il faut toujours connaître la vérité et parfois la dire."
+    author:  "Khalil Gibran (poète et peintre libanais, 1883-1931)"
+    saint:   "Saint Raoul"
+
+"07.08":
+    content: "N'allez pas là où le chemin peut mener. Allez là où il n'y a pas de chemin et laissez une trace."
+    author:  "Ralph Waldo Emerson (philosophe et poète américain, 1803-1882)"
+    saint:   "Saint Thibaut"
+
+"07.09":
+    content: "Les illusions perdues sont des vérités trouvées."
+    author:  "Multatuli (écrivain néerlandais, 1820-1887)"
+    saint:   "Saint Amandine"
+
+"07.10":
+    content: "A ta naissance, tout le monde rit et tu es le seul à pleurer. Conduis ta vie de façon à ce qu'à ta mort, tout le monde pleure et que tu sois le seul à sourire."
+    author:  "Confucius (philosophe chinois, v. 551-479 av. J.-C.)"
+    saint:   "Saint Ulrich"
+
+"07.11":
+    content: "Plutôt que de se promener sur la rive et regarder le poisson d'un oeil d'envie, mieux vaut rentrer chez soi et tisser un filet."
+    author:  "Proverbe arabe"
+    saint:   "Saint Benoît"
+
+"07.12":
+    content: "L'esprit sage est le mirroir du ciel et de la terre, dans lequel toutes les choses se réfléchissent."
+    author:  "Tchouang-tseu (philosophe chinois, v. 369-286 av. J.-C.)"
+    saint:   "Saint Olivier"
+
+"07.13":
+    content: "Un moment de patience peut préserver de grands malheurs, un moment d'impatience, détruire toute une vie."
+    author:  "Proverbe chinois"
+    saint:   "Saint Henri, Saint Joël"
+
+"07.14":
+    content: "Il n'est jamais trop tard pour devenir ce que l'on aurait pu être."
+    author:  "George Eliot (femme de lettres britannique, 1819-1880)"
+    saint:   "Saint Camille, Fête nationale"
+
+"07.15":
+    content: "L'homme, c'est les autres ; demander, c'est honorer ; donner, c'est aimer."
+    author:  "Proverbe malien"
+    saint:   "Saint Donald"
+
+"07.16":
+    content: "Une idée fixe aboutit à la folie ou à l'héroïsme."
+    author:  "Victor Hugo (écrivain français, 1802-1885)"
+    saint:   "Notre-Dame du Mont-Carmel"
+
+"07.17":
+    content: "De même qu'une grande distance révèle un bon cheval, le temps révèle une personne de bien."
+    author:  "Proverbe thaïlandais"
+    saint:   "Saint Charlotte"
+
+"07.18":
+    content: "En parlant peu, tu entends davantage."
+    author:  "Proverbe russe"
+    saint:   "Saint Frédéric"
+
+"07.19":
+    content: "La simplicité consiste à montrer ce que l'on est ; la modestie à le cacher."
+    author:  "Jean le Rond d'Alembert (mathématicien, philosophe et encyclopédiste français, 1717-1783)"
+    saint:   "Saint Arsène"
+
+"07.20":
+    content: "Dans l'amitié, ménage une petie place pour la brouille, et dans la brouille, une autre pour la réconciliation."
+    author:  "Proverbe hébreu"
+    saint:   "Sainte Marina"
+
+"07.21":
+    content: "Ne vous mettez pas en avant, mais restez pas en arrière."
+    author:  "Proverbe chinois"
+    saint:   "Saint Victor"
+
+"07.22":
+    content: "Tu peux, à l'heure que tu veux, te retirer en toi-même. Nulle part, en effet, l'homme ne trouve de plus tranquille et plus calme retraite que dans son âme."
+    author:  "Marc Aurèle (empereur romain, 121-180)"
+    saint:   "Sainte Marie-Madelaine"
+
+"07.23":
+    content: "Quand tu montes à l'échelle, souris à tous ceux que tu dépasses, car tu croiseras les mêmes en redescendant."
+    author:  "Proverbe américain"
+    saint:   "Sainte Brigitte"
+
+"07.24":
+    content: "Il est plus facile d'être héros qu'honnête homme. Héros, nous pouvons l'être une fois par hasard ; honnête homme, il faut l'être toujours."
+    author:  "Luigi Pirandello (écrivain italien, 1867-1936)"
+    saint:   "Sainte Christine"
+
+"07.25":
+    content: "\"Connais-toi toi-même\" est bien ; connaître autrui est mieux."
+    author:  "Ménandre (poète comique grec, v. 342-292 av. J.-C.)"
+    saint:   "Saint Jacques le Majeur"
+
+"07.26":
+    content: "Ne dites jamais du mal de vous ; vos amis en diront toujours assez."
+    author:  "Charles Maurice de Talleyrand (homme politique français, 1754-1838)"
+    saint:   "Sainte Anne, Saint Joachim"
+
+"07.27":
+    content: "Celui qui vit sans folie n'est pas si sage qu'il croit."
+    author:  "Proverbe chinois"
+    saint:   "Sainte Nathalie"
+
+"07.28":
+    content: "Croire tout découvert est une erreur profonde. C'est prendre l'horizon pour les bornes du monde."
+    author:  "Antoine-Marin Lemiere (académicien et poète français, 1733-1793)"
+    saint:   "Saint Samson"
+
+"07.29":
+    content: "On a deux vies, et la deuxième commence quand on se rend compte que l'on n'en a qu'une."
+    author:  "Confucius (philosophe chinois, v. 551-479 av. J.-C.)"
+    saint:   "Sainte Marthe"
+
+"07.30":
+    content: "Tu es le maître des paroles que tu n'as pas prononcées ; tu es l'esclave de celles que tu laisses échapper."
+    author:  "Proverbe arabe"
+    saint:   "Sainte Juliette"
+
+"07.31":
+    content: "Mauvais est l'avis qui ne peut varier."
+    author:  "Pubilius Syrus (poète latin, 85-43 av. J.-C.)"
+    saint:   "Saint Ignace de Loyola"
+
+"08.01":
+    content: "Pour un sage, le bonheur n'est pas d'avoir ce qu'il veut mais de vouloir ce qu'il a."
+    author:  "Proverbe bouddhiste"
+    saint:   "Saint Alphonse"
+
+"08.02":
+    content: "C'est en vain qu'on cherche au loin son bonheur quand on oublie de le cultiver soi-même."
+    author:  "Jean-Jacques Rousseau (écrivain et philosophe français, 1712-1778)"
+    saint:   "Saint Julien"
+
+"08.03":
+    content: "La question n'est pas \"qu'est ce que je peux avoir ?\" mais \"qu'est ce que je peux donner dans la vie ?\""
+    author:  "Robert Baden-Powell (général anglais, 1857-1941)"
+    saint:   "Saint Lydie"
+
+"08.04":
+    content: "Choisissez un travail que vous aimez et vous n'aurez pas à travailler un seul jour de votre vie."
+    author:  "Confucius (philosophe chinois, v. 551-479 av. J.-C.)"
+    saint:   "Saint J.-M. Vianney"
+
+"08.05":
+    content: "Abuse du présent. Laisse le futur aux rêveurs et le passé aux morts."
+    author:  "Proverbe canadien"
+    saint:   "Saint Abel"
+
+"08.06":
+    content: "Limite tes désirs des choses de ce monde et vis content."
+    author:  "Omar Khayyam (poète et mathématicien persan, v. 1047-1122)"
+    saint:   "Saint Octavien"
+
+"08.07":
+    content: "Il est plus facile d'acheter un livre que de le lire, et plus facile de le lire que de le comprendre."
+    author:  "Sir William Osler (médecin britannique, 1849-1919)"
+    saint:   "Saint Gaëtan"
+
+"08.08":
+    content: "Si tu es prêt à sacrifier un peu de liberté pour te sentir en sécurité, tu ne mérites ni l'une ni l'autre."
+    author:  "Thomas Jefferson (président des Etats-Unis d'Amérique, 1743-1826)"
+    saint:   "Saint Dominique"
+
+"08.09":
+    content: "Ce n'est pas assez d'avoir l'esprit bon, mais le principal est de l'appliquer bien."
+    author:  "René Descartes (philosophe, mathématicien et physicien français, 1596-1650)"
+    saint:   "Saint Amour"
+
+"08.10":
+    content: "En Afrique, un vieillard qui meurt, c'est une bibliothèque qui brûle."
+    author:  "Proverbe africain"
+    saint:   "Saint Laurent"
+
+"08.11":
+    content: "Se venger, c'est se mettre au niveau de l'ennemi ; pardonner, c'est le dépasser."
+    author:  "Francis Bacon (homme d'Etat et philosophe britannique, 1561-1626)"
+    saint:   "Sainte Claire"
+
+"08.12":
+    content: "Fais du bien à ton corps pour que ton âme ait envie d'y rester."
+    author:  "Proverbe indien"
+    saint:   "Sainte Clarisse"
+
+"08.13":
+    content: "Vouloir éviter l'inévitable, n'est ce pas augmenter sa douleur ?"
+    author:  "Tchouang-tseu (philosophe chinois, v. 369-286 av. J.-C.)"
+    saint:   "Saint Hippolyte"
+
+"08.14":
+    content: "Heureux celui qui sait prendre son temps pour aller plus vite !"
+    author:  "Proverbe inuit"
+    saint:   "Saint Evrard"
+
+"08.15":
+    content: "Le plaisir est le bonheur des fous. Le bonheur est le plaisir des sages."
+    author:  "Jules Amédée Barbey d'Aurevilly (écrivain français, 1808-1889)"
+    saint:   "Assomption"
+
+"08.16":
+    content: "Le génie ne garantit ni l'erreur, ni des autres faiblesses humaines."
+    author:  "Horace Pauleus Sannon (historien haïtien, 1870-1938)"
+    saint:   "Saint Armel"
+
+"08.17":
+    content: "L'amitié est toujours une douce responsabilité, jamais une opportunité."
+    author:  "Khalil Gibran (poète et peintre libanais, 1883-1931)"
+    saint:   "Saint Hyacinthe"
+
+"08.18":
+    content: "Tu as l'avantage sur la colère quand tu te tais."
+    author:  "Proverbe égyptien"
+    saint:   "Sainte Hélène"
+
+"08.19":
+    content: "Mieux vaut voyager plein d'espoir qu'arriver au but."
+    author:  "Proverbe japonais"
+    saint:   "Saint Jean Eudes"
+
+"08.20":
+    content: "On peut supporter seul le chagrin, mais il faut être deux pour être heureux."
+    author:  "Elbert Hubbard (écrivain américain, 1856-1915)"
+    saint:   "Saint Bernard"
+
+"08.21":
+    content: "Apprendre à se connaître, c'est s'oublier soi-même. S'oublier soi-même, c'est être illuminé par tout ce qui se trouve dans l'univers."
+    author:  "Dôgen (maître zen japonais, 1200-1253)"
+    saint:   "Saint Christophe"
+
+"08.22":
+    content: "Tu vaudras aux yeux des autres ce que tu seras à tes yeux."
+    author:  "Proverbe latin"
+    saint:   "Saint Fabrice"
+
+"08.23":
+    content: "Le coeur ignore le prix du lien d'amitié lorsque cette amitié est heureuse."
+    author:  "Abu Shakour (poète persan, Xe s.)"
+    saint:   "Sainte Rose"
+
+"08.24":
+    content: "Délaisse les grandes routes, prends les sentiers."
+    author:  "Pythagore (philosophe et mathématicien grec, v. 570-480 av. J.-C.)"
+    saint:   "Saint Barthélemy"
+
+"08.25":
+    content: "Lorsque mon ami rit, c'est à lui de m'apprendre le sujet de sa joie. Pleure-t-il ? C'est à moi de découvrir la cause de son chagrin."
+    author:  "Joseph-François-Edouard de Corsembleu (dramaturge français, 1722-1761)"
+    saint:   "Saint Louis"
+
+"08.26":
+    content: "On est reçu selon l'habit, et reconduit selon l'esprit."
+    author:  "Proverbe russe"
+    saint:   "Sainte Natacha"
+
+"08.27":
+    content: "Qui se connaît, conaît aussi les autres, car chaque homme porte la forme entière de l'humaine condition."
+    author:  "Michel Eyquem de Montaigne (écrivain français, 1553-1592)"
+    saint:   "Sainte Monique"
+
+"08.28":
+    content: "On peut répandre la lumière de deux façons : être la bougie, ou le mirroir qui la reflète."
+    author:  "Edit Wharton (romancière américaine, 1862-1937)"
+    saint:   "Saint Augustin"
+
+"08.29":
+    content: "Ce n'est pas d'être frotté au piment qui fait sentir mauvais, ni d'être frotté au miel qui fait sentir bon ; ce sont les actes qui sont bons ou mauvais."
+    author:  "Proverbe malgache"
+    saint:   "Sainte Sabine"
+
+"08.30":
+    content: "Pour vivre pleinement sa vie, il n'est pas nécessaire d'agir. Pour vivre pleinement sa vie, il est indispensable d'être."
+    author:  "Lao-tseu (philosophe chinois, 570-490 av. J.-C.)"
+    saint:   "Saint Fiacre"
+
+"08.31":
+    content: "Mieux vaut vivre un jour comme un lion que cent ans comme un mouton."
+    author:  "Proverbe italien"
+    saint:   "Saint Aristide"
+
+"09.01":
+    content: "Celui qui connaît l'art de vivre avec soi-même ignore l'ennui."
+    author:  "Erasme (humaniste hollandais, v. 1469-1536)"
+    saint:   "Saint Gilles"
+
+"09.02":
+    content: "La vérité vaut bien qu'on passe quelques années à la trouver."
+    author:  "Jules Renard (écrivain français, 1864-1910)"
+    saint:   "Sainte Ingrid"
+
+"09.03":
+    content: "Pour qu'un enfant grandisse, il faut tout un village."
+    author:  "Proverbe africain"
+    saint:   "Saint Grégoire"
+
+"09.04":
+    content: "Il n'y a rien de plus facile à dire ni de plus difficile à faire que de lâcher prise."
+    author:  "Santoka Taneda (moine et poète japonais, 1882-1940)"
+    saint:   "Sainte Rosalie"
+
+"09.05":
+    content: "Il y a trois sortes d'hommes avec lesquels il est utile de se lier d'amitié : les hommes droits, les hommes sincères et les hommes qui ont beaucoup appris."
+    author:  "Confucius (philosophe chinois, v. 551-479 av. J.-C.)"
+    saint:   "Sainte Raïssa"
+
+"09.06":
+    content: "Ne charge pas tes épaules d'un fardeau qui excède tes forces."
+    author:  "Horace (poète latin, 65-8 av. J.-C.)"
+    saint:   "Saint Bertrand"
+
+"09.07":
+    content: "La jeunesse croit beaucoup de choses qui sont fausses ; la vieillesse doute de beaucoup de choses qui sont vraies."
+    author:  "Proverbe allemand"
+    saint:   "Sainte Reine"
+
+"09.08":
+    content: "Hâtons-nous aujourd'hui de jouir de la vie ; qui sait si nous serons demain ?"
+    author:  "Jean Racine (poète tragique français, 1639-1699)"
+    saint:   "Saint Adrien"
+
+"09.09":
+    content: "De même qu'un roc massif n'est pas ébranlé par la tempête, ainsi le sage n'est pas agité par le blâme ou la louange."
+    author:  "Dhammapada (texte bouddhique)"
+    saint:   "Saint Alain"
+
+"09.10":
+    content: "A qui sait atendre le temps ouvre ses portes."
+    author:  "Proverbe chinois"
+    saint:   "Sainte Inès"
+
+"09.11":
+    content: "Si tu choisis l'amitié, accepte l'ami tel qu'il est."
+    author:  "Bashâr ibn Burd (poète marocain, v. 714-784)"
+    saint:   "Saint Adelphe"
+
+"09.12":
+    content: "On s'étonne trop de ce qu'on voit rarement et pas assez de ce qu'on voit tous les jours."
+    author:  "Comtesse de Genlis (écrivaine française, 1746-1830)"
+    saint:   "Saint Apollinaire"
+
+"09.13":
+    content: "Mieux vaut se fier à son courage qu'à sa fortune."
+    author:  "Pubilius Syrus (poète latin, 85-43 av. J.-C.)"
+    saint:   "Saint Aimé"
+
+"09.14":
+    content: "La perplexité est le début de la connaissance."
+    author:  "Khalil Gibran (poète et peintre libanais, 1883-1931)"
+    saint:   "Saint Materne"
+
+"09.15":
+    content: "Il faut avoir une très haute idée, non pas de ce que l'on fait, mais de ce qu'on pourrait faire un jour. Sans quoi ce n'est pas la peine de travailler."
+    author:  "Edgar Degas (peintre, graveur et sculpteur français, 1834-1917)"
+    saint:   "Saint Roland"
+
+"09.16":
+    content: "Pour chaque minute où vous êtes en colère, vous perdez soixante secondes de bonheur."
+    author:  "Ralph Waldo Emerson (philosophe et poète américain, 1803-1882)"
+    saint:   "Sainte Edith"
+
+"09.17":
+    content: "Plus on prend de la hauteur et plus on voit loin."
+    author:  "Proverbe chinois"
+    saint:   "Saint Renaud"
+
+"09.18":
+    content: "Je crois beaucoup en la chance ; et je constate que plus je travaille, plus la chance me sourit."
+    author:  "Thomas Jefferson (président des Etats-Unis d'Amérique, 1743-1826)"
+    saint:   "Sainte Nadège"
+
+"09.19":
+    content: "Connaître son ignorance est la meilleure part de la connaissance."
+    author:  "Proverbe zen"
+    saint:   "Sainte Emilie"
+
+"09.20":
+    content: "Suis ton coeur pour que ton visage rayonne durant le temps de ta vie."
+    author:  "Proverbe égyptien"
+    saint:   "Saint Davy"
+
+"09.21":
+    content: "Il n'y a point de bonheur sans courage, ni de vertu sans combat."
+    author:  "Jean-Jacques Rousseau (écrivain français, 1712-1778)"
+    saint:   "Saint Matthieu"
+
+"09.22":
+    content: "Il pousse plus de choses dans un jardin que n'en sème le jardinier."
+    author:  "Proverbe espagnol"
+    saint:   "Saint Maurice"
+
+"09.23":
+    content: "Rire souvent et beaucoup ; gagner le respect des gens intelligents et l'affection des enfants ; savoir qu'un être a respiré plus aisément parce que vous avez vécu. C'est cela réussir sa vie."
+    author:  "Ralph Waldo Emerson (philosophe et poète américain, 1803-1882)"
+    saint:   "Saint Constant"
+
+"09.24":
+    content: "La meilleure éloquence, c'est la vérité."
+    author:  "Proverbe israélien"
+    saint:   "Sainte Thècle"
+
+"09.25":
+    content: "Quand on porte un chagrin, il faut le porter loin pour le laisser un peu s'égrener sur la route."
+    author:  "Maurice Magre (écrivain français, 1877-1941)"
+    saint:   "Saint Hermann"
+
+"09.26":
+    content: "La patience est clé de tous les soulagements."
+    author:  "Proverbe tunisien"
+    saint:   "Saint Côme, Saint Damien"
+
+"09.27":
+    content: "Il faut rêver très haut pour ne pas réaliser trop bas."
+    author:  "Alfred Capus (journaliste et écrivain français, 1858-1922)"
+    saint:   "Saint Vincent de Paul"
+
+"09.28":
+    content: "Cent hommes habiles ne valent pas un homme expérimenté."
+    author:  "Proverbe vietnamien"
+    saint:   "Saint Venceslas"
+
+"09.29":
+    content: "Exige beaucoup de toi-même et attends peu des autres. Ainsi beaucoup d'ennuis te seront épargnés."
+    author:  "Confucius (philosophe chinois, v. 551-479 av. J.-C.)"
+    saint:   "Saint Michel, Saint Gabriel"
+
+"09.30":
+    content: "Si vous gardez les poings fermés, vous n'obtiendrez que quelques grains de sable. Mais si vous ouvrez les mains, vous obtiendrez tout le sable du désert."
+    author:  "Dôgen (maître zen japonais, 1200-1253)"
+    saint:   "Saint Jéôme"
+
+"10.01":
+    content: "J'appelle sage celui qui, tout innocent qu'il est, supporte les injures et les coups avec une patience égale à sa force."
+    author:  "Bouddha (chef spirituel népalais, VIe-Ve s. av. J.-C.)"
+    saint:   "Saint Thérèse de Lisieux"
+
+"10.02":
+    content: "Si vous voulez que la vie vous sourie, apportez-lui d'abord votre bonne humeur."
+    author:  "Baruch Spinoza (philosophe hollandais, 1632-1677)"
+    saint:   "Saint Léger"
+
+"10.03":
+    content: "Mieux vaut allumer une chandelle que de maudire l'obscurité."
+    author:  "Proverbe chinois"
+    saint:   "Saint Gérard"
+
+"10.04":
+    content: "C'est ce qui manque qui donne la raison d'être."
+    author:  "Lao-tseu (philosophe chinois, 570-490 av. J.-C.)"
+    saint:   "Saint François d'Assise"
+
+"10.05":
+    content: "C'est une belle harmonie quand le faire et le dire vont ensemble."
+    author:  "Michel Eyquem de Montaigne (écrivain français, 1553-1592)"
+    saint:   "Sainte Fleur"
+
+"10.06":
+    content: "La modestie est au mérite ce que les ombres sont aux figures dans un tableau : elle lui donne la force et du relief."
+    author:  "Jean de la Bruyère (écrivain français, 1645-1696)"
+    saint:   "Saint Bruno"
+
+"10.07":
+    content: "Mieux vaut vivre enchaîné près de celui qu'on aime que libre au milieu des jardins près de celui que l'on hait."
+    author:  "Mocharrafoddin Saadi (poète persan, 1213-1292)"
+    saint:   "Saint Serge"
+
+"10.08":
+    content: "Celui qui sourit au lieu de s'emporter est toujours plus fort."
+    author:  "Proverbe japonais"
+    saint:   "Sainte Pélagie"
+
+"10.09":
+    content: "Lorsque l'esprit connaît la tranquilité, il soumet l'univers tout entier."
+    author:  "Tchouang-tseu (philosophe chinois, v. 369-286 av. J.-C.)"
+    saint:   "Saint Denis"
+
+"10.10":
+    content: "C'est en essayant encore et encore que le singe apprend à bondir."
+    author:  "Proverbe africain"
+    saint:   "Saint Ghislain"
+
+"10.11":
+    content: "Grand est celui qui n'a pas perdu son coeur d'enfant."
+    author:  "Mencius (philosophe chinois, v. 371-289 av. J.-C.)"
+    saint:   "Saint Firmin"
+
+"10.12":
+    content: "On voyage autour du monde à la recherche de quelque chose, et on rentre chez soi pour le trouver."
+    author:  "George Moore (écrivain irlandais, 1852-1933)"
+    saint:   "Saint Wilfried"
+
+"10.13":
+    content: "La parole qu'on prononce doit être comme le rubis, peu pesante, mais de grand prix."
+    author:  "Abu Shakour (poète persan, Xe s.)"
+    saint:   "Saint Géraud"
+
+"10.14":
+    content: "Si tu veux être heureux pendant une heure, fais une sieste. Si tu veux être heureux pendant une journée, va à la pêche. Si tu veux être heureux toute la vie, aide ton prochain."
+    author:  "Proverbe chinois"
+    saint:   "Saint Juste"
+
+"10.15":
+    content: "Il faut tenir une résolution parce qu'elle est bonne et non parce qu'on l'a prise."
+    author:  "François de la Rochefoucaud (écrivain français, 1613-1680)"
+    saint:   "Sainte Thérèse d'Avila"
+
+"10.16":
+    content: "Connaître autrui n'est qu'une science ; se connaître, c'est l'intelligence."
+    author:  "Lao-tseu (philosophe chinois, 570-490 av. J.-C.)"
+    saint:   "Sainte Edwige"
+
+"10.17":
+    content: "De la discussion jaillit la lumière."
+    author:  "Proverbe indien"
+    saint:   "Sain Baudouin"
+
+"10.18":
+    content: "Le contentement apporte le bonheur, même dans la pauvreté. Le mécontentement apporte la pauvreté même dans la richesse."
+    author:  "Confucius (philosophe chinois, v. 551-479 av. J.-C.)"
+    saint:   "Saint Luc"
+
+"10.19":
+    content: "Un homme n'est pas malheureux parce qu'il a l'ambition mais parce qu'il en est dévoré."
+    author:  "Montesqieu (écrivain français, 1689-1755)"
+    saint:   "Saint René"
+
+"10.20":
+    content: "La sagesse est de voir le nouveau dans l'ordinaire, en s'accommodant du monde tel qu'il est. Il y a des trésors cachés dans l'instant présent."
+    author:  "Santoka Taneda (moine et poète japonais, 1882-1940)"
+    saint:   "Sainte Adeline"
+
+"10.21":
+    content: "Aimez qui vous résiste et croyez qui vous blâme."
+    author:  "Casimir Delavigne (poète français, 1793-1843)"
+    saint:   "Sainte Céline"
+
+"10.22":
+    content: "Je ne connais pas d'autres marques de supériorité que la bonté."
+    author:  "Ludwig van Beethoven (compositeur allemand, 1770-1827)"
+    saint:   "Sainte Salomé"
+
+"10.23":
+    content: "La perfection est un chemin, non une fin."
+    author:  "Proverbe coréen"
+    saint:   "Saint Jean de Capistran"
+
+"10.24":
+    content: "Une seule parole qui fait du bien est meilleure que cent mille discours qui ne servent à rien."
+    author:  "Bouddha (chef spirituel népalais, VIe-Ve s. av. J.-C.)"
+    saint:   "Saint Florentin"
+
+"10.25":
+    content: "Vous ne pouvez empêcher les oiseaux de chagrin de survoler vos têtes, mais vous pouvez les empêcher d'y construire leur nid."
+    author:  "Proverbe chinois"
+    saint:   "Saint Crépin"
+
+"10.26":
+    content: "Le courage n'est rien sans la reflexion."
+    author:  "Euripide (poète tragique grec, 480-406 av. J.-C.)"
+    saint:   "Saint Dimitri"
+
+"10.27":
+    content: "La bonne humeur réussit parfois là où la force et la raison échouent."
+    author:  "Proverbe canadien"
+    saint:   "Sainte Emeline"
+
+"10.28":
+    content: "Ce ne sont pas les richesses qui font le bonheur, mais l'usage qu'on en fait."
+    author:  "Miguel de Cervantès (écrivain espagnol, 1547-1616)"
+    saint:   "Saint Simon, Saint Jude"
+
+"10.29":
+    content: "L'expérience est une lanterne que l'on porte dans le dos et qui n'éclaire que le chemin parcouru."
+    author:  "Confucius (philosophe chinois, v. 551-479 av. J.-C.)"
+    saint:   "Saint Narcisse"
+
+"10.30":
+    content: "Vieillir n'est, au fond, pas autre chose que n'avoir plus peur de son passé."
+    author:  "Stefan Zweig (écrivain autrichien, 1881-1942)"
+    saint:   "Saint Bienvenue"
+
+"10.31":
+    content: "Celui dont le pied glisse montre le chemin à beaucoup."
+    author:  "Proverbe turc"
+    saint:   "Saint Quentin"
+
+"11.01":
+    content: "On est rarement maître de se faire aimer, on l'est toujours de se faire estimer."
+    author:  "Bernard le Bovier de Fontenelle (écrivain français, 1657-1757)"
+    saint:   "Toussaint"
+
+"11.02":
+    content: "La jeunesse est le temps d'étudier la sagesse, la vieillesse est le temps de la pratiquer."
+    author:  "Jean-Jacques Rousseau (écrivain et philosophe français, 1712-1778)"
+    saint:   "Saint Victorin"
+
+"11.03":
+    content: "Ce qui est passé a fui ; ce que tu espères est absent ; mais le présent est à toi."
+    author:  "Proverbe arabe"
+    saint:   "Saint Hubert"
+
+"11.04":
+    content: "L'amitié double les joies et réduit de moitié les peines."
+    author:  "Francis Bacon (homme d'Etat et philosophe britannique, 1561-1626)"
+    saint:   "Saint Charles"
+
+"11.05":
+    content: "La fleur de lotus vient au milieu de la boue."
+    author:  "Proverbe japonais"
+    saint:   "Sainte Sylvie"
+
+"11.06":
+    content: "Il vaut mieux exceller en une chose que d'être médiocre en plusieurs."
+    author:  "Pline le Jeune (écrivain latin, v. 61-114)"
+    saint:   "Sainte Berftille"
+
+"11.07":
+    content: "La vraie faute est celle qu'on ne corrige pas."
+    author:  "Confucius (philosophe chinois, v. 551-479 av. J.-C.)"
+    saint:   "Sainte Carine"
+
+"11.08":
+    content: "Il faut prendre la main à ses amis sans fermer les doigts."
+    author:  "Diogène (philosophe grec, v. 413-323 av. J.-C.)"
+    saint:   "Saint Geoffroy"
+
+"11.09":
+    content: "Le sourire est le même dans toutes les langues."
+    author:  "Proverbe mexicain"
+    saint:   "Saint Théodore"
+
+"11.10":
+    content: "Vaincre la colère, c'est triompher de son plus grand ennemi."
+    author:  "Pubilius Syrus (poète latin, 85-43 av. J.-C.)"
+    saint:   "Saint Léon"
+
+"11.11":
+    content: "Le bonheur ne vient pas à ceux qui l'attendent assis."
+    author:  "Robert Baden-Powell (général anglais, 1857-1941)"
+    saint:   "Armistice 1918"
+
+"11.12":
+    content: "Le moment donné par le hasard vaut mieux que le moment choisi."
+    author:  "Proverbe chinois"
+    saint:   "Saint Christian"
+
+"11.13":
+    content: "La musique donne une âme à nos coeurs et des ailes à la pensée."
+    author:  "Platon (philosophe grec, v. 427-348 av. J.-C.)"
+    saint:   "Saint Brice"
+
+"11.14":
+    content: "Celui qui va doucement va loin."
+    author:  "Proverbe laotien"
+    saint:   "Saint Sidoine"
+
+"11.15":
+    content: "Agir en homme de pensée, penser en homme d'action."
+    author:  "Henri Bergson (philosophe français, 1859-1941)"
+    saint:   "Saint Albert"
+
+"11.16":
+    content: "Qui se craint lui même n'a plus rien à craindre."
+    author:  "Proverbe chinois"
+    saint:   "Sainte Marguerite"
+
+"11.17":
+    content: "La bonté est la seule valeur qui, dans ce monde d'apparences, peut se revendiquer comme une fin en soi."
+    author:  "William Somerset Maugham (écrivain britannique, 1874-1965)"
+    saint:   "Sainte Elisabeth"
+
+"11.18":
+    content: "Nous commençons à vieillir quand nous remplaçons nos rêves par des regrets."
+    author:  "Sénèque (philosophe latin, v. 2 av. J.-C.-65 apr. J.-C.)"
+    saint:   "Sainte Aude"
+
+"11.19":
+    content: "Savoir bien se taire est plus malaisé que de bien parler."
+    author:  "Proverbe israélien"
+    saint:   "Saint Tanguy"
+
+"11.20":
+    content: "Ceux qui savent ne parlent pas. Ceux qui parlent ne savent pas. Le sage enseigne par ses actes, non par ses paroles."
+    author:  "Thouang-tseu (philosophe chinois, 350-275 av. J.-C.)"
+    saint:   "Saint Edmond"
+
+"11.21":
+    content: "De ton ami dis du bien, de ton ennemi ne dis rien."
+    author:  "Proverbe arabe"
+    saint:   "Saint Gélasse"
+
+"11.22":
+    content: "Voici la morale parfaite : vivre chaque jour comme si c'était le dernier ; ne pas s'agiter, ne pas sommeiller, ne pas faire semblant."
+    author:  "Marc Aurèle (empereur romain, 121-180)"
+    saint:   "Sainte Cécile"
+
+"11.23":
+    content: "Vivre sans espoir, c'est cesser de vivre."
+    author:  "Fedor Mikhaïlovitch Dostoïevski (écrivain russe, 1821-1881)"
+    saint:   "Saint Clément"
+
+"11.24":
+    content: "L'archer est un modèle pour le sage. Quand il a manqué le milieu de la cible, il en cherche la cause en lui-même."
+    author:  "Confucius (philosophe chinois, v. 551-479 av. J.-C.)"
+    saint:   "Sainte Flora"
+
+"11.25":
+    content: "Un homme amoureux est né une seconde fois."
+    author:  "Proverbe américain"
+    saint:   "Sainte Catherine"
+
+"11.26":
+    content: "Une demi-heure de méditation est essentielle sauf quand on est très occupé. Alors une heure est nécessaire."
+    author:  "Saint François de Sales (évêque et théologien français, 1567-1622)"
+    saint:   "Sainte Delphine"
+
+"11.27":
+    content: "Rien ne développe l'intélligence comme les voyages."
+    author:  "Emile Zola (écrivain français, 1840-1902)"
+    saint:   "Saint Séverin"
+
+"11.28":
+    content: "Quand tu lances la flèche de la vérité, trempe la pointe dans du miel."
+    author:  "Proverbe arabe"
+    saint:   "Saint Jacques de la Marche"
+
+"11.29":
+    content: "On rencontre sa destinée souvent par les chemins que l'on prend pour l'éviter."
+    author:  "Jean de la Fontaine (poète français, 1621-1695)"
+    saint:   "Saint Saturnin"
+
+"11.30":
+    content: "Lorsqu'il est libre, l'esprit est naturellement serein, de même que l'eau non agitée est par nature limpide et claire."
+    author:  "Proverbe tibétain"
+    saint:   "Saint André"
+
+"12.01":
+    content: "Seuls les artistes et les enfants voient la vie telle qu'elle est."
+    author:  "Hugo von Hofmannsthal (écrivain autrichien, 1874-1929)"
+    saint:   "Sainte Florence"
+
+"12.02":
+    content: "Mieux vaut passer la nuit dans l'irritation de l'offense que dans le repentir de la vengeance."
+    author:  "Proverbe touareg"
+    saint:   "Sainte Viviane - Avent"
+
+"12.03":
+    content: "Le silence est l'un des arguments les plus durs à réfuter."
+    author:  "Josh Billings (écrivain et humoriste américain 1818-1885)"
+    saint:   "Saint François-Xavier"
+
+"12.04":
+    content: "Si vous ne voulez pas qu'on le sache, mieux vaut encore ne pas le faire."
+    author:  "Proverbe chinois"
+    saint:   "Sainte Barbara"
+
+"12.05":
+    content: "Quand le soleil s'éclipse, on en voit la grandeur."
+    author:  "Sénèque (philosophe latin, v. 2 av. J.-C.-65 apr. J.-C.)"
+    saint:   "Saint Gérald"
+
+"12.06":
+    content: "Celui qui pose une question est bête cinq minutes, qui qui n'en pose pas l'est toute sa vie."
+    author:  "Proverbe chinois"
+    saint:   "Saint Nicolas"
+
+"12.07":
+    content: "Il est temps de vivre la vie que tu t'es imaginée."
+    author:  "Henry James (écrivain américain, 1843-1916)"
+    saint:   "Saint Ambroise"
+
+"12.08":
+    content: "Une parole de vérité pèse plus que le monde entier."
+    author:  "Proverbe russe"
+    saint:   "Saint Elfried"
+
+"12.09":
+    content: "La grande affaire et la seule qu'on doive avoir, c'est de vivre heureux."
+    author:  "Voltaire (écrivain et philosophe français, 1694-1778)"
+    saint:   "Saint Pierre Fourier"
+
+"12.10":
+    content: "La vraie grandeur consiste à être maître de soi-même."
+    author:  "Daniel Defoe (écrivain britannique, v. 1660-1731)"
+    saint:   "Saint Romaric"
+
+"12.11":
+    content: "Avec un mensonge on va loin, mais sans espoir de retour."
+    author:  "Proverbe israélien"
+    saint:   "Saint Daniel"
+
+"12.12":
+    content: "Le bonheur est né de l'altruisme et le malheur de l'égosïsme."
+    author:  "Bouddha (chef spirituel népalais, VIe-Ve s. av. J.-C.)"
+    saint:   "Sainte J.-F. de Chantal"
+
+"12.13":
+    content: "La perfection a grand défaut : elle est souvent assomante."
+    author:  "William Somerset Maugham (écrivain britannique, 1874-1965)"
+    saint:   "Sainte Lucie"
+
+"12.14":
+    content: "Il n'y a point de désert si affreux que de vivre sans amis."
+    author:  "Baltasar Gracian y Morales (écrivain espagnol, 1601-16558)"
+    saint:   "Sainte Odile"
+
+"12.15":
+    content: "Mieux vaut mécontenter par cent refus que manquer à une seule promesse."
+    author:  "Proverbe chinois"
+    saint:   "Sainte Ninon"
+
+"12.16":
+    content: "Si ton coeur ne peut contenir les secrets qu'on t'a confiés, comment celui d'autrui les contiendrait-il ?"
+    author:  "Abu Shakour (poète persan, Xe s.)"
+    saint:   "Sainte Alice"
+
+"12.17":
+    content: "Pour savoir qui tu es, écoute ton silence."
+    author:  "Proverbe japonais"
+    saint:   "Saint Judicaël"
+
+"12.18":
+    content: "La parole n'est pas faite pour couvrir la vérité, mais pour la dire."
+    author:  "José Marti (homme politique et écrivain cubain, 1853-1895)"
+    saint:   "Saint Gatien"
+
+"12.19":
+    content: "Celui qui cherche un ami sans défaut reste sans ami."
+    author:  "Proverbe turc"
+    saint:   "Saint Urbain"
+
+"12.20":
+    content: "Il est souvent plus grand d'avouer ses fautes que de ne pas en commettre."
+    author:  "François de la Rochefoucaud (écrivain français, 1613-1680)"
+    saint:   "Saint Théophile"
+
+"12.21":
+    content: "Cueillons les douceurs, nous n'avons à nous que le temps de notre vie."
+    author:  "Proverbe persan"
+    saint:   "Saint Pierre Canisius"
+
+"12.22":
+    content: "Aucune grâce extérieure n'est complète si la beauté intérieure ne la vivifie. La beauté de l'âme se répand comme une lumière mystérieuse sur la beauté du corps."
+    author:  "Victor Hugo (écrivain français, 1802-1885)"
+    saint:   "Sainte Françoise-Xavière"
+
+"12.23":
+    content: "N'ouvre la bouche que lorsque tu es sûr que ce que tu vas dire est plus beau que le silence."
+    author:  "Proverbe chinois"
+    saint:   "Saint Armand"
+
+"12.24":
+    content: "Il n'est pas possible de vivre heureux sans être sage, honnête et juste, ni sage, honnête et juste sans être heureux."
+    author:  "Epicure (philosophe grec, 341-270 av. J.-C.)"
+    saint:   "Saint Adèle"
+
+"12.25":
+    content: "Celui qui ne sait pas se fâcher est un sot, mais celui qui ne veut pas se fâcher est un sage."
+    author:  "Proverbe chinois"
+    saint:   "Saint Emmanuel - Noël"
+
+"12.26":
+    content: "Débarassez-vous d'une mauvaise habitude par an. En agissant ainsi, même le pire des hommes deviendrait un modèle de vertu."
+    author:  "Benjamin Franklin (homme politique et physicien américain, 1706-1790)"
+    saint:   "Saint Etienne"
+
+"12.27":
+    content: "Si tu ne peux être une étoile au firmament, sois une lampe dans ta maison."
+    author:  "Proverbe arabe"
+    saint:   "Saint Jean l'Apôtre"
+
+"12.28":
+    content: "Une suite de petites volontés fait un gros résultat."
+    author:  "Charles Baudelaire (poète français 1821-1867)"
+    saint:   "Saints Innocents"
+
+"12.29":
+    content: "Il y a bien des manières de ne pas réussir, mais la plus sûre est de ne jamais prendre de risques."
+    author:  "Benjamin Franklin (homme politique et physicien américain, 1706-1790)"
+    saint:   "Saint David"
+
+"12.30":
+    content: "Le monde est un grand bal où chacun est masqué."
+    author:  "Marquis de Vauvenargues (moraliste français, 1715-1747)"
+    saint:   "Saint Roger"
+
+"12.31":
+    content: "La distance qui relie la terre au ciel est celle de la pensée."
+    author:  "Proverbe mongol"
+    saint:   "Saint Sylvestre"
