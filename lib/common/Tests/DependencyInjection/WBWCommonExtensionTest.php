@@ -29,6 +29,7 @@ use WBW\Bundle\CommonBundle\Manager\JavascriptManager;
 use WBW\Bundle\CommonBundle\Manager\StylesheetManager;
 use WBW\Bundle\CommonBundle\Service\SessionService;
 use WBW\Bundle\CommonBundle\Service\StatementService;
+use WBW\Bundle\CommonBundle\Service\TokenService;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 use WBW\Bundle\CommonBundle\Twig\Extension\AssetsTwigExtension;
 use WBW\Bundle\CommonBundle\Twig\Extension\ContainerTwigExtension;
@@ -120,6 +121,7 @@ class WBWCommonExtensionTest extends AbstractTestCase {
         // Services
         $this->assertInstanceOf(SessionService::class, $this->containerBuilder->get(SessionService::SERVICE_NAME));
         $this->assertInstanceOf(StatementService::class, $this->containerBuilder->get(StatementService::SERVICE_NAME));
+        $this->assertInstanceOf(TokenService::class, $this->containerBuilder->get(TokenService::SERVICE_NAME));
 
         // Twig extensions
         $this->assertInstanceOf(AssetsTwigExtension::class, $this->containerBuilder->get(AssetsTwigExtension::SERVICE_NAME));
