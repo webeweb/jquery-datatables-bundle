@@ -154,7 +154,7 @@ class QuoteManagerTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw.core.manager.quote", QuoteManager::SERVICE_NAME);
+        $this->assertEquals("wbw.common.manager.quote", QuoteManager::SERVICE_NAME);
 
         $obj = new QuoteManager($this->logger);
 
