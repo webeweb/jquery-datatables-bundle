@@ -33,7 +33,7 @@ class WorldsWisdomQuoteProviderTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertStringEndsWith("/Resources/config/quote/WorldsWisdom.fr.yml", WorldsWisdomQuoteProvider::RESOURCE_PATH);
+        $this->assertStringEndsWith("/Resources/assets/quote/WorldsWisdom.fr.yml", WorldsWisdomQuoteProvider::RESOURCE_PATH);
         $this->assertEquals("wbw.common.provider.quote.worlds_wisdom", WorldsWisdomQuoteProvider::SERVICE_NAME);
 
         $obj = new WorldsWisdomQuoteProvider();
