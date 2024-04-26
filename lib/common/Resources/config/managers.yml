@@ -15,6 +15,11 @@ services:
         public: false
         arguments: [ "@logger" ]
 
+    wbw.common.manager.quote:
+        class:  WBW\Bundle\CommonBundle\Manager\QuoteManager
+        public: false
+        arguments: [ "@logger" ]
+
     wbw.common.manager.stylesheet:
         class:  WBW\Bundle\CommonBundle\Manager\StylesheetManager
         public: false
