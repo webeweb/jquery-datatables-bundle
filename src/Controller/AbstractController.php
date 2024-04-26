@@ -40,8 +40,8 @@ use WBW\Bundle\DataTablesBundle\Provider\DataTablesRouterInterface;
 use WBW\Bundle\DataTablesBundle\Repository\DataTablesRepositoryInterface;
 use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
 use WBW\Library\Common\Database\Paginator;
-use WBW\Library\Symfony\Response\SimpleJsonResponseData;
-use WBW\Library\Symfony\Response\SimpleJsonResponseDataInterface;
+use WBW\Library\Common\Model\Response\SimpleJsonResponseData;
+use WBW\Library\Common\Model\Response\SimpleJsonResponseDataInterface;
 
 /**
  * Abstract controller.
