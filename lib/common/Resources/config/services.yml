@@ -14,3 +14,7 @@ services:
         class:  WBW\Bundle\CommonBundle\Service\StatementService
         public: false
         arguments: [ "@doctrine.orm.entity_manager" ]
+
+    wbw.common.service.token:
+        class:  WBW\Bundle\CommonBundle\Service\TokenService
+        public: false
