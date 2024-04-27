@@ -15,6 +15,21 @@ services:
         public: false
         arguments: [ "@logger" ]
 
+    wbw.common.manager.layout:
+        class:  WBW\Bundle\CommonBundle\Manager\LayoutManager
+        public: false
+        arguments: [ "@logger", "@twig" ]
+        calls:
+            - [ "setApplicationLayoutProvider",           [ "@?wbw.common.provider.layout.application" ] ]
+            - [ "setBreadcrumbsLayoutProvider",           [ "@?wbw.common.provider.layout.breadcrumbs" ] ]
+            - [ "setHookDropdownLayoutProvider",          [ "@?wbw.common.provider.layout.hook_dropdown" ] ]
+            - [ "setFooterLayoutProvider",                [ "@?wbw.common.provider.layout.footer" ] ]
+            - [ "setNavigationLayoutProvider",            [ "@?wbw.common.provider.layout.navigation" ] ]
+            - [ "setNotificationsDropdownLayoutProvider", [ "@?wbw.common.provider.layout.notifications_dropdown" ] ]
+            - [ "setSearchLayoutProvider",                [ "@?wbw.common.provider.layout.search" ] ]
+            - [ "setTasksDropdownLayoutProvider",         [ "@?wbw.common.provider.layout.tasks_dropdown" ] ]
+            - [ "setUserInfoLayoutProvider",              [ "@?wbw.common.provider.layout.user_info" ] ]
+
     wbw.common.manager.quote:
         class:  WBW\Bundle\CommonBundle\Manager\QuoteManager
         public: false
