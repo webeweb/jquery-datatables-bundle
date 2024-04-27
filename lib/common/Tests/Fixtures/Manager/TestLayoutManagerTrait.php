@@ -13,17 +13,17 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\CommonBundle\Tests\Fixtures\Manager;
 
-use WBW\Bundle\CommonBundle\Manager\ThemeManagerTrait;
+use WBW\Bundle\CommonBundle\Manager\LayoutManagerTrait;
 
 /**
- * Test theme manager trait.
+ * Test layout manager trait.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Tests\Fixtures\Manager
  */
-class TestThemeManagerTrait {
+class TestLayoutManagerTrait {
 
-    use ThemeManagerTrait {
-        setThemeManager as public;
+    use LayoutManagerTrait {
+        setLayoutManager as public;
     }
 }
