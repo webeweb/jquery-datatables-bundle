@@ -26,6 +26,7 @@ use WBW\Bundle\CommonBundle\EventListener\NotificationEventListener;
 use WBW\Bundle\CommonBundle\EventListener\ToastEventListener;
 use WBW\Bundle\CommonBundle\Manager\ColorManager;
 use WBW\Bundle\CommonBundle\Manager\JavascriptManager;
+use WBW\Bundle\CommonBundle\Manager\LayoutManager;
 use WBW\Bundle\CommonBundle\Manager\QuoteManager;
 use WBW\Bundle\CommonBundle\Manager\StylesheetManager;
 use WBW\Bundle\CommonBundle\Service\SessionService;
@@ -117,6 +118,7 @@ class WBWCommonExtensionTest extends AbstractTestCase {
         // Managers
         $this->assertInstanceOf(ColorManager::class, $this->containerBuilder->get(ColorManager::SERVICE_NAME));
         $this->assertInstanceOf(JavascriptManager::class, $this->containerBuilder->get(JavascriptManager::SERVICE_NAME));
+        $this->assertInstanceOf(LayoutManager::class, $this->containerBuilder->get(LayoutManager::SERVICE_NAME));
         $this->assertInstanceOf(QuoteManager::class, $this->containerBuilder->get(QuoteManager::SERVICE_NAME));
         $this->assertInstanceOf(StylesheetManager::class, $this->containerBuilder->get(StylesheetManager::SERVICE_NAME));
 
