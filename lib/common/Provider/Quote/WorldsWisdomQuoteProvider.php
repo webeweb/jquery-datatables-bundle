@@ -17,7 +17,7 @@ namespace WBW\Bundle\CommonBundle\Provider\Quote;
  * World's wisdom quote provider.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Library\Symfony\Provider\Quote
+ * @package WBW\Bundle\CommonBundle\Provider\Quote
  */
 class WorldsWisdomQuoteProvider extends YamlQuoteProvider {
 
