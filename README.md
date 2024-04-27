@@ -54,7 +54,7 @@ If you like this package, pay me a beer (or a coffee)
 
 ## Compatibility
 
-[![PHP](https://img.shields.io/packagist/php-v/webeweb/jquery-datatables-bundle.svg?style=for-the-badge&color=777BB4&logo=php)](https://php.net)
+[![PHP](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fwebeweb%2Fjquery-datatables-bundle%2Fmaster%2Fcomposer.json&query=%24.require.php&style=for-the-badge&color=777BB4&logo=php&label=PHP)](http://php.net)
 [![Symfony](https://img.shields.io/badge/symfony-%5E4.4%7C%5E5.0%7C%5E6.0-000000.svg?style=for-the-badge&logo=symfony)](https://symfony.com)
 
 ## Installation
