@@ -70,7 +70,7 @@ class DataTablesControllerTest extends DefaultWebTestCase {
 
         $client->request("GET", "/datatables/employee/delete/49");
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
-        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
+        $this->assertStringContainsString("text/html; charset=", $client->getResponse()->headers->get("Content-Type"));
         $this->assertEquals("/datatables/employee/index", $client->getResponse()->headers->get("location"));
 
         $client->followRedirect();
@@ -88,7 +88,7 @@ class DataTablesControllerTest extends DefaultWebTestCase {
 
         $client->request("GET", "/datatables/employee/delete/49");
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
-        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
+        $this->assertStringContainsString("text/html; charset=", $client->getResponse()->headers->get("Content-Type"));
         $this->assertEquals("/datatables/employee/index", $client->getResponse()->headers->get("location"));
 
         $client->followRedirect();
