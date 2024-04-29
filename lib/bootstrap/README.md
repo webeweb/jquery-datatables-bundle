@@ -62,6 +62,7 @@ If you like this package, pay me a beer (or a coffee)
 
 [![PHP](https://img.shields.io/packagist/php-v/webeweb/jquery-datatables-bundle.svg?style=for-the-badge&color=777BB4&logo=php)](http://php.net)
 [![Symfony](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fwebeweb%2Fjquery-datatables-bundle%2Fmaster%2Fcomposer.json&query=%24%5B'require'%5D%5B'symfony%2Fframework-bundle'%5D&style=for-the-badge&color=000000&logo=symfony&label=symfony)](http://php.net)
+
 ## Installation
 
 Open a command console, enter your project directory and execute the following

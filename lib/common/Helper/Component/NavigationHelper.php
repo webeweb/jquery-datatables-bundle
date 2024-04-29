@@ -15,7 +15,6 @@ namespace WBW\Bundle\CommonBundle\Helper\Component;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
-use WBW\Library\Widget\Component\AbstractNavigationNode;
 use WBW\Library\Widget\Component\Navigation\BreadcrumbNode;
 use WBW\Library\Widget\Component\Navigation\NavigationNode;
 use WBW\Library\Widget\Component\Navigation\NavigationTree;

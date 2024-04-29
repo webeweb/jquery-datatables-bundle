@@ -14,8 +14,8 @@ declare(strict_types = 1);
 namespace WBW\Bundle\CommonBundle\Tests\Exception;
 
 use WBW\Bundle\CommonBundle\Exception\BadUserRoleException;
-use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 use WBW\Bundle\CommonBundle\Model\User;
+use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 
 /**
  * Bad user role exception test.
