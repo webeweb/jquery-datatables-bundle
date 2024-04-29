@@ -37,7 +37,7 @@ class BadUserRoleException extends AbstractException {
      * Constructor.
      *
      * @param UserInterface $user The user.
-     * @param array $roles The roles.
+     * @param string[] $roles The roles.
      * @param string $redirectUrl The redirect.
      * @param string $originUrl The route.
      */
