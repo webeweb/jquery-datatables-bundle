@@ -27,7 +27,7 @@ use WBW\Bundle\CommonBundle\Controller\AbstractController;
 use WBW\Bundle\CommonBundle\Event\NotificationEvent;
 use WBW\Bundle\CommonBundle\Event\ToastEvent;
 use WBW\Bundle\CommonBundle\Service\SessionService;
-use WBW\Bundle\CommonBundle\Tests\AbstractWebTestCase;
+use WBW\Bundle\CommonBundle\Tests\DefaultWebTestCase as AbstractWebTestCase;
 use WBW\Bundle\CommonBundle\Tests\Fixtures\Controller\TestAbstractController;
 use WBW\Library\Widget\Component\NotificationInterface;
 use WBW\Library\Widget\Component\ToastInterface;
@@ -52,8 +52,6 @@ class AbstractControllerTest extends AbstractWebTestCase {
      */
     protected function setUp(): void {
         parent::setUp();
-
-        static::createClient();
 
         // Set a controller mock.
         $this->controller = static::$kernel->getContainer()->get(TestAbstractController::class);
