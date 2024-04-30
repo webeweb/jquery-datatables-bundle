@@ -22,7 +22,7 @@ use WBW\Bundle\CommonBundle\Security\Core\User\UserTrait;
  * Kernel event listener.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\CoreBundle\EventListener
+ * @package WBW\Bundle\CommonBundle\EventListener
  */
 class KernelEventListener {
 
