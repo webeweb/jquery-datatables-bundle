@@ -80,7 +80,7 @@ class AssetsTwigExtension extends AbstractTwigExtension {
      */
     public static function renderIcon(Environment $twigEnvironment, ?string $name, string $style = null): ?string {
 
-        if (null === $name) {
+        if (null === $name || "" === $name) {
             return null;
         }
 
