@@ -18,10 +18,12 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\Routing\RouterInterface;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Throwable;
 use Twig\Environment;
 use WBW\Bundle\CommonBundle\Command\UnzipAssetsCommand;
 use WBW\Bundle\CommonBundle\DependencyInjection\WBWCommonExtension;
+use WBW\Bundle\CommonBundle\EventListener\KernelEventListener;
 use WBW\Bundle\CommonBundle\EventListener\NotificationEventListener;
 use WBW\Bundle\CommonBundle\EventListener\ToastEventListener;
 use WBW\Bundle\CommonBundle\Manager\ColorManager;
@@ -78,6 +80,9 @@ class WBWCommonExtensionTest extends AbstractTestCase {
         // Set a Router mock.
         $router = $this->getMockBuilder(RouterInterface::class)->getMock();
 
+        // Set a Token storage mock.
+        $tokenStorage = $this->getMockBuilder(TokenStorageInterface::class)->getMock();
+
         // Set a Twig environment mock.
         $twigEnvironment = $this->getMockBuilder(Environment::class)->disableOriginalConstructor()->getMock();
 
@@ -93,6 +98,7 @@ class WBWCommonExtensionTest extends AbstractTestCase {
         $this->containerBuilder->set("doctrine.orm.entity_manager", $entityManager);
         $this->containerBuilder->set("logger", $logger);
         $this->containerBuilder->set("router", $router);
+        $this->containerBuilder->set("security.token_storage", $tokenStorage);
         $this->containerBuilder->set("twig", $twigEnvironment);
     }
 
@@ -112,6 +118,7 @@ class WBWCommonExtensionTest extends AbstractTestCase {
         $this->assertInstanceOf(UnzipAssetsCommand::class, $this->containerBuilder->get(UnzipAssetsCommand::SERVICE_NAME));
 
         // Event listeners
+        $this->assertInstanceOf(KernelEventListener::class, $this->containerBuilder->get(KernelEventListener::SERVICE_NAME));
         $this->assertInstanceOf(NotificationEventListener::class, $this->containerBuilder->get(NotificationEventListener::SERVICE_NAME));
         $this->assertInstanceOf(ToastEventListener::class, $this->containerBuilder->get(ToastEventListener::SERVICE_NAME));
 
