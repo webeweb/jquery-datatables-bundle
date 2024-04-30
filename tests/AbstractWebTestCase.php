@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Tests;
 
-use WBW\Bundle\CommonBundle\Tests\AbstractWebTestCase as BaseWebTestCase;
+use WBW\Bundle\CommonBundle\Tests\DefaultWebTestCase as BaseWebTestCase;
 
 /**
  * Abstract web test case.
@@ -23,12 +23,4 @@ use WBW\Bundle\CommonBundle\Tests\AbstractWebTestCase as BaseWebTestCase;
  */
 abstract class AbstractWebTestCase extends BaseWebTestCase {
 
-    /**
-     * {@inheritDoc}
-     */
-    protected function setUp(): void {
-        parent::setUp();
-
-        static::createClient();
-    }
 }
