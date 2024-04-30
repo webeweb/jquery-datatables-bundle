@@ -47,7 +47,7 @@ abstract class AbstractController extends BaseController {
      * Create a default JSON response data.
      *
      * @param bool $success The success.
-     * @param array $data The data.
+     * @param mixed[] $data The data.
      * @param string|null $message The message.
      * @return DefaultJsonResponseDataInterface Returns the default JSON response data.
      */
