@@ -13,8 +13,8 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Tests\Controller;
 
+use WBW\Bundle\BootstrapBundle\Tests\AbstractWebTestCase;
 use WBW\Bundle\BootstrapBundle\WBWBootstrapBundle;
-use WBW\Bundle\CommonBundle\Tests\DefaultWebTestCase;
 
 /**
  * Views controller test.
@@ -22,14 +22,7 @@ use WBW\Bundle\CommonBundle\Tests\DefaultWebTestCase;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\BootstrapBundle\Tests\Controller
  */
-class ViewsControllerTest extends DefaultWebTestCase {
-
-    /**
-     * {@inheritDoc}
-     */
-    public static function setUpBeforeClass(): void {
-        parent::setUpBeforeClass();
-    }
+class ViewsControllerTest extends AbstractWebTestCase {
 
     /**
      * Test lib/bootstrap/Resources/views/layout.html.twig
