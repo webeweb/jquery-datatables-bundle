@@ -1,6 +1,14 @@
 # lib/common/Resources/config/event_listeners.yml
 services:
 
+    WBW\Bundle\CommonBundle\EventListener\KernelEventListener:
+        alias: "wbw.common.event_listener.kernel"
+
+    wbw.common.event_listener.kernel:
+        class:  WBW\Bundle\CommonBundle\EventListener\KernelEventListener
+        public: true
+        arguments: [ "@security.token_storage" ]
+
     wbw.common.event_listener.notification:
         class:  WBW\Bundle\CommonBundle\EventListener\NotificationEventListener
         public: false
