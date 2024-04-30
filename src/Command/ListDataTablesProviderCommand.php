@@ -58,7 +58,7 @@ class ListDataTablesProviderCommand extends AbstractCommand {
     /**
      * {@inheritDoc}
      */
-    protected function execute(InputInterface $input, OutputInterface $output): ?int {
+    protected function execute(InputInterface $input, OutputInterface $output): int {
 
         $io = $this->newStyle($input, $output);
         $this->displayTitle($io, $this->getDescription());
