@@ -22,7 +22,7 @@ use InvalidArgumentException;
 use Throwable;
 use WBW\Bundle\CommonBundle\Service\StatementService;
 use WBW\Bundle\CommonBundle\Service\StatementServiceInterface;
-use WBW\Bundle\CommonBundle\Tests\DefaultWebTestCase as BaseWebTestCase;
+use WBW\Bundle\CommonBundle\Tests\DefaultWebTestCase as AbstractWebTestCase;
 
 /**
  * Statement service test.
@@ -30,7 +30,7 @@ use WBW\Bundle\CommonBundle\Tests\DefaultWebTestCase as BaseWebTestCase;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Tests\Service
  */
-class StatementServiceTest extends BaseWebTestCase {
+class StatementServiceTest extends AbstractWebTestCase {
 
     /**
      * Statement service.
