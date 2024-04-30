@@ -15,8 +15,8 @@ namespace WBW\Bundle\DataTablesBundle\Tests\Controller;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Throwable;
-use WBW\Bundle\DataTablesBundle\Tests\AbstractWebTestCase as BaseWebTestCase;
 use WBW\Bundle\DataTablesBundle\Controller\DataTablesController;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractWebTestCase as BaseWebTestCase;
 use WBW\Bundle\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
 /**
