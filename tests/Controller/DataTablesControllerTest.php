@@ -15,7 +15,7 @@ namespace WBW\Bundle\DataTablesBundle\Tests\Controller;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Throwable;
-use WBW\Bundle\CommonBundle\Tests\DefaultWebTestCase;
+use WBW\Bundle\DataTablesBundle\Tests\AbstractWebTestCase as BaseWebTestCase;
 use WBW\Bundle\DataTablesBundle\Controller\DataTablesController;
 use WBW\Bundle\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
@@ -25,7 +25,7 @@ use WBW\Bundle\DataTablesBundle\Tests\Fixtures\TestFixtures;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Tests\Controller
  */
-class DataTablesControllerTest extends DefaultWebTestCase {
+class DataTablesControllerTest extends BaseWebTestCase {
 
     /**
      * {@inheritDoc}
