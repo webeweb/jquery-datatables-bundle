@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\CommonBundle\Tests\Controller;
 
-use WBW\Bundle\CommonBundle\Tests\DefaultWebTestCase;
+use WBW\Bundle\CommonBundle\Tests\DefaultWebTestCase as BaseWebTestCase;
 
 /**
  * Views controller test.
@@ -21,7 +21,7 @@ use WBW\Bundle\CommonBundle\Tests\DefaultWebTestCase;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Tests\Controller
  */
-class ViewsControllerTest extends DefaultWebTestCase {
+class ViewsControllerTest extends BaseWebTestCase {
 
     /**
      * Test lib/common/Resources/views/assets/_javascripts.html.twig
