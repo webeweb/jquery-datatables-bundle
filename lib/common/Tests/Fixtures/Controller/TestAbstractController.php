@@ -25,6 +25,7 @@ use Twig\Environment;
 use WBW\Bundle\CommonBundle\Controller\AbstractController;
 use WBW\Bundle\CommonBundle\Event\NotificationEvent;
 use WBW\Bundle\CommonBundle\Event\ToastEvent;
+use WBW\Bundle\CommonBundle\EventListener\KernelEventListener;
 use WBW\Library\Widget\Component\NotificationInterface;
 use WBW\Library\Widget\Component\ToastInterface;
 
@@ -55,6 +56,13 @@ class TestAbstractController extends AbstractController {
      */
     public function getEventDispatcher(): ?EventDispatcherInterface {
         return parent::getEventDispatcher();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getKernelEventListener(): ?KernelEventListener {
+        return parent::getKernelEventListener();
     }
 
     /**

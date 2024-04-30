@@ -27,6 +27,7 @@ use Throwable;
 use Twig\Environment;
 use WBW\Bundle\CommonBundle\Event\NotificationEvent;
 use WBW\Bundle\CommonBundle\Event\ToastEvent;
+use WBW\Bundle\CommonBundle\EventListener\KernelEventListener;
 use WBW\Bundle\CommonBundle\Service\SessionService;
 use WBW\Library\Widget\Component\NotificationInterface;
 use WBW\Library\Widget\Component\ToastInterface;
@@ -88,6 +89,16 @@ abstract class AbstractController extends BaseController {
     }
 
     /**
+     * Get the kernel event listener.
+     *
+     * @return KernelEventListener|null Returns the kernel event listener.
+     * @throws Throwable Throws an exception if an error occurs.
+     */
+    protected function getKernelEventListener(): ?KernelEventListener {
+        return $this->container->get(KernelEventListener::SERVICE_NAME);
+    }
+
+    /**
      * Get the logger.
      *
      * @return LoggerInterface|null Returns the logger.
@@ -136,14 +147,15 @@ abstract class AbstractController extends BaseController {
      */
     public static function getSubscribedServices(): array {
 
-        return array_merge([
-            "doctrine.orm.entity_manager" => "?" . EntityManagerInterface::class,
-            "event_dispatcher"            => "?" . EventDispatcherInterface::class,
-            "logger"                      => "?" . LoggerInterface::class,
-            "mailer"                      => "?" . MailerInterface::class,
-            "translator"                  => "?" . TranslatorInterface::class,
-            SessionService::SERVICE_NAME  => "?" . SessionService::class,
-        ], parent::getSubscribedServices());
+        return array_merge(parent::getSubscribedServices(), [
+            "doctrine.orm.entity_manager"     => "?" . EntityManagerInterface::class,
+            "event_dispatcher"                => "?" . EventDispatcherInterface::class,
+            "logger"                          => "?" . LoggerInterface::class,
+            "mailer"                          => "?" . MailerInterface::class,
+            "translator"                      => "?" . TranslatorInterface::class,
+            KernelEventListener::SERVICE_NAME => "?" . KernelEventListener::class,
+            SessionService::SERVICE_NAME      => "?" . SessionService::class,
+        ]);
     }
 
     /**

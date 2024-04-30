@@ -26,6 +26,7 @@ use Twig\Environment;
 use WBW\Bundle\CommonBundle\Controller\AbstractController;
 use WBW\Bundle\CommonBundle\Event\NotificationEvent;
 use WBW\Bundle\CommonBundle\Event\ToastEvent;
+use WBW\Bundle\CommonBundle\EventListener\KernelEventListener;
 use WBW\Bundle\CommonBundle\Service\SessionService;
 use WBW\Bundle\CommonBundle\Tests\DefaultWebTestCase as AbstractWebTestCase;
 use WBW\Bundle\CommonBundle\Tests\Fixtures\Controller\TestAbstractController;
@@ -99,6 +100,20 @@ class AbstractControllerTest extends AbstractWebTestCase {
     }
 
     /**
+     * Test getKernelEventListener()
+     *
+     * @return void
+     * @throws Throwable Throws an exception if an error occurs.
+     */
+    public function testGetKernelEventListener(): void {
+
+        $obj = $this->controller;
+
+        $res = $obj->getKernelEventListener();
+        $this->assertInstanceOf(KernelEventListener::class, $res);
+    }
+
+    /**
      * Test getLogger()
      *
      * @return void
@@ -168,13 +183,14 @@ class AbstractControllerTest extends AbstractWebTestCase {
     public function testGetSubscribedServices(): void {
 
         $res = AbstractController::getSubscribedServices();
-        $this->assertGreaterThan(6, count($res));
+        $this->assertGreaterThan(7, count($res));
 
         $this->assertArrayHasKey("doctrine.orm.entity_manager", $res);
         $this->assertArrayHasKey("event_dispatcher", $res);
         $this->assertArrayHasKey("logger", $res);
         $this->assertArrayHasKey("mailer", $res);
         $this->assertArrayHasKey("translator", $res);
+        $this->assertArrayHasKey(KernelEventListener::SERVICE_NAME, $res);
         $this->assertArrayHasKey(SessionService::SERVICE_NAME, $res);
     }
 
