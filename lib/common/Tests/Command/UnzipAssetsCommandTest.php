@@ -16,7 +16,7 @@ namespace WBW\Bundle\CommonBundle\Tests\Command;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 use WBW\Bundle\CommonBundle\Command\UnzipAssetsCommand;
-use WBW\Bundle\CommonBundle\Tests\AbstractWebTestCase;
+use WBW\Bundle\CommonBundle\Tests\DefaultWebTestCase as AbstractWebTestCase;
 
 /**
  * Unzip assets command test.
@@ -24,16 +24,7 @@ use WBW\Bundle\CommonBundle\Tests\AbstractWebTestCase;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Tests\Command
  */
-class UnzipAssetsCommandWebTest extends AbstractWebTestCase {
-
-    /**
-     * {@inheritDoc}
-     */
-    protected function setUp(): void {
-        parent::setUp();
-
-        static::createClient();
-    }
+class UnzipAssetsCommandTest extends AbstractWebTestCase {
 
     /**
      * Test execute()
