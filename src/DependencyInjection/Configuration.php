@@ -32,6 +32,7 @@ class Configuration implements ConfigurationInterface {
      * @param ArrayNodeDefinition $node The node.
      * @param array<string,mixed> $assets The assets.
      * @return void
+     * @formatter:off
      */
     private function addSectionPlugins(ArrayNodeDefinition $node, array $assets): void {
 
@@ -56,6 +57,7 @@ class Configuration implements ConfigurationInterface {
      * @param ArrayNodeDefinition $node The node.
      * @param array<string,mixed> $assets The assets.
      * @return void
+     * @formatter:off
      */
     private function addSectionTheme(ArrayNodeDefinition $node, array $assets): void {
 

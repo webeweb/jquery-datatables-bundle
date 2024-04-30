@@ -32,6 +32,7 @@ class Configuration implements ConfigurationInterface {
      * @param ArrayNodeDefinition $node The node.
      * @param array<string,mixed> $locales The locales.
      * @return void
+     * @formatter:off
      */
     private function addSectionLocales(ArrayNodeDefinition $node, array $locales): void {
 
@@ -80,6 +81,7 @@ class Configuration implements ConfigurationInterface {
      * @param ArrayNodeDefinition $node The node.
      * @param string[] $plugins The plugins.
      * @return void
+     * @formatter:off
      */
     private function addSectionPlugins(ArrayNodeDefinition $node, array $plugins): void {
 
@@ -101,6 +103,7 @@ class Configuration implements ConfigurationInterface {
      *
      * @param ArrayNodeDefinition $node The node.
      * @return void
+     * @formatter:off
      */
     private function addSectionVersion(ArrayNodeDefinition $node): void {
 
