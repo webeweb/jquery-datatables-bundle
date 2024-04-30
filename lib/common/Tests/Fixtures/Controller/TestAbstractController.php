@@ -26,6 +26,7 @@ use WBW\Bundle\CommonBundle\Controller\AbstractController;
 use WBW\Bundle\CommonBundle\Event\NotificationEvent;
 use WBW\Bundle\CommonBundle\Event\ToastEvent;
 use WBW\Bundle\CommonBundle\EventListener\KernelEventListener;
+use WBW\Library\Common\Model\Response\DefaultJsonResponseDataInterface;
 use WBW\Library\Widget\Component\NotificationInterface;
 use WBW\Library\Widget\Component\ToastInterface;
 
@@ -36,6 +37,13 @@ use WBW\Library\Widget\Component\ToastInterface;
  * @package WBW\Bundle\CommonBundle\Tests\Fixtures\Controller
  */
 class TestAbstractController extends AbstractController {
+
+    /**
+     * {@inheritDoc}
+     */
+    public function defaultJsonResponseData(bool $success, array $data, string $message = null): DefaultJsonResponseDataInterface {
+        return parent::defaultJsonResponseData($success, $data, $message);
+    }
 
     /**
      * {@inheritDoc}

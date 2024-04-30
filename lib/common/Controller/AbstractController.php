@@ -29,6 +29,8 @@ use WBW\Bundle\CommonBundle\Event\NotificationEvent;
 use WBW\Bundle\CommonBundle\Event\ToastEvent;
 use WBW\Bundle\CommonBundle\EventListener\KernelEventListener;
 use WBW\Bundle\CommonBundle\Service\SessionService;
+use WBW\Library\Common\Model\Response\DefaultJsonResponseData;
+use WBW\Library\Common\Model\Response\DefaultJsonResponseDataInterface;
 use WBW\Library\Widget\Component\NotificationInterface;
 use WBW\Library\Widget\Component\ToastInterface;
 
@@ -40,6 +42,24 @@ use WBW\Library\Widget\Component\ToastInterface;
  * @abstract
  */
 abstract class AbstractController extends BaseController {
+
+    /**
+     * Create a default JSON response data.
+     *
+     * @param bool $success The success.
+     * @param array $data The data.
+     * @param string|null $message The message.
+     * @return DefaultJsonResponseDataInterface Returns the default JSON response data.
+     */
+    protected function defaultJsonResponseData(bool $success, array $data, string $message = null): DefaultJsonResponseDataInterface {
+
+        $model = new DefaultJsonResponseData();
+        $model->setData($data);
+        $model->setMessage($message);
+        $model->setSuccess($success);
+
+        return $model;
+    }
 
     /**
      * Dispatch an event.
