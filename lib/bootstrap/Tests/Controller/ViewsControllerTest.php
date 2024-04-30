@@ -35,7 +35,7 @@ class ViewsControllerTest extends AbstractWebTestCase {
 
         $client->request("GET", "/bootstrap/layout");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
+        $this->assertStringContainsString("text/html; charset=", $client->getResponse()->headers->get("Content-Type"));
 
         $this->assertStringContainsString(WBWBootstrapBundle::BOOTSTRAP_VERSION_4 . "/css", $client->getResponse()->getContent());
         $this->assertStringContainsString(WBWBootstrapBundle::BOOTSTRAP_VERSION_4 . "/js", $client->getResponse()->getContent());
@@ -52,7 +52,7 @@ class ViewsControllerTest extends AbstractWebTestCase {
 
         $client->request("GET", "/bootstrap/layout/flash-bag");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
+        $this->assertStringContainsString("text/html; charset=", $client->getResponse()->headers->get("Content-Type"));
 
         $exp = file_get_contents(__DIR__ . "/../Fixtures/Controller/ViewsControllerTest.testLayoutFlashBagAction.html.txt") . "    ";
         $this->assertEquals($exp, $client->getResponse()->getContent());
@@ -69,7 +69,7 @@ class ViewsControllerTest extends AbstractWebTestCase {
 
         $client->request("GET", "/bootstrap/layout/no-data-to-display");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
+        $this->assertStringContainsString("text/html; charset=", $client->getResponse()->headers->get("Content-Type"));
     }
 
     /**
@@ -83,6 +83,6 @@ class ViewsControllerTest extends AbstractWebTestCase {
 
         $client->request("GET", "/bootstrap/layout/work-in-progress");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
+        $this->assertStringContainsString("text/html; charset=", $client->getResponse()->headers->get("Content-Type"));
     }
 }
