@@ -9,14 +9,14 @@
     </php>
     <filter>
         <whitelist>
-            <directory>./lib</directory>
-            <directory>./src</directory>
+            <directory>./</directory>
             <exclude>
                 <directory>lib/bootstrap/Resources</directory>
                 <directory>lib/bootstrap/Tests</directory>
                 <directory>lib/common/Resources</directory>
                 <directory>lib/common/Tests</directory>
                 <directory>src/Resources</directory>
+                <directory>vendor</directory>
             </exclude>
         </whitelist>
     </filter>
