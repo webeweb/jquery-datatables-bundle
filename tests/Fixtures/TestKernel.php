@@ -13,10 +13,13 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures;
 
+use Doctrine;
+use Symfony;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 use Symfony\Component\HttpKernel\Kernel;
-use WBW\Bundle\CommonBundle\Tests\DefaultKernel;
+use WBW;
+use WBW\Bundle\CommonBundle\Tests\DefaultKernel as BaseKernel;
 
 /**
  * Test kernel.
@@ -24,7 +27,7 @@ use WBW\Bundle\CommonBundle\Tests\DefaultKernel;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Tests\Fixtures
  */
-class TestKernel extends DefaultKernel {
+class TestKernel extends BaseKernel {
 
     /**
      * {@inheritDoc}
@@ -33,14 +36,14 @@ class TestKernel extends DefaultKernel {
     public function registerBundles(): array {
 
         return [
-            new \Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
-            new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
-            new \Symfony\Bundle\MonologBundle\MonologBundle(),
-            new \Symfony\Bundle\SecurityBundle\SecurityBundle(),
-            new \Symfony\Bundle\TwigBundle\TwigBundle(),
-            new \WBW\Bundle\CommonBundle\WBWCommonBundle(),
-            new \WBW\Bundle\BootstrapBundle\WBWBootstrapBundle(),
-            new \WBW\Bundle\DataTablesBundle\WBWDataTablesBundle(),
+            new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
+            new Symfony\Bundle\MonologBundle\MonologBundle(),
+            new Symfony\Bundle\SecurityBundle\SecurityBundle(),
+            new Symfony\Bundle\TwigBundle\TwigBundle(),
+            new WBW\Bundle\BootstrapBundle\WBWBootstrapBundle(),
+            new WBW\Bundle\CommonBundle\WBWCommonBundle(),
+            new WBW\Bundle\DataTablesBundle\WBWDataTablesBundle(),
         ];
     }
 
