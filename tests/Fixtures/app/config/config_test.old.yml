@@ -31,16 +31,16 @@ doctrine:
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping:                true
-        naming_strategy:             "doctrine.orm.naming_strategy.underscore"
+        naming_strategy:             "doctrine.orm.naming_strategy.underscore_number_aware"
         mappings:
-            WBWDataTablesBundle:
-                type:   "xml"
-                dir:    "tests/Fixtures/app/config/doctrine"
-                prefix: "WBW\\Bundle\\DataTablesBundle\\Tests\\Fixtures\\Entity"
             WBWCommonBundle:
                 type:   "xml"
                 dir:    "lib/common/Tests/Fixtures/Resources/config/doctrine"
                 prefix: "WBW\\Bundle\\CommonBundle\\Tests\\Fixtures\\Entity"
+            WBWDataTablesBundle:
+                type:   "xml"
+                dir:    "tests/Fixtures/app/config/doctrine"
+                prefix: "WBW\\Bundle\\DataTablesBundle\\Tests\\Fixtures\\Entity"
 
 # Monolog configuration
 monolog:
