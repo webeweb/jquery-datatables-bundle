@@ -24,7 +24,7 @@ use WBW\Bundle\CommonBundle\Doctrine\ORM\EntityManagerTrait;
  * @package WBW\Bundle\CommonBundle\Form\DataTransformer
  * @abstract
  */
-abstract class AbstractEntityDataTransformer implements DataTransformerInterface {
+abstract class AbstractEntityDataTransformer extends AbstractDataTransformer implements DataTransformerInterface {
 
     use EntityManagerTrait;
 
@@ -38,16 +38,12 @@ abstract class AbstractEntityDataTransformer implements DataTransformerInterface
     }
 
     /**
-     * Get the entity class.
+     * Decode a value.
      *
-     * @return string Returns the entity class.
+     * @param mixed|null $value The value.
+     * @return mixed|null Returns the decoded value
      */
-    abstract protected function getEntityClass(): string;
-
-    /**
-     * {@inheritDoc}
-     */
-    public function reverseTransform($value) {
+    protected function decode($value) {
 
         if ($value <= 0) {
             return null;
@@ -59,9 +55,12 @@ abstract class AbstractEntityDataTransformer implements DataTransformerInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Encode a value.
+     *
+     * @param mixed|null $value The value.
+     * @return mixed|null Returns the encoded value.
      */
-    public function transform($value) {
+    protected function encode($value) {
 
         if (null === $value || false === method_exists($value, "getId")) {
             return -1;
@@ -69,4 +68,12 @@ abstract class AbstractEntityDataTransformer implements DataTransformerInterface
 
         return $value->getId();
     }
+
+    /**
+     * Get the entity class.
+     *
+     * @return string Returns the entity class.
+     */
+    abstract protected function getEntityClass(): string;
+
 }

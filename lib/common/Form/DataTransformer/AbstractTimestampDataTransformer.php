@@ -27,10 +27,10 @@ abstract class AbstractTimestampDataTransformer extends AbstractDateTimeDataTran
     /**
      * {@inheritDoc}
      */
-    public function reverseTransform($value) {
+    protected function decode($value) {
 
         /** @var DateTime|null $date */
-        $date = parent::reverseTransform($value);
+        $date = parent::decode($value);
         if (null === $date) {
             return null;
         }
@@ -41,7 +41,7 @@ abstract class AbstractTimestampDataTransformer extends AbstractDateTimeDataTran
     /**
      * {@inheritDoc}
      */
-    public function transform($value) {
+    protected function encode($value) {
 
         if (null === $value) {
             return null;
@@ -49,6 +49,6 @@ abstract class AbstractTimestampDataTransformer extends AbstractDateTimeDataTran
 
         $date = new DateTime("@$value");
 
-        return parent::transform($date);
+        return parent::encode($date);
     }
 }

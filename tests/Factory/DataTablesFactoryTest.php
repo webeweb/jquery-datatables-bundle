@@ -16,6 +16,7 @@ namespace WBW\Bundle\DataTablesBundle\Tests\Factory;
 use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Security\Core\User\UserInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesOptionsInterface;
@@ -552,11 +553,20 @@ class DataTablesFactoryTest extends AbstractTestCase {
      */
     public function testParseWrapper(): void {
 
-        // Set a Parameter bag mock.
-        $parameterBag = $this->getMockBuilder(ParameterBag::class)->getMock();
-        $parameterBag->expects($this->any())->method("keys")->willReturn([]);
-        $parameterBag->expects($this->any())->method("all")->willReturn([]);
-        $parameterBag->expects($this->any())->method("getInt")->willReturn(1);
+        // TODO: Remove when dropping support for Symfony 6.4
+        if (Kernel::VERSION_ID < 70000) {
+
+            // Set a Parameter bag mock.
+            $parameterBag = $this->getMockBuilder(ParameterBag::class)->getMock();
+            $parameterBag->expects($this->any())->method("keys")->willReturn([]);
+            $parameterBag->expects($this->any())->method("all")->willReturn([]);
+            $parameterBag->expects($this->any())->method("getInt")->willReturn(1);
+        } else {
+
+            $classname = "Symfony\\Component\\HttpFoundation\\InputBag";
+
+            $parameterBag = new $classname();
+        }
 
         // Set a Request mock.
         $request = $this->getMockBuilder(Request::class)->disableOriginalConstructor()->getMock();
