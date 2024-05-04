@@ -36,6 +36,11 @@ class BootstrapIconRendererTraitTest extends AbstractTestCase {
         $twigEnvironment = $this->getMockBuilder(Environment::class)->disableOriginalConstructor()->getMock();
 
         $obj = new TestBootstrapIconRendererTrait();
+
+        $this->assertNull($obj->renderIcon(null));
+        $this->assertNull($obj->renderIcon(""));
+        $this->assertNull($obj->renderIcon("fa:home"));
+
         $obj->setTwigEnvironment($twigEnvironment);
 
         $this->assertNull($obj->renderIcon(null));
