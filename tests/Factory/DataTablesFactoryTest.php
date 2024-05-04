@@ -553,15 +553,14 @@ class DataTablesFactoryTest extends AbstractTestCase {
      */
     public function testParseWrapper(): void {
 
-        // TODO: Remove when dropping support for Symfony 6.4
-        if (Kernel::VERSION_ID < 70000) {
+        // Set a Parameter bag mock.
+        $parameterBag = $this->getMockBuilder(ParameterBag::class)->getMock();
+        $parameterBag->expects($this->any())->method("keys")->willReturn([]);
+        $parameterBag->expects($this->any())->method("all")->willReturn([]);
+        $parameterBag->expects($this->any())->method("getInt")->willReturn(1);
 
-            // Set a Parameter bag mock.
-            $parameterBag = $this->getMockBuilder(ParameterBag::class)->getMock();
-            $parameterBag->expects($this->any())->method("keys")->willReturn([]);
-            $parameterBag->expects($this->any())->method("all")->willReturn([]);
-            $parameterBag->expects($this->any())->method("getInt")->willReturn(1);
-        } else {
+        // TODO: Remove when dropping support for Symfony 6
+        if (70000 <= Kernel::VERSION_ID) {
 
             $classname = "Symfony\\Component\\HttpFoundation\\InputBag";
 

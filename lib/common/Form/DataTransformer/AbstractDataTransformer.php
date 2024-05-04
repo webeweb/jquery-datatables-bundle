@@ -13,7 +13,7 @@ namespace WBW\Bundle\CommonBundle\Form\DataTransformer;
 
 use Symfony\Component\HttpKernel\Kernel;
 
-// TODO: Remove when dropping support for Symfony 6.4
+// TODO: Remove when dropping support for Symfony 6
 if (Kernel::VERSION_ID < 70000) {
     class_alias("WBW\Bundle\CommonBundle\Form\DataTransformer\Symfony6DataTransformer", "WBW\Bundle\CommonBundle\Form\DataTransformer\AbstractDataTransformer");
 } else {

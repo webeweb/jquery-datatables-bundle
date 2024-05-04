@@ -27,7 +27,6 @@ use Throwable;
  */
 abstract class AbstractDateTimeDataTransformer extends AbstractDataTransformer implements DataTransformerInterface {
 
-
     /**
      * Format.
      *
