@@ -24,10 +24,12 @@ parameters:
         -
             message: '#Comparison operation [<=>]+ between [0-9]+ and [0-9]+ is always "true||false"#'
             paths:
+                - lib/common/Form/DataTransformer/AbstractDataTransformer.php
                 - lib/common/Security/Core/User/UserHelper.php
                 - lib/common/Service/SessionService.php
                 - lib/common/Tests/Service/SessionServiceTest.php
                 - lib/common/Tests/DefaultTestCase.php
+                - tests/Factory/DataTablesFactoryTest.php
                 - tests/Fixtures/TestKernel.php
         -
             message: '#Method Symfony\\Contracts\\EventDispatcher\\EventDispatcherInterface\:\:dispatch\(\)#'
