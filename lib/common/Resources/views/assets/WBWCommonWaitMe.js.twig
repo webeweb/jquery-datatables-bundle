@@ -1,0 +1,86 @@
+{# lib/common/Resources/views/assets/WBWCommonWaitMe.js.twig #}
+/**
+ * Wait me.
+ */
+class WBWCommonWaitMe {
+
+    /**
+     * Get the options by default.
+     *
+     * @param {String} color The color.
+     * @returns {Object} Returns the options.
+     */
+    static getOptionsDefault(color = null) {
+
+        const options = {
+            effect: "stretch",
+            text  : "{{ "wait_me.text"|trans([], "WBWCommonBundle") }}",
+            bg    : "rgba(255, 255, 255, 0.75)"
+        };
+
+        if (null !== color) {
+            options.color = color;
+        }
+
+        return options;
+    }
+
+    /**
+     * Get the options for an element.
+     *
+     * @returns {Object} Returns the optons.
+     */
+    static getOptionsElement() {
+
+        const options = WBWCommonWaitMe.getOptionsDefault();
+
+        delete options.text;
+        options.effect = "progressBar";
+
+        return options;
+    }
+
+    /**
+     * Get the options for Octopus.
+     *
+     * @returns {Object} Returns the options.
+     */
+    static getOptionsOctopus() {
+
+        return {
+            effect : "img",
+            text   : "{{ "wait_me.text"|trans([], "WBWCommonBundle") }}",
+            bg     : "rgba(255, 255, 255, 0.98)",
+            color  : "#36d9a9",
+            maxSize: 180,
+            source : "{{ asset("bundles/wbwCommon/img/octo-loader.gif") }}"
+        };
+    }
+
+    /**
+     * Displays a wait me inside an element.
+     *
+     * @param {jQuery} $el The element.
+     * @param {Object} options The options.
+     * @returns {jQuery} Returns the wait me.
+     */
+    static waitMe($el, options = null) {
+
+        console.debug({$el, options});
+
+        options = null !== options ? options : WBWCommonWaitMe.getOptionsDefault();
+
+        return $el.waitMe(options);
+    }
+
+    /**
+     * Displays a wait me inside a select.
+     *
+     * @param {jQuery} $select The select.
+     * @param {Object} options The options.
+     * @return {jQuery} Returns the wait me.
+     */
+    static waitMeSelect($select, options = null) {
+        return WBWCommonWaitMe.waitMe($select.parent(), options);
+    }
+}
