@@ -40,6 +40,7 @@ use WBW\Bundle\CommonBundle\Service\TokenService;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 use WBW\Bundle\CommonBundle\Twig\Extension\AssetsTwigExtension;
 use WBW\Bundle\CommonBundle\Twig\Extension\ContainerTwigExtension;
+use WBW\Bundle\CommonBundle\Twig\Extension\QuoteTwigExtension;
 use WBW\Bundle\CommonBundle\Twig\Extension\StringTwigExtension;
 
 /**
@@ -150,6 +151,7 @@ class WBWCommonExtensionTest extends AbstractTestCase {
         // Twig extensions
         $this->assertInstanceOf(AssetsTwigExtension::class, $this->containerBuilder->get(AssetsTwigExtension::SERVICE_NAME));
         $this->assertInstanceOf(ContainerTwigExtension::class, $this->containerBuilder->get(ContainerTwigExtension::SERVICE_NAME));
+        $this->assertInstanceOf(QuoteTwigExtension::class, $this->containerBuilder->get(QuoteTwigExtension::SERVICE_NAME));
         $this->assertInstanceOf(StringTwigExtension::class, $this->containerBuilder->get(StringTwigExtension::SERVICE_NAME));
     }
 

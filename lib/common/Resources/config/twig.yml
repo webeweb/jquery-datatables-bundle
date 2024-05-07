@@ -18,6 +18,13 @@ services:
         tags:
             - { name: "twig.extension" }
 
+    wbw.common.twig.extension.quote:
+        class:  WBW\Bundle\CommonBundle\Twig\Extension\QuoteTwigExtension
+        public: false
+        arguments: [ "@twig", "@wbw.common.manager.quote" ]
+        tags:
+            - { name: "twig.extension" }
+
     wbw.common.twig.extension.string:
         class:  WBW\Bundle\CommonBundle\Twig\Extension\StringTwigExtension
         public: false
