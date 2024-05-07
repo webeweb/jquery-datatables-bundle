@@ -13,6 +13,9 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\CommonBundle\Manager;
 
+use WBW\Bundle\CommonBundle\Provider\ProviderInterface;
+use WBW\Bundle\CommonBundle\Provider\QuoteProviderInterface;
+
 /**
  * Quote manager interface.
  *
@@ -21,4 +24,11 @@ namespace WBW\Bundle\CommonBundle\Manager;
  */
 interface QuoteManagerInterface extends ManagerInterface {
 
+    /**
+     * Get a quote provider.
+     *
+     * @param string $domain The domain.
+     * @return QuoteProviderInterface|null Returns the quote provider.
+     */
+    public function getProvider(string $domain): ?QuoteProviderInterface;
 }

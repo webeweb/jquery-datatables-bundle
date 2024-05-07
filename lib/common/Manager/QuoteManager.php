@@ -66,12 +66,9 @@ class QuoteManager extends AbstractManager implements QuoteManagerInterface {
     }
 
     /**
-     * Get a quote provider.
-     *
-     * @param string $domain The domain.
-     * @return ProviderInterface|null Returns the quote provider.
+     * {@inheritDoc}
      */
-    public function getProvider(string $domain): ?ProviderInterface {
+    public function getProvider(string $domain): ?QuoteProviderInterface {
 
         /** @var QuoteProviderInterface $current */
         foreach ($this->getProviders() as $current) {
