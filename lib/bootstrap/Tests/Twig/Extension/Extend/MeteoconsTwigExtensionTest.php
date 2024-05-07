@@ -86,7 +86,7 @@ class MeteoconsTwigExtensionTest extends AbstractTestCase {
      */
     public function testMeteoconsIconFunction(): void {
 
-        $arg = ["name"  => "B", "style" => "color: #FFFFFF;"];
+        $arg = ["name" => "B", "style" => "color: #FFFFFF;"];
         $exp = '<i class="meteocons" data-meteocons="B" style="color: #FFFFFF;"></i>';
 
         $obj = new MeteoconsTwigExtension($this->twigEnvironment);

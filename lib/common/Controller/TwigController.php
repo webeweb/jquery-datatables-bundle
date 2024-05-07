@@ -18,7 +18,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Throwable;
-use Twig\Environment;
 use Twig\TwigFunction;
 use WBW\Bundle\CommonBundle\Manager\JavascriptManager;
 use WBW\Bundle\CommonBundle\Manager\JavascriptManagerTrait;
