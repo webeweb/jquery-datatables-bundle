@@ -32,10 +32,14 @@ Includes:
 - [Bootstrap Tagsinput 0.8.0](https://github.com/bootstrap-tagsinput/bootstrap-tagsinput) (Bootstrap plug-in)
 - [Bootstrap Timepicker 0.5.2](https://github.com/jdewit/bootstrap-timepicker) (Bootstrap plug-in)
 - [Bootstrap WYSIWYG 0.3.3](https://github.com/Waxolunist/bootstrap3-wysihtml5-bower) (Bootstrap plug-in)
+- [Font Awesome 5.15.2](https://github.com/FortAwesome/Font-Awesome)
 - [Handlebars 1.3.0](https://github.com/handlebars-lang/handlebars.js) (Bootstrap WYSIWYG dependency)
+- [Material Design Iconic Font 2.2.0](https://github.com/zavoloklom/material-design-iconic-font)
+- [Meteocons](https://www.alessioatzeni.com/meteocons)
 - [Moment.js 2.20.1](https://github.com/moment/moment) (Bootstrap Daterangepicker dependency)
 - [Popper.js 1.15.0](https://github.com/popperjs/popper-core) (Bootstrap dependency)
 - [Summernote 0.8.20](https://github.com/summernote/summernote) (Bootstrap plug-in)
+- [twemoji 14.0.2](https://github.com/twitter/twemoji)
 - [WYSIHTML 0.4.15](https://github.com/Voog/wysihtml) (Bootstrap WYSIWYG dependency)
 
 Provides:
