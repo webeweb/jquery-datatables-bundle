@@ -54,8 +54,6 @@ class FontAwesomeTwigExtensionTest extends AbstractTestCase {
      */
     public function testFontAwesomeIconFunction(): void {
 
-        $obj = new FontAwesomeTwigExtension($this->twigEnvironment);
-
         $arg = [
             "font"       => "s",
             "name"       => "camera-retro",
@@ -68,6 +66,8 @@ class FontAwesomeTwigExtensionTest extends AbstractTestCase {
         ];
         $exp = '<i class="fas fa-camera-retro fa-lg fa-fw fa-border fa-pull-left fa-spin" style="color: #FFFFFF;"></i>';
 
+        $obj = new FontAwesomeTwigExtension($this->twigEnvironment);
+
         $this->assertEquals($exp, $obj->fontAwesomeIconFunction($arg));
     }
 
@@ -78,10 +78,10 @@ class FontAwesomeTwigExtensionTest extends AbstractTestCase {
      */
     public function testFontAwesomeIconFunctionWithoutArguments(): void {
 
-        $obj = new FontAwesomeTwigExtension($this->twigEnvironment);
-
         $arg = [];
         $exp = '<i class="fa fa-home"></i>';
+
+        $obj = new FontAwesomeTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->fontAwesomeIconFunction($arg));
     }

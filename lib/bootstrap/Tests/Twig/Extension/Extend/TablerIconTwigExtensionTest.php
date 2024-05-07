@@ -105,10 +105,10 @@ class TablerIconTwigExtensionTest extends AbstractTestCase {
      */
     public function testTablerIconFunction(): void {
 
-        $obj = new TablerIconTwigExtension($this->twigEnvironment);
-
         $arg = ["name" => "asterisk"];
         $exp = '';
+
+        $obj = new TablerIconTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->tablerIconFunction($arg));
     }

@@ -91,10 +91,10 @@ class LabelTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapLabelDangerFunction(): void {
 
-        $obj = new LabelTwigExtension($this->twigEnvironment);
-
         $arg = ["content" => "content"];
         $exp = '<span class="label label-danger">content</span>';
+
+        $obj = new LabelTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->bootstrapLabelDangerFunction($arg));
     }
@@ -107,10 +107,10 @@ class LabelTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapLabelDangerFunctionWithoutArguments(): void {
 
-        $obj = new LabelTwigExtension($this->twigEnvironment);
-
         $arg = [];
         $exp = '<span class="label label-danger"></span>';
+
+        $obj = new LabelTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->bootstrapLabelDangerFunction($arg));
     }
@@ -122,10 +122,10 @@ class LabelTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapLabelDefaultFunction(): void {
 
-        $obj = new LabelTwigExtension($this->twigEnvironment);
-
         $arg = ["content" => "content"];
         $exp = '<span class="label label-default">content</span>';
+
+        $obj = new LabelTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->bootstrapLabelDefaultFunction($arg));
     }
@@ -137,10 +137,10 @@ class LabelTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapLabelDefaultFunctionWithoutArguments(): void {
 
-        $obj = new LabelTwigExtension($this->twigEnvironment);
-
         $arg = [];
         $exp = '<span class="label label-default"></span>';
+
+        $obj = new LabelTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->bootstrapLabelDefaultFunction($arg));
     }
@@ -152,10 +152,10 @@ class LabelTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapLabelInfoFunction(): void {
 
-        $obj = new LabelTwigExtension($this->twigEnvironment);
-
         $arg = ["content" => "content"];
         $exp = '<span class="label label-info">content</span>';
+
+        $obj = new LabelTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->bootstrapLabelInfoFunction($arg));
     }
@@ -167,10 +167,10 @@ class LabelTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapLabelInfoFunctionWithoutArguments(): void {
 
-        $obj = new LabelTwigExtension($this->twigEnvironment);
-
         $arg = [];
         $exp = '<span class="label label-info"></span>';
+
+        $obj = new LabelTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->bootstrapLabelInfoFunction($arg));
     }
@@ -182,10 +182,10 @@ class LabelTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapLabelPrimaryFunction(): void {
 
-        $obj = new LabelTwigExtension($this->twigEnvironment);
-
         $arg = ["content" => "content"];
         $exp = '<span class="label label-primary">content</span>';
+
+        $obj = new LabelTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->bootstrapLabelPrimaryFunction($arg));
     }
@@ -197,10 +197,10 @@ class LabelTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapLabelPrimaryFunctionWithoutArguments(): void {
 
-        $obj = new LabelTwigExtension($this->twigEnvironment);
-
         $arg = [];
         $exp = '<span class="label label-primary"></span>';
+
+        $obj = new LabelTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->bootstrapLabelPrimaryFunction($arg));
     }
@@ -238,10 +238,10 @@ class LabelTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapLabelSuccessFunction(): void {
 
-        $obj = new LabelTwigExtension($this->twigEnvironment);
-
         $arg = ["content" => "content"];
         $exp = '<span class="label label-success">content</span>';
+
+        $obj = new LabelTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->bootstrapLabelSuccessFunction($arg));
     }
@@ -253,10 +253,10 @@ class LabelTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapLabelSuccessFunctionWithoutArguments(): void {
 
-        $obj = new LabelTwigExtension($this->twigEnvironment);
-
         $arg = [];
         $exp = '<span class="label label-success"></span>';
+
+        $obj = new LabelTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->bootstrapLabelSuccessFunction($arg));
     }
@@ -268,10 +268,10 @@ class LabelTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapLabelWarningFunction(): void {
 
-        $obj = new LabelTwigExtension($this->twigEnvironment);
-
         $arg = ["content" => "content"];
         $exp = '<span class="label label-warning">content</span>';
+
+        $obj = new LabelTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->bootstrapLabelWarningFunction($arg));
     }
@@ -283,10 +283,10 @@ class LabelTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapLabelWarningFunctionWithoutArguments(): void {
 
-        $obj = new LabelTwigExtension($this->twigEnvironment);
-
         $arg = [];
         $exp = '<span class="label label-warning"></span>';
+
+        $obj = new LabelTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->bootstrapLabelWarningFunction($arg));
     }

@@ -53,10 +53,10 @@ class GlyphiconTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapGlyphiconFunction(): void {
 
-        $obj = new GlyphiconTwigExtension($this->twigEnvironment);
-
         $arg = ["name" => "asterisk"];
         $exp = '<span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>';
+
+        $obj = new GlyphiconTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->bootstrapGlyphiconFunction($arg));
     }
@@ -68,10 +68,10 @@ class GlyphiconTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapGlyphiconFunctionWithoutArguments(): void {
 
-        $obj = new GlyphiconTwigExtension($this->twigEnvironment);
-
         $arg = [];
         $exp = '<span class="glyphicon glyphicon-home" aria-hidden="true"></span>';
+
+        $obj = new GlyphiconTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->bootstrapGlyphiconFunction($arg));
     }

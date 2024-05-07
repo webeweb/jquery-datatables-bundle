@@ -53,11 +53,11 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapBadgeDangerFunction(): void {
 
-        $obj = new BadgeTwigExtension($this->twigEnvironment);
-        $obj->setVersion(4);
-
         $arg = ["content" => "content", "pill" => true];
         $exp = '<span class="badge badge-danger badge-pill">content</span>';
+
+        $obj = new BadgeTwigExtension($this->twigEnvironment);
+        $obj->setVersion(4);
 
         $this->assertEquals($exp, $obj->bootstrapBadgeDangerFunction($arg));
     }
@@ -69,11 +69,11 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapBadgeDarkFunction(): void {
 
-        $obj = new BadgeTwigExtension($this->twigEnvironment);
-        $obj->setVersion(4);
-
         $arg = ["content" => "content", "pill" => true];
         $exp = '<span class="badge badge-dark badge-pill">content</span>';
+
+        $obj = new BadgeTwigExtension($this->twigEnvironment);
+        $obj->setVersion(4);
 
         $this->assertEquals($exp, $obj->bootstrapBadgeDarkFunction($arg));
     }
@@ -85,11 +85,11 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapBadgeFunction(): void {
 
-        $obj = new BadgeTwigExtension($this->twigEnvironment);
-        $obj->setVersion(4);
-
         $arg = ["content" => "content", "pill" => true];
         $exp = '<span class="badge badge-pill">content</span>';
+
+        $obj = new BadgeTwigExtension($this->twigEnvironment);
+        $obj->setVersion(4);
 
         $this->assertEquals($exp, $obj->bootstrapBadgeFunction($arg));
     }
@@ -101,11 +101,11 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapBadgeFunctionWithoutArguments(): void {
 
-        $obj = new BadgeTwigExtension($this->twigEnvironment);
-        $obj->setVersion(4);
-
         $arg = [];
         $exp = '<span class="badge"></span>';
+
+        $obj = new BadgeTwigExtension($this->twigEnvironment);
+        $obj->setVersion(4);
 
         $this->assertEquals($exp, $obj->bootstrapBadgeFunction($arg));
     }
@@ -117,11 +117,11 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapBadgeInfoFunction(): void {
 
-        $obj = new BadgeTwigExtension($this->twigEnvironment);
-        $obj->setVersion(4);
-
         $arg = ["content" => "content", "pill" => true];
         $exp = '<span class="badge badge-info badge-pill">content</span>';
+
+        $obj = new BadgeTwigExtension($this->twigEnvironment);
+        $obj->setVersion(4);
 
         $this->assertEquals($exp, $obj->bootstrapBadgeInfoFunction($arg));
     }
@@ -133,11 +133,11 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapBadgeLightFunction(): void {
 
-        $obj = new BadgeTwigExtension($this->twigEnvironment);
-        $obj->setVersion(4);
-
         $arg = ["content" => "content", "pill" => true];
         $exp = '<span class="badge badge-light badge-pill">content</span>';
+
+        $obj = new BadgeTwigExtension($this->twigEnvironment);
+        $obj->setVersion(4);
 
         $this->assertEquals($exp, $obj->bootstrapBadgeLightFunction($arg));
     }
@@ -149,11 +149,11 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapBadgeLinkFilter(): void {
 
-        $obj = new BadgeTwigExtension($this->twigEnvironment);
-        $obj->setVersion(4);
-
         $arg = [];
         $exp = '<a href="https://github.com/" target="_blank" class="badge badge-danger"></a>';
+
+        $obj = new BadgeTwigExtension($this->twigEnvironment);
+        $obj->setVersion(4);
 
         $this->assertEquals($exp, $obj->bootstrapBadgeLinkFilter($obj->bootstrapBadgeDangerFunction($arg), "https://github.com/", "_blank"));
     }
@@ -165,11 +165,11 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapBadgePrimaryFunction(): void {
 
-        $obj = new BadgeTwigExtension($this->twigEnvironment);
-        $obj->setVersion(4);
-
         $arg = ["content" => "content", "pill" => true];
         $exp = '<span class="badge badge-primary badge-pill">content</span>';
+
+        $obj = new BadgeTwigExtension($this->twigEnvironment);
+        $obj->setVersion(4);
 
         $this->assertEquals($exp, $obj->bootstrapBadgePrimaryFunction($arg));
     }
@@ -181,11 +181,11 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapBadgeSecondaryFunction(): void {
 
-        $obj = new BadgeTwigExtension($this->twigEnvironment);
-        $obj->setVersion(4);
-
         $arg = ["content" => "content", "pill" => true];
         $exp = '<span class="badge badge-secondary badge-pill">content</span>';
+
+        $obj = new BadgeTwigExtension($this->twigEnvironment);
+        $obj->setVersion(4);
 
         $this->assertEquals($exp, $obj->bootstrapBadgeSecondaryFunction($arg));
     }
@@ -197,11 +197,11 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapBadgeSuccessFunction(): void {
 
-        $obj = new BadgeTwigExtension($this->twigEnvironment);
-        $obj->setVersion(4);
-
         $arg = ["content" => "content", "pill" => true];
         $exp = '<span class="badge badge-success badge-pill">content</span>';
+
+        $obj = new BadgeTwigExtension($this->twigEnvironment);
+        $obj->setVersion(4);
 
         $this->assertEquals($exp, $obj->bootstrapBadgeSuccessFunction($arg));
     }
@@ -213,11 +213,11 @@ class BadgeTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapBadgeWarningFunction(): void {
 
-        $obj = new BadgeTwigExtension($this->twigEnvironment);
-        $obj->setVersion(4);
-
         $arg = ["content" => "content", "pill" => true];
         $exp = '<span class="badge badge-warning badge-pill">content</span>';
+
+        $obj = new BadgeTwigExtension($this->twigEnvironment);
+        $obj->setVersion(4);
 
         $this->assertEquals($exp, $obj->bootstrapBadgeWarningFunction($arg));
     }

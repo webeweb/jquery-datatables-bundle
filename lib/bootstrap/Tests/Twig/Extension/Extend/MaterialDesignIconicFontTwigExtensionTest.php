@@ -114,8 +114,6 @@ class MaterialDesignIconicFontTwigExtensionTest extends AbstractTestCase {
      */
     public function testMaterialDesignIconicFontIconFunction(): void {
 
-        $obj = new MaterialDesignIconicFontTwigExtension($this->twigEnvironment);
-
         $arg = [
             "name"       => "camera-retro",
             "size"       => "lg",
@@ -129,6 +127,8 @@ class MaterialDesignIconicFontTwigExtensionTest extends AbstractTestCase {
         ];
         $exp = '<i class="zmdi zmdi-camera-retro zmdi-hc-lg zmdi-hc-fw zmdi-hc-border-circle pull-left zmdi-hc-spin zmdi-hc-rotate-180 zmdi-hc-flip-horizontal" style="color: #FFFFFF;"></i>';
 
+        $obj = new MaterialDesignIconicFontTwigExtension($this->twigEnvironment);
+
         $this->assertEquals($exp, $obj->materialDesignIconicFontIconFunction($arg));
     }
 
@@ -139,10 +139,10 @@ class MaterialDesignIconicFontTwigExtensionTest extends AbstractTestCase {
      */
     public function testMaterialDesignIconicFontIconFunctionWithoutArguments(): void {
 
-        $obj = new MaterialDesignIconicFontTwigExtension($this->twigEnvironment);
-
         $arg = [];
         $exp = '<i class="zmdi zmdi-home"></i>';
+
+        $obj = new MaterialDesignIconicFontTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->materialDesignIconicFontIconFunction($arg));
     }

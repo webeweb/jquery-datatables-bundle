@@ -53,10 +53,10 @@ class IconTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapIconFunction(): void {
 
-        $obj = new IconTwigExtension($this->twigEnvironment);
-
         $arg = ["name" => "asterisk"];
         $exp = '<i class="bi bi-asterisk"></i>';
+
+        $obj = new IconTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->bootstrapIconFunction($arg));
     }
@@ -68,10 +68,10 @@ class IconTwigExtensionTest extends AbstractTestCase {
      */
     public function testBootstrapIconFunctionWithoutArguments(): void {
 
-        $obj = new IconTwigExtension($this->twigEnvironment);
-
         $arg = [];
         $exp = '<i class="bi bi-house"></i>';
+
+        $obj = new IconTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->bootstrapIconFunction($arg));
     }

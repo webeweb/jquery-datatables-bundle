@@ -55,7 +55,7 @@ class IconFactoryTest extends AbstractTestCase {
      */
     public function testParseFontAwesomeIcon(): void {
 
-        // Set the Arguments mock.
+        // Set the arguments mock.
         $arg = [
             "name"       => "home",
             "style"      => "color: #000000;",
@@ -88,7 +88,7 @@ class IconFactoryTest extends AbstractTestCase {
      */
     public function testParseMaterialDesignIconicFontIcon(): void {
 
-        // Set the Arguments mock.
+        // Set the arguments mock.
         $arg = [
             "name"       => "home",
             "style"      => "color: #000000;",

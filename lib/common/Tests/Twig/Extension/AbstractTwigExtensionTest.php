@@ -51,9 +51,7 @@ class AbstractTwigExtensionTest extends AbstractTestCase {
      */
     public function testH(): void {
 
-        $arg = [
-            "type" => "text/javascript",
-        ];
+        $arg = ["type" => "text/javascript"];
         $exp = file_get_contents(__DIR__ . "/../../Fixtures/Twig/Extension/AbstractTwigExtensionTest.testCoreHtmlElement.html.txt");
 
         $this->assertEquals($exp, AbstractTwigExtension::h("script", "\n    $(document).ready(function() {});\n", $arg) . "\n");

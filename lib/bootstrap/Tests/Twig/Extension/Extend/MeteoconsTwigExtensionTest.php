@@ -86,13 +86,10 @@ class MeteoconsTwigExtensionTest extends AbstractTestCase {
      */
     public function testMeteoconsIconFunction(): void {
 
-        $obj = new MeteoconsTwigExtension($this->twigEnvironment);
-
-        $arg = [
-            "name"  => "B",
-            "style" => "color: #FFFFFF;",
-        ];
+        $arg = ["name"  => "B", "style" => "color: #FFFFFF;"];
         $exp = '<i class="meteocons" data-meteocons="B" style="color: #FFFFFF;"></i>';
+
+        $obj = new MeteoconsTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->meteoconsIconFunction($arg));
     }
@@ -104,12 +101,10 @@ class MeteoconsTwigExtensionTest extends AbstractTestCase {
      */
     public function testMeteoconsIconFunctionWithName(): void {
 
-        $obj = new MeteoconsTwigExtension($this->twigEnvironment);
-
-        $arg = [
-            "name" => "B",
-        ];
+        $arg = ["name" => "B"];
         $exp = '<i class="meteocons" data-meteocons="B"></i>';
+
+        $obj = new MeteoconsTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->meteoconsIconFunction($arg));
     }
@@ -121,12 +116,10 @@ class MeteoconsTwigExtensionTest extends AbstractTestCase {
      */
     public function testMeteoconsIconFunctionWithStyle(): void {
 
-        $obj = new MeteoconsTwigExtension($this->twigEnvironment);
-
-        $arg = [
-            "style" => "color: #FFFFFF;",
-        ];
+        $arg = ["style" => "color: #FFFFFF;"];
         $exp = '<i class="meteocons" data-meteocons="A" style="color: #FFFFFF;"></i>';
+
+        $obj = new MeteoconsTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->meteoconsIconFunction($arg));
     }
@@ -138,10 +131,10 @@ class MeteoconsTwigExtensionTest extends AbstractTestCase {
      */
     public function testMeteoconsIconFunctionWithoutArguments(): void {
 
-        $obj = new MeteoconsTwigExtension($this->twigEnvironment);
-
         $arg = [];
         $exp = '<i class="meteocons" data-meteocons="A"></i>';
+
+        $obj = new MeteoconsTwigExtension($this->twigEnvironment);
 
         $this->assertEquals($exp, $obj->meteoconsIconFunction($arg));
     }
