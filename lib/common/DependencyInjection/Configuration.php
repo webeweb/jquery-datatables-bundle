@@ -126,6 +126,21 @@ class Configuration implements ConfigurationInterface {
     }
 
     /**
+     * Add a section "security".
+     *
+     * @param ArrayNodeDefinition $node The node.
+     * @return void
+     * @formatter:off
+     */
+    private function addSectionSecurity(ArrayNodeDefinition $node): void {
+
+        $node
+            ->children()
+                ->booleanNode("security")->defaultFalse()->info("Load security event listener")->end()
+            ->end();
+    }
+
+    /**
      * Add a section "themes".
      *
      * @param ArrayNodeDefinition $node The node.
@@ -166,6 +181,8 @@ class Configuration implements ConfigurationInterface {
         $this->addSectionLocales($rootNode, $assets["assets"]["wbw.common.assets"]["plugins"]);
         $this->addSectionThemes($rootNode, $assets["assets"]["wbw.common.assets"]["plugins"]);
         $this->addSectionBrushes($rootNode, $assets["assets"]["wbw.common.assets"]["plugins"]["syntax_highlighter"]["brushes"]);
+
+        $this->addSectionSecurity($rootNode);
         $this->addSectionQuote($rootNode);
 
         return $treeBuilder;
