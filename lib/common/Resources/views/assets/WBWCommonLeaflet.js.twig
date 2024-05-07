@@ -1,0 +1,53 @@
+{# lib/common/Resources/views/assets/WBWCommonLeaflet.js.twig #}
+/**
+ * Leaflet.
+ */
+class WBWCommonLeaflet {
+
+    /**
+     * Options.
+     *
+     * @type {Object}
+     */
+    static options = {
+        url        : 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'
+    }
+
+    /**
+     * Displays a Leaflet map.
+     *
+     * @param {String} id The id.
+     * @param {Array} center The center.
+     * @param {int} zoom The zoom.
+     * @param {Array<Object>} markers The markers.
+     * @returns {Map} Returns the map.
+     */
+    static map(id, center, zoom, markers) {
+
+        console.debug({id, center, zoom, markers});
+
+        const map = L.map(id).setView(center, zoom);
+
+        L.tileLayer(WBWCommonLeaflet.options.url, {
+            attribution: WBWCommonLeaflet.options.attribution
+        }).addTo(map);
+
+        markers.forEach((m) => {
+
+            if (null === m.latitude || null === m.longitude) {
+                return;
+            }
+
+            const marker = L.marker([m.latitude, m.longitude]);
+
+            if (true === m.hasOwnProperty("popup")) {
+                marker.bindPopup(m.popup);
+            }
+
+            marker.addTo(map);
+        });
+
+        return map;
+    }
+}
