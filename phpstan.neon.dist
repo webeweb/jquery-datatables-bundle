@@ -35,3 +35,4 @@ parameters:
             message: '#Method Symfony\\Contracts\\EventDispatcher\\EventDispatcherInterface\:\:dispatch\(\)#'
             paths:
                 - lib/common/Controller/AbstractController.php
+                - lib/common/EventDispatcher/EventDispatcherTrait.php
