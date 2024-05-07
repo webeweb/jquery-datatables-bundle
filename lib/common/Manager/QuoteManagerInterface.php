@@ -13,7 +13,6 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\CommonBundle\Manager;
 
-use WBW\Bundle\CommonBundle\Provider\ProviderInterface;
 use WBW\Bundle\CommonBundle\Provider\QuoteProviderInterface;
 
 /**
