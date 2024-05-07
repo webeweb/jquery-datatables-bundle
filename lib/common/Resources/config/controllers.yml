@@ -12,3 +12,17 @@ services:
             - [ "setContainer", [ "@Psr\\Container\\ContainerInterface" ] ]
         tags:
             - { name: "container.service_subscriber" }
+
+    WBW\Bundle\CommonBundle\Controller\TwigController:
+        alias:  "wbw.common.controller.twig"
+        public: true
+
+    wbw.common.controller.twig:
+        class:  WBW\Bundle\CommonBundle\Controller\TwigController
+        public: false
+        calls:
+            - [ "setContainer",         [ "@Psr\\Container\\ContainerInterface" ] ]
+            - [ "setJavascriptManager", [ "@wbw.common.manager.javascript" ] ]
+            - [ "setStylesheetManager", [ "@wbw.common.manager.stylesheet" ] ]
+        tags:
+            - { name: "container.service_subscriber" }
