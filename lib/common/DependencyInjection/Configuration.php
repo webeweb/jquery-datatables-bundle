@@ -21,7 +21,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  * Configuration.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\CoreBundle\DependencyInjection
+ * @package WBW\Bundle\CommonBundle\DependencyInjection
  */
 class Configuration implements ConfigurationInterface {
 
@@ -95,11 +95,11 @@ class Configuration implements ConfigurationInterface {
 
         $node
             ->children()
-                ->arrayNode("plugins")->info("Core plug-ins")
+                ->arrayNode("plugins")->info("Common plug-ins")
                     ->prototype("scalar")
                         ->validate()
                             ->ifNotInArray(array_keys($plugins))
-                            ->thenInvalid("The Core plug-in %s is not supported. Please choose one of " . json_encode(array_keys($plugins)))
+                            ->thenInvalid("The common plug-in %s is not supported. Please choose one of " . json_encode(array_keys($plugins)))
                         ->end()
                     ->end()
                 ->end()

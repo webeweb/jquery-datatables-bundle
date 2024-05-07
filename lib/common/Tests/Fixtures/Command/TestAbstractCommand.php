@@ -31,7 +31,7 @@ class TestAbstractCommand extends AbstractCommand {
      * {@inheritDoc}
      */
     protected function configure(): void {
-        $this->setName("wbw:core:abstract");
+        $this->setName("wbw:common:abstract");
     }
 
     /**
