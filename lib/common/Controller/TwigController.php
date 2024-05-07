@@ -59,7 +59,6 @@ class TwigController extends AbstractController {
      */
     public function functionAction(Request $request, string $name): Response {
 
-        /** @var Environment $twig */
         $twig = $this->getTwig();
 
         $function = $twig->getFunction($name);

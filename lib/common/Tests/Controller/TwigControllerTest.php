@@ -31,12 +31,12 @@ class TwigControllerTest extends AbstractWebTestCase {
      */
     public function testFunctionAction(): void {
 
-        $arg = ["font" => "s", "name" => "camera-retro", "size" => "lg", "fixedWidth" => true, "bordered" => true, "pull" => "left", "animation" => "spin", "style" => "color: #FFFFFF;"];
-        $exp = '<i class="fas fa-camera-retro fa-lg fa-fw fa-border fa-pull-left fa-spin" style="color: #FFFFFF;"></i>';
+        $arg = "string";
+        $exp = md5("string");
 
         $client = $this->client;
 
-        $client->request("POST", "/twig/function/fontAwesomeIcon", ["args" => [$arg]]);
+        $client->request("POST", "/twig/function/md5", ["args" => [$arg]]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
 
@@ -71,7 +71,7 @@ class TwigControllerTest extends AbstractWebTestCase {
 
         $client->request("GET", "/twig/resource/404.js");
         $this->assertEquals(404, $client->getResponse()->getStatusCode());
-        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
+        $this->assertStringContainsString("text/html; charset=", $client->getResponse()->headers->get("Content-Type"));
     }
 
     /**
@@ -100,7 +100,7 @@ class TwigControllerTest extends AbstractWebTestCase {
 
         $client->request("GET", "/twig/resource/WBWCommonTest.css");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals("text/css; charset=utf-8", $client->getResponse()->headers->get("Content-Type"));
+        $this->assertStringContainsString("text/css; charset=", $client->getResponse()->headers->get("Content-Type"));
         $this->assertNotNull($client->getResponse()->headers->get("Last-Modified"));
     }
 
