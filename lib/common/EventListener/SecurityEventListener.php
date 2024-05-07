@@ -14,11 +14,9 @@ declare(strict_types = 1);
 namespace WBW\Bundle\CommonBundle\EventListener;
 
 use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use WBW\Bundle\CommonBundle\Security\Core\User\UserHelper;
-use WBW\Bundle\CommonBundle\Security\Core\User\UserTrait;
 use WBW\Bundle\CommonBundle\Translation\TranslatorTrait;
 use WBW\Bundle\CommonBundle\WBWCommonBundle;
 
@@ -31,7 +29,6 @@ use WBW\Bundle\CommonBundle\WBWCommonBundle;
 class SecurityEventListener {
 
     use TranslatorTrait;
-    use UserTrait;
 
     /**
      * Service name.
@@ -44,11 +41,9 @@ class SecurityEventListener {
      * Constructor.
      *
      * @param TranslatorInterface $translator The translator.
-     * @param UserInterface|null $user The user.
      */
-    public function __construct(TranslatorInterface $translator, UserInterface $user = null) {
+    public function __construct(TranslatorInterface $translator) {
         $this->setTranslator($translator);
-        $this->setUser($user);
     }
 
     /**
@@ -59,8 +54,10 @@ class SecurityEventListener {
      */
     public function onInteractiveLogin(InteractiveLoginEvent $event): InteractiveLoginEvent {
 
+        $user = $event->getAuthenticationToken()->getUser();
+
         $message = $this->translate("message.welcome", [
-            "{{ identifier }}" => UserHelper::getIdentifier($this->getUser()),
+            "{{ identifier }}" => UserHelper::getIdentifier($user),
         ], WBWCommonBundle::getTranslationDomain());
 
         /** @var Session $session */

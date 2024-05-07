@@ -40,13 +40,6 @@ class SecurityEventListenerTest extends AbstractTestCase {
     private $translator;
 
     /**
-     * User.
-     *
-     * @var UserInterface|null
-     */
-    private $user;
-
-    /**
      * {@inheritDoc}
      */
     protected function setUp(): void {
@@ -55,9 +48,6 @@ class SecurityEventListenerTest extends AbstractTestCase {
         // Set a Translator mock.
         $this->translator = $this->getMockBuilder(TranslatorInterface::class)->getMock();
         $this->translator->expects($this->any())->method("trans")->willReturnCallback(DefaultTestCase::getTranslatorTransFunction());
-
-        // Set a User mock.
-        $this->user = $this->getMockBuilder(UserInterface::class)->getMock();
     }
 
     /**
@@ -67,8 +57,12 @@ class SecurityEventListenerTest extends AbstractTestCase {
      */
     public function testOnInteractiveLogin(): void {
 
+        // Set a User mock.
+        $user = $this->getMockBuilder(UserInterface::class)->getMock();
+
         // Set a Token mock.
         $token = $this->getMockBuilder(TokenInterface::class)->getMock();
+        $token->expects($this->any())->method("getUser")->willReturn($user);
 
         // Set a Flash bag mock.
         $flashBag = $this->getMockBuilder(FlashBagInterface::class)->getMock();
@@ -85,7 +79,7 @@ class SecurityEventListenerTest extends AbstractTestCase {
         // Set an Interactive login event mock.
         $event = new InteractiveLoginEvent($request, $token);
 
-        $obj = new SecurityEventListener($this->translator, $this->user);
+        $obj = new SecurityEventListener($this->translator);
 
         $this->assertSame($event, $obj->onInteractiveLogin($event));
     }
@@ -99,9 +93,8 @@ class SecurityEventListenerTest extends AbstractTestCase {
 
         $this->assertEquals("wbw.common.event_listener.security", SecurityEventListener::SERVICE_NAME);
 
-        $obj = new SecurityEventListener($this->translator, $this->user);
+        $obj = new SecurityEventListener($this->translator);
 
         $this->assertSame($this->translator, $obj->getTranslator());
-        $this->assertSame($this->user, $obj->getUser());
     }
 }
