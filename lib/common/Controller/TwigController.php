@@ -88,11 +88,8 @@ class TwigController extends AbstractController {
         $path = $twig->getLoader()->getSourceContext($view)->getPath();
 
         $time = filemtime($path);
-        if (false === $time) {
-            return null;
-        }
 
-        return new DateTime("@$time");
+        return false !== $time ? new DateTime("@$time") : null;
     }
 
     /**
