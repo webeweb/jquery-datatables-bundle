@@ -49,6 +49,10 @@ wbw_common_host:
     prefix:   "/host"
     resource: "@WBWCommonBundle/Resources/config/routing/host.yml"
 
+wbw_common_twig:
+    prefix:   "/twig"
+    resource: "@WBWCommonBundle/Resources/config/routing/twig.yml"
+
 wbw_common_assets_javascripts:
     path: "/common/assets/javascripts"
     defaults: { _controller: "WBW\\Bundle\\CommonBundle\\Tests\\Fixtures\\Controller\\TestViewsController::assetsJavascriptsAction" }
