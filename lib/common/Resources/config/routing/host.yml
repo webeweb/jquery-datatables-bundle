@@ -1,0 +1,15 @@
+# lib/common/Resources/config/routing/host.yml
+wbw_common_host_cpu:
+    path: "/cpu"
+    defaults: { _controller: "WBW\\Bundle\\CommonBundle\\Controller\\HostController::cpuAction" }
+    methods: [ "GET" ]
+
+wbw_common_host_hard_disks:
+    path: "/hard-disks"
+    defaults: { _controller: "WBW\\Bundle\\CommonBundle\\Controller\\HostController::hardDisksAction" }
+    methods: [ "GET" ]
+
+wbw_common_host_memory:
+    path: "/memory"
+    defaults: { _controller: "WBW\\Bundle\\CommonBundle\\Controller\\HostController::memoryAction" }
+    methods: [ "GET" ]
