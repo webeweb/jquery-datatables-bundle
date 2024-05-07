@@ -67,7 +67,6 @@ class SecurityEventListenerTest extends AbstractTestCase {
 
         // Set a Flash bag mock.
         $flashBag = $this->getMockBuilder(FlashBagInterface::class)->getMock();
-        $flashBag->expects($this->any())->method("add")->willReturn($flashBag);
 
         // Set a Session mock.
         $session = $this->getMockBuilder(Session::class)->getMock();
