@@ -53,7 +53,7 @@ class WBWCommonExtension extends Extension {
         $serviceLoader = new YamlFileLoader($container, $fileLocator);
         //$serviceLoader->load("colors.yml");
         $serviceLoader->load("commands.yml");
-        //$serviceLoader->load("controllers.yml");
+        $serviceLoader->load("controllers.yml");
         $serviceLoader->load("event_listeners.yml");
         $serviceLoader->load("managers.yml");
         //$serviceLoader->load("providers.yml");

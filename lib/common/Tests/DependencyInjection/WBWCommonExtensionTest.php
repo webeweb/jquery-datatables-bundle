@@ -22,6 +22,7 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 use Throwable;
 use Twig\Environment;
 use WBW\Bundle\CommonBundle\Command\UnzipAssetsCommand;
+use WBW\Bundle\CommonBundle\Controller\HostController;
 use WBW\Bundle\CommonBundle\DependencyInjection\WBWCommonExtension;
 use WBW\Bundle\CommonBundle\EventListener\KernelEventListener;
 use WBW\Bundle\CommonBundle\EventListener\NotificationEventListener;
@@ -116,6 +117,9 @@ class WBWCommonExtensionTest extends AbstractTestCase {
 
         // Commands
         $this->assertInstanceOf(UnzipAssetsCommand::class, $this->containerBuilder->get(UnzipAssetsCommand::SERVICE_NAME));
+
+        // Controllers
+        $this->assertInstanceOf(HostController::class, $this->containerBuilder->get(HostController::SERVICE_NAME));
 
         // Event listeners
         $this->assertInstanceOf(KernelEventListener::class, $this->containerBuilder->get(KernelEventListener::SERVICE_NAME));
