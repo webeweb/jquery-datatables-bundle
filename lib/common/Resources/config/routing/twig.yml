@@ -1,0 +1,10 @@
+# lib/common/Resources/config/routing/twig.yml
+wbw_common_twig_function:
+    path: "/function/{name}"
+    defaults: { _controller: "WBW\\Bundle\\CommonBundle\\Controller\\TwigController::functionAction" }
+    methods: [ "POST" ]
+
+wbw_common_twig_resource:
+    path: "/resource/{name}.{type}"
+    defaults: { _controller: "WBW\\Bundle\\CommonBundle\\Controller\\TwigController::resourceAction" }
+    methods: [ "GET" ]
