@@ -23,6 +23,7 @@ use Throwable;
 use Twig\Environment;
 use WBW\Bundle\CommonBundle\Command\UnzipAssetsCommand;
 use WBW\Bundle\CommonBundle\Controller\HostController;
+use WBW\Bundle\CommonBundle\Controller\TwigController;
 use WBW\Bundle\CommonBundle\DependencyInjection\WBWCommonExtension;
 use WBW\Bundle\CommonBundle\EventListener\KernelEventListener;
 use WBW\Bundle\CommonBundle\EventListener\NotificationEventListener;
@@ -123,6 +124,7 @@ class WBWCommonExtensionTest extends AbstractTestCase {
 
         // Controllers
         $this->assertInstanceOf(HostController::class, $this->containerBuilder->get(HostController::SERVICE_NAME));
+        $this->assertInstanceOf(TwigController::class, $this->containerBuilder->get(TwigController::SERVICE_NAME));
 
         // Event listeners
         $this->assertInstanceOf(KernelEventListener::class, $this->containerBuilder->get(KernelEventListener::SERVICE_NAME));
