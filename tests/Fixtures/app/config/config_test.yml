@@ -81,7 +81,6 @@ wbw_common:
         - "sweet_alert"
         - "sweet_alert2"
         - "syntax_highlighter"
-        - "twemoji"
         - "typed_js"
         - "wait_me"
     locales:
@@ -133,6 +132,7 @@ wbw_bootstrap:
         - "bootstrap_timepicker"
         - "bootstrap_wysiwyg"
         - "summernote"
+        - "twemoji"
     locales:
         bootstrap_datepicker: "fr"
         bootstrap_markdown:   "fr"

@@ -41,7 +41,7 @@ class WBWBootstrapBundleTest extends AbstractTestCase {
         $plugins = $assets["assets"]["wbw.bootstrap.assets"]["plugins"];
 
         $res = AssetsHelper::listAssets(__DIR__ . "/../Resources/assets");
-        $this->assertCount(25, $res);
+        $this->assertCount(26, $res);
 
         $i = -1;
         $this->assertRegExp("/bootstrap-" . preg_quote(WBWBootstrapBundle::BOOTSTRAP_VERSION_3, ".") . "\.zip$/", $res[++$i]);
@@ -68,6 +68,7 @@ class WBWBootstrapBundleTest extends AbstractTestCase {
         $this->assertRegExp("/moment-.*\.zip$/", $res[++$i]);
         $this->assertRegExp("/popper\.js-.*\.zip$/", $res[++$i]);
         $this->assertRegExp("/summernote-.*\.zip$/", $res[++$i]);
+        $this->assertRegExp("/twemoji-" . preg_quote($plugins["twemoji"]["version"]) . "\.zip$/", $res[++$i]);
         $this->assertRegExp("/wysihtml-.*\.zip$/", $res[++$i]);
     }
 

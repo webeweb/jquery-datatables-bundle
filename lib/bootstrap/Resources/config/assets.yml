@@ -332,3 +332,9 @@ assets:
                     - "vi-VN"
                     - "zh-CN"
                     - "zh-TW"
+            twemoji:
+                version:     "14.0.2"
+                description: "Twemoji"
+                stylesheets: [ ]
+                javascripts:
+                    - "/twemoji-{{ version }}/twemoji.min.js"
