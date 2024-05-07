@@ -1,0 +1,7 @@
+# lib/common/Resources/config/quote/worlds_wisdom.yml
+services:
+
+    wbw.common.provider.quote.worlds_wisdom:
+        class: WBW\Bundle\CommonBundle\Provider\Quote\WorldsWisdomQuoteProvider
+        tags:
+            - { name: "wbw.common.provider.quote" }
