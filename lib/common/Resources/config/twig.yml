@@ -17,3 +17,10 @@ services:
         arguments: [ "@twig", "@service_container" ]
         tags:
             - { name: "twig.extension" }
+
+    wbw.common.twig.extension.string:
+        class:  WBW\Bundle\CommonBundle\Twig\Extension\StringTwigExtension
+        public: false
+        arguments: [ "@twig" ]
+        tags:
+            - { name: "twig.extension" }
