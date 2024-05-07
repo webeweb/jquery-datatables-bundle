@@ -21,7 +21,7 @@ use WBW\Bundle\CommonBundle\WBWCommonBundle;
 use WBW\Library\Widget\Helper\AssetsHelper;
 
 /**
- * Core bundle test.
+ * Common bundle test.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Tests

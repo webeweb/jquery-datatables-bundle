@@ -27,7 +27,7 @@ use WBW\Bundle\CommonBundle\Provider\AssetsProviderInterface;
  * Common bundle.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\CoreBundle
+ * @package WBW\Bundle\CommonBundle
  */
 class WBWCommonBundle extends Bundle implements AssetsProviderInterface {
 
