@@ -1,0 +1,54 @@
+{# lib/common/Resources/views/assets/WBWCommonSweetAlert.js.twig #}
+/**
+ * Sweet alert.
+ */
+class WBWCommonSweetAlert {
+
+    /**
+     * Get the options "delete".
+     *
+     * @returns {Object} Returns the options.
+     */
+    static getOptionsDelete() {
+
+        return {
+            icon      : "warning",
+            title     : "{{ "swal.delete.title"|trans([], "WBWCommonBundle") }}",
+            text      : "{{ "swal.delete.text"|trans([], "WBWCommonBundle") }}",
+            buttons   : {
+                cancel : {
+                    text   : "{{ "label.cancel"|trans([], "WBWCommonBundle") }}",
+                    visible: true
+                },
+                confirm: true
+            },
+            dangerMode: true,
+            className : "WBWCommonSweetAlertDelete"
+        };
+    }
+
+    /**
+     * Get the options "error".
+     *
+     * @returns {Object} Returns the options.
+     */
+    static getOptionsError() {
+
+        return {
+            icon      : "error",
+            title     : "{{ "swal.error.title"|trans([], "WBWCommonBundle") }}",
+            text      : "{{ "swal.error.text"|trans([], "WBWCommonBundle") }}",
+            dangerMode: true,
+            className : "WBWCommonSweetAlertError"
+        };
+    }
+
+    /**
+     * Displays a sweet alert "error".
+     *
+     * @returns {SweetAlert} Returns the sweet alert.
+     */
+    static swalError() {
+        return swal(WBWCommonSweetAlert.getOptionsError());
+    }
+}
