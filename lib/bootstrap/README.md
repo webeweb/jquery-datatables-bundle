@@ -88,7 +88,6 @@ in the `app/AppKernel.php` file of your project:
         $bundles = [
             // ...
             new WBW\Bundle\BootstrapBundle\WBWBootstrapBundle(),
-            new WBW\Bundle\CommonBundle\WBWCommonBundle(),
         ];
 
         // ...
