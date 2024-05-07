@@ -57,6 +57,12 @@ services:
         alias:  "wbw.common.service.statement"
         public: true
 
+    wbw.common.tests.fixtures.provider.test_stylesheet:
+        class:  WBW\Bundle\CommonBundle\Tests\Fixtures\Provider\TestStylesheetProvider
+        public: true
+        tags:
+            - { name: "wbw.common.provider.stylesheet" }
+
     # === Bootstrap bundle ====================================================
     WBW\Bundle\BootstrapBundle\Tests\Fixtures\Controller\TestAbstractController:
         public: true
