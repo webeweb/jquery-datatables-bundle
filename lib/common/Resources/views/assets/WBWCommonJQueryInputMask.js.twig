@@ -1,0 +1,148 @@
+{# lib/common/Resources/views/assets/WBWCommonJQueryInputMask.js.twig #}
+/**
+ * jQuery InputMask.
+ */
+class WBWCommonJQueryInputMask {
+
+    /**
+     * Displays an input mask.
+     *
+     * @param {jQuery} $el The element.
+     * @param {String} mask The mask.
+     * @param {Object} options The options.
+     * @return {Inputmask} Returns the input mask.
+     */
+    static inputMask($el, mask = null, options = null) {
+        return $el.inputmask(mask, options);
+    }
+
+    /**
+     * Displays an input mask "date".
+     *
+     * @param {String} id The id attribute.
+     * @return {Inputmask} Returns the input mask.
+     */
+    static inputMaskDate(id) {
+
+        return WBWCommonJQueryInputMask.inputMask($(id), "99/99/9999", {
+            autoUnmask        : true,
+            removeMaskOnSubmit: true,
+            placeholder       : "__/__/____"
+        });
+    }
+
+    /**
+     * Displays an input mask "date/time".
+     *
+     * @param {String} id The id attribute.
+     * @return {Inputmask} Returns the input mask.
+     */
+    static inputMaskDateTime(id) {
+
+        return WBWCommonJQueryInputMask.inputMask($(id), "99/99/9999 99:99", {
+            autoUnmask        : true,
+            removeMaskOnSubmit: true,
+            placeholder       : "__/__/____ __:__"
+        });
+    }
+
+    /**
+     * Displays an input mask "IBAN".
+     *
+     * @param {String} id The id attribute.
+     * @return {Inputmask} Returns the input mask.
+     */
+    static inputMaskIban(id) {
+
+        return WBWCommonJQueryInputMask.inputMask($(id), "AA99 99999 99999 99999999999 99", {
+            autoUnmask        : true,
+            removeMaskOnSubmit: true,
+            placeholder       : "____ _____ _____ ___________ ___"
+        });
+    }
+
+    /**
+     * Displays an input mask "NAF code".
+     *
+     * @param {String} id The id attribute.
+     * @return {Inputmask} Returns the input mask.
+     */
+    static inputMaskNafCode(id) {
+
+        return WBWCommonJQueryInputMask.inputMask($(id), "9999A", {
+            autoUnmask        : true,
+            removeMaskOnSubmit: true,
+            placeholder       : "_____"
+        });
+    }
+
+    /**
+     * Displays an input mask "phone".
+     *
+     * @param {String} id The id attribute.
+     * @return {Inputmask} Returns the input mask.
+     */
+    static inputMaskPhone(id) {
+
+        return WBWCommonJQueryInputMask.inputMask($(id), "+99 9 99 99 99 99", {
+            autoUnmask        : true,
+            removeMaskOnSubmit: true,
+            placeholder       : "+__ _ __ __ __ __"
+        });
+    }
+
+    /**
+     * Displays an input mask "SIRET number".
+     *
+     * @param {String} id The id attribute.
+     * @return {Inputmask} Returns the input mask.
+     */
+    static inputMaskSiretNumber(id) {
+
+        return WBWCommonJQueryInputMask.inputMask($(id), "999 999 999 99999", {
+            autoUnmask        : true,
+            removeMaskOnSubmit: true,
+            placeholder       : "___ ___ ___ _____"
+        });
+    }
+
+    /**
+     * Displays an input mask "time".
+     *
+     * @param {String} id The id attribute.
+     * @return {Inputmask} Returns the input mask.
+     */
+    static inputMaskTime(id) {
+
+        return WBWCommonJQueryInputMask.inputMask($(id), "99:99", {
+            autoUnmask        : true,
+            removeMaskOnSubmit: true,
+            placeholder       : "99:99"
+        });
+    }
+
+    /**
+     * Displays an input mask "VAT number".
+     *
+     * @param {String} id The id attribute.
+     * @return {Inputmask} Returns the input mask.
+     */
+    static inputMaskVatNumber(id) {
+
+        return WBWCommonJQueryInputMask.inputMask($(id), "AA99 999 999 999", {
+            autoUnmask        : true,
+            removeMaskOnSubmit: true,
+            placeholder       : "_____ ___ ___ ___"
+        });
+    }
+
+    /**
+     * Remove an input mask.
+     *
+     * @param {jQuery} $el The element.
+     * @return {jQuery} Returns the element.
+     */
+    static unmask($el) {
+        return $el.inputmask("remove");
+    }
+}
