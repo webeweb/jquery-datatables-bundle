@@ -45,6 +45,10 @@ wbw_bootstrap_layout_work_in_progress:
     methods: [ "GET" ]
 
 # === Common bundle ===========================================================
+wbw_common_host:
+    prefix:   "/host"
+    resource: "@WBWCommonBundle/Resources/config/routing/host.yml"
+
 wbw_common_assets_javascripts:
     path: "/common/assets/javascripts"
     defaults: { _controller: "WBW\\Bundle\\CommonBundle\\Tests\\Fixtures\\Controller\\TestViewsController::assetsJavascriptsAction" }
