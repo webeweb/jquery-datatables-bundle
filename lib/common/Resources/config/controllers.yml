@@ -1,0 +1,14 @@
+# lib/common/Resources/config/controllers.yml
+services:
+
+    WBW\Bundle\CommonBundle\Controller\HostController:
+        alias:  "wbw.common.controller.host"
+        public: true
+
+    wbw.common.controller.host:
+        class:  WBW\Bundle\CommonBundle\Controller\HostController
+        public: false
+        calls:
+            - [ "setContainer", [ "@Psr\\Container\\ContainerInterface" ] ]
+        tags:
+            - { name: "container.service_subscriber" }
