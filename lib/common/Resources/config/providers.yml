@@ -1,7 +1,4 @@
 # lib/common/Resources/config/providers.yml
-imports:
-    - { resource: "quote/worlds_wisdom.yml" }
-
 services:
 
     wbw.common.provider.javascript:
