@@ -62,7 +62,7 @@ class SecurityEventListener {
 
         /** @var Session $session */
         $session = $event->getRequest()->getSession();
-        $session->getBag("flashes")->add("welcome", $message);
+        $session->getFlashBag()->add("welcome", $message);
 
         return $event;
     }

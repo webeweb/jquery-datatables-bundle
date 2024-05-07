@@ -15,6 +15,7 @@ namespace WBW\Bundle\CommonBundle\Tests\EventListener;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -69,8 +70,8 @@ class SecurityEventListenerTest extends AbstractTestCase {
         $flashBag->expects($this->any())->method("add")->willReturn($flashBag);
 
         // Set a Session mock.
-        $session = $this->getMockBuilder(SessionInterface::class)->getMock();
-        $session->expects($this->any())->method("getBag")->willReturn($flashBag);
+        $session = $this->getMockBuilder(Session::class)->getMock();
+        $session->expects($this->any())->method("getFlashBag")->willReturn($flashBag);
 
         // Set a Request mock.
         $request = $this->getMockBuilder(Request::class)->getMock();
