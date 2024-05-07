@@ -1,0 +1,8 @@
+# lib/common/Resources/config/providers.yml
+services:
+
+    wbw.common.provider.javascript:
+        class:  WBW\Bundle\CommonBundle\Provider\JavascriptProvider
+        public: false
+        tags:
+            - { name: "wbw.common.provider.javascript" }
