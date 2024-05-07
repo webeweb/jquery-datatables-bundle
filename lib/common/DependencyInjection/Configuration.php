@@ -107,6 +107,25 @@ class Configuration implements ConfigurationInterface {
     }
 
     /**
+     * Add a section "quote".
+     *
+     * @param ArrayNodeDefinition $node The node.
+     * @return void
+     * @formatter:off
+     */
+    private function addSectionQuote(ArrayNodeDefinition $node): void {
+
+        $node
+            ->children()
+                ->arrayNode("quote")->addDefaultsIfNotSet()
+                    ->children()
+                        ->booleanNode("worlds_wisdom")->defaultFalse()->info("Load World's wisdom")->end()
+                    ->end()
+                ->end()
+            ->end();
+    }
+
+    /**
      * Add a section "themes".
      *
      * @param ArrayNodeDefinition $node The node.
@@ -147,6 +166,7 @@ class Configuration implements ConfigurationInterface {
         $this->addSectionLocales($rootNode, $assets["assets"]["wbw.common.assets"]["plugins"]);
         $this->addSectionThemes($rootNode, $assets["assets"]["wbw.common.assets"]["plugins"]);
         $this->addSectionBrushes($rootNode, $assets["assets"]["wbw.common.assets"]["plugins"]["syntax_highlighter"]["brushes"]);
+        $this->addSectionQuote($rootNode);
 
         return $treeBuilder;
     }
