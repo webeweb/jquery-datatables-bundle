@@ -112,6 +112,8 @@ wbw_common:
             - "Sql"
             - "Vb"
             - "Xml"
+    quote:
+        worlds_wisdom: true
 
 # Bootstrap bundle
 wbw_bootstrap:
