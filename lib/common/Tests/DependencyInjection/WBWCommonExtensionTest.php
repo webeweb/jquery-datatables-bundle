@@ -74,7 +74,11 @@ class WBWCommonExtensionTest extends AbstractTestCase {
 
         // Set a configs array mock.
         $this->configs = [
-            WBWCommonExtension::EXTENSION_ALIAS => [],
+            WBWCommonExtension::EXTENSION_ALIAS => [
+                "quote" => [
+                    "worlds_wisdom" => true,
+                ],
+            ],
         ];
 
         // Set an Entity manager mock.
