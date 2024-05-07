@@ -19,6 +19,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 use Throwable;
 use Twig\Environment;
 use WBW\Bundle\CommonBundle\Command\UnzipAssetsCommand;
@@ -27,6 +28,7 @@ use WBW\Bundle\CommonBundle\Controller\TwigController;
 use WBW\Bundle\CommonBundle\DependencyInjection\WBWCommonExtension;
 use WBW\Bundle\CommonBundle\EventListener\KernelEventListener;
 use WBW\Bundle\CommonBundle\EventListener\NotificationEventListener;
+use WBW\Bundle\CommonBundle\EventListener\SecurityEventListener;
 use WBW\Bundle\CommonBundle\EventListener\ToastEventListener;
 use WBW\Bundle\CommonBundle\Manager\ColorManager;
 use WBW\Bundle\CommonBundle\Manager\JavascriptManager;
@@ -75,7 +77,8 @@ class WBWCommonExtensionTest extends AbstractTestCase {
         // Set a configs array mock.
         $this->configs = [
             WBWCommonExtension::EXTENSION_ALIAS => [
-                "quote" => [
+                "security" => true,
+                "quote"    => [
                     "worlds_wisdom" => true,
                 ],
             ],
@@ -93,6 +96,9 @@ class WBWCommonExtensionTest extends AbstractTestCase {
         // Set a Token storage mock.
         $tokenStorage = $this->getMockBuilder(TokenStorageInterface::class)->getMock();
 
+        // Set a Translator mock.
+        $translator = $this->getMockBuilder(TranslatorInterface::class)->getMock();
+
         // Set a Twig environment mock.
         $twigEnvironment = $this->getMockBuilder(Environment::class)->disableOriginalConstructor()->getMock();
 
@@ -109,6 +115,7 @@ class WBWCommonExtensionTest extends AbstractTestCase {
         $this->containerBuilder->set("logger", $logger);
         $this->containerBuilder->set("router", $router);
         $this->containerBuilder->set("security.token_storage", $tokenStorage);
+        $this->containerBuilder->set("translator", $translator);
         $this->containerBuilder->set("twig", $twigEnvironment);
 
         $this->containerBuilder->set("Psr\\Container\\ContainerInterface", $this->containerBuilder);
@@ -136,6 +143,7 @@ class WBWCommonExtensionTest extends AbstractTestCase {
         // Event listeners
         $this->assertInstanceOf(KernelEventListener::class, $this->containerBuilder->get(KernelEventListener::SERVICE_NAME));
         $this->assertInstanceOf(NotificationEventListener::class, $this->containerBuilder->get(NotificationEventListener::SERVICE_NAME));
+        $this->assertInstanceOf(SecurityEventListener::class, $this->containerBuilder->get(SecurityEventListener::SERVICE_NAME));
         $this->assertInstanceOf(ToastEventListener::class, $this->containerBuilder->get(ToastEventListener::SERVICE_NAME));
 
         // Managers

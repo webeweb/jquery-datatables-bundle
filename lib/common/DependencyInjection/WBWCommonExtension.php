@@ -69,6 +69,10 @@ class WBWCommonExtension extends Extension {
             $serviceLoader->load("quote/worlds_wisdom.yml");
         }
 
+        if (true === $config["security"]) {
+            $serviceLoader->load("security.yml");
+        }
+
         ContainerHelper::setParameter($container, $config, $this->getAlias(), "plugins");
         ContainerHelper::setParameter($container, $config, $this->getAlias(), "locales");
         ContainerHelper::setParameter($container, $config, $this->getAlias(), "themes");
