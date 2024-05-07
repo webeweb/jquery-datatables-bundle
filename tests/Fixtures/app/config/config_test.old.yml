@@ -112,6 +112,7 @@ wbw_common:
             - "Sql"
             - "Vb"
             - "Xml"
+    security: true
     quote:
         worlds_wisdom: true
 
