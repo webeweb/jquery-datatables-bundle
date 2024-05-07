@@ -17,6 +17,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\ServerBag;
 use WBW\Bundle\CommonBundle\Controller\HostController;
 use WBW\Bundle\CommonBundle\Tests\DefaultWebTestCase as AbstractWebTestCase;
+use WBW\Library\Common\Serializer\SerializerKeys as BaseSerializerKeys;
 
 /**
  * Host controller test.
@@ -43,24 +44,19 @@ class HostControllerTest extends AbstractWebTestCase {
         $res = json_decode($client->getResponse()->getContent(), true);
         $this->assertCount(4, $res);
 
-        $this->assertArrayHasKey("success", $res);
-        $this->assertArrayHasKey("message", $res);
-        $this->assertArrayHasKey("errors", $res);
-        $this->assertArrayHasKey("data", $res);
+        $this->assertTrue($res[BaseSerializerKeys::SUCCESS]);
+        $this->assertNull($res[BaseSerializerKeys::MESSAGE]);
+        $this->assertNull($res[BaseSerializerKeys::ERRORS]);
+        $this->assertCount(8, $res[BaseSerializerKeys::DATA]);
 
-        $this->assertTrue($res["success"]);
-        $this->assertNull($res["message"]);
-        $this->assertNull($res["errors"]);
-        $this->assertCount(8, $res["data"]);
-
-        $this->assertArrayHasKey("us", $res["data"]);
-        $this->assertArrayHasKey("sy", $res["data"]);
-        $this->assertArrayHasKey("ni", $res["data"]);
-        $this->assertArrayHasKey("id", $res["data"]);
-        $this->assertArrayHasKey("wa", $res["data"]);
-        $this->assertArrayHasKey("hi", $res["data"]);
-        $this->assertArrayHasKey("si", $res["data"]);
-        $this->assertArrayHasKey("st", $res["data"]);
+        $this->assertArrayHasKey(BaseSerializerKeys::US, $res[BaseSerializerKeys::DATA]);
+        $this->assertArrayHasKey(BaseSerializerKeys::SY, $res[BaseSerializerKeys::DATA]);
+        $this->assertArrayHasKey(BaseSerializerKeys::NI, $res[BaseSerializerKeys::DATA]);
+        $this->assertArrayHasKey(BaseSerializerKeys::ID, $res[BaseSerializerKeys::DATA]);
+        $this->assertArrayHasKey(BaseSerializerKeys::WA, $res[BaseSerializerKeys::DATA]);
+        $this->assertArrayHasKey(BaseSerializerKeys::HI, $res[BaseSerializerKeys::DATA]);
+        $this->assertArrayHasKey(BaseSerializerKeys::SI, $res[BaseSerializerKeys::DATA]);
+        $this->assertArrayHasKey(BaseSerializerKeys::ST, $res[BaseSerializerKeys::DATA]);
     }
 
     /**
@@ -80,23 +76,18 @@ class HostControllerTest extends AbstractWebTestCase {
         $res = json_decode($client->getResponse()->getContent(), true);
         $this->assertCount(4, $res);
 
-        $this->assertArrayHasKey("success", $res);
-        $this->assertArrayHasKey("message", $res);
-        $this->assertArrayHasKey("errors", $res);
-        $this->assertArrayHasKey("data", $res);
+        $this->assertTrue($res[BaseSerializerKeys::SUCCESS]);
+        $this->assertNull($res[BaseSerializerKeys::MESSAGE]);
+        $this->assertNull($res[BaseSerializerKeys::ERRORS]);
+        $this->assertNotCount(0, $res[BaseSerializerKeys::DATA]);
 
-        $this->assertTrue($res["success"]);
-        $this->assertNull($res["message"]);
-        $this->assertNull($res["errors"]);
-        $this->assertNotCount(0, $res["data"]);
-
-        $this->assertArrayHasKey("available", $res["data"][0]);
-        $this->assertArrayHasKey("fileSystem", $res["data"][0]);
-        $this->assertArrayHasKey("mountedOn", $res["data"][0]);
-        $this->assertArrayHasKey("name", $res["data"][0]);
-        $this->assertArrayHasKey("type", $res["data"][0]);
-        $this->assertArrayHasKey("used", $res["data"][0]);
-        $this->assertArrayHasKey("usePercent", $res["data"][0]);
+        $this->assertArrayHasKey(BaseSerializerKeys::AVAILABLE, $res[BaseSerializerKeys::DATA][0]);
+        $this->assertArrayHasKey(BaseSerializerKeys::FILE_SYSTEM, $res[BaseSerializerKeys::DATA][0]);
+        $this->assertArrayHasKey(BaseSerializerKeys::MOUNTED_ON, $res[BaseSerializerKeys::DATA][0]);
+        $this->assertArrayHasKey(BaseSerializerKeys::NAME, $res[BaseSerializerKeys::DATA][0]);
+        $this->assertArrayHasKey(BaseSerializerKeys::TYPE, $res[BaseSerializerKeys::DATA][0]);
+        $this->assertArrayHasKey(BaseSerializerKeys::USED, $res[BaseSerializerKeys::DATA][0]);
+        $this->assertArrayHasKey(BaseSerializerKeys::USE_PERCENT, $res[BaseSerializerKeys::DATA][0]);
     }
 
     /**
@@ -116,21 +107,16 @@ class HostControllerTest extends AbstractWebTestCase {
         $res = json_decode($client->getResponse()->getContent(), true);
         $this->assertCount(4, $res);
 
-        $this->assertArrayHasKey("success", $res);
-        $this->assertArrayHasKey("message", $res);
-        $this->assertArrayHasKey("errors", $res);
-        $this->assertArrayHasKey("data", $res);
+        $this->assertTrue($res[BaseSerializerKeys::SUCCESS]);
+        $this->assertNull($res[BaseSerializerKeys::MESSAGE]);
+        $this->assertNull($res[BaseSerializerKeys::ERRORS]);
+        $this->assertNotCount(0, $res[BaseSerializerKeys::DATA]);
 
-        $this->assertTrue($res["success"]);
-        $this->assertNull($res["message"]);
-        $this->assertNull($res["errors"]);
-        $this->assertNotCount(0, $res["data"]);
-
-        $this->assertArrayHasKey("MemAvailable", $res["data"]);
-        $this->assertArrayHasKey("MemFree", $res["data"]);
-        $this->assertArrayHasKey("MemTotal", $res["data"]);
-        $this->assertArrayHasKey("SwapFree", $res["data"]);
-        $this->assertArrayHasKey("SwapTotal", $res["data"]);
+        $this->assertArrayHasKey("MemAvailable", $res[BaseSerializerKeys::DATA]);
+        $this->assertArrayHasKey("MemFree", $res[BaseSerializerKeys::DATA]);
+        $this->assertArrayHasKey("MemTotal", $res[BaseSerializerKeys::DATA]);
+        $this->assertArrayHasKey("SwapFree", $res[BaseSerializerKeys::DATA]);
+        $this->assertArrayHasKey("SwapTotal", $res[BaseSerializerKeys::DATA]);
     }
 
     /**
