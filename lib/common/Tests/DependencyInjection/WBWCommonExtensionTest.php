@@ -101,6 +101,8 @@ class WBWCommonExtensionTest extends AbstractTestCase {
         $this->containerBuilder->set("router", $router);
         $this->containerBuilder->set("security.token_storage", $tokenStorage);
         $this->containerBuilder->set("twig", $twigEnvironment);
+
+        $this->containerBuilder->set("Psr\\Container\\ContainerInterface", $this->containerBuilder);
     }
 
     /**
