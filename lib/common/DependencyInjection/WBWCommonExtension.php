@@ -56,7 +56,7 @@ class WBWCommonExtension extends Extension {
         $serviceLoader->load("controllers.yml");
         $serviceLoader->load("event_listeners.yml");
         $serviceLoader->load("managers.yml");
-        //$serviceLoader->load("providers.yml");
+        $serviceLoader->load("providers.yml");
         $serviceLoader->load("services.yml");
         $serviceLoader->load("twig.yml");
 

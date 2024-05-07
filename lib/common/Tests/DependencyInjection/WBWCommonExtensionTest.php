@@ -32,6 +32,7 @@ use WBW\Bundle\CommonBundle\Manager\JavascriptManager;
 use WBW\Bundle\CommonBundle\Manager\LayoutManager;
 use WBW\Bundle\CommonBundle\Manager\QuoteManager;
 use WBW\Bundle\CommonBundle\Manager\StylesheetManager;
+use WBW\Bundle\CommonBundle\Provider\JavascriptProvider;
 use WBW\Bundle\CommonBundle\Service\SessionService;
 use WBW\Bundle\CommonBundle\Service\StatementService;
 use WBW\Bundle\CommonBundle\Service\TokenService;
@@ -134,6 +135,9 @@ class WBWCommonExtensionTest extends AbstractTestCase {
         $this->assertInstanceOf(LayoutManager::class, $this->containerBuilder->get(LayoutManager::SERVICE_NAME));
         $this->assertInstanceOf(QuoteManager::class, $this->containerBuilder->get(QuoteManager::SERVICE_NAME));
         $this->assertInstanceOf(StylesheetManager::class, $this->containerBuilder->get(StylesheetManager::SERVICE_NAME));
+
+        // Providers
+        $this->assertInstanceOf(JavascriptProvider::class, $this->containerBuilder->get(JavascriptProvider::SERVICE_NAME));
 
         // Services
         $this->assertInstanceOf(SessionService::class, $this->containerBuilder->get(SessionService::SERVICE_NAME));
