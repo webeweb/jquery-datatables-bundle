@@ -85,11 +85,8 @@ class TwigController extends AbstractController {
     protected function getLastModified(string $view): ?DateTime {
 
         $twig = $this->getTwig();
-        if (null === $twig) {
-            return null;
-        }
-
         $path = $twig->getLoader()->getSourceContext($view)->getPath();
+
         $time = filemtime($path);
         if (false === $time) {
             return null;
