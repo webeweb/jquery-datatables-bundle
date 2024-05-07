@@ -15,6 +15,7 @@ namespace WBW\Bundle\CommonBundle\Tests\EventDispatcher;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
+use WBW\Bundle\CommonBundle\Tests\Fixtures\Event\TestAbstractEvent;
 use WBW\Bundle\CommonBundle\Tests\Fixtures\EventDispatcher\TestEventDispatcherTrait;
 
 /**
@@ -24,6 +25,29 @@ use WBW\Bundle\CommonBundle\Tests\Fixtures\EventDispatcher\TestEventDispatcherTr
  * @package WBW\Bundle\CommonBundle\Tests\EventDispatcher
  */
 class EventDispatcherTraitTest extends AbstractTestCase {
+
+    /**
+     * Test dispatch()
+     *
+     * @return void
+     */
+    public function testDispatch(): void {
+
+        // Set an Event mock.
+        $event = new TestAbstractEvent("test");
+
+        // Set an Event dispatcher mock.
+        $eventDispatcher = $this->getMockBuilder(EventDispatcherInterface::class)->getMock();
+        $eventDispatcher->expects($this->any())->method("dispatch")->willReturn($event);
+
+        $obj = new TestEventDispatcherTrait();
+
+        $obj->setEventDispatcher($eventDispatcher);
+        $this->assertSame($event, $obj->dispatch($event));
+
+        $obj->setEventDispatcher(null);
+        $this->assertSame($event, $obj->dispatch($event));
+    }
 
     /**
      * Test setEventDispatcher()

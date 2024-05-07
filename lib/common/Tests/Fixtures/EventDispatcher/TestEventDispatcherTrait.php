@@ -24,6 +24,7 @@ use WBW\Bundle\CommonBundle\EventDispatcher\EventDispatcherTrait;
 class TestEventDispatcherTrait {
 
     use EventDispatcherTrait {
+        dispatch as public;
         setEventDispatcher as public;
     }
 }
