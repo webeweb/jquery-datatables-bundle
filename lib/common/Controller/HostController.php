@@ -78,7 +78,7 @@ class HostController extends AbstractController {
     /**
      * Retrieve the information "database".
      *
-     * @return array Returns the information "database".
+     * @return array<string,mixed> Returns the information "database".
      */
     public function retrieveInformationDatabase(): array {
 
@@ -103,7 +103,7 @@ class HostController extends AbstractController {
      * Retrieve the information "server".
      *
      * @param Request $request The request.
-     * @return array Returns the information "server".
+     * @return array<string,mixed> Returns the information "server".
      */
     public function retrieveInformationServer(Request $request): array {
 
