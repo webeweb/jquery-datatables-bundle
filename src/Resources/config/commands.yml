@@ -1,8 +1,8 @@
 # src/Resources/config/commands.yml
 services:
 
-    wbw.datatables.command.list_provider:
-        class:  WBW\Bundle\DataTablesBundle\Command\ListDataTablesProviderCommand
+    wbw.datatables.command.provider_list:
+        class:  WBW\Bundle\DataTablesBundle\Command\DataTablesProviderListCommand
         public: false
         calls:
             - [ "setDataTablesManager", [ "@wbw.datatables.manager" ] ]

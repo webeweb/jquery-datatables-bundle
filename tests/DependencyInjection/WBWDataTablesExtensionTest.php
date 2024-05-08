@@ -20,7 +20,7 @@ use Symfony\Component\Routing\RouterInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Throwable;
 use Twig\Environment;
-use WBW\Bundle\DataTablesBundle\Command\ListDataTablesProviderCommand;
+use WBW\Bundle\DataTablesBundle\Command\DataTablesProviderListCommand;
 use WBW\Bundle\DataTablesBundle\Controller\DataTablesController;
 use WBW\Bundle\DataTablesBundle\DependencyInjection\Configuration;
 use WBW\Bundle\DataTablesBundle\DependencyInjection\WBWDataTablesExtension;
@@ -127,7 +127,7 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
         $obj->load($this->configs, $this->containerBuilder);
 
         // Commands
-        $this->assertInstanceOf(ListDataTablesProviderCommand::class, $this->containerBuilder->get(ListDataTablesProviderCommand::SERVICE_NAME));
+        $this->assertInstanceOf(DataTablesProviderListCommand::class, $this->containerBuilder->get(DataTablesProviderListCommand::SERVICE_NAME));
 
         // Controllers
         $this->assertInstanceOf(DataTablesController::class, $this->containerBuilder->get(DataTablesController::SERVICE_NAME));

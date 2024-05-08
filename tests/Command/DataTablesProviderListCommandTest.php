@@ -15,17 +15,17 @@ namespace WBW\Bundle\DataTablesBundle\Tests\Command;
 
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
-use WBW\Bundle\DataTablesBundle\Command\ListDataTablesProviderCommand;
+use WBW\Bundle\DataTablesBundle\Command\DataTablesProviderListCommand;
 use WBW\Bundle\DataTablesBundle\Manager\DataTablesManager;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractWebTestCase;
 
 /**
- * List DataTables provider command test.
+ * DataTables provider list command test.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Tests\Command
  */
-class ListDataTablesProviderCommandTest extends AbstractWebTestCase {
+class DataTablesProviderListCommandTest extends AbstractWebTestCase {
 
     /**
      * Test execute()
@@ -34,7 +34,7 @@ class ListDataTablesProviderCommandTest extends AbstractWebTestCase {
      */
     public function testExecute(): void {
 
-        $obj = new ListDataTablesProviderCommand();
+        $obj = new DataTablesProviderListCommand();
         $obj->setDataTablesManager(static::$kernel->getContainer()->get(DataTablesManager::SERVICE_NAME . ".alias"));
         $obj->setTranslator(static::$kernel->getContainer()->get("translator"));
 
@@ -43,7 +43,7 @@ class ListDataTablesProviderCommandTest extends AbstractWebTestCase {
         $application->add($obj);
 
         // Set a Command mock.
-        $command = $application->find(ListDataTablesProviderCommand::COMMAND_NAME);
+        $command = $application->find(DataTablesProviderListCommand::COMMAND_NAME);
 
         // Set a Command tester.
         $commandTester = new CommandTester($command);
@@ -65,13 +65,13 @@ class ListDataTablesProviderCommandTest extends AbstractWebTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw.datatables.command.list_provider", ListDataTablesProviderCommand::SERVICE_NAME);
-        $this->assertEquals("wbw:datatables:provider:list", ListDataTablesProviderCommand::COMMAND_NAME);
+        $this->assertEquals("wbw.datatables.command.provider_list", DataTablesProviderListCommand::SERVICE_NAME);
+        $this->assertEquals("wbw:datatables:provider:list", DataTablesProviderListCommand::COMMAND_NAME);
 
-        $obj = new ListDataTablesProviderCommand();
+        $obj = new DataTablesProviderListCommand();
 
         $this->assertEquals("List the DataTables providers", $obj->getDescription());
         $this->assertNotNull($obj->getHelp());
-        $this->assertEquals(ListDataTablesProviderCommand::COMMAND_NAME, $obj->getName());
+        $this->assertEquals(DataTablesProviderListCommand::COMMAND_NAME, $obj->getName());
     }
 }

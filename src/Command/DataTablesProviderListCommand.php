@@ -20,12 +20,12 @@ use WBW\Bundle\DataTablesBundle\Provider\DataTablesCsvExporterInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 
 /**
- * List DataTables provider command.
+ * DataTables provider list command.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Command
  */
-class ListDataTablesProviderCommand extends AbstractCommand {
+class DataTablesProviderListCommand extends AbstractCommand {
 
     use DataTablesManagerTrait {
         setDataTablesManager as public;
@@ -43,7 +43,7 @@ class ListDataTablesProviderCommand extends AbstractCommand {
      *
      * @var string
      */
-    public const SERVICE_NAME = "wbw.datatables.command.list_provider";
+    public const SERVICE_NAME = "wbw.datatables.command.provider_list";
 
     /**
      * {@inheritDoc}
