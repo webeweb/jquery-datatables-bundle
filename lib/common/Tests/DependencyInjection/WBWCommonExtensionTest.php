@@ -23,7 +23,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 use Throwable;
 use Twig\Environment;
 use WBW\Bundle\CommonBundle\Command\JavascriptProviderListCommand;
-use WBW\Bundle\CommonBundle\Command\ListQuoteProviderCommand;
+use WBW\Bundle\CommonBundle\Command\QuoteProviderListCommand;
 use WBW\Bundle\CommonBundle\Command\ListStylesheetProviderCommand;
 use WBW\Bundle\CommonBundle\Command\UnzipAssetsCommand;
 use WBW\Bundle\CommonBundle\Controller\HostController;
@@ -138,7 +138,7 @@ class WBWCommonExtensionTest extends AbstractTestCase {
 
         // Commands
         $this->assertInstanceOf(JavascriptProviderListCommand::class, $this->containerBuilder->get(JavascriptProviderListCommand::SERVICE_NAME));
-        $this->assertInstanceOf(ListQuoteProviderCommand::class, $this->containerBuilder->get(ListQuoteProviderCommand::SERVICE_NAME));
+        $this->assertInstanceOf(QuoteProviderListCommand::class, $this->containerBuilder->get(QuoteProviderListCommand::SERVICE_NAME));
         $this->assertInstanceOf(ListStylesheetProviderCommand::class, $this->containerBuilder->get(ListStylesheetProviderCommand::SERVICE_NAME));
         $this->assertInstanceOf(UnzipAssetsCommand::class, $this->containerBuilder->get(UnzipAssetsCommand::SERVICE_NAME));
 

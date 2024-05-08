@@ -10,8 +10,8 @@ services:
         tags:
             - { name: "console.command" }
 
-    wbw.common.command.list_quote_provider:
-        class:  WBW\Bundle\CommonBundle\Command\ListQuoteProviderCommand
+    wbw.common.command.quote_provider_list:
+        class:  WBW\Bundle\CommonBundle\Command\QuoteProviderListCommand
         public: false
         calls:
             - [ "setQuoteManager", [ "@wbw.common.manager.quote" ] ]

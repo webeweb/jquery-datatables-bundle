@@ -15,17 +15,17 @@ namespace WBW\Bundle\CommonBundle\Tests\Command;
 
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
-use WBW\Bundle\CommonBundle\Command\ListQuoteProviderCommand;
+use WBW\Bundle\CommonBundle\Command\QuoteProviderListCommand;
 use WBW\Bundle\CommonBundle\Manager\QuoteManager;
 use WBW\Bundle\CommonBundle\Tests\DefaultWebTestCase as AbstractWebTestCase;
 
 /**
- * List quote provider command test.
+ * Quote provider list command test.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Tests\Command
  */
-class ListQuoteProviderCommandTest extends AbstractWebTestCase {
+class QuoteProviderListCommandTest extends AbstractWebTestCase {
 
     /**
      * Test execute()
@@ -34,7 +34,7 @@ class ListQuoteProviderCommandTest extends AbstractWebTestCase {
      */
     public function testExecute(): void {
 
-        $obj = new ListQuoteProviderCommand();
+        $obj = new QuoteProviderListCommand();
         $obj->setQuoteManager(static::$kernel->getContainer()->get(QuoteManager::SERVICE_NAME . ".alias"));
         $obj->setTranslator(static::$kernel->getContainer()->get("translator"));
 
@@ -43,7 +43,7 @@ class ListQuoteProviderCommandTest extends AbstractWebTestCase {
         $application->add($obj);
 
         // Set a Command mock.
-        $command = $application->find(ListQuoteProviderCommand::COMMAND_NAME);
+        $command = $application->find(QuoteProviderListCommand::COMMAND_NAME);
 
         // Set a Command tester.
         $commandTester = new CommandTester($command);
@@ -65,13 +65,13 @@ class ListQuoteProviderCommandTest extends AbstractWebTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw:common:quote:provider:list", ListQuoteProviderCommand::COMMAND_NAME);
-        $this->assertEquals("wbw.common.command.list_quote_provider", ListQuoteProviderCommand::SERVICE_NAME);
+        $this->assertEquals("wbw:common:quote:provider:list", QuoteProviderListCommand::COMMAND_NAME);
+        $this->assertEquals("wbw.common.command.quote_provider_list", QuoteProviderListCommand::SERVICE_NAME);
 
-        $obj = new ListQuoteProviderCommand();
+        $obj = new QuoteProviderListCommand();
 
         $this->assertEquals("List the quote providers", $obj->getDescription());
         $this->assertNotNull($obj->getHelp());
-        $this->assertEquals(ListQuoteProviderCommand::COMMAND_NAME, $obj->getName());
+        $this->assertEquals(QuoteProviderListCommand::COMMAND_NAME, $obj->getName());
     }
 }

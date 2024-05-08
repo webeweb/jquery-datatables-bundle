@@ -21,12 +21,12 @@ use WBW\Bundle\CommonBundle\Provider\QuoteProviderInterface;
 use WBW\Bundle\CommonBundle\WBWCommonBundle;
 
 /**
- * List quote provider command.
+ * Quote provider list command.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Command
  */
-class ListQuoteProviderCommand extends AbstractCommand {
+class QuoteProviderListCommand extends AbstractCommand {
 
     use QuoteManagerTrait {
         setQuoteManager as public;
@@ -44,7 +44,7 @@ class ListQuoteProviderCommand extends AbstractCommand {
      *
      * @var string
      */
-    public const SERVICE_NAME = "wbw.common.command.list_quote_provider";
+    public const SERVICE_NAME = "wbw.common.command.quote_provider_list";
 
     /**
      * {@inheritDoc}
