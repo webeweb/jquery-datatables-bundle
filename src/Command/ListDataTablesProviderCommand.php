@@ -73,7 +73,7 @@ class ListDataTablesProviderCommand extends AbstractCommand {
         $this->sortRows($rows);
 
         $io->table($this->getHeaders(), $rows);
-        $this->displayFooter($io, count($rows), "message.command.provider.list.success", "message.command.provider.list.warning");
+        $this->displayFooter($io, count($rows), "command.footer.list_provider.success", "command.footer.list_provider.warning");
 
         return 0;
     }
@@ -86,11 +86,11 @@ class ListDataTablesProviderCommand extends AbstractCommand {
     protected function getHeaders(): array {
 
         return [
-            $this->translate("header.name", [], null, "en"),
-            $this->translate("header.service", [], null, "en"),
-            $this->translate("header.columns", [], null, "en"),
-            $this->translate("header.prefix", [], null, "en"),
-            $this->translate("header.view", [], null, "en"),
+            $this->translate("command.header.name", [], null, "en"),
+            $this->translate("command.header.service", [], null, "en"),
+            $this->translate("command.header.columns", [], null, "en"),
+            $this->translate("command.header.prefix", [], null, "en"),
+            $this->translate("command.header.view", [], null, "en"),
             "CSV",
         ];
     }
