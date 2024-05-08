@@ -1,6 +1,12 @@
 # lib/common/Resources/config/commands.yml
 services:
 
+    wbw.common.command.assets_unzip:
+        class:  WBW\Bundle\CommonBundle\Command\AssetsUnzipCommand
+        public: false
+        tags:
+            - { name: "console.command" }
+
     wbw.common.command.javascript_provider_list:
         class:  WBW\Bundle\CommonBundle\Command\JavascriptProviderListCommand
         public: false
@@ -25,11 +31,5 @@ services:
         calls:
             - [ "setStylesheetManager", [ "@wbw.common.manager.stylesheet" ] ]
             - [ "setTranslator",        [ "@translator" ] ]
-        tags:
-            - { name: "console.command" }
-
-    wbw.common.command.unzip_assets:
-        class:  WBW\Bundle\CommonBundle\Command\UnzipAssetsCommand
-        public: false
         tags:
             - { name: "console.command" }

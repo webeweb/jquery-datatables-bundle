@@ -20,12 +20,12 @@ use WBW\Bundle\CommonBundle\Provider\AssetsProviderInterface;
 use WBW\Library\Widget\Helper\AssetsHelper;
 
 /**
- * Unzip assets command.
+ * Assets unzip command.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Command
  */
-class UnzipAssetsCommand extends AbstractCommand {
+class AssetsUnzipCommand extends AbstractCommand {
 
     /**
      * Command name.
@@ -39,7 +39,7 @@ class UnzipAssetsCommand extends AbstractCommand {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.common.command.unzip_assets";
+    const SERVICE_NAME = "wbw.common.command.assets_unzip";
 
     /**
      * {@inheritDoc}

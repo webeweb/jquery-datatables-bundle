@@ -25,7 +25,7 @@ use Twig\Environment;
 use WBW\Bundle\CommonBundle\Command\JavascriptProviderListCommand;
 use WBW\Bundle\CommonBundle\Command\QuoteProviderListCommand;
 use WBW\Bundle\CommonBundle\Command\StylesheetProviderListCommand;
-use WBW\Bundle\CommonBundle\Command\UnzipAssetsCommand;
+use WBW\Bundle\CommonBundle\Command\AssetsUnzipCommand;
 use WBW\Bundle\CommonBundle\Controller\HostController;
 use WBW\Bundle\CommonBundle\Controller\TwigController;
 use WBW\Bundle\CommonBundle\DependencyInjection\WBWCommonExtension;
@@ -137,10 +137,10 @@ class WBWCommonExtensionTest extends AbstractTestCase {
         $obj->load($this->configs, $this->containerBuilder);
 
         // Commands
+        $this->assertInstanceOf(AssetsUnzipCommand::class, $this->containerBuilder->get(AssetsUnzipCommand::SERVICE_NAME));
         $this->assertInstanceOf(JavascriptProviderListCommand::class, $this->containerBuilder->get(JavascriptProviderListCommand::SERVICE_NAME));
         $this->assertInstanceOf(QuoteProviderListCommand::class, $this->containerBuilder->get(QuoteProviderListCommand::SERVICE_NAME));
         $this->assertInstanceOf(StylesheetProviderListCommand::class, $this->containerBuilder->get(StylesheetProviderListCommand::SERVICE_NAME));
-        $this->assertInstanceOf(UnzipAssetsCommand::class, $this->containerBuilder->get(UnzipAssetsCommand::SERVICE_NAME));
 
         // Controllers
         $this->assertInstanceOf(HostController::class, $this->containerBuilder->get(HostController::SERVICE_NAME));
