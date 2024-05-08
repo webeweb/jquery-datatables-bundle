@@ -15,17 +15,17 @@ namespace WBW\Bundle\CommonBundle\Tests\Command;
 
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
-use WBW\Bundle\CommonBundle\Command\ListStylesheetProviderCommand;
+use WBW\Bundle\CommonBundle\Command\StylesheetProviderListCommand;
 use WBW\Bundle\CommonBundle\Manager\StylesheetManager;
 use WBW\Bundle\CommonBundle\Tests\DefaultWebTestCase as AbstractWebTestCase;
 
 /**
- * List stylesheet provider command test.
+ * Stylesheet provider list command test.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Tests\Command
  */
-class ListStylesheetProviderCommandTest extends AbstractWebTestCase {
+class StylesheetProviderListCommandTest extends AbstractWebTestCase {
 
     /**
      * Test execute()
@@ -34,7 +34,7 @@ class ListStylesheetProviderCommandTest extends AbstractWebTestCase {
      */
     public function testExecute(): void {
 
-        $obj = new ListStylesheetProviderCommand();
+        $obj = new StylesheetProviderListCommand();
         $obj->setStylesheetManager(static::$kernel->getContainer()->get(StylesheetManager::SERVICE_NAME . ".alias"));
         $obj->setTranslator(static::$kernel->getContainer()->get("translator"));
 
@@ -43,7 +43,7 @@ class ListStylesheetProviderCommandTest extends AbstractWebTestCase {
         $application->add($obj);
 
         // Set a Command mock.
-        $command = $application->find(ListStylesheetProviderCommand::COMMAND_NAME);
+        $command = $application->find(StylesheetProviderListCommand::COMMAND_NAME);
 
         // Set a Command tester.
         $commandTester = new CommandTester($command);
@@ -65,13 +65,13 @@ class ListStylesheetProviderCommandTest extends AbstractWebTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw:common:stylesheet:provider:list", ListStylesheetProviderCommand::COMMAND_NAME);
-        $this->assertEquals("wbw.common.command.list_stylesheet_provider", ListStylesheetProviderCommand::SERVICE_NAME);
+        $this->assertEquals("wbw:common:stylesheet:provider:list", StylesheetProviderListCommand::COMMAND_NAME);
+        $this->assertEquals("wbw.common.command.stylesheet_provider_list", StylesheetProviderListCommand::SERVICE_NAME);
 
-        $obj = new ListStylesheetProviderCommand();
+        $obj = new StylesheetProviderListCommand();
 
         $this->assertEquals("List the stylesheet providers", $obj->getDescription());
         $this->assertNotNull($obj->getHelp());
-        $this->assertEquals(ListStylesheetProviderCommand::COMMAND_NAME, $obj->getName());
+        $this->assertEquals(StylesheetProviderListCommand::COMMAND_NAME, $obj->getName());
     }
 }

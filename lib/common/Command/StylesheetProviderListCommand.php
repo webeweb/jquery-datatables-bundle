@@ -21,12 +21,12 @@ use WBW\Bundle\CommonBundle\Provider\StylesheetProviderInterface;
 use WBW\Bundle\CommonBundle\WBWCommonBundle;
 
 /**
- * List stylesheet provider command.
+ * Stylesheet provider list command.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Command
  */
-class ListStylesheetProviderCommand extends AbstractProviderListCommand {
+class StylesheetProviderListCommand extends AbstractProviderListCommand {
 
     use StylesheetManagerTrait {
         setStylesheetManager as public;
@@ -44,7 +44,7 @@ class ListStylesheetProviderCommand extends AbstractProviderListCommand {
      *
      * @var string
      */
-    public const SERVICE_NAME = "wbw.common.command.list_stylesheet_provider";
+    public const SERVICE_NAME = "wbw.common.command.stylesheet_provider_list";
 
     /**
      * {@inheritDoc}

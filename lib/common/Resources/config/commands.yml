@@ -19,8 +19,8 @@ services:
         tags:
             - { name: "console.command" }
 
-    wbw.common.command.list_stylesheet_provider:
-        class:  WBW\Bundle\CommonBundle\Command\ListStylesheetProviderCommand
+    wbw.common.command.stylesheet_provider_list:
+        class:  WBW\Bundle\CommonBundle\Command\StylesheetProviderListCommand
         public: false
         calls:
             - [ "setStylesheetManager", [ "@wbw.common.manager.stylesheet" ] ]
