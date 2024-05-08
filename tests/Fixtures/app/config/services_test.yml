@@ -53,6 +53,10 @@ services:
         tags:
             - { name: "container.service_subscriber" }
 
+    wbw.common.manager.quote.alias:
+        alias:  "wbw.common.manager.quote"
+        public: true
+
     wbw.common.service.statement.alias:
         alias:  "wbw.common.service.statement"
         public: true
