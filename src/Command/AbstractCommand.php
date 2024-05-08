@@ -15,7 +15,6 @@ namespace WBW\Bundle\DataTablesBundle\Command;
 
 use Symfony\Component\Console\Style\StyleInterface;
 use WBW\Bundle\CommonBundle\Command\AbstractCommand as BaseCommand;
-use WBW\Bundle\CommonBundle\Translation\TranslatorTrait;
 use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
 
 /**
@@ -26,10 +25,6 @@ use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
  * @abstract
  */
 abstract class AbstractCommand extends BaseCommand {
-
-    use TranslatorTrait {
-        setTranslator as public;
-    }
 
     /**
      * Display the footer.
