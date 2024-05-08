@@ -21,12 +21,12 @@ use WBW\Bundle\CommonBundle\Provider\JavascriptProviderInterface;
 use WBW\Bundle\CommonBundle\WBWCommonBundle;
 
 /**
- * List javascript provider command.
+ * Javascript provider list command.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Command
  */
-class ListJavascriptProviderCommand extends AbstractCommand {
+class JavascriptProviderListCommand extends AbstractCommand {
 
     use JavascriptManagerTrait {
         setJavascriptManager as public;
@@ -44,7 +44,7 @@ class ListJavascriptProviderCommand extends AbstractCommand {
      *
      * @var string
      */
-    public const SERVICE_NAME = "wbw.common.command.list_javascript_provider";
+    public const SERVICE_NAME = "wbw.common.command.javascript_provider_list";
 
     /**
      * {@inheritDoc}

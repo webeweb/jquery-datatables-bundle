@@ -15,17 +15,17 @@ namespace WBW\Bundle\CommonBundle\Tests\Command;
 
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
-use WBW\Bundle\CommonBundle\Command\ListJavascriptProviderCommand;
+use WBW\Bundle\CommonBundle\Command\JavascriptProviderListCommand;
 use WBW\Bundle\CommonBundle\Manager\JavascriptManager;
 use WBW\Bundle\CommonBundle\Tests\DefaultWebTestCase as AbstractWebTestCase;
 
 /**
- * List javascript provider command test.
+ * Javascript provider list command test.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Tests\Command
  */
-class ListJavascriptProviderCommandTest extends AbstractWebTestCase {
+class JavascriptProviderListCommandTest extends AbstractWebTestCase {
 
     /**
      * Test execute()
@@ -34,7 +34,7 @@ class ListJavascriptProviderCommandTest extends AbstractWebTestCase {
      */
     public function testExecute(): void {
 
-        $obj = new ListJavascriptProviderCommand();
+        $obj = new JavascriptProviderListCommand();
         $obj->setJavascriptManager(static::$kernel->getContainer()->get(JavascriptManager::SERVICE_NAME . ".alias"));
         $obj->setTranslator(static::$kernel->getContainer()->get("translator"));
 
@@ -43,7 +43,7 @@ class ListJavascriptProviderCommandTest extends AbstractWebTestCase {
         $application->add($obj);
 
         // Set a Command mock.
-        $command = $application->find(ListJavascriptProviderCommand::COMMAND_NAME);
+        $command = $application->find(JavascriptProviderListCommand::COMMAND_NAME);
 
         // Set a Command tester.
         $commandTester = new CommandTester($command);
@@ -65,13 +65,13 @@ class ListJavascriptProviderCommandTest extends AbstractWebTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw:common:javascript:provider:list", ListJavascriptProviderCommand::COMMAND_NAME);
-        $this->assertEquals("wbw.common.command.list_javascript_provider", ListJavascriptProviderCommand::SERVICE_NAME);
+        $this->assertEquals("wbw:common:javascript:provider:list", JavascriptProviderListCommand::COMMAND_NAME);
+        $this->assertEquals("wbw.common.command.javascript_provider_list", JavascriptProviderListCommand::SERVICE_NAME);
 
-        $obj = new ListJavascriptProviderCommand();
+        $obj = new JavascriptProviderListCommand();
 
         $this->assertEquals("List the javascript providers", $obj->getDescription());
         $this->assertNotNull($obj->getHelp());
-        $this->assertEquals(ListJavascriptProviderCommand::COMMAND_NAME, $obj->getName());
+        $this->assertEquals(JavascriptProviderListCommand::COMMAND_NAME, $obj->getName());
     }
 }
