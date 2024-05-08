@@ -61,6 +61,10 @@ services:
         alias:  "wbw.common.manager.quote"
         public: true
 
+    wbw.common.manager.stylesheet.alias:
+        alias:  "wbw.common.manager.stylesheet"
+        public: true
+
     wbw.common.service.statement.alias:
         alias:  "wbw.common.service.statement"
         public: true
