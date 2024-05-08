@@ -10,3 +10,4 @@ command:
         domain:      "Domain"
         javascripts: "Javascripts"
         quotes:      "Quotes"
+        stylesheets: "Stylesheets"
