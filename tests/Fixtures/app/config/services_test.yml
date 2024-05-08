@@ -53,6 +53,10 @@ services:
         tags:
             - { name: "container.service_subscriber" }
 
+    wbw.common.manager.javascript.alias:
+        alias:  "wbw.common.manager.javascript"
+        public: true
+
     wbw.common.manager.quote.alias:
         alias:  "wbw.common.manager.quote"
         public: true
