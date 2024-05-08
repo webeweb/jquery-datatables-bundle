@@ -52,6 +52,10 @@ class ListDataTablesProviderCommandTest extends AbstractWebTestCase {
             "command" => $command->getName(),
         ]);
         $this->assertEquals(0, $res);
+
+        $output = $commandTester->getDisplay();
+        $this->assertStringContainsString("List the DataTables providers", $output);
+        $this->assertStringContainsString("[OK] All DataTables providers were successfully listed", $output);
     }
 
     /**
