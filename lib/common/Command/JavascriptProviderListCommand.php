@@ -26,7 +26,7 @@ use WBW\Bundle\CommonBundle\WBWCommonBundle;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Command
  */
-class JavascriptProviderListCommand extends AbstractCommand {
+class JavascriptProviderListCommand extends AbstractProviderListCommand {
 
     use JavascriptManagerTrait {
         setJavascriptManager as public;

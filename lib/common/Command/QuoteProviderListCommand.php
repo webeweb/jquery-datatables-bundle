@@ -26,7 +26,7 @@ use WBW\Bundle\CommonBundle\WBWCommonBundle;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Command
  */
-class QuoteProviderListCommand extends AbstractCommand {
+class QuoteProviderListCommand extends AbstractProviderListCommand {
 
     use QuoteManagerTrait {
         setQuoteManager as public;

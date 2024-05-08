@@ -19,7 +19,6 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\StyleInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
-use WBW\Bundle\CommonBundle\Translation\TranslatorTrait;
 
 /**
  * Abstract command.
@@ -29,10 +28,6 @@ use WBW\Bundle\CommonBundle\Translation\TranslatorTrait;
  * @abstract
  */
 abstract class AbstractCommand extends Command {
-
-    use TranslatorTrait {
-        setTranslator as public;
-    }
 
     /**
      * Display the header.

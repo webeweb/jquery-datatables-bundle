@@ -26,7 +26,7 @@ use WBW\Bundle\CommonBundle\WBWCommonBundle;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Command
  */
-class ListStylesheetProviderCommand extends AbstractCommand {
+class ListStylesheetProviderCommand extends AbstractProviderListCommand {
 
     use StylesheetManagerTrait {
         setStylesheetManager as public;
