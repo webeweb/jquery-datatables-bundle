@@ -19,6 +19,15 @@ services:
         tags:
             - { name: "console.command" }
 
+    wbw.common.command.list_stylesheet_provider:
+        class:  WBW\Bundle\CommonBundle\Command\ListStylesheetProviderCommand
+        public: false
+        calls:
+            - [ "setStylesheetManager", [ "@wbw.common.manager.stylesheet" ] ]
+            - [ "setTranslator",        [ "@translator" ] ]
+        tags:
+            - { name: "console.command" }
+
     wbw.common.command.unzip_assets:
         class:  WBW\Bundle\CommonBundle\Command\UnzipAssetsCommand
         public: false
