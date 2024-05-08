@@ -1,6 +1,15 @@
 # lib/common/Resources/config/commands.yml
 services:
 
+    wbw.common.command.list_javascript_provider:
+        class:  WBW\Bundle\CommonBundle\Command\ListJavascriptProviderCommand
+        public: false
+        calls:
+            - [ "setJavascriptManager", [ "@wbw.common.manager.javascript" ] ]
+            - [ "setTranslator",        [ "@translator" ] ]
+        tags:
+            - { name: "console.command" }
+
     wbw.common.command.list_quote_provider:
         class:  WBW\Bundle\CommonBundle\Command\ListQuoteProviderCommand
         public: false
