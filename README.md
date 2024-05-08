@@ -97,8 +97,8 @@ Add the bundle assets in the `app/config/config.yml` file of your project:
 
 ```yaml
 # ...
-# Core configuration
-wbw_core:
+# Common configuration
+wbw_common:
     plugins:
         - "jquery"
 
