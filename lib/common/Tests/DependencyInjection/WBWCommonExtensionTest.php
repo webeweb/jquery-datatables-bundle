@@ -22,6 +22,7 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Throwable;
 use Twig\Environment;
+use WBW\Bundle\CommonBundle\Command\ListQuoteProviderCommand;
 use WBW\Bundle\CommonBundle\Command\UnzipAssetsCommand;
 use WBW\Bundle\CommonBundle\Controller\HostController;
 use WBW\Bundle\CommonBundle\Controller\TwigController;
@@ -134,6 +135,7 @@ class WBWCommonExtensionTest extends AbstractTestCase {
         $obj->load($this->configs, $this->containerBuilder);
 
         // Commands
+        $this->assertInstanceOf(ListQuoteProviderCommand::class, $this->containerBuilder->get(ListQuoteProviderCommand::SERVICE_NAME));
         $this->assertInstanceOf(UnzipAssetsCommand::class, $this->containerBuilder->get(UnzipAssetsCommand::SERVICE_NAME));
 
         // Controllers
