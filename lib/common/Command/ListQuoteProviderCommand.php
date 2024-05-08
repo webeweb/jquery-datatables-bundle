@@ -90,7 +90,7 @@ class ListQuoteProviderCommand extends AbstractCommand {
         $this->sortRows($rows);
 
         $io->table($this->getHeaders(), $rows);
-        $this->displayFooter($io, count($rows), "message.command.provider.list.success", "message.command.provider.list.warning");
+        $this->displayFooter($io, count($rows), "command.footer.list_provider.success", "command.footer.list_provider.warning");
 
         return 0;
     }
@@ -103,10 +103,10 @@ class ListQuoteProviderCommand extends AbstractCommand {
     protected function getHeaders(): array {
 
         return [
-            $this->translate("header.class", [], null, "en"),
-            $this->translate("header.domain", [], null, "en"),
-            $this->translate("header.authors", [], null, "en"),
-            $this->translate("header.quotes", [], null, "en"),
+            $this->translate("command.header.class", [], null, "en"),
+            $this->translate("command.header.domain", [], null, "en"),
+            $this->translate("command.header.authors", [], null, "en"),
+            $this->translate("command.header.quotes", [], null, "en"),
         ];
     }
 

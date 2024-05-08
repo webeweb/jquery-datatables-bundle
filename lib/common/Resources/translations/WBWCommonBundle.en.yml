@@ -1,13 +1,11 @@
 # lib/common/Resources/translations/WBWCommonBundle.en.yml
-header:
-    authors: "Authors"
-    class:   "Class"
-    domain:  "Domain"
-    quotes:  "Quotes"
-
-message:
-    command:
-        provider:
-            list:
-                success: "All providers were successfully listed"
-                warning: "No provider to list"
+command:
+    footer:
+        list_provider:
+            success: "All providers were successfully listed"
+            warning: "No provider to list"
+    header:
+        authors: "Authors"
+        class:   "Class"
+        domain:  "Domain"
+        quotes:  "Quotes"
