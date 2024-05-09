@@ -124,17 +124,4 @@ class StylesheetProviderListCommand extends AbstractProviderListCommand {
             sprintf($format, count($provider->getStylesheets())),
         ];
     }
-
-    /**
-     * Sort the rows.
-     *
-     * @param string[][] $rows The rows.
-     * @return void
-     */
-    protected function sortRows(array &$rows): void {
-
-        usort($rows, function(array $a, array $b): int {
-            return strcmp($a[0], $b[0]);
-        });
-    }
 }

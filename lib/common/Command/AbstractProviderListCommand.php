@@ -27,4 +27,17 @@ abstract class AbstractProviderListCommand extends AbstractCommand {
     use TranslatorTrait {
         setTranslator as public;
     }
+
+    /**
+     * Sort the rows.
+     *
+     * @param string[][] $rows The rows.
+     * @return void
+     */
+    protected function sortRows(array &$rows): void {
+
+        usort($rows, function(array $a, array $b): int {
+            return strcmp($a[0], $b[0]);
+        });
+    }
 }
