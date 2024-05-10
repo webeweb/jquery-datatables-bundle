@@ -124,8 +124,8 @@ class QuoteProviderListCommand extends AbstractProviderListCommand {
             strlen($this->getHeaders()[3]),
         ];
         $format = [
-            "%{$length[0]}d",
-            "%{$length[1]}d",
+            "%$length[0]d",
+            "%$length[1]d",
         ];
 
         $quotes = count($provider->getQuotes());

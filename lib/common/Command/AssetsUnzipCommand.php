@@ -91,6 +91,7 @@ class AssetsUnzipCommand extends AbstractCommand {
         $warning = static::formatCheckbox(false);
 
         foreach ($results as $bundle => $assets) {
+
             foreach ($assets as $asset => $result) {
 
                 $rows[] = [
