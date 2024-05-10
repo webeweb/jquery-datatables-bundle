@@ -107,6 +107,7 @@ class QuoteProviderListCommand extends AbstractProviderListCommand {
             $this->translate("command.header.domain", [], null, "en"),
             $this->translate("command.header.authors", [], null, "en"),
             $this->translate("command.header.quotes", [], null, "en"),
+            "",
         ];
     }
 
@@ -127,11 +128,14 @@ class QuoteProviderListCommand extends AbstractProviderListCommand {
             "%{$length[1]}d",
         ];
 
+        $quotes = count($provider->getQuotes());
+
         return [
             get_class($provider),
             $provider->getDomain(),
             sprintf($format[0], count($provider->getAuthors())),
-            sprintf($format[1], count($provider->getQuotes())),
+            sprintf($format[1], $quotes),
+            static::formatCheckbox(365 === $quotes),
         ];
     }
 }
