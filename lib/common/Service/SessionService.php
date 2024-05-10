@@ -19,7 +19,7 @@ use Symfony\Component\HttpKernel\Kernel;
 use WBW\Bundle\CommonBundle\DependencyInjection\Container\ContainerTrait;
 
 /**
- * Symfony backward compatibility service.
+ * Session service.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Service
