@@ -10,22 +10,22 @@ jobs:
         runs-on: ubuntu-22.04
 
         steps:
-            -   name: "Checkout"
-                uses: actions/checkout@v4
-
-            -   name: "Setup"
+            -   name: "Environment"
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: "7.1"
                     coverage:    "xdebug"
 
-            -   name: "Composer"
+            -   name: "Checkout"
+                uses: actions/checkout@v4
+
+            -   name: "Dependencies"
                 run:  |
                       php --version
                       composer --version
                       COMPOSER_MEMORY_LIMIT=-1 composer update
 
-            -   name: "PHPStan"
+            -   name: "Analysis"
                 run:  |
                       vendor/bin/phpstan --version
                       vendor/bin/phpstan analyse --error-format=github --configuration phpstan.conf.neon

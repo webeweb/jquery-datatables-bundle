@@ -10,27 +10,27 @@ jobs:
         runs-on: ubuntu-22.04
 
         steps:
-            -   name: "Checkout"
-                uses: actions/checkout@v4
-
-            -   name: "Setup"
+            -   name: "Environment"
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: "7.1"
                     coverage:    "xdebug"
 
-            -   name: "Composer"
+            -   name: "Checkout"
+                uses: actions/checkout@v4
+
+            -   name: "Dependencies"
                 run:  |
                       php --version
                       composer --version
                       COMPOSER_MEMORY_LIMIT=-1 composer update
 
-            -   name: "PHPUnit"
+            -   name: "Tests"
                 run:  |
                       mkdir -p build/logs
                       vendor/bin/phpunit --log-junit build/logs/junit.xml
 
-            -   name: "PHPMetrics"
+            -   name: "Metrics"
                 run:  |
                       wget -c -nc --retry-connrefused --tries=0 https://github.com/phpmetrics/PhpMetrics/releases/download/v2.8.1/phpmetrics.phar -O phpmetrics.phar
                       chmod +x phpmetrics.phar

@@ -58,16 +58,16 @@ jobs:
                         symfony-label:   ": Symfony 7.0.*"
 
         steps:
-            -   name: "Checkout"
-                uses: actions/checkout@v4
-
-            -   name: "Setup"
+            -   name: "Environment"
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: "${{ matrix.php-version }}"
                     coverage:    "xdebug"
 
-            -   name: "Composer"
+            -   name: "Checkout"
+                uses: actions/checkout@v4
+
+            -   name: "Dependencies"
                 run:  |
                       php --version
                       composer --version
@@ -76,7 +76,7 @@ jobs:
                       if [ "7.0.*" != "${{ matrix.symfony-version }}" ]; then COMPOSER_MEMORY_LIMIT=-1 composer require "symfony/symfony:${SYMFONY_VERSION}" --no-update; fi;
                       COMPOSER_MEMORY_LIMIT=-1 composer update
 
-            -   name: "PHPUnit"
+            -   name: "Tests"
                 run:  |
                       mkdir -p build/logs
                       vendor/bin/phpunit --coverage-clover build/logs/clover.xml
