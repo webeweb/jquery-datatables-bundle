@@ -13,32 +13,31 @@ jobs:
             -   name: "Checkout"
                 uses: actions/checkout@v4
 
-            -   name: "Build environment"
+            -   name: "Setup"
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: "7.1"
                     coverage:    "xdebug"
 
-            -   name: "Dependencies"
+            -   name: "Composer"
                 run:  |
                       php --version
                       composer --version
                       COMPOSER_MEMORY_LIMIT=-1 composer update
 
-            -   name: "Application"
+            -   name: "PHPUnit"
                 run:  |
                       mkdir -p build/logs
+                      vendor/bin/phpunit --log-junit build/logs/junit.xml
+
+            -   name: "PHPMetrics"
+                run:  |
                       wget -c -nc --retry-connrefused --tries=0 https://github.com/phpmetrics/PhpMetrics/releases/download/v2.8.1/phpmetrics.phar -O phpmetrics.phar
                       chmod +x phpmetrics.phar
                       php phpmetrics.phar --version
+                      php phpmetrics.phar --git --junit=build/logs/junit.xml --report-html=build/logs/ . --exclude-dirs=Tests/
 
-            -   name: "Tests"
-                run:  vendor/bin/phpunit --log-junit build/logs/junit.xml
-
-            -   name: "Calculates"
-                run:  php phpmetrics.phar --git --junit=build/logs/junit.xml --report-html=build/logs/ . --exclude-dirs=Tests/
-
-            -   name: "Upload artifact"
+            -   name: "Artifacts"
                 uses: actions/upload-artifact@v4
                 with:
                     name: "metrics"

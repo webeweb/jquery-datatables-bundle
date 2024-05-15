@@ -13,20 +13,19 @@ jobs:
             -   name: "Checkout"
                 uses: actions/checkout@v4
 
-            -   name: "Build environment"
+            -   name: "Setup"
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: "7.1"
                     coverage:    "xdebug"
 
-            -   name: "Dependencies"
+            -   name: "Composer"
                 run:  |
                       php --version
                       composer --version
                       COMPOSER_MEMORY_LIMIT=-1 composer update
 
-            -   name: "Application"
-                run:  vendor/bin/phpstan --version
-
-            -   name: "Analyses"
-                run:  vendor/bin/phpstan analyse --error-format=github --configuration phpstan.conf.neon
+            -   name: "PHPStan"
+                run:  |
+                      vendor/bin/phpstan --version
+                      vendor/bin/phpstan analyse --error-format=github --configuration phpstan.conf.neon
