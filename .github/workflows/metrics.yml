@@ -10,14 +10,14 @@ jobs:
         runs-on: ubuntu-22.04
 
         steps:
+            -   name: "Checkout"
+                uses: actions/checkout@v4
+
             -   name: "Environment"
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: "7.1"
                     coverage:    "xdebug"
-
-            -   name: "Checkout"
-                uses: actions/checkout@v4
 
             -   name: "Dependencies"
                 run:  |
