@@ -25,7 +25,7 @@ jobs:
                       composer --version
                       COMPOSER_MEMORY_LIMIT=-1 composer update
 
-            -   name: "Analysis"
+            -   name: "Application"
                 run:  |
                       vendor/bin/phpstan --version
-                      vendor/bin/phpstan analyse --error-format=github --configuration phpstan.conf.neon
+                      vendor/bin/phpstan analyse src/ --error-format=github

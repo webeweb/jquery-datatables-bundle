@@ -76,14 +76,14 @@ jobs:
                       if [ "7.0.*" != "${{ matrix.symfony-version }}" ]; then COMPOSER_MEMORY_LIMIT=-1 composer require "symfony/symfony:${SYMFONY_VERSION}" --no-update; fi;
                       COMPOSER_MEMORY_LIMIT=-1 composer update
 
-            -   name: "Tests"
+            -   name: "Application"
                 run:  |
                       mkdir -p build/logs
                       vendor/bin/phpunit --coverage-clover build/logs/clover.xml
 
             -   name: "Coverage"
                 env:
-                    COVERALLS_REPO_TOKEN: ${{ secrets.github_token }}
+                    COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                     COVERALLS_FLAG_NAME:  php-${{ matrix.php-version }}
                     COVERALLS_PARALLEL:   true
                 run:  |
@@ -102,5 +102,5 @@ jobs:
             -   name: "Coverage"
                 uses: coverallsapp/github-action@v2
                 with:
-                    github-token:      ${{ secrets.github_token }}
+                    github-token:      ${{ secrets.GITHUB_TOKEN }}
                     parallel-finished: true
