@@ -135,7 +135,7 @@ class QuoteProviderListCommand extends AbstractProviderListCommand {
             $provider->getDomain(),
             sprintf($format[0], count($provider->getAuthors())),
             sprintf($format[1], $quotes),
-            static::formatCheckbox(365 === $quotes),
+            static::formatCheckbox(366 === $quotes),
         ];
     }
 }
