@@ -22,10 +22,10 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Throwable;
 use Twig\Environment;
+use WBW\Bundle\CommonBundle\Command\AssetsUnzipCommand;
 use WBW\Bundle\CommonBundle\Command\JavascriptProviderListCommand;
 use WBW\Bundle\CommonBundle\Command\QuoteProviderListCommand;
 use WBW\Bundle\CommonBundle\Command\StylesheetProviderListCommand;
-use WBW\Bundle\CommonBundle\Command\AssetsUnzipCommand;
 use WBW\Bundle\CommonBundle\Controller\HostController;
 use WBW\Bundle\CommonBundle\Controller\TwigController;
 use WBW\Bundle\CommonBundle\DependencyInjection\WBWCommonExtension;
