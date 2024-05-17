@@ -103,10 +103,10 @@ class QuoteProviderListCommand extends AbstractProviderListCommand {
     protected function getHeaders(): array {
 
         return [
-            $this->translate("command.header.class", [], null, "en"),
-            $this->translate("command.header.domain", [], null, "en"),
-            $this->translate("command.header.authors", [], null, "en"),
-            $this->translate("command.header.quotes", [], null, "en"),
+            $this->translate("command.header.class", [], WBWCommonBundle::getTranslationDomain(), "en"),
+            $this->translate("command.header.domain", [], WBWCommonBundle::getTranslationDomain(), "en"),
+            $this->translate("command.header.authors", [], WBWCommonBundle::getTranslationDomain(), "en"),
+            $this->translate("command.header.quotes", [], WBWCommonBundle::getTranslationDomain(), "en"),
             "",
         ];
     }
