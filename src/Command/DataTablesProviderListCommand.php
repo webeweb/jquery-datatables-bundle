@@ -18,6 +18,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use WBW\Bundle\DataTablesBundle\Manager\DataTablesManagerTrait;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesCsvExporterInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
+use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
 
 /**
  * DataTables provider list command.
@@ -86,11 +87,11 @@ class DataTablesProviderListCommand extends AbstractCommand {
     protected function getHeaders(): array {
 
         return [
-            $this->translate("command.header.name", [], null, "en"),
-            $this->translate("command.header.service", [], null, "en"),
-            $this->translate("command.header.columns", [], null, "en"),
-            $this->translate("command.header.prefix", [], null, "en"),
-            $this->translate("command.header.view", [], null, "en"),
+            $this->translate("command.header.name", [], WBWDataTablesBundle::getTranslationDomain(), "en"),
+            $this->translate("command.header.service", [], WBWDataTablesBundle::getTranslationDomain(), "en"),
+            $this->translate("command.header.columns", [], WBWDataTablesBundle::getTranslationDomain(), "en"),
+            $this->translate("command.header.prefix", [], WBWDataTablesBundle::getTranslationDomain(), "en"),
+            $this->translate("command.header.view", [], WBWDataTablesBundle::getTranslationDomain(), "en"),
             "CSV",
         ];
     }
