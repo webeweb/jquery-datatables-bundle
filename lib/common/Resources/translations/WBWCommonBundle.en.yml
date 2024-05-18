@@ -1,7 +1,10 @@
 # lib/common/Resources/translations/WBWCommonBundle.en.yml
 command:
     footer:
-        list_provider:
+        assets_unzip:
+            success: "All assets were successfully unzipped"
+            warning: "No assets were provided by any bundle"
+        provider_list:
             success: "All providers were successfully listed"
             warning: "No provider to list"
     header:
