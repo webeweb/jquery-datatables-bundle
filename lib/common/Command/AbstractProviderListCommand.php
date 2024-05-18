@@ -13,8 +13,6 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\CommonBundle\Command;
 
-use WBW\Bundle\CommonBundle\Translation\TranslatorTrait;
-
 /**
  * Abstract provider list command.
  *
@@ -23,10 +21,6 @@ use WBW\Bundle\CommonBundle\Translation\TranslatorTrait;
  * @abstract
  */
 abstract class AbstractProviderListCommand extends AbstractCommand {
-
-    use TranslatorTrait {
-        setTranslator as public;
-    }
 
     /**
      * Sort the rows.

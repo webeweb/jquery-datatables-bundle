@@ -19,6 +19,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\StyleInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
+use WBW\Bundle\CommonBundle\Translation\TranslatorTrait;
 
 /**
  * Abstract command.
@@ -28,6 +29,28 @@ use Symfony\Component\HttpKernel\KernelInterface;
  * @abstract
  */
 abstract class AbstractCommand extends Command {
+
+    use TranslatorTrait {
+        setTranslator as public;
+    }
+
+    /**
+     * Display a footer.
+     *
+     * @param StyleInterface $io The I/O.
+     * @param int $count The count.
+     * @param string $success The success message.
+     * @param string $warning The warning message.
+     * @param string $domain The domain.
+     * @param string $locale The locale.
+     * @return void
+     */
+    protected function displayFooter(StyleInterface $io, int $count, string $success, string $warning, string $domain, string $locale = "en"): void {
+
+        $message = $this->translate(0 < $count ? $success : $warning, [], $domain, $locale);
+
+        $io->success($message);
+    }
 
     /**
      * Display the header.

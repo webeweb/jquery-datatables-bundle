@@ -74,7 +74,7 @@ class DataTablesProviderListCommand extends AbstractCommand {
         $this->sortRows($rows);
 
         $io->table($this->getHeaders(), $rows);
-        $this->displayFooter($io, count($rows), "command.footer.list_provider.success", "command.footer.list_provider.warning");
+        $this->displayFooter($io, count($rows), "command.footer.provider_list.success", "command.footer.provider_list.warning", WBWDataTablesBundle::getTranslationDomain());
 
         return 0;
     }

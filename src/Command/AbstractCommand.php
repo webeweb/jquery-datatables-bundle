@@ -13,9 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Command;
 
-use Symfony\Component\Console\Style\StyleInterface;
 use WBW\Bundle\CommonBundle\Command\AbstractProviderListCommand as BaseCommand;
-use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
 
 /**
  * Abstract command.
@@ -26,19 +24,4 @@ use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
  */
 abstract class AbstractCommand extends BaseCommand {
 
-    /**
-     * Display the footer.
-     *
-     * @param StyleInterface $io The I/O.
-     * @param int $count The count.
-     * @param string $success The success message.
-     * @param string $warning The warning message.
-     * @return void
-     */
-    protected function displayFooter(StyleInterface $io, int $count, string $success, string $warning): void {
-
-        $message = $this->translate(0 < $count ? $success : $warning, [], WBWDataTablesBundle::getTranslationDomain(), "en");
-
-        $io->success($message);
-    }
 }

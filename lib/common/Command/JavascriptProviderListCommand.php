@@ -15,7 +15,6 @@ namespace WBW\Bundle\CommonBundle\Command;
 
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Style\StyleInterface;
 use WBW\Bundle\CommonBundle\Manager\JavascriptManagerTrait;
 use WBW\Bundle\CommonBundle\Provider\JavascriptProviderInterface;
 use WBW\Bundle\CommonBundle\WBWCommonBundle;
@@ -57,22 +56,6 @@ class JavascriptProviderListCommand extends AbstractProviderListCommand {
     }
 
     /**
-     * Display the footer.
-     *
-     * @param StyleInterface $io The I/O.
-     * @param int $count The count.
-     * @param string $success The success message.
-     * @param string $warning The warning message.
-     * @return void
-     */
-    protected function displayFooter(StyleInterface $io, int $count, string $success, string $warning): void {
-
-        $message = $this->translate(0 < $count ? $success : $warning, [], WBWCommonBundle::getTranslationDomain(), "en");
-
-        $io->success($message);
-    }
-
-    /**
      * {@inheritDoc}
      */
     protected function execute(InputInterface $input, OutputInterface $output): int {
@@ -90,7 +73,7 @@ class JavascriptProviderListCommand extends AbstractProviderListCommand {
         $this->sortRows($rows);
 
         $io->table($this->getHeaders(), $rows);
-        $this->displayFooter($io, count($rows), "command.footer.list_provider.success", "command.footer.list_provider.warning");
+        $this->displayFooter($io, count($rows), "command.footer.provider_list.success", "command.footer.provider_list.warning", WBWCommonBundle::getTranslationDomain());
 
         return 0;
     }
