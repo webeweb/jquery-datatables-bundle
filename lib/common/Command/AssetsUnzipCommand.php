@@ -79,7 +79,7 @@ class AssetsUnzipCommand extends AbstractCommand {
         }
 
         $io->table($this->getHeaders(), $rows);
-        $this->displayFooter($io, count($rows), "command.footer.assets_unzip.success", "command.footer.assets_unzip.warning", WBWCommonBundle::getTranslationDomain());
+        $this->displayFooter($io, count($rows), "command.footer.assets_unzip.success", "command.footer.assets_unzip.warning", WBWCommonBundle::getTranslationDomain(), "en");
 
         return 0;
     }
@@ -93,8 +93,8 @@ class AssetsUnzipCommand extends AbstractCommand {
 
         return [
             "",
-            $this->translate("command.header.bundle", [], WBWCommonBundle::getTranslationDomain()),
-            $this->translate("command.header.asset", [], WBWCommonBundle::getTranslationDomain()),
+            $this->translate("command.header.bundle", [], WBWCommonBundle::getTranslationDomain(), "en"),
+            $this->translate("command.header.asset", [], WBWCommonBundle::getTranslationDomain(), "en"),
         ];
     }
 
