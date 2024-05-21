@@ -73,7 +73,7 @@ class QuoteProviderListCommand extends AbstractProviderListCommand {
         $this->sortRows($rows);
 
         $io->table($this->getHeaders(), $rows);
-        $this->displayFooter($io, count($rows), "command.footer.provider_list.success", "command.footer.provider_list.warning", WBWCommonBundle::getTranslationDomain());
+        $this->displayFooter($io, count($rows), "command.footer.provider_list.success", "command.footer.provider_list.warning", WBWCommonBundle::getTranslationDomain(), "en");
 
         return 0;
     }
@@ -86,10 +86,10 @@ class QuoteProviderListCommand extends AbstractProviderListCommand {
     protected function getHeaders(): array {
 
         return [
-            $this->translate("command.header.class", [], WBWCommonBundle::getTranslationDomain()),
-            $this->translate("command.header.domain", [], WBWCommonBundle::getTranslationDomain()),
-            $this->translate("command.header.authors", [], WBWCommonBundle::getTranslationDomain()),
-            $this->translate("command.header.quotes", [], WBWCommonBundle::getTranslationDomain()),
+            $this->translate("command.header.class", [], WBWCommonBundle::getTranslationDomain(), "en"),
+            $this->translate("command.header.domain", [], WBWCommonBundle::getTranslationDomain(), "en"),
+            $this->translate("command.header.authors", [], WBWCommonBundle::getTranslationDomain(), "en"),
+            $this->translate("command.header.quotes", [], WBWCommonBundle::getTranslationDomain(), "en"),
             "",
         ];
     }
