@@ -87,11 +87,11 @@ class DataTablesProviderListCommand extends AbstractCommand {
     protected function getHeaders(): array {
 
         return [
-            $this->translate("command.header.name", [], WBWDataTablesBundle::getTranslationDomain(), "en"),
-            $this->translate("command.header.service", [], WBWDataTablesBundle::getTranslationDomain(), "en"),
-            $this->translate("command.header.columns", [], WBWDataTablesBundle::getTranslationDomain(), "en"),
-            $this->translate("command.header.prefix", [], WBWDataTablesBundle::getTranslationDomain(), "en"),
-            $this->translate("command.header.view", [], WBWDataTablesBundle::getTranslationDomain(), "en"),
+            $this->translate("command.header.name", [], WBWDataTablesBundle::getTranslationDomain()),
+            $this->translate("command.header.service", [], WBWDataTablesBundle::getTranslationDomain()),
+            $this->translate("command.header.columns", [], WBWDataTablesBundle::getTranslationDomain()),
+            $this->translate("command.header.prefix", [], WBWDataTablesBundle::getTranslationDomain()),
+            $this->translate("command.header.view", [], WBWDataTablesBundle::getTranslationDomain()),
             "CSV",
         ];
     }
