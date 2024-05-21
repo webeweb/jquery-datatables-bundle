@@ -4,6 +4,8 @@ services:
     wbw.common.command.assets_unzip:
         class:  WBW\Bundle\CommonBundle\Command\AssetsUnzipCommand
         public: false
+        calls:
+            - [ "setTranslator", [ "@translator" ] ]
         tags:
             - { name: "console.command" }
 
