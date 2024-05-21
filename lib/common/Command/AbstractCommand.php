@@ -42,10 +42,10 @@ abstract class AbstractCommand extends Command {
      * @param string $success The success message.
      * @param string $warning The warning message.
      * @param string $domain The domain.
-     * @param string $locale The locale.
+     * @param string|null $locale The locale.
      * @return void
      */
-    protected function displayFooter(StyleInterface $io, int $count, string $success, string $warning, string $domain, string $locale = "en"): void {
+    protected function displayFooter(StyleInterface $io, int $count, string $success, string $warning, string $domain, string $locale = null): void {
 
         $message = $this->translate(0 < $count ? $success : $warning, [], $domain, $locale);
 
