@@ -118,6 +118,14 @@ interface DataTablesWrapperInterface {
     public function getUser(): ?UserInterface;
 
     /**
+     * Set the options.
+     *
+     * @param DataTablesOptionsInterface|null $options The options.
+     * @return DataTablesWrapperInterface Returns this wrapper.
+     */
+    public function setOptions(?DataTablesOptionsInterface $options): DataTablesWrapperInterface;
+
+    /**
      * Set the request.
      *
      * @param DataTablesRequestInterface|null $request The request.

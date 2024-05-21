@@ -31,7 +31,6 @@ use WBW\Bundle\DataTablesBundle\Factory\DataTablesFactory;
 use WBW\Bundle\DataTablesBundle\Helper\DataTablesExportHelper;
 use WBW\Bundle\DataTablesBundle\Manager\DataTablesManagerTrait;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesColumnInterface;
-use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapper;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesCsvExporterInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesEditorInterface;
@@ -379,7 +378,6 @@ abstract class AbstractController extends BaseController {
      */
     protected function getDataTablesWrapper(DataTablesProviderInterface $dtProvider): DataTablesWrapperInterface {
 
-        /** @var DataTablesWrapper $dtWrapper */
         $dtWrapper = DataTablesFactory::newWrapper($this->getDataTablesUrl($dtProvider), $dtProvider, $this->getUser());
 
         $context = [

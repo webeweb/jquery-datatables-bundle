@@ -255,10 +255,7 @@ class DataTablesWrapper implements DataTablesWrapperInterface {
     }
 
     /**
-     * Set the options.
-     *
-     * @param DataTablesOptionsInterface|null $options The options.
-     * @return DataTablesWrapperInterface Returns this wrapper.
+     * {@inheritDoc}
      */
     public function setOptions(?DataTablesOptionsInterface $options): DataTablesWrapperInterface {
         $this->options = $options;
