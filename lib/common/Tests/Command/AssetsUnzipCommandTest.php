@@ -34,6 +34,7 @@ class AssetsUnzipCommandTest extends AbstractWebTestCase {
     public function testExecute(): void {
 
         $obj = new AssetsUnzipCommand();
+        $obj->setTranslator(static::$kernel->getContainer()->get("translator"));
 
         // Set an Application mock.
         $application = new Application(static::$kernel);
