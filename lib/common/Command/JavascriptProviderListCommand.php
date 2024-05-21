@@ -86,8 +86,8 @@ class JavascriptProviderListCommand extends AbstractProviderListCommand {
     protected function getHeaders(): array {
 
         return [
-            $this->translate("command.header.class", [], WBWCommonBundle::getTranslationDomain(), "en"),
-            $this->translate("command.header.javascripts", [], WBWCommonBundle::getTranslationDomain(), "en"),
+            $this->translate("command.header.class", [], WBWCommonBundle::getTranslationDomain()),
+            $this->translate("command.header.javascripts", [], WBWCommonBundle::getTranslationDomain()),
         ];
     }
 
