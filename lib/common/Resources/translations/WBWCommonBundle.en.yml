@@ -9,6 +9,8 @@ command:
             warning: "No provider to list"
     header:
         authors:     "Authors"
+        asset:       "Asset"
+        bundle:      "Bundle"
         class:       "Class"
         domain:      "Domain"
         javascripts: "Javascripts"
