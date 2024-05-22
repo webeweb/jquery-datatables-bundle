@@ -75,12 +75,11 @@ in the `app/AppKernel.php` file of your project:
 
 ```php
     public function registerBundles() {
+
         $bundles = [
             // ...
             new WBW\Bundle\DataTablesBundle\WBWDataTablesBundle(),
         ];
-
-        // ...
 
         return $bundles;
     }

@@ -85,12 +85,11 @@ in the `app/AppKernel.php` file of your project:
 
 ```php
     public function registerBundles() {
+
         $bundles = [
             // ...
             new WBW\Bundle\BootstrapBundle\WBWBootstrapBundle(),
         ];
-
-        // ...
 
         return $bundles;
     }
