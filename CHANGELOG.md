@@ -9,6 +9,7 @@ CHANGELOG
 - Add PHP 8.3 support
 - Add declare(strict_types = 1)
 - Add PHPStan
+- Fix className into DataTables normalizer
 - Improve code quality
 - Improve PHPDoc
 - Merge Bootstrap bundle (from [bootstrap-bundle](https://github.com/webeweb/bootstrap-bundle))
