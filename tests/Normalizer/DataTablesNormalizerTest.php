@@ -53,7 +53,7 @@ class DataTablesNormalizerTest extends AbstractTestCase {
 
         $exp = [
             "cellType"       => "td",
-            "classname"      => "classname",
+            "className"      => "classname",
             "contentPadding" => "contentPadding",
             "data"           => "data",
             "defaultContent" => "defaultContent",

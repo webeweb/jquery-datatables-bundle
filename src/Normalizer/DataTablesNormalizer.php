@@ -36,7 +36,7 @@ class DataTablesNormalizer {
         $output = [];
 
         ArrayHelper::set($output, "cellType", $column->getCellType(), [null]);
-        ArrayHelper::set($output, "classname", $column->getClassname(), [null]);
+        ArrayHelper::set($output, "className", $column->getClassname(), [null]);
         ArrayHelper::set($output, "contentPadding", $column->getContentPadding(), [null]);
         ArrayHelper::set($output, "data", $column->getData(), [null]);
         ArrayHelper::set($output, "defaultContent", $column->getDefaultContent(), [null]);
