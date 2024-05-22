@@ -16,8 +16,8 @@ namespace WBW\Bundle\DataTablesBundle\Tests\Helper;
 use InvalidArgumentException;
 use Symfony\Component\Serializer\SerializerInterface;
 use Throwable;
-use WBW\Bundle\DataTablesBundle\Entity\DataTablesEntityInterface;
 use WBW\Bundle\DataTablesBundle\Helper\DataTablesEntityHelper;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesEntityInterface;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Entity\Employee;
 

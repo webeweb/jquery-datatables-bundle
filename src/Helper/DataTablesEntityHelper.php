@@ -19,7 +19,7 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\SerializerInterface;
-use WBW\Bundle\DataTablesBundle\Entity\DataTablesEntityInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesEntityInterface;
 
 /**
  * DataTables entity helper.

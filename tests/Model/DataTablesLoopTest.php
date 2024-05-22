@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Tests\Model;
 
-use WBW\Bundle\DataTablesBundle\Entity\DataTablesEntityInterface;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesEntityInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesLoop;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 

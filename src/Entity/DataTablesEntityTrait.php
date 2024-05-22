@@ -13,6 +13,8 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Entity;
 
+use WBW\Bundle\DataTablesBundle\Model\DataTablesEntityInterface;
+
 /**
  * DataTables entity trait.
  *
