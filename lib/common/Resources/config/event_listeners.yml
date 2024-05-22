@@ -6,7 +6,7 @@ services:
 
     wbw.common.event_listener.kernel:
         class:  WBW\Bundle\CommonBundle\EventListener\KernelEventListener
-        public: true
+        public: false
         arguments: [ "@security.token_storage" ]
 
     wbw.common.event_listener.notification:
