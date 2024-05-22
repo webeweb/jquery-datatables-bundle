@@ -1,0 +1,8 @@
+# lib/common/Resources/config/routing.yml
+wbw_core_host:
+    prefix:   "/host"
+    resource: "@WBWCommonBundle/Resources/config/routing/host.yml"
+
+wbw_core_twig:
+    prefix:   "/twig"
+    resource: "@WBWCommonBundle/Resources/config/routing/twig.yml"
