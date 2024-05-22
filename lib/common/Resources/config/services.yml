@@ -7,7 +7,7 @@ services:
 
     wbw.common.service.session:
         class:  WBW\Bundle\CommonBundle\Service\SessionService
-        public: true
+        public: false
         arguments: [ "@service_container" ]
 
     wbw.common.service.statement:
