@@ -97,15 +97,6 @@ Add the bundle assets in the `app/config/config.yml` file of your project:
 
 ```yaml
 # ...
-# Common configuration
-wbw_common:
-    plugins:
-        - "jquery"
-
-# Bootstrap configuration
-wbw_bootstrap:
-    version: 3
-
 # DataTables configuration
 wbw_datatables:
     theme: "bootstrap"
