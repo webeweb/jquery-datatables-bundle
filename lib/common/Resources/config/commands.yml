@@ -9,6 +9,15 @@ services:
         tags:
             - { name: "console.command" }
 
+    wbw.common.command.color_provider_list:
+        class:  WBW\Bundle\CommonBundle\Command\ColorProviderListCommand
+        public: false
+        calls:
+            - [ "setColorManager", [ "@wbw.common.manager.color" ] ]
+            - [ "setTranslator",   [ "@translator" ] ]
+        tags:
+            - { name: "console.command" }
+
     wbw.common.command.javascript_provider_list:
         class:  WBW\Bundle\CommonBundle\Command\JavascriptProviderListCommand
         public: false
