@@ -11,11 +11,11 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Tests\Entity;
+namespace WBW\Bundle\DataTablesBundle\Tests\Model;
 
 use WBW\Bundle\DataTablesBundle\Model\DataTablesEntityInterface;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
-use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Entity\TestDataTablesEntityTrait;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Model\TestDataTablesEntityTrait;
 
 /**
  * DataTables entity trait test.

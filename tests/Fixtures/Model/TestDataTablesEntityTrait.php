@@ -11,9 +11,9 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Entity;
+namespace WBW\Bundle\DataTablesBundle\Tests\Fixtures\Model;
 
-use WBW\Bundle\DataTablesBundle\Entity\DataTablesEntityTrait;
+use WBW\Bundle\DataTablesBundle\Model\DataTablesEntityTrait;
 
 /**
  * Test DataTables entity trait.
