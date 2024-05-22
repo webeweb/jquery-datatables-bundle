@@ -25,6 +25,7 @@ use WBW\Bundle\CommonBundle\Manager\StylesheetManager;
 use WBW\Bundle\CommonBundle\Manager\StylesheetManagerTrait;
 use WBW\Bundle\CommonBundle\Provider\JavascriptProviderInterface;
 use WBW\Bundle\CommonBundle\Provider\StylesheetProviderInterface;
+use WBW\Library\Common\Helper\ObjectHelper;
 
 /**
  * Twig controller.
@@ -131,12 +132,8 @@ class TwigController extends AbstractController {
             throw $this->createNotFoundException();
         }
 
-        $modified = $this->getLastModified($resources[$name]);
-        if (null === $modified) {
-            $modified = new DateTime();
-        }
-
-        $content = $this->renderView($resources[$name], $request->query->all());
+        $modified = ObjectHelper::coalesce($this->getLastModified($resources[$name]), new DateTime());
+        $content  = $this->renderView($resources[$name], $request->query->all());
 
         return new Response($content, 200, [
             "Content-Type"  => $contentType,
