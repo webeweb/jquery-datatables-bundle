@@ -104,7 +104,7 @@ class ColorProviderListCommand extends AbstractProviderListCommand {
         $format = "%{$length}d";
 
         return [
-            $this->getName(),
+            $provider->getName(),
             get_class($provider),
             sprintf($format, count($provider->getColors())),
         ];

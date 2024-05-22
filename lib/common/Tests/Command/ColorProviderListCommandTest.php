@@ -55,7 +55,7 @@ class ColorProviderListCommandTest extends AbstractWebTestCase {
 
         $output = $commandTester->getDisplay();
         $this->assertStringContainsString("List the color providers", $output);
-        $this->assertStringContainsString("[OK] No provider to list", $output);
+        $this->assertStringContainsString("[OK] All providers were successfully listed", $output);
     }
 
     /**
