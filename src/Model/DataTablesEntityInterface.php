@@ -17,7 +17,7 @@ namespace WBW\Bundle\DataTablesBundle\Model;
  * DataTables entity interface.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Entity
+ * @package WBW\Bundle\DataTablesBundle\Model
  */
 interface DataTablesEntityInterface {
 

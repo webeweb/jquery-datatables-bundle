@@ -21,7 +21,7 @@ use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Model\TestDataTablesEntityTrait;
  * DataTables entity trait test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\DataTablesBundle\Tests\Provider
+ * @package WBW\Bundle\DataTablesBundle\Tests\Model
  */
 class DataTablesEntityTraitTest extends AbstractTestCase {
 
