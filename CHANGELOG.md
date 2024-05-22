@@ -8,8 +8,14 @@ CHANGELOG
 
 - Add PHP 8.3 support
 - Add declare(strict_types = 1)
+- Add Color provider list command
+- Add Javascript provider list command
+- Add Quote provider list command
+- Add Stylesheet provider list command
 - Add PHPStan
 - Fix className into DataTables normalizer
+- Improve Assets unzip command
+- Improve DataTables provider list command
 - Improve code quality
 - Improve PHPDoc
 - Merge Bootstrap bundle (from [bootstrap-bundle](https://github.com/webeweb/bootstrap-bundle))
