@@ -1,0 +1,8 @@
+# Resources/config/providers.yml
+services:
+
+    wbw.bootstrap.provider.color:
+        class:  WBW\Bundle\BootstrapBundle\Provider\ColorProvider
+        public: false
+        tags:
+            - { name: "wbw.common.provider.color" }
