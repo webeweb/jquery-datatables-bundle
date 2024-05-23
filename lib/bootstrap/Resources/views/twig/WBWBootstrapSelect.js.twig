@@ -1,0 +1,70 @@
+{# lib/bootstrap/Resources/views/twig/WBWBootstrapSelect.js.twig #}
+/**
+ * Bootstrap select.
+ */
+class WBWBootstrapSelect {
+
+    /**
+     * Destroy a select picker.
+     *
+     * @param {jQuery} $el The element.
+     * @return {jQuery} Returns the element.
+     */
+    static destroy($el) {
+        return $el.selectpicker("destroy");
+    }
+
+    /**
+     * Refresh a select picker.
+     *
+     * @param {jQuery} $el The element.
+     * @return {jQuery} Returns the element.
+     */
+    static refresh($el) {
+        return $el.selectpicker("refresh");
+    }
+
+    /**
+     * Displays a select picker.
+     *
+     * @param {jQuery} $el The element.
+     * @return {jQuery} Returns the element.
+     */
+    static selectPicker($el) {
+
+        return $el.selectpicker({
+            container: "body", // https://developer.snapappointments.com/bootstrap-select/examples/#container
+        });
+    }
+
+    /**
+     * Update a select picker.
+     *
+     * @param {jQuery} $el The element.
+     * @param {Object} options The options.
+     * @return {jQuery} Returns the element.
+     */
+    static update($el, options) {
+
+        console.debug({$el, options});
+
+        const displays = ["none", "list-item"];
+
+        const $select = $el;
+        const $option = $select.find("option:selected");
+
+        $select.find('option[value!=""]').css("display", displays[0]).prop("selected", false);
+
+        options.forEach((option) => {
+            $select.find('option[value="' + option.value + '"]').css("display", displays[1]);
+        });
+
+        if (displays[1] === $option.css("display")) {
+            $option.prop("selected", true);
+        } else {
+            $select.find("option:visible").first().prop("selected", true);
+        }
+
+        return WBWBootstrapSelect.refresh($select);
+    }
+}
