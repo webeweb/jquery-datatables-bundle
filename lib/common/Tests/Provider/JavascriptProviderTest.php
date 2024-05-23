@@ -36,10 +36,10 @@ class JavascriptProviderTest extends AbstractTestCase {
         $obj = new JavascriptProvider();
 
         $exp = [
-            "WBWCommonJQueryInputMask" => "@WBWCommon/assets/WBWCommonJQueryInputMask.js.twig",
-            "WBWCommonLeaflet"         => "@WBWCommon/assets/WBWCommonLeaflet.js.twig",
-            "WBWCommonSweetAlert"      => "@WBWCommon/assets/WBWCommonSweetAlert.js.twig",
-            "WBWCommonWaitMe"          => "@WBWCommon/assets/WBWCommonWaitMe.js.twig",
+            "WBWCommonJQueryInputMask" => "@WBWCommon/twig/WBWCommonJQueryInputMask.js.twig",
+            "WBWCommonLeaflet"         => "@WBWCommon/twig/WBWCommonLeaflet.js.twig",
+            "WBWCommonSweetAlert"      => "@WBWCommon/twig/WBWCommonSweetAlert.js.twig",
+            "WBWCommonWaitMe"          => "@WBWCommon/twig/WBWCommonWaitMe.js.twig",
         ];
 
         $this->assertEquals($exp, $obj->getJavascripts());
