@@ -1,0 +1,85 @@
+{# lib/bootstrap/Resources/views/twig/WBWBootstrapNotify.js.twig #}
+/**
+ * Bootstrap notify.
+ */
+class WBWBootstrapNotify {
+
+    /**
+     * Displays a notification.
+     *
+     * @param {String} message The message.
+     * @param {String} icon The icon.
+     * @param {String} type The type.
+     * @param {Boolean} dismissible Dismissible ?
+     * @param {jQuery} $el The element.
+     * @return {Notify} Returns the notification.
+     */
+    static notify(message, icon, type, dismissible, $el = null) {
+
+        console.debug({message, icon, type, dismissible, $el});
+
+        $.notify({
+            message: message,
+            icon   : icon,
+        }, {
+            element      : null !== $el ? $el : "body",
+            type         : type,
+            allow_dismiss: dismissible,
+            newest_on_top: true,
+            placement    : {
+                from : "bottom",
+                align: "left",
+            },
+            timer        : 1000,
+            animate      : {
+                enter: "animated fadeInUp",
+                exit : "animated fadeOut",
+            },
+            template     : '{{ include("@WBWBootstrap/assets/WBWBootstrapNotify.html.twig")|e("js") }}',
+        });
+    }
+
+    /**
+     * Displays a notification "error".
+     *
+     * @param {String} message The message.
+     * @param {jQuery} $el The element.
+     * @return {Notify} Returns the notification.
+     */
+    static notifyError(message, $el = null) {
+        return WBWBootstrapNotify.notify(message, "glyphicon glyphicon-remove-circle m-r-10", "alert-danger", true, $el);
+    }
+
+    /**
+     * Displays a notification "info".
+     *
+     * @param {String} message The message.
+     * @param {jQuery} $el The element.
+     * @return {Notify} Returns the notification.
+     */
+    static notifyInfo(message, $el = null) {
+        return WBWBootstrapNotify.notify(message, "glyphicon glyphicon-info-sign m-r-10", "alert-info", true, $el);
+    }
+
+    /**
+     * Displays a notification "success".
+     *
+     * @param {String} message The message.
+     * @param {jQuery} $el The element.
+     * @return {Notify} Returns the notification.
+     */
+    static notifySuccess(message, $el = null) {
+        return WBWBootstrapNotify.notify(message, "glyphicon glyphicon-ok-circle m-r-10", "alert-success", true, $el);
+    }
+
+    /**
+     * Displays a notification "warning".
+     *
+     * @param {String} message The message.
+     * @param {jQuery} $el The element.
+     * @return {Notify} Returns the notification.
+     */
+    static notifyWarning(message, $el = null) {
+        return WBWBootstrapNotify.notify(message, "glyphicon glyphicon-exclamation-sign m-r-10", "alert-warning", true, $el);
+    }
+}
