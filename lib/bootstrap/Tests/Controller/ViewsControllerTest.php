@@ -13,6 +13,8 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\BootstrapBundle\Tests\Controller;
 
+use Symfony\Component\Routing\RouterInterface;
+use WBW\Bundle\BootstrapBundle\Provider\JavascriptProvider;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractWebTestCase;
 use WBW\Bundle\BootstrapBundle\WBWBootstrapBundle;
 
@@ -23,6 +25,47 @@ use WBW\Bundle\BootstrapBundle\WBWBootstrapBundle;
  * @package WBW\Bundle\BootstrapBundle\Tests\Controller
  */
 class ViewsControllerTest extends AbstractWebTestCase {
+
+    /**
+     * Test lib/bootstrap/Resources/views/assets/_javascripts.html.twig
+     *
+     * @return void
+     */
+    public function testAssetsJavascriptsAction(): void {
+
+        $client = $this->client;
+
+        $client->request("GET", "/bootstrap/assets/javascripts");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
+
+        /** @var RouterInterface $router */
+        $router = static::$kernel->getContainer()->get("router");
+
+        $provider = new JavascriptProvider();
+        foreach ($provider->getJavascripts() as $k => $v) {
+
+            $uri = $router->generate("wbw_common_twig_resource", ["name" => $k, "type" => "js"]);
+
+            $client->request("GET", $uri);
+            $this->assertEquals(200, $client->getResponse()->getStatusCode(), $v);
+            $this->assertEquals("application/javascript", $client->getResponse()->headers->get("Content-Type"), $v);
+        }
+    }
+
+    /**
+     * Test lib/bootstrap/Resources/views/assets/_stylesheets.html.twig
+     *
+     * @return void
+     */
+    public function testAssetsStylesheetsAction(): void {
+
+        $client = $this->client;
+
+        $client->request("GET", "/bootstrap/assets/stylesheets");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
+    }
 
     /**
      * Test lib/bootstrap/Resources/views/layout.html.twig
