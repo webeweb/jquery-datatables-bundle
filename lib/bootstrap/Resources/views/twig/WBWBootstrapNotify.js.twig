@@ -28,14 +28,14 @@ class WBWBootstrapNotify {
             newest_on_top: true,
             placement    : {
                 from : "bottom",
-                align: "left",
+                align: "left"
             },
             timer        : 1000,
             animate      : {
                 enter: "animated fadeInUp",
-                exit : "animated fadeOut",
+                exit : "animated fadeOut"
             },
-            template     : '{{ include("@WBWBootstrap/assets/WBWBootstrapNotify.html.twig")|e("js") }}',
+            template     : '{{ include("@WBWBootstrap/twig/WBWBootstrapNotify.html.twig")|e("js") }}'
         });
     }
 
