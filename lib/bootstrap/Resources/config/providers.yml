@@ -6,3 +6,9 @@ services:
         public: false
         tags:
             - { name: "wbw.common.provider.color" }
+
+    wbw.bootstrap.provider.javascript:
+        class:  WBW\Bundle\BootstrapBundle\Provider\JavascriptProvider
+        public: true
+        tags:
+            - { name: "wbw.common.provider.javascript" }
