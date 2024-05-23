@@ -77,7 +77,6 @@ class DataTablesController extends AbstractController {
 
             $output = $this->prepareActionResponse(200, "controller.datatables.delete.success");
         } catch (Throwable $ex) {
-
             $output = $this->handleDataTablesException($ex, "controller.datatables.delete");
         }
 
@@ -124,7 +123,6 @@ class DataTablesController extends AbstractController {
 
             $output = $this->prepareActionResponse(200, "controller.datatables.edit.success");
         } catch (Throwable $ex) {
-
             $output = $this->handleDataTablesException($ex, "controller.datatables.edit");
         }
 
@@ -153,15 +151,16 @@ class DataTablesController extends AbstractController {
         $dtWrapper = $this->getDataTablesWrapper($dtProvider);
         DataTablesFactory::parseWrapper($dtWrapper, $request);
 
-        $filename = (new DateTime())->format("Y.m.d-H.i.s") . "-" . $dtProvider->getName() . ".csv";
+        $filename = (new DateTime())->format("Y.m.d-H.i.s") . "-{$dtProvider->getName()}.csv";
         $charset  = true === $windows ? "iso-8859-1" : "utf-8";
+        $callback = function() use ($dtWrapper, $repository, $dtExporter, $windows) {
+            $this->exportDataTablesCallback($dtWrapper, $repository, $dtExporter, $windows);
+        };
 
         $response = new StreamedResponse();
         $response->headers->set("Content-Disposition", 'attachment; filename="' . $filename . '"');
-        $response->headers->set("Content-Type", "text/csv; charset=" . $charset);
-        $response->setCallback(function() use ($dtWrapper, $repository, $dtExporter, $windows) {
-            $this->exportDataTablesCallback($dtWrapper, $repository, $dtExporter, $windows);
-        });
+        $response->headers->set("Content-Type", "text/csv; charset=$charset");
+        $response->setCallback($callback);
         $response->setStatusCode(200);
 
         return $response;
@@ -208,7 +207,7 @@ class DataTablesController extends AbstractController {
 
             $dtWrapper->getResponse()->addRow();
 
-            // Render each row.
+            // Render the row.
             foreach (DataTablesEnumerator::enumRows() as $dtRow) {
                 $dtWrapper->getResponse()->setRow($dtRow, $dtProvider->renderRow($dtRow, $entity, $dtLoop->getIndex0()));
             }
