@@ -13,6 +13,8 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\CommonBundle\Tests\Controller;
 
+use Symfony\Component\Routing\RouterInterface;
+use WBW\Bundle\CommonBundle\Provider\JavascriptProvider;
 use WBW\Bundle\CommonBundle\Tests\DefaultWebTestCase as AbstractWebTestCase;
 
 /**
@@ -35,6 +37,19 @@ class ViewsControllerTest extends AbstractWebTestCase {
         $client->request("GET", "/common/assets/javascripts");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertStringContainsString("text/html; charset=", $client->getResponse()->headers->get("Content-Type"));
+
+        /** @var RouterInterface $router */
+        $router = static::$kernel->getContainer()->get("router");
+
+        $provider = new JavascriptProvider();
+        foreach ($provider->getJavascripts() as $k => $v) {
+
+            $uri = $router->generate("wbw_common_twig_resource", ["name" => $k, "type" => "js"]);
+
+            $client->request("GET", $uri);
+            $this->assertEquals(200, $client->getResponse()->getStatusCode(), $v);
+            $this->assertEquals("application/javascript", $client->getResponse()->headers->get("Content-Type"), $v);
+        }
     }
 
     /**
