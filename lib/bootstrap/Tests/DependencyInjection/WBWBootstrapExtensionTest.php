@@ -19,6 +19,7 @@ use Twig\Environment;
 use WBW\Bundle\BootstrapBundle\DependencyInjection\Configuration;
 use WBW\Bundle\BootstrapBundle\DependencyInjection\WBWBootstrapExtension;
 use WBW\Bundle\BootstrapBundle\Provider\ColorProvider;
+use WBW\Bundle\BootstrapBundle\Provider\JavascriptProvider;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\AssetsTwigExtension;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\AlertTwigExtension;
@@ -114,6 +115,7 @@ class WBWBootstrapExtensionTest extends AbstractTestCase {
 
         // Providers
         $this->assertInstanceOf(ColorProvider::class, $this->containerBuilder->get(ColorProvider::SERVICE_NAME));
+        $this->assertInstanceOf(JavascriptProvider::class, $this->containerBuilder->get(JavascriptProvider::SERVICE_NAME));
 
         // Twig extensions
         $this->assertInstanceOf(AssetsTwigExtension::class, $this->containerBuilder->get(AssetsTwigExtension::SERVICE_NAME));
