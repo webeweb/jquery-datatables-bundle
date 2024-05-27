@@ -13,8 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\CommonBundle\Tests\EventListener;
 
-use Symfony\Contracts\Translation\TranslatorInterface;
-use WBW\Bundle\CommonBundle\EventListener\SecurityEventListener;
+use WBW\Bundle\CommonBundle\EventListener\SecurityEventListenerInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 use WBW\Bundle\CommonBundle\Tests\Fixtures\EventListener\TestSecurityEventListenerTrait;
 
@@ -33,11 +32,8 @@ class SecurityEventListenerTraitTest extends AbstractTestCase {
      */
     public function testSetSecurityEventListener(): void {
 
-        // Set a Translator mock.
-        $translator = $this->getMockBuilder(TranslatorInterface::class)->getMock();
-
         // Set a Security event listener mock.
-        $securityEventListener = new SecurityEventListener($translator);
+        $securityEventListener = $this->getMockBuilder(SecurityEventListenerInterface::class)->getMock();
 
         $obj = new TestSecurityEventListenerTrait();
 
