@@ -28,6 +28,7 @@ use Twig\Environment;
 use WBW\Bundle\CommonBundle\Event\NotificationEvent;
 use WBW\Bundle\CommonBundle\Event\ToastEvent;
 use WBW\Bundle\CommonBundle\EventListener\KernelEventListener;
+use WBW\Bundle\CommonBundle\EventListener\KernelEventListenerInterface;
 use WBW\Bundle\CommonBundle\Service\SessionService;
 use WBW\Library\Common\Model\Response\DefaultJsonResponseData;
 use WBW\Library\Common\Model\Response\DefaultJsonResponseDataInterface;
@@ -111,10 +112,10 @@ abstract class AbstractController extends BaseController {
     /**
      * Get the kernel event listener.
      *
-     * @return KernelEventListener|null Returns the kernel event listener.
+     * @return KernelEventListenerInterface|null Returns the kernel event listener.
      * @throws Throwable Throws an exception if an error occurs.
      */
-    protected function getKernelEventListener(): ?KernelEventListener {
+    protected function getKernelEventListener(): ?KernelEventListenerInterface {
         return $this->container->get(KernelEventListener::SERVICE_NAME);
     }
 
