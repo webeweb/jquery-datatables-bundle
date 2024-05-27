@@ -21,6 +21,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use WBW\Bundle\CommonBundle\EventListener\SecurityEventListener;
+use WBW\Bundle\CommonBundle\EventListener\SecurityEventListenerInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 use WBW\Bundle\CommonBundle\Tests\DefaultTestCase;
 
@@ -93,6 +94,8 @@ class SecurityEventListenerTest extends AbstractTestCase {
         $this->assertEquals("wbw.common.event_listener.security", SecurityEventListener::SERVICE_NAME);
 
         $obj = new SecurityEventListener($this->translator);
+
+        $this->assertInstanceOf(SecurityEventListenerInterface::class, $obj);
 
         $this->assertSame($this->translator, $obj->getTranslator());
     }

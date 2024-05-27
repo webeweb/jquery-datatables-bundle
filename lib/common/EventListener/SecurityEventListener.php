@@ -26,7 +26,7 @@ use WBW\Bundle\CommonBundle\WBWCommonBundle;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\EventListener
  */
-class SecurityEventListener {
+class SecurityEventListener implements SecurityEventListenerInterface {
 
     use TranslatorTrait;
 
@@ -47,10 +47,7 @@ class SecurityEventListener {
     }
 
     /**
-     * On interactive login.
-     *
-     * @param InteractiveLoginEvent $event The event.
-     * @return InteractiveLoginEvent Returns the event.
+     * {@inheritDoc}
      */
     public function onInteractiveLogin(InteractiveLoginEvent $event): InteractiveLoginEvent {
 
