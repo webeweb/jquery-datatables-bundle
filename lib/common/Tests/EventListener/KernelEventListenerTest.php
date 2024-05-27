@@ -17,6 +17,7 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use WBW\Bundle\CommonBundle\EventListener\KernelEventListener;
+use WBW\Bundle\CommonBundle\EventListener\KernelEventListenerInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 
 /**
@@ -87,6 +88,8 @@ class KernelEventListenerTest extends AbstractTestCase {
         $this->assertEquals("wbw.common.event_listener.kernel", KernelEventListener::SERVICE_NAME);
 
         $obj = new KernelEventListener($this->tokenStorage);
+
+        $this->assertInstanceOf(KernelEventListenerInterface::class, $obj);
 
         $this->assertSame($this->tokenStorage, $obj->getTokenStorage());
         $this->assertNull($obj->getUser());

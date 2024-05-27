@@ -24,7 +24,7 @@ use WBW\Bundle\CommonBundle\Security\Core\User\UserTrait;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\EventListener
  */
-class KernelEventListener {
+class KernelEventListener implements KernelEventListenerInterface {
 
     use TokenStorageTrait;
     use UserTrait;
@@ -46,9 +46,7 @@ class KernelEventListener {
     }
 
     /**
-     * Get the current user.
-     *
-     * @return UserInterface|null Returns the current user in case of success, null otherwise.
+     * {@inheritDoc}
      */
     public function getUser(): ?UserInterface {
 
