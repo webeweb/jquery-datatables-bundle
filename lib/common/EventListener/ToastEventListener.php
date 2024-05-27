@@ -14,7 +14,6 @@ declare(strict_types = 1);
 namespace WBW\Bundle\CommonBundle\EventListener;
 
 use Symfony\Component\HttpFoundation\Session\Session;
-use Throwable;
 use WBW\Bundle\CommonBundle\Event\ToastEvent;
 use WBW\Bundle\CommonBundle\Service\SessionServiceInterface;
 use WBW\Bundle\CommonBundle\Service\SessionServiceTrait;
@@ -25,7 +24,7 @@ use WBW\Bundle\CommonBundle\Service\SessionServiceTrait;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\EventListener
  */
-class ToastEventListener {
+class ToastEventListener implements ToastEventListenerInterface {
 
     use SessionServiceTrait;
 
@@ -46,11 +45,7 @@ class ToastEventListener {
     }
 
     /**
-     * On toast.
-     *
-     * @param ToastEvent $event The event.
-     * @return ToastEvent Returns the event.
-     * @throws Throwable Throws an exception if an error occurs.
+     * {@inheritDoc}
      */
     public function onToast(ToastEvent $event): ToastEvent {
 

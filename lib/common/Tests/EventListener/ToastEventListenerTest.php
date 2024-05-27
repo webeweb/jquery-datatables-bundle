@@ -19,6 +19,7 @@ use Symfony\Component\HttpFoundation\Session\Session;
 use Throwable;
 use WBW\Bundle\CommonBundle\Event\ToastEvent;
 use WBW\Bundle\CommonBundle\EventListener\ToastEventListener;
+use WBW\Bundle\CommonBundle\EventListener\ToastEventListenerInterface;
 use WBW\Bundle\CommonBundle\Service\SessionServiceInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 use WBW\Library\Widget\Component\ToastInterface;
@@ -84,6 +85,8 @@ class ToastEventListenerTest extends AbstractTestCase {
         $this->assertEquals("wbw.common.event_listener.toast", ToastEventListener::SERVICE_NAME);
 
         $obj = new ToastEventListener($this->sessionService);
+
+        $this->assertInstanceOf(ToastEventListenerInterface::class, $obj);
 
         $this->assertSame($this->sessionService, $obj->getSessionService());
     }
