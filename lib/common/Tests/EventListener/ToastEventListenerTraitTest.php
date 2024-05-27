@@ -13,8 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\CommonBundle\Tests\EventListener;
 
-use WBW\Bundle\CommonBundle\EventListener\ToastEventListener;
-use WBW\Bundle\CommonBundle\Service\SessionServiceInterface;
+use WBW\Bundle\CommonBundle\EventListener\ToastEventListenerInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 use WBW\Bundle\CommonBundle\Tests\Fixtures\EventListener\TestToastEventListenerTrait;
 
@@ -33,11 +32,8 @@ class ToastEventListenerTraitTest extends AbstractTestCase {
      */
     public function testSetToastEventListener(): void {
 
-        // Set a Session service mock.
-        $sessionService = $this->getMockBuilder(SessionServiceInterface::class)->getMock();
-
         // Set a Toast event listener mock.
-        $toastEventListener = new ToastEventListener($sessionService);
+        $toastEventListener = $this->getMockBuilder(ToastEventListenerInterface::class)->getMock();
 
         $obj = new TestToastEventListenerTrait();
 

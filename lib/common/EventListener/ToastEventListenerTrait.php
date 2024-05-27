@@ -24,26 +24,26 @@ trait ToastEventListenerTrait {
     /**
      * Toast event listener.
      *
-     * @var ToastEventListener|null
+     * @var ToastEventListenerInterface|null
      */
     private $toastEventListener;
 
     /**
      * Get the Toast event listener.
      *
-     * @return ToastEventListener|null Returns the toast event listener.
+     * @return ToastEventListenerInterface|null Returns the toast event listener.
      */
-    public function getToastEventListener(): ?ToastEventListener {
+    public function getToastEventListener(): ?ToastEventListenerInterface {
         return $this->toastEventListener;
     }
 
     /**
      * Set the toast event listener.
      *
-     * @param ToastEventListener|null $toastEventListener The toast event listener.
+     * @param ToastEventListenerInterface|null $toastEventListener The toast event listener.
      * @return self Returns this instance.
      */
-    protected function setToastEventListener(?ToastEventListener $toastEventListener): self {
+    protected function setToastEventListener(?ToastEventListenerInterface $toastEventListener): self {
         $this->toastEventListener = $toastEventListener;
         return $this;
     }
