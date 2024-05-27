@@ -24,26 +24,26 @@ trait KernelEventListenerTrait {
     /**
      * Kernel event listener.
      *
-     * @var KernelEventListener|null
+     * @var KernelEventListenerInterface|null
      */
     private $kernelEventListener;
 
     /**
      * Get the kernel event listener.
      *
-     * @return KernelEventListener|null Returns the kernel event listener.
+     * @return KernelEventListenerInterface|null Returns the kernel event listener.
      */
-    public function getKernelEventListener(): ?KernelEventListener {
+    public function getKernelEventListener(): ?KernelEventListenerInterface {
         return $this->kernelEventListener;
     }
 
     /**
      * Set the kernel event listener.
      *
-     * @param KernelEventListener|null $kernelEventListener The kernel event listener.
+     * @param KernelEventListenerInterface|null $kernelEventListener The kernel event listener.
      * @return self Returns this instance.
      */
-    protected function setKernelEventListener(?KernelEventListener $kernelEventListener): self {
+    protected function setKernelEventListener(?KernelEventListenerInterface $kernelEventListener): self {
         $this->kernelEventListener = $kernelEventListener;
         return $this;
     }

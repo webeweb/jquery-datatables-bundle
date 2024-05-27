@@ -13,8 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\CommonBundle\Tests\EventListener;
 
-use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
-use WBW\Bundle\CommonBundle\EventListener\KernelEventListener;
+use WBW\Bundle\CommonBundle\EventListener\KernelEventListenerInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 use WBW\Bundle\CommonBundle\Tests\Fixtures\EventListener\TestKernelEventListenerTrait;
 
@@ -33,11 +32,8 @@ class KernelEventListenerTraitTest extends AbstractTestCase {
      */
     public function testSetKernelEventListener(): void {
 
-        // Set a Token storage mock.
-        $tokenStorage = $this->getMockBuilder(TokenStorageInterface::class)->getMock();
-
         // Set a Kernel event listener mock.
-        $kernelEventListener = new KernelEventListener($tokenStorage);
+        $kernelEventListener = $this->getMockBuilder(KernelEventListenerInterface::class)->getMock();
 
         $obj = new TestKernelEventListenerTrait();
 
