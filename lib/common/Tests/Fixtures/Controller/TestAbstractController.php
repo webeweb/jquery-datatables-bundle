@@ -25,7 +25,6 @@ use Twig\Environment;
 use WBW\Bundle\CommonBundle\Controller\AbstractController;
 use WBW\Bundle\CommonBundle\Event\NotificationEvent;
 use WBW\Bundle\CommonBundle\Event\ToastEvent;
-use WBW\Bundle\CommonBundle\EventListener\KernelEventListener;
 use WBW\Bundle\CommonBundle\EventListener\KernelEventListenerInterface;
 use WBW\Library\Common\Model\Response\DefaultJsonResponseDataInterface;
 use WBW\Library\Widget\Component\NotificationInterface;
