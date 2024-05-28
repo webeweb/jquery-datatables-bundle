@@ -86,7 +86,6 @@ class DataTablesEntityHelperTest extends AbstractTestCase {
     public function testIsCompatibleWithThrowException(): void {
 
         try {
-
             DataTablesEntityHelper::isCompatible($this, true);
         } catch (Throwable $ex) {
 

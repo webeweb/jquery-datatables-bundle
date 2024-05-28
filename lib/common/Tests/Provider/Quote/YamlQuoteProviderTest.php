@@ -105,7 +105,6 @@ class YamlQuoteProviderTest extends AbstractTestCase {
     public function test__constructWithInvalidArgumentException(): void {
 
         try {
-
             new YamlQuoteProvider("exception");
         } catch (Throwable $ex) {
 

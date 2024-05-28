@@ -51,7 +51,6 @@ class DataTablesWrapperHelperTest extends AbstractTestCase {
     public function testGetLanguageUrlWithFileNotFoundException(): void {
 
         try {
-
             DataTablesWrapperHelper::getLanguageUrl("exception");
         } catch (Throwable $ex) {
 

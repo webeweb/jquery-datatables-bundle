@@ -86,10 +86,8 @@ class ColorManagerTest extends AbstractTestCase {
         $obj->addProvider($this->colorProvider);
 
         try {
-
             $obj->addProvider($this->colorProvider);
         } catch (Throwable $ex) {
-
             $this->assertInstanceOf(AlreadyRegisteredProviderException::class, $ex);
         }
     }
@@ -107,7 +105,6 @@ class ColorManagerTest extends AbstractTestCase {
         $obj = new ColorManager($this->logger);
 
         try {
-
             $obj->addProvider($provider);
         } catch (Throwable $ex) {
 

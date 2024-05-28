@@ -86,10 +86,8 @@ class QuoteManagerTest extends AbstractTestCase {
         $obj->addProvider($this->quoteProvider);
 
         try {
-
             $obj->addProvider($this->quoteProvider);
         } catch (Throwable $ex) {
-
             $this->assertInstanceOf(AlreadyRegisteredProviderException::class, $ex);
         }
     }
@@ -123,7 +121,6 @@ class QuoteManagerTest extends AbstractTestCase {
         $obj = new QuoteManager($this->logger);
 
         try {
-
             $obj->containsProvider($provider);
         } catch (Throwable $ex) {
 

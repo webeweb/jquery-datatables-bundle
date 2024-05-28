@@ -86,10 +86,8 @@ class JavascriptManagerTest extends AbstractTestCase {
         $obj->addProvider($this->javascriptProvider);
 
         try {
-
             $obj->addProvider($this->javascriptProvider);
         } catch (Throwable $ex) {
-
             $this->assertInstanceOf(AlreadyRegisteredProviderException::class, $ex);
         }
     }
@@ -107,7 +105,6 @@ class JavascriptManagerTest extends AbstractTestCase {
         $obj = new JavascriptManager($this->logger);
 
         try {
-
             $obj->addProvider($provider);
         } catch (Throwable $ex) {
 

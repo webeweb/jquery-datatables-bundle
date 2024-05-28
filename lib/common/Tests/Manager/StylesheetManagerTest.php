@@ -86,7 +86,6 @@ class StylesheetManagerTest extends AbstractTestCase {
         $obj->addProvider($this->stylesheetProvider);
 
         try {
-
             $obj->addProvider($this->stylesheetProvider);
         } catch (Throwable $ex) {
 
@@ -107,7 +106,6 @@ class StylesheetManagerTest extends AbstractTestCase {
         $obj = new StylesheetManager($this->logger);
 
         try {
-
             $obj->addProvider($provider);
         } catch (Throwable $ex) {
 

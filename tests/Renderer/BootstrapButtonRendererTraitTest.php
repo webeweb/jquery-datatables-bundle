@@ -219,7 +219,6 @@ class BootstrapButtonRendererTraitTest extends AbstractTestCase {
         $obj = $this->bootstrapButtonsRenderer;
 
         try {
-
             $obj->renderActionButtonDelete($this, "route");
         } catch (Throwable $ex) {
 

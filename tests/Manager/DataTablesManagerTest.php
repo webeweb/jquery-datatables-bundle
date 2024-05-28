@@ -75,7 +75,6 @@ class DataTablesManagerTest extends AbstractTestCase {
         $obj->addProvider($this->dataTablesProvider);
 
         try {
-
             $obj->addProvider($this->dataTablesProvider);
         } catch (Throwable $ex) {
 
@@ -97,7 +96,6 @@ class DataTablesManagerTest extends AbstractTestCase {
         $obj = new DataTablesManager();
 
         try {
-
             $obj->addProvider($provider);
         } catch (Throwable $ex) {
 
@@ -130,7 +128,6 @@ class DataTablesManagerTest extends AbstractTestCase {
         $obj = new DataTablesManager();
 
         try {
-
             $obj->getProvider("exception");
         } catch (Throwable $ex) {
 

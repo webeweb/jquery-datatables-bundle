@@ -249,7 +249,6 @@ class DataTablesColumnTest extends AbstractTestCase {
         $obj = new DataTablesColumn();
 
         try {
-
             $obj->setType("exception");
         } catch (Throwable $ex) {
 

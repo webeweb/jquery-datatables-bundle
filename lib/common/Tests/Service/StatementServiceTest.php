@@ -280,7 +280,6 @@ class StatementServiceTest extends AbstractWebTestCase {
         $obj = $this->statementService;
 
         try {
-
             $obj->readStatementFile($filename);
         } catch (Throwable $ex) {
 
