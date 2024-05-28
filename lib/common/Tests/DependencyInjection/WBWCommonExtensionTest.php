@@ -24,6 +24,7 @@ use Throwable;
 use Twig\Environment;
 use WBW\Bundle\CommonBundle\Command\AssetsUnzipCommand;
 use WBW\Bundle\CommonBundle\Command\ColorProviderListCommand;
+use WBW\Bundle\CommonBundle\Command\ImageProviderListCommand;
 use WBW\Bundle\CommonBundle\Command\JavascriptProviderListCommand;
 use WBW\Bundle\CommonBundle\Command\QuoteProviderListCommand;
 use WBW\Bundle\CommonBundle\Command\StylesheetProviderListCommand;
@@ -141,6 +142,7 @@ class WBWCommonExtensionTest extends AbstractTestCase {
         // Commands
         $this->assertInstanceOf(AssetsUnzipCommand::class, $this->containerBuilder->get(AssetsUnzipCommand::SERVICE_NAME));
         $this->assertInstanceOf(ColorProviderListCommand::class, $this->containerBuilder->get(ColorProviderListCommand::SERVICE_NAME));
+        $this->assertInstanceOf(ImageProviderListCommand::class, $this->containerBuilder->get(ImageProviderListCommand::SERVICE_NAME));
         $this->assertInstanceOf(JavascriptProviderListCommand::class, $this->containerBuilder->get(JavascriptProviderListCommand::SERVICE_NAME));
         $this->assertInstanceOf(QuoteProviderListCommand::class, $this->containerBuilder->get(QuoteProviderListCommand::SERVICE_NAME));
         $this->assertInstanceOf(StylesheetProviderListCommand::class, $this->containerBuilder->get(StylesheetProviderListCommand::SERVICE_NAME));
