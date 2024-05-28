@@ -15,6 +15,7 @@ namespace WBW\Bundle\DataTablesBundle\Command;
 
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use WBW\Bundle\CommonBundle\Command\AbstractProviderListCommand;
 use WBW\Bundle\DataTablesBundle\Manager\DataTablesManagerTrait;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesCsvExporterInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
@@ -26,7 +27,7 @@ use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Command
  */
-class DataTablesProviderListCommand extends AbstractCommand {
+class DataTablesProviderListCommand extends AbstractProviderListCommand {
 
     use DataTablesManagerTrait {
         setDataTablesManager as public;

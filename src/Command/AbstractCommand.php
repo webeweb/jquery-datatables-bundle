@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Command;
 
-use WBW\Bundle\CommonBundle\Command\AbstractProviderListCommand as BaseCommand;
+use WBW\Bundle\CommonBundle\Command\AbstractCommand as BaseCommand;
 
 /**
  * Abstract command.
