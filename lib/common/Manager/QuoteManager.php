@@ -38,31 +38,15 @@ class QuoteManager extends AbstractManager implements QuoteManagerInterface {
      */
     public function addProvider(ProviderInterface $provider): ManagerInterface {
 
+        if (false === ($provider instanceof QuoteProviderInterface)) {
+            throw new InvalidArgumentException("The provider must implements " . QuoteProviderInterface::class);
+        }
+
         if (true === $this->containsProvider($provider)) {
             throw new AlreadyRegisteredProviderException($provider);
         }
 
         return parent::addProvider($provider);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function containsProvider(ProviderInterface $provider): bool {
-
-        if (false === ($provider instanceof QuoteProviderInterface)) {
-            throw new InvalidArgumentException("The provider must implements " . QuoteProviderInterface::class);
-        }
-
-        /** @var QuoteProviderInterface $current */
-        foreach ($this->getProviders() as $current) {
-
-            if ($provider->getDomain() === $current->getDomain()) {
-                return true;
-            }
-        }
-
-        return false;
     }
 
     /**
