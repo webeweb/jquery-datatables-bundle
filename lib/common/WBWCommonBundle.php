@@ -43,6 +43,7 @@ class WBWCommonBundle extends Bundle implements AssetsProviderInterface {
      */
     public function build(ContainerBuilder $container): void {
         $container->addCompilerPass(new ColorProviderCompilerPass());
+        //$container->addCompilerPass(new ImageProviderCompilerPass());
         $container->addCompilerPass(new JavascriptProviderCompilerPass());
         $container->addCompilerPass(new QuoteProviderCompilerPass());
         $container->addCompilerPass(new StylesheetProviderCompilerPass());
