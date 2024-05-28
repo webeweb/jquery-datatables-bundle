@@ -214,7 +214,7 @@ abstract class DefaultTestCase extends TestCase {
      */
     public static function getRouterGenerateFunction(): callable {
 
-        return function($name) {
+        return function($name): string {
             return $name;
         };
     }
