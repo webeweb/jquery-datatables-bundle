@@ -18,6 +18,15 @@ services:
         tags:
             - { name: "console.command" }
 
+    wbw.common.command.image_provider_list:
+        class:  WBW\Bundle\CommonBundle\Command\ImageProviderListCommand
+        public: false
+        calls:
+            - [ "setImageManager", [ "@wbw.common.manager.image" ] ]
+            - [ "setTranslator",   [ "@translator" ] ]
+        tags:
+            - { name: "console.command" }
+
     wbw.common.command.javascript_provider_list:
         class:  WBW\Bundle\CommonBundle\Command\JavascriptProviderListCommand
         public: false
