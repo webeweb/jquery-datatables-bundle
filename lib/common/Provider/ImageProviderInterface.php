@@ -28,4 +28,34 @@ interface ImageProviderInterface extends ProviderInterface {
      */
     public const IMAGE_PROVIDER_TAG_NAME = "wbw.common.provider.image";
 
+    /**
+     * Get the image.
+     *
+     * @param string|null $name The name.
+     * @return string Returns the image.
+     */
+    public function getImage(?string $name): string;
+
+    /**
+     * Get the image URI.
+     *
+     * @param string|null $name The name.
+     * @return string Returns the image URI.
+     */
+    public function getImageUri(?string $name): string;
+
+    /**
+     * Get the image URL.
+     *
+     * @param string|null $name The name.
+     * @return string Returns the image URL.
+     */
+    public function getImageUrl(?string $name): string;
+
+    /**
+     * Get the images.
+     *
+     * @return string[] Returns the images.
+     */
+    public function getImages(): array;
 }
