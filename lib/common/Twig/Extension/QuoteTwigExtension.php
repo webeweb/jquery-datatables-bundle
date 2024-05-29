@@ -38,7 +38,7 @@ class QuoteTwigExtension extends AbstractTwigExtension {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.common.twig.extension.quote";
+    public const SERVICE_NAME = "wbw.common.twig.extension.quote";
 
     /**
      * Constructor.
