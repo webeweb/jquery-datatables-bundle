@@ -32,14 +32,14 @@ class AssetsUnzipCommand extends AbstractCommand {
      *
      * @var string
      */
-    const COMMAND_NAME = "wbw:common:assets:unzip";
+    public const COMMAND_NAME = "wbw:common:assets:unzip";
 
     /**
      * Service name.
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.common.command.assets_unzip";
+    public const SERVICE_NAME = "wbw.common.command.assets_unzip";
 
     /**
      * {@inheritDoc}
