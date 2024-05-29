@@ -35,7 +35,7 @@ class SecurityEventListener implements SecurityEventListenerInterface {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.common.event_listener.security";
+    public const SERVICE_NAME = "wbw.common.event_listener.security";
 
     /**
      * Constructor.
