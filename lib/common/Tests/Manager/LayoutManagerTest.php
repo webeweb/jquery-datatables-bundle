@@ -146,6 +146,22 @@ class LayoutManagerTest extends AbstractTestCase {
     }
 
     /**
+     * Test registerTwigGlobals()
+     *
+     * @return void
+     * @throws Throwable Throws an exception if an error occurs.
+     */
+    public function testRegisterTwigGlobalsWithoutProviders(): void {
+
+        $obj = new LayoutManager($this->logger, $this->twigEnvironment);
+
+        $obj->registerTwigGlobals();
+
+        $res = $this->twigEnvironment->getGlobals();
+        $this->assertCount(0, $res);
+    }
+
+    /**
      * Test setApplicationLayoutProvider()
      *
      * @return void
