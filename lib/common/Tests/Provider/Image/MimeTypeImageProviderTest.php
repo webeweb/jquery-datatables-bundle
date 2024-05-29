@@ -505,6 +505,8 @@ class MimeTypeImageProviderTest extends AbstractTestCase {
         foreach (self::IMAGES as $k => $v) {
             $this->assertEquals($v, $obj->getImage($k), $k);
         }
+
+        $this->assertEquals(MimeTypeImageProvider::DEFAULT_IMAGE, $obj->getImage("exception"));
     }
 
     /**
