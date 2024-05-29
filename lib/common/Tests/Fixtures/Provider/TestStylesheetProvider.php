@@ -28,7 +28,7 @@ class TestStylesheetProvider implements StylesheetProviderInterface {
      *
      * @ver string
      */
-    const SERVICE_NAME = "wbw.common.tests.fixtures.provider.test_stylesheet";
+    public const SERVICE_NAME = "wbw.common.tests.fixtures.provider.test_stylesheet";
 
     /**
      * {@inheritDoc}
