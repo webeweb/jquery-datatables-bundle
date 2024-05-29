@@ -34,7 +34,7 @@ class HostController extends AbstractController {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.common.controller.host";
+    public const SERVICE_NAME = "wbw.common.controller.host";
 
     /**
      * CPU.
