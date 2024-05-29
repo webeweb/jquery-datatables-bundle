@@ -14,7 +14,7 @@ command:
         class:       "Class"
         colors:      "Colors"
         domain:      "Domain"
-        images:      "images"
+        images:      "Images"
         javascripts: "Javascripts"
         name:        "Name"
         quotes:      "Quotes"
