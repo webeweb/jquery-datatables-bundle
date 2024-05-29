@@ -23,7 +23,7 @@ use WBW\Bundle\CommonBundle\Service\SessionServiceInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 
 /**
- * Symfony backward compatibility service test.
+ * Session service test.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Tests\Service
