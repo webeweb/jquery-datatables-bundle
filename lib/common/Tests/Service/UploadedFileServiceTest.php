@@ -18,6 +18,7 @@ use Throwable;
 use WBW\Bundle\CommonBundle\Service\UploadedFileService;
 use WBW\Bundle\CommonBundle\Service\UploadedFileServiceInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
+use WBW\Bundle\CommonBundle\Tests\Fixtures\Service\TestUploadedFileService;
 
 /**
  * Uploaded file service test.
@@ -54,6 +55,19 @@ class UploadedFileServiceTest extends AbstractTestCase {
         $obj = new UploadedFileService($this->directory);
 
         $this->assertFalse($obj->exists("basename.bak"));
+    }
+
+    /**
+     * Test mkdir()
+     *
+     * @return void
+     */
+    public function testMkdir(): void {
+
+        $obj = new TestUploadedFileService($this->directory);
+
+        $this->assertTrue($obj->mkdir("directory"));
+        $this->assertTrue($obj->mkdir("directory"));
     }
 
     /**
