@@ -28,7 +28,7 @@ class JavascriptProvider implements JavascriptProviderInterface {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.bootstrap.provider.javascript";
+    public const SERVICE_NAME = "wbw.bootstrap.provider.javascript";
 
     /**
      * {@inheritDoc}
