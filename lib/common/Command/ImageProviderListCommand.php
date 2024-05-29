@@ -106,7 +106,7 @@ class ImageProviderListCommand extends AbstractProviderListCommand {
         return [
             "",
             get_class($provider),
-            "",
+            sprintf($format, count($provider->getImages())),
         ];
     }
 }
