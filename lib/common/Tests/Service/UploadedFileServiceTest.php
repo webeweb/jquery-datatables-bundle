@@ -14,6 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\CommonBundle\Tests\Service;
 
 use SplFileInfo;
+use Symfony\Component\Filesystem\Filesystem;
 use Throwable;
 use WBW\Bundle\CommonBundle\Service\UploadedFileService;
 use WBW\Bundle\CommonBundle\Service\UploadedFileServiceInterface;
@@ -64,10 +65,15 @@ class UploadedFileServiceTest extends AbstractTestCase {
      */
     public function testMkdir(): void {
 
+        $dir = $this->directory . UploadedFileService::UPLOAD_DIRECTORY;
+        if (true === file_exists($dir)) {
+            (new Filesystem())->remove($dir);
+        }
+
         $obj = new TestUploadedFileService($this->directory);
 
-        $this->assertTrue($obj->mkdir("directory"));
-        $this->assertTrue($obj->mkdir("directory"));
+        $this->assertTrue($obj->mkdir($dir));
+        $this->assertTrue($obj->mkdir($dir));
     }
 
     /**
@@ -92,13 +98,10 @@ class UploadedFileServiceTest extends AbstractTestCase {
     public function testSave(): void {
 
         // Set a directory mock.
-        $dir = $this->directory . "/uploads/subdirectory";
+        $dir = $this->directory . UploadedFileService::UPLOAD_DIRECTORY . "/subdirectory";
 
-        if (true === file_exists("$dir/basename.bak")) {
-            unlink("$dir/basename.bak");
-        }
         if (true === file_exists($dir)) {
-            rmdir($dir);
+            (new Filesystem())->remove($dir);
         }
 
         // Set the file mocks.
@@ -117,7 +120,7 @@ class UploadedFileServiceTest extends AbstractTestCase {
         $obj = new UploadedFileService($this->directory);
 
         $res = $obj->save($uploadedFile, "/subdirectory", "basename.bak");
-        $this->assertEquals("/uploads/subdirectory/basename.bak", $res);
+        $this->assertEquals(UploadedFileService::UPLOAD_DIRECTORY . "/subdirectory/basename.bak", $res);
 
         $this->assertFileExists("$dir/basename.bak");
     }
@@ -145,7 +148,7 @@ class UploadedFileServiceTest extends AbstractTestCase {
         $obj = new UploadedFileService($this->directory);
 
         $this->assertNull($obj->unlink("exception"));
-        $this->assertTrue($obj->unlink("/uploads/subdirectory/basename.bak"));
+        $this->assertTrue($obj->unlink(UploadedFileService::UPLOAD_DIRECTORY . "/subdirectory/basename.bak"));
     }
 
     /**
@@ -156,7 +159,7 @@ class UploadedFileServiceTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $this->assertEquals("wbw.common.service.uploaded_file", UploadedFileService::SERVICE_NAME);
-        $this->assertEquals("/uploads", UploadedFileService::UPLOAD_DIRECTORY);
+        $this->assertEquals(DIRECTORY_SEPARATOR . "uploads", UploadedFileService::UPLOAD_DIRECTORY);
 
         $obj = new UploadedFileService($this->directory);
 
