@@ -41,6 +41,7 @@ use WBW\Bundle\CommonBundle\Manager\JavascriptManager;
 use WBW\Bundle\CommonBundle\Manager\LayoutManager;
 use WBW\Bundle\CommonBundle\Manager\QuoteManager;
 use WBW\Bundle\CommonBundle\Manager\StylesheetManager;
+use WBW\Bundle\CommonBundle\Provider\Image\MimeTypeImageProvider;
 use WBW\Bundle\CommonBundle\Provider\JavascriptProvider;
 use WBW\Bundle\CommonBundle\Provider\Quote\WorldsWisdomQuoteProvider;
 use WBW\Bundle\CommonBundle\Service\SessionService;
@@ -167,6 +168,7 @@ class WBWCommonExtensionTest extends AbstractTestCase {
 
         // Providers
         $this->assertInstanceOf(JavascriptProvider::class, $this->containerBuilder->get(JavascriptProvider::SERVICE_NAME));
+        $this->assertInstanceOf(MimeTypeImageProvider::class, $this->containerBuilder->get(MimeTypeImageProvider::SERVICE_NAME));
         $this->assertInstanceOf(WorldsWisdomQuoteProvider::class, $this->containerBuilder->get(WorldsWisdomQuoteProvider::SERVICE_NAME));
 
         // Services
