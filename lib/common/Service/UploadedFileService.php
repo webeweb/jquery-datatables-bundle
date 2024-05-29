@@ -42,7 +42,7 @@ class UploadedFileService implements UploadedFileServiceInterface {
      *
      * @var string
      */
-    public const UPLOAD_DIRECTORY = "/uploads";
+    public const UPLOAD_DIRECTORY = DIRECTORY_SEPARATOR. "uploads";
 
     /**
      * Constructor.
