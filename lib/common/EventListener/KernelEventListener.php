@@ -34,7 +34,7 @@ class KernelEventListener implements KernelEventListenerInterface {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.common.event_listener.kernel";
+    public const SERVICE_NAME = "wbw.common.event_listener.kernel";
 
     /**
      * Constructor.
