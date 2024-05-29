@@ -66,12 +66,13 @@ class StatementServiceTest extends AbstractWebTestCase {
      */
     public function testExecuteQueries(): void {
 
+        // Set a filename mock.
         $filename = __DIR__ . "/../Fixtures/Service/StatementServiceTest.testExecuteQueriesFile.sql";
 
+        $queries = $this->statementService->readStatementFile($filename);
         $values  = array_pad([], 2, [
             ":date" => [(new DateTime())->format("Y-m-d"), ParameterType::STRING],
         ]);
-        $queries = $this->statementService->readStatementFile($filename);
 
         $obj = $this->statementService;
 
@@ -91,8 +92,7 @@ class StatementServiceTest extends AbstractWebTestCase {
     public function testExecuteQueriesFile(): void {
 
         $filename = __DIR__ . "/../Fixtures/Service/StatementServiceTest.testExecuteQueriesFile.sql";
-
-        $values = array_pad([], 2, [
+        $values   = array_pad([], 2, [
             ":date" => [(new DateTime())->format("Y-m-d"), ParameterType::STRING],
         ]);
 
@@ -113,12 +113,13 @@ class StatementServiceTest extends AbstractWebTestCase {
      */
     public function testExecuteQuery(): void {
 
+        // Set a filename mock.
         $filename = __DIR__ . "/../Fixtures/Service/StatementServiceTest.testExecuteQueryFile.sql";
 
+        $query  = $this->statementService->readStatementFile($filename);
         $values = [
             ":date" => [(new DateTime())->format("Y-m-d"), ParameterType::STRING],
         ];
-        $query  = $this->statementService->readStatementFile($filename);
 
         $obj = $this->statementService;
 
@@ -134,9 +135,9 @@ class StatementServiceTest extends AbstractWebTestCase {
      */
     public function testExecuteQueryFile(): void {
 
+        // Set a filename mock.
         $filename = __DIR__ . "/../Fixtures/Service/StatementServiceTest.testExecuteQueryFile.sql";
-
-        $values = [
+        $values   = [
             ":date" => [(new DateTime())->format("Y-m-d"), ParameterType::STRING],
         ];
 
@@ -154,12 +155,13 @@ class StatementServiceTest extends AbstractWebTestCase {
      */
     public function testExecuteStatement(): void {
 
+        // Set a filename mock.
         $filename = __DIR__ . "/../Fixtures/Service/StatementServiceTest.testExecuteStatementFile.sql";
 
+        $query  = $this->statementService->readStatementFile($filename);
         $values = [
             ":id" => [1, ParameterType::INTEGER],
         ];
-        $query  = $this->statementService->readStatementFile($filename);
 
         $obj = $this->statementService;
 
@@ -176,8 +178,7 @@ class StatementServiceTest extends AbstractWebTestCase {
     public function testExecuteStatementFile(): void {
 
         $filename = __DIR__ . "/../Fixtures/Service/StatementServiceTest.testExecuteStatementFile.sql";
-
-        $values = [
+        $values   = [
             ":id" => [1, ParameterType::INTEGER],
         ];
 
@@ -195,12 +196,13 @@ class StatementServiceTest extends AbstractWebTestCase {
      */
     public function testExecuteStatements(): void {
 
+        // Set a filename mock.
         $filename = __DIR__ . "/../Fixtures/Service/StatementServiceTest.testExecuteStatementsFile.sql";
 
+        $queries = $this->statementService->readStatementFile($filename);
         $values  = array_pad([], 2, [
             ":id" => [1, ParameterType::INTEGER],
         ]);
-        $queries = $this->statementService->readStatementFile($filename);
 
         $obj = $this->statementService;
 
@@ -220,8 +222,7 @@ class StatementServiceTest extends AbstractWebTestCase {
     public function testExecuteStatementsFile(): void {
 
         $filename = __DIR__ . "/../Fixtures/Service/StatementServiceTest.testExecuteStatementsFile.sql";
-
-        $values = array_pad([], 2, [
+        $values   = array_pad([], 2, [
             ":id" => [1, ParameterType::INTEGER],
         ]);
 
@@ -242,10 +243,10 @@ class StatementServiceTest extends AbstractWebTestCase {
      */
     public function testPrepareStatement(): void {
 
+        $query  = "SELECT :date";
         $values = [
             ":date" => [(new DateTime())->format("Y-m-d"), ParameterType::STRING],
         ];
-        $query  = "SELECT :date";
 
         $obj = $this->statementService;
 
@@ -295,6 +296,7 @@ class StatementServiceTest extends AbstractWebTestCase {
      */
     public function testSplitStatements(): void {
 
+        // Set a filename mock.
         $filename = __DIR__ . "/../Fixtures/Service/StatementServiceTest.testExecuteQueriesFile.sql";
 
         $queries = $this->statementService->readStatementFile($filename);

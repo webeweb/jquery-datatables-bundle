@@ -149,9 +149,6 @@ class StatementService implements StatementServiceInterface {
     public function splitStatements(string $sql): array {
 
         $queries = preg_split(self::STATEMENT_SEPARATOR, $sql);
-        if (false === $queries) {
-            return [];
-        }
 
         return array_map(function($query) {
             return trim($query);
