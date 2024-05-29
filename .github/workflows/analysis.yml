@@ -28,4 +28,4 @@ jobs:
             -   name: "Application"
                 run:  |
                       vendor/bin/phpstan --version
-                      vendor/bin/phpstan analyse --error-format=github --configuration phpstan.conf.neon
+                      vendor/bin/phpstan analyse --error-format=github --configuration .github/workflows/analysis.neon
