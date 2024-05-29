@@ -47,7 +47,7 @@ class TwigController extends AbstractController {
      *
      * @var string
      */
-    const SERVICE_NAME = "wbw.common.controller.twig";
+    public const SERVICE_NAME = "wbw.common.controller.twig";
 
     /**
      * Function.
