@@ -87,8 +87,9 @@ class ColorProviderListCommand extends AbstractProviderListCommand {
 
         return [
             $this->translate("command.header.name", [], WBWCommonBundle::getTranslationDomain(), "en"),
-            $this->translate("command.header.class", [], WBWCommonBundle::getTranslationDomain(), "en"),
+            $this->translate("command.header.service", [], WBWCommonBundle::getTranslationDomain(), "en"),
             $this->translate("command.header.colors", [], WBWCommonBundle::getTranslationDomain(), "en"),
+            "",
         ];
     }
 
@@ -103,10 +104,13 @@ class ColorProviderListCommand extends AbstractProviderListCommand {
         $length = strlen($this->getHeaders()[2]);
         $format = "%{$length}d";
 
+        $number = count($provider->getColors());
+
         return [
             $provider->getName(),
             get_class($provider),
-            sprintf($format, count($provider->getColors())),
+            sprintf($format, $number),
+            static::formatCheckbox(0 < $number),
         ];
     }
 }
