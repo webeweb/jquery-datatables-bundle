@@ -88,8 +88,8 @@ class QuoteProviderListCommand extends AbstractProviderListCommand {
         return [
             $this->translate("command.header.service", [], WBWCommonBundle::getTranslationDomain(), "en"),
             $this->translate("command.header.quotes", [], WBWCommonBundle::getTranslationDomain(), "en"),
-            $this->translate("command.header.authors", [], WBWCommonBundle::getTranslationDomain(), "en"),
             $this->translate("command.header.domain", [], WBWCommonBundle::getTranslationDomain(), "en"),
+            $this->translate("command.header.authors", [], WBWCommonBundle::getTranslationDomain(), "en"),
             "",
         ];
     }
@@ -104,7 +104,7 @@ class QuoteProviderListCommand extends AbstractProviderListCommand {
 
         $length = [
             strlen($this->getHeaders()[1]),
-            strlen($this->getHeaders()[2]),
+            strlen($this->getHeaders()[3]),
         ];
         $format = [
             "%$length[0]d",
@@ -116,8 +116,8 @@ class QuoteProviderListCommand extends AbstractProviderListCommand {
         return [
             get_class($provider),
             sprintf($format[0], $number),
-            sprintf($format[1], count($provider->getAuthors())),
             $provider->getDomain(),
+            sprintf($format[1], count($provider->getAuthors())),
             static::formatCheckbox(366 === $number),
         ];
     }
