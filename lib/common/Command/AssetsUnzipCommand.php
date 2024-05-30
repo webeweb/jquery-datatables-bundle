@@ -92,9 +92,9 @@ class AssetsUnzipCommand extends AbstractCommand {
     protected function getHeaders(): array {
 
         return [
-            "",
             $this->translate("command.header.bundle", [], WBWCommonBundle::getTranslationDomain(), "en"),
             $this->translate("command.header.asset", [], WBWCommonBundle::getTranslationDomain(), "en"),
+            "",
         ];
     }
 
@@ -115,9 +115,9 @@ class AssetsUnzipCommand extends AbstractCommand {
         foreach ($assets as $k => $v) {
 
             $rows[] = [
-                true === $v ? $success : $warning,
                 $bundle,
                 basename($k),
+                true === $v ? $success : $warning,
             ];
         }
 
