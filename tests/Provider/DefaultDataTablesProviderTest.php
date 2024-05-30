@@ -14,6 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\DataTablesBundle\Tests\Provider;
 
 use Symfony\Contracts\Translation\TranslatorInterface;
+use WBW\Bundle\CommonBundle\Provider\ProviderInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesOptionsInterface;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesResponseInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
@@ -141,6 +142,7 @@ class DefaultDataTablesProviderTest extends AbstractTestCase {
 
         $obj = $this->dataTablesProvider;
 
+        $this->assertInstanceOf(ProviderInterface::class, $obj);
         $this->assertInstanceOf(DataTablesProviderInterface::class, $obj);
 
         $this->assertSame($this->translator, $obj->getTranslator());
