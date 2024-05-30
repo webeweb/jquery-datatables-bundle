@@ -11,18 +11,18 @@
 
 declare(strict_types = 1);
 
-namespace WBW\Bundle\BootstrapBundle\Provider;
+namespace WBW\Bundle\BootstrapBundle\Provider\Color;
 
 use WBW\Bundle\BootstrapBundle\Factory\Customize\ColorFactory;
 use WBW\Bundle\CommonBundle\Provider\ColorProviderInterface;
 
 /**
- * Color provider.
+ * Bootstrap color provider.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\BootstrapBundle\Provider
+ * @package WBW\Bundle\BootstrapBundle\Provider\Color
  */
-class ColorProvider implements ColorProviderInterface {
+class BootstrapColorProvider implements ColorProviderInterface {
 
     /**
      * Provider name.
@@ -36,7 +36,7 @@ class ColorProvider implements ColorProviderInterface {
      *
      * @var string
      */
-    public const SERVICE_NAME = "wbw.bootstrap.provider.color";
+    public const SERVICE_NAME = "wbw.bootstrap.provider.color.bootstrap";
 
     /**
      * {@inheritDoc}
