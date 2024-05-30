@@ -16,6 +16,7 @@ namespace WBW\Bundle\CommonBundle\Tests\Provider\Layout;
 use WBW\Bundle\CommonBundle\Provider\Layout\DefaultUserInfoLayoutProvider;
 use WBW\Bundle\CommonBundle\Provider\Layout\UserInfoLayoutProviderInterface;
 use WBW\Bundle\CommonBundle\Provider\LayoutProviderInterface;
+use WBW\Bundle\CommonBundle\Provider\ProviderInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 
 /**
@@ -59,6 +60,7 @@ class DefaultUserInfoLayoutProviderTest extends AbstractTestCase {
 
         $obj = new DefaultUserInfoLayoutProvider();
 
+        $this->assertInstanceOf(ProviderInterface::class, $obj);
         $this->assertInstanceOf(LayoutProviderInterface::class, $obj);
         $this->assertInstanceOf(UserInfoLayoutProviderInterface::class, $obj);
     }
