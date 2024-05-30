@@ -43,6 +43,13 @@ class MimeTypeImageProvider implements MimeTypeImageProviderInterface {
     public const IMAGES_FOLDER = "img/mimetype/default";
 
     /**
+     * Provider name.
+     *
+     * @var string
+     */
+    public const PROVIDER_NAME = "mimetype.default";
+
+    /**
      * Service name.
      *
      * @var string
@@ -113,5 +120,12 @@ class MimeTypeImageProvider implements MimeTypeImageProviderInterface {
         sort($images, SORT_STRING);
 
         return $images;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getName(): string {
+        return self::PROVIDER_NAME;
     }
 }

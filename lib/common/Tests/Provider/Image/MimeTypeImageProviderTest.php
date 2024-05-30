@@ -15,6 +15,7 @@ namespace WBW\Bundle\CommonBundle\Tests\Provider\Image;
 
 use WBW\Bundle\CommonBundle\Provider\Image\MimeTypeImageProvider;
 use WBW\Bundle\CommonBundle\Provider\ImageProviderInterface;
+use WBW\Bundle\CommonBundle\Provider\ProviderInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 
 /**
@@ -565,12 +566,14 @@ class MimeTypeImageProviderTest extends AbstractTestCase {
 
         $directory = realpath(__DIR__ . "/../../../Resources/public/" . MimeTypeImageProvider::IMAGES_FOLDER);
 
+        $this->assertEquals("wbw.common.provider.image.mime_type", MimeTypeImageProvider::SERVICE_NAME);
         $this->assertEquals("unknown.svg", MimeTypeImageProvider::DEFAULT_IMAGE);
         $this->assertEquals("img/mimetype/default", MimeTypeImageProvider::IMAGES_FOLDER);
-        $this->assertEquals("wbw.common.provider.image.mime_type", MimeTypeImageProvider::SERVICE_NAME);
+        $this->assertEquals("mimetype.default", MimeTypeImageProvider::PROVIDER_NAME);
 
         $obj = new MimeTypeImageProvider();
 
+        $this->assertInstanceOf(ProviderInterface::class, $obj);
         $this->assertInstanceOf(ImageProviderInterface::class, $obj);
         $this->assertInstanceOf(MimeTypeImageProvider::class, $obj);
 
