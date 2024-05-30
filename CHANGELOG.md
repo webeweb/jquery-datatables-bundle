@@ -9,6 +9,9 @@ CHANGELOG
 - Add PHP 8.3 support
 - Add declare(strict_types = 1)
 - Add Color provider list command
+- Add Image manager
+- Add Image provider list command
+- Add Image provider
 - Add Javascript provider list command
 - Add Quote provider list command
 - Add Stylesheet provider list command
