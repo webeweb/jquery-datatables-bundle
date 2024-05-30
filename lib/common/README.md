@@ -95,6 +95,7 @@ Read the [documentation](Resources/doc/index.md).
 The following commands are available:
 
 ```bash
+php bin/console wbw:common:assets:provider:list
 php bin/console wbw:common:assets:unzip
 php bin/console wbw:common:color:provider:list
 php bin/console wbw:common:image:provider:list
