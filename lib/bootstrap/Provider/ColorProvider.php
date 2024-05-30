@@ -25,6 +25,13 @@ use WBW\Bundle\CommonBundle\Provider\ColorProviderInterface;
 class ColorProvider implements ColorProviderInterface {
 
     /**
+     * Provider name.
+     *
+     * @var string
+     */
+    public const PROVIDER_NAME = "bootstrap";
+
+    /**
      * Service name.
      *
      * @var string
@@ -42,6 +49,6 @@ class ColorProvider implements ColorProviderInterface {
      * {@inheritDoc}
      */
     public function getName(): string {
-        return "bootstrap";
+        return self::PROVIDER_NAME;
     }
 }
