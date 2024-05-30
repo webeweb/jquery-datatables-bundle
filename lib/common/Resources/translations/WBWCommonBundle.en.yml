@@ -10,6 +10,7 @@ command:
     header:
         authors:     "Authors"
         asset:       "Asset"
+        assets:      "Assets"
         bundle:      "Bundle"
         colors:      "Colors"
         domain:      "Domain"
