@@ -13,6 +13,7 @@ into all our bundles and Symfony applications.
 
 Includes:
 
+- 460 SVG icons
 - [Animate.css 3.7.0](https://github.com/animate-css/animate.css)
 - [Chart.js 4.2.1](https://github.com/chartjs/Chart.js)
 - [Clippy JS](https://github.com/clippyjs/clippy.js)
