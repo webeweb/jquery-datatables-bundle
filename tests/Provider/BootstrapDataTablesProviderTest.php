@@ -19,6 +19,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 use Throwable;
 use Twig\Environment;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\Component\ButtonTwigExtension;
+use WBW\Bundle\CommonBundle\Provider\ProviderInterface;
 use WBW\Bundle\CommonBundle\Tests\DefaultTestCase;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
@@ -195,6 +196,7 @@ class BootstrapDataTablesProviderTest extends AbstractTestCase {
 
         $obj = $this->dataTablesProvider;
 
+        $this->assertInstanceOf(ProviderInterface::class, $obj);
         $this->assertInstanceOf(DataTablesProviderInterface::class, $obj);
 
         $this->assertSame($this->buttonTwigExtension, $obj->getButtonTwigExtension());
