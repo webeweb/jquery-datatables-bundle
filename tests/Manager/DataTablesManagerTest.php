@@ -15,10 +15,12 @@ namespace WBW\Bundle\DataTablesBundle\Tests\Manager;
 
 use InvalidArgumentException;
 use Throwable;
+use WBW\Bundle\CommonBundle\Manager\ManagerInterface;
 use WBW\Bundle\CommonBundle\Provider\ProviderInterface;
 use WBW\Bundle\DataTablesBundle\Exception\AlreadyRegisteredDataTablesProviderException;
 use WBW\Bundle\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\DataTablesBundle\Manager\DataTablesManager;
+use WBW\Bundle\DataTablesBundle\Manager\DataTablesManagerInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 
@@ -146,6 +148,9 @@ class DataTablesManagerTest extends AbstractTestCase {
         $this->assertEquals("wbw.datatables.manager", DataTablesManager::SERVICE_NAME);
 
         $obj = new DataTablesManager();
+
+        $this->assertInstanceOf(ManagerInterface::class, $obj);
+        $this->assertInstanceOf(DataTablesManagerInterface::class, $obj);
 
         $this->assertEquals([], $obj->getProviders());
     }

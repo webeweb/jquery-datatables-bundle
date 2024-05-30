@@ -28,7 +28,7 @@ use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Manager
  */
-class DataTablesManager extends AbstractManager {
+class DataTablesManager extends AbstractManager implements DataTablesManagerInterface {
 
     /**
      * Service name.
@@ -56,11 +56,7 @@ class DataTablesManager extends AbstractManager {
     }
 
     /**
-     * Get a provider.
-     *
-     * @param string $name The name.
-     * @return DataTablesProviderInterface Returns the provider.
-     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
+     * {@inheritDoc}
      */
     public function getProvider(string $name): DataTablesProviderInterface {
 
