@@ -13,6 +13,8 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\CommonBundle\Tests\Provider\Quote;
 
+use WBW\Bundle\CommonBundle\Provider\ProviderInterface;
+use WBW\Bundle\CommonBundle\Provider\QuoteProviderInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 use WBW\Bundle\CommonBundle\Tests\Fixtures\Provider\Quote\TestAbstractQuoteProvider;
 
@@ -32,6 +34,9 @@ class AbstractQuoteProviderTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new TestAbstractQuoteProvider();
+
+        $this->assertInstanceOf(ProviderInterface::class, $obj);
+        $this->assertInstanceOf(QuoteProviderInterface::class, $obj);
 
         $this->assertEquals([], $obj->getAuthors());
         $this->assertEquals([], $obj->getQuotes());
