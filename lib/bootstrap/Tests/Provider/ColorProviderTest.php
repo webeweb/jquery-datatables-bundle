@@ -61,7 +61,7 @@ class ColorProviderTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $this->assertEquals("wbw.bootstrap.provider.color", ColorProvider::SERVICE_NAME);
-        $this->assertEquals("bootstrap", ColorProvider::PROVIDER_NAME);
+        $this->assertEquals("Bootstrap", ColorProvider::PROVIDER_NAME);
 
         $obj = new ColorProvider();
 

@@ -29,7 +29,7 @@ class ColorProvider implements ColorProviderInterface {
      *
      * @var string
      */
-    public const PROVIDER_NAME = "bootstrap";
+    public const PROVIDER_NAME = "Bootstrap";
 
     /**
      * Service name.
