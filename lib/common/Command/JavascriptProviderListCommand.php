@@ -86,8 +86,9 @@ class JavascriptProviderListCommand extends AbstractProviderListCommand {
     protected function getHeaders(): array {
 
         return [
-            $this->translate("command.header.class", [], WBWCommonBundle::getTranslationDomain(), "en"),
+            $this->translate("command.header.service", [], WBWCommonBundle::getTranslationDomain(), "en"),
             $this->translate("command.header.javascripts", [], WBWCommonBundle::getTranslationDomain(), "en"),
+            "",
         ];
     }
 
@@ -102,9 +103,12 @@ class JavascriptProviderListCommand extends AbstractProviderListCommand {
         $length = strlen($this->getHeaders()[1]);
         $format = "%{$length}d";
 
+        $number = count($provider->getJavascripts());
+
         return [
             get_class($provider),
-            sprintf($format, count($provider->getJavascripts())),
+            sprintf($format, $number),
+            static::formatCheckbox(0 < $number),
         ];
     }
 }
