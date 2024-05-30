@@ -18,7 +18,7 @@ use Throwable;
 use Twig\Environment;
 use WBW\Bundle\BootstrapBundle\DependencyInjection\Configuration;
 use WBW\Bundle\BootstrapBundle\DependencyInjection\WBWBootstrapExtension;
-use WBW\Bundle\BootstrapBundle\Provider\Color\BootstrapColorProvider;
+use WBW\Bundle\BootstrapBundle\Provider\ColorProvider;
 use WBW\Bundle\BootstrapBundle\Provider\JavascriptProvider;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\BootstrapBundle\Twig\Extension\AssetsTwigExtension;
@@ -114,7 +114,7 @@ class WBWBootstrapExtensionTest extends AbstractTestCase {
         $obj->load($this->configs, $this->containerBuilder);
 
         // Providers
-        $this->assertInstanceOf(BootstrapColorProvider::class, $this->containerBuilder->get(BootstrapColorProvider::SERVICE_NAME));
+        $this->assertInstanceOf(ColorProvider::class, $this->containerBuilder->get(ColorProvider::SERVICE_NAME));
         $this->assertInstanceOf(JavascriptProvider::class, $this->containerBuilder->get(JavascriptProvider::SERVICE_NAME));
 
         // Twig extensions

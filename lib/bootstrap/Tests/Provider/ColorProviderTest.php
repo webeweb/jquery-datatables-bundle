@@ -11,21 +11,21 @@
 
 declare(strict_types = 1);
 
-namespace WBW\Bundle\BootstrapBundle\Tests\Provider\Color;
+namespace WBW\Bundle\BootstrapBundle\Tests\Provider;
 
 use WBW\Bundle\BootstrapBundle\Factory\Customize\ColorFactory;
-use WBW\Bundle\BootstrapBundle\Provider\Color\BootstrapColorProvider;
+use WBW\Bundle\BootstrapBundle\Provider\ColorProvider;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
 use WBW\Bundle\CommonBundle\Provider\ColorProviderInterface;
 use WBW\Bundle\CommonBundle\Provider\ProviderInterface;
 
 /**
- * Bootstrap color provider test.
+ * Color provider test.
  *
  * @author webeweb <https://github.com/webeweb>
- * @package WBW\Bundle\BootstrapBundle\Tests\Provider\Color
+ * @package WBW\Bundle\BootstrapBundle\Tests\Provider
  */
-class BootstrapColorProviderTest extends AbstractTestCase {
+class ColorProviderTest extends AbstractTestCase {
 
     /**
      * Test getColors()
@@ -36,7 +36,7 @@ class BootstrapColorProviderTest extends AbstractTestCase {
 
         $exp = ColorFactory::newBootstrapPalette();
 
-        $obj = new BootstrapColorProvider();
+        $obj = new ColorProvider();
 
         $this->assertEquals($exp, $obj->getColors());
     }
@@ -48,9 +48,9 @@ class BootstrapColorProviderTest extends AbstractTestCase {
      */
     public function testGetName(): void {
 
-        $obj = new BootstrapColorProvider();
+        $obj = new ColorProvider();
 
-        $this->assertEquals(BootstrapColorProvider::PROVIDER_NAME, $obj->getName());
+        $this->assertEquals(ColorProvider::PROVIDER_NAME, $obj->getName());
     }
 
     /**
@@ -60,10 +60,10 @@ class BootstrapColorProviderTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw.bootstrap.provider.color.bootstrap", BootstrapColorProvider::SERVICE_NAME);
-        $this->assertEquals("bootstrap", BootstrapColorProvider::PROVIDER_NAME);
+        $this->assertEquals("wbw.bootstrap.provider.color", ColorProvider::SERVICE_NAME);
+        $this->assertEquals("bootstrap", ColorProvider::PROVIDER_NAME);
 
-        $obj = new BootstrapColorProvider();
+        $obj = new ColorProvider();
 
         $this->assertInstanceOf(ProviderInterface::class, $obj);
         $this->assertInstanceOf(ColorProviderInterface::class, $obj);
