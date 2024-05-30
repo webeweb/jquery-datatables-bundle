@@ -75,5 +75,4 @@ abstract class AbstractEntityDataTransformer extends AbstractDataTransformer imp
      * @return string Returns the entity class.
      */
     abstract protected function getEntityClass(): string;
-
 }
