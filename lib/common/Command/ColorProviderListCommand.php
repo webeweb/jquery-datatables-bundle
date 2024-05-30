@@ -86,8 +86,8 @@ class ColorProviderListCommand extends AbstractProviderListCommand {
     protected function getHeaders(): array {
 
         return [
-            $this->translate("command.header.name", [], WBWCommonBundle::getTranslationDomain(), "en"),
             $this->translate("command.header.service", [], WBWCommonBundle::getTranslationDomain(), "en"),
+            $this->translate("command.header.name", [], WBWCommonBundle::getTranslationDomain(), "en"),
             $this->translate("command.header.colors", [], WBWCommonBundle::getTranslationDomain(), "en"),
             "",
         ];
@@ -107,8 +107,8 @@ class ColorProviderListCommand extends AbstractProviderListCommand {
         $number = count($provider->getColors());
 
         return [
-            $provider->getName(),
             get_class($provider),
+            $provider->getName(),
             sprintf($format, $number),
             static::formatCheckbox(0 < $number),
         ];
