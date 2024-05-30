@@ -24,26 +24,26 @@ trait DataTablesManagerTrait {
     /**
      * DataTables manager.
      *
-     * @var DataTablesManager|null
+     * @var DataTablesManagerInterface|null
      */
     private $dataTablesManager;
 
     /**
      * Get the DataTables manager.
      *
-     * @return DataTablesManager|null Returns the DataTables manager.
+     * @return DataTablesManagerInterface|null Returns the DataTables manager.
      */
-    public function getDataTablesManager(): ?DataTablesManager {
+    public function getDataTablesManager(): ?DataTablesManagerInterface {
         return $this->dataTablesManager;
     }
 
     /**
      * Set the DataTables manager.
      *
-     * @param DataTablesManager|null $dataTablesManager The DataTables manager.
+     * @param DataTablesManagerInterface|null $dataTablesManager The DataTables manager.
      * @return self Returns this instance.
      */
-    protected function setDataTablesManager(?DataTablesManager $dataTablesManager): self {
+    protected function setDataTablesManager(?DataTablesManagerInterface $dataTablesManager): self {
         $this->dataTablesManager = $dataTablesManager;
         return $this;
     }

@@ -13,7 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Tests\Manager;
 
-use WBW\Bundle\DataTablesBundle\Manager\DataTablesManager;
+use WBW\Bundle\DataTablesBundle\Manager\DataTablesManagerInterface;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Manager\TestDataTablesManagerTrait;
 
@@ -33,7 +33,7 @@ class DataTablesManagerTraitTest extends AbstractTestCase {
     public function testSetDataTablesManager(): void {
 
         // Set a DataTables manager mock.
-        $dataTablesManager = new DataTablesManager();
+        $dataTablesManager = $this->getMockBuilder(DataTablesManagerInterface::class)->getMock();
 
         $obj = new TestDataTablesManagerTrait();
 
