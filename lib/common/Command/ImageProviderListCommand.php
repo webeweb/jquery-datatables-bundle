@@ -86,9 +86,10 @@ class ImageProviderListCommand extends AbstractProviderListCommand {
     protected function getHeaders(): array {
 
         return [
+            $this->translate("command.header.service", [], WBWCommonBundle::getTranslationDomain(), "en"),
             $this->translate("command.header.name", [], WBWCommonBundle::getTranslationDomain(), "en"),
-            $this->translate("command.header.class", [], WBWCommonBundle::getTranslationDomain(), "en"),
             $this->translate("command.header.images", [], WBWCommonBundle::getTranslationDomain(), "en"),
+            "",
         ];
     }
 
@@ -103,10 +104,13 @@ class ImageProviderListCommand extends AbstractProviderListCommand {
         $length = strlen($this->getHeaders()[2]);
         $format = "%{$length}d";
 
+        $number = count($provider->getImages());
+
         return [
-            "",
             get_class($provider),
-            sprintf($format, count($provider->getImages())),
+            $provider->getName(),
+            sprintf($format, $number),
+            static::formatCheckbox(0 < $number),
         ];
     }
 }
