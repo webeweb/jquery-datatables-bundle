@@ -62,7 +62,7 @@ class MaterialDesignColorProviderTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $this->assertEquals("wbw.common.provider.color.material_design", MaterialDesignColorProvider::SERVICE_NAME);
-        $this->assertEquals("material_design", MaterialDesignColorProvider::PROVIDER_NAME);
+        $this->assertEquals("MaterialDesign", MaterialDesignColorProvider::PROVIDER_NAME);
 
         $obj = new MaterialDesignColorProvider();
 

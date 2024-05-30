@@ -28,7 +28,7 @@ class MaterialDesignColorProvider implements MaterialDesignColorProviderInterfac
      *
      * @var string
      */
-    public const PROVIDER_NAME = "material_design";
+    public const PROVIDER_NAME = "MaterialDesign";
 
     /**
      * Service name.
