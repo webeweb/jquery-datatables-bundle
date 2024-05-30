@@ -22,6 +22,7 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Throwable;
 use Twig\Environment;
+use WBW\Bundle\CommonBundle\Command\AssetsProviderListCommand;
 use WBW\Bundle\CommonBundle\Command\AssetsUnzipCommand;
 use WBW\Bundle\CommonBundle\Command\ColorProviderListCommand;
 use WBW\Bundle\CommonBundle\Command\ImageProviderListCommand;
@@ -143,6 +144,7 @@ class WBWCommonExtensionTest extends AbstractTestCase {
 
         // Commands
         $this->assertInstanceOf(AssetsUnzipCommand::class, $this->containerBuilder->get(AssetsUnzipCommand::SERVICE_NAME));
+        $this->assertInstanceOf(AssetsProviderListCommand::class, $this->containerBuilder->get(AssetsProviderListCommand::SERVICE_NAME));
         $this->assertInstanceOf(ColorProviderListCommand::class, $this->containerBuilder->get(ColorProviderListCommand::SERVICE_NAME));
         $this->assertInstanceOf(ImageProviderListCommand::class, $this->containerBuilder->get(ImageProviderListCommand::SERVICE_NAME));
         $this->assertInstanceOf(JavascriptProviderListCommand::class, $this->containerBuilder->get(JavascriptProviderListCommand::SERVICE_NAME));
