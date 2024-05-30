@@ -13,6 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\CommonBundle\Tests\Provider\Quote;
 
+use WBW\Bundle\CommonBundle\Provider\ProviderInterface;
 use WBW\Bundle\CommonBundle\Provider\Quote\WorldsWisdomQuoteProvider;
 use WBW\Bundle\CommonBundle\Provider\Quote\YamlQuoteProvider;
 use WBW\Bundle\CommonBundle\Provider\QuoteProviderInterface;
@@ -38,6 +39,7 @@ class WorldsWisdomQuoteProviderTest extends AbstractTestCase {
 
         $obj = new WorldsWisdomQuoteProvider();
 
+        $this->assertInstanceOf(ProviderInterface::class, $obj);
         $this->assertInstanceOf(QuoteProviderInterface::class, $obj);
         $this->assertInstanceOf(YamlQuoteProvider::class, $obj);
     }
