@@ -32,7 +32,7 @@ class MimeTypeImageProviderTraitTest extends AbstractTestCase {
      */
     public function testSetMimeTypeImageProvider(): void {
 
-        // Set a Mimy type image provider mock.
+        // Set a Mime type image provider mock.
         $mimeTypeImageProvider = $this->getMockBuilder(MimeTypeImageProviderInterface::class)->getMock();
 
         $obj = new TestMimeTypeImageProviderTrait();
