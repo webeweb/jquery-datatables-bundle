@@ -88,8 +88,8 @@ class DataTablesProviderListCommand extends AbstractProviderListCommand {
     protected function getHeaders(): array {
 
         return [
-            $this->translate("command.header.name", [], WBWDataTablesBundle::getTranslationDomain(), "en"),
             $this->translate("command.header.service", [], WBWDataTablesBundle::getTranslationDomain(), "en"),
+            $this->translate("command.header.name", [], WBWDataTablesBundle::getTranslationDomain(), "en"),
             $this->translate("command.header.columns", [], WBWDataTablesBundle::getTranslationDomain(), "en"),
             $this->translate("command.header.prefix", [], WBWDataTablesBundle::getTranslationDomain(), "en"),
             $this->translate("command.header.view", [], WBWDataTablesBundle::getTranslationDomain(), "en"),
@@ -109,11 +109,11 @@ class DataTablesProviderListCommand extends AbstractProviderListCommand {
         $format = "%{$length}d";
 
         return [
-            $provider->getName(),
             implode(PHP_EOL, [
                 get_class($provider),
                 "└ " . $provider->getEntity(),
             ]),
+            $provider->getName(),
             sprintf($format, count($provider->getColumns())),
             $provider->getPrefix(),
             $provider->getView(),
