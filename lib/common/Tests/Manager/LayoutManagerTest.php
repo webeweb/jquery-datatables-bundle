@@ -18,6 +18,7 @@ use Throwable;
 use Twig\Environment;
 use WBW\Bundle\CommonBundle\Manager\LayoutManager;
 use WBW\Bundle\CommonBundle\Manager\LayoutManagerInterface;
+use WBW\Bundle\CommonBundle\Manager\ManagerInterface;
 use WBW\Bundle\CommonBundle\Provider\Layout\ApplicationLayoutProviderInterface;
 use WBW\Bundle\CommonBundle\Provider\Layout\BreadcrumbsLayoutProviderInterface;
 use WBW\Bundle\CommonBundle\Provider\Layout\FooterLayoutProviderInterface;
@@ -326,6 +327,7 @@ class LayoutManagerTest extends AbstractTestCase {
 
         $obj = new LayoutManager($this->logger, $this->twigEnvironment);
 
+        $this->assertInstanceOf(ManagerInterface::class, $obj);
         $this->assertInstanceOf(LayoutManagerInterface::class, $obj);
 
         $this->assertSame($this->logger, $obj->getLogger());
