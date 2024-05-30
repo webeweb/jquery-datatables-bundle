@@ -17,6 +17,7 @@ use DateInterval;
 use DateTime;
 use InvalidArgumentException;
 use Throwable;
+use WBW\Bundle\CommonBundle\Provider\ProviderInterface;
 use WBW\Bundle\CommonBundle\Provider\Quote\WorldsWisdomQuoteProvider;
 use WBW\Bundle\CommonBundle\Provider\Quote\YamlQuoteProvider;
 use WBW\Bundle\CommonBundle\Provider\QuoteProviderInterface;
@@ -89,6 +90,7 @@ class YamlQuoteProviderTest extends AbstractTestCase {
 
         $obj = new YamlQuoteProvider($this->filename);
 
+        $this->assertInstanceOf(ProviderInterface::class, $obj);
         $this->assertInstanceOf(QuoteProviderInterface::class, $obj);
 
         $this->assertEquals($this->filename, $obj->getFilename());
