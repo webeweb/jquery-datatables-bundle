@@ -14,6 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\CommonBundle\Tests\Provider\Color;
 
 use WBW\Bundle\CommonBundle\Provider\Color\MaterialDesignColorProvider;
+use WBW\Bundle\CommonBundle\Provider\Color\MaterialDesignColorProviderInterface;
 use WBW\Bundle\CommonBundle\Provider\ColorProviderInterface;
 use WBW\Bundle\CommonBundle\Provider\ProviderInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
@@ -67,5 +68,6 @@ class MaterialDesignColorProviderTest extends AbstractTestCase {
 
         $this->assertInstanceOf(ProviderInterface::class, $obj);
         $this->assertInstanceOf(ColorProviderInterface::class, $obj);
+        $this->assertInstanceOf(MaterialDesignColorProviderInterface::class, $obj);
     }
 }

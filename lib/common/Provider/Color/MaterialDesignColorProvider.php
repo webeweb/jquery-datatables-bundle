@@ -13,7 +13,6 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\CommonBundle\Provider\Color;
 
-use WBW\Bundle\CommonBundle\Provider\ColorProviderInterface;
 use WBW\Library\Widget\Factory\ColorFactory;
 
 /**
@@ -22,7 +21,7 @@ use WBW\Library\Widget\Factory\ColorFactory;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Provider\Color
  */
-class MaterialDesignColorProvider implements ColorProviderInterface {
+class MaterialDesignColorProvider implements MaterialDesignColorProviderInterface {
 
     /**
      * Provider name.
