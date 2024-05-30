@@ -17,6 +17,7 @@ use DateTime;
 use WBW\Bundle\CommonBundle\Provider\Layout\ApplicationLayoutProviderInterface;
 use WBW\Bundle\CommonBundle\Provider\Layout\DefaultApplicationLayoutProvider;
 use WBW\Bundle\CommonBundle\Provider\LayoutProviderInterface;
+use WBW\Bundle\CommonBundle\Provider\ProviderInterface;
 use WBW\Bundle\CommonBundle\Tests\AbstractTestCase;
 
 /**
@@ -128,6 +129,7 @@ class DefaultApplicationLayoutProviderTest extends AbstractTestCase {
 
         $obj = new DefaultApplicationLayoutProvider();
 
+        $this->assertInstanceOf(ProviderInterface::class, $obj);
         $this->assertInstanceOf(LayoutProviderInterface::class, $obj);
         $this->assertInstanceOf(ApplicationLayoutProviderInterface::class, $obj);
     }
