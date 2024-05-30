@@ -58,4 +58,11 @@ interface ImageProviderInterface extends ProviderInterface {
      * @return string[] Returns the images.
      */
     public function getImages(): array;
+
+    /**
+     * Get the name.
+     *
+     * @return string Returns the name.
+     */
+    public function getName(): string;
 }
