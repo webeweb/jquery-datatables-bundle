@@ -16,6 +16,8 @@ namespace WBW\Bundle\BootstrapBundle\Tests\Provider;
 use WBW\Bundle\BootstrapBundle\Factory\Customize\ColorFactory;
 use WBW\Bundle\BootstrapBundle\Provider\ColorProvider;
 use WBW\Bundle\BootstrapBundle\Tests\AbstractTestCase;
+use WBW\Bundle\CommonBundle\Provider\ColorProviderInterface;
+use WBW\Bundle\CommonBundle\Provider\ProviderInterface;
 
 /**
  * Color provider test.
@@ -60,5 +62,10 @@ class ColorProviderTest extends AbstractTestCase {
 
         $this->assertEquals("wbw.bootstrap.provider.color", ColorProvider::SERVICE_NAME);
         $this->assertEquals("bootstrap", ColorProvider::PROVIDER_NAME);
+
+        $obj = new ColorProvider();
+
+        $this->assertInstanceOf(ProviderInterface::class, $obj);
+        $this->assertInstanceOf(ColorProviderInterface::class, $obj);
     }
 }
