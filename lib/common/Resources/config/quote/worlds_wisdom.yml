@@ -2,6 +2,7 @@
 services:
 
     wbw.common.provider.quote.worlds_wisdom:
-        class: WBW\Bundle\CommonBundle\Provider\Quote\WorldsWisdomQuoteProvider
+        class:  WBW\Bundle\CommonBundle\Provider\Quote\WorldsWisdomQuoteProvider
+        public: false
         tags:
             - { name: "wbw.common.provider.quote" }
