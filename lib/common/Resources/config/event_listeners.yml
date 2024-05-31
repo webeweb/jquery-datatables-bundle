@@ -2,7 +2,8 @@
 services:
 
     WBW\Bundle\CommonBundle\EventListener\KernelEventListener:
-        alias: "wbw.common.event_listener.kernel"
+        alias:  "wbw.common.event_listener.kernel"
+        public: false
 
     wbw.common.event_listener.kernel:
         class:  WBW\Bundle\CommonBundle\EventListener\KernelEventListener
