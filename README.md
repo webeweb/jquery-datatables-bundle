@@ -1,5 +1,5 @@
-datatables-bundle
-=================
+jquery-datatables-bundle
+========================
 
 [![Github actions workflow status](https://img.shields.io/github/actions/workflow/status/webeweb/jquery-datatables-bundle/build.yml?style=for-the-badge&color2088FF&logo=github)](https://github.com/webeweb/jquery-datatables-bundle/actions)
 [![Coveralls](https://img.shields.io/coveralls/github/webeweb/jquery-datatables-bundle/master.svg?style=for-the-badge&color=3F5767&logo=coveralls)](https://coveralls.io/github/webeweb/jquery-datatables-bundle?branch=master)
