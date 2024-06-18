@@ -29,20 +29,40 @@ class TwigControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testFunctionAction(): void {
+    public function testFunctionActionWithFontAwesomeIcon(): void {
+
+        $arg = ["font" => "s", "name" => "camera-retro", "size" => "lg", "fixedWidth" => true, "bordered" => true, "pull" => "left", "animation" => "spin", "style" => "color: #FFFFFF;"];
+        $exp = '<i class="fas fa-camera-retro fa-lg fa-fw fa-border fa-pull-left fa-spin" style="color: #FFFFFF;"></i>';
+
+        $client = $this->client;
+
+        $client->request("POST", "/twig/function/fontAwesomeIcon", ["args" => json_encode([$arg])]);
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
+
+        // Check the JSON response.
+        $res = json_decode($client->getResponse()->getContent(), true);
+        $this->assertEquals($exp, $res[0]);
+    }
+
+    /**
+     * Test functionAction()
+     *
+     * @return void
+     */
+    public function testFunctionActionWithMd5(): void {
 
         $arg = "string";
         $exp = md5("string");
 
         $client = $this->client;
 
-        $client->request("POST", "/twig/function/md5", ["args" => [$arg]]);
+        $client->request("POST", "/twig/function/md5", ["args" => json_encode([$arg])]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
 
         // Check the JSON response.
         $res = json_decode($client->getResponse()->getContent(), true);
-
         $this->assertEquals($exp, $res[0]);
     }
 
