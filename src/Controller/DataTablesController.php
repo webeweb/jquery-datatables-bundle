@@ -296,6 +296,8 @@ class DataTablesController extends AbstractController {
 
         $data = DataTablesEntityHelper::jsonSerialize($entity);
 
-        return new Response($data, 200, ["Content-type" => "application/json"]);
+        return new Response($data, 200, [
+            "Content-type" => "application/json",
+        ]);
     }
 }
