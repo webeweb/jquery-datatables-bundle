@@ -16,7 +16,7 @@ namespace WBW\Bundle\CommonBundle\Provider\Color;
 use WBW\Bundle\CommonBundle\Provider\ColorProviderInterface;
 
 /**
- * Material design color provider interface.
+ * Material Design color provider interface.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\CommonBundle\Provider\Color
