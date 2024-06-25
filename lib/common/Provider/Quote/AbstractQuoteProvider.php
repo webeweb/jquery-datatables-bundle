@@ -53,7 +53,7 @@ abstract class AbstractQuoteProvider implements QuoteProviderInterface {
             }
         }
 
-        asort($authors);
+        sort($authors, SORT_STRING);
 
         return $authors;
     }
