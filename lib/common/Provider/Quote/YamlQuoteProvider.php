@@ -41,11 +41,12 @@ class YamlQuoteProvider extends AbstractQuoteProvider {
     public function __construct(?string $filename) {
         parent::__construct();
 
-        if (false === realpath($filename)) {
+        $path = realpath($filename);
+        if (false === $path) {
             throw new InvalidArgumentException(sprintf('The file "%s" was not found', $filename));
         }
 
-        $this->setFilename(realpath($filename));
+        $this->setFilename($path);
     }
 
     /**
@@ -77,7 +78,7 @@ class YamlQuoteProvider extends AbstractQuoteProvider {
 
         foreach ($yamlContent as $k => $v) {
 
-            // Force year to manage the leap years.
+            // Force year for manage the leap years.
             $date = DateTime::createFromFormat("!Y.m.d", "2016." . $k);
 
             $model = new Quote();
