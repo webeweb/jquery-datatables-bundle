@@ -13,6 +13,7 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Tests\DependencyInjection;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
@@ -25,6 +26,7 @@ use WBW\Bundle\DataTablesBundle\Controller\DataTablesController;
 use WBW\Bundle\DataTablesBundle\DependencyInjection\Configuration;
 use WBW\Bundle\DataTablesBundle\DependencyInjection\WBWDataTablesExtension;
 use WBW\Bundle\DataTablesBundle\Manager\DataTablesManager;
+use WBW\Bundle\DataTablesBundle\Service\DataTablesService;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\DataTablesBundle\Twig\Extension\DataTablesTwigExtension;
 
@@ -61,6 +63,9 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
             WBWDataTablesExtension::EXTENSION_ALIAS => [],
         ];
 
+        // Set an Entity manager mock.
+        $entityManager = $this->getMockBuilder(EntityManagerInterface::class)->getMock();
+
         // Set a Logger mock.
         $logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
 
@@ -82,6 +87,7 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
         // Set a Container builder mock.
         $this->containerBuilder = new ContainerBuilder($parameterBag);
 
+        $this->containerBuilder->set("doctrine.orm.entity_manager", $entityManager);
         $this->containerBuilder->set("logger", $logger);
         $this->containerBuilder->set("router", $router);
         $this->containerBuilder->set("translator", $translator);
@@ -132,8 +138,9 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
         // Controllers
         $this->assertInstanceOf(DataTablesController::class, $this->containerBuilder->get(DataTablesController::SERVICE_NAME));
 
-        // Managers
+        // Services
         $this->assertInstanceOf(DataTablesManager::class, $this->containerBuilder->get(DataTablesManager::SERVICE_NAME));
+        $this->assertInstanceOf(DataTablesService::class, $this->containerBuilder->get(DataTablesService::SERVICE_NAME));
 
         // Twig extensions
         $this->assertInstanceOf(DataTablesTwigExtension::class, $this->containerBuilder->get(DataTablesTwigExtension::SERVICE_NAME));
