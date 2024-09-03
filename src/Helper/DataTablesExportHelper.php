@@ -35,10 +35,12 @@ class DataTablesExportHelper {
      */
     public static function convert(array $values, bool $windows = false): array {
 
-        if (true === $windows) {
-            for ($i = count($values) - 1; 0 <= $i; --$i) {
-                $values[$i] = utf8_decode($values[$i]);
-            }
+        if (false === $windows) {
+            return $values;
+        }
+
+        for ($i = count($values) - 1; 0 <= $i; --$i) {
+            $values[$i] = utf8_decode($values[$i]);
         }
 
         return $values;
