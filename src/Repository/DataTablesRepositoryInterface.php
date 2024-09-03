@@ -14,6 +14,7 @@ declare(strict_types = 1);
 namespace WBW\Bundle\DataTablesBundle\Repository;
 
 use Doctrine\ORM\QueryBuilder;
+use Doctrine\Persistence\ObjectRepository;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperInterface;
 
 /**
@@ -22,7 +23,7 @@ use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperInterface;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Provider;
  */
-interface DataTablesRepositoryInterface {
+interface DataTablesRepositoryInterface extends ObjectRepository {
 
     /**
      * Repository limit.
