@@ -1,0 +1,18 @@
+# src/Resources/config/services.yml
+services:
+
+    logger:
+        alias:  "monolog.logger"
+        public: true
+
+    wbw.datatables.manager:
+        class:  WBW\Bundle\DataTablesBundle\Manager\DataTablesManager
+        public: false
+        arguments: [ "@logger" ]
+
+    wbw.datatables.service:
+        class:  WBW\Bundle\DataTablesBundle\Service\DataTablesService
+        public: false
+        arguments: [ "@doctrine.orm.entity_manager", "@logger", "@router" ]
+        calls:
+            - [ "setDataTablesManager", [ "@wbw.datatables.manager" ] ]
