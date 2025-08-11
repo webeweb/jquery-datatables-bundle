@@ -61,11 +61,13 @@ class DataTablesController extends AbstractController {
      */
     public function deleteAction(Request $request, string $name, string $id): Response {
 
-        $dtProvider = $this->getDataTablesProvider($name);
+        $dtService = $this->getDataTablesService();
+
+        $dtProvider = $dtService->getDataTablesProvider($name);
 
         try {
 
-            $entity = $this->getDataTablesEntityById($dtProvider, $id);
+            $entity = $dtService->getDataTablesEntityById($dtProvider, $id);
 
             $this->dispatchDataTablesEvent([$entity], DataTablesEvent::PRE_DELETE, $dtProvider);
 
@@ -99,13 +101,15 @@ class DataTablesController extends AbstractController {
      */
     public function editAction(Request $request, string $name, string $id, string $data, $value): Response {
 
-        $dtProvider = $this->getDataTablesProvider($name);
-        $dtEditor   = $this->getDataTablesEditor($dtProvider);
-        $dtColumn   = $this->getDataTablesColumn($dtProvider, $data);
+        $dtService = $this->getDataTablesService();
+
+        $dtProvider = $dtService->getDataTablesProvider($name);
+        $dtEditor   = $dtService->getDataTablesEditor($dtProvider);
+        $dtColumn   = $dtService->getDataTablesColumn($dtProvider, $data);
 
         try {
 
-            $entity = $this->getDataTablesEntityById($dtProvider, $id);
+            $entity = $dtService->getDataTablesEntityById($dtProvider, $id);
 
             if (true === $request->isMethod("POST")) {
                 $value = $request->request->get("value");
@@ -144,11 +148,13 @@ class DataTablesController extends AbstractController {
 
         $windows = DataTablesExportHelper::isWindows($request);
 
-        $dtProvider = $this->getDataTablesProvider($name);
-        $dtExporter = $this->getDataTablesCsvExporter($dtProvider);
-        $repository = $this->getDataTablesRepository($dtProvider);
+        $dtService = $this->getDataTablesService();
 
-        $dtWrapper = $this->getDataTablesWrapper($dtProvider);
+        $dtProvider = $dtService->getDataTablesProvider($name);
+        $dtExporter = $dtService->getDataTablesCsvExporter($dtProvider);
+        $repository = $dtService->getDataTablesRepository($dtProvider);
+
+        $dtWrapper = $dtService->getDataTablesWrapper($dtProvider);
         DataTablesFactory::parseWrapper($dtWrapper, $request);
 
         $filename = (new DateTime())->format("Y.m.d-H.i.s") . "-{$dtProvider->getName()}.csv";
@@ -182,10 +188,12 @@ class DataTablesController extends AbstractController {
             return $this->renderAction($name);
         }
 
-        $dtProvider = $this->getDataTablesProvider($name);
-        $repository = $this->getDataTablesRepository($dtProvider);
+        $dtService = $this->getDataTablesService();
 
-        $dtWrapper = $this->getDataTablesWrapper($dtProvider);
+        $dtProvider = $dtService->getDataTablesProvider($name);
+        $repository = $dtService->getDataTablesRepository($dtProvider);
+
+        $dtWrapper = $dtService->getDataTablesWrapper($dtProvider);
         DataTablesFactory::parseWrapper($dtWrapper, $request);
 
         $dtRecords = $repository->dataTablesCountTotal($dtWrapper);
@@ -235,8 +243,10 @@ class DataTablesController extends AbstractController {
      */
     public function optionsAction(string $name): Response {
 
-        $dtProvider = $this->getDataTablesProvider($name);
-        $dtWrapper  = $this->getDataTablesWrapper($dtProvider);
+        $dtService = $this->getDataTablesService();
+
+        $dtProvider = $dtService->getDataTablesProvider($name);
+        $dtWrapper  = $dtService->getDataTablesWrapper($dtProvider);
         $dtOptions  = DataTablesWrapperHelper::getOptions($dtWrapper);
 
         return new JsonResponse($dtOptions);
@@ -253,8 +263,10 @@ class DataTablesController extends AbstractController {
      */
     public function renderAction(string $name, string $alone = null): Response {
 
-        $dtProvider = $this->getDataTablesProvider($name);
-        $dtWrapper  = $this->getDataTablesWrapper($dtProvider);
+        $dtService = $this->getDataTablesService();
+
+        $dtProvider = $dtService->getDataTablesProvider($name);
+        $dtWrapper  = $dtService->getDataTablesWrapper($dtProvider);
 
         $dtView = $dtProvider->getView();
         if (null === $dtProvider->getView()) {
@@ -281,13 +293,15 @@ class DataTablesController extends AbstractController {
      */
     public function serializeAction(string $name, string $id): Response {
 
-        $dtProvider = $this->getDataTablesProvider($name);
+        $dtService = $this->getDataTablesService();
+
+        $dtProvider = $dtService->getDataTablesProvider($name);
 
         $entity = null;
 
         try {
 
-            $entity = $this->getDataTablesEntityById($dtProvider, $id);
+            $entity = $dtService->getDataTablesEntityById($dtProvider, $id);
 
             $this->dispatchDataTablesEvent([$entity], DataTablesEvent::PRE_SERIALIZE, $dtProvider);
         } catch (EntityNotFoundException $ex) {
