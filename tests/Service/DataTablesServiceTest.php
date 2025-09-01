@@ -336,9 +336,12 @@ class DataTablesServiceTest extends AbstractTestCase {
      */
     public function testGetDataTablesRepositoryWithBadDataTablesRepositoryException(): void {
 
+        // Set an Entity repository mock.
+        $entityRepository = $this->getMockBuilder(ObjectRepository::class)->getMock();
+
         // Set a DataTables provider mock.
         $entityManager = $this->getMockBuilder(EntityManagerInterface::class)->getMock();
-        $entityManager->expects($this->any())->method("getRepository")->willReturn(null);
+        $entityManager->expects($this->any())->method("getRepository")->willReturn($entityRepository);
 
         $obj = new DataTablesService($entityManager, $this->logger, $this->router);
 
