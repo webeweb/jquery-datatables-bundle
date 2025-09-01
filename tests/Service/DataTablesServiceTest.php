@@ -35,6 +35,8 @@ use WBW\Bundle\DataTablesBundle\Service\DataTablesService;
 use WBW\Bundle\DataTablesBundle\Service\DataTablesServiceInterface;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractTestCase;
 use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Provider\OfficeDataTablesProvider;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Repository\EmployeeRepository;
+use WBW\Bundle\DataTablesBundle\Tests\Fixtures\Repository\OfficeRepository;
 
 /**
  * DataTables service test.
@@ -151,7 +153,7 @@ class DataTablesServiceTest extends AbstractTestCase {
         };
 
         // Set a DataTables manager mock.
-        $this->dataTablesRepository = $this->getMockBuilder(DataTablesRepositoryInterface::class)->getMock();
+        $this->dataTablesRepository = $this->getMockBuilder(EmployeeRepository::class)->disableOriginalConstructor()->getMock();
         $this->dataTablesRepository->expects($this->any())->method("find")->willReturnCallback($findCallback);
 
         // Set an Entity manager mock.
@@ -337,7 +339,7 @@ class DataTablesServiceTest extends AbstractTestCase {
     public function testGetDataTablesRepositoryWithBadDataTablesRepositoryException(): void {
 
         // Set an Entity repository mock.
-        $entityRepository = $this->getMockBuilder(ObjectRepository::class)->getMock();
+        $entityRepository = $this->getMockBuilder(OfficeRepository::class)->disableOriginalConstructor()->getMock();
 
         // Set a DataTables provider mock.
         $entityManager = $this->getMockBuilder(EntityManagerInterface::class)->getMock();
