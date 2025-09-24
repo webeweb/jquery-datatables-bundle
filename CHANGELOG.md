@@ -7,6 +7,10 @@ CHANGELOG
 > - WBW\Bundle\JQuery\DataTablesBundle\Translation\TranslatorTrait
 
 - Add PHP 8.3 support
+- Add PHP 8.4 support
+- Add Symfony 7.2 support
+- Add Symfony 7.3 support
+- Add Symfony 7.4 support
 - Add declare(strict_types = 1)
 - Add Color provider list command
 - Add Image manager
