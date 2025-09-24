@@ -126,6 +126,11 @@ The following commands are available:
 php bin/console wbw:datatables:provider:list
 ```
 
+Libraries resources:
+
+- Common bundle [README](lib/common/README.md)/[Documentation](lib/common/Resources/doc/index.md)
+- Bootstrap bundle [README](lib/bootstrap/README.md)/[Documentation](lib/bootstrap/Resources/doc/index.md)
+
 ## Testing
 
 To test the package, is better to clone this repository on your computer.
