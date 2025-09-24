@@ -59,7 +59,7 @@ trait TranslatorTrait {
      * @param string|null $locale The locale.
      * @return string Returns the translated id in case of success, id otherwise.
      */
-    protected function translate(?string $id, array $parameters = [], string $domain = null, string $locale = null): string {
+    protected function translate(?string $id, array $parameters = [], ?string $domain = null, ?string $locale = null): string {
         return null !== $this->getTranslator() ? $this->getTranslator()->trans($id, $parameters, $domain, $locale) : $id;
     }
 }

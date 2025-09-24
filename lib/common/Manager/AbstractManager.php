@@ -39,7 +39,7 @@ class AbstractManager implements ManagerInterface {
      *
      * @param LoggerInterface|null $logger The logger.
      */
-    public function __construct(LoggerInterface $logger = null) {
+    public function __construct(?LoggerInterface $logger = null) {
         $this->setLogger($logger);
         $this->setProviders([]);
     }

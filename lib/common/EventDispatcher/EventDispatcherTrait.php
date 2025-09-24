@@ -38,7 +38,7 @@ trait EventDispatcherTrait {
      * @param string|null $eventName The event name.
      * @return Event Returns the event.
      */
-    protected function dispatch(Event $event, string $eventName = null): Event {
+    protected function dispatch(Event $event, ?string $eventName = null): Event {
         return null !== $this->getEventDispatcher() ? $this->eventDispatcher->dispatch($event, $eventName) : $event;
     }
 

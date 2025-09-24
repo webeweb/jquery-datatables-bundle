@@ -73,7 +73,7 @@ class DefaultApplicationLayoutProvider implements ApplicationLayoutProviderInter
     /**
      * {@inheritDoc}
      */
-    public function getYear(string $startYear = null): ?string {
+    public function getYear(?string $startYear = null): ?string {
 
         $today = date("Y");
         $years = ["2018"];

@@ -171,7 +171,7 @@ class DataTablesFactory {
      * @param UserInterface|null $user The user.
      * @return DataTablesWrapperInterface Returns the wrapper.
      */
-    public static function newWrapper(string $url, DataTablesProviderInterface $provider, UserInterface $user = null): DataTablesWrapperInterface {
+    public static function newWrapper(string $url, DataTablesProviderInterface $provider, ?UserInterface $user = null): DataTablesWrapperInterface {
 
         $dtWrapper = new DataTablesWrapper();
         $dtWrapper->getMapping()->setPrefix($provider->getPrefix());

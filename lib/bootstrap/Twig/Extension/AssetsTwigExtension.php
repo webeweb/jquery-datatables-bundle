@@ -44,7 +44,7 @@ class AssetsTwigExtension extends AbstractTwigExtension {
      * @param string|null $style The style.
      * @return string|null Returns the icon.
      */
-    public function bootstrapRenderIconFunction(?string $name, string $style = null): ?string {
+    public function bootstrapRenderIconFunction(?string $name, ?string $style = null): ?string {
         return static::renderIcon($this->getTwigEnvironment(), $name, $style);
     }
 
@@ -78,7 +78,7 @@ class AssetsTwigExtension extends AbstractTwigExtension {
      * @param string|null $style The style.
      * @return string|null Returns the rendered icon.
      */
-    public static function renderIcon(Environment $twigEnvironment, ?string $name, string $style = null): ?string {
+    public static function renderIcon(Environment $twigEnvironment, ?string $name, ?string $style = null): ?string {
 
         if (null === $name || "" === $name) {
             return null;

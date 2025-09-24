@@ -261,7 +261,7 @@ class DataTablesController extends AbstractController {
      * @throws Throwable Throws an exception if an error occurs.
      * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
      */
-    public function renderAction(string $name, string $alone = null): Response {
+    public function renderAction(string $name, ?string $alone = null): Response {
 
         $dtService = $this->getDataTablesService();
 

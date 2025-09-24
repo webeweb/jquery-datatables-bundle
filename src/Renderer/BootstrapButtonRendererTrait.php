@@ -272,5 +272,5 @@ trait BootstrapButtonRendererTrait {
      * @param string|null $locale The locale.
      * @return string Returns the translated id in case of success, id otherwise.
      */
-    abstract protected function translate(?string $id, array $parameters = [], string $domain = null, string $locale = null): string;
+    abstract protected function translate(?string $id, array $parameters = [], ?string $domain = null, ?string $locale = null): string;
 }

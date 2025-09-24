@@ -89,7 +89,7 @@ class LabelTwigExtension extends AbstractLabelTwigExtension {
      * @param string|null $domain The translation domain.
      * @return string|null Returns the Bootstrap role label.
      */
-    public function bootstrapLabelRolesFunction(?UserInterface $user, array $roleChoices = [], array $roleColors = [], string $domain = null): ?string {
+    public function bootstrapLabelRolesFunction(?UserInterface $user, array $roleChoices = [], array $roleColors = [], ?string $domain = null): ?string {
 
         if (null === $user) {
             return null;

@@ -55,7 +55,7 @@ interface UploadedFileServiceInterface {
      * @param string|null $filename The filename.
      * @return string|null Returns the uploaded file path.
      */
-    public function save(SplFileInfo $uploadedFile, string $subdirectory, string $filename = null): ?string;
+    public function save(SplFileInfo $uploadedFile, string $subdirectory, ?string $filename = null): ?string;
 
     /**
      * Unique id.

@@ -92,7 +92,7 @@ class BadgeTwigExtension extends AbstractBadgeTwigExtension {
      * @param string|null $target The target attribute.
      * @return string Returns the Bootstrap badge transformed into an anchor.
      */
-    public function bootstrapBadgeLinkFilter(string $button, string $href = self::DEFAULT_HREF, string $target = null): string {
+    public function bootstrapBadgeLinkFilter(string $button, string $href = self::DEFAULT_HREF, ?string $target = null): string {
 
         $searches = ["<span", "</span>", "class="];
         $replaces = ["<a", "</a>", StringHelper::parseArray(["href" => $href, "target" => $target]) . " class="];

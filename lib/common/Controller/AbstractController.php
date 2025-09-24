@@ -52,7 +52,7 @@ abstract class AbstractController extends BaseController {
      * @param string|null $message The message.
      * @return DefaultJsonResponseDataInterface Returns the default JSON response data.
      */
-    protected function defaultJsonResponseData(bool $success, array $data, string $message = null): DefaultJsonResponseDataInterface {
+    protected function defaultJsonResponseData(bool $success, array $data, ?string $message = null): DefaultJsonResponseDataInterface {
 
         $model = new DefaultJsonResponseData();
         $model->setData($data);
@@ -241,7 +241,7 @@ abstract class AbstractController extends BaseController {
      * @return string Returns the translation in case of success, $id otherwise.
      * @throws Throwable Throws an exception if an error occurs.
      */
-    protected function translate(string $id, array $parameters = [], string $domain = null, string $locale = null): string {
+    protected function translate(string $id, array $parameters = [], ?string $domain = null, ?string $locale = null): string {
         return $this->getTranslator()->trans($id, $parameters, $domain, $locale);
     }
 }

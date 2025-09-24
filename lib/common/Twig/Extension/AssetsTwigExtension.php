@@ -206,7 +206,7 @@ class AssetsTwigExtension extends AbstractTwigExtension {
      * @param string|null $style The style.
      * @return string|null Returns the icon.
      */
-    public function hIconFunction(?string $name, string $style = null): ?string {
+    public function hIconFunction(?string $name, ?string $style = null): ?string {
         return BootstrapAssetsTwigExtension::renderIcon($this->getTwigEnvironment(), $name, $style);
     }
 

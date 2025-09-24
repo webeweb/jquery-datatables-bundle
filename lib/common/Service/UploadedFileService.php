@@ -101,7 +101,7 @@ class UploadedFileService implements UploadedFileServiceInterface {
      * @param int $permissions The permissions.
      * @return string|null Returns the uploaded file path.
      */
-    public function save(SplFileInfo $uploadedFile, string $subdirectory, string $filename = null, int $permissions = 0600): ?string {
+    public function save(SplFileInfo $uploadedFile, string $subdirectory, ?string $filename = null, int $permissions = 0600): ?string {
 
         // Directory
         $dir = implode("", [

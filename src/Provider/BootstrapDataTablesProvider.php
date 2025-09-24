@@ -88,7 +88,7 @@ abstract class BootstrapDataTablesProvider extends DefaultDataTablesProvider {
      * @throws RouteNotFoundException Throws a route not found exception if the route doesn't exist.
      * @throws MissingMandatoryParametersException Throws a missing mandatory parameter exception if a mandatory exception is missing.
      */
-    protected function renderRowButtons($entity, string $showRoute = null, string $editRoute = null, string $deleteRoute = null): string {
+    protected function renderRowButtons($entity, ?string $showRoute = null, ?string $editRoute = null, ?string $deleteRoute = null): string {
 
         $anchors = [];
 

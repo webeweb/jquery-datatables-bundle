@@ -41,7 +41,7 @@ class TestAbstractController extends AbstractController {
     /**
      * {@inheritDoc}
      */
-    public function defaultJsonResponseData(bool $success, array $data, string $message = null): DefaultJsonResponseDataInterface {
+    public function defaultJsonResponseData(bool $success, array $data, ?string $message = null): DefaultJsonResponseDataInterface {
         return parent::defaultJsonResponseData($success, $data, $message);
     }
 
@@ -132,7 +132,7 @@ class TestAbstractController extends AbstractController {
     /**
      * {@inheritDoc}
      */
-    public function translate(string $id, array $parameters = [], string $domain = null, string $locale = null): string {
+    public function translate(string $id, array $parameters = [], ?string $domain = null, ?string $locale = null): string {
         return parent::translate($id, $parameters, $domain, $locale);
     }
 }

@@ -93,7 +93,7 @@ class ButtonTwigExtension extends AbstractButtonTwigExtension {
      * @param string|null $target The target attribute.
      * @return string Returns the Bootstrap button transformed into an anchor.
      */
-    public function bootstrapButtonLinkFilter(string $button, string $href = self::DEFAULT_HREF, string $target = null): string {
+    public function bootstrapButtonLinkFilter(string $button, string $href = self::DEFAULT_HREF, ?string $target = null): string {
 
         if (1 === preg_match('/disabled="disabled"/', $button)) {
 

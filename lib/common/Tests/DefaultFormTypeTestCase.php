@@ -72,7 +72,7 @@ abstract class DefaultFormTypeTestCase extends AbstractTestCase {
         $this->form = $this->getMockBuilder(FormInterface::class)->getMock();
 
         // Set a add() callback.
-        $add = function($child, string $type = null, array $options = []) {
+        $add = function($child, ?string $type = null, array $options = []) {
 
             $this->children[$child] = [
                 "type"    => $type,

@@ -161,7 +161,7 @@ class TestBootstrapDataTablesProvider extends BootstrapDataTablesProvider {
     /**
      *{@inheritDoc}
      */
-    public function renderRowButtons($entity, string $showRoute = null, string $editRoute = null, string $deleteRoute = null): string {
+    public function renderRowButtons($entity, ?string $showRoute = null, ?string $editRoute = null, ?string $deleteRoute = null): string {
         return parent::renderRowButtons($entity, $showRoute, $editRoute, $deleteRoute);
     }
 }

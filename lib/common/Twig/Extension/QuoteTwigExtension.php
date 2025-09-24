@@ -72,7 +72,7 @@ class QuoteTwigExtension extends AbstractTwigExtension {
      * @param string|null $domain The domain.
      * @return QuoteProviderInterface|null Returns the quote provider.
      */
-    protected function getQuoteProvider(string $domain = null): ?QuoteProviderInterface {
+    protected function getQuoteProvider(?string $domain = null): ?QuoteProviderInterface {
 
         if (false === $this->getQuoteManager()->hasProviders()) {
             return null;
@@ -95,7 +95,7 @@ class QuoteTwigExtension extends AbstractTwigExtension {
      * @return string Returns the quote author.
      * @throws Throwable Throws an exception if an error occurs.
      */
-    public function quoteAuthorFunction(string $domain = null): string {
+    public function quoteAuthorFunction(?string $domain = null): string {
 
         $quote = $this->quoteFunction($domain);
         if (null === $quote) {
@@ -112,7 +112,7 @@ class QuoteTwigExtension extends AbstractTwigExtension {
      * @return string Returns the quote content.
      * @throws Throwable Throws an exception if an error occurs.
      */
-    public function quoteContentFunction(string $domain = null): ?string {
+    public function quoteContentFunction(?string $domain = null): ?string {
 
         $quote = $this->quoteFunction($domain);
         if (null === $quote) {
@@ -129,7 +129,7 @@ class QuoteTwigExtension extends AbstractTwigExtension {
      * @return QuoteInterface|null Returns the quote.
      * @throws Throwable Throws an exception if an error occurs.
      */
-    public function quoteFunction(string $domain = null): ?QuoteInterface {
+    public function quoteFunction(?string $domain = null): ?QuoteInterface {
 
         $provider = $this->getQuoteProvider($domain);
         if (null === $provider) {

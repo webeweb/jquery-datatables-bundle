@@ -70,7 +70,7 @@ class DataTablesService implements DataTablesServiceInterface {
      * @param RouterInterface $router The router.
      * @param UserInterface|null $user The user.
      */
-    public function __construct(EntityManagerInterface $entityManager, LoggerInterface $logger, RouterInterface $router, UserInterface $user = null) {
+    public function __construct(EntityManagerInterface $entityManager, LoggerInterface $logger, RouterInterface $router, ?UserInterface $user = null) {
         $this->setEntityManager($entityManager);
         $this->setLogger($logger);
         $this->setRouter($router);

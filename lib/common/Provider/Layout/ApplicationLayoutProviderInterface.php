@@ -78,5 +78,5 @@ interface ApplicationLayoutProviderInterface extends LayoutProviderInterface {
      * @param string|null $startYear The start year.
      * @return string|null Returns the year.
      */
-    public function getYear(string $startYear = null): ?string;
+    public function getYear(?string $startYear = null): ?string;
 }
