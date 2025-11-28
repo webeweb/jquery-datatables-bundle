@@ -332,7 +332,7 @@ class DataTablesFactory {
     }
 
     /**
-     * Parse a request.
+     * Parse a wrapper.
      *
      * @param DataTablesWrapperInterface $wrapper The wrapper.
      * @param Request $request The request.
