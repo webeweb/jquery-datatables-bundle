@@ -50,42 +50,6 @@ class DataTablesController extends AbstractDataTablesController {
     public const SERVICE_NAME = "wbw.datatables.controller.datatables";
 
     /**
-     * Delete an existing entity.
-     *
-     * @param Request $request The request.
-     * @param string $name The provider name.
-     * @param string $id The entity id.
-     * @return Response Returns the response.
-     * @throws Throwable Throws an exception if an error occurs.
-     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
-     */
-    public function deleteAction(Request $request, string $name, string $id): Response {
-
-        $dtService = $this->getDataTablesService();
-
-        $dtProvider = $dtService->getDataTablesProvider($name);
-
-        try {
-
-            $entity = $dtService->getDataTablesEntityById($dtProvider, $id);
-
-            $this->dispatchDataTablesEvent([$entity], DataTablesEvent::PRE_DELETE, $dtProvider);
-
-            $em = $this->getEntityManager();
-            $em->remove($entity);
-            $em->flush();
-
-            $this->dispatchDataTablesEvent([$entity], DataTablesEvent::POST_DELETE, $dtProvider);
-
-            $output = $this->prepareActionResponse(200, "controller.datatables.delete.success");
-        } catch (Throwable $ex) {
-            $output = $this->handleDataTablesException($ex, "controller.datatables.delete");
-        }
-
-        return $this->buildDataTablesResponse($request, $name, $output);
-    }
-
-    /**
      * Edit an existing entity.
      *
      * @param Request $request The request.

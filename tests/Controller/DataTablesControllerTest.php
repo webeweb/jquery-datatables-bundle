@@ -13,7 +13,6 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Tests\Controller;
 
-use Doctrine\ORM\EntityManagerInterface;
 use Throwable;
 use WBW\Bundle\DataTablesBundle\Controller\DataTablesController;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractWebTestCase;
@@ -39,106 +38,6 @@ class DataTablesControllerTest extends AbstractWebTestCase {
 
         // Set a default timezone.
         date_default_timezone_set("UTC");
-    }
-
-    /**
-     * Set up the employee entities.
-     *
-     * @return void
-     * @throws Throwable Throws an exception if an error occurs.
-     */
-    protected static function setUpEmployeeEntities(): void {
-
-        /** @var EntityManagerInterface $em */
-        $em = static::$kernel->getContainer()->get("doctrine.orm.entity_manager");
-
-        foreach (TestFixtures::getEmployees() as $entity) {
-            $em->persist($entity);
-        }
-
-        $em->flush();
-    }
-
-    /**
-     * Test deleteAction()
-     *
-     * @return void
-     */
-    public function testDeleteAction(): void {
-
-        $client = $this->client;
-
-        $client->request("GET", "/datatables/employee/delete/49");
-        $this->assertEquals(302, $client->getResponse()->getStatusCode());
-        $this->assertStringContainsString("text/html; charset=", $client->getResponse()->headers->get("Content-Type"));
-        $this->assertEquals("/datatables/employee/index", $client->getResponse()->headers->get("location"));
-
-        $client->followRedirect();
-        $this->assertStringContainsString("Successful deletion", $client->getResponse()->getContent());
-    }
-
-    /**
-     * Test deleteAction()
-     *
-     * @return void
-     */
-    public function testDeleteActionWithNotify404(): void {
-
-        $client = $this->client;
-
-        $client->request("GET", "/datatables/employee/delete/49");
-        $this->assertEquals(302, $client->getResponse()->getStatusCode());
-        $this->assertStringContainsString("text/html; charset=", $client->getResponse()->headers->get("Content-Type"));
-        $this->assertEquals("/datatables/employee/index", $client->getResponse()->headers->get("location"));
-
-        $client->followRedirect();
-        $this->assertStringContainsString("Record not found", $client->getResponse()->getContent());
-    }
-
-    /**
-     * Test deleteAction()
-     *
-     * @return void
-     */
-    public function testDeleteActionWithStatus200(): void {
-
-        $client = $this->client;
-
-        $client->request("GET", "/datatables/employee/delete/48", [], [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
-
-        // Check the JSON response.
-        $res = json_decode($client->getResponse()->getContent(), true);
-
-        $this->assertArrayHasKey("status", $res);
-        $this->assertArrayHasKey("notify", $res);
-
-        $this->assertEquals(200, $res["status"]);
-        $this->assertEquals("Successful deletion", $res["notify"]);
-    }
-
-    /**
-     * Test deleteAction()
-     *
-     * @return void
-     */
-    public function testDeleteActionWithStatus404(): void {
-
-        $client = $this->client;
-
-        $client->request("GET", "/datatables/employee/delete/49", [], [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
-
-        // Check the JSON response.
-        $res = json_decode($client->getResponse()->getContent(), true);
-
-        $this->assertArrayHasKey("status", $res);
-        $this->assertArrayHasKey("notify", $res);
-
-        $this->assertEquals(404, $res["status"]);
-        $this->assertEquals("Record not found", $res["notify"]);
     }
 
     /**
@@ -205,7 +104,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
 
         $client = $this->client;
 
-        $client->request("GET", "/datatables/employee/edit/49/name/value");
+        $client->request("GET", "/datatables/employee/edit/58/name/value");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
 
@@ -375,7 +274,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         // Check the JSON response.
         $res = json_decode($client->getResponse()->getContent(), true);
 
-        $this->assertCount(55, $res["data"]);
+        $this->assertCount(57, $res["data"]);
 
         $this->assertArrayHasKey("DT_RowId", $res["data"][0]);
         $this->assertArrayHasKey("DT_RowClass", $res["data"][0]);
@@ -399,6 +298,8 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         $this->assertEquals("Unity Butler", $res["data"][52]["name"]);
         $this->assertEquals("Vivian Harrell", $res["data"][53]["name"]);
         $this->assertEquals("Yuri Berry", $res["data"][54]["name"]);
+        $this->assertEquals("Zenaida Frank", $res["data"][55]["name"]);
+        $this->assertEquals("Zorita Serrano", $res["data"][56]["name"]);
     }
 
     /**
@@ -427,16 +328,18 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         $this->assertArrayHasKey("DT_RowClass", $res["data"][0]);
         $this->assertArrayHasKey("DT_RowData", $res["data"][0]);
 
-        $this->assertEquals("Yuri Berry", $res["data"][0]["name"]);
-        $this->assertEquals("Vivian Harrell", $res["data"][1]["name"]);
-        $this->assertEquals("Unity Butler", $res["data"][2]["name"]);
-        $this->assertEquals("Timothy Mooney", $res["data"][3]["name"]);
-        $this->assertEquals("Tiger Nixon", $res["data"][4]["name"]);
-        $this->assertEquals("Thor Walton", $res["data"][5]["name"]);
-        $this->assertEquals("Tatyana Fitzpatrick", $res["data"][6]["name"]);
-        $this->assertEquals("Suki Burks", $res["data"][7]["name"]);
-        $this->assertEquals("Sonya Frost", $res["data"][8]["name"]);
-        $this->assertEquals("Shou Itou", $res["data"][9]["name"]);
+        $this->assertEquals("Zorita Serrano", $res["data"][0]["name"]);
+        $this->assertEquals("Zenaida Frank", $res["data"][1]["name"]);
+        $this->assertEquals("Yuri Berry", $res["data"][2]["name"]);
+        $this->assertEquals("Vivian Harrell", $res["data"][3]["name"]);
+        $this->assertEquals("Unity Butler", $res["data"][4]["name"]);
+        $this->assertEquals("Timothy Mooney", $res["data"][5]["name"]);
+        $this->assertEquals("Tiger Nixon", $res["data"][6]["name"]);
+        $this->assertEquals("Thor Walton", $res["data"][7]["name"]);
+        $this->assertEquals("Tatyana Fitzpatrick", $res["data"][8]["name"]);
+        $this->assertEquals("Suki Burks", $res["data"][9]["name"]);
+        //$this->assertEquals("Sonya Frost", $res["data"][8]["name"]);
+        //$this->assertEquals("Shou Itou", $res["data"][9]["name"]);
     }
 
     /**
@@ -640,7 +543,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
         // Check the JSON response.
         $res = json_decode($client->getResponse()->getContent(), true);
 
-        $this->assertCount(5, $res["data"]);
+        $this->assertCount(7, $res["data"]);
 
         $this->assertEquals("Tiger Nixon", $res["data"][0]["name"]);
         $this->assertEquals("Timothy Mooney", $res["data"][1]["name"]);
@@ -786,7 +689,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
 
         $client = $this->client;
 
-        $client->request("GET", "/datatables/employee/serialize/49");
+        $client->request("GET", "/datatables/employee/serialize/58");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
 
@@ -829,7 +732,7 @@ class DataTablesControllerTest extends AbstractWebTestCase {
 
         $client = $this->client;
 
-        $client->request("GET", "/datatables/employee/show/49");
+        $client->request("GET", "/datatables/employee/show/58");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
 
