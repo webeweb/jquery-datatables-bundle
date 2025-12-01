@@ -1,7 +1,7 @@
 # src/Resources/config/routing/datatables.yml
 wbw_datatables_delete:
     path: "/datatables/{name}/delete/{id}"
-    defaults: { _controller: "WBW\\Bundle\\DataTablesBundle\\Controller\\DataTablesController::deleteAction" }
+    defaults: { _controller: "WBW\\Bundle\\DataTablesBundle\\Controller\\DeleteDataTablesController::deleteAction" }
     methods: [ "GET" ]
 
 wbw_datatables_edit:
