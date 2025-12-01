@@ -16,7 +16,7 @@ wbw_datatables_export:
 
 wbw_datatables_index:
     path: "/datatables/{name}/index"
-    defaults: { _controller: "WBW\\Bundle\\DataTablesBundle\\Controller\\DataTablesController::indexAction" }
+    defaults: { _controller: "WBW\\Bundle\\DataTablesBundle\\Controller\\ReadDataTablesController::indexAction" }
     methods: [ "GET", "POST" ]
 
 wbw_datatables_options:
