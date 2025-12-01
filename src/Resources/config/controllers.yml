@@ -15,6 +15,20 @@ services:
         tags:
             - { name: "container.service_subscriber" }
 
+    WBW\Bundle\DataTablesBundle\Controller\DeleteDataTablesController:
+        alias:  "wbw.datatables.controller.delete"
+        public: true
+
+    wbw.datatables.controller.delete:
+        class:  WBW\Bundle\DataTablesBundle\Controller\DeleteDataTablesController
+        public: false
+        calls:
+            - [ "setContainer",         [ "@Psr\\Container\\ContainerInterface" ] ]
+            - [ "setDataTablesManager", [ "@wbw.datatables.manager" ] ]
+            - [ "setDataTablesService", [ "@wbw.datatables.service" ] ]
+        tags:
+            - { name: "container.service_subscriber" }
+
     WBW\Bundle\DataTablesBundle\Controller\DataTablesController:
         alias:  "wbw.datatables.controller.datatables"
         public: true
