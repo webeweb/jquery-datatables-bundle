@@ -25,6 +25,7 @@ use WBW\Bundle\DataTablesBundle\Command\DataTablesProviderListCommand;
 use WBW\Bundle\DataTablesBundle\Controller\CreateDataTablesController;
 use WBW\Bundle\DataTablesBundle\Controller\DataTablesController;
 use WBW\Bundle\DataTablesBundle\Controller\DeleteDataTablesController;
+use WBW\Bundle\DataTablesBundle\Controller\ExportDataTablesController;
 use WBW\Bundle\DataTablesBundle\Controller\ReadDataTablesController;
 use WBW\Bundle\DataTablesBundle\Controller\UpdateDataTablesController;
 use WBW\Bundle\DataTablesBundle\DependencyInjection\Configuration;
@@ -141,11 +142,11 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
 
         // Controllers
         $this->assertInstanceOf(CreateDataTablesController::class, $this->containerBuilder->get(CreateDataTablesController::SERVICE_NAME));
+        $this->assertInstanceOf(DataTablesController::class, $this->containerBuilder->get(DataTablesController::SERVICE_NAME));
         $this->assertInstanceOf(DeleteDataTablesController::class, $this->containerBuilder->get(DeleteDataTablesController::SERVICE_NAME));
+        $this->assertInstanceOf(ExportDataTablesController::class, $this->containerBuilder->get(ExportDataTablesController::SERVICE_NAME));
         $this->assertInstanceOf(ReadDataTablesController::class, $this->containerBuilder->get(ReadDataTablesController::SERVICE_NAME));
         $this->assertInstanceOf(UpdateDataTablesController::class, $this->containerBuilder->get(UpdateDataTablesController::SERVICE_NAME));
-
-        $this->assertInstanceOf(DataTablesController::class, $this->containerBuilder->get(DataTablesController::SERVICE_NAME));
 
         // Services
         $this->assertInstanceOf(DataTablesManager::class, $this->containerBuilder->get(DataTablesManager::SERVICE_NAME));
