@@ -13,20 +13,16 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DataTablesBundle\Controller;
 
-use DateTime;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\StreamedResponse;
 use Throwable;
 use WBW\Bundle\DataTablesBundle\Event\DataTablesEvent;
 use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesColumnException;
-use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesCsvExporterException;
 use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesEditorException;
 use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesRepositoryException;
 use WBW\Bundle\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\DataTablesBundle\Factory\DataTablesFactory;
-use WBW\Bundle\DataTablesBundle\Helper\DataTablesExportHelper;
 use WBW\Bundle\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesEnumerator;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesLoop;
@@ -93,45 +89,6 @@ class DataTablesController extends AbstractDataTablesController {
         }
 
         return new JsonResponse($output);
-    }
-
-    /**
-     * Export all entities.
-     *
-     * @param Request $request The request.
-     * @param string $name The provider name.
-     * @return Response Returns the response.
-     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
-     * @throws BadDataTablesCsvExporterException Throws a bad CSV exporter exception.
-     * @throws BadDataTablesRepositoryException Throws a bad repository exception.
-     * @throws Throwable Throws an exception if an error occurs.
-     */
-    public function exportAction(Request $request, string $name): Response {
-
-        $windows = DataTablesExportHelper::isWindows($request);
-
-        $dtService = $this->getDataTablesService();
-
-        $dtProvider = $dtService->getDataTablesProvider($name);
-        $dtExporter = $dtService->getDataTablesCsvExporter($dtProvider);
-        $repository = $dtService->getDataTablesRepository($dtProvider);
-
-        $dtWrapper = $dtService->getDataTablesWrapper($dtProvider);
-        DataTablesFactory::parseWrapper($dtWrapper, $request);
-
-        $filename = (new DateTime())->format("Y.m.d-H.i.s") . "-{$dtProvider->getName()}.csv";
-        $charset  = true === $windows ? "iso-8859-1" : "utf-8";
-        $callback = function() use ($dtWrapper, $repository, $dtExporter, $windows) {
-            $this->exportDataTablesCallback($dtWrapper, $repository, $dtExporter, $windows);
-        };
-
-        $response = new StreamedResponse();
-        $response->headers->set("Content-Disposition", 'attachment; filename="' . $filename . '"');
-        $response->headers->set("Content-Type", "text/csv; charset=$charset");
-        $response->setCallback($callback);
-        $response->setStatusCode(200);
-
-        return $response;
     }
 
     /**

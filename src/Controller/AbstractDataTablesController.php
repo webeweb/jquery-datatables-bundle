@@ -20,15 +20,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Throwable;
 use WBW\Bundle\BootstrapBundle\Controller\AbstractController as BaseController;
 use WBW\Bundle\DataTablesBundle\Event\DataTablesEvent;
-use WBW\Bundle\DataTablesBundle\Helper\DataTablesExportHelper;
 use WBW\Bundle\DataTablesBundle\Manager\DataTablesManagerTrait;
-use WBW\Bundle\DataTablesBundle\Model\DataTablesWrapperInterface;
-use WBW\Bundle\DataTablesBundle\Provider\DataTablesCsvExporterInterface;
 use WBW\Bundle\DataTablesBundle\Provider\DataTablesProviderInterface;
-use WBW\Bundle\DataTablesBundle\Repository\DataTablesRepositoryInterface;
 use WBW\Bundle\DataTablesBundle\Service\DataTablesServiceTrait;
 use WBW\Bundle\DataTablesBundle\WBWDataTablesBundle;
-use WBW\Library\Common\Database\Paginator;
 use WBW\Library\Common\Model\Response\SimpleJsonResponseData;
 use WBW\Library\Common\Model\Response\SimpleJsonResponseDataInterface;
 
@@ -97,53 +92,6 @@ abstract class AbstractDataTablesController extends BaseController {
         $this->dispatchEvent($event, $eventName);
 
         return $event;
-    }
-
-    /**
-     * Export callback.
-     *
-     * @param DataTablesWrapperInterface $dtWrapper The wrapper.
-     * @param DataTablesRepositoryInterface $repository The repository.
-     * @param DataTablesCsvExporterInterface $dtExporter The exporter.
-     * @param bool $windows Windows ?
-     * @return void
-     * @throws Throwable Throws an exception if an error occurs.
-     */
-    protected function exportDataTablesCallback(DataTablesWrapperInterface $dtWrapper, DataTablesRepositoryInterface $repository, DataTablesCsvExporterInterface $dtExporter, bool $windows): void {
-
-        $stream = fopen("php://output", "w+");
-        fputcsv($stream, DataTablesExportHelper::convert($dtExporter->exportColumns(), $windows), ";");
-
-        // Paginates.
-        $total = $repository->dataTablesCountExported($dtWrapper);
-        $pages = Paginator::countPages($total, DataTablesRepositoryInterface::REPOSITORY_LIMIT);
-
-        $em = $this->getEntityManager();
-
-        for ($i = 0; $i < $pages; ++$i) {
-
-            // Get the offset and limit.
-            [$offset, $limit] = Paginator::offsetLimit($i, DataTablesRepositoryInterface::REPOSITORY_LIMIT, $total);
-
-            // Get the export query with offset and limit.
-            $query = $repository->dataTablesExportAll($dtWrapper)
-                ->setFirstResult($offset)
-                ->setMaxResults($limit)
-                ->getQuery();
-
-            foreach ($query->toIterable() as $entity) {
-
-                $this->dispatchDataTablesEvent([$entity], DataTablesEvent::PRE_EXPORT, $dtWrapper->getProvider());
-
-                fputcsv($stream, DataTablesExportHelper::convert($dtExporter->exportRow($entity), $windows), ";");
-
-                $this->dispatchDataTablesEvent([$entity], DataTablesEvent::POST_EXPORT, $dtWrapper->getProvider());
-            }
-
-            $em->clear(); // Detach the entity to avoid memory consumption.
-        }
-
-        fclose($stream);
     }
 
     /**
