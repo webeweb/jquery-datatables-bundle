@@ -25,19 +25,19 @@ use WBW\Bundle\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Library\Common\Helper\BooleanHelper;
 
 /**
- * DataTables controller.
+ * Default DataTables controller.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Controller
  */
-class DataTablesController extends AbstractDataTablesController {
+class DefaultDataTablesController extends AbstractDataTablesController {
 
     /**
      * Service name.
      *
      * @var string
      */
-    public const SERVICE_NAME = "wbw.datatables.controller.datatables";
+    public const SERVICE_NAME = "wbw.datatables.controller.default";
 
     /**
      * Edit an existing entity.
@@ -124,10 +124,10 @@ class DataTablesController extends AbstractDataTablesController {
 
         $dtView = $dtProvider->getView();
         if (null === $dtProvider->getView()) {
-            $dtView = "@WBWDataTables/datatables/index.html.twig";
+            $dtView = "@WBWDataTables/default/index.html.twig";
         }
         if (true === BooleanHelper::parseString($alone)) {
-            $dtView = "@WBWDataTables/datatables/render.html.twig";
+            $dtView = "@WBWDataTables/default/render.html.twig";
         }
 
         return $this->render($dtView, [

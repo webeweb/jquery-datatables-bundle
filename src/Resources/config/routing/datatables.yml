@@ -6,7 +6,7 @@ wbw_datatables_delete:
 
 wbw_datatables_edit:
     path: "/datatables/{name}/edit/{id}/{data}/{value}"
-    defaults: { _controller: "WBW\\Bundle\\DataTablesBundle\\Controller\\DataTablesController::editAction", value: null }
+    defaults: { _controller: "WBW\\Bundle\\DataTablesBundle\\Controller\\DefaultDataTablesController::editAction", value: null }
     methods: [ "GET", "POST" ]
 
 wbw_datatables_export:
@@ -21,12 +21,12 @@ wbw_datatables_index:
 
 wbw_datatables_options:
     path: "/datatables/{name}/options"
-    defaults: { _controller: "WBW\\Bundle\\DataTablesBundle\\Controller\\DataTablesController::optionsAction" }
+    defaults: { _controller: "WBW\\Bundle\\DataTablesBundle\\Controller\\DefaultDataTablesController::optionsAction" }
     methods: [ "GET" ]
 
 wbw_datatables_render:
     path: "/datatables/{name}/render/{alone}"
-    defaults: { _controller: "WBW\\Bundle\\DataTablesBundle\\Controller\\DataTablesController::renderAction", alone: null }
+    defaults: { _controller: "WBW\\Bundle\\DataTablesBundle\\Controller\\DefaultDataTablesController::renderAction", alone: null }
     methods: [ "GET" ]
 
 wbw_datatables_serialize:

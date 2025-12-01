@@ -15,6 +15,20 @@ services:
         tags:
             - { name: "container.service_subscriber" }
 
+    WBW\Bundle\DataTablesBundle\Controller\DefaultDataTablesController:
+        alias:  "wbw.datatables.controller.default"
+        public: true
+
+    wbw.datatables.controller.default:
+        class:  WBW\Bundle\DataTablesBundle\Controller\DefaultDataTablesController
+        public: false
+        calls:
+            - [ "setContainer",         [ "@Psr\\Container\\ContainerInterface" ] ]
+            - [ "setDataTablesManager", [ "@wbw.datatables.manager" ] ]
+            - [ "setDataTablesService", [ "@wbw.datatables.service" ] ]
+        tags:
+            - { name: "container.service_subscriber" }
+
     WBW\Bundle\DataTablesBundle\Controller\DeleteDataTablesController:
         alias:  "wbw.datatables.controller.delete"
         public: true
@@ -63,20 +77,6 @@ services:
 
     wbw.datatables.controller.update:
         class:  WBW\Bundle\DataTablesBundle\Controller\UpdateDataTablesController
-        public: false
-        calls:
-            - [ "setContainer",         [ "@Psr\\Container\\ContainerInterface" ] ]
-            - [ "setDataTablesManager", [ "@wbw.datatables.manager" ] ]
-            - [ "setDataTablesService", [ "@wbw.datatables.service" ] ]
-        tags:
-            - { name: "container.service_subscriber" }
-
-    WBW\Bundle\DataTablesBundle\Controller\DataTablesController:
-        alias:  "wbw.datatables.controller.datatables"
-        public: true
-
-    wbw.datatables.controller.datatables:
-        class:  WBW\Bundle\DataTablesBundle\Controller\DataTablesController
         public: false
         calls:
             - [ "setContainer",         [ "@Psr\\Container\\ContainerInterface" ] ]

@@ -14,17 +14,17 @@ declare(strict_types = 1);
 namespace WBW\Bundle\DataTablesBundle\Tests\Controller;
 
 use Throwable;
-use WBW\Bundle\DataTablesBundle\Controller\DataTablesController;
+use WBW\Bundle\DataTablesBundle\Controller\DefaultDataTablesController;
 use WBW\Bundle\DataTablesBundle\Tests\AbstractWebTestCase;
 use WBW\Bundle\DataTablesBundle\Tests\Fixtures\TestFixtures;
 
 /**
- * DataTables controller test.
+ * Default DataTables controller test.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Tests\Controller
  */
-class DataTablesControllerTest extends AbstractWebTestCase {
+class DefaultDataTablesControllerTest extends AbstractWebTestCase {
 
     /**
      * {@inheritDoc}
@@ -295,6 +295,6 @@ class DataTablesControllerTest extends AbstractWebTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw.datatables.controller.datatables", DataTablesController::SERVICE_NAME);
+        $this->assertEquals("wbw.datatables.controller.default", DefaultDataTablesController::SERVICE_NAME);
     }
 }

@@ -23,7 +23,7 @@ use Throwable;
 use Twig\Environment;
 use WBW\Bundle\DataTablesBundle\Command\DataTablesProviderListCommand;
 use WBW\Bundle\DataTablesBundle\Controller\CreateDataTablesController;
-use WBW\Bundle\DataTablesBundle\Controller\DataTablesController;
+use WBW\Bundle\DataTablesBundle\Controller\DefaultDataTablesController;
 use WBW\Bundle\DataTablesBundle\Controller\DeleteDataTablesController;
 use WBW\Bundle\DataTablesBundle\Controller\ExportDataTablesController;
 use WBW\Bundle\DataTablesBundle\Controller\ReadDataTablesController;
@@ -142,7 +142,7 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
 
         // Controllers
         $this->assertInstanceOf(CreateDataTablesController::class, $this->containerBuilder->get(CreateDataTablesController::SERVICE_NAME));
-        $this->assertInstanceOf(DataTablesController::class, $this->containerBuilder->get(DataTablesController::SERVICE_NAME));
+        $this->assertInstanceOf(DefaultDataTablesController::class, $this->containerBuilder->get(DefaultDataTablesController::SERVICE_NAME));
         $this->assertInstanceOf(DeleteDataTablesController::class, $this->containerBuilder->get(DeleteDataTablesController::SERVICE_NAME));
         $this->assertInstanceOf(ExportDataTablesController::class, $this->containerBuilder->get(ExportDataTablesController::SERVICE_NAME));
         $this->assertInstanceOf(ReadDataTablesController::class, $this->containerBuilder->get(ReadDataTablesController::SERVICE_NAME));

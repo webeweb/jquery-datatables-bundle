@@ -53,7 +53,7 @@ class ReadDataTablesController extends AbstractDataTablesController {
     public function indexAction(Request $request, string $name): Response {
 
         if (false === $request->isXmlHttpRequest()) {
-            return $this->forward(DataTablesController::class . "::renderAction", [
+            return $this->forward(DefaultDataTablesController::class . "::renderAction", [
                 "name" => $name,
             ]);
         }
