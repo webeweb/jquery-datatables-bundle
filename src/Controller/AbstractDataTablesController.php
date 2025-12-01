@@ -33,13 +33,13 @@ use WBW\Library\Common\Model\Response\SimpleJsonResponseData;
 use WBW\Library\Common\Model\Response\SimpleJsonResponseDataInterface;
 
 /**
- * Abstract controller.
+ * Abstract DataTables controller.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Controller
  * @abstract
  */
-abstract class AbstractController extends BaseController {
+abstract class AbstractDataTablesController extends BaseController {
 
     use DataTablesManagerTrait {
         setDataTablesManager as public;
@@ -170,10 +170,10 @@ abstract class AbstractController extends BaseController {
      *
      * @param string $message The message.
      * @param mixed[] $context The context.
-     * @return AbstractController Returns this controller.
+     * @return AbstractDataTablesController Returns this controller.
      * @throws Throwable Throws an exception if an error occurs.
      */
-    protected function logInfo(string $message, array $context = []): AbstractController {
+    protected function logInfo(string $message, array $context = []): AbstractDataTablesController {
         $this->getLogger()->info($message, $context);
         return $this;
     }

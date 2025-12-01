@@ -40,7 +40,7 @@ use WBW\Library\Common\Helper\BooleanHelper;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DataTablesBundle\Controller
  */
-class DataTablesController extends AbstractController {
+class DataTablesController extends AbstractDataTablesController {
 
     /**
      * Service name.
