@@ -46,7 +46,7 @@ class DeleteDataTablesControllerTest extends AbstractWebTestCase {
 
         $client = $this->client;
 
-        $client->request("GET", "/datatables/employee/delete/49");
+        $client->request("GET", "/datatables/employee/delete/57");
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
         $this->assertStringContainsString("text/html; charset=", $client->getResponse()->headers->get("Content-Type"));
         $this->assertEquals("/datatables/employee/index", $client->getResponse()->headers->get("location"));
@@ -64,7 +64,7 @@ class DeleteDataTablesControllerTest extends AbstractWebTestCase {
 
         $client = $this->client;
 
-        $client->request("GET", "/datatables/employee/delete/49");
+        $client->request("GET", "/datatables/employee/delete/57");
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
         $this->assertStringContainsString("text/html; charset=", $client->getResponse()->headers->get("Content-Type"));
         $this->assertEquals("/datatables/employee/index", $client->getResponse()->headers->get("location"));
@@ -82,7 +82,7 @@ class DeleteDataTablesControllerTest extends AbstractWebTestCase {
 
         $client = $this->client;
 
-        $client->request("GET", "/datatables/employee/delete/48", [], [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
+        $client->request("GET", "/datatables/employee/delete/56", [], [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
 
@@ -105,7 +105,7 @@ class DeleteDataTablesControllerTest extends AbstractWebTestCase {
 
         $client = $this->client;
 
-        $client->request("GET", "/datatables/employee/delete/49", [], [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
+        $client->request("GET", "/datatables/employee/delete/56", [], [], ["HTTP_X-Requested-With" => "XMLHttpRequest"]);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("application/json", $client->getResponse()->headers->get("Content-Type"));
 
