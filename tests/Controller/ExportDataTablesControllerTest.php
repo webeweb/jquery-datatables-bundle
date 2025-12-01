@@ -60,7 +60,7 @@ class ExportDataTablesControllerTest extends AbstractWebTestCase {
      *
      * @return void
      */
-    public function testExportActionWithBadDataTablesRepository(): void {
+    public function testExportActionWithBadDataTablesCsvExporter(): void {
 
         $client = $this->client;
 
