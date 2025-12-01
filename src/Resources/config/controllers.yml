@@ -1,6 +1,20 @@
 # Resources/config/controllers.yml
 services:
 
+    WBW\Bundle\DataTablesBundle\Controller\CreateDataTablesController:
+        alias:  "wbw.datatables.controller.create"
+        public: true
+
+    wbw.datatables.controller.create:
+        class:  WBW\Bundle\DataTablesBundle\Controller\CreateDataTablesController
+        public: false
+        calls:
+            - [ "setContainer",         [ "@Psr\\Container\\ContainerInterface" ] ]
+            - [ "setDataTablesManager", [ "@wbw.datatables.manager" ] ]
+            - [ "setDataTablesService", [ "@wbw.datatables.service" ] ]
+        tags:
+            - { name: "container.service_subscriber" }
+
     WBW\Bundle\DataTablesBundle\Controller\DataTablesController:
         alias:  "wbw.datatables.controller.datatables"
         public: true
