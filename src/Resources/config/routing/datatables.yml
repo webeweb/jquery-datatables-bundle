@@ -31,10 +31,10 @@ wbw_datatables_render:
 
 wbw_datatables_serialize:
     path: "/datatables/{name}/serialize/{id}"
-    defaults: { _controller: "WBW\\Bundle\\DataTablesBundle\\Controller\\DataTablesController::serializeAction" }
+    defaults: { _controller: "WBW\\Bundle\\DataTablesBundle\\Controller\\ReadDataTablesController::serializeAction" }
     methods: [ "GET" ]
 
 wbw_datatables_show:
     path: "/datatables/{name}/show/{id}"
-    defaults: { _controller: "WBW\\Bundle\\DataTablesBundle\\Controller\\DataTablesController::serializeAction" }
+    defaults: { _controller: "WBW\\Bundle\\DataTablesBundle\\Controller\\ReadDataTablesController::serializeAction" }
     methods: [ "GET" ]
