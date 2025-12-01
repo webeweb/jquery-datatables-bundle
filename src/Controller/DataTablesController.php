@@ -14,7 +14,6 @@ declare(strict_types = 1);
 namespace WBW\Bundle\DataTablesBundle\Controller;
 
 use DateTime;
-use Doctrine\ORM\EntityNotFoundException;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,7 +26,6 @@ use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesEditorException;
 use WBW\Bundle\DataTablesBundle\Exception\BadDataTablesRepositoryException;
 use WBW\Bundle\DataTablesBundle\Exception\UnregisteredDataTablesProviderException;
 use WBW\Bundle\DataTablesBundle\Factory\DataTablesFactory;
-use WBW\Bundle\DataTablesBundle\Helper\DataTablesEntityHelper;
 use WBW\Bundle\DataTablesBundle\Helper\DataTablesExportHelper;
 use WBW\Bundle\DataTablesBundle\Helper\DataTablesWrapperHelper;
 use WBW\Bundle\DataTablesBundle\Model\DataTablesEnumerator;
@@ -242,40 +240,6 @@ class DataTablesController extends AbstractDataTablesController {
 
         return $this->render($dtView, [
             "dtWrapper" => $dtWrapper,
-        ]);
-    }
-
-    /**
-     * Serialize an existing entity.
-     *
-     * @param string $name The provider name.
-     * @param string $id The entity id.
-     * @return Response Returns the response.
-     * @throws BadDataTablesRepositoryException Throws a bad repository exception.
-     * @throws Throwable Throws an exception if an error occurs.
-     * @throws UnregisteredDataTablesProviderException Throws an unregistered provider exception.
-     */
-    public function serializeAction(string $name, string $id): Response {
-
-        $dtService = $this->getDataTablesService();
-
-        $dtProvider = $dtService->getDataTablesProvider($name);
-
-        $entity = null;
-
-        try {
-
-            $entity = $dtService->getDataTablesEntityById($dtProvider, $id);
-
-            $this->dispatchDataTablesEvent([$entity], DataTablesEvent::PRE_SERIALIZE, $dtProvider);
-        } catch (EntityNotFoundException $ex) {
-            $this->logInfo($ex->getMessage());
-        }
-
-        $data = DataTablesEntityHelper::jsonSerialize($entity);
-
-        return new Response($data, 200, [
-            "Content-type" => "application/json",
         ]);
     }
 }
