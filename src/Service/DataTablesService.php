@@ -74,6 +74,7 @@ class DataTablesService implements DataTablesServiceInterface {
         $this->setEntityManager($entityManager);
         $this->setLogger($logger);
         $this->setRouter($router);
+        $this->setUser($user);
     }
 
     /**
