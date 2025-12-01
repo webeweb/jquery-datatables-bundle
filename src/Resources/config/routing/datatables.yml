@@ -11,7 +11,7 @@ wbw_datatables_edit:
 
 wbw_datatables_export:
     path: "/datatables/{name}/export"
-    defaults: { _controller: "WBW\\Bundle\\DataTablesBundle\\Controller\\DataTablesController::exportAction" }
+    defaults: { _controller: "WBW\\Bundle\\DataTablesBundle\\Controller\\ExportDataTablesController::exportAction" }
     methods: [ "GET", "POST" ]
 
 wbw_datatables_index:
