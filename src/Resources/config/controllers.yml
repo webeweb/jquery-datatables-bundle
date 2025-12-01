@@ -29,6 +29,20 @@ services:
         tags:
             - { name: "container.service_subscriber" }
 
+    WBW\Bundle\DataTablesBundle\Controller\UpdateDataTablesController:
+        alias:  "wbw.datatables.controller.update"
+        public: true
+
+    wbw.datatables.controller.update:
+        class:  WBW\Bundle\DataTablesBundle\Controller\UpdateDataTablesController
+        public: false
+        calls:
+            - [ "setContainer",         [ "@Psr\\Container\\ContainerInterface" ] ]
+            - [ "setDataTablesManager", [ "@wbw.datatables.manager" ] ]
+            - [ "setDataTablesService", [ "@wbw.datatables.service" ] ]
+        tags:
+            - { name: "container.service_subscriber" }
+
     WBW\Bundle\DataTablesBundle\Controller\DataTablesController:
         alias:  "wbw.datatables.controller.datatables"
         public: true

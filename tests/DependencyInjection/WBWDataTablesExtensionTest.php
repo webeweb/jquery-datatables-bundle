@@ -25,6 +25,7 @@ use WBW\Bundle\DataTablesBundle\Command\DataTablesProviderListCommand;
 use WBW\Bundle\DataTablesBundle\Controller\CreateDataTablesController;
 use WBW\Bundle\DataTablesBundle\Controller\DataTablesController;
 use WBW\Bundle\DataTablesBundle\Controller\DeleteDataTablesController;
+use WBW\Bundle\DataTablesBundle\Controller\UpdateDataTablesController;
 use WBW\Bundle\DataTablesBundle\DependencyInjection\Configuration;
 use WBW\Bundle\DataTablesBundle\DependencyInjection\WBWDataTablesExtension;
 use WBW\Bundle\DataTablesBundle\Manager\DataTablesManager;
@@ -140,6 +141,7 @@ class WBWDataTablesExtensionTest extends AbstractTestCase {
         // Controllers
         $this->assertInstanceOf(CreateDataTablesController::class, $this->containerBuilder->get(CreateDataTablesController::SERVICE_NAME));
         $this->assertInstanceOf(DeleteDataTablesController::class, $this->containerBuilder->get(DeleteDataTablesController::SERVICE_NAME));
+        $this->assertInstanceOf(UpdateDataTablesController::class, $this->containerBuilder->get(UpdateDataTablesController::SERVICE_NAME));
         $this->assertInstanceOf(DataTablesController::class, $this->containerBuilder->get(DataTablesController::SERVICE_NAME));
 
         // Services
