@@ -29,6 +29,7 @@ CHANGELOG
 - Merge Common bundle (from [core-bundle](https://github.com/webeweb/core-bundle))
 - Split DataTables controller
 - Update Bootstrap to 5.3.8
+- Update Summernote to 0.9.1
 - Update dependencies
 
 ### [4.0.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v4.0.1) (2024-03-07)
