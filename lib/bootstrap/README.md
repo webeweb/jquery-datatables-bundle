@@ -38,7 +38,7 @@ Includes:
 - [Meteocons](https://www.alessioatzeni.com/meteocons)
 - [Moment.js 2.20.1](https://github.com/moment/moment) (Bootstrap Daterangepicker dependency)
 - [Popper.js 1.15.0](https://github.com/popperjs/popper-core) (Bootstrap dependency)
-- [Summernote 0.8.20](https://github.com/summernote/summernote) (Bootstrap plug-in)
+- [Summernote 0.9.1](https://github.com/summernote/summernote) (Bootstrap plug-in)
 - [twemoji 14.0.2](https://github.com/twitter/twemoji)
 - [WYSIHTML 0.4.15](https://github.com/Voog/wysihtml) (Bootstrap WYSIWYG dependency)
 
