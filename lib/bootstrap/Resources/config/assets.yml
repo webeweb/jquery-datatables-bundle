@@ -280,9 +280,9 @@ assets:
                     - "/css/meteocons.css"
                 javascripts: [ ]
             summernote:
-                version:     "0.8.20"
+                version:     "0.9.1"
                 description: "Summernote"
-                bootstrap: { "3": "", "4": "-bs4" }
+                bootstrap: { "3": "", "4": "-bs4", "5": "-bs5" }
                 stylesheets:
                     - "/summernote-{{ version }}/summernote{{ bootstrap }}.css"
                 javascripts:
