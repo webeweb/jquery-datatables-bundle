@@ -28,6 +28,7 @@ CHANGELOG
 - Merge Bootstrap bundle (from [bootstrap-bundle](https://github.com/webeweb/bootstrap-bundle))
 - Merge Common bundle (from [core-bundle](https://github.com/webeweb/core-bundle))
 - Split DataTables controller
+- Update Bootstrap to 5.3.8
 - Update dependencies
 
 ### [4.0.1](https://github.com/webeweb/jquery-datatables-bundle/tree/v4.0.1) (2024-03-07)
