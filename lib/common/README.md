@@ -18,7 +18,7 @@ Includes:
 - [Chart.js 4.2.1](https://github.com/chartjs/Chart.js)
 - [Clippy JS](https://github.com/clippyjs/clippy.js)
 - [FullCalendar 5.9.0](https://github.com/fullcalendar/fullcalendar)
-- [jQuery 3.6.2](https://github.com/jquery/jquery)
+- [jQuery 3.7.1](https://github.com/jquery/jquery)
 - [jQuery contextMenu 2.9.2](https://github.com/swisnl/jQuery-contextMenu) (jQuery plug-in)
 - [jQuery EasyAutocomplete 1.3.5](https://github.com/pawelczak/EasyAutocomplete) (jQuery plug-in)
 - [jQuery FancyBox 3.5.7](https://github.com/fancyapps/fancybox) (jQuery plug-in)
