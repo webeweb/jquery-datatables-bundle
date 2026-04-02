@@ -301,7 +301,6 @@ class DataTablesService implements DataTablesServiceInterface {
      * @param string $message The message.
      * @param mixed[] $context The context.
      * @return DataTablesServiceInterface Returns this DataTables service.
-     * @throws Throwable Throws an exception if an error occurs.
      */
     protected function logInfo(string $message, array $context = []): DataTablesServiceInterface {
         $this->getLogger()->info($message, $context);
