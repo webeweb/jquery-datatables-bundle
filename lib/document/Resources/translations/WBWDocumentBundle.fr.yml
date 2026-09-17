@@ -1,0 +1,61 @@
+# # lib/document/Resources/translations/WBWDocumentBundle.fr.yml
+DocumentController:
+    deleteAction:
+        danger:
+            directory: "La suppression du répertoire a échouée : le répertoire n'est pas vide"
+            document:  "La suppression du document a échouée"
+        success:
+            directory: "La suppression du répertoire a réussie"
+            document:  "La suppression du document a réussie"
+    editAction:
+        title: "Edition d'un document"
+        success:
+            directory: "L'édition du répertoire a réussie"
+            document:  "L'édition du document a réussie"
+    indexAction:
+        title: "Gestion des documents"
+    moveAction:
+        title: "Déplacement d'un document"
+        success:
+            directory: "Le déplacement du répertoire a réussi"
+            document:  "Le déplacement du document a réussi"
+    newAction:
+        title: "Création d'un répertoire"
+        success:
+            directory: "La création du répertoire a réussi"
+    uploadAction:
+        title:   "Téléversement d'un document"
+        success: "Le téléversement du document a réussi"
+
+DropzoneController:
+    uploadAction:
+        title:   "Glisser/déposer vos fichiers ici ou cliquer pour téléverser."
+        success: "Le téléversement du document a réussi"
+
+dict:
+    cancelUpload:             "Annuler téléversement"
+    cancelUploadConfirmation: "Etes-vous sûr de vouloir annuler le téléversement ?"
+    defaultMessage:           "Déposer vos fichiers ici pour téléverser"
+    fallbackMessage:          "Votre navigateur ne supporte pas le téléversement par glissé/déposé."
+    fallbackText:             "Veuillez utiliser le formulaire de secours ci-dessous pour télécharger vos fichiers comme au bon vieux temps."
+    fileTooBig:               "Le fichier est trop volumineux ({{filesize}}MiB). Taille de fichier maximum : {{maxFilesize}}MiB."
+    invalidFileType:          "Vous ne pouvez pas téléverser de fichiers de ce type."
+    maxFilesExceeded:         "Vous ne pouvez plus téléverser de fichiers."
+    removeFile:               "Supprimer fichier"
+    responseError:            "Le serveur a répondu avec un code {{statusCode}}."
+    uploadCanceled:           "Téléversement annulé."
+
+label:
+    actions:     "Actions"
+    directory:   "Dossier"
+    download:    "Télécharger"
+    file:        "Fichier"
+    index:       "Ouvrir"
+    items_count: "{{ count }} élément(s)"
+    move:        "Déplacer"
+    name:        "Nom"
+    parent:      "Parent"
+    size:        "Taille"
+    type:        "Type"
+    updated_at:  "Modifié le"
+    upload:      "Téléverser"

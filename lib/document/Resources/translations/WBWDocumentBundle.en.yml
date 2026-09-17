@@ -1,0 +1,64 @@
+# # lib/document/Resources/translations/WBWDocumentBundle.en.yml
+DocumentController:
+    deleteAction:
+        danger:
+            directory: "Directory deletion failed : the directory is not empty"
+            document:  "Document deletion failed"
+        success:
+            directory: "Directory deletion successful"
+            document:  "Document deletion successful"
+    editAction:
+        title: "Edition of a document"
+        success:
+            directory: "Directory edition successful"
+            document:  "Directory edition successful"
+    indexAction:
+        title: "Document management"
+    moveAction:
+        title: "Move a document"
+        success:
+            directory: "Directory moving successful"
+            document:  "Document moving successful"
+    newAction:
+        title: "Creation of a directory"
+        success:
+            directory: "Directory creation successful"
+    uploadAction:
+        title: "Upload a document"
+        success:
+            document: "Document uploaded successfully"
+
+DropzoneController:
+    uploadAction:
+        title:   "Drop files here or click to upload."
+        success: "Document uploaded successfully"
+
+dict:
+    cancelUpload:             "Cancel upload"
+    cancelUploadConfirmation: "Are you sure you want to cancel this upload?"
+    defaultMessage:           "Drop files here to upload"
+    fallbackMessage:          "Your browser does not support drag'n'drop file uploads."
+    fallbackText:             "Please use the fallback form below to upload your files like in the olden days."
+    fileTooBig:               "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB."
+    invalidFileType:          "You can't upload files of this type."
+    maxFilesExceeded:         "You can not upload any more files."
+    removeFile:               "Remove file"
+    responseError:            "Server responded with {{statusCode}} code."
+    uploadCanceled:           "Upload canceled."
+
+label:
+    actions:     "Actions"
+    directory:   "Directory"
+    download:    "Download"
+    file:        "File"
+    index:       "Open"
+    items_count: "{{ count }} item(s)"
+    move:        "Move"
+    name:        "Nom"
+    parent:      "Parent"
+    size:        "Size"
+    type:        "Type"
+    updated_at:  "Updated at"
+    upload:      "Upload"
+
+    class:       "Class"
