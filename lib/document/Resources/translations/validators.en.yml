@@ -1,0 +1,12 @@
+# lib/document/Resources/translations/validators.en.yml
+document:
+    unique_entity:
+        message: "This document already exists"
+    name:
+        length:
+            max_message: "The name must contains a maximum of {{ limit }} characters"
+        not_blank:
+            message: "The name is required"
+    upload_file:
+        not_blank:
+            message: "The file is required"
