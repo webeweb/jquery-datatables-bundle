@@ -50,17 +50,17 @@ class DocumentEventTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw.edm.event.document.pre_delete", DocumentEvent::PRE_DELETE);
-        $this->assertEquals("wbw.edm.event.document.pre_download", DocumentEvent::PRE_DOWNLOAD);
-        $this->assertEquals("wbw.edm.event.document.pre_edit", DocumentEvent::PRE_EDIT);
-        $this->assertEquals("wbw.edm.event.document.pre_move", DocumentEvent::PRE_MOVE);
-        $this->assertEquals("wbw.edm.event.document.pre_new", DocumentEvent::PRE_NEW);
+        $this->assertEquals("wbw.document.event.document.pre_delete", DocumentEvent::PRE_DELETE);
+        $this->assertEquals("wbw.document.event.document.pre_download", DocumentEvent::PRE_DOWNLOAD);
+        $this->assertEquals("wbw.document.event.document.pre_edit", DocumentEvent::PRE_EDIT);
+        $this->assertEquals("wbw.document.event.document.pre_move", DocumentEvent::PRE_MOVE);
+        $this->assertEquals("wbw.document.event.document.pre_new", DocumentEvent::PRE_NEW);
 
-        $this->assertEquals("wbw.edm.event.document.post_delete", DocumentEvent::POST_DELETE);
-        $this->assertEquals("wbw.edm.event.document.post_download", DocumentEvent::POST_DOWNLOAD);
-        $this->assertEquals("wbw.edm.event.document.post_edit", DocumentEvent::POST_EDIT);
-        $this->assertEquals("wbw.edm.event.document.post_move", DocumentEvent::POST_MOVE);
-        $this->assertEquals("wbw.edm.event.document.post_new", DocumentEvent::POST_NEW);
+        $this->assertEquals("wbw.document.event.document.post_delete", DocumentEvent::POST_DELETE);
+        $this->assertEquals("wbw.document.event.document.post_download", DocumentEvent::POST_DOWNLOAD);
+        $this->assertEquals("wbw.document.event.document.post_edit", DocumentEvent::POST_EDIT);
+        $this->assertEquals("wbw.document.event.document.post_move", DocumentEvent::POST_MOVE);
+        $this->assertEquals("wbw.document.event.document.post_new", DocumentEvent::POST_NEW);
 
         // Set a Document mock.
         $document = $this->getMockBuilder(DocumentInterface::class)->getMock();
