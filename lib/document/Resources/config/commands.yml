@@ -1,0 +1,11 @@
+# lib/document/Resources/config/commands.yml
+services:
+
+    wbw.document.command.list_provider:
+        class:  WBW\Bundle\DocumentBundle\Command\ListStorageProviderCommand
+        public: false
+        calls:
+            - [ "setStorageManager", [ "@wbw.document.manager.storage" ] ]
+            - [ "setTranslator",     [ "@translator" ] ]
+        tags:
+            - { name: "console.command" }
