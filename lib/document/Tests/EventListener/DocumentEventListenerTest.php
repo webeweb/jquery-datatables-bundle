@@ -225,7 +225,7 @@ class DocumentEventListenerTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertSame("wbw.edm.event_listener.document", DocumentEventListener::SERVICE_NAME);
+        $this->assertSame("wbw.document.event_listener.document", DocumentEventListener::SERVICE_NAME);
 
         $obj = new DocumentEventListener($this->entityManager, $this->storageManager);
 
