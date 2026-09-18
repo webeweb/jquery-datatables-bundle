@@ -20,7 +20,6 @@ use Exception;
 use InvalidArgumentException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Throwable;
-use WBW\Bundle\DocumentBundle\Helper\DocumentHelper;
 use WBW\Bundle\DocumentBundle\Serializer\JsonSerializer;
 use WBW\Library\Common\Sorter\AlphabeticalNodeInterface;
 use WBW\Library\Common\Traits\DateTimes\DateTimeCreatedAtTrait;
