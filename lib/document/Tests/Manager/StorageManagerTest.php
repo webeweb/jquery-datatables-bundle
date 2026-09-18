@@ -345,7 +345,7 @@ class StorageManagerTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertSame("wbw.edm.manager.storage", StorageManager::SERVICE_NAME);
+        $this->assertSame("wbw.document.manager.storage", StorageManager::SERVICE_NAME);
 
         $obj = new StorageManager($this->logger);
 
