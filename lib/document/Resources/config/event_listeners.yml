@@ -1,0 +1,12 @@
+# lib/document/Resources/config/event_listeners.yml
+services:
+
+    wbw.document.event_listener.document:
+        class:  WBW\Bundle\DocumentBundle\EventListener\DocumentEventListener
+        public: false
+        arguments: [ "@doctrine.orm.entity_manager", "@wbw.document.manager.storage" ]
+        tags:
+            - { name: "kernel.event_listener", event: "wbw.document.event.document.post_delete",  method: "onDeleteDocument" }
+            - { name: "kernel.event_listener", event: "wbw.document.event.document.pre_download", method: "onDownloadDocument" }
+            - { name: "kernel.event_listener", event: "wbw.document.event.document.post_move",    method: "onMoveDocument" }
+            - { name: "kernel.event_listener", event: "wbw.document.event.document.post_new",     method: "onNewDocument" }
