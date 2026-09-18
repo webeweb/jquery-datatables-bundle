@@ -47,7 +47,7 @@ class FilesystemStorageProvider implements StorageProviderInterface {
      *
      * @var string
      */
-    public const SERVICE_NAME = "wbw.edm.provider.storage.filesystem";
+    public const SERVICE_NAME = "wbw.document.provider.storage.filesystem";
 
     /**
      * Constructor.

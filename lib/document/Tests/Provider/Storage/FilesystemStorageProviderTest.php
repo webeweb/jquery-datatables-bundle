@@ -352,7 +352,7 @@ class FilesystemStorageProviderTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw.edm.provider.storage.filesystem", FilesystemStorageProvider::SERVICE_NAME);
+        $this->assertEquals("wbw.document.provider.storage.filesystem", FilesystemStorageProvider::SERVICE_NAME);
 
         $obj = new FilesystemStorageProvider($this->logger, $this->storageProviderDirectory);
 
