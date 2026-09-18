@@ -31,7 +31,7 @@ interface StorageProviderInterface extends ProviderInterface {
      *
      * @var string
      */
-    public const STORAGE_PROVIDER_TAG_NAME = "wbw.edm.provider.storage";
+    public const STORAGE_PROVIDER_TAG_NAME = "wbw.document.provider.storage";
 
     /**
      * Delete a directory.
