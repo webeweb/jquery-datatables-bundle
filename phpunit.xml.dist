@@ -16,6 +16,8 @@
                 <directory>lib/bootstrap/Tests</directory>
                 <directory>lib/common/Resources</directory>
                 <directory>lib/common/Tests</directory>
+                <directory>lib/document/Resources</directory>
+                <directory>lib/document/Tests</directory>
                 <directory>src/Resources</directory>
             </exclude>
         </whitelist>
@@ -24,6 +26,7 @@
         <testsuite name="webeweb/datatables-bundle">
             <directory>./lib/bootstrap/Tests</directory>
             <directory>./lib/common/Tests</directory>
+            <directory>./lib/document/Tests</directory>
             <directory>./tests</directory>
         </testsuite>
     </testsuites>

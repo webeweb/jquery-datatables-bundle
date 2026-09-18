@@ -1,0 +1,21 @@
+# lib/document/Resources/config/validation.yml
+WBW\Bundle\DocumentBundle\Entity\Document:
+    constraints:
+        -   Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+                errorPath:  "name"
+                fields: [ "parent", "name", "extension" ]
+                ignoreNull: false
+                message:    "document.unique_entity.message"
+    properties:
+        name:
+            -   Symfony\Component\Validator\Constraints\NotBlank:
+                    message: "document.name.not_blank.message"
+                    groups:  "new"
+            -   Symfony\Component\Validator\Constraints\Length:
+                    max:        255
+                    maxMessage: "document.name.length.max_message"
+                    groups:     "new"
+        uploadedFile:
+            -   Symfony\Component\Validator\Constraints\NotBlank:
+                    message: "document.upload_file.not_blank.message"
+                    groups:  "upload"

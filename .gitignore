@@ -10,3 +10,4 @@
 
 /var/*
 !/var/.gitkeep
+!/var/data/.gitkeep
