@@ -1,0 +1,9 @@
+# lib/document/Resources/config/services/filesystem_storage_provider.yml
+services:
+
+    wbw.document.provider.storage.filesystem:
+        class:  WBW\Bundle\DocumentBundle\Provider\Storage\FilesystemStorageProvider
+        arguments: [ "@logger", "%wbw.document.directory%" ]
+        public: true
+        tags:
+            - { name: "wbw.document.provider.storage" }
