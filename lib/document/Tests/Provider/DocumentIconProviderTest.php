@@ -82,7 +82,7 @@ class DocumentIconProviderTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw.edm.provider.document_icon", DocumentIconProvider::SERVICE_NAME);
+        $this->assertEquals("wbw.document.provider.document_icon", DocumentIconProvider::SERVICE_NAME);
 
         $obj = new DocumentIconProvider();
 

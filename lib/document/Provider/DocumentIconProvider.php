@@ -32,7 +32,7 @@ class DocumentIconProvider {
      *
      * @var string
      */
-    public const SERVICE_NAME = "wbw.edm.provider.document_icon";
+    public const SERVICE_NAME = "wbw.document.provider.document_icon";
 
     /**
      * Constructor.
