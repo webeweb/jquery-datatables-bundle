@@ -1,0 +1,11 @@
+# lib/document/Resources/config/services.yml
+services:
+
+    wbw.document.manager.storage:
+        class:  WBW\Bundle\DocumentBundle\Manager\StorageManager
+        public: false
+        arguments: [ "@logger" ]
+
+    wbw.document.provider.document_icon:
+        class:  WBW\Bundle\DocumentBundle\Provider\DocumentIconProvider
+        public: false
