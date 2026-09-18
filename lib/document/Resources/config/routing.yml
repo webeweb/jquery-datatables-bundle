@@ -1,0 +1,8 @@
+# lib/document/Resources/config/routing.yml
+wbw_document_document:
+    prefix:   "/"
+    resource: "@WBWDocumentBundle/Resources/config/routing/document.yml"
+
+wbw_document_dropzone:
+    prefix:   "/"
+    resource: "@WBWDocumentBundle/Resources/config/routing/dropzone.yml"
