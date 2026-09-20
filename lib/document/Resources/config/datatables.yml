@@ -1,0 +1,12 @@
+# lib/document/Resources/config/datatables.yml
+services:
+
+    wbw.document.datatables.provider.document:
+        class:  WBW\Bundle\DocumentBundle\DataTables\Provider\DocumentDataTablesProvider
+        public: false
+        arguments: [ "@translator", "@router", "@wbw.bootstrap.twig.extension.component.button" ]
+        calls:
+            - [ "setMimeTypeIconProvider", [ "@wbw.document.provider.mime_type_icon" ] ]
+        tags:
+            - { name: "kernel.event_listener", event: "kernel.request",   method: "onKernelRequest" }
+            - { name: "wbw.datatables.provider" }
