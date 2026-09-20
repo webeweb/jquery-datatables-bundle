@@ -1,0 +1,3 @@
+{# lib/document/Resources/views/assets/_javascripts.html.twig #}
+{% if ("prod" != app.environment) %}<!-- Dropzone -->{% endif %}
+<script type="text/javascript" src="{{ asset("bundles/wbwdocument/dropzone-5.9.3/min/dropzone.min.js") }}"></script>
