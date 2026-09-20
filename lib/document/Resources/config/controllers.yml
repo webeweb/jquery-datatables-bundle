@@ -1,0 +1,26 @@
+# lib/document/Resources/config/controllers.yml
+services:
+
+    WBW\Bundle\DocumentBundle\Controller\DocumentController:
+        alias:  "wbw.document.controller.document"
+        public: true
+
+    wbw.document.controller.document:
+        class:  WBW\Bundle\DocumentBundle\Controller\DocumentController
+        public: false
+        calls:
+            - [ "setContainer", [ "@Psr\\Container\\ContainerInterface" ] ]
+        tags:
+            - { name: "container.service_subscriber" }
+
+    WBW\Bundle\DocumentBundle\Controller\DropzoneController:
+        alias:  "wbw.document.controller.dropzone"
+        public: true
+
+    wbw.document.controller.dropzone:
+        class:  WBW\Bundle\DocumentBundle\Controller\DropzoneController
+        public: false
+        calls:
+            - [ "setContainer", [ "@Psr\\Container\\ContainerInterface" ] ]
+        tags:
+            - { name: "container.service_subscriber" }
