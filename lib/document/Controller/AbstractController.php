@@ -41,7 +41,7 @@ abstract class AbstractController extends BaseController {
     protected function buildRedirectRoute(DocumentInterface $document): array {
 
         return [
-            "wbw_edm_document_index",
+            "wbw_document_document_index",
             [
                 "id" => null === $document->getParent() ? null : $document->getParent()->getId(),
             ],

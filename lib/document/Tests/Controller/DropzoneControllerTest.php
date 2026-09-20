@@ -16,7 +16,7 @@ namespace WBW\Bundle\DocumentBundle\Tests\Controller;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Throwable;
 use WBW\Bundle\DocumentBundle\Controller\DropzoneController;
-use WBW\Bundle\DocumentBundle\Form\Type\AbstractFormType;
+use WBW\Bundle\DocumentBundle\DependencyInjection\WBWDocumentExtension;
 use WBW\Bundle\DocumentBundle\Model\DocumentInterface;
 use WBW\Bundle\DocumentBundle\Tests\AbstractWebTestCase;
 
@@ -111,7 +111,7 @@ class DropzoneControllerTest extends AbstractWebTestCase {
 
         $submit = $crawler->filter("form");
         $form   = $submit->form([
-            "wbw_document_document_upload[uploadedFile]" => $upload,
+            WBWDocumentExtension::EXTENSION_ALIAS . "_document_upload[uploadedFile]" => $upload,
         ]);
         $client->submit($form);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
