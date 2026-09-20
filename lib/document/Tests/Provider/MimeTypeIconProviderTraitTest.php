@@ -13,17 +13,17 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DocumentBundle\Tests\Provider;
 
-use WBW\Bundle\DocumentBundle\Provider\DocumentIconProvider;
+use WBW\Bundle\DocumentBundle\Provider\MimeTypeIconProvider;
 use WBW\Bundle\DocumentBundle\Tests\AbstractTestCase;
-use WBW\Bundle\DocumentBundle\Tests\Fixtures\Provider\TestDocumentIconTrait;
+use WBW\Bundle\DocumentBundle\Tests\Fixtures\Provider\TestMimeTypeIconTrait;
 
 /**
- * Document icon provider trait test.
+ * Mime type icon provider trait test.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DocumentBundle\Tests\Provider
  */
-class DocumentIconProviderTraitTest extends AbstractTestCase {
+class MimeTypeIconProviderTraitTest extends AbstractTestCase {
 
     /**
      * Test setDocumentIconProvider()
@@ -33,11 +33,11 @@ class DocumentIconProviderTraitTest extends AbstractTestCase {
     public function testSetDocumentIconProvider(): void {
 
         // Set a Document icon provider mock.
-        $documentIconProvider = new DocumentIconProvider();
+        $documentIconProvider = new MimeTypeIconProvider();
 
-        $obj = new TestDocumentIconTrait();
+        $obj = new TestMimeTypeIconTrait();
 
-        $obj->setDocumentIconProvider($documentIconProvider);
-        $this->assertSame($documentIconProvider, $obj->getDocumentIconProvider());
+        $obj->setMimeTypeIconProvider($documentIconProvider);
+        $this->assertSame($documentIconProvider, $obj->getMimeTypeIconProvider());
     }
 }

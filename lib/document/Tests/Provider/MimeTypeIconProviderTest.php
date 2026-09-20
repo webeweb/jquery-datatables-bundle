@@ -15,16 +15,16 @@ namespace WBW\Bundle\DocumentBundle\Tests\Provider;
 
 use WBW\Bundle\DocumentBundle\Entity\Document;
 use WBW\Bundle\DocumentBundle\Model\DocumentInterface;
-use WBW\Bundle\DocumentBundle\Provider\DocumentIconProvider;
+use WBW\Bundle\DocumentBundle\Provider\MimeTypeIconProvider;
 use WBW\Bundle\DocumentBundle\Tests\AbstractTestCase;
 
 /**
- * Document icon provider test.
+ * Mime type icon provider test.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DocumentBundle\Tests\Provider
  */
-class DocumentIconProviderTest extends AbstractTestCase {
+class MimeTypeIconProviderTest extends AbstractTestCase {
 
     /**
      * Test getIcon()
@@ -38,7 +38,7 @@ class DocumentIconProviderTest extends AbstractTestCase {
         $document->setType(DocumentInterface::TYPE_DOCUMENT);
         $document->setMimeType("application/x-php");
 
-        $obj = new DocumentIconProvider();
+        $obj = new MimeTypeIconProvider();
 
         $this->assertEquals("application-x-php.svg", $obj->getIcon($document));
     }
@@ -54,7 +54,7 @@ class DocumentIconProviderTest extends AbstractTestCase {
         $document = new Document();
         $document->setType(DocumentInterface::TYPE_DIRECTORY);
 
-        $obj = new DocumentIconProvider();
+        $obj = new MimeTypeIconProvider();
 
         $this->assertStringContainsString("folder.svg", $obj->getIconAsset($document));
     }
@@ -70,7 +70,7 @@ class DocumentIconProviderTest extends AbstractTestCase {
         $document = new Document();
         $document->setType(DocumentInterface::TYPE_DIRECTORY);
 
-        $obj = new DocumentIconProvider();
+        $obj = new MimeTypeIconProvider();
 
         $this->assertEquals("folder.svg", $obj->getIcon($document));
     }
@@ -82,9 +82,9 @@ class DocumentIconProviderTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $this->assertEquals("wbw.document.provider.document_icon", DocumentIconProvider::SERVICE_NAME);
+        $this->assertEquals("wbw.document.provider.mime_type_icon", MimeTypeIconProvider::SERVICE_NAME);
 
-        $obj = new DocumentIconProvider();
+        $obj = new MimeTypeIconProvider();
 
         $this->assertNotNull($obj->getMimeTypeImageProvider());
     }

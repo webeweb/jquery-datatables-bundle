@@ -13,15 +13,15 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DocumentBundle\Tests\Fixtures\Provider;
 
-use WBW\Bundle\DocumentBundle\Provider\DocumentIconProviderTrait;
+use WBW\Bundle\DocumentBundle\Provider\MimeTypeIconProviderTrait;
 
 /**
- * Test document icon trait.
+ * Test mime type icon trait.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DocumentBundle\Tests\Fixtures\Provider
  */
-class TestDocumentIconTrait {
+class TestMimeTypeIconTrait {
 
-    use DocumentIconProviderTrait;
+    use MimeTypeIconProviderTrait;
 }

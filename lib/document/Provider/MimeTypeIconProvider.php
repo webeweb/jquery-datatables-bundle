@@ -18,12 +18,12 @@ use WBW\Bundle\CommonBundle\Provider\Image\MimeTypeImageProviderTrait;
 use WBW\Bundle\DocumentBundle\Model\DocumentInterface;
 
 /**
- * Document icon provider.
+ * Mime type icon provider.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DocumentBundle\Provider
  */
-class DocumentIconProvider {
+class MimeTypeIconProvider {
 
     use MimeTypeImageProviderTrait;
 
@@ -32,7 +32,7 @@ class DocumentIconProvider {
      *
      * @var string
      */
-    public const SERVICE_NAME = "wbw.document.provider.document_icon";
+    public const SERVICE_NAME = "wbw.document.provider.mime_type_icon";
 
     /**
      * Constructor.
