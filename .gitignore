@@ -6,6 +6,7 @@
 !/lib/bootstrap/Resources/public/css
 /lib/common/Resources/public/*
 !/lib/common/Resources/public/img
+/lib/document/Resources/public/*
 /src/Resources/public/*
 
 /var/*
