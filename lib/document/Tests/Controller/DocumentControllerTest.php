@@ -134,7 +134,7 @@ class DocumentControllerTest extends AbstractWebTestCase {
             $this->assertEquals(302, $client->getResponse()->getStatusCode());
             $this->assertEquals("/document/index", $client->getResponse()->headers->get("location"));
         }catch (Throwable $ex){
-            echo $ex->getMessage();
+            echo $ex->getTraceAsString();
         }
     }
 
