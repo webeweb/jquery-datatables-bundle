@@ -99,6 +99,13 @@ services:
             - { name: "container.service_subscriber" }
 
     # === Document bundle =====================================================
+    WBW\Bundle\DocumentBundle\Tests\Fixtures\Controller\TestViewsController:
+        public: true
+        calls:
+            - [ "setContainer", [ "@Psr\\Container\\ContainerInterface" ] ]
+        tags:
+            - { name: "container.service_subscriber" }
+
     wbw.document.manager.storage.alias:
         alias:  "wbw.document.manager.storage"
         public: true
