@@ -1,0 +1,35 @@
+# lib/document/Resources/config/routing/document.yml
+wbw_document_document_delete:
+    path: "/document/delete/{id}"
+    defaults: { _controller: "WBW\\Bundle\\DocumentBundle\\Controller\\DocumentController::deleteAction" }
+    methods: [ "GET", "POST" ]
+
+wbw_document_document_download:
+    path: "/document/download/{id}"
+    defaults: { _controller: "WBW\\Bundle\\DocumentBundle\\Controller\\DocumentController::downloadAction" }
+    methods: [ "GET" ]
+
+wbw_document_document_edit:
+    path: "/document/edit/{id}"
+    defaults: { _controller: "WBW\\Bundle\\DocumentBundle\\Controller\\DocumentController::editAction" }
+    methods: [ "GET", "POST" ]
+
+wbw_document_document_index:
+    path: "/document/index/{id}"
+    defaults: { _controller: "WBW\\Bundle\\DocumentBundle\\Controller\\DocumentController::indexAction", id: null }
+    methods: [ "GET", "POST" ]
+
+wbw_document_document_move:
+    path: "/document/move/{id}"
+    defaults: { _controller: "WBW\\Bundle\\DocumentBundle\\Controller\\DocumentController::moveAction" }
+    methods: [ "GET", "POST" ]
+
+wbw_document_document_new:
+    path: "/document/new"
+    defaults: { _controller: "WBW\\Bundle\\DocumentBundle\\Controller\\DocumentController::newAction" }
+    methods: [ "GET", "POST" ]
+
+wbw_document_document_upload:
+    path: "/document/upload/{id}"
+    defaults: { _controller: "WBW\\Bundle\\DocumentBundle\\Controller\\DocumentController::uploadAction", id: null }
+    methods: [ "GET", "POST" ]
