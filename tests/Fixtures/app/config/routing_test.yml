@@ -58,3 +58,8 @@ wbw_common_assets_stylesheets:
     path: "/common/assets/stylesheets"
     defaults: { _controller: "WBW\\Bundle\\CommonBundle\\Tests\\Fixtures\\Controller\\TestViewsController::assetsStylesheetsAction" }
     methods: [ "GET" ]
+
+# === Document bundle =========================================================
+wbw_document:
+    prefix:   "/"
+    resource: "@WBWDocumentBundle/Resources/config/routing.yml"
