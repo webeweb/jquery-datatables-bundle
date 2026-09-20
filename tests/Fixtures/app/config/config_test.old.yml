@@ -2,9 +2,12 @@
 imports:
     - { resource: "security_test.old.yml" }
     - { resource: "services_test.yml" }
+    - { resource: "@WBWDocumentBundle/Resources/config/services/filesystem_storage_provider.yml" }
 
 parameters:
     locale: "en"
+
+    wbw.document.directory: "%kernel.project_dir%/../../../var/data"
 
 framework:
     assets:         true
@@ -37,6 +40,10 @@ doctrine:
                 type:   "xml"
                 dir:    "lib/common/Tests/Fixtures/Resources/config/doctrine"
                 prefix: "WBW\\Bundle\\CommonBundle\\Tests\\Fixtures\\Entity"
+            WBWDocumentBundle:
+                type:   "xml"
+                dir:    "lib/document/Resources/config/doctrine"
+                prefix: "WBW\\Bundle\\DocumentBundle\\Entity"
             WBWDataTablesBundle:
                 type:   "xml"
                 dir:    "tests/Fixtures/app/config/doctrine"
