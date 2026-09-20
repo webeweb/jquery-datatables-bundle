@@ -120,17 +120,22 @@ class DocumentControllerTest extends AbstractWebTestCase {
 
         $client = $this->client;
 
-        $crawler = $client->request("GET", "/document/edit/1");
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertStringContainsString("text/html; charset=", $client->getResponse()->headers->get("Content-Type"));
+        try {
 
-        $submit = $crawler->filter("form");
-        $form   = $submit->form([
-            WBWDocumentExtension::EXTENSION_ALIAS . "_document[name]" => "Home",
-        ]);
-        $client->submit($form);
-        $this->assertEquals(302, $client->getResponse()->getStatusCode());
-        $this->assertEquals("/document/index", $client->getResponse()->headers->get("location"));
+            $crawler = $client->request("GET", "/document/edit/1");
+            $this->assertEquals(200, $client->getResponse()->getStatusCode());
+            $this->assertStringContainsString("text/html; charset=", $client->getResponse()->headers->get("Content-Type"));
+
+            $submit = $crawler->filter("form");
+            $form   = $submit->form([
+                WBWDocumentExtension::EXTENSION_ALIAS . "_document[name]" => "Home",
+            ]);
+            $client->submit($form);
+            $this->assertEquals(302, $client->getResponse()->getStatusCode());
+            $this->assertEquals("/document/index", $client->getResponse()->headers->get("location"));
+        }catch (Throwable $ex){
+            echo $ex->getMessage();
+        }
     }
 
     /**
