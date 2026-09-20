@@ -1,0 +1,15 @@
+{# lib/document/Resources/views/dropzone/upload/_content.html.twig #}
+{% set _domain = constant("WBW\\Bundle\\DocumentBundle\\WBWDocumentBundle::TRANSLATION_DOMAIN") %}
+<div class="row clearfix">
+    <div class="{{ bootstrapGrid({"lg": 6, "md": 6, "sm": 12, "xs": 12}) }}">
+        <div class="dz-message">
+            <div class="drag-icon-cph">
+                {{ fontAwesomeIcon({"name": "hand-point-up"}) }}
+            </div>
+            <h3>{{ "DropzoneController.uploadAction.title"|trans([], _domain) }}</h3>
+        </div>
+        <div class="fallback">
+            {{ form_row(form.uploadedFile) }}
+        </div>
+    </div>
+</div>

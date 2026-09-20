@@ -1,0 +1,53 @@
+{# lib/document/Resources/views/dropzone/upload/_javascript.html.twig #}
+{% set _formID = form.vars.id %}
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+
+        Dropzone.autoDiscover = false;
+
+        const $documentDropzone = $('[name="{{ _formID }}"]');
+
+        $documentDropzone.addClass("dropzone");
+        $documentDropzone.dropzone({
+            init                        : () => {
+
+                myself = this;
+
+                $.get("{{ path("wbw_document_dropzone_index", {"id": document.id|default(null)}) }}", function (data) {
+
+                    $(data).each((k, v) => {
+
+                        if (null === v) {
+                            return;
+                        }
+
+                        const f = {
+                            id  : v.id,
+                            name: v.filename,
+                            size: v.size
+                        };
+
+                        myself.options.addedfile.call(myself, f);
+                        myself.options.thumbnail.call(myself, f, "{{ path("wbw_document_document_download", {"id": "__id"}) }}".replace("__id", f.id));
+                    });
+                });
+            },
+            addRemoveLinks              : false,
+            dictCancelUpload            : "{{ "dict.cancelUpload"|trans([], "WBWDocumentBundle") }}",
+            dictCancelUploadConfirmation: "{{ "dict.cancelUploadConfirmation"|trans([], "WBWDocumentBundle") }}",
+            dictDefaultMessage          : "{{ "dict.defaultMessage"|trans([], "WBWDocumentBundle") }}",
+            dictFallbackMessage         : "{{ "dict.fallbackMessage"|trans([], "WBWDocumentBundle") }}",
+            dictFallbackText            : "{{ "dict.fallbackText"|trans([], "WBWDocumentBundle") }}",
+            dictFileTooBig              : "{{ "dict.fileTooBig"|trans([], "WBWDocumentBundle") }}",
+            dictInvalidFileType         : "{{ "dict.invalidFileType"|trans([], "WBWDocumentBundle") }}",
+            dictMaxFilesExceeded        : "{{ "dict.maxFilesExceeded"|trans([], "WBWDocumentBundle") }}",
+            dictRemoveFile              : "{{ "dict.removeFile"|trans([], "WBWDocumentBundle") }}",
+            dictResponseError           : "{{ "dict.responseError"|trans([], "WBWDocumentBundle") }}",
+            dictUploadCanceled          : "{{ "dict.uploadCanceled"|trans([], "WBWDocumentBundle") }}",
+            maxFilesize                 : {{ uploadMaxFilesize }},
+            paramName                   : "{{ _formID }}[uploadedFile]",
+            uploadMultiple              : false,
+            url                         : "{{ path("wbw_document_dropzone_upload", {"id": document.id|default(null)}) }}"
+        });
+    });
+</script>

@@ -1,0 +1,15 @@
+# lib/document/Resources/config/routing/dropzone.yml
+wbw_document_dropzone_index:
+    path: "/dropzone/index/{id}"
+    defaults: { _controller: "WBW\\Bundle\\DocumentBundle\\Controller\\DropzoneController::indexAction", id: null }
+    methods: [ "GET" ]
+
+wbw_document_dropzone_serialize:
+    path: "/dropzone/serialize/{id}"
+    defaults: { _controller: "WBW\\Bundle\\DocumentBundle\\Controller\\DropzoneController::serializeAction", id: null }
+    methods: [ "GET", "POST" ]
+
+wbw_document_dropzone_upload:
+    path: "/dropzone/upload/{id}"
+    defaults: { _controller: "WBW\\Bundle\\DocumentBundle\\Controller\\DropzoneController::uploadAction", id: null }
+    methods: [ "GET", "POST" ]
