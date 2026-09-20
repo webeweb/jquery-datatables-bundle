@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the edm-bundle package.
+ * This file is part of the jquery-datatables-bundle package.
  *
  * (c) 2018 WEBEWEB
  *
@@ -42,7 +42,7 @@ abstract class AbstractWebTestCase extends BaseWebTestCase {
 
         foreach (new DirectoryIterator($fs->getDirectory()) as $current) {
 
-            if (1 === preg_match("/^[0-9]{1,}(\.download)?$/", $current->getFilename())) {
+            if (1 === preg_match("/^[0-9]+(\.download)?$/", $current->getFilename())) {
                 (new Filesystem())->remove($current->getPathname());
             }
         }
