@@ -1,4 +1,4 @@
 {# lib/document/Resources/views/document/upload.html.twig #}
 {{ form_start(form) }}
-{% include "@WBWDocument/document/upload/_content.html.twig" %}
+{% include "@WBWDocument/document/upload/_content.html.twig" with {"form": form} only %}
 {{ form_end(form) }}
