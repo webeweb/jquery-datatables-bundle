@@ -17,13 +17,13 @@ use Symfony\Component\Form\AbstractType;
 use WBW\Bundle\DocumentBundle\DependencyInjection\WBWDocumentExtension;
 
 /**
- * Abstract document form type.
+ * Abstract form type.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DocumentBundle\Form\Type
  * @abstract
  */
-abstract class AbstractDocumentFormType extends AbstractType {
+abstract class AbstractFormType extends AbstractType {
 
     /**
      * {@inheritDoc}

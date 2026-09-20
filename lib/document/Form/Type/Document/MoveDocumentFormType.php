@@ -20,7 +20,7 @@ use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use WBW\Bundle\CommonBundle\Form\Factory\ChoiceTypeFactory;
 use WBW\Bundle\DocumentBundle\Entity\Document;
-use WBW\Bundle\DocumentBundle\Form\Type\AbstractDocumentFormType;
+use WBW\Bundle\DocumentBundle\Form\Type\AbstractFormType;
 use WBW\Bundle\DocumentBundle\Model\DocumentInterface;
 use WBW\Bundle\DocumentBundle\WBWDocumentBundle;
 use WBW\Library\Common\Sorter\AlphabeticalTreeSort;
@@ -31,7 +31,7 @@ use WBW\Library\Common\Sorter\AlphabeticalTreeSort;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DocumentBundle\Form\Type\Document
  */
-class MoveDocumentFormType extends AbstractDocumentFormType {
+class MoveDocumentFormType extends AbstractFormType {
 
     /**
      * {@inheritDoc}

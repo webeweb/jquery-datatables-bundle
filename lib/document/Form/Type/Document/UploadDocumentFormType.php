@@ -19,7 +19,7 @@ use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use WBW\Bundle\DocumentBundle\Entity\Document;
-use WBW\Bundle\DocumentBundle\Form\Type\AbstractDocumentFormType;
+use WBW\Bundle\DocumentBundle\Form\Type\AbstractFormType;
 use WBW\Bundle\DocumentBundle\Model\DocumentInterface;
 use WBW\Bundle\DocumentBundle\WBWDocumentBundle;
 
@@ -29,7 +29,7 @@ use WBW\Bundle\DocumentBundle\WBWDocumentBundle;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DocumentBundle\Form\Type\Document
  */
-class UploadDocumentFormType extends AbstractDocumentFormType {
+class UploadDocumentFormType extends AbstractFormType {
 
     /**
      * {@inheritDoc}

@@ -13,14 +13,14 @@ declare(strict_types = 1);
 
 namespace WBW\Bundle\DocumentBundle\Tests\Fixtures\Form\Type;
 
-use WBW\Bundle\DocumentBundle\Form\Type\AbstractDocumentFormType;
+use WBW\Bundle\DocumentBundle\Form\Type\AbstractFormType;
 
 /**
- * Test document form type.
+ * Test form type.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DocumentBundle\Tests\Fixtures\Form\Type
  */
-class TestDocumentFormType extends AbstractDocumentFormType {
+class TestFormType extends AbstractFormType {
 
 }

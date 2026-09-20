@@ -14,15 +14,15 @@ declare(strict_types = 1);
 namespace WBW\Bundle\DocumentBundle\Tests\Form\Type;
 
 use WBW\Bundle\DocumentBundle\Tests\AbstractTestCase;
-use WBW\Bundle\DocumentBundle\Tests\Fixtures\Form\Type\TestDocumentFormType;
+use WBW\Bundle\DocumentBundle\Tests\Fixtures\Form\Type\TestFormType;
 
 /**
- * Abstract document form type test.
+ * Abstract form type test.
  *
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DocumentBundle\Tests\Form\Type
  */
-class AbstractDocumentFormTypeTest extends AbstractTestCase {
+class AbstractFormTypeTest extends AbstractTestCase {
 
     /**
      * Test getBlockPrefix()
@@ -31,7 +31,7 @@ class AbstractDocumentFormTypeTest extends AbstractTestCase {
      */
     public function testGetBlockPrefix(): void {
 
-        $obj = new TestDocumentFormType();
+        $obj = new TestFormType();
 
         $this->assertEquals("wbw_document_document", $obj->getBlockPrefix());
     }

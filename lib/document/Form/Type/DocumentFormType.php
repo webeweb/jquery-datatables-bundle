@@ -25,7 +25,7 @@ use WBW\Bundle\DocumentBundle\WBWDocumentBundle;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DocumentBundle\Form\Type
  */
-class DocumentFormType extends AbstractDocumentFormType {
+class DocumentFormType extends AbstractFormType {
 
     /**
      * {@inheritDoc}

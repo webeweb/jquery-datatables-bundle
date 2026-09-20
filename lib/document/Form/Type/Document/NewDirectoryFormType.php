@@ -18,7 +18,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use WBW\Bundle\DocumentBundle\DependencyInjection\WBWDocumentExtension;
 use WBW\Bundle\DocumentBundle\Entity\Document;
-use WBW\Bundle\DocumentBundle\Form\Type\AbstractDocumentFormType;
+use WBW\Bundle\DocumentBundle\Form\Type\AbstractFormType;
 use WBW\Bundle\DocumentBundle\WBWDocumentBundle;
 
 /**
@@ -27,7 +27,7 @@ use WBW\Bundle\DocumentBundle\WBWDocumentBundle;
  * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\DocumentBundle\Form\Type\Document
  */
-class NewDirectoryFormType extends AbstractDocumentFormType {
+class NewDirectoryFormType extends AbstractFormType {
 
     /**
      * {@inheritDoc}
