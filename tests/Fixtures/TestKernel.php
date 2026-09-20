@@ -43,6 +43,7 @@ class TestKernel extends BaseKernel {
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new WBW\Bundle\BootstrapBundle\WBWBootstrapBundle(),
             new WBW\Bundle\CommonBundle\WBWCommonBundle(),
+            new WBW\Bundle\DocumentBundle\WBWDocumentBundle(),
             new WBW\Bundle\DataTablesBundle\WBWDataTablesBundle(),
         ];
     }
