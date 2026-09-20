@@ -297,7 +297,7 @@ class DocumentDataTablesProviderTest extends AbstractTestCase {
 
         $obj = $this->documentDataTablesProvider;
 
-        $this->assertNull($obj->renderRow("", null, 0));
+        $this->assertNull($obj->renderRow("", (object) null, 0));
     }
 
     /**

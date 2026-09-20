@@ -16,9 +16,11 @@ namespace WBW\Bundle\DocumentBundle\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 use WBW\Bundle\BootstrapBundle\Controller\AbstractController as BaseController;
+use WBW\Bundle\DocumentBundle\DependencyInjection\WBWDocumentExtension;
 use WBW\Bundle\DocumentBundle\Entity\Document;
 use WBW\Bundle\DocumentBundle\Event\DocumentEvent;
 use WBW\Bundle\DocumentBundle\Model\DocumentInterface;
+use WBW\Bundle\DocumentBundle\Repository\DocumentRepository;
 use WBW\Bundle\DocumentBundle\WBWDocumentBundle;
 use WBW\Library\Common\Model\Response\SimpleJsonResponseData;
 use WBW\Library\Common\Model\Response\SimpleJsonResponseDataInterface;
@@ -41,7 +43,7 @@ abstract class AbstractController extends BaseController {
     protected function buildRedirectRoute(DocumentInterface $document): array {
 
         return [
-            "wbw_document_document_index",
+            WBWDocumentExtension::EXTENSION_ALIAS . "_document_index",
             [
                 "id" => null === $document->getParent() ? null : $document->getParent()->getId(),
             ],
@@ -74,7 +76,10 @@ abstract class AbstractController extends BaseController {
      */
     protected function findDocument(?int $id, bool $ex): ?DocumentInterface {
 
-        $document = $this->getEntityManager()->getRepository(Document::class)->findOneById($id);
+        /** @var DocumentRepository $repository */
+        $repository = $this->getEntityManager()->getRepository(Document::class);
+
+        $document = $repository->findOneById($id);
         if (null === $document && true === $ex) {
             throw new NotFoundHttpException();
         }

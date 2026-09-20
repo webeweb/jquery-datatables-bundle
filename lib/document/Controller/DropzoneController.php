@@ -83,7 +83,10 @@ class DropzoneController extends AbstractController {
      */
     public function uploadAction(Request $request, int $id = null): Response {
 
-        $parent = $this->getEntityManager()->getRepository(Document::class)->findOneById($id);
+        /** @var DocumentRepository $repository */
+        $repository = $this->getEntityManager()->getRepository(Document::class);
+
+        $parent = $repository->findOneById($id);
 
         $document = new Document();
         $document->setCreatedAt(new DateTime());

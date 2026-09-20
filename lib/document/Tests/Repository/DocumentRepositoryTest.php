@@ -114,7 +114,7 @@ class DocumentRepositoryTest extends AbstractWebTestCase {
      */
     public function testFindAllDirectoriesExcept(): void {
 
-        // Get a Document mock.
+        /** @var DocumentInterface $document */
         $document = $this->documentRepository->find(10);
 
         $obj = $this->documentRepository;
