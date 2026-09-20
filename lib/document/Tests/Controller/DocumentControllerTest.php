@@ -121,7 +121,6 @@ class DocumentControllerTest extends AbstractWebTestCase {
         $client = $this->client;
 
         try {
-
             $crawler = $client->request("GET", "/document/edit/1");
             $this->assertEquals(200, $client->getResponse()->getStatusCode());
             $this->assertStringContainsString("text/html; charset=", $client->getResponse()->headers->get("Content-Type"));
@@ -133,8 +132,8 @@ class DocumentControllerTest extends AbstractWebTestCase {
             $client->submit($form);
             $this->assertEquals(302, $client->getResponse()->getStatusCode());
             $this->assertEquals("/document/index", $client->getResponse()->headers->get("location"));
-        }catch (Throwable $ex){
-            echo $ex->getTraceAsString();
+        } catch (Throwable $ex) {
+            echo file_get_contents(__DIR__ . "/../../../../var/log/test.log");
         }
     }
 
