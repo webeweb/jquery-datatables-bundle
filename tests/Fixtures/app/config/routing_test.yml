@@ -63,3 +63,13 @@ wbw_common_assets_stylesheets:
 wbw_document:
     prefix:   "/"
     resource: "@WBWDocumentBundle/Resources/config/routing.yml"
+
+wbw_document_assets_javascripts:
+    path: "/document/assets/javascripts"
+    defaults: { _controller: "WBW\\Bundle\\DocumentBundle\\Tests\\Fixtures\\Controller\\TestViewsController::assetsJavascriptsAction" }
+    methods: [ "GET" ]
+
+wbw_document_assets_stylesheets:
+    path: "/document/assets/stylesheets"
+    defaults: { _controller: "WBW\\Bundle\\DocumentBundle\\Tests\\Fixtures\\Controller\\TestViewsController::assetsStylesheetsAction" }
+    methods: [ "GET" ]
