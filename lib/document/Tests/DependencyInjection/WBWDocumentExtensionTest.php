@@ -30,6 +30,10 @@ use WBW\Bundle\DocumentBundle\DataTables\Provider\DocumentDataTablesProvider;
 use WBW\Bundle\DocumentBundle\DependencyInjection\Configuration;
 use WBW\Bundle\DocumentBundle\DependencyInjection\WBWDocumentExtension;
 use WBW\Bundle\DocumentBundle\EventListener\DocumentEventListener;
+use WBW\Bundle\DocumentBundle\Form\Type\Document\MoveDocumentFormType;
+use WBW\Bundle\DocumentBundle\Form\Type\Document\NewDirectoryFormType;
+use WBW\Bundle\DocumentBundle\Form\Type\Document\UploadDocumentFormType;
+use WBW\Bundle\DocumentBundle\Form\Type\DocumentFormType;
 use WBW\Bundle\DocumentBundle\Manager\StorageManager;
 use WBW\Bundle\DocumentBundle\Provider\MimeTypeIconProvider;
 use WBW\Bundle\DocumentBundle\Tests\AbstractTestCase;
@@ -150,6 +154,13 @@ class WBWDocumentExtensionTest extends AbstractTestCase {
 
         // Event listeners
         $this->assertInstanceOf(DocumentEventListener::class, $this->containerBuilder->get(DocumentEventListener::SERVICE_NAME));
+
+        // Forms
+        $this->assertInstanceOf(DocumentFormType::class, $this->containerBuilder->get(DocumentFormType::SERVICE_NAME));
+
+        $this->assertInstanceOf(MoveDocumentFormType::class, $this->containerBuilder->get(MoveDocumentFormType::SERVICE_NAME));
+        $this->assertInstanceOf(NewDirectoryFormType::class, $this->containerBuilder->get(NewDirectoryFormType::SERVICE_NAME));
+        $this->assertInstanceOf(UploadDocumentFormType::class, $this->containerBuilder->get(UploadDocumentFormType::SERVICE_NAME));
 
         // Managers
         $this->assertInstanceOf(StorageManager::class, $this->containerBuilder->get(StorageManager::SERVICE_NAME));
