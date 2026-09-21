@@ -3,7 +3,7 @@
 
 {% block bootstrapStylesheets %}
     {{ parent() }}
-    {% include "@WBWDataTables/assets/_stylesheets.html.twig" %}
+    {% include "@WBWDataTables/assets/_stylesheets.html.twig" with {} only %}
     <style type="text/css">
         .content {
             margin: 70px 0 0;
@@ -34,7 +34,7 @@
             {% if (0 < app.session.flashbag.peekAll()|length) %}
                 <div class="row clearfix">
                     <div class="{{ bootstrapGrid({"lg": 12, "md": 12, "sm": 12, "xs": 12}) }}">
-                        {% include "@WBWBootstrap/layout/_flash_bag.html.twig" %}
+                        {% include "@WBWBootstrap/layout/_flash_bag.html.twig" with {} only %}
                     </div>
                 </div>
             {% endif %}
@@ -51,7 +51,7 @@
 
 {% block bootstrapJavascripts %}
     {{ parent() }}
-    {% include "@WBWDataTables/assets/_javascripts.html.twig" %}
+    {% include "@WBWDataTables/assets/_javascripts.html.twig" with {} only %}
     {% block dataTablesJavascripts %}
     {% endblock %}
 {% endblock %}
