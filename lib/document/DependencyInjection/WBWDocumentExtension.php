@@ -57,6 +57,7 @@ class WBWDocumentExtension extends Extension {
         $serviceLoader->load("controllers.yml");
         $serviceLoader->load("datatables.yml");
         $serviceLoader->load("event_listeners.yml");
+        $serviceLoader->load("forms.yml");
         $serviceLoader->load("services.yml");
         $serviceLoader->load("twig.yml");
     }
