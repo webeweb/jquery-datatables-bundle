@@ -28,6 +28,13 @@ use WBW\Bundle\DocumentBundle\WBWDocumentBundle;
 class DocumentFormType extends AbstractFormType {
 
     /**
+     * Service name.
+     *
+     * @var string
+     */
+    public const SERVICE_NAME = "wbw.document.form.type.document";
+
+    /**
      * {@inheritDoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options): void {

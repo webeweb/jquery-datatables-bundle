@@ -80,4 +80,14 @@ class DocumentFormTypeTest extends DefaultFormTypeTestCase {
 
         $this->assertEquals(WBWDocumentExtension::EXTENSION_ALIAS . "_document", $obj->getBlockPrefix());
     }
+
+    /**
+     * Test __construct()
+     *
+     * @return void
+     */
+    public function test__construct(): void {
+
+        $this->assertEquals("wbw.document.form.type.document", DocumentFormType::SERVICE_NAME);
+    }
 }
