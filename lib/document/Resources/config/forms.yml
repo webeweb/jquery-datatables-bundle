@@ -1,0 +1,26 @@
+# lib/document/Resources/config/forms.yml
+services:
+
+    wbw.document.form.type.document.move:
+        class:  WBW\Bundle\DocumentBundle\Form\Type\Document\MoveDocumentFormType
+        public: false
+        tags:
+            - { name: "form.type" }
+
+    wbw.document.form.type.document.new:
+        class:  WBW\Bundle\DocumentBundle\Form\Type\Document\NewDocumentFormType
+        public: false
+        tags:
+            - { name: "form.type" }
+
+    wbw.document.form.type.document.upload:
+        class:  WBW\Bundle\DocumentBundle\Form\Type\Document\UploadDocumentFormType
+        public: false
+        tags:
+            - { name: "form.type" }
+
+    wbw.document.form.type.document:
+        class:  WBW\Bundle\DocumentBundle\Form\Type\DocumentFormType
+        public: false
+        tags:
+            - { name: "form.type" }
