@@ -130,6 +130,7 @@ Libraries resources:
 
 - Common bundle [README](lib/common/README.md)/[Documentation](lib/common/Resources/doc/index.md)
 - Bootstrap bundle [README](lib/bootstrap/README.md)/[Documentation](lib/bootstrap/Resources/doc/index.md)
+- Document bundle [README](lib/document/README.md)/[Documentation](lib/document/Resources/doc/index.md)
 
 ## Testing
 
