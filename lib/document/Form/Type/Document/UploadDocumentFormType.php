@@ -32,6 +32,13 @@ use WBW\Bundle\DocumentBundle\WBWDocumentBundle;
 class UploadDocumentFormType extends AbstractFormType {
 
     /**
+     * Service name.
+     *
+     * @var string
+     */
+    public const SERVICE_NAME = "wbw.document.form.type.document.upload";
+
+    /**
      * {@inheritDoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options): void {

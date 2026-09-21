@@ -114,4 +114,14 @@ class UploadDocumentFormTypeTest extends DefaultFormTypeTestCase {
         $this->assertEquals("1507fc17f4a6b80c3db5090fa622a12d976351e5", $document->getHashSha1());
         $this->assertEquals("fc58efaa826eb73da8101d261b99f992e99bf3b53754c70035dcc65c0b3f2acb", $document->getHashSha256());
     }
+
+    /**
+     * Test __construct()
+     *
+     * @return void
+     */
+    public function test__construct(): void {
+
+        $this->assertEquals("wbw.document.form.type.document.upload", UploadDocumentFormType::SERVICE_NAME);
+    }
 }
