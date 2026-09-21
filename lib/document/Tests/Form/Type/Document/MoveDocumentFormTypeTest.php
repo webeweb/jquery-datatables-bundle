@@ -101,4 +101,14 @@ class MoveDocumentFormTypeTest extends DefaultFormTypeTestCase {
         $this->assertSame($formEvent, $obj->onPreSetData($formEvent));
         $this->assertSame($document->getParent(), $document->getSavedParent());
     }
+
+    /**
+     * Test __construct()
+     *
+     * @return void
+     */
+    public function test__construct(): void {
+
+        $this->assertEquals("wbw.document.form.type.document.move", MoveDocumentFormType::SERVICE_NAME);
+    }
 }

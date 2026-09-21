@@ -34,6 +34,13 @@ use WBW\Library\Common\Sorter\AlphabeticalTreeSort;
 class MoveDocumentFormType extends AbstractFormType {
 
     /**
+     * Service name.
+     *
+     * @var string
+     */
+    public const SERVICE_NAME = "wbw.document.form.type.document.move";
+
+    /**
      * {@inheritDoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options): void {
