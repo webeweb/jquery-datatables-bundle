@@ -81,4 +81,14 @@ class NewDirectoryFormTypeTest extends DefaultFormTypeTestCase {
 
         $this->assertEquals(WBWDocumentExtension::EXTENSION_ALIAS . "_new_directory", $obj->getBlockPrefix());
     }
+
+    /**
+     * Test __construct()
+     *
+     * @return void
+     */
+    public function test__construct(): void {
+
+        $this->assertEquals("wbw.document.form.type.document.new", NewDirectoryFormType::SERVICE_NAME);
+    }
 }
